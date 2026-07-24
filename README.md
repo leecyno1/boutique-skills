@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-openclaw-skills)
-[![Skills](https://img.shields.io/badge/Skills-343-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-344-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 343 |
+| Curated skills | 344 |
 | Skill suites | 4 |
-| Native sources verified or referenced | 337 |
+| Native sources verified or referenced | 338 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -315,6 +315,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `pick-ui-library` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/pick-ui-library) |
 | `redesign-existing-projects` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill) |
 | `review-animations` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
+| `scroll-world` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
 | `skill-designer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-designer) |
 | `stitch-design-taste` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill) |
 | `strategy-pivot-designer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/strategy-pivot-designer) |

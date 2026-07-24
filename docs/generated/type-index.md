@@ -8,7 +8,7 @@
 | 编程 / 工程工具 (`coding-devtools`) | 10 |
 | 数据分析 (`data-analysis`) | 9 |
 | 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 31 |
+| 设计 / UI (`design-ui`) | 32 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
 | 媒体生成 / 处理 (`media-generation`) | 31 |
 | 写作 / 内容 (`writing-content`) | 12 |
@@ -155,6 +155,7 @@
 | `pick-ui-library` | `L2 Professional` | 5★ | `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend`, `frontend-craft`, `l2`, `offline`, `standard` |
 | `redesign-existing-projects` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `review-animations` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `offline`, `standard` |
+| `scroll-world` | `L2 Professional` | 5★ | `design`, `design-ui`, `direct`, `frontend`, `l2`, `media-generation`, `online` |
 | `skill-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `stitch-design-taste` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `strategy-pivot-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |

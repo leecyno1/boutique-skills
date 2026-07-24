@@ -5,7 +5,7 @@
 | `api-key` | 100 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 10 |
-| `direct` | 139 |
+| `direct` | 140 |
 | `mcp-required` | 72 |
 
 ## api-key
@@ -216,6 +216,7 @@
 | `reflection` | 无 | 无 | `low` |
 | `review-animations` | 无 | 无 | `low` |
 | `scenario-analyzer` | 无 | `python` | `low` |
+| `scroll-world` | 无 | `ffmpeg`, `higgsfield`, `python` | `low` |
 | `self-improving-agent-cn` | 无 | 无 | `low` |
 | `skill-designer` | 无 | 无 | `low` |
 | `skill-integration-tester` | 无 | `python` | `low` |

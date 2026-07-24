@@ -6197,6 +6197,21 @@
           ]
         },
         {
+          "id": "scroll-world",
+          "name": "scroll-world",
+          "description": "Build immersive scroll-scrubbed 3D world landing pages with a Higgsfield generation pipeline, frame-locked video transitions, and a framework-agnostic scrub engine.",
+          "manual": "skills/default/scroll-world/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/scroll-world/SKILL.md",
+          "source": "https://github.com/oso95/scroll-world/tree/main/skills/scroll-world",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "design",
+            "frontend",
+            "media-generation"
+          ]
+        },
+        {
           "id": "sector-analyst",
           "name": "sector-analyst",
           "description": "This skill should be used when analyzing sector rotation patterns and market cycle positioning.",

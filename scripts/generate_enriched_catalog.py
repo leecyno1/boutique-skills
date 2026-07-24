@@ -499,6 +499,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "stock-analysis": "finance-trading",
         "pybroker-backtest-skill": "finance-trading",
         "policy-monitor": "policy-monitoring",
+        "scroll-world": "design-ui",
         "skill-vetter": "security-audit",
         "claude-mem-plugin": "memory-context",
         "html-anything": "html-publishing",
@@ -592,6 +593,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id in EMIL_KOWALSKI_SKILLS:
         api_keys = []
         tools = []
+    if skill_id == "scroll-world":
+        api_keys = []
+        tools = ["ffmpeg", "higgsfield", "python"]
     if skill_id == "agent-reach":
         api_keys = []
         tools = ["browser", "ffmpeg", "gh"]
@@ -622,7 +626,7 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
         access_mode = "browser-required"
     else:
         access_mode = "direct"
-    runtime = "online" if api_keys or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
+    runtime = "online" if api_keys or skill_id == "scroll-world" or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
     return {
         "requires_api_keys": bool(api_keys),
         "api_keys": sorted(api_keys),

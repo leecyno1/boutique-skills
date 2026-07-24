@@ -3,7 +3,7 @@
 | 层级 | 定义 | 数量 |
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
-| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 123 |
+| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 124 |
 | `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 199 |
 
 ## L1 Foundation
@@ -80,6 +80,7 @@
 | `reflection` | 媒体生成 / 处理 | 5★ | `direct` | [origin](https://playbooks.com/skills/openclaw/skills/reflection) |
 | `review-animations` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
 | `scenario-analyzer` | 数据分析 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills) |
+| `scroll-world` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
 | `self-improving-agent-cn` | 多 Agent / 自动调度 | 5★ | `direct` | [origin](https://clawhub.ai/zhengxinjipai/self-improving-agent-cn) |
 | `skill-designer` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-designer) |
 | `skill-integration-tester` | 数据分析 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-integration-tester) |
