@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-deal-sourcing
+name: deal-sourcing
 description: PE deal sourcing workflow — discover target companies, check CRM for existing relationships, and draft personalized founder outreach emails. Use when sourcing new deals, prospecting companies in a sector, or reaching out to founders. Triggers on "find companies", "source deals", "draft founder email", "check if we've seen this company", or "outreach to founder".
 ---
 
@@ -66,7 +66,3 @@ Draft personalized cold emails to founders/CEOs:
 - Never send emails without explicit user approval
 - If the user's firm intro or investment criteria aren't clear, ask before drafting
 - Prioritize quality over quantity — 5 well-researched targets beat 20 generic ones
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/deal-sourcing

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-operations-kyc-rules
+name: kyc-rules
 description: Apply the firm's KYC/AML rules grid to a parsed onboarding record — assign a risk rating, list every rule outcome with the rule cited, and flag what's missing or escalation-worthy. Use after kyc-doc-parse; this skill decides nothing, it scores and routes.
 ---
 
@@ -45,7 +45,3 @@ For every rule in the grid that applies, output one row: rule id, rule text, out
 ```
 
 `clear` only if rating is low/medium, all required docs received, and no escalation rule fired. Otherwise route — **this skill never approves**; the escalator and a human reviewer do.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/operations/skills/kyc-rules

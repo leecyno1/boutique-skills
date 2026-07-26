@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-morning-note
+name: morning-note
 description: Draft concise morning meeting notes summarizing overnight developments, trade ideas, and key events for coverage stocks. Designed for the 7am morning meeting format — tight, opinionated, actionable. Triggers on "morning note", "morning meeting", "what happened overnight", "trade idea", "morning call prep", or "daily note".
 ---
 
@@ -87,7 +87,3 @@ If a coverage company reported, provide a quick reaction:
 - Distinguish between actionable events (earnings, M&A) and noise (minor analyst notes, non-events)
 - Time-stamp your takes — if you're writing at 6am, note that pre-market may change by open
 - If you're wrong, own it in the next morning note — credibility matters more than being right every time
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/morning-note

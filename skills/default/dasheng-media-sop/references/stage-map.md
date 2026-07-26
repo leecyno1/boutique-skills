@@ -1,14 +1,5 @@
 # 阶段地图
 
-## 0.6 Video Style Training（可选）
-
-- 目标：从用户提供的大量样板视频中学习可复用的视频风格 DNA。
-- 常见输入：博主/栏目样板视频目录、`style_id`、博主名、平台名。
-- 交付：`training_manifest.json`、`per_video/*/analysis.json`、`style_profile.json`、`style_profile.md`。
-- 默认输出：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`。
-- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video` 和 `explainer_html_video` 只引用 `style_profile.json`。
-- 禁止：把样板视频、压缩上传副本、训练报告或渲染预览写入项目根目录或 `skills/`。
-
 ## 1. Intake
 
 - 目标：采集原始来源，保留链接，形成当天底稿与报告。
@@ -39,7 +30,7 @@
 - 常见输入：`draft_manifest.json`、`final_structure_snapshot.json`、`transwrite_decision.json`。
 - 三条通路：
   - 公众号：Style DNA / humanize / 封面 / 微信 HTML 转写
-  - 口播视频：真人口播可选、HTML 视觉层、音频、主动/被动对齐、渲染计划；可选引用 `video-style-training` 产出的 `style_profile.json`
+  - 口播视频：真人口播可选、HTML 视觉层、音频、主动/被动对齐、渲染计划
   - 播客：Coze / MiniMax API 请求包
 - 交付：`04_转写计划.md`、`transwrite_manifest.json`、每题 lane manifest。
 - 备注：不补事实、不重做图表；外部 API/素材缺失必须显式标记。

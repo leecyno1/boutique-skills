@@ -24,7 +24,7 @@ python3 scripts/run_hotspot_radar.py
 Optional output directory:
 
 ```bash
-python3 scripts/run_hotspot_radar.py --output-dir ~/Desktop/自媒体创作/00_热点捕捉/manual-check
+python3 scripts/run_hotspot_radar.py --output-dir 产物/00_热点捕捉/manual-check
 ```
 
 ## Output

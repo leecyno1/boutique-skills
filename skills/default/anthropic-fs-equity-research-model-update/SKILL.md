@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-model-update
+name: model-update
 description: Update financial models with new data — quarterly earnings, management guidance, macro changes, or revised assumptions. Adjusts estimates, recalculates valuation, and flags material changes. Use after earnings, guidance updates, or when assumptions need refreshing. Triggers on "update model", "plug earnings", "refresh estimates", "update numbers for [company]", "new guidance", or "revise estimates".
 ---
 
@@ -93,7 +93,3 @@ Recalculate valuation with updated estimates:
 - If the quarter was noisy, separate signal from noise in your estimate changes
 - Check consensus after updating — how do your revised estimates compare to the Street?
 - Share count matters — dilution from stock comp, converts, or buybacks can materially affect EPS
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/model-update

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-cim-builder
+name: cim-builder
 description: Structure and draft a Confidential Information Memorandum for sell-side M&A processes. Organizes company information into a professional, investor-ready document with consistent formatting and narrative flow. Use when preparing sell-side materials, drafting a CIM, or organizing company data for a sale process. Triggers on "CIM", "confidential information memorandum", "offering memorandum", "info memo", "draft CIM", or "sell-side materials".
 ---
 
@@ -103,7 +103,3 @@ Standard CIM table of contents:
 - Work with legal on the confidentiality disclaimer and any regulatory disclosures
 - Get management to review for factual accuracy before distribution
 - The CIM sets expectations on valuation — make sure the narrative supports the asking price
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/cim-builder

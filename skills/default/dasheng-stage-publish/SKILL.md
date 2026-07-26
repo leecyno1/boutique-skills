@@ -15,14 +15,10 @@ description: Use when entering the slim Dasheng publish execution stage to valid
 
 Publish 不再生成正文、封面、视频、播客或图表。上述生产动作全部归入 Draft / Transwrite。
 
-Publish 可调用账号运营策略 Skill 审查发布包装、冷启动实验和矩阵角色，但这是轻量 advisory 层，不允许重写核心事实或替代平台发布执行器。
-
 ## 正式输入
 
 - `transwrite_manifest.json`
 - `publish_decision.json`
-
-`publish_decision.json` 可选提供 `account_stage`、`account_goal`、`account_slot`、`matrix_role`、`target_audience`、`conversion_goal`、`weekly_capacity` 和 `account_operations`。
 
 缺少 `transwrite_manifest.json` 或 `publish_decision.json` 时禁止执行。
 
@@ -33,7 +29,6 @@ Publish 可调用账号运营策略 Skill 审查发布包装、冷启动实验�
 3. 对可自动/半自动发布的平台生成执行器调用计划。
 4. 对缺少执行器的平台导出人工发布包。
 5. 发布后回收草稿 ID、正式链接、发布时间、截图或错误状态。
-6. 为公众号、小红书、抖音和 X 生成账号运营审查请求，把冷启动/低流量/沉寂/风险/矩阵实验号设为受控执行前必审。
 
 ## 验收规则
 
@@ -48,8 +43,8 @@ Publish 不只看 lane `status`，还必须检查关键最终产物是否存在�
 
 ```bash
 python3 scripts/build_stage5_publish.py \
-  --transwrite-manifest ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_manifest.json \
-  --publish-decision ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_decision.json
+  --transwrite-manifest 产物/06_转写生产/<run_id>/transwrite_manifest.json \
+  --publish-decision 产物/07_发布执行/<run_id>/publish_decision.json
 ```
 
 统一入口：
@@ -62,8 +57,8 @@ python3 scripts/run_mainline_stage.py publish --run-id <run_id>
 
 ```bash
 python3 scripts/run_mainline_stage.py publish \
-  --transwrite-manifest ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_manifest.json \
-  --publish-decision ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_decision.json \
+  --transwrite-manifest 产物/06_转写生产/<run_id>/transwrite_manifest.json \
+  --publish-decision 产物/07_发布执行/<run_id>/publish_decision.json \
   --dry-run
 ```
 
@@ -82,10 +77,10 @@ python3 scripts/run_mainline_stage.py doctor --publish --channel wechat_article 
 
 ```bash
 python3 scripts/publish_guard.py \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json
+  --publish-manifest 产物/07_发布执行/<run_id>/publish_manifest.json
 
 python3 scripts/run_mainline_stage.py doctor \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json
+  --publish-manifest 产物/07_发布执行/<run_id>/publish_manifest.json
 ```
 
 `publish_guard.py` 只检查某个发布批次的回填结果是否自洽，不检查依赖安装，也不会打开浏览器、读取 cookies 或发布内容。它必须同时读取 `publish_manifest.json` 与 `publish_verification_report.json`；缺少验真报告时不得通过。每条回填结果都必须能追到磁盘上的 `publish_result.json`，且文件中的核心发布字段必须与 manifest/verification 记录一致。它会重算 `publish_summary`，校验两份文件中的 `records` / `publish_summary` 是否一致，并校验 `published_links`、`draft_records`、待执行渠道、未验真链接和草稿/正式 URL 隔离。
@@ -94,7 +89,7 @@ python3 scripts/run_mainline_stage.py doctor \
 
 ```bash
 python3 scripts/publish_guard.py \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json \
+  --publish-manifest 产物/07_发布执行/<run_id>/publish_manifest.json \
   --fail-on-error
 ```
 
@@ -102,7 +97,7 @@ python3 scripts/publish_guard.py \
 
 ```bash
 python3 scripts/record_publish_result.py \
-  --channel-pack ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/channel_pack.json \
+  --channel-pack 产物/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/channel_pack.json \
   --success true \
   --status draft \
   --draft-id <draft_id> \
@@ -136,7 +131,7 @@ python3 scripts/record_publish_result.py \
 
 ```bash
 python3 scripts/build_publish_payload.py \
-  --channel-pack ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/channel_pack.json
+  --channel-pack 产物/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/channel_pack.json
 ```
 
 `publish_payload.json` 是平台执行器的统一输入，执行器完成后必须再调用 `record_publish_result.py` 回填结果。
@@ -145,7 +140,7 @@ python3 scripts/build_publish_payload.py \
 
 ```bash
 python3 scripts/execute_publish_request.py \
-  --execution-request ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/execution_request.json
+  --execution-request 产物/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/execution_request.json
 ```
 
 默认只做 dry-run。只有当前会话明确确认后，才允许追加 `--confirm-execute` 调用受支持的本地 skill 路线；浏览器、人工包、外部 CLI 路线仍只输出下一步命令，不自动执行。
@@ -161,9 +156,6 @@ python3 scripts/execute_publish_request.py \
 - `channel_packs/<topic_id>/<channel>/README.md`
 - `channel_packs/<topic_id>/<channel>/publish_payload.json`
 - `channel_packs/<topic_id>/<channel>/publish_result.json`
-- `channel_packs/<topic_id>/<channel>/account_operations_request.json`
-- `channel_packs/<topic_id>/<channel>/account_operations_advice.json`（执行运营审查后）
-- `channel_packs/<topic_id>/<channel>/account_operations_advice.md`（执行运营审查后）
 - `channel_execution_manifest.json`
 - `publish_verification_report.json`
 - `publish_manifest.json`
@@ -179,7 +171,6 @@ python3 scripts/execute_publish_request.py \
 - B站：`bilibili-upload-bridge`
 - 播客：人工上传或音频平台 API
 - 验真：`publish-guard`
-- 账号运营审查：`dasheng-publish-operations-bridge` → external `agent-skills-launch-pack`
 
 ## 浏览器登录态
 
@@ -209,8 +200,6 @@ python3 scripts/open_publish_browser.py wechat_article
 4. 任何浏览器/平台发布动作都必须经过人工确认。
 5. 未经过链接回收和 `Publish Guard` 验真，不得回报“已发布”。
 6. 旧 `scripts/publish_video_supplement.py` 仅作为兼容工具或视频补充参考，不再是正式 publish 主入口。
-7. 发布包、截图、平台回执、临时 HTML、上传素材副本不得写入 `skills/` 目录或项目根目录；默认写入 `~/Desktop/自媒体创作/07_发布执行/<run_id>/...`。
+7. 发布包、截图、平台回执、临时 HTML、上传素材副本不得写入 `skills/` 目录；默认写入 `产物/07_发布执行/<run_id>/...`。
 8. 小红书、抖音、公众号等需要登录的平台必须通过 `scripts/open_publish_browser.py` 打开持久化 Profile 完成登录和上传准备。
 9. 小红书主路径优先 API-first Skill/CLI/MCP，浏览器自动化只做 fallback；不要把它降级成纯手动搬运。
-10. `agent-skills-launch-pack` 只是起号/运营策略上游，不得把它误报为登录、上传、定时或发布工具。
-11. 上游默认放在 `/Volumes/PSSD/agent-skills-launch-pack`，通过 `AGENT_SKILLS_LAUNCH_PACK_ROOT` 覆盖；不全局安装，不 vendor 到项目 `skills/`。

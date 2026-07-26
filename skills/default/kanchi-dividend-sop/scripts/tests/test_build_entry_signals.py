@@ -15,7 +15,17 @@ def test_parse_ticker_csv_normalizes_and_deduplicates() -> None:
 
 def test_load_tickers_from_json_candidates(tmp_path) -> None:
     path = tmp_path / "input.json"
-    path.write_text('{"candidates":[{"ticker":"jnj"},{"ticker":"pg"}]}')
+    path.write_text('{"candidates":[{"ticker":"jnj"},{"ticker":"pg"}]}', encoding="utf-8")
+    assert load_tickers(path, None) == ["JNJ", "PG"]
+
+
+def test_load_tickers_from_screener_stocks_symbol_contract(tmp_path) -> None:
+    """Both optional upstream screeners emit ``stocks[].symbol``."""
+    path = tmp_path / "screener-output.json"
+    path.write_text(
+        '{"stocks":[{"symbol":"jnj"},{"symbol":"PG"},{"symbol":"jnj"}]}',
+        encoding="utf-8",
+    )
     assert load_tickers(path, None) == ["JNJ", "PG"]
 
 

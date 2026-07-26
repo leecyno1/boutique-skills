@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-nav-tieout
+name: nav-tieout
 description: Tie an LP statement to the fund's NAV pack — recompute the LP's capital account from the NAV components and flag any line that doesn't agree. Use before LP statements are distributed.
 ---
 
@@ -36,7 +36,3 @@ For each line on the statement, compare to your recomputed value. Tolerance: `0.
 ## Output
 
 A pass/fail per line, the recomputed values alongside the statement values, and a list of flags. Do not edit the statement — the publisher acts on the flags after review.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/nav-tieout

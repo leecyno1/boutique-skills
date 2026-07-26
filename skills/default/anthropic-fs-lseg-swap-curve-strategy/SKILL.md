@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-swap-curve-strategy
+name: swap-curve-strategy
 description: Analyze the interest rate swap curve by pricing swaps at multiple tenors, overlaying government and inflation curves, and identifying curve trade opportunities. Use when analyzing swap curves, computing swap spreads, decomposing real rates, identifying steepener/flattener/butterfly trades, or comparing swap rates across currencies.
 ---
 
@@ -55,7 +55,3 @@ The swap curve prices the market's expectation of future short-term rates, credi
 
 ### Curve Trade Recommendation
 For each trade: structure (e.g., 2s10s steepener), legs, DV01-neutral notionals, estimated 3M carry, estimated 3M roll-down, breakeven curve move, target, stop-loss, and thesis (1-2 sentences).
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/swap-curve-strategy

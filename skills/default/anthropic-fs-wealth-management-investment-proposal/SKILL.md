@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-investment-proposal
+name: investment-proposal
 description: Create professional investment proposals for prospective clients. Covers the firm's approach, proposed allocation, expected outcomes, and fee structure. Use when pitching new clients or presenting a new investment strategy. Triggers on "investment proposal", "prospect presentation", "pitch new client", "proposal for [client]", or "new client presentation".
 ---
 
@@ -86,7 +86,3 @@ Proposed allocation:
 - The transition plan matters — clients fear the disruption of switching advisors
 - Follow up within 48 hours with the proposal and a clear next step
 - Compliance must review before presenting to prospects
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal

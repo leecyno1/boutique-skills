@@ -41,7 +41,7 @@ ${SOCIAL_AUTO_UPLOAD_ROOT:-/Volumes/PSSD/social-auto-upload}
    ```
 4. Run preview/dry-run when supported.
 5. Run upload only after explicit user confirmation.
-6. Write results back under `~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/...`.
+6. Write results back under `产物/07_发布执行/<run_id>/channel_packs/...`.
 
 ## Hard Rules
 

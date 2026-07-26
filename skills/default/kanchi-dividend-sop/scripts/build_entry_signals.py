@@ -48,24 +48,35 @@ def load_tickers(input_path: Path | None, tickers_csv: str | None) -> list[str]:
     payload = json.loads(input_path.read_text())
     tickers: list[str] = []
 
+    def append_ticker(value: Any) -> None:
+        ticker = str(value or "").strip().upper()
+        if ticker and ticker not in tickers:
+            tickers.append(ticker)
+
     raw_candidates = payload.get("candidates")
     if isinstance(raw_candidates, list):
         for item in raw_candidates:
             if isinstance(item, dict):
-                ticker = str(item.get("ticker", "")).strip().upper()
-                if ticker and ticker not in tickers:
-                    tickers.append(ticker)
+                append_ticker(item.get("ticker") or item.get("symbol"))
             else:
-                ticker = str(item).strip().upper()
-                if ticker and ticker not in tickers:
-                    tickers.append(ticker)
+                append_ticker(item)
+
+    # value-dividend-screener and dividend-growth-pullback-screener both
+    # publish their ranked JSON rows as ``stocks[].symbol``. Accept that
+    # contract directly so workflow handoff does not depend on a prose-only
+    # manual rename to candidates/ticker.
+    raw_stocks = payload.get("stocks")
+    if isinstance(raw_stocks, list):
+        for item in raw_stocks:
+            if isinstance(item, dict):
+                append_ticker(item.get("symbol") or item.get("ticker"))
+            else:
+                append_ticker(item)
 
     raw_tickers = payload.get("tickers")
     if isinstance(raw_tickers, list):
         for item in raw_tickers:
-            ticker = str(item).strip().upper()
-            if ticker and ticker not in tickers:
-                tickers.append(ticker)
+            append_ticker(item)
 
     return tickers
 
@@ -569,7 +580,7 @@ def write_csv(rows: list[dict[str, Any]], output_path: Path) -> None:
         "notes",
     ]
 
-    with output_path.open("w", newline="") as fh:
+    with output_path.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         for row in rows:
@@ -701,9 +712,11 @@ def main() -> int:
         "api_calls": client.api_calls,
         "rows": rows,
     }
-    json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
+    json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_csv(rows, csv_path)
-    md_path.write_text(render_markdown(rows, as_of=args.as_of, alpha_pp=args.alpha_pp) + "\n")
+    md_path.write_text(
+        render_markdown(rows, as_of=args.as_of, alpha_pp=args.alpha_pp) + "\n", encoding="utf-8"
+    )
 
     print(f"Wrote JSON: {json_path}")
     print(f"Wrote CSV: {csv_path}")

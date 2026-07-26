@@ -1,14 +1,32 @@
-# a-stock-data
+<p align="center"><b>简体中文</b> | <a href="README_en.md">English</a></p>
 
-A 股全栈数据工具包 — 7 层架构 · 27 个端点 · 13 个数据源 · 零第三方数据封装依赖
+<h1 align="center">a-stock-data</h1>
 
-一个自包含的 Skill 文件，把分散在 13 个数据源里的 A 股原始数据整合成 AI 编程助手直接能用的工具集。你不用再背 mootdx 的 K 线参数、东财的 PDF Referer 头、iwencai 的 X-Claw 鉴权——全部封装好了。
+<p align="center">
+  <b>A 股全栈数据工具包 — 10 层架构 · 44 个端点 · 15 个数据源 · 零鉴权</b>
+</p>
 
-> **V3.2（2026-05-30）：** ① **数据源优先级 + 东财防封**——优先用通达信(mootdx)/腾讯（不封 IP），东财仅用于其独有数据，并新增统一节流入口 `em_get()`，所有东财接口内置串行限流（间隔≥1s+随机抖动）+ 会话复用，AI 抄代码即自带防封；② **财联社快讯下线（#14）**——`cls.cn` 旧 API 全面 404，改用东财全球资讯。
->
-> **V3.1 修复（2026-05-19）：** 替换 4 个失效接口（百度 PAE 资金流→东财 push2、大宗交易/机构席位报表名更新）+ 修复东财全球资讯和巨潮公告参数变更。
->
-> **V3.0 Breaking Change：** 彻底移除 akshare 依赖，所有数据源改为直连 HTTP API。新增资金面/筹码层。
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white" alt="Python">
+  <a href="https://github.com/simonlin1212/a-stock-data/stargazers"><img src="https://img.shields.io/github/stars/simonlin1212/a-stock-data?style=social" alt="Stars"></a>
+  <br>
+  <img src="https://img.shields.io/badge/layers-10-2ea44f.svg" alt="Layers">
+  <img src="https://img.shields.io/badge/endpoints-44-2ea44f.svg" alt="Endpoints">
+  <img src="https://img.shields.io/badge/sources-15-2ea44f.svg" alt="Sources">
+  <img src="https://img.shields.io/badge/auth-zero-success.svg" alt="Zero Auth">
+</p>
+
+<p align="center">
+  <a href="#架构">架构</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#44-个端点能力清单">端点清单</a> ·
+  <a href="#使用示例">使用示例</a> ·
+  <a href="#faq">FAQ</a> ·
+  <a href="./CHANGELOG.md">更新日志</a>
+</p>
+
+一个自包含的 Skill 文件，把分散在 15 个数据源里的 A 股原始数据整合成 AI 编程助手直接能用的工具集。你不用再背 mootdx 的 K 线参数、东财的 PDF Referer 头、iwencai 的 X-Claw 鉴权——全部封装好了。主源被封还有「备用源速查」可降级。
 
 > 兼容 [Claude Code](https://github.com/anthropics/claude-code) · [Codex](https://github.com/openai/codex) · [OpenClaw](https://github.com/anthropics/openclaw)
 >
@@ -19,17 +37,22 @@ A 股全栈数据工具包 — 7 层架构 · 27 个端点 · 13 个数据源 ·
 ## 架构
 
 ```
-A 股全栈数据 · 七层架构 · V3.2
+A 股全栈数据 · 十层架构 · V3.5.0
 │  （优先级：mootdx/腾讯 不封IP 优先用；东财仅用于独有数据，已内置限流防封）
 ├── 行情层    mootdx + 腾讯财经 + 百度K线   K线(带MA5/10/20) + 五档盘口 + PE/PB/市值 + 指数/ETF
-├── 研报层    东财 reportapi + 同花顺 + iwencai  研报列表 / PDF下载 / 一致预期 / NL搜索
-├── 信号层    同花顺 + 百度股市通 + 东财     强势股 + 题材归因 + 北向资金 + 概念板块
-│                                           + 资金流向(push2) + 龙虎榜 + 全市场龙虎榜 + 解禁 + 行业对比
+├── 研报层    东财 reportapi + 同花顺 + iwencai  个股研报 / 行业研报 / PDF下载 / 一致预期 / NL搜索
+├── 信号层    同花顺 + 东财                  强势股 + 题材归因 + 北向资金 + 板块归属
+│                                           + 资金流向(push2) + 龙虎榜 + 全市场龙虎榜 + 解禁 + 行业对比 + 板块资金流
 ├── 资金面    东财 datacenter + push2        融资融券 + 大宗交易 + 股东户数 + 分红送转 + 资金流(分钟+120日)
-├── 新闻层    东财（直连HTTP）              个股新闻 / 全球资讯（财联社快讯已下线）
+├── 新闻层    东财 + 财联社                  个股新闻 / 财联社电报(✅V3.4复活) / 全球资讯（互备）
 ├── 基础数据  mootdx + 东财 + 新浪           季报37字段 / F10九大类 / 财报三表
-└── 公告层    巨潮 cninfo + mootdx           沪深北全量公告
+├── 公告层    巨潮 cninfo + mootdx           沪深北全量公告
+├── 打板层    东财 push2ex + 同花顺          涨停池 / 炸板 / 跌停 / 昨涨停 / 涨停原因题材 / 连板梯队  ★V3.3
+├── 期权层    新浪 hq.sinajs                ETF期权 T型报价 / 希腊字母 / 隐含波动率 IV  ★V3.3
+└── 舆情互动  巨潮互动易 + 同花顺 + 东财     互动易问答 / 同花顺热榜 / 东财人气榜 / 概念命中  ★V3.3
 ```
+
+> ★V3.4 十层之外另附**备用源速查 & 降级策略**：沪深交易所官方 + 新浪 + HKEX——龙虎榜/资金流/公告官方备胎函数 + 各层降级速查表，主源被封时用（见 SKILL.md 对应章节）。
 
 ---
 
@@ -55,7 +78,9 @@ pip install mootdx requests pandas stockstats
 
 ---
 
-## 27 个端点能力清单
+## 44 个端点能力清单
+
+> **计数口径：** 下方清单共 46 行，按端点计 44 个——「东财 行业研报」与「东财 reportapi」为**同一端点**（仅 `qType` 参数不同），「同花顺北向（历史）」为本地自缓存（非独立端点），两行不重复计数。
 
 ### 行情层（实时，不封 IP）
 
@@ -69,8 +94,9 @@ pip install mootdx requests pandas stockstats
 
 | 端点 | 数据 |
 |------|------|
-| 东财 reportapi | 研报列表 + 评级 + 三年 EPS 预测 |
-| 东财 PDF 下载 | 完整研报 PDF（已处理 Referer 鉴权） |
+| 东财 reportapi | 个股研报列表 + 评级 + 三年 EPS 预测 |
+| 东财 行业研报 | 行业研报列表（qType=1，同端点）+ 行业名/行业码 + 评级（V3.2.3 新增） |
+| 东财 PDF 下载 | 完整研报 PDF（个股/行业通用，已处理 Referer 鉴权） |
 | 同花顺一致预期 | 机构一致预期 EPS（直连 basic.10jqka.com.cn） |
 | iwencai NL 搜索 | 自然语言跨主题研报检索 |
 
@@ -79,14 +105,15 @@ pip install mootdx requests pandas stockstats
 | 端点 | 数据 |
 |------|------|
 | 同花顺热点 | 当日强势股 + 题材归因 reason tags（编辑部人工标注） |
-| 同花顺北向（实时） | 沪股通 / 深股通分钟级流向（262 个时间点） |
+| 同花顺北向（实时） | 沪股通分钟级流向（深股通近期上游披露收紧仅供参考，权威北向见 HKEX 备胎） |
 | 同花顺北向（历史） | 本地自缓存日级历史 |
-| 百度概念板块 | 行业 / 概念 / 地域三维归属 + 当日涨跌幅 |
+| 东财板块归属 | 个股所属全部板块（行业/概念/地域混合）+ BK码 + 当日涨跌幅 + 龙头股（V3.2.2 替换百度 PAE，一次请求拿全）|
 | **东财资金流向** | 主力 / 大单 / 中单 / 小单 / 超大单分钟级净流入（V3.1 替换百度 PAE） |
 | 龙虎榜席位 | 上榜记录 + 买卖席位 TOP5 + 机构动向 |
 | 全市场龙虎榜 | 每日全市场上榜股票 + 净买额排名 + 上榜原因 |
 | 限售解禁日历 | 历史解禁 + 未来 90 天待解禁预警 |
 | **行业板块排名** | 东财行业涨跌/上涨下跌家数（V3.0 替换同花顺，零鉴权） |
+| **板块资金流向** | 行业/概念/地域 × 今日/5日/10日 主力净流入额/净占比 + 超大/大/中/小单四档 + 领涨股（V3.5 新增，与行业排名同源）|
 
 ### 资金面 / 筹码层（V3.0 新增）
 
@@ -103,7 +130,7 @@ pip install mootdx requests pandas stockstats
 | 端点 | 数据 |
 |------|------|
 | 个股新闻 | 东财个股新闻流（直连 search-api-web） |
-| ~~财联社快讯~~ | ⚠️ 已下线（cls.cn 迁 Next.js，旧 API 404，#14）→ 用全球资讯替代 |
+| 财联社电报 | 全市场实时快讯（v1 API + 本地签名零 key，✅V3.4.0 复活，与全球资讯互备） |
 | 全球资讯 | 东财全球财经资讯（直连 np-weblist，7×24） |
 
 ### 基础数据 + 公告
@@ -115,6 +142,43 @@ pip install mootdx requests pandas stockstats
 | 东财个股信息 | 行业/总股本/流通股/市值/上市日期（直连 push2） |
 | 新浪财报三表 | 资产负债表/利润表/现金流量表（直连 quotes.sina.cn） |
 | 巨潮公告 | 沪深北交所全量公告 |
+
+### 打板层（V3.3 新增）
+
+| 端点 | 数据 |
+|------|------|
+| 东财涨停池 | 连板数 / 几天几板 / 封板资金 / 炸板次数 / 首末封板时间 / 所属行业 |
+| 东财炸板池 | 曾涨停后开板 + 振幅 / 涨速 |
+| 东财跌停池 | 封单资金 / 连续跌停天数 / 开板次数 / 板上成交额 |
+| 东财昨日涨停池 | 昨涨停今表现（自算晋级率 / 赚钱效应） |
+| 同花顺涨停揭秘 | 涨停原因题材 / 封板成功率 / 一字·换手·T字板 / 封单额 |
+
+### ETF 期权层（V3.3 新增）
+
+| 端点 | 数据 |
+|------|------|
+| 期权合约清单 | 50ETF / 300ETF / 科创50ETF / 500ETF 各月份认购认沽合约 |
+| T型报价 | 买卖五档 / 持仓量 / 行权价 / 最新价 / 成交量额 |
+| 希腊字母 + IV | Delta / Gamma / Theta / Vega / 隐含波动率 / 理论价值（交易所预算，免本地算 BSM） |
+
+### 舆情互动层（V3.3 新增）
+
+| 端点 | 数据 |
+|------|------|
+| 互动易问答 | 投资者提问 + 公司官方回复（AI 问答独家信源：公司如何回应某传闻/利好） |
+| 同花顺热榜 | 人气值 / 概念标签 / 排名变化 |
+| 东财人气榜 | 排名 + 排名变化 + 名称价格 |
+| 东财个股概念命中 | 这只票当下被市场归到哪些概念在炒 + 热度值 |
+
+### 备用源（V3.4 新增 · 主源被封时降级）
+
+| 端点 | 数据 |
+|------|------|
+| 官方龙虎榜备胎 | 上交所 + 深交所官方接口，零鉴权权威一手，含营业部席位（东财被封时用） |
+| 资金流备胎 | 新浪日度四档单净额（超大/大/中/小单 + 净流入） |
+| 公告备胎 | 深市走深交所官方、沪市走东财，均带 PDF 直链（巨潮被封时用） |
+
+> 另附**十层主源 → 独立备胎速查表**（交易所官方 / 同花顺 F10 / HKEX / 巨潮 webapi / 金十等，全部不同风控面）与「已死透别用」名单，见 SKILL.md「备用源速查 & 降级策略」章节。
 
 ### 鉴权要求
 
@@ -137,12 +201,20 @@ pip install mootdx requests pandas stockstats
 | 龙虎榜 | 「002475 最近上过龙虎榜吗，哪些营业部在买」 |
 | 全市场龙虎榜 | 「今天龙虎榜哪些票净买入最多」 |
 | 解禁预警 | 「这只股票未来 3 个月有没有限售解禁」 |
-| 行业轮动 | 「今天哪些行业涨幅最大，资金在流入哪些板块」 |
+| 行业轮动 | 「今天哪些行业涨幅最大」 |
+| **板块资金流** | 「今天主力资金在流入哪些行业/概念板块，近 5 日趋势呢」 |
 | 融资融券 | 「600519 最近的融资余额变化趋势」 |
 | 大宗交易 | 「这只票最近有没有大宗交易，溢价还是折价」 |
 | 股东户数 | 「000858 股东户数在增加还是减少，筹码集中吗」 |
 | 分红送转 | 「茅台历年分红派息多少」 |
+| **ETF 行情** | 「510050 上证50ETF 现在什么价、今天涨跌多少」 |
+| **涨停打板** | 「今天涨停多少家、最高几连板、炸板率多少」 |
+| **涨停归因** | 「今天涨停的票都是什么题材，哪些是几天几板」 |
+| **ETF 期权** | 「50ETF 平值期权的隐含波动率和 Delta 是多少」 |
+| **互动易** | 「比亚迪最近投资者都在问什么，公司怎么回应的」 |
+| **市场热度** | 「今天哪些票最热门，被归到什么概念在炒」 |
 | 新闻公告 | 「拉一下 300476 最近的新闻和公告」 |
+| **市场快讯** | 「用财联社电报看看现在市场上有什么大新闻」 |
 | 批量对比 | 「帮我对比这 5 只半导体股的估值」 |
 
 ### 内置 4 套调研流程
@@ -156,16 +228,6 @@ pip install mootdx requests pandas stockstats
 
 ---
 
-## V3.2 亮点
-
-| 变化 | 说明 |
-|------|------|
-| **数据源优先级原则** | 明确「能用通达信(mootdx)/腾讯就别用东财」——前两者 TCP/HTTP 实测不封 IP，可放心高频；东财仅用于其独有数据 |
-| **东财统一限流防封** | 新增节流入口 `em_get()`，所有东财端点（datacenter/push2/reportapi/search/np-weblist）改用它，内置串行限流（间隔≥1s+随机抖动）+ 会话复用，批量抄代码即自带防封 |
-| **东财风控阈值文档化** | SKILL 新增「数据源优先级 & 东财防封」章节，列出触发封禁的阈值（每秒>5/并发≥10/1分≥200/5分≥300）与防封铁律 |
-| **财联社快讯下线（#14）** | `cls.cn` 旧 API 全面 404，标注弃用，改用东财全球资讯 |
-
----
 
 ## 数据源优先级（V3.2 重排，按封 IP 风险）
 
@@ -176,7 +238,7 @@ pip install mootdx requests pandas stockstats
 | **1（首选）** | mootdx（通达信） | TCP 7709 | **不封 IP** | K线/五档/逐笔/财务快照/F10 |
 | **2（首选）** | 腾讯财经 | HTTP | **不封 IP** | 实时价/PE/PB/市值/换手率/涨跌停/指数/ETF |
 | 3 | 同花顺热点/北向 | HTTP | 极低（零鉴权） | 强势股/题材归因/北向资金 |
-| 4 | 百度股市通 | HTTP | 极低 | 概念板块/K线 |
+| 4 | 百度股市通 | HTTP | 极低 | K线（带 MA5/10/20）|
 | 5 | 新浪财经 | HTTP | 低 | 财报三表 |
 | 6 | 巨潮 cninfo | HTTP | 低 | 公告全文 |
 | 7 | 同花顺一致预期 | HTTP | 低（需 UA） | EPS 一致预期 |
@@ -184,10 +246,29 @@ pip install mootdx requests pandas stockstats
 | **末位（仅独有数据）** | **东财** datacenter/push2/reportapi/search/np-weblist | HTTP | **中 — 有风控会封 IP** | 龙虎榜/解禁/两融/大宗/股东户数/分红/资金流/研报/个股新闻/全球资讯（已统一走 `em_get()` 限流） |
 
 > **架构原则：** 除 mootdx（TCP 二进制协议）外，全部直连 HTTP API，零第三方数据封装依赖。**东财系接口有访问频率风控，所有调用统一经 `em_get()` 串行限流防封；批量任务请调大 `EM_MIN_INTERVAL`。**
+>
+> **降级原则（V3.4 新增）：** 任一主源被封/失效时，查 SKILL.md「备用源速查 & 降级策略」——每类数据都备有一条**不同域名、不同风控面**的独立备胎（沪深交易所官方 / 新浪 / 同花顺 / HKEX），东财被封时它们不受牵连。
 
 ---
 
 ## FAQ
+
+**Q: SKILL.md 这么大，agent 每次加载很费 token？**
+单文件自包含是本项目的**有意产品决策**——拷一个文件就能用、离线可携、便于分发，这个形态会长期保持，不做目录化拆分（相关讨论见 #21 / #22 / #29）。两个降耗建议：① v3.3.1 起 description 已收窄触发范围，无需取数的 A 股话题不会再误加载整个文件；② token 敏感的用户可以不把它装成自动触发 skill，改为放进项目目录、需要取数时让 agent 按需读取——文件按十层组织、章节标题清晰，v3.4.0 起顶部还有「端点路由速查」总表（§→函数→用途→源），agent 按表定位后只读对应层，通常只花几 K token。
+
+**Q: 东财接口 403 / 连接重置，是被封了怎么办？**
+东财系接口（datacenter/push2/push2ex/reportapi/search/np-weblist）共用同一套风控，IP 被封会成片失联。三步：① 停止请求等 30-60 分钟（IP 级临时封通常自动解除），或换网络（手机热点）立刻恢复；② 长批任务确认全部走 `em_get()` 并调大 `EM_MIN_INTERVAL`；③ 数据不能等 → 用 SKILL.md「备用源速查 & 降级策略」的独立备胎（交易所官方/新浪/同花顺，不同风控面）。
+
+**Q: 财联社快讯不是 V3.2 标注下线了吗？**
+已复活（V3.4.0）。2026-05 死的是旧 `nodeapi` 系接口；官方新版 `v1/roll/get_roll_list` 一直可用，只是强制 `sign` 校验——sign 纯本地可算（`md5(sha1(按 key 字典序拼接的 query 串))`），零 key。与东财 7×24 全球资讯互为独立备份。
+
+**Q: mootdx 库听说停更了，还能用吗？**
+库确实烂尾（最后 commit 2024-07，BESTIP bug 无官方修复），但**通达信 TCP 协议本身照常运行**——烂尾的是封装库，不是数据源。内置的 `tdx_client()` 已绕开 BESTIP bug，继续用没问题；若未来装不上，社区活跃替代是 easy_tdx（同协议）。
+
+**Q: `pip install mootdx` 把 httpx 降到 0.25.2，和 MCP（要 httpx≥0.27.1）冲突？（#30）**
+mootdx 上游锁了 `httpx<0.26`，与 MCP 等工具的 `httpx≥0.27` 硬冲突，skill 层改不动它的依赖声明。但**可以绕过**——关键点：**mootdx 取行情走的是 TCP 二进制协议（通达信 7709 端口），运行时根本不经过 httpx**，`httpx<0.26` 只是它声明的一个用不到的保守上限。两个务实解法：
+> 1. **`--no-deps` 升 httpx（推荐）**：装完 mootdx 后 `pip install --no-deps "httpx>=0.27.1"`，既满足 MCP，mootdx 也照常工作。pip 会留一条 incompatible 警告，但不影响运行（实测 mootdx 0.11.7 在 httpx 0.28.1 下取数正常）。
+> 2. **独立 venv 隔离**：把跑 mootdx 的部分和跑 MCP 的主环境分到不同 venv，彻底互不干扰。
 
 **Q: mootdx 和腾讯有什么区别？**
 互补。mootdx = 交易层（价格 + 盘口 + K 线），腾讯 = 估值层（PE / PB / 市值 / 换手率 / 涨跌停价）。两者都不封 IP。
@@ -213,6 +294,9 @@ akshare 本质是对东财/同花顺/新浪等公开 API 的封装，中间层�
 **Q: 百度股市通 ResultCode 不稳定？**
 已知坑——有时返回 int `0`，有时返回 string `"0"`。代码里用 `str()` 统一比较即可。
 
+**Q: 东财资金流/个股新闻偶尔返回空或 HTTP 000？（#18）**
+部分**大陆住宅宽带 IP** 会被东财 push2/search-api 连接级间歇风控（表现 `HTTP 000` 连接被拒、或新闻只返回 `passportWeb` 无文章）。**这不是代码问题**——同一代码在其他网络/时段实测正常。对策：隔几分钟重试、换网络环境（手机热点）、调大 `EM_MIN_INTERVAL` 降频。日级资金流也可用 mootdx 量价数据务实替代。
+
 **Q: 北向资金历史只有几天？**
 V2.1 改为本地自缓存。每次调用自动积累，越跑越丰富。首次运行只有当天数据。
 
@@ -227,25 +311,21 @@ V2.1 改为本地自缓存。每次调用自动积累，越跑越丰富。首次
 
 ---
 
-## Donate
+## 免责声明
+
+本项目仅提供数据获取工具，不构成任何投资建议。股市有风险，投资需谨慎。
+
+---
+
+## 赞赏
 
 如果这个工具帮到了你的投研工作流，欢迎请作者喝杯咖啡 ☕
 
 <p align="center">
-  <img src="./assets/wechat-sponsor.jpg" width="240" alt="微信赞赏码">
-</p>
-<p align="center">
-  <a href="https://ifdian.net/a/simonlin">爱发电</a> ·
-  <a href="https://buymeacoffee.com/simonlin1212">Buy Me a Coffee</a>
+  <a href="https://buymeacoffee.com/simonlin1212"><img src="./assets/bmc-qr.png" width="180" alt="Buy Me a Coffee"></a>
 </p>
 
 > 想要什么数据端点？欢迎开 [Issue](https://github.com/simonlin1212/a-stock-data/issues) 提需求，赞助者的 Issue 优先处理。
-
----
-
-## Disclaimer
-
-本项目仅提供数据获取工具，不构成任何投资建议。股市有风险，投资需谨慎。
 
 ---
 
@@ -253,213 +333,4 @@ V2.1 改为本地自缓存。每次调用自动积累，越跑越丰富。首次
 
 [Apache License 2.0](./LICENSE) — 自由使用，注明出处即可。
 
-**作者：** Simon 林 · 抖音「Simon林」 · 公众号「硅基世纪」
-
----
-
-<details>
-<summary><b>🇬🇧 English</b></summary>
-
-# a-stock-data
-
-Full-stack data toolkit for China A-Share market — 7-layer architecture · 27 endpoints · 13 data sources · zero third-party data wrapper dependencies
-
-A self-contained Skill file that consolidates raw A-share data from 13 sources into a ready-to-use toolkit for AI coding assistants. No need to memorize mootdx candlestick parameters, Eastmoney PDF Referer headers, or iwencai X-Claw authentication — it's all handled.
-
-> **V3.2 (2026-05-30):** ① **Data-source priority + Eastmoney anti-ban** — prefer mootdx (TDX) / Tencent (never IP-banned); use Eastmoney only for its exclusive data, all routed through a new throttled `em_get()` (serial rate-limit ≥1s + jitter + session reuse) so copied code is ban-safe by default. ② **Cailianpress (cls.cn) deprecated (#14)** — old API returns 404, replaced by Eastmoney global news.
->
-> **V3.1 Fix (2026-05-19):** Replaced 4 broken endpoints (Baidu PAE fund flow → Eastmoney push2, block trade/institution report name updates) + fixed Eastmoney global news and cninfo filing parameter changes.
->
-> **V3.0 Breaking Change:** Completely removed akshare dependency. All data sources now use direct HTTP API calls. Added capital flow / ownership layer.
-
-> Compatible with [Claude Code](https://github.com/anthropics/claude-code) · [Codex](https://github.com/openai/codex) · [OpenClaw](https://github.com/anthropics/openclaw)
->
-> The Skill file is structured Markdown + embedded Python. Any AI coding assistant with context injection can use it.
-
----
-
-## Architecture
-
-```
-China A-Share Full-Stack Data · 7-Layer Architecture · V3.2
-│  (Priority: prefer mootdx/Tencent — never IP-banned; Eastmoney only for exclusive data, with built-in throttling)
-├── Market Data    mootdx + Tencent + Baidu K-line   Candlesticks (w/ MA5/10/20) + Order Book + PE/PB + Index/ETF
-├── Research       Eastmoney + THS + iwencai          Report list / PDF / Consensus EPS / NL search
-├── Signals        THS + Baidu + Eastmoney            Hot stocks + Sector attribution + Northbound flow
-│                                                     + Concept blocks + Fund flow(push2) + Dragon Tiger + Lockup + Industry
-├── Capital Flow   Eastmoney datacenter + push2       Margin trading + Block trades + Holder count + Dividends + Fund flow(min+120d)
-├── News           Eastmoney (direct HTTP)            Stock news / Global finance (CLS flash deprecated)
-├── Fundamentals   mootdx + Eastmoney + Sina          37-field quarterly + F10 9 categories + Financial statements
-└── Filings        cninfo + mootdx                    Full filings across SSE / SZSE / BSE
-```
-
----
-
-## Quick Start
-
-**3 steps, 2 minutes.**
-
-```bash
-# 1. Create skill directory
-mkdir -p ~/.claude/skills/a-stock-data
-
-# 2. Download SKILL.md
-curl -o ~/.claude/skills/a-stock-data/SKILL.md \
-  https://raw.githubusercontent.com/simonlin1212/a-stock-data/main/SKILL.md
-
-# 3. Install dependencies (V3.0: akshare no longer needed)
-pip install mootdx requests pandas stockstats
-```
-
-Launch Claude Code and say "Check the valuation of 688017" — the skill activates automatically.
-
-> **Codex / OpenClaw users:** Paste the contents of SKILL.md into your system prompt or project context file. The embedded Python code is ready to execute.
-
----
-
-## 27 Endpoints
-
-### Market Data (real-time, no IP ban)
-
-| Endpoint | Data |
-|----------|------|
-| mootdx Market Data | Candlesticks (multi-period) + Level-2 order book + tick-by-tick + 46-field quote |
-| Tencent Finance | PE(TTM) / PB / Market Cap / Float Cap / Turnover / Price Limits / Index / ETF |
-| **Baidu K-line** | Daily K-line + MA5/MA10/MA20 moving averages included (V3.0 new) |
-
-### Research Reports
-
-| Endpoint | Data |
-|----------|------|
-| Eastmoney reportapi | Report list + ratings + 3-year EPS forecasts |
-| Eastmoney PDF | Full research report PDF (Referer auth handled) |
-| THS Consensus EPS | Institutional consensus EPS (direct basic.10jqka.com.cn) |
-| iwencai NL Search | Natural language cross-topic report search |
-
-### Signals
-
-| Endpoint | Data |
-|----------|------|
-| THS Hot Stocks | Today's strong stocks + sector attribution tags (editorial annotations) |
-| THS Northbound (real-time) | Shanghai/Shenzhen Connect minute-level flow (262 data points) |
-| THS Northbound (historical) | Local self-cached daily history |
-| Baidu Concept Blocks | Industry / Concept / Region classification + daily change |
-| **Eastmoney Fund Flow** | Main / Large / Medium / Small / Super-large order minute-level net inflow (V3.1, replaced Baidu PAE) |
-| Dragon Tiger Board | Appearance records + Top 5 buy/sell brokerages + institutional activity |
-| Daily Dragon Tiger (Full Market) | All stocks on daily board + net buy ranking + appearance reasons |
-| Lockup Expiry Calendar | Historical releases + 90-day upcoming expiry alerts |
-| **Industry Ranking** | Eastmoney industry change/up/down counts (V3.0, replaced THS 401) |
-
-### Capital Flow / Ownership (V3.0 New)
-
-| Endpoint | Data |
-|----------|------|
-| **Margin Trading** | Daily margin balance / buy / repay + short selling balance |
-| **Block Trades** | Deal price/volume + buyer/seller brokerages + premium rate |
-| **Shareholder Count** | Quarterly holder count + QoQ change + avg shares per holder |
-| **Dividend History** | Per-share cash dividend / bonus shares / transfer shares |
-| **120-Day Fund Flow** | Main / large / medium / small order daily net inflow |
-
-### News
-
-| Endpoint | Data |
-|----------|------|
-| Stock News | Eastmoney per-stock news (direct search-api-web) |
-| ~~CLS Flash~~ | ⚠️ Deprecated (cls.cn migrated to Next.js, old API 404, #14) → use Global News |
-| Global News | Eastmoney global finance news (direct np-weblist, 7×24) |
-
-### Fundamentals + Filings
-
-| Endpoint | Data |
-|----------|------|
-| Quarterly Snapshot | 37 fields (EPS / ROE / Net Profit / Revenue...) |
-| F10 Company Data | 9 categories (truncation optimization, -70% tokens) |
-| Eastmoney Stock Info | Industry / total shares / float / market cap / listing date (direct push2) |
-| Sina Financial Statements | Balance sheet / Income statement / Cash flow (direct quotes.sina.cn) |
-| cninfo Filings | Full filings across all exchanges |
-
-### Authentication
-
-All data sources except iwencai are **completely free, no API key needed**. Only iwencai semantic search requires an API key ([apply here](https://www.iwencai.com/skillhub)).
-
----
-
-## Usage Examples
-
-Just tell your AI assistant:
-
-| Scenario | Prompt |
-|----------|--------|
-| Valuation | "Estimate 688017 — give me PE / PEG / payback period" |
-| Sector Attribution | "Which stocks are strong today and what sectors are driving them" |
-| Research Reports | "Latest reports on humanoid robot supply chain, especially ball screws and reducers" |
-| Northbound Flow | "How's northbound capital flow looking today" |
-| Concept Blocks | "What concept sectors does 688017 belong to" |
-| Fund Flow | "Is institutional money flowing into or out of 000858 today" |
-| Dragon Tiger Board | "Has 002475 appeared on the dragon tiger board recently, which brokerages are buying" |
-| Daily Dragon Tiger | "Which stocks had the highest net buy on today's dragon tiger board" |
-| Lockup Expiry | "Any lockup expiries coming up in the next 3 months for this stock" |
-| Industry Rotation | "Which industries are up the most today, where is money flowing" |
-| Margin Trading | "What's the recent trend in margin balance for 600519" |
-| Block Trades | "Any recent block trades for this stock, premium or discount" |
-| Shareholder Count | "Is 000858 shareholder count increasing or decreasing" |
-| Dividends | "How much has Moutai paid in dividends over the years" |
-| News & Filings | "Pull recent news and filings for 300476" |
-| Batch Compare | "Compare valuations of these 5 semiconductor stocks" |
-
-### 4 Built-in Research Workflows
-
-| Workflow | What it does | Time |
-|----------|-------------|------|
-| Single Stock Valuation | Live price → Consensus EPS → Forward PE / PEG / PE payback years | 30 sec |
-| Batch Comparison | Side-by-side valuation ranking | 1 min |
-| Thematic Research | iwencai multi-keyword NL search + Eastmoney PDF cross-reference | 2 min |
-| New Target Research | Coverage → Valuation → Concepts → Fund flow → Dragon tiger → Lockup → Margin | 1 min |
-
----
-
-## V3.2 Highlights
-
-| Change | Description |
-|--------|-------------|
-| **Data-source priority principle** | Prefer mootdx (TDX) / Tencent — both never IP-banned in practice, safe for high-frequency use. Use Eastmoney only for its exclusive data |
-| **Unified Eastmoney throttling** | New `em_get()` entry point; all Eastmoney endpoints (datacenter/push2/reportapi/search/np-weblist) route through it with built-in serial rate-limit (≥1s + jitter) + session reuse — copied code is ban-safe by default |
-| **Eastmoney rate-limit documented** | New "Data-source priority & Eastmoney anti-ban" section lists ban thresholds (>5/s, ≥10 concurrent, ≥200/min, ≥300/5min) and anti-ban rules |
-| **Cailianpress deprecated (#14)** | cls.cn old API returns 404 — marked deprecated, replaced by Eastmoney global news |
-
----
-
-## Data Source Priority (V3.2 re-ranked by IP-ban risk)
-
-> **Principle: anything available from mootdx or Tencent (quotes / K-line / live price / market cap / financials) must use them first (never IP-banned). Eastmoney is only for its exclusive data, all routed through the throttled `em_get()`.**
-
-| Priority | Source | Protocol | IP Ban Risk | Use |
-|----------|--------|----------|-------------|-----|
-| **1 (top)** | mootdx (TDX) | TCP 7709 | **Never banned** | K-line / order book / ticks / financials / F10 |
-| **2 (top)** | Tencent Finance | HTTP | **Never banned** | Live price / PE / PB / market cap / turnover / index / ETF |
-| 3 | THS Hot Stocks / Northbound | HTTP | Very low (zero auth) | Hot stocks / themes / northbound flow |
-| 4 | Baidu Finance | HTTP | Very low | Concept blocks / K-line |
-| 5 | Sina Finance | HTTP | Low | Financial statements |
-| 6 | cninfo | HTTP | Low | Filings |
-| 7 | THS Consensus EPS | HTTP | Low (UA required) | Consensus EPS |
-| 8 | iwencai | OpenAPI | Low (key required) | NL semantic search |
-| **last (exclusive only)** | **Eastmoney** datacenter/push2/reportapi/search/np-weblist | HTTP | **Medium — has rate-limit risk** | Dragon-tiger / lockup / margin / block trade / shareholders / dividends / fund flow / reports / news (all via `em_get()`) |
-
-> **Architecture:** Except mootdx (TCP binary protocol), all sources use direct HTTP API calls, zero third-party data wrapper dependencies. **Eastmoney APIs are rate-limited; all calls go through `em_get()` for serial throttling. For batch jobs, increase `EM_MIN_INTERVAL`.**
-
----
-
-## Disclaimer
-
-This project provides data access tools only and does not constitute investment advice. Investing involves risk.
-
----
-
-## License
-
-[Apache License 2.0](./LICENSE)
-
-**Author:** Simon Lin · TikTok [@simonlin121212](https://www.tiktok.com/@simonlin121212) · Douyin "Simon林" · WeChat Official Account "硅基世纪"
-
-</details>
-
+**作者：** Simon 林 · X [@linsizhen](https://x.com/linsizhen) · TikTok [@simonlin0423](https://www.tiktok.com/@simonlin0423) · 邮箱：[simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)

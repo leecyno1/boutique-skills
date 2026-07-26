@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-idea-generation
+name: idea-generation
 description: Systematic stock screening and investment idea sourcing. Combines quantitative screens, thematic research, and pattern recognition to surface new long and short ideas. Use when looking for new ideas, running screens, or conducting thematic sweeps. Triggers on "idea generation", "stock screen", "find ideas", "what looks interesting", "screen for", "new ideas", or "pitch me something".
 ---
 
@@ -112,7 +112,3 @@ For each idea that passes the screen, present:
 - Contrarian ideas need a catalyst — being early without a catalyst is the same as being wrong
 - Track idea hit rates over time — which screens and approaches produce the best ideas?
 - Short ideas need higher conviction — timing is harder and risk is asymmetric
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/idea-generation

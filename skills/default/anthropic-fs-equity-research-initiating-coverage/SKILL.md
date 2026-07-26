@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-initiating-coverage
+name: initiating-coverage
 description: Create institutional-quality equity research initiation reports through a 5-task workflow. Tasks must be executed individually with verified prerequisites - (1) company research, (2) financial modeling, (3) valuation analysis, (4) chart generation, (5) final report assembly. Each task produces specific deliverables (markdown docs, Excel models, charts, or DOCX reports). Tasks 3-5 have dependencies on earlier tasks.
 ---
 
@@ -781,7 +781,3 @@ A successful initiation report workflow should:
 
 **Output quality**: Institutional (JPMorgan/Goldman/Morgan Stanley level)
 **Use case**: First-time comprehensive coverage of a company
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/initiating-coverage

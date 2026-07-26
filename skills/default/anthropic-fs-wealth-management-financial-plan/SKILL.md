@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-financial-plan
+name: financial-plan
 description: Build or update a comprehensive financial plan covering retirement projections, education funding, estate planning, and cash flow analysis. Use for new client onboarding, annual plan reviews, or scenario modeling. Triggers on "financial plan", "retirement plan", "can I retire", "education funding", "estate plan", "cash flow analysis", or "plan update".
 ---
 
@@ -116,7 +116,3 @@ Prioritized action items:
 - Social Security timing is a major lever — model start ages of 62, 67, and 70
 - Always stress-test the plan — a plan that only works in the base case isn't a good plan
 - Compliance: ensure recommendations align with suitability/fiduciary standards
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/financial-plan

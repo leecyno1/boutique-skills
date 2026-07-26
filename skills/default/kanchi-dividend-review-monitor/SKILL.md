@@ -42,6 +42,10 @@ Always create `WARN` or `REVIEW` evidence for human confirmation first.
 
 Use `references/trigger-matrix.md` for trigger thresholds and actions.
 
+### Flat-dividend cadence caveat
+
+When T6 is driven only by `freeze_flag` / latest regular dividend equal to prior regular dividend, treat it as a `WARN` for cadence confirmation, not as proof of dividend deterioration. Many quarterly dividend payers repeat the same dividend for several quarters between annual raise cycles. In reports, phrase this as “confirm next dividend-growth cadence / pause optional adds until checked” and avoid implying a cut or broken thesis unless T1/T2/T3/T4/T5 evidence also supports escalation.
+
 ## Monitoring Cadence
 
 - Daily:
@@ -101,6 +105,7 @@ When implementing live SEC fetchers:
 - Include a compliant `User-Agent` string (name + email).
 - Use caching and throttling.
 - Respect SEC fair-access guidance.
+- In scheduled portfolio reviews where upstream filing snippets are empty, use SEC `company_tickers.json` plus `https://data.sec.gov/submissions/CIK##########.json` to enumerate recent 8-K / 8-K/A filings for each holding, then scan primary filing documents for the T4 keyword family (`Item 4.02`, non-reliance, restatement, material weakness, SEC investigation, subpoena, going concern, auditor resignation, internal control). Record the scan window, recent 8-K count, and whether hits were found. Treat "no keyword hits" as a narrow T4 scan result, not a full governance clearance.
 
 ## Output Contract
 

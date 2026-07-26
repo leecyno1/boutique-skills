@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-strip-profile
+name: fsi-strip-profile
 description: |
   Creates professional investment banking strip profiles (company profiles) for pitch books, deal materials, and client presentations. Generates 1-4 information-dense slides with quadrant layouts, charts, and tables.
 ---
@@ -383,7 +383,3 @@ For projections, use Bear/Base/Bull case scenarios in structured tables.
 - [ ] Investment banking quality (GS/MS/JPM standard)
 
 **Note:** Reference the **PPTX skill** for PowerPoint file creation.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/strip-profile

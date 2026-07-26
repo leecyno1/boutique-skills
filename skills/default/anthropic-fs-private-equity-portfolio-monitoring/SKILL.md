@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-portfolio-monitoring
+name: portfolio-monitoring
 description: Track and analyze portfolio company performance against plan. Ingests monthly/quarterly financial packages (Excel, PDF), extracts KPIs, flags variances to budget, and produces summary dashboards. Use when reviewing portfolio company financials, preparing board materials, or monitoring covenant compliance. Triggers on "review portfolio company", "monthly financials", "how is [company] performing", "covenant check", or "portfolio update".
 ---
 
@@ -58,7 +58,3 @@ If multiple periods are provided:
 - Don't assume sector-specific KPIs — ask what matters for this company
 - If covenant levels aren't known, ask the user for the credit agreement terms
 - Output should be board-ready — concise, factual, no fluff
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/portfolio-monitoring

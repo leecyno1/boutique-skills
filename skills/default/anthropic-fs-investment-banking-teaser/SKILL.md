@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-teaser
+name: teaser
 description: Draft anonymous one-page company teasers for sell-side M&A processes. Creates a compelling summary without revealing the company's identity, designed to gauge buyer interest before NDA execution. Triggers on "teaser", "blind teaser", "anonymous profile", "one-pager for process", or "draft teaser for sell-side".
 ---
 
@@ -78,7 +78,3 @@ Ensure the teaser doesn't inadvertently identify the company:
 - Include enough financial detail to qualify serious buyers but not so much that tire-kickers waste your time
 - Always have the client and legal review before distribution
 - Track who receives the teaser — it becomes the outreach log for the process
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/teaser

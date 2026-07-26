@@ -6,6 +6,8 @@ suitable for thesis_store.register().
 
 from __future__ import annotations
 
+import argparse
+import csv
 import json
 import logging
 import sys
@@ -36,6 +38,9 @@ def _adapter(source_name: str):
 # -- Individual Adapters ------------------------------------------------------
 
 
+_KANCHI_ACTIONABLE_VERDICTS = frozenset({"CLEAN-PASS", "PASS-CAUTION", "CONDITIONAL-PASS"})
+
+
 @_adapter("kanchi-dividend-sop")
 def ingest_kanchi(record: dict, input_file: str) -> dict:
     """Transform kanchi-dividend-sop output into thesis data."""
@@ -43,12 +48,20 @@ def ingest_kanchi(record: dict, input_file: str) -> dict:
     if not ticker:
         raise ValueError("Missing required field 'ticker' in kanchi record")
 
+    verdict = record.get("verdict")
+    if not isinstance(verdict, str) or verdict not in _KANCHI_ACTIONABLE_VERDICTS:
+        rendered = repr(verdict) if verdict is not None else "missing"
+        raise ValueError(
+            "Kanchi record is not actionable: verdict "
+            f"{rendered}; expected one of {sorted(_KANCHI_ACTIONABLE_VERDICTS)}"
+        )
+
     thesis_data = {
         "ticker": ticker,
         "thesis_type": "dividend_income",
         "thesis_statement": (f"{ticker} dividend income thesis from Kanchi screening"),
         "setup_type": record.get("setup_type", "kanchi_5step"),
-        "_register_reason": "screened by kanchi-dividend-sop",
+        "_register_reason": f"kanchi-dividend-sop actionable verdict: {verdict}",
         "entry": {},
         "exit": {},
         "origin": {
@@ -235,22 +248,45 @@ def ingest_vcp(record: dict, input_file: str) -> dict:
 
 @_adapter("pead-screener")
 def ingest_pead(record: dict, input_file: str) -> dict:
-    """Transform pead-screener result into thesis data."""
+    """Transform pead-screener result into thesis data.
+
+    Field-name fix (money-adjacent, fail-closed): the real screen_pead.py
+    output carries `stage` (BREAKOUT / SIGNAL_READY / MONITORING /
+    EXPIRED — see screen_pead.py:364) and `stop_price` (screen_pead.py:373,
+    used as the actionable stop only in the BREAKOUT branch of
+    report_generator.py:223-232) — NOT `status`/`stop_loss`, which never
+    exist in a real record. Reading the wrong keys silently left every
+    thesis_statement as "status ?" and exit.stop_loss permanently unset.
+
+    `stage == "BREAKOUT"` is the only actionable tier here (mirrors
+    report_generator.py's own stage-gated stop display): a BREAKOUT
+    candidate with a missing/non-numeric/NaN/Infinity/non-positive
+    stop_price is rejected outright rather than silently registered
+    without a stop. Earlier stages (MONITORING/SIGNAL_READY/EXPIRED) have
+    no real stop yet by design (report_generator.py only shows one
+    tentative "if triggered" reference for SIGNAL_READY, off the red
+    candle, not stop_price) — those are still ingested as IDEA, just with
+    exit.stop_loss left unset rather than filled with an invalid value.
+    """
     ticker = record.get("symbol")
     if not ticker:
         raise ValueError("Missing required field 'symbol' in PEAD record")
 
+    stage = record.get("stage", "?")
     thesis_data = {
         "ticker": ticker,
         "thesis_type": "earnings_drift",
-        "thesis_statement": (f"{ticker} PEAD earnings drift — status {record.get('status', '?')}"),
+        "thesis_statement": (f"{ticker} PEAD earnings drift — stage {stage}"),
         "_register_reason": "screened by pead-screener",
         "entry": {},
         "exit": {},
         "origin": {
             "skill": "pead-screener",
             "output_file": input_file,
-            "screening_grade": record.get("grade"),
+            # screen_pead.py's output record names its grade field `rating`
+            # (screen_pead.py:379), never `grade` — reading `grade` here left
+            # screening_grade permanently None. Mirrors ingest_vcp/ingest_canslim.
+            "screening_grade": record.get("rating"),
             "screening_score": record.get("composite_score"),
             "raw_provenance": {k: v for k, v in record.items()},
         },
@@ -258,8 +294,17 @@ def ingest_pead(record: dict, input_file: str) -> dict:
 
     if "entry_price" in record:
         thesis_data["entry"]["target_price"] = record["entry_price"]
-    if "stop_loss" in record:
-        thesis_data["exit"]["stop_loss"] = record["stop_loss"]
+
+    valid_stop = thesis_store._valid_finite_positive(record.get("stop_price"))
+    if stage == "BREAKOUT" and valid_stop is None:
+        raise ValueError(
+            f"PEAD record for {ticker!r} is stage=BREAKOUT (actionable) but "
+            f"stop_price is missing/non-numeric/non-finite/non-positive "
+            f"({record.get('stop_price')!r}) — refusing to register an "
+            f"actionable thesis without a valid stop"
+        )
+    if valid_stop is not None:
+        thesis_data["exit"]["stop_loss"] = valid_stop
 
     return thesis_data
 
@@ -380,6 +425,66 @@ def ingest_edge(record: dict, input_file: str) -> dict | None:
     return thesis_data
 
 
+_MANUAL_CSV_REQUIRED_COLUMNS = {"ticker", "thesis_statement", "thesis_type"}
+_MANUAL_CSV_FLOAT_COLUMNS = {
+    "entry_price",
+    "shares",
+    "stop_price",
+    "stop_loss",
+    "target_price",
+    "take_profit",
+}
+
+
+def _coerce_manual_csv_record(record: dict, row_num: int) -> dict:
+    coerced = dict(record)
+    for key in _MANUAL_CSV_FLOAT_COLUMNS:
+        if key not in coerced:
+            continue
+        try:
+            coerced[key] = float(coerced[key])
+        except ValueError as e:
+            raise ValueError(f"Bulk CSV row {row_num}: column {key} must be numeric") from e
+    return coerced
+
+
+def _read_manual_csv_records(csv_file: str) -> list[tuple[int, dict]]:
+    """Read manual bulk CSV records with row numbers for useful errors."""
+    csv_path = Path(csv_file)
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Bulk CSV file not found: {csv_file}")
+
+    try:
+        with open(csv_path, newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames:
+                raise ValueError("Bulk CSV is missing a header row")
+            fieldnames = {name.strip() for name in reader.fieldnames if name}
+            missing = sorted(_MANUAL_CSV_REQUIRED_COLUMNS - fieldnames)
+            if missing:
+                raise ValueError(
+                    "Bulk CSV missing required column(s): "
+                    f"{', '.join(missing)}. Required: "
+                    f"{', '.join(sorted(_MANUAL_CSV_REQUIRED_COLUMNS))}"
+                )
+
+            records = []
+            for row_num, row in enumerate(reader, start=2):
+                record = {
+                    (key.strip() if key else key): value
+                    for key, value in row.items()
+                    if key and value not in (None, "")
+                }
+                record = _coerce_manual_csv_record(record, row_num)
+                records.append((row_num, record))
+    except csv.Error as e:
+        raise ValueError(f"Failed to parse bulk CSV {csv_file}: {e}") from e
+
+    if not records:
+        raise ValueError("Bulk CSV contains no data rows")
+    return records
+
+
 # -- Public API ---------------------------------------------------------------
 
 
@@ -442,6 +547,34 @@ def ingest(
     return thesis_ids
 
 
+def ingest_bulk_csv(
+    source: str,
+    csv_file: str,
+    state_dir: str = "state/theses",
+) -> list[str]:
+    """All-or-nothing bulk ingest for manual CSV records."""
+    if source != "manual":
+        raise ValueError("--bulk-csv is only supported with --source manual")
+
+    adapter = _ADAPTERS["manual"]
+    state_path = Path(state_dir)
+    prepared = []
+    for row_num, record in _read_manual_csv_records(csv_file):
+        try:
+            thesis_data = adapter(record, csv_file)
+            # Validate the completed thesis without writing. register() will
+            # rebuild and validate again before persistence.
+            thesis_store._build_thesis_for_registration(thesis_data)
+        except ValueError as e:
+            raise ValueError(f"Bulk CSV row {row_num}: {e}") from e
+        prepared.append(thesis_data)
+
+    thesis_ids = []
+    for thesis_data in prepared:
+        thesis_ids.append(thesis_store.register(state_path, thesis_data))
+    return thesis_ids
+
+
 def _extract_source_date(data: dict | list) -> str | None:
     """Extract report date from top-level metadata.
 
@@ -489,20 +622,33 @@ def _extract_records(data: dict | list, source: str) -> list[dict]:
 
 # -- CLI entry point ----------------------------------------------------------
 
-if __name__ == "__main__":
-    import argparse
 
+def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
     parser = argparse.ArgumentParser(description="Ingest skill output into Trader Memory Core")
     parser.add_argument("--source", required=True, help="Source skill name")
-    parser.add_argument("--input", required=True, help="Path to JSON input file")
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument("--input", help="Path to JSON input file")
+    input_group.add_argument("--bulk-csv", help="Path to manual bulk CSV input file")
     parser.add_argument("--state-dir", default="state/theses", help="Thesis state directory")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
-    ids = ingest(args.source, args.input, args.state_dir)
+    if args.bulk_csv:
+        ids = ingest_bulk_csv(args.source, args.bulk_csv, args.state_dir)
+    else:
+        ids = ingest(args.source, args.input, args.state_dir)
     if ids:
         print(f"Registered {len(ids)} thesis(es): {', '.join(ids)}")
     else:
         print("No theses registered.")
-        sys.exit(1)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except (FileNotFoundError, json.JSONDecodeError, ValueError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        raise SystemExit(1)

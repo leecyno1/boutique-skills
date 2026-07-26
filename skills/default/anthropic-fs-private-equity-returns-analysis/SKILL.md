@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-returns-analysis
+name: returns-analysis
 description: Build quick IRR/MOIC sensitivity tables for PE deal evaluation. Models returns across entry multiple, leverage, exit multiple, growth, and hold period scenarios. Use when sizing up a deal, stress-testing assumptions, or preparing IC returns exhibits. Triggers on "returns analysis", "IRR sensitivity", "MOIC table", "what's the return at", "model the returns", or "back of the envelope".
 ---
 
@@ -117,7 +117,3 @@ Build 3 scenarios:
 - Dividend recaps or interim distributions affect IRR significantly — include if planned
 - Don't forget transaction costs (typically 2-4% of EV) — they reduce Day 1 equity value
 - Tax considerations (asset vs. stock deal, 338(h)(10) election) can materially affect after-tax returns
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/returns-analysis

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-fixed-income-portfolio
+name: fixed-income-portfolio
 description: Review fixed income portfolios by pricing multiple bonds, retrieving reference data, analyzing cashflows, and running scenario analysis. Use when reviewing bond portfolios, computing portfolio duration and DV01, analyzing cashflow waterfalls, stress testing rate scenarios, or assessing portfolio composition.
 ---
 
@@ -57,7 +57,3 @@ Present sector, rating, and maturity bucket distributions as percentage tables. 
 | Base | -- | -- | -- | -- |
 | +100bp | ... | ... | ... | ... |
 | +200bp | ... | ... | ... | ... |
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/fixed-income-portfolio

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-value-creation-plan
+name: value-creation-plan
 description: Structure post-acquisition value creation plans with revenue, cost, and operational levers mapped to an EBITDA bridge. Includes 100-day priorities, KPI targets, and accountability frameworks. Use when planning post-close execution, preparing operating partner materials, or building a board-ready value creation roadmap. Triggers on "value creation plan", "100-day plan", "post-close plan", "EBITDA bridge", "operating plan", or "value creation levers".
 ---
 
@@ -121,7 +121,3 @@ Define the metrics that will track value creation:
 - Track initiative-level P&L impact, not just top-line EBITDA — you need to know what's working
 - Add-on M&A is often the largest value creation lever — start the pipeline on Day 1
 - Always pressure-test assumptions with operating partners or industry experts
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/value-creation-plan

@@ -1008,8 +1008,11 @@ def screen_dividend_growth_pullbacks(
             "debt_to_equity": health_metrics.get("debt_to_equity"),
             "current_ratio": health_metrics.get("current_ratio"),
             "financially_healthy": health_metrics.get("financially_healthy", False),
-            "roe": latest_metrics.get("roe", 0),
-            "profit_margin": latest_metrics.get("netProfitMargin", 0),
+            # roe and netProfitMargin from FMP are decimals (e.g., 0.25 = 25%),
+            # like payoutRatio above; convert to whole-number percents so they
+            # match the composite-score thresholds and the report's "%" display.
+            "roe": (latest_metrics.get("roe") or 0) * 100,
+            "profit_margin": (latest_metrics.get("netProfitMargin") or 0) * 100,
         }
 
         # Calculate composite score
@@ -1241,7 +1244,7 @@ High dividend growth stocks (12%+ CAGR) compound wealth through rising dividends
 """
 
     # Write report
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(report)
 
     print(f"✅ Markdown report saved: {output_path}", file=sys.stderr)
@@ -1378,7 +1381,7 @@ Environment Variables:
     }
 
     json_path = os.path.join(logs_dir, f"dividend_growth_pullback_results_{today}.json")
-    with open(json_path, "w") as f:
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(json_output, f, indent=2)
 
     print(f"✅ JSON results saved: {json_path}", file=sys.stderr)

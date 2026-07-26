@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-spglobal-earnings-preview-beta
+name: earnings-preview-single
 description: Generate a concise 4-5 page equity research earnings preview for a single company. Analyzes the most recent earnings transcript, competitor landscape, valuation, and recent news to produce a professional HTML report.
 ---
 
@@ -522,7 +522,3 @@ Group the appendix rows by section (Financials, Valuation, Estimates & Consensus
 - **Charts must use real data**: Every chart populated with actual MCP data. Never fabricate.
 - **Competitor context**: Frame valuation relative to peers. A 25x P/E means nothing without knowing peers trade at 20x or 35x.
 - **Hyperlinked claims**: Every factual claim — numeric or qualitative — must be an `<a class="data-ref">` tag linking to its appendix entry. Numbers: `<a href="#ref-1" class="data-ref">$152.3B</a>`. Qualitative: `<a href="#ref-25" class="data-ref">management flagged tariff headwinds as the primary margin risk</a>`. No fact should appear without a traceable source in the appendix.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/earnings-preview-beta

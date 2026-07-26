@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-portfolio-rebalance
+name: portfolio-rebalance
 description: Analyze portfolio allocation drift and generate rebalancing trade recommendations across accounts. Considers tax implications, transaction costs, and wash sale rules. Triggers on "rebalance", "portfolio drift", "allocation check", "rebalancing trades", or "my portfolio is out of balance".
 ---
 
@@ -79,7 +79,3 @@ Optimize which assets are held in which account types:
 - Check for any client-specific restrictions (ESG, concentrated stock, lockups)
 - Document rationale for every trade for compliance records
 - Wash sale rules apply across accounts — coordinate trades across the household
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance

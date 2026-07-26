@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-option-vol-analysis
+name: option-vol-analysis
 description: Analyze option volatility by combining vol surface data, option pricing with Greeks, and historical price data to assess implied vs realized volatility. Use when pricing options, analyzing volatility surfaces, computing Greeks, assessing vol premiums, or evaluating vol trading strategies.
 ---
 
@@ -58,7 +58,3 @@ Always start from the vol surface — it encodes the market's view of future unc
 
 ### Assessment
 State the vol regime (low/normal/elevated/crisis), whether implied is rich or cheap vs realized, surface shape signals (skew direction, term structure shape), and recommended strategies with key Greeks and rationale.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/option-vol-analysis

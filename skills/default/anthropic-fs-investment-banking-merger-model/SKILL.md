@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-merger-model
+name: merger-model
 description: Build accretion/dilution analysis for M&A transactions. Models pro forma EPS impact, synergy sensitivities, and purchase price allocation. Use when evaluating a potential acquisition, preparing merger consequences analysis for a pitch, or advising on deal terms. Triggers on "merger model", "accretion dilution", "M&A model", "pro forma EPS", "merger consequences", or "deal impact analysis".
 ---
 
@@ -109,7 +109,3 @@ Calculate the minimum synergies needed for the deal to be EPS-neutral in Year 1.
 - Synergy phase-in is critical — Year 1 is often only 25-50% of run-rate synergies
 - Don't forget foregone interest income on cash used and new interest expense on debt raised
 - Tax rate on synergies and interest adjustments should match the acquirer's marginal rate
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/merger-model

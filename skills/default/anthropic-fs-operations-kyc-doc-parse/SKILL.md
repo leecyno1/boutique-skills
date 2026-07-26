@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-operations-kyc-doc-parse
+name: kyc-doc-parse
 description: Parse an investor or client onboarding packet into structured KYC fields — identity, ownership, control, source of funds, and document inventory. Use as the first step of KYC screening; output feeds the rules engine.
 ---
 
@@ -46,7 +46,3 @@ Produce one JSON record. Use `null` for any field not found — do not guess.
 ## Step 3: Flag obvious gaps
 
 Before handing to `kyc-rules`, note anything plainly missing or expired (ID past expiry, address proof older than 3 months, UBO chart absent for an entity). These are inventory gaps, not rules-engine outcomes.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/operations/skills/kyc-doc-parse

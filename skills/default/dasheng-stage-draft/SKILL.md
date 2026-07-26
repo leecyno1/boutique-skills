@@ -29,7 +29,7 @@ Stage 3 Draft 是大声自媒体创作工作台的核心写作阶段，负责将
 - `--asset-specs-file` - 可选，按 `topic_id` 提供 `chart_specs` / `image_specs`，用于 Draft 内直接生成图表与配图
 - `--chartjs-file` - 可选，本地 Chart.js v4.4.4 UMD 文件；未提供时使用项目 `vendor/chart.umd.min.js`
 - `--run-id` - 自定义运行ID（默认自动生成）
-- `--output-dir` - 自定义输出目录；默认应位于 `~/Desktop/自媒体创作/05_初稿生成/<run_id>`，不要写入项目根目录
+- `--output-dir` - 自定义输出目录
 
 ### 金融数据增强输入
 
@@ -71,7 +71,7 @@ console.log(result);
 // {
 //   success: true,
 //   run_id: '2026-04-14_120000',
-//   out_dir: '/Users/lichengyin/Desktop/自媒体创作/05_初稿生成/2026-04-14_120000',
+//   out_dir: '/Volumes/PSSD/Projects/公众号文章/产物/05_初稿生成/2026-04-14_120000',
 //   draft_count: 3,
 //   draft_files: ['...', '...', '...'],
 //   manifest_file: '.../draft_manifest.json',

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-deal-tracker
+name: deal-tracker
 description: Track multiple live deals with milestones, deadlines, action items, and status updates. Maintains a deal pipeline view and surfaces upcoming deadlines and overdue items. Use when managing a book of business, tracking process milestones, or preparing for weekly deal reviews. Triggers on "deal tracker", "deal status", "where are we on", "process update", "deal pipeline", or "weekly deal review".
 ---
 
@@ -88,7 +88,3 @@ Generate a summary for weekly team meetings:
 - The pipeline view should show deal stage, size, and likelihood — useful for revenue forecasting
 - Keep notes on buyer/investor feedback — patterns in feedback inform strategy adjustments
 - Archive closed/dead deals separately — keep the active view clean
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/deal-tracker

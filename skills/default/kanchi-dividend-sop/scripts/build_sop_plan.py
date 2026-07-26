@@ -23,6 +23,8 @@ def parse_ticker_csv(raw: str) -> list[str]:
 
 def normalize_candidates(payload: dict[str, Any]) -> list[dict[str, str]]:
     raw = payload.get("candidates")
+    if not isinstance(raw, list):
+        raw = payload.get("stocks")
     if isinstance(raw, list):
         normalized: list[dict[str, str]] = []
         for item in raw:
@@ -31,7 +33,7 @@ def normalize_candidates(payload: dict[str, Any]) -> list[dict[str, str]]:
                 if ticker:
                     normalized.append({"ticker": ticker, "bucket": "unassigned"})
             elif isinstance(item, dict):
-                ticker = str(item.get("ticker", "")).strip().upper()
+                ticker = str(item.get("ticker") or item.get("symbol") or "").strip().upper()
                 bucket = str(item.get("bucket", "unassigned")).strip().lower() or "unassigned"
                 if ticker:
                     normalized.append({"ticker": ticker, "bucket": bucket})
@@ -131,7 +133,9 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     filename = args.filename or f"kanchi_sop_plan_{args.as_of}.md"
     output_path = output_dir / filename
-    output_path.write_text(render_markdown(candidates, args.as_of, profile) + "\n")
+    output_path.write_text(
+        render_markdown(candidates, args.as_of, profile) + "\n", encoding="utf-8"
+    )
     print(f"Wrote SOP plan: {output_path}")
     return 0
 

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-financial-analysis-comps-analysis
+name: comps-analysis
 description: |
   Build institutional-grade comparable company analyses with operating metrics, valuation multiples, and statistical benchmarking in Excel/spreadsheet format.
 
@@ -375,7 +375,7 @@ If you have more than 15 metrics, you're probably including noise. Edit ruthless
 
 ### Sanity Checks
 - **Margin test**: Gross margin > EBITDA margin > Net margin (always true by definition)
-- **Multiple reasonableness**:
+- **Multiple reasonableness**: 
   - EV/Revenue: typically 0.5-20x (varies widely by industry)
   - EV/EBITDA: typically 8-25x (fairly consistent across industries)
   - P/E: typically 10-50x (depends on growth rate)
@@ -558,18 +558,18 @@ Add if relevant: Asset Turnover, Inventory Turns, Backlog
 ## Section 10: Red Flags & Warning Signs
 
 ### Data Quality Issues
-🚩 Inconsistent time periods (mixing quarterly and annual)
-🚩 Missing data without explanation
+🚩 Inconsistent time periods (mixing quarterly and annual)  
+🚩 Missing data without explanation  
 🚩 Significant differences between data sources (>10% variance)
 
 ### Valuation Red Flags
-🚩 Negative EBITDA companies being valued on EBITDA multiples (use revenue multiples instead)
-🚩 P/E ratios >100x without hypergrowth story
+🚩 Negative EBITDA companies being valued on EBITDA multiples (use revenue multiples instead)  
+🚩 P/E ratios >100x without hypergrowth story  
 🚩 Margins that don't make sense for the industry
 
 ### Comparability Issues
-🚩 Different fiscal year ends (causes timing problems)
-🚩ixing pure-play and conglomerates
+🚩 Different fiscal year ends (causes timing problems)  
+🚩ixing pure-play and conglomerates  
 🚩 Materially different business models labeled as "comps"
 
 **When in doubt, exclude the company.** Better to have 3 perfect comps than 6 questionable ones.
@@ -659,7 +659,3 @@ After completing a comp analysis, ask:
 5. What would make this more useful next time?
 
 The best comp analyses evolve with each iteration. Save templates, learn from feedback, and refine the structure based on what decision-makers actually use.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/comps-analysis

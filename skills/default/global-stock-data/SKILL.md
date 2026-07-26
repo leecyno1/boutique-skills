@@ -1,17 +1,23 @@
 ---
 name: global-stock-data
-description: 美股港股全栈数据工具包 — 覆盖行情(新浪+腾讯+东财push2)、K线(新浪+Yahoo)、技术指标(MA/MACD/RSI/KDJ/布林带)、基本面(东财datacenter三表+GMAININDICATOR+Yahoo quoteSummary+SEC XBRL)、资金面(东财push2his日级资金流)、期权(Yahoo)、SEC Filing(EDGAR)、搜索与工具(东财search+Yahoo+SEC CIK+全市场列表)八层数据源，内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权策略、SEC文件检索、资金流追踪、机构持仓分析等场景。
+description: 美股港股全栈数据工具包（官方源优先）— 十三层架构·30+端点·11数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、SEC文件检索、资金流与机构持仓分析等场景。
 origin: custom
-version: 1.0.1
+version: 2.0.1
 ---
 
 > 📦 项目主页：https://github.com/simonlin1212/global-stock-data — 更新、反馈、支持作者
 > 
-> 作者：Simon 林 · 抖音「Simon林」· 公众号「硅基世纪」
+> 作者：Simon 林 · X [@linsizhen](https://x.com/linsizhen) · TikTok [@simonlin0423](https://www.tiktok.com/@simonlin0423) · 邮箱：simonlin0423@gmail.com
 
-# 美股港股全栈数据工具包 V1.0.1
+# 美股港股全栈数据工具包 V2.0 — 官方源优先
 
-八层数据架构，18 个端点，5 个数据源，全部零鉴权，实测可用（2026-05-20 验证）。
+十三层数据架构，30+ 个端点，11 个数据源，全部零鉴权，实测可用（2026-07-24 全量回归验证）。
+
+**V2.0 设计原则：官方源优先。** 新增层的主力数据取自美国政府（SEC EDGAR / Treasury / CFTC）、
+自律组织（FINRA）与交易所（CBOE / Nasdaq）的公开端点。**每个数据源都标注了合规级别与条款原文**
+（见下方「数据源合规分级」）——"官方"不等于"可自由使用"，各源差异极大。
+
+**本工具只分发代码，不分发、不转售任何市场数据**；数据由使用者自行按各源条款获取。
 
 **使用方式：** 将本文件放入 `~/.claude/skills/global-stock-data/SKILL.md`，Claude Code 会自动识别并在美股/港股相关对话中激活。
 
@@ -48,7 +54,92 @@ SEC Filing层（仅美股）
 ├── 东财 push2     → 全市场股票列表(涨跌幅/成交量排名, 美股5925只+港股18000+只)
 ├── Yahoo search   → 新闻资讯(按股票代码)
 └── SEC CIK mapping → ticker↔CIK 映射 (仅美股)
+
+━━━ 以下为 V2.0 新增（官方源优先）━━━
+
+期权层·CBOE 官方（仅美股）⭐
+└── CBOE cdn → 全链 + IV + delta/gamma/vega/theta/rho + 0DTE + 异动flow   [C级·需授权]
+
+做空层（仅美股）⭐
+└── FINRA Reg SHO → 全市场每日空头成交量(实测12,112只) + 个股时序 + 排行  [B级]
+
+申报事件流（仅美股）⭐
+├── EDGAR 每日索引 → Form4内部人/8-K/13F机构持仓/144，当日全量           [S级]
+└── EDGAR 全文检索 → 2001至今所有申报正文，按关键词+表单+日期            [S级]
+
+全市场横截面（仅美股）⭐
+└── EDGAR frames → 任意XBRL标签一次拿全市场(实测1,842~5,309家)=免费screener [S级]
+
+宏观 / 日历 ⭐
+├── Treasury → 美债收益率曲线(1M~30Y, 每日)                             [S级]
+├── CFTC     → COT 持仓报告                                             [S级]
+└── Nasdaq   → 财报日历(含盘前盘后+EPS预期)                             [C级·未核实]
 ```
+
+---
+
+## 端点路由速查（按需定位，不必通读全文）
+
+| 我想要… | 去哪层 | 主力源 | 合规级 |
+|---|---|---|---|
+| 实时/延时报价 | Layer 1 | 新浪 / 腾讯 / 东财 | C |
+| K 线（日/周/月） | Layer 2 | 新浪 / Yahoo | C |
+| 技术指标 MA/MACD/RSI/KDJ/布林 | Layer 3 | 本地计算 | — |
+| 财报三表 / 关键指标 / 分析师 / 机构持仓 | Layer 4 | 东财 / Yahoo / EDGAR | C·S |
+| 日级资金流 | Layer 5 | 东财 | C |
+| **期权链 + 希腊字母 + IV + 0DTE + 异动flow** | **Layer 6.1** | **CBOE 官方** ⭐ | C |
+| 期权链（无希腊字母，后备） | Layer 6.2 | Yahoo | C |
+| 10-K/10-Q/8-K 列表、XBRL 财务 | Layer 7 | SEC EDGAR | **S** |
+| 搜索 / 新闻 / CIK 映射 / 全市场列表 | Layer 8 | 东财 / Yahoo / SEC | C·S |
+| **全市场每日空头成交量、个股空头占比** | **Layer 9** | **FINRA Reg SHO** ⭐ | B |
+| **当日申报流：Form 4 内部人 / 8-K / 13F** | **Layer 10.1** | **EDGAR 每日索引** ⭐ | **S** |
+| **申报全文检索（2001 至今正文）** | **Layer 10.2** | **EDGAR FTS** ⭐ | **S** |
+| **全市场基本面横截面（免费 screener）** | **Layer 11** | **EDGAR frames** ⭐ | **S** |
+| 美债收益率曲线 / CFTC COT / 财报日历 | Layer 12 | Treasury / CFTC / Nasdaq | S·C |
+
+⭐ = V2.0 新增，且为 yfinance 与多数开源方案不具备的能力。
+
+---
+
+## 数据源合规分级（取用前必读 — 各级均引条款原文）
+
+> 下表结论来自 **2026-07-24 逐家实读各源条款原文**，不是推断。引号内为原文。
+> **各源差异极大，"官方"不等于"可自由使用"。**
+
+### S 级 — 可自由使用（含商用与再分发）
+
+| 源 | 依据（原文） |
+|---|---|
+| **SEC EDGAR** | 官网明示：*"Anyone can access and download this information **for free**"*、*"We **allow scripted access** to sec.gov content"*。**硬性要求**：`Current max request rate: 10 requests/second`，且必须声明 User-Agent（格式 `Company Name AdminContact@domain.com`），否则触发 *"Undeclared Automated Tool"* / Access Denied |
+| **US Treasury / CFTC** | 美国联邦政府作品不受版权保护（17 U.S.C. §105）。⚠️ 本次**未逐条核验**两站条款正文，按政府数据惯例归此级 |
+
+### B 级 — 数据文件系主动公开，但站点条款含限制
+
+| 源 | 依据（原文） |
+|---|---|
+| **FINRA** | Reg SHO 每日文件是 FINRA 主动发布供下载的监管披露文件；但其 Terms of Use 同时禁止 *"use any process to monitor or copy the FINRA Website **in bulk**, or use any **data mining, scraping or harvesting tools (including robots)**"*，且站点声明 *"FINRA Data provides **non-commercial use** of data"*。→ **下载已发布的数据文件属常规用法；批量爬站点页面不属于。商用前请自行向 FINRA 确认。** |
+
+### C 级 — 使用需事先授权，或条款未核实
+
+| 源 | 依据（原文） |
+|---|---|
+| **CBOE** | Use of Content 政策：使用任何 Cboe Content 须 *"receive **approval in advance** from Cboe"*，并须 *"**execution of a license agreement**"*；政策**不区分**商用/非商用、不区分实时/延时。→ **本工具的 CBOE 期权层仅供个人研究；商业用途或再分发前，须先向 Cboe 申请授权。** |
+| **Nasdaq** | 本次抓取条款页超时，**未核实**。按未核实处理 |
+| Yahoo / 东财 / 新浪 / 腾讯 | Yahoo 官方文档写明 **personal use only**；其余为站点前端接口。仅供个人研究，勿用于商业产品或再分发 |
+
+### ⛔ 已排除的源
+
+| 源 | 原因 |
+|---|---|
+| **HKEX（CCASS 港股席位持股）** | 其 Terms of Use 明文禁止 *"any '**robot**', '**bot**', '**spider**', '**scraper**' or other automated device... to access, obtain, copy, monitor or republish any portion of the Website"*，禁止 *"text or data mining or web scraping"*，且适用于 *"**whether or not for gain**"*（不论是否营利）。→ **本工具不提供 CCASS 抓取代码。** 需要港股席位持股/南向资金数据者，请通过 HKEX 授权渠道或其网页人工查询 |
+
+### 给使用者的三条硬规则
+
+1. **商业用途**：只依赖 **S 级**（SEC EDGAR / Treasury / CFTC）。B 级需自行确认，C 级须先取得授权。
+2. **再分发**：本工具**只分发代码，不分发任何市场数据**。你也不应把 B/C 级源取得的数据对外分发。
+3. **限速**：所有新增层的请求已内置节流（见「统一 HTTP 层」）。**不要绕过它**——SEC 的 10 req/s 是官方硬上限。
+
+---
 
 ## When to Activate
 
@@ -182,6 +273,154 @@ def eastmoney_datacenter(report_name: str, columns: str = "ALL",
         return d["result"]["data"]
     return []
 ```
+
+---
+
+### 官方源统一出口（限流 + UA 声明）— V2.0 新增
+
+V2.0 新增的 Layer 9–12 全部走这个出口。它负责三件事：**按源限速**、**SEC User-Agent 声明**、
+**友好错误提示**。
+
+> ⚠️ **使用前必改**：把 `SEC_CONTACT` 换成你自己的真实姓名与邮箱。
+> SEC 官方要求声明 User-Agent，未声明会被判定为 *Undeclared Automated Tool* 并拒绝服务。
+
+```python
+import requests, time, threading
+
+# ⚠️⚠️ 必改：SEC 要求 UA 含真实联系方式，格式 "Company Name AdminContact@domain.com"
+SEC_CONTACT = "your-name your-email@example.com"
+
+
+class DataNotAvailable(RuntimeError):
+    """该日/该标的确实没有数据（如非交易日、文件尚未发布）——可安全回退到下一个候选日。
+
+    与配置错误、网络错误区分开：后者必须立刻抛给调用方，
+    否则「SEC_CONTACT 没配」会被日期回退循环吞掉，最后伪装成「没找到数据」。
+    """
+
+
+class _RateLimiter:
+    """线程安全的最小间隔节流器（用锁，避免并发下被击穿）"""
+
+    def __init__(self, max_per_sec: float):
+        self._interval = 1.0 / float(max_per_sec)
+        self._last = 0.0
+        self._lock = threading.Lock()
+
+    def wait(self) -> None:
+        with self._lock:
+            gap = self._interval - (time.monotonic() - self._last)
+            if gap > 0:
+                time.sleep(gap)
+            self._last = time.monotonic()
+
+
+# 各源限速：SEC 官方硬上限 10/s，此处取 8/s 留余量；其余为自律保护值
+_LIMITS = {
+    "sec.gov": _RateLimiter(8),
+    "finra.org": _RateLimiter(4),
+    "cboe.com": _RateLimiter(4),
+    "nasdaq.com": _RateLimiter(2),
+    "_default": _RateLimiter(5),
+}
+
+
+def _limiter_for(url: str) -> _RateLimiter:
+    for host, lim in _LIMITS.items():
+        if host != "_default" and host in url:
+            return lim
+    return _LIMITS["_default"]
+
+
+def _is_object_missing(resp) -> bool:
+    """
+    正向识别「资源确实不存在」。
+
+    ⚠️ SEC Archives 与 FINRA CDN 都托管在 S3 上，而 S3 在调用方没有
+    ListBucket 权限时，对**不存在的对象**返回 `403 AccessDenied`（XML）
+    而不是 404 NoSuchKey。实测 2026-07-24 两个源行为一致。
+
+    真正的拒绝长得完全不同（SEC 的 UA 未声明返回 ~4.8KB HTML 页面），
+    所以这里按 Content-Type + XML 错误码正向判定，
+    而不是用「排除法」——否则限流/封禁会被伪装成「没数据」。
+    """
+    if resp.status_code == 404:
+        return True
+    if resp.status_code != 403:
+        return False
+    ctype = (resp.headers.get("Content-Type") or "").lower()
+    head = (resp.text or "")[:500]
+    return "xml" in ctype and "<Code>AccessDenied</Code>" in head
+
+
+def official_get(url: str, params: dict = None, headers: dict = None,
+                 timeout: int = 30, as_json: bool = False):
+    """
+    V2.0 官方源统一出口：自动节流 + UA 处理 + 友好错误。
+    as_json=True 返回 dict，否则返回 str。
+
+    异常语义：资源不存在 → DataNotAvailable（调用方可回退到下一个候选日）；
+             配置/限流/网络 → RuntimeError（必须冒泡）。
+    """
+    if "sec.gov" in url:
+        if "your-email@example.com" in SEC_CONTACT:
+            raise RuntimeError(
+                "请先把 SEC_CONTACT 改成你的真实姓名与邮箱 —— SEC 要求声明 "
+                "User-Agent，否则返回 Undeclared Automated Tool 错误。")
+        h = {"User-Agent": SEC_CONTACT, "Accept-Encoding": "gzip, deflate"}
+    else:
+        h = {"User-Agent": UA}
+    h.update(headers or {})
+
+    _limiter_for(url).wait()
+    try:
+        r = requests.get(url, params=params, headers=h, timeout=timeout)
+        r.raise_for_status()
+    except requests.HTTPError as e:
+        resp = e.response
+        code = resp.status_code
+        low = (resp.text or "")[:4000].lower()
+        # ① 正向识别：资源确实不存在（404，或 S3 风格的 403 AccessDenied）
+        if _is_object_missing(resp):
+            raise DataNotAvailable(
+                f"HTTP {code} {url[:80]} — 资源不存在（该日无数据/尚未发布）") from e
+        # ② SEC 的 UA 未声明（返回 HTML 页，含 Undeclared Automated Tool）
+        if code == 403 and "undeclared" in low:
+            raise RuntimeError(
+                f"SEC 拒绝请求：User-Agent 未被识别为已声明。"
+                f"当前 SEC_CONTACT={SEC_CONTACT!r}，"
+                f"格式应为 'Company Name AdminContact@domain.com'") from e
+        # ③ 其余一律视为真错误，必须冒泡（限流/封禁/权限/接口变更）
+        hint = {403: "被拒绝：限流、封禁或权限问题（已排除「资源不存在」）",
+                404: "端点不存在：接口可能已变更",
+                429: "请求过快：已内置节流，若仍触发请调低 _LIMITS"}.get(code, "")
+        raise RuntimeError(f"HTTP {code} {url[:80]} — {hint}") from e
+    except requests.RequestException as e:
+        raise RuntimeError(f"请求失败 {url[:80]} — {type(e).__name__}: {e}") from e
+    return r.json() if as_json else r.text
+
+
+# ── 异常约定（V2.0）──
+#   DataNotAvailable : 该日/该标的确实没有数据（非交易日、文件未发布、标的无期权…）
+#                      → 调用方可安全回退到下一个候选日
+#   RuntimeError     : 配置错误（SEC_CONTACT 未改）、限流、网络故障
+#                      → 必须冒泡给使用者，不可伪装成「没数据」
+#   ValueError       : 参数错误（如把港股代码传给仅支持美股的层）
+
+
+def assert_us_ticker(ticker: str) -> str:
+    """Layer 6.1 / 9 / 10 / 11 仅支持美股；传入港股代码时给出明确提示"""
+    t = str(ticker).upper()
+    if t.endswith(".HK") or (t.isdigit() and len(t) in (4, 5)):
+        raise ValueError(f"'{ticker}' 看起来是港股代码；该层仅支持美股。"
+                         f"港股请用 Layer 1-5 的港股端点。")
+    if not t.replace(".", "").replace("-", "").isalnum():
+        raise ValueError(f"无效的 ticker: '{ticker}'")
+    return t
+```
+
+> `requests` 会自动解压 gzip 响应，因此上面带 `Accept-Encoding` 是安全的。
+> 若你改用 `urllib` 自行实现，**必须手动 `gzip.decompress`**，否则 SEC 返回的内容会解析失败。
 
 ---
 
@@ -1034,7 +1273,180 @@ def fund_flow_daily(ticker_or_code: str, secid_prefix: int = 105,
 
 ## Layer 6: 期权层
 
-### 6.1 期权链 — Yahoo Finance
+### 6.1 期权链 + 希腊字母 + 0DTE 流 — CBOE 官方（主力 ⭐ V2.0 新增）
+
+数据源 `cdn.cboe.com`，零鉴权。单只标的全链一次返回（实测 NVDA 3,908 / TSLA 6,200 / AAPL 3,576 合约），
+字段含 `bid/ask/volume/open_interest/iv/delta/gamma/vega/theta/rho`。
+
+> ⚠️ **合规（C 级）**：Cboe 的 Use of Content 政策要求使用前取得书面批准与 license。
+> 以下代码**仅供个人研究**；商业用途或再分发前须先向 Cboe 申请授权。
+
+```python
+import re
+from datetime import datetime, timezone, timedelta
+# 依赖「官方源统一出口」的 official_get / assert_us_ticker
+
+CBOE_BASE = "https://cdn.cboe.com/api/global/delayed_quotes"
+# OCC 合约代码: 标的 + YYMMDD + C/P + 8位行权价(千分之一美元)
+_OSI = re.compile(r"^(?P<root>[A-Z]+)(?P<y>\d{2})(?P<m>\d{2})(?P<d>\d{2})"
+                  r"(?P<cp>[CP])(?P<strike>\d{8})$")
+
+
+def parse_osi(symbol: str) -> dict:
+    """解析 OCC 合约代码 → {expiry, type, strike}；无法解析返回 {}"""
+    m = _OSI.match(symbol)
+    if not m:
+        return {}
+    g = m.groupdict()
+    return {"expiry": f"20{g['y']}-{g['m']}-{g['d']}",
+            "type": "call" if g["cp"] == "C" else "put",
+            "strike": int(g["strike"]) / 1000.0}
+
+
+def options_chain_cboe(ticker: str) -> dict:
+    """
+    CBOE 官方延时期权全链（仅美股）。
+    返回 {"ticker","timestamp","spot","contracts":[{symbol,expiry,type,strike,bid,ask,
+          volume,open_interest,iv,delta,gamma,vega,theta,rho,last_trade_price}]}
+    """
+    ticker = assert_us_ticker(ticker)
+    raw = official_get(f"{CBOE_BASE}/options/{ticker}.json", as_json=True)
+    data = raw.get("data") or {}
+    contracts = []
+    for o in data.get("options") or []:
+        meta = parse_osi(o.get("option", ""))
+        if not meta:
+            continue
+        contracts.append({
+            "symbol": o["option"], **meta,
+            "bid": o.get("bid"), "ask": o.get("ask"),
+            "volume": o.get("volume") or 0,
+            "open_interest": o.get("open_interest") or 0,
+            "iv": o.get("iv"), "delta": o.get("delta"), "gamma": o.get("gamma"),
+            "vega": o.get("vega"), "theta": o.get("theta"), "rho": o.get("rho"),
+            "last_trade_price": o.get("last_trade_price"),
+        })
+    if not contracts:
+        raise DataNotAvailable(f"{ticker} 未返回任何期权合约 —— 该标的可能无期权，"
+                               f"或不在 CBOE 覆盖范围（CBOE 仅覆盖美股）")
+    return {"ticker": ticker, "timestamp": raw.get("timestamp"),
+            "spot": data.get("current_price"), "contracts": contracts}
+
+
+try:
+    from zoneinfo import ZoneInfo
+    _ET_TZ = ZoneInfo("America/New_York")
+except Exception:      # Windows 上 zoneinfo 可能缺 tzdata
+    _ET_TZ = None
+
+
+def _et_today() -> str:
+    """
+    美东今日 YYYY-MM-DD，用于 0DTE 判定。
+
+    ⚠️ 必须区分 EDT(UTC-4) 与 EST(UTC-5)：硬编码 UTC-4 会让冬令时
+    UTC 04:00–05:00 这一小时算成次日，导致 0DTE 选错到期日。
+    """
+    now = datetime.now(timezone.utc)
+    if _ET_TZ is not None:
+        return now.astimezone(_ET_TZ).strftime("%Y-%m-%d")
+    # 无 tzdata 时的回退：按美国 DST 规则（3月第2个周日 ~ 11月第1个周日）自算
+    y = now.year
+    # 美国 DST 在**当地时间 2:00** 切换，换算成 UTC：
+    #   开始 = 3月第2个周日 02:00 EST = 07:00 UTC
+    #   结束 = 11月第1个周日 02:00 EDT = 06:00 UTC
+    # 用 00:00 UTC 当切换点会在切换日凌晨那几小时取错偏移。
+    mar8 = datetime(y, 3, 8, tzinfo=timezone.utc)
+    dst_start = (mar8 + timedelta(days=(6 - mar8.weekday()) % 7)
+                 ).replace(hour=7)
+    nov1 = datetime(y, 11, 1, tzinfo=timezone.utc)
+    dst_end = (nov1 + timedelta(days=(6 - nov1.weekday()) % 7)
+               ).replace(hour=6)
+    offset = 4 if dst_start <= now < dst_end else 5
+    return (now - timedelta(hours=offset)).strftime("%Y-%m-%d")
+
+
+def filter_expiry(chain: dict, expiry: str = None, dte_max: int = None) -> list[dict]:
+    """按到期日筛选。expiry='0DTE' 取当日到期；dte_max 取 N 天内到期"""
+    cs = chain["contracts"]
+    if expiry == "0DTE":
+        return [c for c in cs if c["expiry"] == _et_today()]
+    if expiry:
+        return [c for c in cs if c["expiry"] == expiry]
+    if dte_max is not None:
+        today = datetime.strptime(_et_today(), "%Y-%m-%d")
+        return [c for c in cs
+                if 0 <= (datetime.strptime(c["expiry"], "%Y-%m-%d") - today).days <= dte_max]
+    return cs
+
+
+def unusual_activity(contracts: list[dict], min_volume: int = 500,
+                     vol_oi_min: float = 1.0) -> list[dict]:
+    """
+    异动合约识别：成交量 >= min_volume 且 volume/open_interest >= vol_oi_min。
+    vol/OI > 1 = 当日成交超过存量持仓 = 新建仓，是 options flow 的核心信号。
+    """
+    out = []
+    for c in contracts:
+        vol, oi = c["volume"], c["open_interest"]
+        if vol < min_volume:
+            continue
+        ratio = vol / oi if oi > 0 else float("inf")
+        if ratio >= vol_oi_min:
+            out.append({**c, "vol_oi_ratio": round(ratio, 2) if oi > 0 else None})
+    return sorted(out, key=lambda x: -x["volume"])
+
+
+def chain_summary(contracts: list[dict]) -> dict:
+    """链级聚合：put/call 量比与持仓比、成交量加权 IV、净 delta 敞口"""
+    calls = [c for c in contracts if c["type"] == "call"]
+    puts = [c for c in contracts if c["type"] == "put"]
+    cv, pv = sum(c["volume"] for c in calls), sum(c["volume"] for c in puts)
+    coi, poi = sum(c["open_interest"] for c in calls), sum(c["open_interest"] for c in puts)
+    traded = [c for c in contracts if c["volume"] > 0 and c.get("iv")]
+    tot_v = sum(c["volume"] for c in traded)
+    vwiv = sum(c["iv"] * c["volume"] for c in traded) / tot_v if tot_v else None
+    net_delta = sum((c.get("delta") or 0) * c["volume"] * 100 for c in contracts)
+    return {"call_volume": cv, "put_volume": pv,
+            "put_call_volume_ratio": round(pv / cv, 3) if cv else None,
+            "call_oi": coi, "put_oi": poi,
+            "put_call_oi_ratio": round(poi / coi, 3) if coi else None,
+            "volume_weighted_iv": round(vwiv, 4) if vwiv else None,
+            "net_delta_exposure_shares": round(net_delta),
+            "contracts_total": len(contracts),
+            "contracts_traded": len([c for c in contracts if c["volume"] > 0])}
+
+
+def cboe_quote(ticker: str) -> dict:
+    """CBOE 个股快照（含现价，可与期权链配合定 ATM）"""
+    return official_get(f"{CBOE_BASE}/quotes/{assert_us_ticker(ticker)}.json",
+                        as_json=True)["data"]
+```
+
+**用法**
+```python
+chain = options_chain_cboe("NVDA")
+zero  = filter_expiry(chain, expiry="0DTE")      # 当日到期合约
+near  = filter_expiry(chain, dte_max=7)          # 7 日内到期
+flow  = unusual_activity(zero, min_volume=1000)  # 0DTE 异动
+summ  = chain_summary(zero)                      # P/C 比、加权 IV、净 delta
+```
+
+**实测样本（2026-07-24）**
+
+| 标的 | 全链 | 0DTE 合约 | P/C 量比 | 量加权 IV | 净 delta 敞口 |
+|---|---|---|---|---|---|
+| NVDA | 3,908 | 168 | 0.542 | 43.1% | +16,496,611 股 |
+| TSLA | 6,200 | 326 | 1.041 | 83.2% | −37,364,065 股 |
+
+> TSLA 当日 −14.52%，期权层三个指标（put 占优 / IV 83% / 净 delta 为负）独立指向同一方向，可交叉验证。
+
+⚠️ **限制**：CBOE 端点仅覆盖**美股**（港股期权需港交所专有接口）；数据为**延时**，
+不适用于实盘下单，适用于研究与流向分析。
+
+---
+
+### 6.2 期权链 — Yahoo Finance（后备 · 无希腊字母）
 
 ```python
 def options_chain(symbol: str, expiration: int = None) -> dict:
@@ -1397,6 +1809,282 @@ def market_stock_list(market: str = "us_nasdaq", sort_field: str = "f3",
 
 ---
 
+## Layer 9: 做空层 — FINRA Reg SHO（B 级 ⭐ V2.0 新增 · 仅美股）
+
+全市场**每日**空头成交量，A 股无对应品类。单个文件覆盖全市场（实测 12,112 只）。
+
+> ⚠️ **合规（B 级）**：Reg SHO 每日文件是 FINRA 主动发布供下载的监管披露文件，直接下载属常规用法；
+> 但其站点条款禁止批量爬取页面，且声明数据为 non-commercial use。**商用前请自行向 FINRA 确认。**
+
+```python
+from datetime import datetime, timedelta
+# 依赖「官方源统一出口」的 official_get
+
+
+def _recent_weekdays(days_back: int = 7) -> list[str]:
+    d, out = datetime.now(), []
+    while len(out) < days_back:
+        if d.weekday() < 5:
+            out.append(d.strftime("%Y%m%d"))
+        d -= timedelta(days=1)
+    return out
+
+
+def short_volume_all(date: str = None, market: str = "CNMS") -> dict:
+    """
+    FINRA 全市场每日空头成交量。
+    market: CNMS(合并全市场) / FNSQ(Nasdaq) / FNYX(NYSE) / FNRA(TRF)
+    date: YYYYMMDD；不传则自动回退找最近有数据的交易日
+    返回 {"date","market","count","data":{SYMBOL:{short,short_exempt,total,ratio}}}
+    """
+    for d in ([date] if date else _recent_weekdays(7)):
+        try:
+            raw = official_get(
+                f"https://cdn.finra.org/equity/regsho/daily/{market}shvol{d}.txt")
+        except DataNotAvailable:
+            continue   # 该日无文件（非交易日/尚未发布），回退下一日
+        # 其余异常（网络/限流/配置）直接抛出，不伪装成「没数据」
+        rows = {}
+        for line in raw.splitlines()[1:]:
+            p = line.split("|")
+            if len(p) < 5 or not p[1]:
+                continue
+            try:
+                sv, se, tv = float(p[2]), float(p[3]), float(p[4])
+            except ValueError:
+                continue
+            rows[p[1]] = {"short": sv, "short_exempt": se, "total": tv,
+                          "ratio": round(sv / tv, 4) if tv else None}
+        if rows:
+            return {"date": d, "market": market, "count": len(rows), "data": rows}
+    # 抛 DataNotAvailable 而非 RuntimeError：指定日期无数据时，
+    # 调用方（如 short_volume_symbol 的多日循环）要能捕获并跳过这一天
+    raise DataNotAvailable(f"未找到 {market} "
+                           f"{'该日' if date else '近 7 个工作日'}的 Reg SHO 数据")
+
+
+def short_volume_symbol(symbol: str, days: int = 5, market: str = "CNMS") -> list[dict]:
+    """单只股票近 N 个交易日的空头成交占比时间序列"""
+    out = []
+    for d in _recent_weekdays(days * 2):
+        if len(out) >= days:
+            break
+        try:
+            snap = short_volume_all(date=d, market=market)
+        except DataNotAvailable:
+            continue
+        rec = snap["data"].get(symbol.upper())
+        if rec:
+            out.append({"date": d, **rec})
+    return out
+
+
+def short_volume_ranking(snapshot: dict, min_total: float = 1_000_000,
+                         top: int = 20) -> list[dict]:
+    """空头占比排行（先按最小成交量过滤，避免小票噪音）"""
+    rows = [{"symbol": s, **v} for s, v in snapshot["data"].items()
+            if v["total"] >= min_total and v["ratio"] is not None]
+    return sorted(rows, key=lambda x: -x["ratio"])[:top]
+```
+
+**实测（2026-07-23，覆盖 12,112 只）**：NVDA 空头占比 37.5% / TSLA 48.3% / MU 49.6% / AAPL 50.7%；
+NVDA 近三日 37.5% → 43.0% → 33.5%。
+
+> ⚠️ **读法**：short volume ≠ short interest。前者是**当日卖出成交里被标记为空头的部分**
+> （含做市商对冲，天然偏高，40%~50% 常见），后者是**未平仓空头存量**（双月披露）。
+> 用它看**日度变化趋势**，不要用绝对值下结论。
+
+---
+
+## Layer 10: 申报事件流 — SEC EDGAR（S 级 ⭐ V2.0 新增 · 仅美股）
+
+> ✅ **合规（S 级）**：本工具唯一无争议的可商用源。官方明示允许脚本访问、数据免费。
+> **10 requests/second 是官方硬上限**，且必须声明 User-Agent（已由统一出口处理，记得改 `SEC_CONTACT`）。
+
+### 10.1 每日申报流（Form 4 内部人 / 8-K / 13F 机构持仓）
+
+```python
+_FORM_LABEL = {"4": "内部人交易", "8-K": "重大事件", "13F-HR": "机构持仓",
+               "144": "限售股拟出售", "10-K": "年报", "10-Q": "季报",
+               "SC 13D": "举牌(主动)", "SC 13G": "举牌(被动)", "S-1": "IPO注册"}
+
+
+def daily_filings(date: str = None, forms: list[str] = None) -> dict:
+    """
+    EDGAR 每日申报流。date=YYYYMMDD，不传自动回退找最近有数据的日子。
+    forms: 只保留这些表单类型，如 ["4","8-K","13F-HR"]；None=全部
+    返回 {"date","total","by_form":{...},"filings":[{form,form_label,company,cik,date,url}]}
+    """
+    for d in ([date] if date else _recent_weekdays(7)):
+        dt = datetime.strptime(d, "%Y%m%d")
+        url = (f"https://www.sec.gov/Archives/edgar/daily-index/"
+               f"{dt.year}/QTR{(dt.month - 1) // 3 + 1}/form.{d}.idx")
+        try:
+            raw = official_get(url)
+        except DataNotAvailable:
+            continue   # 该日无索引文件，回退下一日
+        # 配置错误（SEC_CONTACT 未改）与网络错误在此直接抛出——
+        # 否则会被 7 次循环吞掉，最终误报成「未找到 EDGAR 每日索引」
+        lines = raw.splitlines()
+        start = next((i + 1 for i, L in enumerate(lines) if L.startswith("---")), 11)
+        filings, by_form = [], {}
+        for L in lines[start:]:
+            if len(L) < 98:
+                continue
+            form, company = L[:12].strip(), L[12:74].strip()
+            cik, filed, path = L[74:86].strip(), L[86:98].strip(), L[98:].strip()
+            if not form:
+                continue
+            by_form[form] = by_form.get(form, 0) + 1
+            if forms and form not in forms:
+                continue
+            filings.append({"form": form, "form_label": _FORM_LABEL.get(form, ""),
+                            "company": company, "cik": cik, "date": filed,
+                            "url": f"https://www.sec.gov/Archives/{path}" if path else None})
+        if by_form:
+            return {"date": d, "total": sum(by_form.values()),
+                    "by_form": dict(sorted(by_form.items(), key=lambda x: -x[1])),
+                    "filings": filings}
+    raise DataNotAvailable("未找到近 7 个工作日的 EDGAR 每日索引")
+```
+
+**实测（2026-07-23，当日 3,703 份）**：424B2=627 / **Form 4 内部人=547** / **8-K=370** /
+**13F-HR=261** / D=204 / 144=118。
+
+### 10.2 全文检索（覆盖 2001 年至今所有申报正文）
+
+```python
+def fulltext_search(query: str, forms: str = None, date_from: str = None,
+                    date_to: str = None, limit: int = 20) -> dict:
+    """
+    query: 加引号为精确短语，如 '"HBM4"'
+    forms: "8-K" / "10-K" 等；date_from/to: YYYY-MM-DD
+    """
+    p = {"q": query, "from": 0, "size": limit}
+    if forms:
+        p["forms"] = forms
+    if date_from:
+        p["dateRange"], p["startdt"] = "custom", date_from
+    if date_to:
+        p["dateRange"], p["enddt"] = "custom", date_to
+    j = official_get("https://efts.sec.gov/LATEST/search-index", params=p, as_json=True)
+    hits = (j.get("hits") or {}).get("hits") or []
+    return {"total": ((j.get("hits") or {}).get("total") or {}).get("value", 0),
+            "results": [{"form": (h.get("_source") or {}).get("root_form"),
+                         "company": ((h.get("_source") or {}).get("display_names") or [None])[0],
+                         "filed": (h.get("_source") or {}).get("file_date"),
+                         "id": h.get("_id")} for h in hits]}
+```
+
+**实测**：`fulltext_search('"HBM4"', forms="8-K")` → 命中 5 条，含 MICRON (MU) 2026-06-24、
+AMD 2026-05-05。→ 可用于追踪某个技术名词/产品代号首次出现在哪家公司的正式申报里。
+
+---
+
+## Layer 11: 全市场横截面 — EDGAR frames（S 级 ⭐ V2.0 新增 · 免费 screener）
+
+一次请求拿到**所有申报公司**某个指标某期的值。实测「研发费用 CY2025Q1」覆盖 1,842 家、
+「净利润 CY2025Q1」覆盖 5,309 家。
+
+```python
+XBRL_TAGS = {
+    "营业收入": "Revenues",
+    "营业收入(合同)": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "净利润": "NetIncomeLoss",
+    "研发费用": "ResearchAndDevelopmentExpense",
+    "毛利": "GrossProfit",
+    "经营利润": "OperatingIncomeLoss",
+    "总资产": "Assets",
+    "股东权益": "StockholdersEquity",
+    "现金及等价物": "CashAndCashEquivalentsAtCarryingValue",
+    "经营现金流": "NetCashProvidedByUsedInOperatingActivities",
+    "资本开支": "PaymentsToAcquirePropertyPlantAndEquipment",
+    "长期负债": "LongTermDebtNoncurrent",
+    "稀释EPS": "EarningsPerShareDiluted",
+}
+
+
+def market_frame(tag: str, year: int, quarter: int = None, unit: str = "USD") -> dict:
+    """
+    全市场横截面。tag 可用 XBRL_TAGS 的中文键或原始 XBRL 标签。
+    quarter: 1-4 季度；None 为年度
+    """
+    tag = XBRL_TAGS.get(tag, tag)
+    period = f"CY{year}Q{quarter}" if quarter else f"CY{year}"
+    j = official_get(
+        f"https://data.sec.gov/api/xbrl/frames/us-gaap/{tag}/{unit}/{period}.json",
+        timeout=45, as_json=True)
+    rows = [{"cik": d.get("cik"), "entity": d.get("entityName"),
+             "value": d.get("val"), "end": d.get("end")} for d in j.get("data", [])]
+    return {"tag": tag, "period": period, "unit": unit, "count": len(rows), "data": rows}
+
+
+def frame_ranking(frame: dict, top: int = 20, ascending: bool = False) -> list[dict]:
+    return sorted(frame["data"], key=lambda x: x["value"], reverse=not ascending)[:top]
+
+
+def frame_screen(frame: dict, min_value: float = None,
+                 max_value: float = None) -> list[dict]:
+    """按数值区间筛选全市场公司"""
+    out = frame["data"]
+    if min_value is not None:
+        out = [r for r in out if r["value"] >= min_value]
+    if max_value is not None:
+        out = [r for r in out if r["value"] <= max_value]
+    return out
+```
+
+**实测**：研发费用 CY2025Q1 → Alphabet $13.56B / Meta $12.15B / Apple $8.55B /
+微软 $8.20B / NVDA $3.99B；研发 > $10 亿的共 17 家。
+
+> ⚠️ 不同公司使用的 XBRL 标签口径不完全一致（如营收有 `Revenues` 与
+> `RevenueFromContractWithCustomerExcludingAssessedTax` 两种），做横截面对比时需交叉两个标签取并集。
+
+---
+
+## Layer 12: 宏观 / 日历（S 级为主 ⭐ V2.0 新增）
+
+```python
+import csv, io
+
+
+def treasury_yield_curve(year: int = None) -> list[dict]:
+    """美国国债收益率曲线（每日，1M~30Y）。政府数据，S 级。返回 [0] 为最新一日"""
+    year = year or datetime.now().year
+    url = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/"
+           f"daily-treasury-rates.csv/{year}/all?type=daily_treasury_yield_curve"
+           f"&field_tdr_date_value={year}&page&_format=csv")
+    return list(csv.DictReader(io.StringIO(official_get(url))))
+
+
+def cftc_cot(limit: int = 20, market_contains: str = None) -> list[dict]:
+    """CFTC 持仓报告(COT)。政府数据，S 级"""
+    q = {"$limit": limit, "$order": "report_date_as_yyyy_mm_dd DESC"}
+    if market_contains:
+        q["$where"] = f"upper(contract_market_name) like upper('%{market_contains}%')"
+    return official_get("https://publicreporting.cftc.gov/resource/6dca-aqww.json",
+                        params=q, as_json=True)
+
+
+def earnings_calendar(date: str = None) -> dict:
+    """Nasdaq 财报日历。date=YYYY-MM-DD，不传取今天"""
+    date = date or datetime.now().strftime("%Y-%m-%d")
+    j = official_get("https://api.nasdaq.com/api/calendar/earnings",
+                     params={"date": date}, headers={"Accept": "application/json"},
+                     as_json=True)
+    rows = ((j.get("data") or {}).get("rows")) or []
+    return {"date": date, "count": len(rows),
+            "rows": [{"symbol": r.get("symbol"), "name": r.get("name"),
+                      "time": r.get("time"), "eps_forecast": r.get("epsForecast"),
+                      "market_cap": r.get("marketCap")} for r in rows]}
+```
+
+**实测（2026-07-23/24）**：收益率曲线 3M=3.95 / 2Y=4.37 / 10Y=4.71 / 30Y=5.17
+（10Y−2Y=+0.34，未倒挂）；CFTC COT 最新报告日 2026-07-14；今日财报日历 41 家
+（AXP 盘前 EPS 预期 $4.41、VZ、NEE、HCA…）。
+
+---
+
 ## 数据源优先级
 
 | 场景 | 第一优先 | 备选 | 说明 |
@@ -1412,7 +2100,13 @@ def market_stock_list(market: str = "us_nasdaq", sort_field: str = "f3",
 | 分析师预期 | Yahoo quoteSummary | — | EPS预测+评级+升降级 |
 | 机构持仓 | Yahoo quoteSummary | — | 前10大机构+内部人 |
 | 资金流 | 东财 push2his | — | 日级主力/大单/中单/小单 |
-| 期权链 | Yahoo options | — | 仅美股；港股期权需港交所专有接口 |
+| **期权链/希腊字母/IV/0DTE** | **CBOE 官方** ⭐ | Yahoo options | CBOE 含 delta/gamma/vega/theta/rho；Yahoo 无希腊字母。仅美股。⚠️C 级需授权 |
+| **异动 options flow** | **CBOE 官方** ⭐ | — | `unusual_activity()`：vol/OI>1 = 新建仓 |
+| **全市场每日空头量** | **FINRA Reg SHO** ⭐ | — | 单文件覆盖全市场，仅美股。B 级 |
+| **当日申报流(Form4/8-K/13F)** | **EDGAR 每日索引** ⭐ | — | 仅美股。**S 级可商用** |
+| **申报全文检索** | **EDGAR FTS** ⭐ | — | 2001 至今正文。**S 级可商用** |
+| **全市场基本面横截面** | **EDGAR frames** ⭐ | — | 免费 screener。**S 级可商用** |
+| **收益率曲线 / COT / 财报日历** | **Treasury / CFTC / Nasdaq** ⭐ | — | 宏观与事件驱动 |
 | SEC Filing | EDGAR | — | 官方数据，仅美股 |
 | XBRL财务 | EDGAR | — | 503个GAAP指标 |
 | 搜索 | 东财 search | Yahoo search | 东财有 secid 映射 |
@@ -1423,15 +2117,22 @@ def market_stock_list(market: str = "us_nasdaq", sort_field: str = "f3",
 
 ## 数据源汇总
 
-| 数据源 | 协议 | 鉴权 | 覆盖 |
-|--------|------|------|------|
-| 东财 push2 | HTTPS | 零 | 美股+港股 实时行情+全市场列表 |
-| 东财 push2his | HTTPS | 零 | 美股+港股 资金流（K线仅A股，不覆盖美股/港股） |
-| 东财 datacenter | HTTPS | 零 | 美股+港股 财报三表+GMAININDICATOR关键指标 |
-| 东财 search API | HTTPS | 零 | 全球股票搜索+secid映射 |
-| Yahoo Finance | HTTPS | cookie+crumb(自动) | 美股+港股 全品类 |
-| 新浪财经 | HTTP | 零 | 美股+港股 行情、美股K线 |
-| 腾讯财经 | HTTPS | 零 | 美股+港股 行情 |
-| SEC EDGAR | HTTPS | 零(需UA) | 美股 Filing+XBRL |
+| 数据源 | 合规级 | 协议 | 鉴权 | 覆盖 |
+|--------|------|------|------|------|
+| **SEC EDGAR** | **S** | HTTPS | 零(需真实UA) | 美股 Filing/XBRL/**每日申报流**/**全文检索**/**全市场横截面** |
+| **US Treasury** | **S** | HTTPS | 零 | **收益率曲线(1M~30Y)** |
+| **CFTC** | **S** | HTTPS | 零 | **COT 持仓报告** |
+| **FINRA** | **B** | HTTPS | 零 | 美股 **每日空头成交量(全市场)**（商用需自行确认） |
+| **CBOE** | **C** | HTTPS | 零 | 美股 **期权全链+希腊字母+IV+0DTE**（使用需 Cboe 事先授权） |
+| **Nasdaq** | **C** | HTTPS | 零 | 美股 **财报日历**（条款未核实） |
+| 东财 push2 | C | HTTPS | 零 | 美股+港股 实时行情+全市场列表 |
+| 东财 push2his | C | HTTPS | 零 | 美股+港股 资金流（K线仅A股，不覆盖美股/港股） |
+| 东财 datacenter | C | HTTPS | 零 | 美股+港股 财报三表+GMAININDICATOR关键指标 |
+| 东财 search API | C | HTTPS | 零 | 全球股票搜索+secid映射 |
+| Yahoo Finance | C | HTTPS | cookie+crumb(自动) | 美股+港股 全品类 |
+| 新浪财经 | C | HTTP | 零 | 美股+港股 行情、美股K线 |
+| 腾讯财经 | C | HTTPS | 零 | 美股+港股 行情 |
+
+**级别含义**：**S**＝美国政府数据，可商用可再分发｜**B**＝主动公开的数据文件，商用需自行确认｜**C**＝需事先授权或条款未核实，仅个人研究。各级依据的条款原文见顶部「数据源合规分级」。
 
 > 📦 https://github.com/simonlin1212/global-stock-data — Star ⭐ 是最好的支持

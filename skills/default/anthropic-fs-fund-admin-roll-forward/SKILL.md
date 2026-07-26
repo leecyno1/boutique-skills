@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-roll-forward
+name: roll-forward
 description: Build a roll-forward schedule for a balance-sheet account — beginning balance plus activity less reversals equals ending balance, with each component tied to GL. Use for month-end close packages and audit support.
 ---
 
@@ -31,7 +31,3 @@ The schedule **must foot**: `X + A + B − C − D + E + F = Y`. If it doesn't, 
 ## Output
 
 The roll-forward table with a "ties to" column citing the GL query or document for every line, plus a foot check (pass/fail and the unexplained delta if any).
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/roll-forward

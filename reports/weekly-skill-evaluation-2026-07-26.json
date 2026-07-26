@@ -1,0 +1,64 @@
+{
+  "date": "2026-07-26",
+  "pre_existing_changes_protected": [
+    "reports/finance-skill-eval/tushare-eval/standard-finance-skills-recommendation.json",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.html",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.json",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.md"
+  ],
+  "baseline": {
+    "skills": 344,
+    "stars": {"5": 69, "4": 116, "3": 151, "2": 2, "1": 6},
+    "native_origins_verified_or_referenced": 338,
+    "missing_native_origins": 0,
+    "standard_bundle_skills": 34,
+    "standard_bundle_packs": 2,
+    "finance_suite_skills": 159
+  },
+  "post_sync": {
+    "skills": 344,
+    "stars": {"5": 68, "4": 119, "3": 149, "2": 2, "1": 6},
+    "complete_skill_md_and_description": 344,
+    "github_license_detected": 297,
+    "github_active_within_90_days": 281,
+    "access_modes": {"direct": 142, "api_key": 99, "mcp": 71, "api_key_and_mcp": 22, "browser": 10},
+    "risk_levels": {"low": 117, "medium": 223, "high": 4}
+  },
+  "upstream": {
+    "checked": 323,
+    "updated": 169,
+    "current": 110,
+    "metadata_only": 33,
+    "source_path_missing": 11
+  },
+  "candidates": {
+    "added": [],
+    "replaced": [],
+    "watchlist": [
+      "openclaw/agent-skills",
+      "FTShare-Lab/FTShare-skills",
+      "lungray/investment-workflow-skill",
+      "SentiSenseApp/skills"
+    ],
+    "rejected_bulk": ["agentskillexchange/skills", "JerryGou96/Finance-Skill"]
+  },
+  "bundles": {
+    "standard_membership_changed": false,
+    "finance_membership_changed": false,
+    "standard_skill_count": 34,
+    "finance_skill_count": 159
+  },
+  "validation": {
+    "catalog_generation": "pass",
+    "audit_status": "WARN",
+    "missing_skills": 0,
+    "missing_native_origins": 0,
+    "duplicate_capabilities": 0,
+    "standard_bundle_issues": 0,
+    "missing_environment_variables": 76,
+    "risk_pattern_hits": 11,
+    "unit_tests": {"passed": 7, "failed": 0},
+    "full_pytest": "collection_blocked_by_alphaear_news_skill_local_import",
+    "python_compile": "pass"
+  }
+}

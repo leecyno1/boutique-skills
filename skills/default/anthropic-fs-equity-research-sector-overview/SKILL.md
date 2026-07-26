@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-sector-overview
+name: sector-overview
 description: Create comprehensive industry and sector landscape reports covering market dynamics, competitive positioning, key players, and thematic trends. Use for client requests, sector initiations, thematic research pieces, or internal knowledge building. Triggers on "sector overview", "industry report", "market landscape", "sector analysis", "industry deep dive", or "thematic research".
 ---
 
@@ -86,7 +86,3 @@ For each company, brief profile:
 - Sector overviews age fast — note the date and flag data that may be stale
 - Charts are essential — market size waterfall, competitive positioning matrix, valuation scatter plot
 - If for a client, tailor the "so what" to their specific situation (M&A target identification, competitive positioning, market entry)
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-bond-futures-basis
+name: bond-futures-basis
 description: Analyze the bond futures basis by pricing futures, identifying the cheapest-to-deliver, and comparing with yield curves to assess delivery option value and basis trading opportunities. Use when analyzing bond futures, computing the basis, identifying CTD bonds, calculating implied repo rates, or evaluating basis trades.
 ---
 
@@ -64,7 +64,3 @@ The basis sits at the intersection of cash bond pricing, repo markets, and deliv
 | Implied Repo | ... | ... | ... | ...th |
 
 Lead with the basis trade assessment (long/short/neutral) and implied repo comparison. Follow with detailed analytics tables.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-futures-basis

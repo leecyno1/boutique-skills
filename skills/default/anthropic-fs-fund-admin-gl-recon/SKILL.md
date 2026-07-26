@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-gl-recon
+name: gl-recon
 description: Reconcile general ledger to subledger for a trade date or period — match at the position or transaction level, surface breaks, and classify each break by likely cause. Use for daily or month-end recon runs across asset classes.
 ---
 
@@ -51,7 +51,3 @@ Produce two artifacts:
 2. **Summary** — counts and totals by bucket and by likely cause, plus the matched percentage.
 
 Hand the break report to `break-trace` to root-cause the material ones; hand the summary to the resolver to format the sign-off package.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/gl-recon

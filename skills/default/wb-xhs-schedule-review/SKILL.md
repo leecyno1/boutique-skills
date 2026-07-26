@@ -6,6 +6,10 @@ description: |
 
 # 小红书排期与周复盘闭环
 
+## Runtime bootstrap and update gate
+
+Before using any external program, browser automation, package, API client, or local script, apply [`../RUNTIME_UPDATE_POLICY.md`](../RUNTIME_UPDATE_POLICY.md). Check the current version, automatically install or update a missing or outdated dependency to the latest stable supported version, run its diagnostic, and only then continue. Text-only work needs no installation. Never use `sudo` or claim success without verification.
+
 ## R — 原文
 
 > "排期 + 复盘，让它帮你记。"
@@ -102,6 +106,14 @@ xhs-visual-director-skill 补充了图文生产节奏：排期不只安排发什
 9. **生成周度运营报告**
    - 汇总本周有效假设、失效假设、最强标题触发器、最强内容机制、最值得继续测试的 3 个方向。
    - 完成标准: 报告能直接更新账号档案、选题库和下周排期。
+
+## 视觉交接边界
+
+排期只在确认后交给视觉流程“生产日期、审核日期、已确认的发布形态和复盘约束”；如无此类信息，传递 `constraints: []`。不改派到变现定位，不输出 `execution_mode`、已选视觉专家、输出路径、持久化状态或未知字段。视觉路由器拥有这些运行时决策。
+
+## 纯排期请求的所有权
+
+用户只要求 7 天、30 天或首 10 条排期时，select `wb-xhs-schedule-review` alone。可在排期中使用 `[主题]`、`[人群]` 等占位符和一个最小确认问题；不要为了补全占位符而同时调用选题库，也不改派到定位。
 
 ## B — 边界
 

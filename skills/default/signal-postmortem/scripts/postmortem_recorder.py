@@ -38,7 +38,7 @@ def fetch_price_data(ticker: str, start_date: str, end_date: str, api_key: str) 
         return {}
 
     endpoints = [
-        ("https://financialmodelingprep.com/stable/historical-price-full", True),
+        ("https://financialmodelingprep.com/stable/historical-price-eod/full", True),
         ("https://financialmodelingprep.com/api/v3/historical-price-full", False),
     ]
     for base_url, is_stable in endpoints:
@@ -364,7 +364,7 @@ def main():
 
         # Save postmortem
         output_file = postmortems_dir / f"{postmortem['postmortem_id']}.json"
-        with open(output_file, "w") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(postmortem, f, indent=2)
 
         print(f"Saved postmortem: {output_file}")
@@ -402,7 +402,7 @@ def main():
 
             # Save individual postmortem
             output_file = postmortems_dir / f"{postmortem['postmortem_id']}.json"
-            with open(output_file, "w") as f:
+            with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(postmortem, f, indent=2)
 
     # Save batch summary
@@ -417,7 +417,7 @@ def main():
         "postmortems": results,
     }
 
-    with open(summary_file, "w") as f:
+    with open(summary_file, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
 
     # Print summary

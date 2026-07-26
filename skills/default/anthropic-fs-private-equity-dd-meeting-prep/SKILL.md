@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-dd-meeting-prep
+name: dd-meeting-prep
 description: Prepare for due diligence meetings — management presentations, expert network calls, customer references, and advisor sessions. Generates targeted question lists, benchmarks to reference, and red flags to probe. Use before any diligence meeting or call. Triggers on "prep for management meeting", "diligence call prep", "expert call questions", "customer reference questions", or "meeting prep for [company]".
 ---
 
@@ -101,7 +101,3 @@ One-page meeting prep doc:
 - Take notes on body language and confidence levels, not just answers
 - Always end with: "What haven't we asked about that we should?"
 - Keep the question list to 15-20 max — you won't get through more in a 60-90 min session
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/dd-meeting-prep

@@ -15,8 +15,6 @@
 
 Optional rewrite tools may emit `rewrite_manifest.json`, but it is not a required gate in the canonical mainline.
 
-Optional asset generators may emit `paradigm_manifest.json` or `training_manifest.json`, but neither is a required gate in the canonical mainline.
-
 ## Brief Contract
 
 - Generation mode: `ai_only`
@@ -33,7 +31,6 @@ Optional asset generators may emit `paradigm_manifest.json` or `training_manifes
 
 - Formal upstream input: `draft_manifest.json`
 - Required gates: `final_structure_snapshot.json` + `transwrite_decision.json`
-- Optional upstream assets: `paradigm_profile.yaml`, `video-style-training/style_profile.json`
 - Lanes:
   - `wechat_article`
   - `talking_head_video`

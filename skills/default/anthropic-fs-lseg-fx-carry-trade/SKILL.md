@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-fx-carry-trade
+name: fx-carry-trade
 description: Evaluate FX carry trade opportunities by combining spot rates, forward points, interest rate differentials, volatility surface analysis, and historical price trends. Use when analyzing carry trades, comparing FX forward curves, assessing carry-to-vol ratios, or evaluating currency pair opportunities.
 ---
 
@@ -49,7 +49,3 @@ A carry trade earns the interest rate differential but bears FX spot risk. The c
 
 ### Carry Trade Recommendation
 For each recommended trade: pair and direction, tenor, annualized carry, carry-to-vol ratio, skew signal (bullish/neutral/bearish), key risks, and conviction (high/medium/low).
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/fx-carry-trade

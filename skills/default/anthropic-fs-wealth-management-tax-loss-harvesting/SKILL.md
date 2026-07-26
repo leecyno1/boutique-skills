@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-tax-loss-harvesting
+name: tax-loss-harvesting
 description: Identify tax-loss harvesting opportunities across taxable accounts. Finds positions with unrealized losses, suggests replacement securities, and tracks wash sale windows. Triggers on "tax-loss harvesting", "TLH", "harvest losses", "tax losses", "unrealized losses", or "year-end tax planning".
 ---
 
@@ -105,7 +105,3 @@ After 30+ days, optionally:
 - Mutual fund capital gains distributions in December can create additional harvesting urgency
 - Document everything for tax reporting and compliance
 - Not all losses are worth harvesting — transaction costs and tracking error have real costs
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting

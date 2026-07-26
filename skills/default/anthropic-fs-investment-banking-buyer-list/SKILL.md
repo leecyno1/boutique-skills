@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-buyer-list
+name: buyer-list
 description: Build and organize a universe of potential acquirers for sell-side M&A processes. Identifies strategic and financial buyers, assesses fit, and prioritizes outreach. Use when preparing for a sell-side mandate, building a buyer universe, or evaluating potential partners. Triggers on "buyer list", "buyer universe", "potential acquirers", "who would buy this", "strategic buyers", or "financial sponsors".
 ---
 
@@ -96,7 +96,3 @@ For each Tier 1 buyer:
 - Financial sponsors: check fund vintage and deployment pace — a fund nearing end of investment period may be more motivated
 - Always ask the seller if there are buyers they want included or excluded
 - Update the list as the process progresses — move buyers between tiers based on feedback
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/buyer-list

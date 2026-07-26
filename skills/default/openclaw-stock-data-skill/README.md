@@ -15,29 +15,33 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
 
 ## 📋 数据分类概览
 
-2. **股票实时数据**
-   - 实时行情快照（价格、五档盘口等）、集合竞价、推送历史、停牌信息等
+2. **股票实时数据**  
+   - 实时行情快照（价格、五档盘口等）、集合竞价、推送历史、停牌信息等  
    - 典型函数：`get_stock_snapshot_daily`（实时快照）、`get_call_auction`、`get_basic_snapshot`（集合竞价快照）、`get_stock_snapshot_push_history` 等
 
-3. **股票历史数据**
-   - 日 K 线（前复权/不复权）、分钟级历史、日度财务因子、主力资金流向、复权因子、历史快照等
-  - 典型函数：`get_daily_data`、`get_history_data`、`get_finance_data`、`get_financial_indicator`、`get_main_fund_flow`、`get_main_fund_flow_overview`、`get_cyq_chips`、`get_daily_adj_data`、`get_adj_factor` 等
+3. **股票历史数据**  
+   - 日 K 线（前复权/不复权）、分钟级历史、日度财务因子、主力资金流向、复权因子、历史快照等  
+  - 技术指标：MACD、MAVOL、KDJ、RSI、BOLL、MA，支持日线/分钟线和股票前复权
+  - 典型函数：`get_daily_data`、`get_history_data`、`get_stock_indicator`、`get_stock_mavol`、`get_finance_data`、`get_financial_indicator`、`get_main_fund_flow`、`get_main_fund_flow_overview`、`get_cyq_chips`、`get_daily_adj_data`、`get_adj_factor` 等
 
-3. **可转债历史和实时数据**
-   - 可转债日线、分钟级行情、日度指标（纯债价值、转股溢价等）、收盘快照、基础列表等
-   - 典型函数：`get_bond_daily`、`get_bond_history`、`get_bond_indicator_daily`、`get_bond_closing_snapshot`、`get_bond_list` 等
+3. **可转债历史和实时数据**  
+   - 可转债日线、分钟级行情、日度指标（纯债价值、转股溢价等）、收盘快照、基础列表等  
+   - 技术指标：MACD、MAVOL、KDJ、RSI、BOLL、MA
+   - 典型函数：`get_bond_daily`、`get_bond_history`、`get_bond_technical_indicator`、`get_bond_indicator_daily`、`get_bond_closing_snapshot`、`get_bond_list` 等
 
 4. **ETF 数据**
    - ETF 列表数据
    - ETF 日线与分钟级历史行情
-   - 典型函数：`get_etf_list`、`get_etf_daily`、`get_etf_history`
+   - 技术指标：MACD、MAVOL、KDJ、RSI、BOLL、MA
+   - 典型函数：`get_etf_list`、`get_etf_daily`、`get_etf_history`、`get_etf_indicator`
 
-5. **指数历史数据**
-   - 指数分钟级历史行情（支持多种时间粒度）、同花顺指数日线数据等
-   - 典型函数：`get_index_history`、`get_index_realtime_history`、`get_ths_daily`、`get_ths_sector_categories`、`get_ths_constituent_stocks`、`get_dc_blocks`、`get_dc_block_stocks`、`get_dc_daily`
+5. **指数历史数据**  
+   - 指数分钟级历史行情（支持多种时间粒度）、同花顺指数日线数据等  
+   - 技术指标：MACD、KDJ、RSI、BOLL、MA，不提供 MAVOL
+   - 典型函数：`get_index_history`、`get_index_realtime_history`、`get_index_indicator`、`get_index_macd`、`get_index_kdj`、`get_index_rsi`、`get_index_boll`、`get_index_ma`、`get_ths_daily`、`get_ths_sector_categories`、`get_ths_constituent_stocks`、`get_dc_blocks`、`get_dc_block_stocks`、`get_dc_daily`
 
-6. **龙虎榜数据**
-   - 龙虎榜机构明细与每日明细数据
+6. **龙虎榜数据**  
+   - 龙虎榜机构明细与每日明细数据  
    - 典型函数：`get_dragon_tiger`, `get_top_list`
 
 7. **WebSocket 实时快照**
@@ -58,9 +62,9 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
 4. **Header 认证：** `apiKey` 必须放到请求的 header 里面进行验证，格式如下：
 
 ```python
-headers = {
-     "apiKey": "YOUR_API_KEY",
-     "Content-Type": "application/json"
+headers = { 
+     "apiKey": "YOUR_API_KEY", 
+     "Content-Type": "application/json" 
 }
 ```
 

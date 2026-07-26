@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-ic-memo
+name: ic-memo
 description: Draft a structured investment committee memo for PE deal approval. Synthesizes due diligence findings, financial analysis, and deal terms into a professional IC-ready document. Use when preparing for investment committee, writing up a deal, or creating a formal recommendation. Triggers on "write IC memo", "investment committee memo", "deal write-up", "prepare IC materials", or "recommendation memo".
 ---
 
@@ -86,7 +86,3 @@ Standard IC memo format:
 - Use the firm's standard memo template if the user provides one
 - Financial tables should tie — check that EBITDA bridges, S&U balances, and returns math is consistent
 - Ask for missing inputs rather than making assumptions on deal terms or returns
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/ic-memo

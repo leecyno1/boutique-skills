@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-private-equity-dd-checklist
+name: dd-checklist
 description: Generate and track comprehensive due diligence checklists tailored to the target company's sector, deal type, and complexity. Covers all major workstreams with request lists, status tracking, and red flag escalation. Use when kicking off diligence, organizing a data room review, or tracking outstanding items. Triggers on "dd checklist", "due diligence tracker", "diligence request list", "what do we still need", or "data room review".
 ---
 
@@ -115,7 +115,3 @@ Automatically add relevant items based on sector:
 - Flag items where the seller is slow to respond — may indicate issues
 - Cross-reference data room contents against the checklist to identify gaps
 - Update the checklist as diligence progresses — it's a living document
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/dd-checklist

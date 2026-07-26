@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-equity-research
+name: equity-research
 description: Generate comprehensive equity research snapshots combining analyst consensus estimates, company fundamentals, historical prices, and macroeconomic context. Use when researching stocks, comparing estimates to actuals, analyzing company financials, assessing equity valuations, or building investment cases.
 ---
 
@@ -55,7 +55,3 @@ Every piece of data must connect to an investment thesis. Pull consensus estimat
 
 ### Investment Thesis
 Conclude with: recommendation (buy/hold/sell), fair value range, key bull case (1-2 sentences), key bear case (1-2 sentences), upcoming catalysts, and conviction level (high/medium/low).
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/equity-research

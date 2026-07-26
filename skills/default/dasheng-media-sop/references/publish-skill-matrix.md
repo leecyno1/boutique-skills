@@ -1,10 +1,10 @@
 # Publish 技能矩阵
 
-更新时间：`2026-07-12`
+更新时间：`2026-06-14`
 
 ## 当前原则
 
-Publish 不生产正文、图表、封面、视频或播客。它只读取 `transwrite_manifest.json` 中已完成或可打包的 lane，生成平台发布包、账号运营审查请求、执行器请求、人工包和发后验真记录。
+Publish 不生产正文、图表、封面、视频或播客。它只读取 `transwrite_manifest.json` 中已完成或可打包的 lane，生成平台发布包、执行器请求、人工包和发后验真记录。
 
 ## 平台矩阵
 
@@ -43,7 +43,6 @@ Publish 不生产正文、图表、封面、视频或播客。它只读取 `tran
 | `publish-guard` | `boutique-openclaw-skills` | 发后验真、凭据和审计参考 |
 | `social-auto-upload-bridge` | 本仓库 | 外部 `social-auto-upload` 多视频平台桥 |
 | `bilibili-upload-bridge` | 本仓库 | B站投稿桥，优先 `biliup-rs`，fallback `social-auto-upload` |
-| `dasheng-publish-operations-bridge` | 本仓库 + external `agent-skills-launch-pack` | 公众号/小红书/抖音/X 起号、矩阵角色、发布包装和复盘指标审查；不执行发布 |
 
 ## 外部候选
 
@@ -61,7 +60,6 @@ Publish 不生产正文、图表、封面、视频或播客。它只读取 `tran
 | `Postiz` | `https://github.com/gitroomhq/postiz-app` | 海外社媒排程，X/TikTok/YouTube/LinkedIn 等 | 海外平台排程候选 |
 | `xurl` | `https://github.com/xdevplatform/xurl` | X 官方 API CLI、媒体上传 | X API fallback |
 | `x-cli` | `https://github.com/Infatoshi/x-cli` | X/Twitter API v2 CLI | X API fallback |
-| `agent-skills-launch-pack` | `https://github.com/chenjin-cmd/agent-skills-launch-pack_` | 公众号、小红书、抖音、视频号和 X 的起号/运营策略 | 外部 advisory 上游，不当作发布执行器，不 vendoring |
 
 ## 执行模式
 
@@ -72,7 +70,6 @@ Publish 不生产正文、图表、封面、视频或播客。它只读取 `tran
 | `approval_required` | Request -> Approve -> Execute | 微博短帖 |
 | `manual_package` | 只导出人工发布包 | B站/视频号未配置执行器时 |
 | `fallback_export` | 自动失败后导出 outbox | 抖音、B站、小红书 |
-| `account_operations_advisory` | Agent/Skill 生成定位、钩子、关键词、合集、节奏和复盘建议 | 公众号、小红书、抖音、X |
 
 ## 强约束
 
@@ -83,8 +80,6 @@ Publish 不生产正文、图表、封面、视频或播客。它只读取 `tran
 5. B站在 `bilibili-upload-bridge` 未完成真实提交和验真前不得标记自动发布完成。
 6. `social-auto-upload` 作为外部依赖调用，不把运行产物写入 skill 目录。
 7. 没有 `Publish Guard` 或平台回执验真，不得回报“已发布”。
-8. `agent-skills-launch-pack` 不具备登录、上传、定时或发布能力，不得出现在执行器路由中。
-9. 冷启动、低流量、沉寂、风险审查和矩阵实验账号的受控执行，需要有效的 `account_operations_advice.json`。
 
 ## 后续开发
 

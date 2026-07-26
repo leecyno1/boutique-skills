@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-thesis-tracker
+name: thesis-tracker
 description: Maintain and update investment theses for portfolio positions and watchlist names. Track key data points, catalysts, and thesis milestones over time. Use when updating a thesis with new information, reviewing position rationale, or checking if a thesis is still intact. Triggers on "update thesis for [company]", "is my thesis still intact", "thesis check", "add data point to [company]", or "review my positions".
 ---
 
@@ -65,7 +65,3 @@ Format: Concise markdown or Word doc with the scorecard, recent updates, and cur
 - Review theses at least quarterly, even when nothing dramatic has happened
 - If the user manages multiple positions, offer to do a full portfolio thesis review
 - Store thesis data in a structured format so it can be referenced across sessions
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/thesis-tracker

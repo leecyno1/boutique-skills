@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-macro-rates-monitor
+name: macro-rates-monitor
 description: Build macroeconomic and rates dashboards combining macro indicators, yield curves, inflation breakevens, and swap rates. Use when monitoring macro conditions, analyzing yield curve shape, decomposing real vs nominal rates, assessing policy rate expectations, or evaluating financial conditions.
 ---
 
@@ -64,7 +64,3 @@ Present yields at key tenors (3M, 2Y, 5Y, 10Y, 30Y). Highlight 2s10s and 3M-10Y 
 
 ### Overall Assessment
 2-3 sentences on the macro-rates regime: cycle position, policy outlook, financial conditions, and key risks.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/macro-rates-monitor

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-client-report
+name: client-report
 description: Generate professional client-facing performance reports with portfolio returns, allocation breakdowns, and market commentary. Suitable for quarterly or annual distribution. Triggers on "client report", "performance report", "quarterly report for [client]", "generate reports", or "client statement".
 ---
 
@@ -97,7 +97,3 @@ Brief market summary tailored to the client's level of sophistication:
 - Match the level of detail to the client — some want every holding, others want a one-page summary
 - Benchmark selection matters — use the benchmark from the IPS, not whatever looks best
 - Review for compliance approval before first distribution of a new template
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-report

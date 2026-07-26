@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-wealth-management-client-review
+name: client-review
 description: Prepare for client review meetings with portfolio performance summary, allocation analysis, talking points, and action items. Pulls together account data into a concise meeting-ready format. Use before quarterly reviews, annual checkups, or ad-hoc client meetings. Triggers on "client review", "meeting prep for [client]", "quarterly review", "prep for [client name]", or "client meeting".
 ---
 
@@ -88,7 +88,3 @@ Based on the review, suggest:
 - Always end with clear action items and next steps with dates
 - Document the meeting notes and any changes to the IPS
 - Compliance: ensure all materials are compliant with firm policies and regulatory requirements
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-review

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-lseg-bond-relative-value
+name: bond-relative-value
 description: Perform relative value analysis on bonds by combining pricing, yield curve context, credit spreads, and scenario stress testing. Use when analyzing bond richness/cheapness, computing spread decomposition, comparing bonds, assessing bond value vs curves, or running rate shock scenarios.
 ---
 
@@ -49,7 +49,3 @@ Relative value is about whether a bond's spread adequately compensates for its r
 
 ### Rich/Cheap Summary
 State the primary spread metric, its historical context (percentile, comparison to averages), the residual spread signal, and a clear recommendation: rich (avoid/underweight), cheap (buy/overweight), or fair (neutral). Quantify how many bp of spread move would change the recommendation.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-relative-value

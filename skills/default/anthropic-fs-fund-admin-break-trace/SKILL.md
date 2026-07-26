@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-break-trace
+name: break-trace
 description: Root-cause a reconciliation break to its source transaction or posting — follow the audit trail from the break row back to the originating entry on each side and state what differs and why. Use after gl-recon has classified a break.
 ---
 
@@ -37,7 +37,3 @@ For each traced break, return:
 ```
 
 Only the resolver writes adjustments — this skill diagnoses, it does not post.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/break-trace

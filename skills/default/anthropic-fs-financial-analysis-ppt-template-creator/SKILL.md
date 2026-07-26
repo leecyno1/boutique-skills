@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-financial-analysis-ppt-template-creator
+name: ppt-template-creator
 description: Creates self-contained PPT template SKILLS (not presentations) from user-provided PowerPoint templates. Use ONLY when a user wants to create a reusable skill from their template. For creating actual presentations, use the pptx skill instead.
 ---
 
@@ -252,7 +252,3 @@ Generate a sample presentation to validate the skill works. Save it alongside th
 3. **No manual bullets** - use `paragraph.level` for hierarchy
 4. **Delete slides first** - always clear existing slides before adding new ones
 5. **Document placeholders by idx** - placeholder idx values are template-specific
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ppt-template-creator

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-pitch-deck
+name: pitch-deck
 description: "Populates investment banking pitch deck templates with data from source files. Use when: user provides a PowerPoint template to fill in, user has source data (Excel/CSV) to populate into slides, user mentions populating or filling a pitch deck template, or user needs to transfer data into existing slide layouts. Not for creating presentations from scratch."
 ---
 
@@ -406,7 +406,3 @@ Before delivering the populated template, verify:
 
 ### Final Step
 - [ ] Recommend user validate in Microsoft PowerPoint before distribution (LibreOffice may render differently)
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/pitch-deck

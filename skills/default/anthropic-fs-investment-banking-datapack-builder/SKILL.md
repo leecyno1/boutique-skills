@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-datapack-builder
+name: datapack-builder
 description: Build professional financial services data packs from various sources including CIMs, offering memorandums, SEC filings, web search, or MCP servers. Extract, normalize, and standardize financial data into investment committee-ready Excel workbooks with consistent structure, proper formatting, and documented assumptions. Use for M&A due diligence, private equity analysis, investment committee materials, and standardizing financial reporting across portfolio companies. Do not use for simple financial calculations or working with already-completed data packs.
 ---
 
@@ -654,7 +654,3 @@ Complete this checklist before delivering the data pack:
 **Final Output:**
 - File saved to outputs with proper naming convention
 - All quality control checks passed
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/datapack-builder

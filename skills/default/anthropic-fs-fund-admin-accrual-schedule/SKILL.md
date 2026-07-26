@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-accrual-schedule
+name: accrual-schedule
 description: Build the period-end accrual schedule — for each accrual, compute the entry, cite the support, and draft the JE. Use during month-end close; the JE is a draft for controller approval, not a posting.
 ---
 
@@ -35,7 +35,3 @@ Reversing entries: if the policy marks the accrual as auto-reversing, note "reve
 ## Output
 
 One table (the schedule) plus a JE draft block. **Do not post** — this is staged for controller sign-off.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/accrual-schedule

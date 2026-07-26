@@ -4,8 +4,7 @@
 
 - 引擎：`/Volumes/PSSD/Projects/公众号文章/引擎`
 - Skills：`/Volumes/PSSD/Projects/公众号文章/skills`
-- 产物：`~/Desktop/自媒体创作`（可通过 `DASHENG_OUTPUT_ROOT` 覆盖）
-- 项目根目录：只放代码、配置、SOP、skill，不放文章、图片、音频、视频、字幕、审核页或训练缓存
+- 产物：`/Volumes/PSSD/Projects/公众号文章/产物`
 
 ## 控制中心
 
@@ -16,7 +15,6 @@
 
 | 阶段 | 交给下游的最小集合 |
 | --- | --- |
-| Video Style Training（可选） | `style_profile.json`、`training_manifest.json`，供视频通路引用 |
 | Intake | 原始链接清单、来源摘要、采集结论 |
 | Brief | 独立题卡、核心判断、证据缺口、研究入口、来源包 |
 | Draft | 分题标准初稿、证据清单、待补证据项、最终结构确认 |
@@ -60,20 +58,6 @@
 - `wechat_article_manifest.json`
 - `talking_head_video_manifest.json`
 - `podcast_manifest.json`
-- 可选：引用 `~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json`
-
-## Video Style Training 最小交付集合
-
-- `training_manifest.json`
-- `per_video/*/analysis.json`
-- `style_profile.json`
-- `style_profile.md`
-
-说明：
-
-- 默认目录：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`
-- 样板视频源文件只记录路径，不复制进项目仓库。
-- 超大视频的压缩上传副本只能写入 `<style_id>/_upload_cache/`。
 
 ## Publish 最小交付集合
 

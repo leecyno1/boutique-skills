@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-financial-analysis-audit-xls
+name: audit-xls
 description: Audit a spreadsheet for formula accuracy, errors, and common mistakes. Scopes to a selected range, a single sheet, or the entire model (including financial-model integrity checks like BS balance, cash tie-out, and logic sanity). Triggers on "audit this sheet", "check my formulas", "find formula errors", "QA this spreadsheet", "sanity check this", "debug model", "model check", "model won't balance", "something's off in my model", "model review".
 ---
 
@@ -154,7 +154,3 @@ For **model** scope, prepend a summary line:
 - **Hardcoded overrides are the #1 source of silent bugs** — search aggressively
 - **Sign convention errors** (positive vs negative for cash outflows) are extremely common
 - If the model uses VBA macros, note any macro-driven calculations that can't be audited from formulas alone
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/audit-xls

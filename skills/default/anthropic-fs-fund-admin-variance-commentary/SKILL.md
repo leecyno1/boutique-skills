@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-fund-admin-variance-commentary
+name: variance-commentary
 description: Write flux commentary for every P&L and balance-sheet line over threshold — current vs prior period and vs budget, with the driver explained from underlying activity. Use for the month-end close package and management reporting.
 ---
 
@@ -32,7 +32,3 @@ Look at the activity behind the line (journal-source breakdown, vendor mix, head
 ## Output
 
 The commentary table plus a short narrative (3–5 sentences) summarizing the period's biggest movers.
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/variance-commentary

@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-earnings-analysis
+name: earnings-analysis
 description: Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests "earnings update", "quarterly update", "earnings analysis", "Q1/Q2/Q3/Q4 results", or post-earnings report.
 ---
 
@@ -226,7 +226,3 @@ Examples of good/bad headlines, tips for success, common mistakes to avoid, and 
 
 **Optional:**
 - XLS skill for model updates (not required for earnings updates)
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/earnings-analysis

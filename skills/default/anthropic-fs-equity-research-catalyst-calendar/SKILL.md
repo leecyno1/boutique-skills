@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-equity-research-catalyst-calendar
+name: catalyst-calendar
 description: Build and maintain a calendar of upcoming catalysts across a coverage universe — earnings dates, conferences, product launches, regulatory decisions, and macro events. Helps prioritize attention and position ahead of events. Triggers on "catalyst calendar", "upcoming events", "what's coming up", "earnings calendar", "event calendar", or "catalyst tracker".
 ---
 
@@ -82,7 +82,3 @@ Each week, generate a forward-looking summary:
 - Some catalysts are recurring (monthly industry data) — build a template and auto-populate
 - Color-code by impact level: Red = high impact, Yellow = moderate, Green = routine
 - Archive past catalysts with the actual outcome — builds pattern recognition over time
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/catalyst-calendar

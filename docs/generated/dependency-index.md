@@ -2,11 +2,11 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 100 |
+| `api-key` | 99 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 10 |
-| `direct` | 140 |
-| `mcp-required` | 72 |
+| `direct` | 142 |
+| `mcp-required` | 71 |
 
 ## api-key
 
@@ -22,7 +22,7 @@
 | `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `baoyu-youtube-transcript` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg`, `python` | `medium` |
 | `dual-axis-skill-reviewer` | `OPENAI_API_KEY` | 无 | `medium` |
-| `guizang-social-card-skill` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
+| `guizang-social-card-skill` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg` | `medium` |
 | `ima` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `lark-calendar` | `FEISHU_APP_SECRET` | 无 | `medium` |
 | `openclaw-stock-data-skill` | `STOCK_API_KEY` | `python` | `medium` |
@@ -96,7 +96,6 @@
 | `vcp-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `agentmail` | `AGENTMAIL_API_KEY` | `browser` | `medium` |
 | `ai-image-generation` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY` | 无 | `medium` |
-| `frontend-dev` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg`, `node` | `medium` |
 | `fullstack-dev` | `JWT_SECRET` | `browser`, `node`, `python` | `medium` |
 | `media-downloader` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `PEXELS_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-docx` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
@@ -176,7 +175,6 @@
 | `animation-vocabulary` | 无 | 无 | `low` |
 | `apple-design` | 无 | 无 | `low` |
 | `backtest-expert` | 无 | 无 | `low` |
-| `baoyu-translate` | 无 | 无 | `low` |
 | `brandkit` | 无 | 无 | `low` |
 | `dasheng-hotspot-radar` | 无 | `python` | `low` |
 | `data-analyst` | 无 | `python` | `low` |
@@ -232,6 +230,7 @@
 | `baoyu-format-markdown` | 无 | 无 | `low` |
 | `baoyu-infographic` | 无 | 无 | `low` |
 | `baoyu-skills` | 无 | 无 | `low` |
+| `baoyu-translate` | 无 | 无 | `low` |
 | `bilibili-upload-bridge` | 无 | `ffmpeg`, `node` | `low` |
 | `capability-evolver` | 无 | 无 | `low` |
 | `channels-account-launch-expert` | 无 | 无 | `low` |
@@ -248,6 +247,7 @@
 | `dasheng-style-profiler` | 无 | 无 | `low` |
 | `dasheng-video-director` | 无 | 无 | `low` |
 | `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node` | `low` |
+| `dasheng-video-roughcut` | 无 | `ffmpeg`, `node` | `low` |
 | `dasheng-video-style-trainer` | 无 | 无 | `low` |
 | `dasheng-video-talking-head` | 无 | `ffmpeg`, `node`, `python` | `low` |
 | `douyin-account-launch-expert` | 无 | 无 | `low` |
@@ -267,6 +267,7 @@
 | `android-native-dev` | 无 | 无 | `low` |
 | `content-strategy` | 无 | 无 | `low` |
 | `flutter-dev` | 无 | 无 | `low` |
+| `frontend-dev` | 无 | `node` | `low` |
 | `ios-application-dev` | 无 | 无 | `low` |
 | `pptx-generator` | 无 | `node` | `low` |
 | `shader-dev` | 无 | 无 | `low` |
@@ -373,6 +374,5 @@
 | `anthropic-fs-wealth-management-investment-proposal` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-portfolio-rebalance` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-tax-loss-harvesting` | 无 | `mcp` | `medium` |
-| `dasheng-video-roughcut` | 无 | `ffmpeg`, `mcp`, `node` | `medium` |
 | `dasheng-xhs-publish-bridge` | 无 | `browser`, `mcp`, `node` | `medium` |
 | `portfolio-manager` | 无 | `mcp`, `python` | `medium` |

@@ -30,7 +30,7 @@ Use this skill when:
 
 - **FMP API key** (required): Set `FMP_API_KEY` environment variable or pass `--fmp-api-key`. Free tier (250 calls/day) is sufficient for FMP-only mode (≤40 stocks). [Sign up](https://site.financialmodelingprep.com/developer/docs).
 - **FINVIZ Elite API key** (optional, recommended): Set `FINVIZ_API_KEY` environment variable or pass `--finviz-api-key`. Reduces execution time from 10–15 min to 2–3 min. [Sign up](https://elite.finviz.com/).
-- Python 3.8+ with `requests` and `pandas` libraries installed.
+- Python 3.9+ with the `requests` library installed.
 
 ## Screening Workflow
 
@@ -134,7 +134,7 @@ For each qualified stock, the report includes:
 
 ## Output
 
-The script saves two files to the current working directory (or `--output-dir` if specified):
+The script saves two files to its configured output location. In current packaged versions the CLI may not accept `--output-dir`; if that flag is unavailable, run the script from the desired working directory or move the generated files after execution. Some builds write to the repository `logs/` directory even when invoked from another directory, so verify the printed paths before reading artifacts.
 
 | File | Description |
 |---|---|

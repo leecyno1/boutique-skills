@@ -4,7 +4,7 @@
 
 ## 目标
 
-`publish` 是轻量执行层，只做验收、打包、账号运营审查、推草稿/人工发布包、链接回收和发后验真。
+`publish` 是轻量执行层，只做验收、打包、推草稿/人工发布包、链接回收和发后验真。
 
 正式阶段顺序：
 
@@ -56,23 +56,6 @@
 
 浏览器型、MCP、API-first CLI、外部 CLI 或人工包路线默认只生成流程计划，不直接点击最终发布按钮。`execute_publish_request.py --confirm-execute` 只允许 `skill_draft_push` 类型的本地草稿推送。
 
-### 3A. Account Operations Advisory
-
-公众号、小红书、抖音和 X 渠道包同时生成 `account_operations_request.json`：
-
-- 公众号 → `wechat-account-launch-expert`
-- 小红书 → `xiaohongshu-account-launch-expert`
-- 抖音 → `douyin-account-launch-expert`
-- X → `x-twitter-cold-start-expert`
-
-统一由 `dasheng-publish-operations-bridge` 读取外部
-`agent-skills-launch-pack`，并生成 `account_operations_advice.json/.md`。
-
-该层只调整定位一致性、标题/钩子、关键词/标签、合集、发布节奏、互动和复盘指标；不登录、不上传、不发布，也不重写已验收的核心内容。
-
-`new/cold_start/low_performance/dormant/risk_review/matrix_experiment`
-默认为受控执行前必审。建议 JSON 通过契约验证并重建发布包后，才恢复可确认执行状态。
-
 ### 4. Link Recovery
 
 发布后必须回填：
@@ -100,8 +83,6 @@
 - `channel_execution_manifest.json`
 - `publish_verification_report.json`
 - `publish_manifest.json`
-- `channel_packs/<topic_id>/<channel>/account_operations_request.json`
-- `channel_packs/<topic_id>/<channel>/account_operations_advice.json`
 
 ## 旧能力去向
 

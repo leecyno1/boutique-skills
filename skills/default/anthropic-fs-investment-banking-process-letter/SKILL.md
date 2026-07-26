@@ -1,5 +1,5 @@
 ---
-name: anthropic-fs-investment-banking-process-letter
+name: process-letter
 description: Draft process letters and bid instructions for sell-side M&A processes. Covers initial indication of interest (IOI) instructions, final bid procedures, and management meeting logistics. Triggers on "process letter", "bid instructions", "IOI letter", "bid procedures", "final round letter", or "management meeting invite".
 ---
 
@@ -73,7 +73,3 @@ Additional requirements beyond IOI:
 - Coordinate with legal on any representations or commitments in the letter
 - Client should review and approve before sending — they may want to adjust tone or terms
 - Keep a log of who received each letter and when — this becomes the process tracker
-
-## Native Upstream
-
-Imported from Anthropic Financial Services: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/process-letter
