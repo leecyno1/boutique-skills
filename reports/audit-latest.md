@@ -1,13 +1,13 @@
-# Boutique OpenClaw Skills Audit
+# Boutique Skills Audit
 
-- Time: 2026-07-26 10:50:47
+- Time: 2026-07-27 21:14:59
 - Status: **WARN**
-- Catalog skills: 344
-- Audited skills: 338
+- Catalog skills: 343
+- Audited skills: 337
 - Legacy catalog skills: 42
-- Installed/Resolved: 338
+- Installed/Resolved: 337
 - Missing: 0
-- Missing env vars: 76
+- Missing env vars: 74
 - Duplicate capabilities: 0
 - Risk hits: 11
 - Missing native origins: 0
@@ -91,8 +91,6 @@
 - fullstack-dev: `JWT_SECRET`
 - media-downloader: `PEXELS_API_KEY`
 - notebooklm-skill: `GEMINI_API_KEY`
-- baoyu-danger-x-to-markdown: `X_AUTH_TOKEN`
-- baoyu-danger-gemini-web: `GEMINI_API_KEY`
 
 ## Duplicate Capabilities
 - None
@@ -104,14 +102,14 @@
 - None
 
 ## Risk Findings
-- skill-vetter: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-vetter/scripts/install.sh`
-- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
-- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
-- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`
-- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/training.py`
-- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-reporter/scripts/utils/predictor/evaluation.py`
-- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-reporter/scripts/utils/predictor/training.py`
-- vcp-screener: `rm\s+-rf\s+/` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vcp-screener/scripts/tests/test_historical_vcp.py`
-- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/env_check.sh`
-- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/setup.sh`
-- minimax-xlsx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py`
+- skill-vetter: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/skill-vetter/scripts/install.sh`
+- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
+- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
+- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`
+- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/training.py`
+- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter/scripts/utils/predictor/evaluation.py`
+- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter/scripts/utils/predictor/training.py`
+- vcp-screener: `rm\s+-rf\s+/` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/vcp-screener/scripts/tests/test_historical_vcp.py`
+- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-docx/scripts/env_check.sh`
+- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-docx/scripts/setup.sh`
+- minimax-xlsx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py`

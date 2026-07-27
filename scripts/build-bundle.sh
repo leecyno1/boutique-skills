@@ -5,7 +5,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DIST="$REPO_ROOT/dist"
 mkdir -p "$DIST"
 TS="$(date +%Y%m%d-%H%M%S)"
-NAME="boutique-openclaw-skills-$TS.tar.gz"
+NAME="boutique-skills-$TS.tar.gz"
 
 tar -czf "$DIST/$NAME" \
   -C "$REPO_ROOT" \

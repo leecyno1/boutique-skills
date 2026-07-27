@@ -25,7 +25,7 @@ TIER_DESCRIPTIONS = {
 }
 
 SOURCE_BASE = 'https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503'
-BOUTIQUE_SOURCE_BASE = 'https://github.com/leecyno1/boutique-openclaw-skills/tree/main'
+BOUTIQUE_SOURCE_BASE = 'https://github.com/leecyno1/boutique-skills/tree/main'
 
 
 def read_json(path: Path) -> dict:

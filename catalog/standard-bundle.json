@@ -470,7 +470,7 @@
       "score": 78,
       "access_mode": "api-key",
       "conflict_group": "ima",
-      "origin_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/ima",
+      "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima",
       "note": "Connect and use IMA notes, notebooks, and knowledge bases from OpenClaw or Hermes. Use when the user asks to initialize IMA, authorize IMA API access, verify API Key or Client ID from controlled config, sync notes, list notebooks, read notes, query knowledge bases, or troubleshoot IMA note/knowledge retrieval. Never ask users to paste real API keys in chat."
     },
     {

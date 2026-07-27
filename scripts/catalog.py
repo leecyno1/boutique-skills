@@ -72,7 +72,7 @@ def resolve_profile_skills(profile_id: str) -> List[str]:
 def main() -> None:
     import argparse
 
-    parser = argparse.ArgumentParser(description="Resolve boutique-openclaw-skills profiles")
+    parser = argparse.ArgumentParser(description="Resolve boutique-skills profiles")
     parser.add_argument("profile", help="Profile ID, e.g. core")
     args = parser.parse_args()
 

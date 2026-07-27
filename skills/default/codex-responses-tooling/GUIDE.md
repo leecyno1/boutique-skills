@@ -36,4 +36,4 @@ ls -la ~/.openclaw/skills/codex-responses-tooling
 
 ## 7. 参考资料
 - 本技能说明：`SKILL.md`
-- 本仓库来源：https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/codex-responses-tooling
+- 本仓库来源：https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling

@@ -5,7 +5,7 @@ usage() {
   cat <<'EOF'
 Usage: scripts/install-tier.sh <low|medium|high> [--dry-run]
 
-Install one of the curated default OpenClaw skill tiers from this repository.
+Install one of the curated default skill tiers from this repository.
 - low: stable baseline
 - medium: production extensions
 - high: full expert pack

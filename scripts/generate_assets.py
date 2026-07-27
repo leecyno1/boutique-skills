@@ -120,13 +120,11 @@ def draw_logo() -> None:
         d.line((0, yy, w, yy), fill=(r, g, b))
 
     draw_store_icon(d, 70, 72)
-    draw_lobster_icon(d, 1190, 72)
-
-    line1 = "BOUTIQUE OPENCLAW SKILLS"
+    line1 = "BOUTIQUE SKILLS"
     line2 = "精选店模式  |  一功能一技能  |  稳定优先"
     line3 = "NO DUPLICATE SKILLS · LOW TOKEN WASTE · AUDITED WEEKLY"
-    line4 = "Theme: Boutique Store + Lobster"
-    line5 = "github.com/leecyno1/boutique-openclaw-skills"
+    line4 = "Theme: Curated Skill Store + Toolkits"
+    line5 = "github.com/leecyno1/boutique-skills"
 
     d.text((340, 110), line1, font=pick_font(58, bold=True, text=line1), fill="#f8fafc")
     d.text((342, 186), line2, font=pick_font(38, bold=True, text=line2), fill="#f87171")
@@ -219,10 +217,10 @@ def draw_svg() -> None:
     <rect x="0" y="90" width="220" height="190" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
     <rect x="-6" y="42" width="232" height="76" rx="18" fill="#ef4444"/>
   </g>
-  <text x="340" y="160" fill="#f8fafc" font-size="58" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">BOUTIQUE OPENCLAW SKILLS</text>
+  <text x="340" y="160" fill="#f8fafc" font-size="58" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">BOUTIQUE SKILLS</text>
   <text x="342" y="220" fill="#f87171" font-size="38" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">精选店模式 | 一功能一技能 | 稳定优先</text>
   <text x="342" y="278" fill="#cbd5e1" font-size="30" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">NO DUPLICATE SKILLS · LOW TOKEN WASTE · AUDITED WEEKLY</text>
-  <text x="342" y="334" fill="#fde68a" font-size="28" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">Theme: Boutique Store + Lobster</text>
+  <text x="342" y="334" fill="#fde68a" font-size="28" font-family="'Hiragino Sans GB', 'STHeiti', 'Arial Unicode MS', Arial, Helvetica, sans-serif">Theme: Curated Skill Store + Toolkits</text>
 </svg>
 '''
     (ASSETS / "logo.svg").write_text(svg, encoding="utf-8")

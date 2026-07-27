@@ -3,4 +3,4 @@ Upstream path: https://github.com/oso95/scroll-world/tree/main/skills/scroll-wor
 Imported from upstream HEAD: 2912048246d057cdfe134dfc0b4dfb7e6a12f30e
 License: MIT License.
 Requested install command: npx skills add oso95/scroll-world
-Repository import command: python3 /Users/lichengyin/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo oso95/scroll-world --path skills/scroll-world --dest /Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default
+Repository import command: python3 /Users/lichengyin/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo oso95/scroll-world --path skills/scroll-world --dest /Volumes/PSSD/Projects/boutique-skills/skills/default

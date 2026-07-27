@@ -72,7 +72,7 @@ def scan_text_files(root: Path, max_files: int = 120) -> List[dict]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Audit curated OpenClaw skill set")
+    parser = argparse.ArgumentParser(description="Audit the curated Boutique Skills registry")
     parser.add_argument("--report", default=str(REPO / "reports" / "audit-latest.md"))
     parser.add_argument("--json", default=str(REPO / "reports" / "audit-latest.json"))
     parser.add_argument("--strict-risk", action="store_true", help="treat risk findings as FAIL instead of WARN")
@@ -171,7 +171,7 @@ def main() -> int:
     }
 
     report_lines = [
-        f"# Boutique OpenClaw Skills Audit",
+        f"# Boutique Skills Audit",
         "",
         f"- Time: {ts}",
         f"- Status: **{status}**",

@@ -32,7 +32,7 @@
 | `brandkit` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit) |
 | `buddy-sings` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
 | `channels-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/channels-account-launch-expert) |
-| `codex-responses-tooling` | `current` | 0 | 0 | [leecyno1/boutique-openclaw-skills](https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/codex-responses-tooling) |
+| `codex-responses-tooling` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `content-strategy` | `current` | 0 | 0 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy) |
 | `dasheng-finance-data` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
 | `dasheng-html-anything-bridge` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge) |
@@ -58,7 +58,7 @@
 | `high-end-visual-design` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill) |
 | `humanizer-zh` | `current` | 0 | 0 | [idao-cube/humanizer-zh](https://github.com/idao-cube/humanizer-zh) |
 | `ian-xiaohei-illustrations` | `current` | 0 | 0 | [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
-| `ima` | `current` | 0 | 0 | [leecyno1/boutique-openclaw-skills](https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/ima) |
+| `ima` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
 | `image-to-code` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill) |
 | `imagegen-frontend-mobile` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile) |
 | `imagegen-frontend-web` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
@@ -91,7 +91,7 @@
 | `nano-pdf` | `current` | 0 | 0 | [steipete/clawdis](https://github.com/steipete/clawdis/tree/main/skills/nano-pdf) |
 | `notebooklm-skill` | `current` | 0 | 0 | [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) |
 | `opencli-reader` | `current` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/opencli-reader) |
-| `policy-monitor` | `current` | 0 | 0 | [leecyno1/boutique-openclaw-skills](https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/policy-monitor) |
+| `policy-monitor` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
 | `pptx-generator` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
 | `pybroker-backtest-skill` | `current` | 0 | 0 | [gaaiyun/pybroker-backtest-skill](https://github.com/gaaiyun/pybroker-backtest-skill) |
 | `react-native-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
