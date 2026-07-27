@@ -99,6 +99,7 @@ L2_HINTS = {
     "social-content", "vision-analysis", "openclaw-cron-setup", "proactive-agent",
     "self-improving-agent-cn", "reflection", "writing-plans", "seedance2-skill",
     "html-anything", "ima",
+    "behavior-validator",
     "guizang-ppt-skill", "khazix-skills", "humanizer-zh", "dbskill",
     "guizang-social-card-skill", "ian-xiaohei-illustrations",
 }
@@ -486,6 +487,7 @@ def classify_category(skill_id: str, description: str) -> str:
         return DASHENG_MEDIA_WORKFLOW_CATEGORIES[skill_id]
     explicit = {
         "a-stock-data": "finance-data",
+        "behavior-validator": "coding-devtools",
         "agent-reach": "search-research",
         "akshare-stock": "finance-data",
         "funda-data": "finance-data",

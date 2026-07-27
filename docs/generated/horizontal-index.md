@@ -4,7 +4,7 @@
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
 | `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 123 |
-| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 200 |
+| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 199 |
 
 ## L1 Foundation
 
@@ -40,6 +40,7 @@
 | `animation-vocabulary` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary) |
 | `apple-design` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
 | `backtest-expert` | 编程 / 工程工具 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert) |
+| `behavior-validator` | 编程 / 工程工具 | 5★ | `direct` | [origin](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `brandkit` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit) |
 | `dasheng-hotspot-radar` | 搜索 / 研究 / 情报 | 5★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
 | `data-analyst` | 数据分析 | 5★ | `direct` | [origin](https://github.com/openclaw/skills/blob/main/skills/oyi77/data-analyst/SKILL.md) |
@@ -154,7 +155,6 @@
 | `minimax-xlsx` | 数据分析 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx) |
 | `notebooklm-skill` | 浏览器 / 自动化 | 3★ | `api-key` | [origin](https://github.com/PleasePrompto/notebooklm-skill) |
 | `react-native-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
-| `baoyu-danger-x-to-markdown` | 设计 / UI | 2★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills#baoyu-danger-x-to-markdown) |
 | `docx` | 文档 / 办公 | 1★ | `direct` | 待补 |
 | `pdf` | 文档 / 办公 | 1★ | `direct` | 待补 |
 | `pptx` | 文档 / 办公 | 1★ | `direct` | 待补 |
@@ -363,4 +363,3 @@
 | `gif-sticker-maker` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
 | `minimax-music-gen` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen) |
 | `minimax-music-playlist` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |
-| `baoyu-danger-gemini-web` | 媒体生成 / 处理 | 2★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills#baoyu-danger-gemini-web) |

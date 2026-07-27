@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-07-26",
+  "generated_at": "2026-07-27",
   "max_skills": 34,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; Open/Hermes preset skills excluded",
   "overrides": {

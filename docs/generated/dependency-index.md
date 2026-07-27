@@ -2,10 +2,10 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 99 |
+| `api-key` | 97 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 10 |
-| `direct` | 142 |
+| `direct` | 143 |
 | `mcp-required` | 71 |
 
 ## api-key
@@ -108,8 +108,6 @@
 | `gif-sticker-maker` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `MINIMAX_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-music-gen` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg` | `medium` |
 | `minimax-music-playlist` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg` | `medium` |
-| `baoyu-danger-x-to-markdown` | `X_AUTH_TOKEN` | 无 | `high` |
-| `baoyu-danger-gemini-web` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser` | `high` |
 | `web-search` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg` | `medium` |
 
 ## api-key+mcp-required
@@ -175,6 +173,7 @@
 | `animation-vocabulary` | 无 | 无 | `low` |
 | `apple-design` | 无 | 无 | `low` |
 | `backtest-expert` | 无 | 无 | `low` |
+| `behavior-validator` | 无 | 无 | `low` |
 | `brandkit` | 无 | 无 | `low` |
 | `dasheng-hotspot-radar` | 无 | `python` | `low` |
 | `data-analyst` | 无 | `python` | `low` |

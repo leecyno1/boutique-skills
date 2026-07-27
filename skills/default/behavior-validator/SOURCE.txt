@@ -1,0 +1,4 @@
+Upstream: https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator
+Commit: fe588b1a6267eb47f785d0c748db9f6f3e9a3b4f
+License: MIT
+Imported: 2026-07-27

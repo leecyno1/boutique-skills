@@ -5,12 +5,12 @@
 | 核心 Agent 能力 (`core-agent`) | 20 |
 | 搜索 / 研究 / 情报 (`search-research`) | 17 |
 | 浏览器 / 自动化 (`browser-automation`) | 2 |
-| 编程 / 工程工具 (`coding-devtools`) | 10 |
+| 编程 / 工程工具 (`coding-devtools`) | 11 |
 | 数据分析 (`data-analysis`) | 9 |
 | 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 31 |
+| 设计 / UI (`design-ui`) | 30 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
-| 媒体生成 / 处理 (`media-generation`) | 31 |
+| 媒体生成 / 处理 (`media-generation`) | 30 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 81 |
@@ -89,6 +89,7 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `backtest-expert` | `L2 Professional` | 5★ | `china-market-data`, `coding-devtools`, `direct`, `l2`, `offline`, `trading_finance`, `tushare-supplement` |
+| `behavior-validator` | `L2 Professional` | 5★ | `behavior-testing`, `coding-devtools`, `direct`, `l2`, `online`, `openclaw-official`, `quality-assurance` |
 | `android-native-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `flutter-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `frontend-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
@@ -162,7 +163,6 @@
 | `animation` | `L2 Professional` | 4★ | `api-key`, `design-ui`, `l2`, `online` |
 | `baoyu-article-illustrator` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `design-ui`, `l2`, `online` |
 | `agentmail` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
-| `baoyu-danger-x-to-markdown` | `L2 Professional` | 2★ | `api-key`, `baoyu`, `design-ui`, `l2`, `online` |
 
 ## HTML 发布 / 视觉出版
 
@@ -206,7 +206,6 @@
 | `gif-sticker-maker` | `L3 Specialist` | 3★ | `api-key`, `default_sentinel`, `l3`, `media-generation`, `minimax_official`, `online` |
 | `minimax-music-gen` | `L3 Specialist` | 3★ | `api-key`, `default_sentinel`, `l3`, `media-generation`, `minimax_official`, `online` |
 | `minimax-music-playlist` | `L3 Specialist` | 3★ | `api-key`, `default_sentinel`, `l3`, `media-generation`, `minimax_official`, `online` |
-| `baoyu-danger-gemini-web` | `L3 Specialist` | 2★ | `api-key`, `baoyu`, `l3`, `media-generation`, `online` |
 
 ## 写作 / 内容
 

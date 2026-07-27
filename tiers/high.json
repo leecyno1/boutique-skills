@@ -1488,34 +1488,6 @@
       ]
     },
     {
-      "id": "baoyu-danger-gemini-web",
-      "name": "baoyu-danger-gemini-web",
-      "description": "Generates images and text via reverse-engineered Gemini Web API.",
-      "manual": "skills/default/baoyu-danger-gemini-web/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/baoyu-danger-gemini-web/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-danger-gemini-web",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "baoyu"
-      ]
-    },
-    {
-      "id": "baoyu-danger-x-to-markdown",
-      "name": "baoyu-danger-x-to-markdown",
-      "description": "Converts X (Twitter) tweets and articles to markdown with YAML front matter.",
-      "manual": "skills/default/baoyu-danger-x-to-markdown/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/baoyu-danger-x-to-markdown/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-danger-x-to-markdown",
-      "requires_api_keys": true,
-      "api_keys": [
-        "X_AUTH_TOKEN"
-      ],
-      "groups": [
-        "baoyu"
-      ]
-    },
-    {
       "id": "baoyu-format-markdown",
       "name": "baoyu-format-markdown",
       "description": "Use when formatting plain text or markdown articles with headings, summaries, lists, and polish.",
@@ -1727,6 +1699,21 @@
       "groups": [
         "dasheng_media_workflow",
         "self_media"
+      ]
+    },
+    {
+      "id": "behavior-validator",
+      "name": "behavior-validator",
+      "description": "Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts.",
+      "manual": "skills/default/behavior-validator/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/behavior-validator/SKILL.md",
+      "source": "https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "openclaw-official",
+        "quality-assurance",
+        "behavior-testing"
       ]
     },
     {

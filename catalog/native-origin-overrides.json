@@ -105,6 +105,7 @@
   "bayesian-intrinsic-growth-valuation": "https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation",
   "bilibili-upload-bridge": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge",
   "blogwatcher": "https://github.com/Hyaxia/blogwatcher",
+  "behavior-validator": "https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator",
   "brainstorming": "https://github.com/baz-scm/agentskills/tree/main/skills/brainstorming",
   "brandkit": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
   "breadth-chart-analyst": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst",

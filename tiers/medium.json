@@ -158,6 +158,21 @@
       "groups": []
     },
     {
+      "id": "behavior-validator",
+      "name": "behavior-validator",
+      "description": "Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts.",
+      "manual": "skills/default/behavior-validator/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-openclaw-skills/tree/main/skills/default/behavior-validator/SKILL.md",
+      "source": "https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "openclaw-official",
+        "quality-assurance",
+        "behavior-testing"
+      ]
+    },
+    {
       "id": "brainstorming",
       "name": "brainstorming",
       "description": "Use before creative feature, component, behavior, or product design work.",

@@ -2,7 +2,7 @@
 
 增强生产档，包含低档全部能力，并加入官方 MiniMax、本地增强、规划、图像、文档和常用扩展。
 
-- 技能数量：`84`
+- 技能数量：`85`
 - 安装命令：`./scripts/install-tier.sh medium`
 - JSON 清单：`tiers/medium.json`
 
@@ -21,6 +21,7 @@
 | `akshare-stock` | A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。 | [skills/default/akshare-stock/GUIDE.md](../../skills/default/akshare-stock/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/akshare-stock) |
 | `android-native-dev` | Android native application development and UI design guide. | [skills/default/android-native-dev/GUIDE.md](../../skills/default/android-native-dev/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/android-native-dev) |
 | `animation` | Generate CSS and SVG animation code snippets using bash and Python. | [skills/default/animation/GUIDE.md](../../skills/default/animation/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation) |
+| `behavior-validator` | Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts. | [skills/default/behavior-validator/SKILL.md](../../skills/default/behavior-validator/SKILL.md) | [source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `brainstorming` | Use before creative feature, component, behavior, or product design work. | [skills/default/brainstorming/GUIDE.md](../../skills/default/brainstorming/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/brainstorming) |
 | `buddy-sings` | Use when user wants their Claude Code pet (/buddy) to sing a song. | [skills/default/buddy-sings/GUIDE.md](../../skills/default/buddy-sings/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/buddy-sings) |
 | `capability-evolver` | A self-evolution engine for AI agents. | [skills/default/capability-evolver/GUIDE.md](../../skills/default/capability-evolver/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/capability-evolver) |
