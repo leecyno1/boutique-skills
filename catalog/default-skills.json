@@ -7062,6 +7062,147 @@
           "groups": [
             "trading_finance"
           ]
+        },
+        {
+          "id": "impeccable",
+          "name": "impeccable",
+          "description": "Production-grade frontend design, redesign, critique, audit, polish, accessibility, responsive, typography, motion, and design-system workflows with focused commands and local detectors.",
+          "manual": "skills/default/impeccable/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
+          "source": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "design-ui",
+            "frontend-craft"
+          ]
+        },
+        {
+          "id": "gsap-core",
+          "name": "gsap-core",
+          "description": "Official GSAP skill for core tweens, targets, properties, easing, staggers, callbacks, control methods, and matchMedia.",
+          "manual": "skills/default/gsap-core/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-core/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-frameworks",
+          "name": "gsap-frameworks",
+          "description": "Official GSAP integration guidance for Vue, Svelte, Nuxt, Next.js, Astro, vanilla JavaScript, and framework lifecycle cleanup.",
+          "manual": "skills/default/gsap-frameworks/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-frameworks/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-performance",
+          "name": "gsap-performance",
+          "description": "Official GSAP skill for animation performance, transform and opacity choices, batching, cleanup, reduced motion, and avoiding layout thrashing.",
+          "manual": "skills/default/gsap-performance/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-performance/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-plugins",
+          "name": "gsap-plugins",
+          "description": "Official GSAP skill for Flip, Draggable, Observer, SplitText, MorphSVG, DrawSVG, MotionPath, CustomEase, and other plugins.",
+          "manual": "skills/default/gsap-plugins/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-plugins/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-plugins",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-react",
+          "name": "gsap-react",
+          "description": "Official GSAP skill for React integration with useGSAP, gsap.context, refs, cleanup, Strict Mode, and route transitions.",
+          "manual": "skills/default/gsap-react/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-react/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-scrolltrigger",
+          "name": "gsap-scrolltrigger",
+          "description": "Official GSAP skill for ScrollTrigger setup, scrub, pinning, snapping, batching, scroller proxies, responsive refresh, and cleanup.",
+          "manual": "skills/default/gsap-scrolltrigger/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-scrolltrigger/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-timeline",
+          "name": "gsap-timeline",
+          "description": "Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing.",
+          "manual": "skills/default/gsap-timeline/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-timeline/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-utils",
+          "name": "gsap-utils",
+          "description": "Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute.",
+          "manual": "skills/default/gsap-utils/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-utils/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "video-shotcraft",
+          "name": "video-shotcraft",
+          "description": "Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates.",
+          "manual": "skills/default/video-shotcraft/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-shotcraft/SKILL.md",
+          "source": "https://github.com/Vincentwei1021/video-shotcraft",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "media-generation",
+            "remotion",
+            "product-video"
+          ]
         }
       ]
     }

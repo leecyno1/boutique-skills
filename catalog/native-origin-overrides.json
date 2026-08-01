@@ -318,5 +318,15 @@
   "xiaohongshu-account-launch-expert": "https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/xiaohongshu-account-launch-expert",
   "xlsx": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
   "yc-reader": "https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/yc-reader",
-  "yfinance-data": "https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data"
+  "yfinance-data": "https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data",
+  "impeccable": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+  "gsap-core": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core",
+  "gsap-frameworks": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks",
+  "gsap-performance": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance",
+  "gsap-plugins": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-plugins",
+  "gsap-react": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react",
+  "gsap-scrolltrigger": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger",
+  "gsap-timeline": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline",
+  "gsap-utils": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils",
+  "video-shotcraft": "https://github.com/Vincentwei1021/video-shotcraft"
 }

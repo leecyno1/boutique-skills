@@ -1,0 +1,6 @@
+Source: https://github.com/Vincentwei1021/video-shotcraft
+Upstream path: https://github.com/Vincentwei1021/video-shotcraft
+Imported from upstream HEAD: d4915443232e89527fdc9d7e79f132ba411fc440
+License: Apache License 2.0 for the upstream project code and original assets.
+Discovered from Xiaohongshu note: https://www.xiaohongshu.com/explore/6a6c71ba0000000025007d5a
+Mirror note: third-party MP3 binaries are intentionally omitted because several upstream files have unresolved provenance. Attribution and audition records are retained under assets/audio/.

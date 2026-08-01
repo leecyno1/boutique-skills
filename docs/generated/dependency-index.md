@@ -4,8 +4,8 @@
 |---|---:|
 | `api-key` | 97 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 10 |
-| `direct` | 143 |
+| `browser-required` | 12 |
+| `direct` | 151 |
 | `mcp-required` | 71 |
 
 ## api-key
@@ -147,10 +147,12 @@
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
+| `impeccable` | 无 | `browser`, `node` | `medium` |
 | `openclaw-cron-setup` | 无 | `browser` | `medium` |
 | `alphaear-search` | `TUSHARE_TOKEN` | `browser`, `python` | `medium` |
 | `baoyu-markdown-to-html` | 无 | `browser` | `medium` |
 | `market-news-analyst` | 无 | `browser`, `node`, `python` | `medium` |
+| `video-shotcraft` | 无 | `browser`, `ffmpeg`, `node` | `medium` |
 
 ## direct
 
@@ -192,6 +194,14 @@
 | `full-output-enforcement` | 无 | 无 | `low` |
 | `generative-ui` | 无 | 无 | `low` |
 | `gpt-taste` | 无 | 无 | `low` |
+| `gsap-core` | 无 | `node` | `low` |
+| `gsap-frameworks` | 无 | `node` | `low` |
+| `gsap-performance` | 无 | `node` | `low` |
+| `gsap-plugins` | 无 | `node` | `low` |
+| `gsap-react` | 无 | `node` | `low` |
+| `gsap-scrolltrigger` | 无 | `node` | `low` |
+| `gsap-timeline` | 无 | `node` | `low` |
+| `gsap-utils` | 无 | `node` | `low` |
 | `high-end-visual-design` | 无 | 无 | `low` |
 | `humanizer-zh` | 无 | 无 | `low` |
 | `ian-xiaohei-illustrations` | 无 | 无 | `low` |

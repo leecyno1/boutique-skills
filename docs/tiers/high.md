@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`343`
+- 技能数量：`353`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -353,3 +353,13 @@
 | `xlsx` | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. | [skills/default/xlsx/GUIDE.md](../../skills/default/xlsx/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/xlsx) |
 | `yc-reader` | Look up Y Combinator companies, batches, and startup ecosystem data using the yc-oss API (read-only). | [skills/default/yc-reader/README.md](../../skills/default/yc-reader/README.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/yc-reader) |
 | `yfinance-data` | Fetch financial and market data using the yfinance Python library. | [skills/default/yfinance-data/README.md](../../skills/default/yfinance-data/README.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/yfinance-data) |
+| `impeccable` | Production-grade frontend design, redesign, critique, audit, polish, accessibility, responsive, typography, motion, and design-system workflows with focused commands and local detectors. | [skills/default/impeccable/SKILL.md](../../skills/default/impeccable/SKILL.md) | [source](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
+| `gsap-core` | Official GSAP skill for core tweens, targets, properties, easing, staggers, callbacks, control methods, and matchMedia. | [skills/default/gsap-core/SKILL.md](../../skills/default/gsap-core/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core) |
+| `gsap-frameworks` | Official GSAP integration guidance for Vue, Svelte, Nuxt, Next.js, Astro, vanilla JavaScript, and framework lifecycle cleanup. | [skills/default/gsap-frameworks/SKILL.md](../../skills/default/gsap-frameworks/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks) |
+| `gsap-performance` | Official GSAP skill for animation performance, transform and opacity choices, batching, cleanup, reduced motion, and avoiding layout thrashing. | [skills/default/gsap-performance/SKILL.md](../../skills/default/gsap-performance/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance) |
+| `gsap-plugins` | Official GSAP skill for Flip, Draggable, Observer, SplitText, MorphSVG, DrawSVG, MotionPath, CustomEase, and other plugins. | [skills/default/gsap-plugins/SKILL.md](../../skills/default/gsap-plugins/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-plugins) |
+| `gsap-react` | Official GSAP skill for React integration with useGSAP, gsap.context, refs, cleanup, Strict Mode, and route transitions. | [skills/default/gsap-react/SKILL.md](../../skills/default/gsap-react/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react) |
+| `gsap-scrolltrigger` | Official GSAP skill for ScrollTrigger setup, scrub, pinning, snapping, batching, scroller proxies, responsive refresh, and cleanup. | [skills/default/gsap-scrolltrigger/SKILL.md](../../skills/default/gsap-scrolltrigger/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger) |
+| `gsap-timeline` | Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing. | [skills/default/gsap-timeline/SKILL.md](../../skills/default/gsap-timeline/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
+| `gsap-utils` | Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute. | [skills/default/gsap-utils/SKILL.md](../../skills/default/gsap-utils/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
+| `video-shotcraft` | Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates. | [skills/default/video-shotcraft/SKILL.md](../../skills/default/video-shotcraft/SKILL.md) | [source](https://github.com/Vincentwei1021/video-shotcraft) |

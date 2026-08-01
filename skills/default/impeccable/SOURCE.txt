@@ -1,0 +1,6 @@
+Source: https://github.com/pbakaus/impeccable
+Upstream path: https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable
+Imported from upstream HEAD: c5e1ddd054dc093ef2546c36b82eddf2c4e84bb9
+License: Apache License 2.0.
+Discovered from Xiaohongshu note: https://www.xiaohongshu.com/explore/6a69f62f0000000010026597
+Mirror note: upstream extension fields version, user-invocable, and argument-hint were moved under standard metadata for Codex Agent Skills validation.

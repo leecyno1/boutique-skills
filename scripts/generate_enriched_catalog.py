@@ -180,6 +180,17 @@ EMIL_KOWALSKI_SKILLS = {
     "review-animations",
 }
 
+GSAP_SKILLS = {
+    "gsap-core",
+    "gsap-frameworks",
+    "gsap-performance",
+    "gsap-plugins",
+    "gsap-react",
+    "gsap-scrolltrigger",
+    "gsap-timeline",
+    "gsap-utils",
+}
+
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
     "bilibili-upload-bridge": "media-generation",
     "dasheng-finance-data": "finance-data",
@@ -483,6 +494,8 @@ def classify_category(skill_id: str, description: str) -> str:
         return "finance-trading"
     if skill_id in EMIL_KOWALSKI_SKILLS:
         return "design-ui"
+    if skill_id in GSAP_SKILLS:
+        return "design-ui"
     if skill_id in DASHENG_MEDIA_WORKFLOW_CATEGORIES:
         return DASHENG_MEDIA_WORKFLOW_CATEGORIES[skill_id]
     explicit = {
@@ -517,6 +530,8 @@ def classify_category(skill_id: str, description: str) -> str:
         "frontend-dev": "coding-devtools",
         "ios-application-dev": "coding-devtools",
         "generative-ui": "design-ui",
+        "impeccable": "design-ui",
+        "video-shotcraft": "media-generation",
         "media-downloader": "media-generation",
         "minimax-pdf": "docs-office",
         "vision-analysis": "media-generation",
@@ -595,6 +610,15 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id in EMIL_KOWALSKI_SKILLS:
         api_keys = []
         tools = []
+    if skill_id in GSAP_SKILLS:
+        api_keys = []
+        tools = ["node"]
+    if skill_id == "impeccable":
+        api_keys = []
+        tools = ["browser", "node"]
+    if skill_id == "video-shotcraft":
+        api_keys = []
+        tools = ["browser", "ffmpeg", "node"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -745,6 +769,8 @@ def build_enriched() -> dict[str, Any]:
             tags.extend(["anthropic-financial-services", "enterprise-data", "institutional-finance", "finance-suite"])
         if skill_id in EMIL_KOWALSKI_SKILLS:
             tags.extend(["emil-kowalski", "design-animation-suite", "frontend-craft"])
+        if skill_id in GSAP_SKILLS:
+            tags.extend(["greensock", "gsap-skills", "design-animation-suite", "frontend-craft"])
         if skill_id in tushare_backed:
             tags.extend(["tushare-backed", "china-market-data"])
             if "TUSHARE_TOKEN" not in deps["api_keys"]:

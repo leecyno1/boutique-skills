@@ -1,0 +1,37 @@
+{
+  "schema_version": "2026.08.01",
+  "id": "gsap-skills",
+  "title": "Official GSAP AI Skills Suite",
+  "description": "Official GreenSock skill set for GSAP core animation, timelines, ScrollTrigger, plugins, React and other frameworks, utilities, and performance guidance.",
+  "source": "https://github.com/greensock/gsap-skills",
+  "native_origin": "https://github.com/greensock/gsap-skills",
+  "homepage": "https://gsap.com/",
+  "license": "MIT",
+  "install_tier": "high",
+  "category": "design-ui",
+  "horizontal_tier": "L2 Professional",
+  "access_mode": "direct",
+  "requires_api_keys": false,
+  "api_keys": [],
+  "requires_tools": [
+    "node"
+  ],
+  "upstream": {
+    "stars": 12806,
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-07-29T17:36:08Z",
+    "verified_at": "2026-08-01",
+    "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760"
+  },
+  "skills": [
+    "gsap-core",
+    "gsap-frameworks",
+    "gsap-performance",
+    "gsap-plugins",
+    "gsap-react",
+    "gsap-scrolltrigger",
+    "gsap-timeline",
+    "gsap-utils"
+  ]
+}

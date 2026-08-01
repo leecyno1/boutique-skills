@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-27 21:14:59",
+  "timestamp": "2026-08-01 19:52:09",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 343,
-    "audited_skills": 337,
+    "catalog_skills": 353,
+    "audited_skills": 347,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 337,
+    "resolved_skills": 347,
     "missing_skills": 0,
     "missing_env": 74,
     "duplicate_capabilities": 0,
@@ -526,6 +526,38 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gpt-taste"
     },
     {
+      "skill": "gsap-core",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-core"
+    },
+    {
+      "skill": "gsap-frameworks",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-frameworks"
+    },
+    {
+      "skill": "gsap-performance",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-performance"
+    },
+    {
+      "skill": "gsap-plugins",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-plugins"
+    },
+    {
+      "skill": "gsap-react",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-react"
+    },
+    {
+      "skill": "gsap-scrolltrigger",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-scrolltrigger"
+    },
+    {
+      "skill": "gsap-timeline",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-timeline"
+    },
+    {
+      "skill": "gsap-utils",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-utils"
+    },
+    {
       "skill": "high-end-visual-design",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/high-end-visual-design"
     },
@@ -880,6 +912,10 @@
     {
       "skill": "guizang-ppt-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/guizang-ppt-skill"
+    },
+    {
+      "skill": "impeccable",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/impeccable"
     },
     {
       "skill": "llmquant-commodities",
@@ -1408,6 +1444,10 @@
     {
       "skill": "portfolio-manager",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/portfolio-manager"
+    },
+    {
+      "skill": "video-shotcraft",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/video-shotcraft"
     },
     {
       "skill": "agentmail-cli",

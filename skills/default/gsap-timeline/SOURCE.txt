@@ -1,0 +1,5 @@
+Source: https://github.com/greensock/gsap-skills
+Upstream path: https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline
+Imported from upstream HEAD: aed9cfd3277740755f6bfc1155c7aa645403b760
+License: MIT License.
+Discovered from Xiaohongshu note: https://www.xiaohongshu.com/explore/6a6d540000000000220144eb
