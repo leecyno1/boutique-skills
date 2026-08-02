@@ -3,7 +3,7 @@
 <h1 align="center">a-stock-data</h1>
 
 <p align="center">
-  <b>A 股全栈数据工具包 — 10 层架构 · 44 个端点 · 15 个数据源 · 零鉴权</b>
+  <b>A 股全栈数据工具包 — 10 层架构 · 47 个端点 · 15 个数据源 · 零鉴权</b>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
   <a href="https://github.com/simonlin1212/a-stock-data/stargazers"><img src="https://img.shields.io/github/stars/simonlin1212/a-stock-data?style=social" alt="Stars"></a>
   <br>
   <img src="https://img.shields.io/badge/layers-10-2ea44f.svg" alt="Layers">
-  <img src="https://img.shields.io/badge/endpoints-44-2ea44f.svg" alt="Endpoints">
+  <img src="https://img.shields.io/badge/endpoints-47-2ea44f.svg" alt="Endpoints">
   <img src="https://img.shields.io/badge/sources-15-2ea44f.svg" alt="Sources">
   <img src="https://img.shields.io/badge/auth-zero-success.svg" alt="Zero Auth">
 </p>
@@ -20,7 +20,7 @@
 <p align="center">
   <a href="#架构">架构</a> ·
   <a href="#快速开始">快速开始</a> ·
-  <a href="#44-个端点能力清单">端点清单</a> ·
+  <a href="#47-个端点能力清单">端点清单</a> ·
   <a href="#使用示例">使用示例</a> ·
   <a href="#faq">FAQ</a> ·
   <a href="./CHANGELOG.md">更新日志</a>
@@ -37,7 +37,7 @@
 ## 架构
 
 ```
-A 股全栈数据 · 十层架构 · V3.5.0
+A 股全栈数据 · 十层架构 · V3.6.0
 │  （优先级：mootdx/腾讯 不封IP 优先用；东财仅用于独有数据，已内置限流防封）
 ├── 行情层    mootdx + 腾讯财经 + 百度K线   K线(带MA5/10/20) + 五档盘口 + PE/PB/市值 + 指数/ETF
 ├── 研报层    东财 reportapi + 同花顺 + iwencai  个股研报 / 行业研报 / PDF下载 / 一致预期 / NL搜索
@@ -47,7 +47,8 @@ A 股全栈数据 · 十层架构 · V3.5.0
 ├── 新闻层    东财 + 财联社                  个股新闻 / 财联社电报(✅V3.4复活) / 全球资讯（互备）
 ├── 基础数据  mootdx + 东财 + 新浪           季报37字段 / F10九大类 / 财报三表
 ├── 公告层    巨潮 cninfo + mootdx           沪深北全量公告
-├── 打板层    东财 push2ex + 同花顺          涨停池 / 炸板 / 跌停 / 昨涨停 / 涨停原因题材 / 连板梯队  ★V3.3
+├── 打板层    东财 push2ex + 同花顺          涨停池 / 炸板 / 跌停 / 昨涨停 / 涨停原因题材 / 连板梯队
+│                                           + 重点监控池 + 日内异动池  ★V3.6
 ├── 期权层    新浪 hq.sinajs                ETF期权 T型报价 / 希腊字母 / 隐含波动率 IV  ★V3.3
 └── 舆情互动  巨潮互动易 + 同花顺 + 东财     互动易问答 / 同花顺热榜 / 东财人气榜 / 概念命中  ★V3.3
 ```
@@ -78,9 +79,9 @@ pip install mootdx requests pandas stockstats
 
 ---
 
-## 44 个端点能力清单
+## 47 个端点能力清单
 
-> **计数口径：** 下方清单共 46 行，按端点计 44 个——「东财 行业研报」与「东财 reportapi」为**同一端点**（仅 `qType` 参数不同），「同花顺北向（历史）」为本地自缓存（非独立端点），两行不重复计数。
+> **计数口径：** 下方清单共 48 行，按端点计 47 个——「东财 行业研报」与「东财 reportapi」为**同一端点**（仅 `qType` 参数不同）、「同花顺北向（历史）」为本地自缓存（非独立端点），两行不计入；「东财日内异动池」一行含 `list` / `count` **两个端点**，多计 1 个。48 − 1 − 1 + 1 = 47。
 
 ### 行情层（实时，不封 IP）
 
@@ -152,6 +153,8 @@ pip install mootdx requests pandas stockstats
 | 东财跌停池 | 封单资金 / 连续跌停天数 / 开板次数 / 板上成交额 |
 | 东财昨日涨停池 | 昨涨停今表现（自算晋级率 / 赚钱效应） |
 | 同花顺涨停揭秘 | 涨停原因题材 / 封板成功率 / 一字·换手·T字板 / 封单额 |
+| 东财重点监控池 | 交易所风险警示 / 重点监控名单 + 生效时间窗（V3.6 新增）|
+| 东财日内异动池 | 严重异常波动明细 + 按标的聚合异动统计 + 12 条异动规则解释（V3.6 新增）|
 
 ### ETF 期权层（V3.3 新增）
 
@@ -210,6 +213,9 @@ pip install mootdx requests pandas stockstats
 | **ETF 行情** | 「510050 上证50ETF 现在什么价、今天涨跌多少」 |
 | **涨停打板** | 「今天涨停多少家、最高几连板、炸板率多少」 |
 | **涨停归因** | 「今天涨停的票都是什么题材，哪些是几天几板」 |
+| **重点监控池** | 「现在哪些标的被交易所列入重点监控，监控到什么时候」 |
+| **日内异动** | 「今天有哪些严重异常波动的票，触发的是哪条异动规则」 |
+| **异动 × 监控交叉** | 「今天异动的票里，有没有已经在重点监控名单上的」 |
 | **ETF 期权** | 「50ETF 平值期权的隐含波动率和 Delta 是多少」 |
 | **互动易** | 「比亚迪最近投资者都在问什么，公司怎么回应的」 |
 | **市场热度** | 「今天哪些票最热门，被归到什么概念在炒」 |
@@ -252,6 +258,12 @@ pip install mootdx requests pandas stockstats
 ---
 
 ## FAQ
+
+**Q: 查北交所股票拿不到研报 / 行情价格明显不对？**
+北交所老号段（`43x`/`83x`/`87x`）已基本作废。2026-07-31 实测：在市 342 只中 **336 只已迁至 `920xxx`**（锦波生物 `832982`→`920982`、贝特瑞 `835185`→`920185`）。老码最坑的地方是**不报错**——东财研报静默返回 0 篇（看着像"这票没研报"），腾讯行情返回定格在迁移日的**僵尸报价**（成交量 0，与真实价差 17%~100%+）。V3.6.0 起：`tencent_quote()` 返回 `is_stale` / `stale_reason` 标志，`eastmoney_reports()` 遇老码直接抛 `ValueError` 而不是返回空。**拿新码**：用 push2 北交所全量清单 `fs=m:0+t:81+s:2048` 按名称反查。
+
+**Q: 传 `SH600519` / `600519.SH` 查不到数据？**
+V3.6.0 前研报层确实如此（reportapi 只认纯 6 位数字，带前缀静默返回 0 篇）。现已新增 `norm_ticker()` 并在研报层接入，四种写法结果一致；解析不出 6 位数字时**抛 ValueError 而非返回空**，避免把"代码写错"误读成"这票没数据"。
 
 **Q: SKILL.md 这么大，agent 每次加载很费 token？**
 单文件自包含是本项目的**有意产品决策**——拷一个文件就能用、离线可携、便于分发，这个形态会长期保持，不做目录化拆分（相关讨论见 #21 / #22 / #29）。两个降耗建议：① v3.3.1 起 description 已收窄触发范围，无需取数的 A 股话题不会再误加载整个文件；② token 敏感的用户可以不把它装成自动触发 skill，改为放进项目目录、需要取数时让 agent 按需读取——文件按十层组织、章节标题清晰，v3.4.0 起顶部还有「端点路由速查」总表（§→函数→用途→源），agent 按表定位后只读对应层，通常只花几 K token。
@@ -333,4 +345,4 @@ V2.1 改为本地自缓存。每次调用自动积累，越跑越丰富。首次
 
 [Apache License 2.0](./LICENSE) — 自由使用，注明出处即可。
 
-**作者：** Simon 林 · X [@linsizhen](https://x.com/linsizhen) · TikTok [@simonlin0423](https://www.tiktok.com/@simonlin0423) · 邮箱：[simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)
+**作者：** Simon 林 · X [@linsizhen](https://x.com/linsizhen) · 邮箱：[simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)

@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-02",
+  "pre_existing_changes_protected": [
+    "reports/finance-skill-eval/tushare-eval/standard-finance-skills-recommendation.json",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.html",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.json",
+    "reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.md"
+  ],
+  "baseline": {
+    "catalog_skills": 353,
+    "audited_resolved": 347,
+    "rating_distribution": {"5★": 77, "4★": 119, "3★": 151, "2★": 0, "1★": 6},
+    "native_origins_verified_or_referenced": 347,
+    "preset_exclusions": 6,
+    "missing_native_origins": 0,
+    "standard_bundle": "34 skills + 2 packs",
+    "finance_investment_suite": 159,
+    "dependency_access": {"direct": 151, "api-key": 97, "mcp": 71, "api-key+mcp": 22, "browser": 12},
+    "conflict_groups_with_alternatives": 11,
+    "missing_optional_env_vars": 74,
+    "risk_pattern_hits": 11
+  },
+  "candidates": [
+    {"repository": "VoltAgent/awesome-openclaw-skills", "head": "69f6512e", "license": "MIT", "decision": "observe-index-only"},
+    {"repository": "VoltAgent/awesome-agent-skills", "head": "6c82fb77", "license": "MIT", "decision": "reject-bulk-import"},
+    {"repository": "alirezarezvani/claude-skills", "head": "aa8d7788", "license": "MIT", "decision": "reject-overlap"},
+    {"repository": "Imbad0202/academic-research-skills", "head": "c804e945", "license": "NOASSERTION", "decision": "observe-license"},
+    {"repository": "HKUDS/Vibe-Trading", "head": "bec189f2", "license": "MIT", "decision": "observe-app-coupling"},
+    {"repository": "FTShare-Lab/FTShare-skills", "head": "c43a3d60", "license": "MIT", "decision": "observe-data-reliability"},
+    {"repository": "avenoxai/avenoxskills", "head": "66c519d1", "license": "MIT", "decision": "reject-overlap"},
+    {"repository": "RobinGru/AgentSkillForge", "head": "23bd86a4", "license": "Apache-2.0", "decision": "reject-overlap"}
+  ],
+  "upstream": {
+    "checked": 332,
+    "applied_skill_directories": 17,
+    "current": 290,
+    "metadata_only_root_no_skill_md": 31,
+    "source_path_missing": 11,
+    "pending_after_apply": 0,
+    "source_heads": {
+      "openclaw/agent-skills": "4b79fc967ba4d7c5231f99dd27bb1372c83e9430",
+      "oso95/scroll-world": "71cc36d3bb150248ae36a2c552f9cbf88802a79c",
+      "leecyno1/dasheng-media-workflow-skills": "06c1219934f20d3865ed1fe6ff4024b51003ab68",
+      "simonlin1212/global-stock-data": "c0b3ed8d8a1fdff0932e5899fc64a5994308a5ef",
+      "jackbauerxu/workbuddy-xhs-skills": "8070632e3f31026ed00b948da12e60a9c41b6f88",
+      "MiniMax-AI/skills": "60aaae52bb2af8162732751a4332f62a5fef518b",
+      "pbakaus/impeccable": "c5e1ddd054dc093ef2546c36b82eddf2c4e84bb9",
+      "tradermonty/claude-trading-skills": "500ca4c292f715e2e04d42f062982350ca7dcdf4",
+      "Vincentwei1021/video-shotcraft": "d4915443232e89527fdc9d7e79f132ba411fc440"
+    }
+  },
+  "bundles": {
+    "general_standard": "34 skills + 2 packs",
+    "finance_investment_standard": 159,
+    "added": [],
+    "replaced": [],
+    "removed": []
+  },
+  "validation": {
+    "audit": "pass-with-warn",
+    "repository_tests": "7/7 passed",
+    "pair_trade_tests": "31/31 passed",
+    "trader_memory_tests": "373/373 passed",
+    "compileall": "passed",
+    "standard_bundle_dry_run": "passed (97 expanded entries)",
+    "full_pytest": "blocked by alphaear-news import/SystemExit",
+    "diff_check": "passed"
+  }
+}

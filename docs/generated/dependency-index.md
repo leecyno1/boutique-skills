@@ -2,10 +2,10 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 97 |
+| `api-key` | 98 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 12 |
-| `direct` | 151 |
+| `direct` | 150 |
 | `mcp-required` | 71 |
 
 ## api-key
@@ -96,6 +96,7 @@
 | `vcp-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `agentmail` | `AGENTMAIL_API_KEY` | `browser` | `medium` |
 | `ai-image-generation` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY` | 无 | `medium` |
+| `frontend-dev` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg`, `node` | `medium` |
 | `fullstack-dev` | `JWT_SECRET` | `browser`, `node`, `python` | `medium` |
 | `media-downloader` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `PEXELS_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-docx` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
@@ -276,7 +277,6 @@
 | `android-native-dev` | 无 | 无 | `low` |
 | `content-strategy` | 无 | 无 | `low` |
 | `flutter-dev` | 无 | 无 | `low` |
-| `frontend-dev` | 无 | `node` | `low` |
 | `ios-application-dev` | 无 | 无 | `low` |
 | `pptx-generator` | 无 | `node` | `low` |
 | `shader-dev` | 无 | 无 | `low` |

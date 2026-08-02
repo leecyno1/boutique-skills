@@ -13,15 +13,22 @@ Collect and write down:
 - `TONE` — a word or two (cozy/premium, playful, industrial…).
 - `STYLE` — the art direction (default below).
 - `SECTIONS[]` — ordered list; for each: `id`, `label`, `subject` (what's in the diorama), `eyebrow`, `title`, `body` (≤ 1 sentence), `tags[]` (0–3). Last section = hero product + CTA.
-- `MOBILE` — yes/no. **Always asked** (SKILL Step 1.5), presented to the user
-  with the ~2× credit cost stated.
-- `VIDEO_TIER` — draft (`seedance_2_0_mini`) | standard (`seedance_2_0`, default) |
-  alternate (`kling3_0`). Chosen by cost at SKILL Step 1.6, with the calibrated
-  total estimate stated before anything renders.
+- `CAMERA` — fly-through (arch B: dives + aerial hops — the flagship-demo look) |
+  walkthrough (arch A: one continuous forward flight) | locked-iso (arch A + the
+  locked-iso clause below: one fixed angle for the whole film). **Always asked**
+  (SKILL Step 1.4), presented by feel with a one-line trade-off each.
+- `MOBILE` — yes/no. **Always asked** (SKILL Step 1.6), presented to the user
+  with the ~2× credit cost stated. Yes = the **native 9:16 portrait chain**
+  (pipeline §6b): portrait renders of every dive/connector +
+  `clipMobile`/`connectorsMobile`/`stillMobile` wiring + the full mobile QA. The
+  §6 crop encodes are a no-credits stopgap only.
+- `VIDEO_TIER` — default is `seedance_2_0` **via Monid** (pay-per-clip; previz =
+  same endpoint at 480p, final at 1080p). Higgsfield-credit alternates: draft
+  (`seedance_2_0_mini`) | standard (`seedance_2_0`) | alternate (`kling3_0`).
+  Chosen by cost at SKILL Step 1.7, with the estimated total stated before
+  anything renders.
 - `STILLS_SOURCE` — higgsfield (`gpt_image_2`, spends credits) | codex
-  (`image_gen`, subscription-billed; only offer when the Codex CLI is present). Yes = the **native 9:16 portrait chain** (pipeline §6b):
-  portrait renders of every dive/connector + `clipMobile`/`connectorsMobile`/`stillMobile`
-  wiring + the full mobile QA. The §6 crop encodes are a no-credits stopgap only.
+  (`image_gen`, subscription-billed; only offer when the Codex CLI is present).
 
 ## Style preamble (default: clay diorama)
 
@@ -81,6 +88,20 @@ steady forward glide toward [the doorway / opening / direction of the next scene
 
 Reversals are safe *inside* a leg (it's one continuous render) — only a seam may never
 reverse. That's why "ease back out" is fine mid-leg.
+
+**Locked-iso clause** (`CAMERA` = locked isometric glide — SKILL Step 1.4/Step 4):
+skip this library entirely and put this clause, verbatim, in the mid-leg slot of
+EVERY leg:
+
+```
+The camera keeps exactly the same high isometric angle throughout — no rotation, no
+orbit, no tilt. It only travels straight and level, the world sliding past beneath
+the same view.
+```
+
+Keep the handoff-contract clauses around it unchanged. When checking each leg's last
+frame, also check the ANGLE hasn't drifted (Seedance rotates slightly on long legs) —
+re-roll the leg if the view has turned.
 
 - **Half-orbit** (product, luxury): "sweeping in a slow half-orbit around [the hero
   object], keeping it centered, then continuing past it"

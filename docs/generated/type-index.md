@@ -92,11 +92,11 @@
 | `behavior-validator` | `L2 Professional` | 5★ | `behavior-testing`, `coding-devtools`, `direct`, `l2`, `online`, `openclaw-official`, `quality-assurance` |
 | `android-native-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `flutter-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
-| `frontend-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `ios-application-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
 | `baoyu-image-gen` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `coding-devtools`, `l2`, `online` |
+| `frontend-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `fullstack-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `react-native-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 

@@ -70,6 +70,7 @@ description: Use when running, resuming, auditing, or updating the Dasheng self-
 - Publish 架构：`skills/dasheng-media-sop/references/publish-architecture.md`
 - Publish 技能矩阵：`skills/dasheng-media-sop/references/publish-skill-matrix.md`
 - 迁移表：`skills/dasheng-media-sop/references/legacy-migration-map.md`
+- 无真人方形视频正式生产标准：`docs/technical/no-human-square-video-production-standard.md`
 
 ## OpenClaw 能力集成
 

@@ -104,7 +104,6 @@
 | `android-native-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/android-native-dev) |
 | `content-strategy` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy) |
 | `flutter-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
-| `frontend-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
 | `ios-application-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
 | `pptx-generator` | 文档 / 办公 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
 | `shader-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
@@ -156,6 +155,7 @@
 | `vision-analysis` | 媒体生成 / 处理 | 3★ | `api-key+mcp-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `agentmail` | 设计 / UI | 3★ | `api-key` | [origin](https://github.com/agentmail-to/agentmail-skills) |
 | `ai-image-generation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/inference-sh/skills/tree/main/tools/image/ai-image-generation) |
+| `frontend-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
 | `fullstack-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `media-downloader` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/yizhiyanhua-ai/media-downloader.git) |
 | `minimax-docx` | 文档 / 办公 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |

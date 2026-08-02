@@ -1,14 +1,21 @@
 <p align="center"><b>简体中文</b> | <a href="README.md">English</a></p>
 
-# global-stock-data · 美股港股全栈数据工具包
+<h1 align="center">global-stock-data</h1>
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![GitHub stars](https://img.shields.io/github/stars/simonlin1212/global-stock-data?style=social)](https://github.com/simonlin1212/global-stock-data/stargazers)
-[![层数](https://img.shields.io/badge/层数-13-2ea44f.svg)](#架构)
-[![端点](https://img.shields.io/badge/端点-30%2B-2ea44f.svg)](#端点)
-[![数据源](https://img.shields.io/badge/数据源-11-2ea44f.svg)](#数据源)
-[![零鉴权](https://img.shields.io/badge/鉴权-零-success.svg)](#数据源)
+<p align="center">
+  <b>给 AI 编程助手用的美股数据工具包</b><br>
+  期权希腊字母 · 0DTE 流 · SEC 申报 · 做空数据 · 基本面 · 全市场筛选
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white" alt="Python 3.9+"></a>
+  <a href="https://github.com/simonlin1212/global-stock-data/stargazers"><img src="https://img.shields.io/github/stars/simonlin1212/global-stock-data?style=social" alt="GitHub stars"></a>
+  <a href="#架构"><img src="https://img.shields.io/badge/层数-13-2ea44f.svg" alt="层数"></a>
+  <a href="#端点"><img src="https://img.shields.io/badge/端点-30%2B-2ea44f.svg" alt="端点"></a>
+  <a href="#数据源"><img src="https://img.shields.io/badge/数据源-11-2ea44f.svg" alt="数据源"></a>
+  <a href="#数据源"><img src="https://img.shields.io/badge/鉴权-零-success.svg" alt="零鉴权"></a>
+</p>
 
 <p align="center">
   <a href="#架构">架构</a> ·
@@ -19,7 +26,7 @@
   <a href="#faq">FAQ</a>
 </p>
 
-> **给 AI 编程助手用的美股港股全栈数据工具包** — 13 层架构 · 30+ 个端点 · 11 个数据源 · 全部零鉴权 · 仅依赖 `requests`。
+> **给 AI 编程助手用的美股全栈数据工具包** — 13 层架构 · 30+ 个端点 · 11 个数据源 · 全部零鉴权 · 仅依赖 `requests`。
 >
 > **官方源优先（V2.0）：** CBOE 官方期权链（完整希腊字母 + **0DTE** 异动 flow）、FINRA 全市场每日空头成交量、SEC EDGAR 申报事件流 + 免费全市场 screener、美债收益率曲线 / CFTC COT / 财报日历。**每个数据源标注了合规级别与条款原文**——因为"官方"不等于"可自由使用"。
 
@@ -34,7 +41,7 @@
 ## 架构
 
 ```
-美股港股全栈数据 · 13 层架构 · V2.0
+美股全栈数据 · 13 层架构 · V2.0
 │
 ├── 行情层      新浪 + 腾讯 + 东财push2        实时报价 25-78 字段
 ├── K线层      新浪(回溯至1984) + Yahoo         日/周/月/分钟
@@ -203,7 +210,7 @@ pip install requests
 
 ## FAQ
 
-**和 a-stock-data 什么关系？** 姊妹项目。[a-stock-data](https://github.com/simonlin1212/a-stock-data) 覆盖 A 股，global-stock-data 覆盖美股港股，两个 Skill 可同时装、互不冲突。
+**和 a-stock-data 什么关系？** 姊妹项目。[a-stock-data](https://github.com/simonlin1212/a-stock-data) 覆盖 A 股，global-stock-data 覆盖美股，两个 Skill 可同时装、互不冲突。
 
 **Yahoo 要 API Key 吗？** 不要，代码自动管理 cookie + crumb，过期自动刷新。
 
@@ -237,4 +244,4 @@ pip install requests
 
 ## License
 
-[Apache License 2.0](./LICENSE) — 自由使用，注明出处即可。**Author:** Simon Lin · X [@linsizhen](https://x.com/linsizhen) · TikTok [@simonlin0423](https://www.tiktok.com/@simonlin0423) · Email: [simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)
+[Apache License 2.0](./LICENSE) — 自由使用，注明出处即可。**Author:** Simon Lin · X [@linsizhen](https://x.com/linsizhen) · Email: [simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-01 19:52:09",
+  "timestamp": "2026-08-02 08:46:06",
   "status": "WARN",
   "summary": {
     "catalog_skills": 353,
@@ -874,10 +874,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/flutter-dev"
     },
     {
-      "skill": "frontend-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/frontend-dev"
-    },
-    {
       "skill": "ios-application-dev",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ios-application-dev"
     },
@@ -1712,6 +1708,10 @@
     {
       "skill": "ai-image-generation",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ai-image-generation"
+    },
+    {
+      "skill": "frontend-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/frontend-dev"
     },
     {
       "skill": "fullstack-dev",

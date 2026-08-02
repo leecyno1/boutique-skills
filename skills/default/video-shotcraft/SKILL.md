@@ -185,9 +185,7 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
   helpers(rand/shake/camera/motion)。FlatPanel 与 helpers/camera 需要
   `three` + `@react-three/fiber` + `@remotion/three` 依赖，其余仅需 remotion。
 - `assets/scripts/capture-template.mjs` 复制后改顶部 CONFIG（BASE/路由/选择器）。
-- `assets/audio/` 音效使用前先读 `assets/audio/ATTRIBUTION.md`。Boutique 镜像因部分
-  上游旧素材来源仍待确认而不再分发 MP3；需要音频时，从上游逐项核验许可证后获取。
-  上游完整包的使用说明如下：
+- `assets/audio/` 音效直接复制使用（免费商用授权，见 audio/ATTRIBUTION.md）：
   `audio/bgm/` 是节奏感强的 BGM 备选；`audio/sfx/<类别>/` 149 个音效按场景分 16 类
   （transition impact riser camera ui text paper film light data scifi mech
   glass fluid crowd counter），找音先进类别目录，清单见 sound-design.md。

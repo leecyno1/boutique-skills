@@ -35,8 +35,17 @@ Use this JSON shape when the orchestrator needs machine-readable behavior valida
 }
 ```
 
-Allowed `overall_behavior` values: `satisfies_contract`, `violates_contract`, `blocked`.
+Allowed `overall_behavior` values:
 
-Allowed check `status` values: `pass`, `fail`, `blocked`, `out_of_scope`.
+- `satisfies_contract`
+- `violates_contract`
+- `blocked`
 
-Use `severity` only for `fail` checks; use `null` otherwise. Redact credentials, tokens, cookies, private user data, and unrelated log content from every evidence field.
+Allowed check `status` values:
+
+- `pass`
+- `fail`
+- `blocked`
+- `out_of_scope`
+
+Use `severity` only for `fail` checks; use `null` otherwise. Use `fail` for observable contract violations, including static or fake behavior. Use `blocked` only when runtime access or required test inputs are unavailable. Redact credentials, tokens, cookies, private user data, and unrelated log content from every evidence field.

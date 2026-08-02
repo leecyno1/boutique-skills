@@ -251,7 +251,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `baoyu-image-gen` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `flutter-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
-| `frontend-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
+| `frontend-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
 | `fullstack-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `ios-application-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
 | `react-native-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |

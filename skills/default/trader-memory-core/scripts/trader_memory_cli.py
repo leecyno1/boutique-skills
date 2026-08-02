@@ -10,7 +10,8 @@ Resolution order:
 
 1. Repo root = ``$CLAUDE_TRADING_SKILLS_REPO`` if set, else derived from
    ``__file__`` (this script lives at
-   ``<repo>/skills/trader-memory-core/scripts/trader_memory_cli.py``).
+   ``<repo>/skills/default/trader-memory-core/scripts/trader_memory_cli.py``
+   in this repository, while still accepting the upstream layout).
 2. If ``uv`` is on ``PATH`` and the recursion-guard env var
    ``TRADER_MEMORY_CLI_INNER`` is not ``"1"``, re-exec via
    ``uv run --project <repo-root> python <target> [args...]`` with the
@@ -47,8 +48,26 @@ def find_repo_root() -> Path:
     env = os.environ.get(REPO_ENV)
     if env:
         return Path(env).resolve()
-    # <repo>/skills/trader-memory-core/scripts/trader_memory_cli.py
-    return Path(__file__).resolve().parents[3]
+    # Support both the upstream layout (<repo>/skills/trader-memory-core)
+    # and this repository's curated layout (<repo>/skills/default/trader-memory-core).
+    script = Path(__file__).resolve()
+    for candidate in (script.parents[3], script.parents[4]):
+        if (candidate / "skills" / "default" / "trader-memory-core" / "scripts").is_dir():
+            return candidate
+        if (candidate / "skills" / "trader-memory-core" / "scripts").is_dir():
+            return candidate
+    return script.parents[4]
+
+
+def target_script(repo_root: Path, name: str) -> Path:
+    for relative in (
+        Path("skills/default/trader-memory-core/scripts") / name,
+        Path("skills/trader-memory-core/scripts") / name,
+    ):
+        candidate = repo_root / relative
+        if candidate.is_file():
+            return candidate
+    return repo_root / "skills/default/trader-memory-core/scripts" / name
 
 
 def _usage() -> str:
@@ -93,7 +112,7 @@ def main(argv: list[str]) -> int:
         return 2
 
     repo_root = find_repo_root()
-    target = repo_root / "skills" / "trader-memory-core" / "scripts" / target_script_name
+    target = target_script(repo_root, target_script_name)
     if not target.is_file():
         print(
             f"trader_memory_cli.py: target script not found at {target}\n"

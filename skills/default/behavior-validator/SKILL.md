@@ -5,7 +5,7 @@ description: "Source-blind user behavior validation against a prewritten contrac
 
 # Behavior Validator
 
-Validate observable behavior without inspecting source. Use this as the black-box companion to code-aware review: code review judges the change bundle, while `behavior-validator` judges the running product, CLI, API, or generated artifact against a behavior contract.
+Validate observable behavior without inspecting source. Use this as the black-box companion to code-aware review: `autoreview` judges the change bundle, while `behavior-validator` judges the running product, CLI, API, or generated artifact against a behavior contract.
 
 ## Contract
 

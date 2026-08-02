@@ -23,24 +23,24 @@ Publish 不生产正文、图表、封面、视频或播客。它只读取 `tran
 
 | Skill | 来源 | 角色 |
 | --- | --- | --- |
-| `baoyu-post-to-wechat` | `boutique-skills` / 本机已安装 | 公众号单篇文章、图文、HTML/Markdown 发布 |
-| `wechat-multi-publisher` | `boutique-skills` | 多篇文章推草稿箱 |
-| `wechat-public-cli` | `boutique-skills` / 本机已安装 | 公众号 CLI fallback |
-| `baoyu-post-to-weibo` | `boutique-skills` | 微博长文/图文半自动 |
-| `weibo-manager` | `boutique-skills` | 微博短帖强审批流 |
-| `baoyu-post-to-x` | `boutique-skills` | X 文本、图片、视频、X Article |
+| `baoyu-post-to-wechat` | `boutique-openclaw-skills` / 本机已安装 | 公众号单篇文章、图文、HTML/Markdown 发布 |
+| `wechat-multi-publisher` | `boutique-openclaw-skills` | 多篇文章推草稿箱 |
+| `wechat-public-cli` | `boutique-openclaw-skills` / 本机已安装 | 公众号 CLI fallback |
+| `baoyu-post-to-weibo` | `boutique-openclaw-skills` | 微博长文/图文半自动 |
+| `weibo-manager` | `boutique-openclaw-skills` | 微博短帖强审批流 |
+| `baoyu-post-to-x` | `boutique-openclaw-skills` | X 文本、图片、视频、X Article |
 | `dasheng-xhs-publish-bridge` | 本仓库 | 小红书 API-first / browser fallback 发布桥 |
-| `xiaohongshu-auto` | `boutique-skills` | 小红书发布执行器 |
-| `xiaohongshu-ops` | `boutique-skills` | 小红书发布前演练、发布后运营维护 |
+| `xiaohongshu-auto` | `boutique-openclaw-skills` | 小红书发布执行器 |
+| `xiaohongshu-ops` | `boutique-openclaw-skills` | 小红书发布前演练、发布后运营维护 |
 | `all-in-one` | `cv-cat/All-IN-ONE` | 小红书/微博/抖音统一 CLI + skill 参考 |
 | `xhs-skills` | `cv-cat/XhsSkills` | Spider_XHS 的薄 skill 包装 |
 | `spider-xhs` | `cv-cat/Spider_XHS` | 小红书 API/source-of-truth |
 | `xiaohongshu-mcp` | `xpzouying/xiaohongshu-mcp` | MCP publish/search/access 参考 |
 | `rednote-mcp` | `TimeCyber/mcp-xiaohongshu` | 浏览器/MCP 参考 |
 | `xhs-downloader` | `JoeanAmier/XHS-Downloader` | 素材与竞品采集，不作发布主链 |
-| `douyin-upload-skill` | `boutique-skills` | 抖音官方上传与 fallback outbox |
-| `zhihu-post` | `boutique-skills` | 知乎专栏/想法发布 |
-| `publish-guard` | `boutique-skills` | 发后验真、凭据和审计参考 |
+| `douyin-upload-skill` | `boutique-openclaw-skills` | 抖音官方上传与 fallback outbox |
+| `zhihu-post` | `boutique-openclaw-skills` | 知乎专栏/想法发布 |
+| `publish-guard` | `boutique-openclaw-skills` | 发后验真、凭据和审计参考 |
 | `social-auto-upload-bridge` | 本仓库 | 外部 `social-auto-upload` 多视频平台桥 |
 | `bilibili-upload-bridge` | 本仓库 | B站投稿桥，优先 `biliup-rs`，fallback `social-auto-upload` |
 

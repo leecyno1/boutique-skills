@@ -1,14 +1,21 @@
 <p align="center"><a href="README_zh.md">简体中文</a> | <b>English</b></p>
 
-# global-stock-data · US & HK Market Data for AI Coding Assistants
+<h1 align="center">global-stock-data</h1>
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![GitHub stars](https://img.shields.io/github/stars/simonlin1212/global-stock-data?style=social)](https://github.com/simonlin1212/global-stock-data/stargazers)
-[![Layers](https://img.shields.io/badge/layers-13-2ea44f.svg)](#architecture)
-[![Endpoints](https://img.shields.io/badge/endpoints-30%2B-2ea44f.svg)](#endpoints)
-[![Sources](https://img.shields.io/badge/sources-11-2ea44f.svg)](#data-sources)
-[![Zero-Auth](https://img.shields.io/badge/auth-zero-success.svg)](#data-sources)
+<p align="center">
+  <b>US Market Data for AI Coding Assistants</b><br>
+  Options Greeks · 0DTE Flow · SEC Filings · Short Volume · Fundamentals · Screener
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white" alt="Python 3.9+"></a>
+  <a href="https://github.com/simonlin1212/global-stock-data/stargazers"><img src="https://img.shields.io/github/stars/simonlin1212/global-stock-data?style=social" alt="GitHub stars"></a>
+  <a href="#architecture"><img src="https://img.shields.io/badge/layers-13-2ea44f.svg" alt="Layers"></a>
+  <a href="#endpoints"><img src="https://img.shields.io/badge/endpoints-30%2B-2ea44f.svg" alt="Endpoints"></a>
+  <a href="#data-sources"><img src="https://img.shields.io/badge/sources-11-2ea44f.svg" alt="Sources"></a>
+  <a href="#data-sources"><img src="https://img.shields.io/badge/auth-zero-success.svg" alt="Zero-Auth"></a>
+</p>
 
 <p align="center">
   <a href="#architecture">Architecture</a> ·
@@ -19,11 +26,11 @@
   <a href="#faq">FAQ</a>
 </p>
 
-> **Full-stack market data for US & HK equities** — 13 layers · 30+ endpoints · 11 sources · zero-auth · only `requests`.
+> **Full-stack market data for US equities** — 13 layers · 30+ endpoints · 11 sources · zero-auth · only `requests`.
 >
 > **Official-source-first (V2.0):** CBOE options with full Greeks + **0DTE** flow, FINRA market-wide short volume, SEC EDGAR filing stream + a free market-wide screener, Treasury / CFTC / earnings calendar. **Every source is labeled with its compliance tier, terms quoted verbatim** — "official" does not mean "free to use".
 
-A single self-contained Skill file that turns raw US/HK stock data — scattered across many sources — into a toolkit an AI coding assistant can call directly. You no longer memorize Eastmoney secid prefixes, Yahoo crumb auth flows, or SEC EDGAR CIK mappings. That's all handled.
+A single self-contained Skill file that turns raw US stock data — scattered across many sources — into a toolkit an AI coding assistant can call directly. You no longer memorize Eastmoney secid prefixes, Yahoo crumb auth flows, or SEC EDGAR CIK mappings. That's all handled.
 
 > *This project distributes **code, not market data**. Data is fetched by the user under each source's own terms. For commercial use, rely only on tier-S sources.*
 
@@ -34,7 +41,7 @@ A single self-contained Skill file that turns raw US/HK stock data — scattered
 ## Architecture
 
 ```
-US & HK Full-Stack Data · 13-layer architecture · V2.0
+US Full-Stack Data · 13-layer architecture · V2.0
 │
 ├── Market Data      Sina + Tencent + Eastmoney push2        Real-time quotes, 25-78 fields
 ├── K-line           Sina(back to 1984) + Yahoo chart        Daily / weekly / monthly / minute
@@ -243,4 +250,4 @@ Want a data endpoint that isn't here? Open an [Issue](https://github.com/simonli
 
 ## License
 
-[Apache License 2.0](./LICENSE) — **Author:** Simon Lin · X [@linsizhen](https://x.com/linsizhen) · TikTok [@simonlin0423](https://www.tiktok.com/@simonlin0423) · Email: [simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)
+[Apache License 2.0](./LICENSE) — **Author:** Simon Lin · X [@linsizhen](https://x.com/linsizhen) · Email: [simonlin0423@gmail.com](mailto:simonlin0423@gmail.com)

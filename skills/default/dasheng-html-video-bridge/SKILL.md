@@ -5,6 +5,8 @@ description: Use when Dasheng transwrite needs no-human or human-material talkin
 
 # Dasheng HTML Video Bridge
 
+正式 1:1 无真人口播交付必须遵循 `docs/technical/no-human-square-video-production-standard.md`。
+
 ## Role
 
 Use the external `html-video` repository as the default renderer for Dasheng video transwrite. This skill turns a confirmed Draft into an executable html-video project package; it does not research facts or rewrite the article thesis.

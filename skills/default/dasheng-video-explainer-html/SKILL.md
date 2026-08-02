@@ -5,6 +5,8 @@ description: Use when turning a Dasheng HTML article into a no-human vertical ex
 
 # Dasheng Video Explainer HTML
 
+正式 1:1 无真人口播交付必须遵循 `docs/technical/no-human-square-video-production-standard.md`。
+
 ## Role
 
 Build the无真人出镜科普 production line. The article is the fact source; the storyboard is the first-class artifact; html-video renders the animated scenes.

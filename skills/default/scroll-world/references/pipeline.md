@@ -12,6 +12,9 @@ NAMES="farm kitchen shop delivery plaza finale"   # <-- your section ids, in ord
 # Must accept --start-image AND --end-image (verify: higgsfield model get <model>):
 # seedance_2_0 | kling3_0 | seedance_2_0_mini (draft tier). Reference-only models can't
 # hold a seam; models without --mode (e.g. kling3_0_turbo) need their own flag branch below.
+# DEFAULT backend: Monid pay-per-clip (§7 — gen_dive_monid/gen_conn_monid with
+# VRES=1080p|720p|480p instead of VOPTS). The gen_dive/gen_conn functions in §2/§4
+# below are the Higgsfield-credits FALLBACK (and the only home of kling3_0/mini).
 VMODEL=seedance_2_0
 case "$VMODEL" in                                  # per-model flags + durations (bash 3.2 safe)
   kling3_0)          VOPTS="--mode std --sound off";          DIVE_DUR=10; CONN_DUR=5 ;;  # no --resolution param on Kling
@@ -39,14 +42,14 @@ gen_still() { # name
 for n in $NAMES; do gen_still "$n" & done ; wait
 ```
 
-Codex variant (STILLS_SOURCE=codex, SKILL Step 1.6 — subscription-billed, zero
+Codex variant (STILLS_SOURCE=codex, SKILL Step 1.7 — subscription-billed, zero
 credits; ~1–3 min each, parallelize in small batches):
 
 ```bash
-gen_still_codex() { # name
+gen_still_codex() { # name   (< /dev/null is REQUIRED for parallel calls — see SKILL Gotchas)
   codex exec -C "$WORK" -s workspace-write --skip-git-repo-check \
     'Use the image generation tool ($imagegen) to generate: '"$(cat "$WORK/still_$1.txt")"' Wide 3:2 landscape, high resolution. Save it as ./still_'"$1"'.png. Do not do anything else.' \
-    > "$WORK/still_$1.codex.log" 2>&1
+    > "$WORK/still_$1.codex.log" 2>&1 < /dev/null
   [ -f "$WORK/still_$1.png" ] && echo "still $1 ok (codex)" || echo "still $1 FAIL (see .codex.log)"
 }
 ```
@@ -167,14 +170,14 @@ If phone scrubbing still stutters, tighten the GOP further (`-g 2`, or `-g 1` fo
 the mobile encode still pays off — the tighter GOP is what makes phone seeks cheap. All-mobile encodes stay 16:9 — the engine
 centre-crops them; see the portrait note in SKILL Step 8 / prompts.md.
 
-## 6b. Native 9:16 portrait chain — THE mobile version (Step 1.5 opt-in)
+## 6b. Native 9:16 portrait chain — THE mobile version (Step 1.6 opt-in)
 
 When the user opts into mobile, this is what they get: a **parallel 9:16 chain** rendered
 natively for phones and shipped as the mobile variants — never the §6 crops (those are the
 no-credits stopgap). Same seam laws as the main chain — the portrait chain frame-locks
 against its own rendered frames, never the landscape ones. Budget ~2N-1 video gens +
 re-rolls (interiors trip the NSFW filter in portrait too); state the credit cost at the
-Step 1.5 interview.
+Step 1.6 interview.
 
 1. **Portrait start canvases.** Don't hand the video model a 3:2 still and hope: composite
    each scene onto a 1080×1920 canvas in the page bg colour (island at ~94% width, visual
@@ -193,6 +196,96 @@ Step 1.5 interview.
 5. **Posters**: extract each 9:16 dive's first frame → webp → wire as the section's
    `stillMobile` so the poster matches the portrait video's frame 0 (no landscape→portrait
    flash when the clip paints). Engine support: `sections[k].stillMobile`.
+
+## 7. Monid backend — Seedance 2.0 pay-per-clip (the DEFAULT; qualified 2026-07-25)
+
+`bytedance /v1/video/seedance-2.0` via Monid is the roster's `seedance_2_0` billed
+per clip in USD, and the **default** chain backend (SKILL Step 4 → Monid backend;
+both probes passed) — use these functions in the §2/§4 loops unless the build fell
+back to Higgsfield credits. Same chain laws as everywhere else — only the I/O
+differs: **frames ride Monid's free `sfs` file
+system** (inline base64 is rejected), **`ratio` must be explicit** (the adaptive
+default follows the input image's aspect), and runs are fire-and-poll. Token-priced
+`w×h×24×sec/1024` at $7/1M (480p/720p), $7.7/1M (1080p) — measured: 1080p ≈ $2.99
+dive / $1.87 connector; 720p ≈ $1.21 / $0.76; 480p previz ≈ $0.28 / $0.35.
+
+```bash
+# helper: upload a local frame to sfs, print a signed public URL for it ($0).
+# NB: /cat and /ls take the SAME relative path you gave /put — not the
+# "home/..."-prefixed path /put echoes back (that one 404s).
+monid_frame_url() { # localPng remoteName  (JPEG-compresses on the way up)
+  jpg="$WORK/sfs_$2.jpg"
+  ffmpeg -v error -y -i "$1" -vf "scale='min(1536,iw)':-2" -q:v 2 "$jpg"
+  size=$(stat -f%z "$jpg")
+  up=$(NO_COLOR=1 monid run -p sfs -e /put \
+    -i "{\"path\":\"chain/$2.jpg\",\"sizeBytes\":$size,\"ttl\":\"1h\"}" -w 60 -j \
+    | jq -r '.output.uploadUrl')
+  curl -fsS -T "$jpg" "$up" > /dev/null
+  NO_COLOR=1 monid run -p sfs -e /cat -i "{\"path\":\"chain/$2.jpg\",\"ttl\":\"1d\"}" \
+    -w 60 -j | jq -r '.output.url'
+}
+
+# fire-and-poll (the CLI's -w caps at 120s and seedance can exceed it)
+monid_wait() { # runId outJson
+  while :; do
+    NO_COLOR=1 monid runs get -r "$1" -j > "$2" 2>/dev/null
+    case "$(jq -r '.status // empty' "$2")" in
+      COMPLETED|FAILED|BLOCKED|STOPPED|TIME_OUT) break ;;
+    esac
+    sleep 8
+  done
+}
+
+gen_dive_monid() { # name   (VRES=1080p|720p|480p; DIVE_DUR as usual)
+  furl=$(monid_frame_url "$WORK/still_$1.png" "still_$1")
+  jq -n --arg p "$(cat "$WORK/dive_$1.txt")" --arg u "$furl" --arg r "$VRES" \
+    '{content:[{type:"text",text:$p},
+               {type:"image_url",image_url:{url:$u},role:"first_frame"}],
+      resolution:$r, duration:'"$DIVE_DUR"', ratio:"16:9", generate_audio:false}' \
+    > "$WORK/dive_$1.body.json"
+  rid=$(NO_COLOR=1 monid run -p bytedance -e /v1/video/seedance-2.0 \
+    -f "$WORK/dive_$1.body.json" -j | jq -r '.runId')
+  monid_wait "$rid" "$WORK/dive_$1.json"
+  url=$(jq -r '.output.content.video_url // empty' "$WORK/dive_$1.json")
+  [ -n "$url" ] && curl -fsSL "$url" -o "$WORK/dive_$1.mp4" \
+    && echo "dive $1 ok (\$$(jq -r '.cost.value' "$WORK/dive_$1.json"))" \
+    || echo "dive $1 FAIL ($(jq -r '.status' "$WORK/dive_$1.json"))"
+}
+
+gen_conn_monid() { # i startPng endPng
+  su=$(monid_frame_url "$2" "conn$1_start"); eu=$(monid_frame_url "$3" "conn$1_end")
+  jq -n --arg p "$(cat "$WORK/conn_$1.txt")" --arg s "$su" --arg e "$eu" --arg r "$VRES" \
+    '{content:[{type:"text",text:$p},
+               {type:"image_url",image_url:{url:$s},role:"first_frame"},
+               {type:"image_url",image_url:{url:$e},role:"last_frame"}],
+      resolution:$r, duration:'"$CONN_DUR"', ratio:"16:9", generate_audio:false}' \
+    > "$WORK/conn_$1.body.json"
+  rid=$(NO_COLOR=1 monid run -p bytedance -e /v1/video/seedance-2.0 \
+    -f "$WORK/conn_$1.body.json" -j | jq -r '.runId')
+  monid_wait "$rid" "$WORK/conn_$1.json"
+  url=$(jq -r '.output.content.video_url // empty' "$WORK/conn_$1.json")
+  [ -n "$url" ] && curl -fsSL "$url" -o "$WORK/conn_$1.mp4" \
+    && echo "conn $1 ok (\$$(jq -r '.cost.value' "$WORK/conn_$1.json"))" \
+    || echo "conn $1 FAIL ($(jq -r '.status' "$WORK/conn_$1.json"))"
+}
+```
+
+Default usage in §2/§4: same loops, `gen_dive_monid`/`gen_conn_monid` in place of
+the Higgsfield `gen_dive`/`gen_conn` (mobile chain: `ratio:"9:16"` and the §6b
+portrait canvases). Previz: same functions with `VRES=480p`.
+Result URLs expire (~24–48 h) — the functions download immediately. Read the billed
+`cost.value` per clip (echoed in the ok-line) and `monid balance` between phases; a
+`BLOCKED` status is a workspace budget/run cap — terminal, surface it to the user.
+Frame extraction, encoding, QA: identical to the Higgsfield path.
+
+**Qualification harness for future/changed endpoints** (each probe = one cheap 480p
+clip): (1) prompt + first_frame from a real still → downloaded video's frame 0 must
+match the still (eyeball + PSNR ≳ 30 dB) and `cost.value` must match the advertised
+cell; (2) add a last_frame from a *different* still → the final frame must land on
+that composition (Seedance-style near-miss ok — the crossfade covers it). Known
+failure to watch for (it's why the harness exists): `minimax /v1/video_generation`
+still silently drops the image when `prompt` is present — image-only output proves
+nothing about steerability.
 
 ## Notes
 
