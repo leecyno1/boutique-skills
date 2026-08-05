@@ -1,0 +1,61 @@
+# ── 個人化檔案（採用者填的，不該進公開 repo）──
+profiles/
+channel_state.json
+config.py
+*.local.*
+
+# ── 媒體 / 素材（版權 + 體積，絕不入庫）──
+*.mp4
+*.mov
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.png
+*.jpg
+*.jpeg
+*.gif
+assets/
+videos/
+raw/
+export/
+_intake_bak/
+*_bak/
+
+# ── CapCut / 草稿 ──
+*draft_content.json
+*draft_info.json
+com.lveditor.draft/
+
+# ── Python ──
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# ── OS / editor ──
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+
+# stray repro/scratch files
+_repro*
+_scratch*
+*.repro.py
+
+# selftest / example 生成物（整個目錄，不只媒體副檔名 —— 產出物可能夾帶本機路徑/檔名）
+src/longform_maker/_demo/
+examples/out/
+
+# 各 line 的 autopilot 產出（來賓姓名/授權書/素材規劃/QA 圖 —— 絕不入庫）
+# 預設落在 videos/ 底下（已被上面涵蓋）；這幾條是換過 VIDEO_KIT_* 路徑後的保險。
+_plan.py
+_guest.py
+_work/
+_out/
+_planning/
+interview_EP*/
+REPORT.md

@@ -7205,6 +7205,22 @@
           ]
         },
         {
+          "id": "video-autopilot-kit",
+          "name": "video-autopilot-kit",
+          "description": "Operate ffmpeg-first short-form and long-form video production, CapCut draft automation, delivery QA, interview packaging, competitor teardown, and channel review with calibrated gates.",
+          "manual": "skills/default/video-autopilot-kit/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-autopilot-kit/SKILL.md",
+          "source": "https://github.com/Hao0321/video-autopilot-kit",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "media-generation",
+            "short-video",
+            "ffmpeg",
+            "capcut"
+          ]
+        },
+        {
           "id": "paper-framework-figure-studio-pro",
           "name": "paper-framework-figure-studio-pro",
           "description": "Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow.",

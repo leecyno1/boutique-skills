@@ -206,6 +206,7 @@ EDITORIAL_SCORE_OVERRIDES = {
     "tech-earnings-deepdive": 85,
     "us-market-sentiment": 76,
     "us-value-investing": 72,
+    "video-autopilot-kit": 88,
 }
 
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
@@ -550,6 +551,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "ios-application-dev": "coding-devtools",
         "generative-ui": "design-ui",
         "impeccable": "design-ui",
+        "video-autopilot-kit": "media-generation",
         "video-shotcraft": "media-generation",
         "paper-framework-figure-studio-pro": "media-generation",
         "media-downloader": "media-generation",
@@ -642,6 +644,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "video-shotcraft":
         api_keys = []
         tools = ["browser", "ffmpeg", "node"]
+    if skill_id == "video-autopilot-kit":
+        api_keys = []
+        tools = ["ffmpeg", "python"]
     if skill_id == "paper-framework-figure-studio-pro":
         api_keys = []
         tools = ["python"]

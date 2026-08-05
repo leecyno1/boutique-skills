@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`359`
+- 技能数量：`360`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -363,6 +363,7 @@
 | `gsap-timeline` | Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing. | [skills/default/gsap-timeline/SKILL.md](../../skills/default/gsap-timeline/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
 | `gsap-utils` | Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute. | [skills/default/gsap-utils/SKILL.md](../../skills/default/gsap-utils/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
 | `video-shotcraft` | Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates. | [skills/default/video-shotcraft/SKILL.md](../../skills/default/video-shotcraft/SKILL.md) | [source](https://github.com/Vincentwei1021/video-shotcraft) |
+| `video-autopilot-kit` | Operate ffmpeg-first short-form and long-form video production, CapCut draft automation, delivery QA, interview packaging, competitor teardown, and channel review with calibrated gates. | [skills/default/video-autopilot-kit/SKILL.md](../../skills/default/video-autopilot-kit/SKILL.md) | [source](https://github.com/Hao0321/video-autopilot-kit) |
 | `paper-framework-figure-studio-pro` | Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow. | [skills/default/paper-framework-figure-studio-pro/SKILL.md](../../skills/default/paper-framework-figure-studio-pro/SKILL.md) | [source](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |
 | `tech-earnings-deepdive` | Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers. | [skills/default/tech-earnings-deepdive/SKILL.md](../../skills/default/tech-earnings-deepdive/SKILL.md) | [source](https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive) |
 | `us-value-investing` | Four-dimension US value-investing checklist covering sustainable ROE, debt safety, free-cash-flow quality, and economic moat. | [skills/default/us-value-investing/SKILL.md](../../skills/default/us-value-investing/SKILL.md) | [source](https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing) |

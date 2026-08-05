@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-08-05 22:52:46",
+  "timestamp": "2026-08-05 23:08:13",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 359,
-    "audited_skills": 353,
+    "catalog_skills": 360,
+    "audited_skills": 354,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 353,
+    "resolved_skills": 354,
     "missing_skills": 0,
     "missing_env": 74,
     "duplicate_capabilities": 0,
@@ -700,6 +700,10 @@
     {
       "skill": "url-to-markdown",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/url-to-markdown"
+    },
+    {
+      "skill": "video-autopilot-kit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/video-autopilot-kit"
     },
     {
       "skill": "dasheng-finance-data",

@@ -10,7 +10,7 @@
 | 文档 / 办公 (`docs-office`) | 10 |
 | 设计 / UI (`design-ui`) | 39 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
-| 媒体生成 / 处理 (`media-generation`) | 32 |
+| 媒体生成 / 处理 (`media-generation`) | 33 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 86 |
@@ -187,6 +187,7 @@
 |---|---|---:|---|
 | `ian-xiaohei-illustrations` | `L2 Professional` | 5★ | `creator`, `direct`, `illustration`, `l2`, `media-generation`, `offline` |
 | `reflection` | `L2 Professional` | 5★ | `direct`, `l2`, `media-generation`, `offline` |
+| `video-autopilot-kit` | `L3 Specialist` | 4★ | `capcut`, `direct`, `ffmpeg`, `l3`, `media-generation`, `offline`, `short-video` |
 | `bilibili-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-html-video-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-stage-transwrite` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |

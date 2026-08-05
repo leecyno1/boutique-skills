@@ -1,0 +1,8 @@
+Source: https://github.com/Hao0321/video-autopilot-kit
+Imported from upstream HEAD: f081e99ed169b5aba1156a2aa6a80b748c39fbc9
+Upstream release: v0.11.0
+License: MIT License.
+Discovered from Xiaohongshu note: https://www.xiaohongshu.com/explore/6a6bdb8c0000000033032c8e
+Mirror note: upstream does not provide SKILL.md. The full source project is mirrored with a local Codex Agent Skill routing layer and agents/openai.yaml; upstream runtime files are otherwise unchanged.
+Compatibility note: subtitle rendering requires an ffmpeg build with the libass-backed ass filter. The local wrapper checks this explicitly because Homebrew's standard ffmpeg 8.1 build does not include it.
+Reviewed: 2026-08-05.

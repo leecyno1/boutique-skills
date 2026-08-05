@@ -5,7 +5,7 @@
 | `api-key` | 98 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 17 |
-| `direct` | 151 |
+| `direct` | 152 |
 | `mcp-required` | 71 |
 
 ## api-key
@@ -239,6 +239,7 @@
 | `twitter-reader` | 无 | 无 | `low` |
 | `writing-plans` | 无 | 无 | `low` |
 | `yc-reader` | 无 | `python` | `low` |
+| `video-autopilot-kit` | 无 | `ffmpeg`, `python` | `low` |
 | `dasheng-finance-data` | 无 | `python` | `medium` |
 | `global-stock-data` | 无 | `python` | `medium` |
 | `yfinance-data` | 无 | `python` | `medium` |

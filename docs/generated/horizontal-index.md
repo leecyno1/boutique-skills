@@ -4,7 +4,7 @@
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
 | `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 132 |
-| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 206 |
+| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 207 |
 
 ## L1 Foundation
 
@@ -174,6 +174,7 @@
 | Skill | 类型 | 星级 | 使用条件 | 原生来源 |
 |---|---|---:|---|---|
 | `claude-mem-plugin` | 记忆 / 上下文基础设施 | 5★ | `api-key` | [origin](https://github.com/thedotmack/claude-mem) |
+| `video-autopilot-kit` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/Hao0321/video-autopilot-kit) |
 | `baoyu-format-markdown` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
 | `baoyu-infographic` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic) |
 | `baoyu-skills` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills) |

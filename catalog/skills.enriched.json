@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 359,
-    "native_origin_verified_or_referenced": 353,
+    "skills": 360,
+    "native_origin_verified_or_referenced": 354,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 132,
-      "L3 Specialist": 206
+      "L3 Specialist": 207
     },
     "by_category": {
       "agent-orchestration": 4,
@@ -41,7 +41,7 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
-      "media-generation": 32,
+      "media-generation": 33,
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 2,
@@ -53,13 +53,13 @@
       "api-key": 98,
       "api-key+mcp-required": 22,
       "browser-required": 17,
-      "direct": 151,
+      "direct": 152,
       "mcp-required": 71
     },
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 123,
+      "4★": 124,
       "5★": 78
     }
   },
@@ -3790,6 +3790,54 @@
       "preset_excluded": false,
       "rating": {
         "score": 89,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "video-autopilot-kit",
+      "name": "video-autopilot-kit",
+      "description": "Build, inspect, quality-gate, and operate YouTube and short-form video pipelines with the bundled Video Autopilot Kit. Use for ffmpeg-first vertical Shorts/Reels, teaching long-form videos, CapCut draft JSON automation, subtitle and B-roll alignment, delivery QA, competitor-video teardown, interview-show packages, channel D2/D7/D28 tracking, or AI creator-compliance checks. Trigger on Video Autopilot Kit, CapCut JSON, shorts_autopilot, vertical teardown, or video delivery QA. Not for cinematic Remotion product promos; use video-shotcraft for those.",
+      "manual": "skills/default/video-autopilot-kit/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-autopilot-kit/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/Hao0321/video-autopilot-kit",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/Hao0321/video-autopilot-kit",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "capcut",
+        "direct",
+        "ffmpeg",
+        "l3",
+        "media-generation",
+        "offline",
+        "short-video"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "video-autopilot-kit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 88,
         "stars": 4,
         "rating_label": "★★★★☆"
       }

@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "description": "Voice profiles per content mode. EMPTY skeleton — fill with YOUR voice.",
+    "how_to_fill": "See templates/voice_profile.template.md. Paste 5-10 of YOUR OWN scripts and let an AI assistant extract tone/persona/hooks/anti-patterns into each mode below.",
+    "note": "This file ships EMPTY on purpose — it must contain your voice, not anyone else's."
+  },
+  "default": {
+    "primary_sample": "",
+    "tone_persona": "",
+    "hooks": [],
+    "sign_off": "",
+    "catchphrases": [],
+    "anti_patterns": []
+  }
+}
