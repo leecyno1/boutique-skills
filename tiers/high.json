@@ -5163,6 +5163,21 @@
         "remotion",
         "product-video"
       ]
+    },
+    {
+      "id": "paper-framework-figure-studio-pro",
+      "name": "paper-framework-figure-studio-pro",
+      "description": "Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow.",
+      "manual": "skills/default/paper-framework-figure-studio-pro/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/paper-framework-figure-studio-pro/SKILL.md",
+      "source": "https://github.com/c-narcissus/paper-framework-figure-studio-pro",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "research-figures",
+        "scientific-visualization",
+        "human-in-the-loop"
+      ]
     }
   ]
 }

@@ -1,0 +1,25 @@
+name: paper-framework-figure-studio-pro
+version: 3.2.15c
+description: >-
+  Human-in-the-loop research-paper framework figure studio from S0-PAPER-FOUNDATION
+  through terminal S5-CANDIDATE-IMAGE. S2 and S5 are image-generation-only stages;
+  S1 must absorb S2 prompt-package preparation, S3 must review generated S2 candidates and
+  aggregate their exploration signals, and S4 must absorb S5 prompt-package preparation. All post-S5
+  assistant workflow is removed; remaining decisions are human decisions. User-facing contract-check configuration is not exposed because the fixed candidate contract behavior is built in. Design-origin/reply rules are top-priority, workflow text replies are gated by cumulative checkpoint zip validation, and image prompts require source-faithful entity/relation/symbol audits.
+critical_rules:
+  - "Default step order: S0-PAPER-FOUNDATION -> S1-FIGURE-STRATEGY -> S2-SKETCH-EXPLORE -> S3-DIRECTION-SELECT -> S4-CANDIDATE-BRIEF -> S5-CANDIDATE-IMAGE -> END."
+  - "Execute at most one explicitly requested public step per user turn. Copyable prompts are inert handoffs and must not be self-executed."
+  - "S1 must prepare S2 prompt packages and prompt-index before closing. S1 must not generate S2 images."
+  - "S2 is IMAGE_GENERATE only. It must not write audit, ranking, rerun guidance, aggregate checkpoint text, or next-step prose."
+  - "S3 must perform S2 issue-ledger review and exploration aggregate before direction selection. S3 must not rerun S2 images."
+  - "S4 must prepare S5 prompt packages and prompt-index before closing. S4 must not generate S5 images."
+  - "If S3 records explicit user-preferred first-round S2 candidate IDs, S4 must include second-round S5 local-essence candidates led by each preferred source for every declared style/treatment slot, expanding the matrix dynamically within the configured safe maximum."
+  - "S5 is IMAGE_GENERATE only and terminal. It must not write audit, ranking, rerun guidance, finalization guidance, final caption package, or next-step prose."
+  - "After S5, if asked what remains, answer exactly: 我的任务已经完成，剩下由人类来决策。"
+  - "Target-paper image units are environment-locked: Codex=image_gen; ChatGPT web=Create Image / ChatGPT Images 2.0; other runtimes require a named approved image-generation API. SVG/code/Python/PIL/Matplotlib/Graphviz/TikZ/Mermaid/canvas/PPT/PDF/screenshot/local raster substitutes are invalid."
+  - "S2/S5 prompts must preserve paper-core semantics, visible hierarchy, edge-label-first carried variables, semantic-vs-visual graph separation, source-backed arrow direction, connector bundling, and internal visual motifs for core compound modules."
+  - "S1/S4 image prompts must pass strict source-grounded modular prompt contracts: evidence-backed connectors, bundled block-to-block lines, variables on edges/ports/tags, modular-not-fragmented structure, simple internal motifs, no duplicate workflows/insets, and small background context with at most three repair cycles."
+  - "Every workflow text reply must validate or rebuild a cumulative checkpoint zip mirror using the response checkpoint zip gate before claiming recoverability or handing off to the next stage."
+  - "S1/S4 prompt packages must audit source-faithfulness and symbol disambiguation: every visible entity, relation, connector, and symbol must be paper-supported or derived through recorded strict logical inference; contradictions block image handoff."
+  - "Reusable skill packaging keeps context on demand: SKILL.md is a compact controller, detailed policies live in references/, scripts live in scripts/, project facts stay in run outputs, and historical PATCH_REPORT files are not runtime dependencies."
+  - "Checkpoint links require cumulative integrity validation: checkpoint-manifest.json and passing checkpoint-cumulative-integrity.json must be present; otherwise rebuild generically or redo the producing stage/substage before closure."

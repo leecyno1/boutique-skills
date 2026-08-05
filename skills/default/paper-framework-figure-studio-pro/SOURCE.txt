@@ -1,0 +1,9 @@
+Source: https://github.com/c-narcissus/paper-framework-figure-studio-pro
+Imported from upstream HEAD: 77557418b4ca8c24fa8961206bf9b8f7f6d030e1
+Imported package: paper-framework-figure-studio-pro-v3.2.15c-skill.zip
+Package SHA-256: a514f3e59eceb77fc95a81d21aaf8295ac1bcf81bfce6fc6a230a7e629b943f4
+License: MIT-0, included inside the upstream skill package and declared in the upstream README.
+Compatibility note: v3.2.15c was selected because it supports the historical Codex workflow. Upstream v3.2.15f is newer but explicitly targets ChatGPT Web and requires reference-image input during S5.
+Mirror note: release reports, publishing collateral, examples, cache files, the enclosing ZIP, and the version-locked release architecture audit were omitted. Runtime instructions, agents metadata, working scripts, references, templates, and assets are retained.
+Third-party note: Tabler and Lucide icon notices are consolidated in THIRD_PARTY_NOTICES.md. Paper-derived motif records are reference abstractions only and do not authorize direct reuse of source-paper artwork.
+Local compatibility note: the unreferenced standalone figure_studio_checkpoint_integrity.py was omitted because it imports four nonexistent symbols in both v3.2.15c and v3.2.15f. The active state/checkpoint workflow contains its own cumulative-integrity guards and remains intact.

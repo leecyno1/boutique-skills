@@ -532,6 +532,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "generative-ui": "design-ui",
         "impeccable": "design-ui",
         "video-shotcraft": "media-generation",
+        "paper-framework-figure-studio-pro": "media-generation",
         "media-downloader": "media-generation",
         "minimax-pdf": "docs-office",
         "vision-analysis": "media-generation",
@@ -619,6 +620,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "video-shotcraft":
         api_keys = []
         tools = ["browser", "ffmpeg", "node"]
+    if skill_id == "paper-framework-figure-studio-pro":
+        api_keys = []
+        tools = ["python"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -675,6 +679,8 @@ def risk_level(skill_id: str, deps: dict[str, Any], category: str) -> str:
     if skill_id == "claude-mem-plugin":
         return "high"
     if skill_id == "html-anything":
+        return "medium"
+    if skill_id == "paper-framework-figure-studio-pro":
         return "medium"
     if any(token in skill_id for token in ["danger", "shell"]):
         return "high"

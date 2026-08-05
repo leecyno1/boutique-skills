@@ -10,7 +10,7 @@
 | 文档 / 办公 (`docs-office`) | 10 |
 | 设计 / UI (`design-ui`) | 39 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
-| 媒体生成 / 处理 (`media-generation`) | 31 |
+| 媒体生成 / 处理 (`media-generation`) | 32 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 81 |
@@ -196,6 +196,7 @@
 | `dasheng-video-style-trainer` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-talking-head` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `social-auto-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
+| `paper-framework-figure-studio-pro` | `L3 Specialist` | 4★ | `direct`, `human-in-the-loop`, `l3`, `media-generation`, `online`, `research-figures`, `scientific-visualization` |
 | `guizang-social-card-skill` | `L2 Professional` | 4★ | `api-key`, `creator`, `design`, `l2`, `media-generation`, `online`, `social-card` |
 | `seedance2-skill` | `L2 Professional` | 4★ | `api-key`, `l2`, `media`, `media-generation`, `online`, `prompt`, `video` |
 | `buddy-sings` | `L3 Specialist` | 4★ | `default_sentinel`, `direct`, `l3`, `media-generation`, `minimax_official`, `offline` |

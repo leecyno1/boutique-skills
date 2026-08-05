@@ -1,0 +1,670 @@
+{
+  "project_state_schema_version": 1,
+  "skill_name": "paper-framework-figure-studio-pro",
+  "skill_version": "3.2.15c",
+  "project_id": "PROJECT_ID",
+  "project_title": "Project title",
+  "created_at": "2026-06-06T01:31:51+00:00",
+  "updated_at": "2026-06-06T01:31:51+00:00",
+  "notes": [],
+  "current_step": "S0-PAPER-FOUNDATION",
+  "workflow_plan": [
+    {
+      "step": "S0-PAPER-FOUNDATION",
+      "mode": "TEXT_ONLY",
+      "purpose": "Build the paper/source foundation, runtime state, canvas defaults, framework-figure readiness state, optional author-supplement request, and risk register.",
+      "output_dir": "outputs/S0-paper-foundation",
+      "canonical_output": "outputs/S0-paper-foundation/paper-foundation-report.md",
+      "default_next_step": "S1-FIGURE-STRATEGY",
+      "status": "in_progress"
+    },
+    {
+      "step": "S1-FIGURE-STRATEGY",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S2_PREPARE",
+      "purpose": "Prepare reader question, figure role, narrative structure, visual directions, sketch candidate cards, and all S2 prompt packages/prompt-index before S2 image generation.",
+      "output_dir": "outputs/S1-figure-strategy",
+      "canonical_output": "outputs/S1-figure-strategy/figure-strategy-brief.md",
+      "default_next_step": "S2-SKETCH-EXPLORE",
+      "status": "pending"
+    },
+    {
+      "step": "S2-SKETCH-EXPLORE",
+      "mode": "IMAGE_GENERATE_ONLY",
+      "purpose": "Generate first-round publication-style framework candidates from S1-prepared prompt packages unless an explicit compatible style override is recorded. Do not write text review, aggregate, or next-step prose.",
+      "output_dir": "outputs/S2-sketch-explore",
+      "canonical_output": "outputs/S2-sketch-explore/candidates/C01/image-v01.png",
+      "default_next_step": "S3-DIRECTION-SELECT",
+      "status": "pending"
+    },
+    {
+      "step": "S3-DIRECTION-SELECT",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S2_REVIEW_AGGREGATE",
+      "purpose": "Review S2 sketches with issue-ledger and exploration aggregate duties, then select the paper-grounded refinement direction.",
+      "output_dir": "outputs/S3-direction-select",
+      "canonical_output": "outputs/S3-direction-select/s3-direction-decision.md",
+      "default_next_step": "S4-CANDIDATE-BRIEF",
+      "status": "pending"
+    },
+    {
+      "step": "S4-CANDIDATE-BRIEF",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S5_PREPARE",
+      "purpose": "Prepare the formal candidate matrix and all S5 prompt packages/prompt-index before formal candidate image generation.",
+      "output_dir": "outputs/S4-candidate-brief",
+      "canonical_output": "outputs/S4-candidate-brief/formal-candidate-brief.md",
+      "default_next_step": "S5-CANDIDATE-IMAGE",
+      "status": "pending"
+    },
+    {
+      "step": "S5-CANDIDATE-IMAGE",
+      "mode": "IMAGE_GENERATE_ONLY_TERMINAL",
+      "purpose": "Generate formal paper-framework raster candidates from S4-prepared prompt packages. This is the terminal assistant workflow stage; remaining decisions are human decisions.",
+      "output_dir": "outputs/S5-candidate-image",
+      "canonical_output": "outputs/S5-candidate-image/candidates/F01/image-v01.png",
+      "default_next_step": null,
+      "status": "pending"
+    }
+  ],
+  "step_sequence": [
+    "S0-PAPER-FOUNDATION",
+    "S1-FIGURE-STRATEGY",
+    "S2-SKETCH-EXPLORE",
+    "S3-DIRECTION-SELECT",
+    "S4-CANDIDATE-BRIEF",
+    "S5-CANDIDATE-IMAGE"
+  ],
+  "default_next_step_by_step": {
+    "S0-PAPER-FOUNDATION": "S1-FIGURE-STRATEGY",
+    "S1-FIGURE-STRATEGY": "S2-SKETCH-EXPLORE",
+    "S2-SKETCH-EXPLORE": "S3-DIRECTION-SELECT",
+    "S3-DIRECTION-SELECT": "S4-CANDIDATE-BRIEF",
+    "S4-CANDIDATE-BRIEF": "S5-CANDIDATE-IMAGE",
+    "S5-CANDIDATE-IMAGE": null
+  },
+  "terminal_step": "S5-CANDIDATE-IMAGE",
+  "terminal_message": "我的任务已经完成，剩下由人类来决策。",
+  "step_runs": {
+    "S0-PAPER-FOUNDATION": {
+      "step": "S0-PAPER-FOUNDATION",
+      "epoch": 1,
+      "attempt_id": "s0_paper_foundation-e0001",
+      "status": "in_progress",
+      "output_dir": "outputs/S0-paper-foundation",
+      "started_at": "2026-06-06T01:31:51+00:00",
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    },
+    "S1-FIGURE-STRATEGY": {
+      "step": "S1-FIGURE-STRATEGY",
+      "epoch": 0,
+      "attempt_id": "s1_figure_strategy-e0000",
+      "status": "pending",
+      "output_dir": "outputs/S1-figure-strategy",
+      "started_at": null,
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    },
+    "S2-SKETCH-EXPLORE": {
+      "step": "S2-SKETCH-EXPLORE",
+      "epoch": 0,
+      "attempt_id": "s2_sketch_explore-e0000",
+      "status": "pending",
+      "output_dir": "outputs/S2-sketch-explore",
+      "started_at": null,
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    },
+    "S3-DIRECTION-SELECT": {
+      "step": "S3-DIRECTION-SELECT",
+      "epoch": 0,
+      "attempt_id": "s3_direction_select-e0000",
+      "status": "pending",
+      "output_dir": "outputs/S3-direction-select",
+      "started_at": null,
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    },
+    "S4-CANDIDATE-BRIEF": {
+      "step": "S4-CANDIDATE-BRIEF",
+      "epoch": 0,
+      "attempt_id": "s4_candidate_brief-e0000",
+      "status": "pending",
+      "output_dir": "outputs/S4-candidate-brief",
+      "started_at": null,
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    },
+    "S5-CANDIDATE-IMAGE": {
+      "step": "S5-CANDIDATE-IMAGE",
+      "epoch": 0,
+      "attempt_id": "s5_candidate_image-e0000",
+      "status": "pending",
+      "output_dir": "outputs/S5-candidate-image",
+      "started_at": null,
+      "updated_at": "2026-06-06T01:31:51+00:00"
+    }
+  },
+  "output_root": "figure-studio-runs/PROJECT_ID",
+  "state_file": "state/project-state.json",
+  "path_storage_policy": "all stored paths are project-run relative; host-specific absolute paths are not persisted",
+  "v3215_terminal_candidate_workflow": {
+    "status": "active",
+    "rule": "S2 and S5 are image-generation-only public stages. S1 prepares S2 prompt packages, S3 reviews and aggregates S2 outputs, S4 prepares S5 prompt packages, and assistant workflow ends after S5 image generation.",
+    "removed_units": [
+      "S2 standalone text plan",
+      "S2 candidate-level revision loop",
+      "S3 aggregate over S2 outputs substage",
+      "S5 standalone text plan",
+      "S5 text-review substage",
+      "S5 candidate-level revision loop",
+      "S5 aggregate substage",
+      "assistant workflow after S5"
+    ]
+  },
+  "v3215_candidate_id_coherence_policy": {
+    "status": "hard_required",
+    "source_of_truth": "S1/S4 prompt-index candidates[].candidate_id",
+    "rule": "candidate_id must match prompt_path, target_image_path, candidate_run_registry keys, substage candidate_ids, artifact candidate_id fields, active image paths, and checkpoint image inventories. Do not renumber or reinterpret IDs by stage defaults after a prompt-index exists.",
+    "s2_default_id_family": "C01-C08 unless a validated prompt-index defines equivalent stage candidates",
+    "s5_default_id_family": "F01-F06 unless a validated prompt-index defines project-specific formal candidate IDs",
+    "human_prompt_rule": "Suggested prompts should say '请使用 paper-framework-figure-studio-pro skill' and should not mention zip package names or versioned skill zip files."
+  },
+  "target_raster_image_generation_policy": {
+    "status": "hard_required",
+    "rule": "Target-paper sketches and formal candidates must be raster images produced by the runtime-locked image-generation route. SVG/HTML/Mermaid/canvas/PPT/PDF/code-drawn or programmatic-raster substitutes are invalid for target images even when saved as PNG/JPG/WebP.",
+    "raster_generation_steps": [
+      "S2-SKETCH-EXPLORE",
+      "S5-CANDIDATE-IMAGE"
+    ],
+    "raster_reference_roles": [
+      "s2.primary_sketch",
+      "s5.primary_candidate"
+    ],
+    "allowed_generated_image_extensions": [
+      ".jpeg",
+      ".jpg",
+      ".png",
+      ".webp"
+    ],
+    "forbidden_target_image_kinds": [
+      "canvas",
+      "html",
+      "mermaid",
+      "pdf",
+      "pptx",
+      "svg"
+    ],
+    "forbidden_target_image_extensions": [
+      ".htm",
+      ".html",
+      ".mmd",
+      ".pdf",
+      ".pptx",
+      ".svg"
+    ],
+    "no_fallback_substitute": "If the required route is unavailable, stop and report the limitation instead of fabricating SVG, code-drawn, Python/PIL/Matplotlib/Graphviz/TikZ/Mermaid, canvas screenshot, SVG-to-PNG, PPT/PDF-rendered, or other local raster placeholders.",
+    "codex_route_requirement": "In Codex, every S2/S5 target-paper image unit must call image_gen.",
+    "chatgpt_web_route_requirement": "In ChatGPT web, every S2/S5 target-paper image unit must use Create Image / ChatGPT Images 2.0.",
+    "approved_api_requirement": "A named approved image-generation API is allowed only in runtimes where neither Codex image_gen nor ChatGPT web Create Image is available.",
+    "registration_provenance_requirement": "register-image-batch and target-image artifact registration must cite a recorded image_generation_event from the environment-locked route.",
+    "direct_delete_policy": "Direct artifact delete is forbidden for active target-paper image artifacts. Mark stale, reset candidate, or use rewind-step cleanup for explicit upstream reruns; preserve provenance records."
+  },
+  "paper_framework_non_poster_policy": "This skill is only for research-paper framework/architecture/pipeline/mechanism figures. It must not produce posters, marketing visuals, cover art, decorative exhibition boards, or PPT-slide content pages.",
+  "default_canvas_policy": {
+    "default_aspect_ratio": "16:9",
+    "user_editable": true,
+    "first_reply_disclosure_required": true,
+    "applies_to_steps": [
+      "S2-SKETCH-EXPLORE",
+      "S5-CANDIDATE-IMAGE"
+    ],
+    "user_adjustment_examples": [
+      "4:3",
+      "1:1",
+      "3:2",
+      "double-column landscape",
+      "journal-specified size"
+    ],
+    "state_recording_policy": "If the user changes the aspect ratio, record the requested ratio in project state and carry it through later image prompts."
+  },
+  "default_density_policy": "Default figure density is readable and not crowded. S1/S4 prompt preparation must cap repeated dots, samples, rows, entities, legends, distributions, and context panels before generation. Use the image as a cognitive map; move definitions, caveats, dense equations, symbol meanings, and long explanations to surrounding manuscript text handled outside the assistant work after S5.",
+  "fixed_candidate_contract_policy": {
+    "user_configurable": false,
+    "rule": "S2/S5 have no standalone heavy per-image text review or candidate-level revision substages. S1/S4 must still prepare strict paper-grounded prompt contracts, and S3 must review S2 images before direction selection."
+  },
+  "entity_compression_and_navigation_guard_policy": {
+    "status": "hard_required",
+    "contract": "references/entity-compression-and-active-stage-navigation-guard-policy-v3215a.md",
+    "entity_rule": "Repeated entity families default to compact markers around one canonical process unless source evidence justifies distinct branches or explicit comparison.",
+    "navigation_rule": "Next-step guidance resolves navigation_state from conversation execution and image-generation events before checkpoint restore_state."
+  },
+  "substage_orchestration_policy": {
+    "contract": "references/s2-s5-image-only-terminal-orchestration-policy-v3215.md",
+    "text_image_separation_rule": "S2 and S5 only generate images. S1/S4 own prompt preparation; S3 reviews and aggregates S2 outputs; no S5 assistant-side review exists.",
+    "image_route_guard": "S2/S5 IMAGE_GENERATE must use Codex image_gen, ChatGPT web Create Image / ChatGPT Images 2.0, or a named approved image-generation API only in other runtimes.",
+    "default_required_sequence": "S1 prepares S2 prompts -> S2 generates images -> S3 reviews/aggregates S2 and selects direction -> S4 prepares S5 prompts -> S5 generates images -> END.",
+    "s2_review_to_s4_transfer_rule": "S3 records review findings from S2 outputs; S4 transfers useful findings into S5 prompt constraints.",
+    "s5_terminal_rule": "After S5 image generation, assistant workflow ends. No next prompt is offered."
+  },
+  "workflow_boundary_policy": {
+    "step_order": [
+      "S0-PAPER-FOUNDATION",
+      "S1-FIGURE-STRATEGY",
+      "S2-SKETCH-EXPLORE",
+      "S3-DIRECTION-SELECT",
+      "S4-CANDIDATE-BRIEF",
+      "S5-CANDIDATE-IMAGE"
+    ],
+    "terminal_step": "S5-CANDIDATE-IMAGE",
+    "terminal_reply": "我的任务已经完成，剩下由人类来决策。",
+    "one_public_step_per_user_turn": true,
+    "s1_to_s2_rule": "S1 prepares S2 prompts and stops; S2 image generation requires a new explicit user turn.",
+    "s4_to_s5_rule": "S4 prepares S5 prompts and stops; S5 image generation requires a new explicit user turn."
+  },
+  "style_transfer_policy": {
+    "style_preference_scope_policy": "Preference references inform S1 figure-type/reader-effect suggestions and do not automatically force S2/S5 style.",
+    "candidate_mix_policy": "S2 defaults to 8 formal publication-style first-round candidates; S5 defaults to 6 formal candidates for complete-framework tasks unless the project state overrides this.",
+    "first_round_default_style_id": "formal_publication_schematic",
+    "first_round_default_style_label_zh": "正式出版风格",
+    "first_round_style_options": [
+      {
+        "id": "formal_publication_schematic",
+        "label_zh": "正式出版风格",
+        "meaning": "Default. Clean publication-style academic framework schematic for first-round comparison; polished surface, but still one candidate direction."
+      },
+      {
+        "id": "low_fidelity_sketch",
+        "label_zh": "低保真草图",
+        "meaning": "Rough exploratory framework sketch, whiteboard/wireframe feel, sparse labels."
+      },
+      {
+        "id": "whiteboard_wireframe",
+        "label_zh": "白板线框",
+        "meaning": "Very rough boxes, arrows, grouping, and layout structure with minimal surface polish."
+      },
+      {
+        "id": "clean_flat_minimal_line",
+        "label_zh": "干净扁平极简线稿",
+        "meaning": "Cleaner line-art while still exploratory; no excessive final polish."
+      },
+      {
+        "id": "formal_schematic_layout_study",
+        "label_zh": "正式 schematic 布局草案",
+        "meaning": "More ordered schematic grammar for layout testing."
+      },
+      {
+        "id": "precision_blueprint_light",
+        "label_zh": "轻量蓝图精密稿",
+        "meaning": "Grid/port/routing emphasis for high arrow-risk papers; avoid dense blueprint clutter."
+      },
+      {
+        "id": "scientific_editorial_light",
+        "label_zh": "轻量科学插画",
+        "meaning": "Light scientific editorial treatment with separable modules and restrained texture."
+      },
+      {
+        "id": "interface_metaphor_light",
+        "label_zh": "轻量界面隐喻",
+        "meaning": "UI/control-board metaphor only when it clarifies paper mechanisms without adding facts."
+      },
+      {
+        "id": "isometric_structure_light",
+        "label_zh": "轻量等距结构",
+        "meaning": "Mild dimensional structure only when it does not obscure connectors or labels."
+      },
+      {
+        "id": "infographic_board_light",
+        "label_zh": "轻量信息图板",
+        "meaning": "Compact explanation board, with density and caption burden explicitly budgeted."
+      },
+      {
+        "id": "hand_drawn_storyboard",
+        "label_zh": "手绘故事板",
+        "meaning": "Narrative/storyboard option only when S1 records a close story-to-paper bridge."
+      },
+      {
+        "id": "acm_ieee_aaai_line_art_schematic",
+        "label_zh": "ACM/IEEE/AAAI 双栏论文 line-art schematic",
+        "meaning": "Optional first-round publication-line-art surface. Use only when explicitly requested in the S1 user request before S1 finalizes S2 prompt packages."
+      }
+    ],
+    "first_round_style_user_reminder": "非复制表面风格提示：第一轮 S2 默认表面风格为正式出版风格；这只约束渲染表面，不等同于候选图的叙事、布局或处理方案。若要修改，请在下一轮 S1 请求中另行明确写入表面风格选择或取消默认表面风格；请不要把本说明复制进默认提示词块。可写例如“第一轮采用 ACM/IEEE/AAAI 双栏论文 line-art schematic 表面风格”，也可以写“取消默认表面风格，请 S1 根据论文实际需要自行设置表面风格”。可选表面风格包括：正式出版风格、低保真草图、白板线框、干净扁平极简线稿、正式 schematic 布局草案、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、手绘故事板、ACM/IEEE/AAAI 双栏论文 line-art schematic。",
+    "first_round_style_stage_reminder_policy": "S0 must include a compact non-blocking surface-style reminder outside the copyable S1 prompt block; S1 records any explicit surface-style override or default-surface cancellation from the S1 user request; S1-to-S2 must repeat the available first-round surface-style menu as non-copyable prose outside the copyable S2 prompt and must explain that changing the first-round surface after S1 requires rerunning S1 before S2; S2 is image-only and follows the prompt-index.",
+    "surface_style_dimension_policy": "A surface style is only the rendering layer. Even when explicitly set, it must be combined with narrative role, layout grammar, semantic emphasis, density budget, connector hierarchy, and paper-source constraints; it must not be treated as the full candidate style.",
+    "second_round_optional_style_options": [
+      {
+        "id": "formal_publication_schematic",
+        "label_zh": "正式出版风格",
+        "meaning": "Default formal publication schematic surface for S5 candidates.",
+        "style_family": "publication_schematic"
+      },
+      {
+        "id": "clean_flat_minimal_line",
+        "label_zh": "干净扁平极简线稿",
+        "meaning": "Clean flat line-art surface for formal candidates with minimal ornament.",
+        "style_family": "minimal_line_art"
+      },
+      {
+        "id": "precision_blueprint_light",
+        "label_zh": "轻量蓝图精密稿",
+        "meaning": "Light blueprint/grid/port/routing treatment for arrow-risk formal candidates.",
+        "style_family": "precision_blueprint"
+      },
+      {
+        "id": "scientific_editorial_light",
+        "label_zh": "轻量科学插画",
+        "meaning": "Restrained scientific editorial treatment while preserving modular semantics.",
+        "style_family": "scientific_editorial"
+      },
+      {
+        "id": "interface_metaphor_light",
+        "label_zh": "轻量界面隐喻",
+        "meaning": "Light UI/control-board metaphor only when it clarifies the paper mechanism.",
+        "style_family": "interface_metaphor"
+      },
+      {
+        "id": "isometric_structure_light",
+        "label_zh": "轻量等距结构",
+        "meaning": "Mild dimensional structure only when connectors and labels remain clear.",
+        "style_family": "isometric_structure"
+      },
+      {
+        "id": "infographic_board_light",
+        "label_zh": "轻量信息图板",
+        "meaning": "Compact explanatory board with explicit density and caption-burden control.",
+        "style_family": "infographic_board"
+      },
+      {
+        "id": "acm_ieee_aaai_line_art_schematic",
+        "label_zh": "ACM/IEEE/AAAI 双栏论文 line-art schematic",
+        "meaning": "Optional publication-line-art surface; inject the dedicated ACM/IEEE/AAAI style block when active.",
+        "style_family": "publication_line_art",
+        "reference": "references/acm-ieee-aaai-line-art-schematic-style-policy-v3215c.md",
+        "prompt_injection_required": true
+      }
+    ],
+    "second_round_style_user_reminder": "可选第二轮表面风格：S5 正式候选默认由 S4 根据论文需要设置表面风格；表面风格只约束渲染层，不改变候选图的论文语义、布局骨架、连线证据和密度预算。若希望指定第二轮表面风格，请在下一轮 S4 请求中另行写入“第二轮采用 <表面风格名> 表面风格”。可选项包括：正式出版风格、干净扁平极简线稿、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、ACM/IEEE/AAAI 双栏论文 line-art schematic。也可以写“取消默认表面风格，请 S4 根据论文实际需要自行设置 S5 表面风格”。低保真草图、白板线框、手绘故事板默认只适合第一轮探索；若要用于第二轮，必须在 S4 请求中明确说明它仍需保持 formal candidate 可读性。",
+    "s1_to_s2_style_options_reminder": "非复制表面风格提示：第一轮 S2 默认表面风格为正式出版风格，除非 S1 已在 prompt-index 中记录了显式覆盖或取消默认表面风格；S2 只会按该记录生成图片。若想在运行 S2 前修改第一轮表面风格，需要回到 S1 重做 prompt packages，而不是改 S2 生图提示词。可选表面风格包括：正式出版风格、低保真草图、白板线框、干净扁平极简线稿、正式 schematic 布局草案、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、手绘故事板、ACM/IEEE/AAAI 双栏论文 line-art schematic。可在重新执行 S1 时另行写入例如“第一轮采用 轻量蓝图精密稿 表面风格”或“取消默认表面风格，请 S1 根据论文实际需要自行设置表面风格”。"
+  },
+  "atlas_display_policy": {
+    "board_root": "assets/subtype-atlas/boards",
+    "manifest_path": "assets/subtype-atlas/manifest.json",
+    "board_ids": [
+      "subtype-overview",
+      "visual-grammar-layout",
+      "reader-role-detail",
+      "visual-communication-styles"
+    ],
+    "policy": "Whenever a reply mentions subtype/category atlas boards, layout grammar, visual communication styles, reader-role detail, or subtype overview, embed the corresponding saved PNG board with Markdown. Do not build generated web pages in any environment, including Codex."
+  },
+  "runtime_environment": {
+    "environment": "unknown",
+    "image_generation_route": "unknown",
+    "note": "set-runtime-config should record chatgpt_web/codex/other before image generation"
+  },
+  "image_generation_chunk_policy": {
+    "chatgpt_web_image_chunk_limit": 8,
+    "chatgpt_web_recommended_image_chunk_size": 8,
+    "codex_image_chunk_limit": 8,
+    "default_candidate_count_by_step": {
+      "S2-SKETCH-EXPLORE": 8,
+      "S5-CANDIDATE-IMAGE": 6
+    },
+    "max_candidate_count_by_step": {
+      "S2-SKETCH-EXPLORE": 12,
+      "S5-CANDIDATE-IMAGE": 12
+    }
+  },
+  "artifact_role_registry": {
+    "s0.paper_foundation_report": {
+      "step": "S0-PAPER-FOUNDATION",
+      "kind": "markdown",
+      "relative_path": "outputs/S0-paper-foundation/paper-foundation-report.md"
+    },
+    "s0.framework_figure_risk_register": {
+      "step": "S0-PAPER-FOUNDATION",
+      "kind": "markdown",
+      "relative_path": "outputs/S0-paper-foundation/framework-figure-risk-register.md"
+    },
+    "s0.author_supplement_request": {
+      "step": "S0-PAPER-FOUNDATION",
+      "kind": "markdown",
+      "relative_path": "outputs/S0-paper-foundation/author-supplement-request.md"
+    },
+    "s0.supplement_integration_log": {
+      "step": "S0-PAPER-FOUNDATION",
+      "kind": "markdown",
+      "relative_path": "outputs/S0-paper-foundation/supplement-integration-log.md"
+    },
+    "s1.figure_strategy": {
+      "step": "S1-FIGURE-STRATEGY",
+      "kind": "markdown",
+      "relative_path": "outputs/S1-figure-strategy/figure-strategy-brief.md"
+    },
+    "s1.s2_prompt_index": {
+      "step": "S1-FIGURE-STRATEGY",
+      "kind": "json",
+      "relative_path": "outputs/S2-sketch-explore/prompt-index.json"
+    },
+    "s2.primary_sketch": {
+      "step": "S2-SKETCH-EXPLORE",
+      "kind": "image",
+      "relative_path": "outputs/S2-sketch-explore/candidates/C01/image-v01.png"
+    },
+    "s3.direction_selection": {
+      "step": "S3-DIRECTION-SELECT",
+      "kind": "markdown",
+      "relative_path": "outputs/S3-direction-select/s3-direction-decision.md"
+    },
+    "s3.s2_exploration_aggregate": {
+      "step": "S3-DIRECTION-SELECT",
+      "kind": "markdown",
+      "relative_path": "outputs/S3-direction-select/s2-exploration-aggregate.md"
+    },
+    "s4.candidate_brief": {
+      "step": "S4-CANDIDATE-BRIEF",
+      "kind": "markdown",
+      "relative_path": "outputs/S4-candidate-brief/formal-candidate-brief.md"
+    },
+    "s4.s5_prompt_index": {
+      "step": "S4-CANDIDATE-BRIEF",
+      "kind": "json",
+      "relative_path": "outputs/S5-candidate-image/prompt-index.json"
+    },
+    "s5.primary_candidate": {
+      "step": "S5-CANDIDATE-IMAGE",
+      "kind": "image",
+      "relative_path": "outputs/S5-candidate-image/candidates/F01/image-v01.png"
+    }
+  },
+  "pending_outputs": [
+    {
+      "step": "S0-PAPER-FOUNDATION",
+      "relative_path": "outputs/S0-paper-foundation/paper-foundation-report.md",
+      "artifact_role": "s0.paper_foundation_report"
+    },
+    {
+      "step": "S1-FIGURE-STRATEGY",
+      "relative_path": "outputs/S1-figure-strategy/figure-strategy-brief.md",
+      "artifact_role": "s1.figure_strategy"
+    },
+    {
+      "step": "S2-SKETCH-EXPLORE",
+      "relative_path": "outputs/S2-sketch-explore/candidates/C01/image-v01.png",
+      "artifact_role": "s2.primary_sketch"
+    },
+    {
+      "step": "S3-DIRECTION-SELECT",
+      "relative_path": "outputs/S3-direction-select/s3-direction-decision.md",
+      "artifact_role": "s3.direction_selection"
+    },
+    {
+      "step": "S4-CANDIDATE-BRIEF",
+      "relative_path": "outputs/S4-candidate-brief/formal-candidate-brief.md",
+      "artifact_role": "s4.candidate_brief"
+    },
+    {
+      "step": "S5-CANDIDATE-IMAGE",
+      "relative_path": "outputs/S5-candidate-image/candidates/F01/image-v01.png",
+      "artifact_role": "s5.primary_candidate"
+    },
+    {
+      "step": "S1-FIGURE-STRATEGY",
+      "relative_path": "outputs/S2-sketch-explore/prompt-index.json",
+      "artifact_role": "s1.s2_prompt_index"
+    },
+    {
+      "step": "S3-DIRECTION-SELECT",
+      "relative_path": "outputs/S3-direction-select/s2-exploration-aggregate.md",
+      "artifact_role": "s3.s2_exploration_aggregate"
+    },
+    {
+      "step": "S4-CANDIDATE-BRIEF",
+      "relative_path": "outputs/S5-candidate-image/prompt-index.json",
+      "artifact_role": "s4.s5_prompt_index"
+    }
+  ],
+  "artifacts": [],
+  "candidate_run_registry": {
+    "s2_sketches": {},
+    "s5_candidates": {}
+  },
+  "substage_runs": {},
+  "substage_guidance_registry": {},
+  "next_prompt_registry": {},
+  "checkpoint_bundles": [],
+  "image_generation_events": [],
+  "user_preference_reference_images": [],
+  "user_preference_profile": {
+    "status": "none",
+    "analysis_artifact": "outputs/S0-paper-foundation/preference-reference-analysis.md",
+    "default_s2_sketch_count": 8,
+    "default_s5_candidate_count": 6,
+    "max_total_candidate_count": 8,
+    "first_round_default_style_id": "formal_publication_schematic",
+    "first_round_style_options": [
+      {
+        "id": "formal_publication_schematic",
+        "label_zh": "正式出版风格",
+        "meaning": "Default. Clean publication-style academic framework schematic for first-round comparison; polished surface, but still one candidate direction."
+      },
+      {
+        "id": "low_fidelity_sketch",
+        "label_zh": "低保真草图",
+        "meaning": "Rough exploratory framework sketch, whiteboard/wireframe feel, sparse labels."
+      },
+      {
+        "id": "whiteboard_wireframe",
+        "label_zh": "白板线框",
+        "meaning": "Very rough boxes, arrows, grouping, and layout structure with minimal surface polish."
+      },
+      {
+        "id": "clean_flat_minimal_line",
+        "label_zh": "干净扁平极简线稿",
+        "meaning": "Cleaner line-art while still exploratory; no excessive final polish."
+      },
+      {
+        "id": "formal_schematic_layout_study",
+        "label_zh": "正式 schematic 布局草案",
+        "meaning": "More ordered schematic grammar for layout testing."
+      },
+      {
+        "id": "precision_blueprint_light",
+        "label_zh": "轻量蓝图精密稿",
+        "meaning": "Grid/port/routing emphasis for high arrow-risk papers; avoid dense blueprint clutter."
+      },
+      {
+        "id": "scientific_editorial_light",
+        "label_zh": "轻量科学插画",
+        "meaning": "Light scientific editorial treatment with separable modules and restrained texture."
+      },
+      {
+        "id": "interface_metaphor_light",
+        "label_zh": "轻量界面隐喻",
+        "meaning": "UI/control-board metaphor only when it clarifies paper mechanisms without adding facts."
+      },
+      {
+        "id": "isometric_structure_light",
+        "label_zh": "轻量等距结构",
+        "meaning": "Mild dimensional structure only when it does not obscure connectors or labels."
+      },
+      {
+        "id": "infographic_board_light",
+        "label_zh": "轻量信息图板",
+        "meaning": "Compact explanation board, with density and caption burden explicitly budgeted."
+      },
+      {
+        "id": "hand_drawn_storyboard",
+        "label_zh": "手绘故事板",
+        "meaning": "Narrative/storyboard option only when S1 records a close story-to-paper bridge."
+      },
+      {
+        "id": "acm_ieee_aaai_line_art_schematic",
+        "label_zh": "ACM/IEEE/AAAI 双栏论文 line-art schematic",
+        "meaning": "Optional first-round publication-line-art surface. Use only when explicitly requested in the S1 user request before S1 finalizes S2 prompt packages."
+      }
+    ],
+    "first_round_style_user_reminder": "非复制表面风格提示：第一轮 S2 默认表面风格为正式出版风格；这只约束渲染表面，不等同于候选图的叙事、布局或处理方案。若要修改，请在下一轮 S1 请求中另行明确写入表面风格选择或取消默认表面风格；请不要把本说明复制进默认提示词块。可写例如“第一轮采用 ACM/IEEE/AAAI 双栏论文 line-art schematic 表面风格”，也可以写“取消默认表面风格，请 S1 根据论文实际需要自行设置表面风格”。可选表面风格包括：正式出版风格、低保真草图、白板线框、干净扁平极简线稿、正式 schematic 布局草案、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、手绘故事板、ACM/IEEE/AAAI 双栏论文 line-art schematic。",
+    "s1_to_s2_style_options_reminder": "非复制表面风格提示：第一轮 S2 默认表面风格为正式出版风格，除非 S1 已在 prompt-index 中记录了显式覆盖或取消默认表面风格；S2 只会按该记录生成图片。若想在运行 S2 前修改第一轮表面风格，需要回到 S1 重做 prompt packages，而不是改 S2 生图提示词。可选表面风格包括：正式出版风格、低保真草图、白板线框、干净扁平极简线稿、正式 schematic 布局草案、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、手绘故事板、ACM/IEEE/AAAI 双栏论文 line-art schematic。可在重新执行 S1 时另行写入例如“第一轮采用 轻量蓝图精密稿 表面风格”或“取消默认表面风格，请 S1 根据论文实际需要自行设置表面风格”。",
+    "second_round_optional_style_options": [
+      {
+        "id": "formal_publication_schematic",
+        "label_zh": "正式出版风格",
+        "meaning": "Default formal publication schematic surface for S5 candidates.",
+        "style_family": "publication_schematic"
+      },
+      {
+        "id": "clean_flat_minimal_line",
+        "label_zh": "干净扁平极简线稿",
+        "meaning": "Clean flat line-art surface for formal candidates with minimal ornament.",
+        "style_family": "minimal_line_art"
+      },
+      {
+        "id": "precision_blueprint_light",
+        "label_zh": "轻量蓝图精密稿",
+        "meaning": "Light blueprint/grid/port/routing treatment for arrow-risk formal candidates.",
+        "style_family": "precision_blueprint"
+      },
+      {
+        "id": "scientific_editorial_light",
+        "label_zh": "轻量科学插画",
+        "meaning": "Restrained scientific editorial treatment while preserving modular semantics.",
+        "style_family": "scientific_editorial"
+      },
+      {
+        "id": "interface_metaphor_light",
+        "label_zh": "轻量界面隐喻",
+        "meaning": "Light UI/control-board metaphor only when it clarifies the paper mechanism.",
+        "style_family": "interface_metaphor"
+      },
+      {
+        "id": "isometric_structure_light",
+        "label_zh": "轻量等距结构",
+        "meaning": "Mild dimensional structure only when connectors and labels remain clear.",
+        "style_family": "isometric_structure"
+      },
+      {
+        "id": "infographic_board_light",
+        "label_zh": "轻量信息图板",
+        "meaning": "Compact explanatory board with explicit density and caption-burden control.",
+        "style_family": "infographic_board"
+      },
+      {
+        "id": "acm_ieee_aaai_line_art_schematic",
+        "label_zh": "ACM/IEEE/AAAI 双栏论文 line-art schematic",
+        "meaning": "Optional publication-line-art surface; inject the dedicated ACM/IEEE/AAAI style block when active.",
+        "style_family": "publication_line_art",
+        "reference": "references/acm-ieee-aaai-line-art-schematic-style-policy-v3215c.md",
+        "prompt_injection_required": true
+      }
+    ],
+    "second_round_style_user_reminder": "可选第二轮表面风格：S5 正式候选默认由 S4 根据论文需要设置表面风格；表面风格只约束渲染层，不改变候选图的论文语义、布局骨架、连线证据和密度预算。若希望指定第二轮表面风格，请在下一轮 S4 请求中另行写入“第二轮采用 <表面风格名> 表面风格”。可选项包括：正式出版风格、干净扁平极简线稿、轻量蓝图精密稿、轻量科学插画、轻量界面隐喻、轻量等距结构、轻量信息图板、ACM/IEEE/AAAI 双栏论文 line-art schematic。也可以写“取消默认表面风格，请 S4 根据论文实际需要自行设置 S5 表面风格”。低保真草图、白板线框、手绘故事板默认只适合第一轮探索；若要用于第二轮，必须在 S4 请求中明确说明它仍需保持 formal candidate 可读性。"
+  },
+  "chatgpt_web_text_only_guard": "本轮纯文字：只执行文字、state、manifest、brief、audit、guidance 或 checkpoint 写入；不要生成任何图片。",
+  "text_reply_step_banner_template": "当前流程位置\n全流程：S0-PAPER-FOUNDATION -> S1-FIGURE-STRATEGY -> S2-SKETCH-EXPLORE -> S3-DIRECTION-SELECT -> S4-CANDIDATE-BRIEF -> S5-CANDIDATE-IMAGE -> END\n当前 step：{current_step}\n默认下一步：{default_next_step}",
+  "required_terminal_answer_after_s5": "我的任务已经完成，剩下由人类来决策。",
+  "strict_source_grounded_modular_prompt_contract_policy": {
+    "status": "hard_required",
+    "contract": "references/strict-source-grounded-modular-prompt-contract-policy-v3215a.md",
+    "applies_to": [
+      "S1-FIGURE-STRATEGY",
+      "S4-CANDIDATE-BRIEF"
+    ],
+    "max_audit_repair_cycles": 3,
+    "rule": "Every S1/S4 image prompt must include strict source-grounded connector evidence, connector multiplicity/bundling, edge-label-first variable placement, modular-not-fragmented structure, simple reviewer-recognizable internal motifs, no duplicate workflow/inset, and small background context. If blockers remain after three audit/repair cycles, stop before image handoff and write residual risk."
+  }
+}

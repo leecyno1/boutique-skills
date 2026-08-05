@@ -5,7 +5,7 @@
 | `api-key` | 98 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 12 |
-| `direct` | 150 |
+| `direct` | 151 |
 | `mcp-required` | 71 |
 
 ## api-key
@@ -293,6 +293,7 @@
 | `hormuz-strait` | 无 | `python` | `medium` |
 | `kanchi-dividend-us-tax-accounting` | 无 | 无 | `medium` |
 | `market-breadth-analyzer` | 无 | `python` | `medium` |
+| `paper-framework-figure-studio-pro` | 无 | `python` | `medium` |
 | `policy-monitor` | 无 | 无 | `medium` |
 | `serenity-alpha` | 无 | `python` | `medium` |
 | `stanley-druckenmiller-investment` | 无 | 无 | `medium` |

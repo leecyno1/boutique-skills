@@ -4,7 +4,7 @@
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
 | `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 132 |
-| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 200 |
+| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 201 |
 
 ## L1 Foundation
 
@@ -223,6 +223,7 @@
 | `hormuz-strait` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills) |
 | `kanchi-dividend-us-tax-accounting` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-us-tax-accounting) |
 | `market-breadth-analyzer` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-breadth-analyzer) |
+| `paper-framework-figure-studio-pro` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |
 | `policy-monitor` | 政策 / 宏观监控 | 4★ | `direct` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
 | `serenity-alpha` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/serenity-alpha) |
 | `stanley-druckenmiller-investment` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/stanley-druckenmiller-investment) |

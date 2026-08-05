@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-08-02 08:46:06",
+  "timestamp": "2026-08-05 22:07:11",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 353,
-    "audited_skills": 347,
+    "catalog_skills": 354,
+    "audited_skills": 348,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 347,
+    "resolved_skills": 348,
     "missing_skills": 0,
     "missing_env": 74,
     "duplicate_capabilities": 0,
@@ -1044,6 +1044,10 @@
     {
       "skill": "market-breadth-analyzer",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/market-breadth-analyzer"
+    },
+    {
+      "skill": "paper-framework-figure-studio-pro",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/paper-framework-figure-studio-pro"
     },
     {
       "skill": "policy-monitor",

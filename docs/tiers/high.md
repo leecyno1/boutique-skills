@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`353`
+- 技能数量：`354`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -363,3 +363,4 @@
 | `gsap-timeline` | Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing. | [skills/default/gsap-timeline/SKILL.md](../../skills/default/gsap-timeline/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
 | `gsap-utils` | Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute. | [skills/default/gsap-utils/SKILL.md](../../skills/default/gsap-utils/SKILL.md) | [source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
 | `video-shotcraft` | Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates. | [skills/default/video-shotcraft/SKILL.md](../../skills/default/video-shotcraft/SKILL.md) | [source](https://github.com/Vincentwei1021/video-shotcraft) |
+| `paper-framework-figure-studio-pro` | Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow. | [skills/default/paper-framework-figure-studio-pro/SKILL.md](../../skills/default/paper-framework-figure-studio-pro/SKILL.md) | [source](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |

@@ -1,0 +1,133 @@
+{
+  "name": "paper-framework-figure-studio-pro",
+  "version": "3.2.15c",
+  "title": "Paper Framework Figure Studio Pro",
+  "description": "Human-in-the-loop research-paper framework figure workflow. S2 and S5 are image-generation-only stages, S5 is terminal, prompt-index candidate IDs are the source of truth, S4 enforces preference-led second-round coverage within the eight-scheme cap, every workflow text reply is gated by a cumulative checkpoint zip validator, S1/S4 image prompts must pass source-faithful entity/relation/symbol audits, and v3.2.15c includes optional ACM/IEEE/AAAI first-/second-round line-art schematic style handling.",
+  "workflow": [
+    {
+      "step": "S0-PAPER-FOUNDATION",
+      "mode": "TEXT_ONLY"
+    },
+    {
+      "step": "S1-FIGURE-STRATEGY",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S2_PREPARE"
+    },
+    {
+      "step": "S2-SKETCH-EXPLORE",
+      "mode": "IMAGE_GENERATE_ONLY"
+    },
+    {
+      "step": "S3-DIRECTION-SELECT",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S2_REVIEW_AGGREGATE"
+    },
+    {
+      "step": "S4-CANDIDATE-BRIEF",
+      "mode": "TEXT_ONLY_WITH_EMBEDDED_S5_PREPARE"
+    },
+    {
+      "step": "S5-CANDIDATE-IMAGE",
+      "mode": "IMAGE_GENERATE_ONLY_TERMINAL"
+    }
+  ],
+  "terminal_step": "S5-CANDIDATE-IMAGE",
+  "terminal_reply": "我的任务已经完成，剩下由人类来决策。",
+  "image_route_policy": {
+    "codex": "image_gen only",
+    "chatgpt_web": "Create Image / ChatGPT Images 2.0 only",
+    "other": "named approved image-generation API only",
+    "forbidden": "SVG, HTML/canvas, Mermaid, Python/PIL, Matplotlib, Graphviz, TikZ, PPT/PDF rendering, screenshots, SVG-to-PNG, and local programmatic raster substitutes"
+  },
+  "checkpoint_policy": "Every workflow text reply must validate or rebuild a cumulative checkpoint zip mirror before claiming recoverability. User-facing checkpoint links require checkpoint-manifest.json, checkpoint-cumulative-integrity.json, checkpoint-integrity-audit.json, and PASS / complete_restore_ready status. If repair cannot restore required assets, reconstruct text state from conversation history when possible or redo/request the relevant producing stage/source asset.",
+  "generic_policy_scope": "Reusable skill files must remain paper-neutral and must not hard-code target-paper modules, variables, datasets, topology, or project-specific fixes.",
+  "v3215_changes": [
+    "Adds hard candidate/artifact id coherence across prompt-index, prompt_path, target_image_path, stage manifest, candidate registry, image generation events, artifact records, outputs, and checkpoint inventory.",
+    "S5 formal candidate defaults use F01-F06 while still accepting any validated prompt-index candidate ids; S2 defaults remain C01-C08.",
+    "Scripts accept both list-style and object-style prompt-index candidates, but normalize to ordered list plus candidate_map.",
+    "Suggested user prompts say “请使用 paper-framework-figure-studio-pro skill” rather than referencing a versioned zip package.",
+    "No target-paper-specific names or task-specific ids are hard-coded."
+  ],
+  "v3215a_in_place_changes": [
+    "First-round S2 surface-style default is formal_publication_schematic unless explicitly overridden or cancelled in the S1 request before S1 finalizes S2 prompt packages.",
+    "S0 must remind the user outside the copyable S1 prompt block that first-round surface style can be changed or cancelled in the S1 request and list compatible options.",
+    "Updates references/first-round-default-style-guidance-policy-v3215a.md and project-state defaults for the first-round surface-style menu."
+  ],
+  "v3215a_changes": [
+    "Package-visible version fields are 3.2.15b.",
+    "Terminal image-only workflow and candidate/artifact ID coherence behavior remain active.",
+    "Current package adds formal first-round default plus strict source-grounded modular prompt contracts."
+  ],
+  "v3215_strict_modular_prompt_contract_changes": [
+    "Package-visible version is 3.2.15b as requested, while retaining the formal_publication_schematic first-round default.",
+    "Adds references/strict-source-grounded-modular-prompt-contract-policy-v3215a.md.",
+    "Requires S1/S4 prompt packages to run edge-support ledgers, connector multiplicity/bundling checks, edge-label-first variable placement checks, modularity-not-fragmentation gates, simple internal motif gates, redundancy checks, and background/context budget checks.",
+    "Limits S1/S4 prompt audit/repair loops to three cycles before stopping at residual-risk rather than handing off to image generation with blockers.",
+    "Requires every image-generation prompt to include a compact hard-constraint block for source-supported arrows, bundled connectors, variables on lines/ports/tags, modular structure, simple motifs, no duplicate workflows, and small background context.",
+    "Updates S3 guidance so users may name preferred first-round candidate IDs as preference signals for later direction selection."
+  ],
+  "v3215a_entity_compression_navigation_guard_changes": [
+    "Adds references/entity-compression-and-active-stage-navigation-guard-policy-v3215a.md.",
+    "Requires S1/S4 prompt packages to classify repeated entity families, declare a process instance budget, add a positive multiplicity lock, and run variant-to-lane plus adversarial generation risk audits.",
+    "Requires next-step prompt suggestions to resolve conversation-aware navigation_state before checkpoint restore_state, because image-only stages may not update cumulative text checkpoints.",
+    "Keeps package-visible version fields at 3.2.15b."
+  ],
+  "v3215b_changes": [
+    "Adds preference-led second-round coverage: explicit S3 preferred first-round IDs require S4/S5 local-essence candidates for every declared style/treatment slot.",
+    "Adds generic preference coverage helpers that derive candidate rows from preference IDs and style slots without fixed image counts or project-specific IDs.",
+    "Strengthens checkpoint response/repair-or-redo gates: checkpoint links require embedded cumulative integrity/audit PASS and incomplete bundles must be generically rebuilt or the producing stage/substage redone before closure.",
+    "Adds configurable paper-neutral hardcoding lint for active reusable files while preserving vector-library metadata as non-doctrinal retrieval material.",
+    "Keeps S2/S5 image-only and S5 terminal human decision boundary.",
+    "Second-round formal candidate schemes are capped at eight; default F01-F06 may expand only to F07/F08, and infeasible preference/style coverage triggers S4 repair/replan or redo before S5.",
+    "Moves design-origin and fixed reply rules into the top-priority controller section.",
+    "Adds scripts/figure_studio_response_checkpoint_zip_gate.py for response-time cumulative checkpoint zip validation and repair dispatch.",
+    "Adds source-faithful prompt audit and symbol-disambiguation gates before S2/S5 image handoff.",
+    "Adds context-on-demand packaging guidance and prunes historical PATCH_REPORT files from the clean release package."
+  ],
+  "v3215c_changes": [
+    "Adds optional first-/second-round surface-style id acm_ieee_aaai_line_art_schematic for ACM/IEEE/AAAI double-column paper line-art schematics.",
+    "Requires S0-to-S1, S1-to-S2, and S3-to-S4 handoffs to expose relevant non-blocking surface-style choices outside copyable suggested prompt blocks; S1-to-S2 explains that first-round surface changes require rerunning S1 before S2, and S4-to-S5 must not repeat a surface-style reminder.",
+    "Requires S1/S4 to inject the ACM/IEEE/AAAI line-art prompt block into affected S2/S5 image prompts when the user explicitly selects the option, and keeps optional surface-style text out of default suggested prompts.",
+    "Keeps the surface style inactive by default, requires it to work with layout/narrative/density/connector dimensions, and preserves the existing S2/S5 default counts, max-eight S5 cap, source-grounded prompt contracts, and terminal S5 behavior."
+  ],
+  "v3215b_preferred_first_round_carryover_changes": [
+    "S3 must record explicit user-preferred first-round S2 candidate IDs in machine-readable form.",
+    "S4 must allocate at least one S5 preference-led local-essence refinement for every preferred candidate × active style family pair.",
+    "S5 formal candidate count is dynamic under preference coverage obligations, but the second-round formal set must never exceed eight schemes; default six may expand only to F07/F08.",
+    "Adds generic preference carryover helpers and guard scripts with no paper/topic/candidate-count hardcoding.",
+    "Cumulative checkpoint links must point only to PASS restore bundles, not delta zips.",
+    "Second-round formal candidate schemes are capped at eight; default F01-F06 may expand only to F07/F08, and infeasible preference/style coverage triggers S4 repair/replan or redo before S5."
+  ],
+  "v3215b_preference_checkpoint_changes": [
+    "User-preferred first-round candidate IDs named in S3 become S4/S5 machine-checkable preference carryover obligations.",
+    "Every valid preferred ID must lead at least one second-round local-essence refinement for every active S5 style family.",
+    "Preference coverage guard derives IDs/styles/counts from artifacts and prompt-index rows; it does not hard-code a paper or candidate count.",
+    "Checkpoint response gate requires checkpoint-manifest.json and checkpoint-cumulative-integrity.json PASS / complete_restore_ready before linking a checkpoint to a user.",
+    "Second-round formal candidate schemes are capped at eight; default F01-F06 may expand only to F07/F08, and infeasible preference/style coverage triggers S4 repair/replan or redo before S5."
+  ],
+  "v3215b_final_redo_checkpoint_changes": [
+    "Failed cumulative checkpoint repair must trigger redo of the affected stage/registration/prompt-preparation step; no incomplete restore checkpoint may be presented as recoverable.",
+    "Preference-led second-round coverage cannot be dropped and second-round schemes cannot exceed eight; S4 must repair/replan or be redone with feasible style/candidate allocation before closure.",
+    "Validation helpers emit redo_required diagnostics on failure while only complete_restore_ready checkpoints may be linked to users.",
+    "Second-round formal candidate schemes are capped at eight; default F01-F06 may expand only to F07/F08, and infeasible preference/style coverage triggers S4 repair/replan or redo before S5."
+  ],
+  "v3215b_repair_or_redo_changes": [
+    "Incomplete cumulative checkpoints must be repaired or the producing stage/substage redone before stage closure.",
+    "Explicit S3 first-round preferences require preference-led S5 local-essence candidates for every active style family.",
+    "Second-round formal candidate schemes are capped at eight; default F01-F06 may expand only to F07/F08, and infeasible preference/style coverage triggers S4 repair/replan or redo before S5."
+  ],
+  "second_round_candidate_policy": {
+    "default_s5_candidate_count": 6,
+    "max_s5_second_round_schemes": 8,
+    "preference_coverage": "preferred first-round candidate × active style coverage is mandatory only within the eight-scheme maximum; S4 must repair/replan or redo if coverage cannot fit",
+    "no_ninth_scheme": true,
+    "optional_style_options": [
+      {
+        "style_id": "acm_ieee_aaai_line_art_schematic",
+        "style_label": "ACM/IEEE/AAAI 双栏论文 line-art schematic",
+        "reference": "references/acm-ieee-aaai-line-art-schematic-style-policy-v3215c.md",
+        "activation": "explicit user request in S4 or S3-to-S4 handoff only"
+      }
+    ]
+  },
+  "prompt_fidelity_policy": "Every image-prompt entity, relation, connector, label, variable, metric, formula, and visual symbol must be directly supported by paper/materials/S0 reports or derived by recorded strict logical inference. Paper contradictions, unsupported arrows, reversed directions, ambiguous relation claims, and symbol mixing block S2/S5 handoff.",
+  "packaging_policy": "SKILL.md is a compact controller; detailed rules are loaded from references/ on demand; scripts are reusable helpers; project-specific facts stay in run outputs; historical PATCH_REPORT files are not runtime dependencies and are pruned from the clean release package."
+}
