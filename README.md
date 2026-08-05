@@ -321,7 +321,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `image-to-code` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill) |
 | `imagegen-frontend-mobile` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile) |
 | `imagegen-frontend-web` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
-| `impeccable` | `L2 Professional` | `design-ui` | 4★ | `browser-required` | [Source](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
+| `impeccable` | `L2 Professional` | `design-ui` | 5★ | `browser-required` | [Source](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
 | `improve-animations` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/improve-animations) |
 | `industrial-brutalist-ui` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill) |
 | `minimalist-ui` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill) |

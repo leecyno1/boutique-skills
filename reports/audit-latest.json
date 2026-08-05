@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05 22:30:50",
+  "timestamp": "2026-08-05 22:52:46",
   "status": "WARN",
   "summary": {
     "catalog_skills": 359,
@@ -582,6 +582,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/imagegen-frontend-web"
     },
     {
+      "skill": "impeccable",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/impeccable"
+    },
+    {
       "skill": "improve-animations",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/improve-animations"
     },
@@ -916,10 +920,6 @@
     {
       "skill": "guizang-ppt-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/guizang-ppt-skill"
-    },
-    {
-      "skill": "impeccable",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/impeccable"
     },
     {
       "skill": "llmquant-commodities",

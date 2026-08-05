@@ -59,8 +59,8 @@
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 124,
-      "5★": 77
+      "4★": 123,
+      "5★": 78
     }
   },
   "skills": [
@@ -2436,6 +2436,52 @@
       },
       "risk_level": "low",
       "conflict_group": "imagegen-frontend-web",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "impeccable",
+      "name": "impeccable",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
+      "manual": "skills/default/impeccable/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "browser-required",
+        "design-ui",
+        "frontend-craft",
+        "l2",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "node"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "impeccable",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -6290,52 +6336,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "guizang-ppt-skill",
-      "preset_excluded": false,
-      "rating": {
-        "score": 81,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "impeccable",
-      "name": "impeccable",
-      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
-      "manual": "skills/default/impeccable/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "browser-required",
-        "design-ui",
-        "frontend-craft",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser",
-          "node"
-        ],
-        "access_mode": "browser-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "impeccable",
       "preset_excluded": false,
       "rating": {
         "score": 81,

@@ -157,6 +157,7 @@
 | `image-to-code` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `imagegen-frontend-mobile` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `imagegen-frontend-web` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
+| `impeccable` | `L2 Professional` | 5★ | `browser-required`, `design-ui`, `frontend-craft`, `l2`, `online` |
 | `improve-animations` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `offline`, `standard` |
 | `industrial-brutalist-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `minimalist-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
@@ -167,7 +168,6 @@
 | `skill-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `stitch-design-taste` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `strategy-pivot-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
-| `impeccable` | `L2 Professional` | 4★ | `browser-required`, `design-ui`, `frontend-craft`, `l2`, `online` |
 | `agentmail-toolkit` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 | `animation` | `L2 Professional` | 4★ | `api-key`, `design-ui`, `l2`, `online` |
 | `baoyu-article-illustrator` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `design-ui`, `l2`, `online` |

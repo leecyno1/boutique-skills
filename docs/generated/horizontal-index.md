@@ -73,6 +73,7 @@
 | `image-to-code` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill) |
 | `imagegen-frontend-mobile` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile) |
 | `imagegen-frontend-web` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
+| `impeccable` | 设计 / UI | 5★ | `browser-required` | [origin](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
 | `improve-animations` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/improve-animations) |
 | `industrial-brutalist-ui` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill) |
 | `khazix-skills` | 写作 / 内容 | 5★ | `direct` | [origin](https://github.com/KKKKhazix/khazix-skills) |
@@ -113,7 +114,6 @@
 | `baoyu-url-to-markdown` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `funda-data` | 金融 / 数据源 | 4★ | `api-key+mcp-required` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/funda-data) |
 | `guizang-ppt-skill` | HTML 发布 / 视觉出版 | 4★ | `browser-required` | [origin](https://github.com/op7418/guizang-ppt-skill) |
-| `impeccable` | 设计 / UI | 4★ | `browser-required` | [origin](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
 | `llmquant-commodities` | 金融 / 交易 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-commodities) |
 | `llmquant-credit` | 金融 / 交易 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-credit) |
 | `llmquant-crypto` | 金融 / 交易 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-crypto) |

@@ -201,6 +201,7 @@ DAY1GLOBAL_SKILLS = {
 
 EDITORIAL_SCORE_OVERRIDES = {
     "btc-bottom-model": 78,
+    "impeccable": 92,
     "macro-liquidity": 82,
     "tech-earnings-deepdive": 85,
     "us-market-sentiment": 76,

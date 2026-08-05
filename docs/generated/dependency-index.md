@@ -143,6 +143,7 @@
 | Skill | API Key | Tools | 风险 |
 |---|---|---|---|
 | `html-anything` | 无 | `browser`, `node` | `medium` |
+| `impeccable` | 无 | `browser`, `node` | `medium` |
 | `agent-browser` | 无 | `browser`, `python` | `medium` |
 | `url-to-markdown` | 无 | `browser` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
@@ -150,7 +151,6 @@
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
-| `impeccable` | 无 | `browser`, `node` | `medium` |
 | `openclaw-cron-setup` | 无 | `browser` | `medium` |
 | `btc-bottom-model` | 无 | `browser` | `medium` |
 | `us-market-sentiment` | 无 | `browser` | `medium` |
