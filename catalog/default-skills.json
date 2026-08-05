@@ -7852,7 +7852,7 @@
             "optional"
           ]
         },
-      {
+        {
           "id": "westockdata",
           "name": "westockdata",
           "description": "Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements.",
@@ -7864,6 +7864,22 @@
           "groups": [
             "finance",
             "cross-market-data",
+            "optional"
+          ]
+        },
+        {
+          "id": "uzi-skill",
+          "name": "uzi-skill",
+          "description": "Application-style A-share, Hong Kong, and US stock-research suite with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and source-controlled HTML reports.",
+          "manual": "skills/default/uzi-skill/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/uzi-skill/SKILL.md",
+          "source": "https://github.com/wbh604/UZI-Skill",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "a-share",
+            "equity-research",
             "optional"
           ]
         }

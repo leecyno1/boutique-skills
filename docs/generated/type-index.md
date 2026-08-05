@@ -13,7 +13,7 @@
 | 媒体生成 / 处理 (`media-generation`) | 34 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
-| 金融 / 交易 (`finance-trading`) | 109 |
+| 金融 / 交易 (`finance-trading`) | 110 |
 | 金融 / 机构服务 (`finance-services`) | 53 |
 | 金融 / 数据源 (`finance-data`) | 22 |
 | 金融 / 知识库 (`finance-knowledge`) | 2 |
@@ -265,6 +265,7 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `uzi-skill` | `L3 Specialist` | 4★ | `a-share`, `browser-required`, `equity-research`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `report-generation`, `uzi-skill` |
 | `tech-earnings-deepdive` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `earnings-research`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `online` |
 | `alphagbm-bps-backtest` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
 | `alphagbm-buffett-analysis` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |

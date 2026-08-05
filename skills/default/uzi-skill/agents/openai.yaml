@@ -1,0 +1,4 @@
+interface:
+  display_name: "UZI Stock Research Suite"
+  short_description: "Research A, Hong Kong, and US stocks with source controls"
+  default_prompt: "Use $uzi-skill for source-backed stock research. Choose the narrowest internal workflow, label simulated personas and proxy valuation inputs, default to local no-browser output, and do not place trades."

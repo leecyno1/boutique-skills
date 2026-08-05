@@ -2,7 +2,7 @@
   "schema_version": "2026.06.14",
   "id": "finance-investment-standard",
   "title": "Finance Investment Standard Suite",
-  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, AlphaGBM, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
+  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, AlphaGBM, UZI Skill, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
   "source": "https://github.com/leecyno1/boutique-skills",
   "native_origin": "https://github.com/leecyno1/boutique-skills",
   "homepage": "https://github.com/leecyno1/boutique-skills#finance--investment-workflows",
@@ -64,6 +64,11 @@
       "id": "alphagbm",
       "source": "https://github.com/AlphaGBM/skills",
       "score": 82
+    },
+    {
+      "id": "uzi-skill",
+      "source": "https://github.com/wbh604/UZI-Skill",
+      "score": 86
     }
   ],
   "standard_slots": [
@@ -407,12 +412,14 @@
     "alphagbm-vix-status",
     "alphagbm-vol-smile",
     "alphagbm-vol-surface",
-    "alphagbm-watchlist"
+    "alphagbm-watchlist",
+    "uzi-skill"
   ],
   "notes": [
     "This is the finance-domain standard suite, separate from the general no-duplicate standard bundle.",
     "It intentionally includes full source families requested by the curator plus the scored finance standard slots.",
     "AlphaGBM is included as an optional source family; it complements but does not replace llmquant-options or options-strategy-advisor because their capability overlap is high.",
+    "UZI Skill is an optional comprehensive A/HK/US equity-research application; its simulated personas and rough valuation fallbacks do not replace source-first research, audited models, or specialist data foundations.",
     "Use ./scripts/install-suite.sh finance-investment-standard --dry-run to preview the install list."
   ]
 }

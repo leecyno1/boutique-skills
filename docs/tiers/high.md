@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`393`
+- 技能数量：`394`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -403,3 +403,4 @@
 | `alphagbm-vol-surface` | Cross-strike and cross-expiry implied-volatility surface analysis. | [skills/default/alphagbm-vol-surface/SKILL.md](../../skills/default/alphagbm-vol-surface/SKILL.md) | [source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
 | `alphagbm-watchlist` | Watchlist monitoring for price, IV, activity, earnings, and score changes. | [skills/default/alphagbm-watchlist/SKILL.md](../../skills/default/alphagbm-watchlist/SKILL.md) | [source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
 | `westockdata` | Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements. | [skills/default/westockdata/SKILL.md](../../skills/default/westockdata/SKILL.md) | [source](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
+| `uzi-skill` | Application-style A-share, Hong Kong, and US stock-research suite with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and source-controlled HTML reports. | [skills/default/uzi-skill/SKILL.md](../../skills/default/uzi-skill/SKILL.md) | [source](https://github.com/wbh604/UZI-Skill) |

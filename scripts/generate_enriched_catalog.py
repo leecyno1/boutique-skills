@@ -253,6 +253,7 @@ EDITORIAL_SCORE_OVERRIDES = {
     "us-value-investing": 72,
     "video-autopilot-kit": 88,
     "westockdata": 76,
+    "uzi-skill": 86,
 }
 
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
@@ -603,6 +604,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "openclaw-stock-data-skill": "finance-data",
         "tushare-openclaw-skill": "finance-data",
         "westockdata": "finance-data",
+        "uzi-skill": "finance-trading",
         "yfinance-data": "finance-data",
         "openclaw-stock-kb": "finance-knowledge",
         "stock-monitor-skill": "finance-monitor",
@@ -742,6 +744,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "westockdata":
         api_keys = []
         tools = ["node"]
+    if skill_id == "uzi-skill":
+        api_keys = []
+        tools = ["browser", "python"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -779,6 +784,8 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "scientific-illustrator":
         runtime = "offline"
     if skill_id == "eigenflux":
+        runtime = "online"
+    if skill_id == "uzi-skill":
         runtime = "online"
     return {
         "requires_api_keys": bool(api_keys),
@@ -916,6 +923,8 @@ def build_enriched() -> dict[str, Any]:
             tags.extend(["day1global-skills", "finance-suite", "investment-research"])
         if skill_id in ALPHAGBM_SKILLS:
             tags.extend(["alphagbm", "finance-suite", "options-research", "api-backed"])
+        if skill_id == "uzi-skill":
+            tags.extend(["uzi-skill", "finance-suite", "a-share", "equity-research", "report-generation"])
         if skill_id in tushare_backed:
             tags.extend(["tushare-backed", "china-market-data"])
             if "TUSHARE_TOKEN" not in deps["api_keys"]:
@@ -1266,6 +1275,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "alphaear": "AlphaEar",
         "day1global-skills": "Day1Global Skills",
         "alphagbm": "AlphaGBM",
+        "uzi-skill": "UZI Skill",
     }
     family_roles = {
         "llmquant": "SEC/13F/宏观、组合/风险、期权、机构研究",
@@ -1276,6 +1286,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "alphaear": "新闻、情绪、信号、报告生成",
         "day1global-skills": "科技股财报、宏观流动性、美股情绪、价值与 BTC 周期",
         "alphagbm": "期权波动率、对冲、市场信号、投资框架与研究档案（可选源）",
+        "uzi-skill": "A/港/美股综合研究、模拟评审团、龙虎榜、风险信号与 HTML 报告（可选源）",
     }
     rows = []
     for row in source_rows:

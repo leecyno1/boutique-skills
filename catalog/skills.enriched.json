@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 393,
-    "native_origin_verified_or_referenced": 387,
+    "skills": 394,
+    "native_origin_verified_or_referenced": 388,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 133,
-      "L3 Specialist": 239
+      "L3 Specialist": 240
     },
     "by_category": {
       "agent-orchestration": 5,
@@ -37,7 +37,7 @@
       "finance-knowledge": 2,
       "finance-monitor": 15,
       "finance-services": 53,
-      "finance-trading": 109,
+      "finance-trading": 110,
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
@@ -52,14 +52,14 @@
     "by_access_mode": {
       "api-key": 128,
       "api-key+mcp-required": 22,
-      "browser-required": 17,
+      "browser-required": 18,
       "direct": 153,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 156,
+      "4★": 157,
       "5★": 79
     }
   },
@@ -4030,6 +4030,58 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-global-data",
+      "preset_excluded": false,
+      "rating": {
+        "score": 86,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "uzi-skill",
+      "name": "uzi-skill",
+      "description": "A-share, Hong Kong, and US stock analysis skill for deep research, quick scans, investor panel review, hot-money/LHB analysis, trap detection, valuation, IC memos, and Bloomberg-style HTML reports.",
+      "manual": "skills/default/uzi-skill/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/uzi-skill/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/wbh604/UZI-Skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/wbh604/UZI-Skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "a-share",
+        "browser-required",
+        "equity-research",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "report-generation",
+        "uzi-skill"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:uzi-skill",
       "preset_excluded": false,
       "rating": {
         "score": 86,

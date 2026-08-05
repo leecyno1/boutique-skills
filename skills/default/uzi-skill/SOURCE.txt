@@ -1,0 +1,9 @@
+Upstream: https://github.com/wbh604/UZI-Skill
+Snapshot: fce996c33e70eddce8e375f53cd252b549eb3d7c
+Imported: 2026-08-06
+License: MIT
+
+Boutique hardening: renamed only the catalog-facing root skill identifier and
+added explicit persona, provenance, valuation-proxy, browser, tunnel, package
+installation, scraping, and no-trading safeguards. The upstream application
+layout and its four internal specialist workflows remain intact.

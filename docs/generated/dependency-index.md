@@ -4,7 +4,7 @@
 |---|---:|
 | `api-key` | 128 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 17 |
+| `browser-required` | 18 |
 | `direct` | 153 |
 | `mcp-required` | 73 |
 
@@ -176,6 +176,7 @@
 | `impeccable` | 无 | `browser`, `node` | `medium` |
 | `agent-browser` | 无 | `browser`, `python` | `medium` |
 | `url-to-markdown` | 无 | `browser` | `medium` |
+| `uzi-skill` | 无 | `browser`, `python` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
 | `macro-liquidity` | 无 | `browser` | `medium` |
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |

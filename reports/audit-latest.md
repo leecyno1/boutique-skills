@@ -1,15 +1,15 @@
 # Boutique Skills Audit
 
-- Time: 2026-08-06 02:20:42
+- Time: 2026-08-06 02:31:55
 - Status: **WARN**
-- Catalog skills: 393
-- Audited skills: 387
+- Catalog skills: 394
+- Audited skills: 388
 - Legacy catalog skills: 42
-- Installed/Resolved: 387
+- Installed/Resolved: 388
 - Missing: 0
 - Missing env vars: 104
 - Duplicate capabilities: 0
-- Risk hits: 11
+- Risk hits: 15
 - Missing native origins: 0
 - Standard bundle issues: 0
 
@@ -133,6 +133,10 @@
 
 ## Risk Findings
 - skill-vetter: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/skill-vetter/scripts/install.sh`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh`
+- uzi-skill: `curl\s+[^\n|]+\|\s*(sh|bash)` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/run.py`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/skills/deep-analysis/run.py`
 - alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
 - alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
 - alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`

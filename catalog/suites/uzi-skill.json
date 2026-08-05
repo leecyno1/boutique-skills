@@ -1,0 +1,49 @@
+{
+  "schema_version": "2026.08.06",
+  "id": "uzi-skill",
+  "title": "UZI Stock Research Suite",
+  "description": "Application-style A-share, Hong Kong, and US stock research with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and HTML reports.",
+  "source": "https://github.com/wbh604/UZI-Skill",
+  "native_origin": "https://github.com/wbh604/UZI-Skill",
+  "homepage": "https://github.com/wbh604/UZI-Skill",
+  "license": "MIT",
+  "install_tier": "high",
+  "category": "finance-trading",
+  "horizontal_tier": "L3 Specialist",
+  "access_mode": "browser-required",
+  "requires_api_keys": false,
+  "api_keys": [],
+  "requires_tools": [
+    "python",
+    "browser"
+  ],
+  "editorial_score": 86,
+  "upstream": {
+    "stars": 6004,
+    "forks": 853,
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-07-18T12:32:23Z",
+    "verified_at": "2026-08-06",
+    "commit": "fce996c33e70eddce8e375f53cd252b549eb3d7c",
+    "commit_date": "2026-07-07T16:47:43+08:00",
+    "commit_subject": "fix flow and data contract regressions (#85)"
+  },
+  "skills": [
+    "uzi-skill"
+  ],
+  "internal_entry_points": [
+    "uzi",
+    "deep-analysis",
+    "investor-panel",
+    "lhb-analyzer",
+    "trap-detector"
+  ],
+  "notes": [
+    "The complete upstream application is mirrored as one catalog skill so its relative paths, commands, templates, tests, and reports remain intact.",
+    "The 66 personas stay internal: they simulate analytical frameworks and are not separate skills, endorsements, quotations, or current views.",
+    "MX_APIKEY is an optional hosted-data enhancement, not a required credential.",
+    "Deep mode can take 5-8 minutes and substantial tokens; use the narrowest workflow and disclose the expected cost first.",
+    "Default to local --no-browser output. Remote tunnels, persistent browser credentials, browser or system package installation, broker connectivity, order placement, and unattended trading require stronger controls and are not enabled by this suite."
+  ]
+}

@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-393-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-394-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 393 |
-| Skill suites | 7 |
-| Native sources verified or referenced | 387 |
+| Curated skills | 394 |
+| Skill suites | 8 |
+| Native sources verified or referenced | 388 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -126,10 +126,10 @@ Finance skills now have a dedicated **Finance Investment Standard Suite**. It is
 
 | Metric | Value |
 |---|---:|
-| Finance-related skills | 203 |
-| Finance investment standard suite | 194 skills |
+| Finance-related skills | 204 |
+| Finance investment standard suite | 195 skills |
 | Finance data skills | 22 |
-| Finance trading/research skills | 109 |
+| Finance trading/research skills | 110 |
 | Institutional finance services | 53 |
 | Finance monitor/risk skills | 15 |
 
@@ -147,6 +147,7 @@ This standard suite lists merged upstream source packs and representative standa
 | 组合包 | 新闻、情绪、信号、报告生成 | AlphaEar | - | [Source](https://github.com/RKiding/Awesome-finance-skills) |
 | 组合包 | 科技股财报、宏观流动性、美股情绪、价值与 BTC 周期 | Day1Global Skills | 79 | [Source](https://github.com/star23/Day1Global-Skills) |
 | 组合包 | 期权波动率、对冲、市场信号、投资框架与研究档案（可选源） | AlphaGBM | 82 | [Source](https://github.com/AlphaGBM/skills) |
+| 组合包 | A/港/美股综合研究、模拟评审团、龙虎榜、风险信号与 HTML 报告（可选源） | UZI Skill | 86 | [Source](https://github.com/wbh604/UZI-Skill) |
 | 单品 | A股结构化数据 | `tushare-openclaw-skill` | 95 | [Source](https://github.com/DayDreammy/tushare-openclaw-skill) |
 | 单品 | A股全栈行情/题材数据 | `a-stock-data` | 88 | [Source](https://github.com/simonlin1212/a-stock-data) |
 | 单品 | 美股港股全栈数据 | `global-stock-data` | 88 | [Source](https://github.com/simonlin1212/global-stock-data) |
@@ -237,9 +238,10 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | [Anthropic Financial Services Suite](https://github.com/anthropics/financial-services) | 66 | `high` | `finance-services` | Tools: `mcp` | `./scripts/install-suite.sh anthropic-financial-services` |
 | [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 29 | `high` | `marketing-growth` | Tools: `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
 | [Day1Global Investment Research Suite](https://github.com/star23/Day1Global-Skills) | 5 | `high` | `finance-trading` | Tools: `browser` | `./scripts/install-suite.sh day1global-skills` |
-| [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-skills) | 194 | `high` | `finance-investment-standard` | API: `TUSHARE_TOKEN`, `FMP_API_KEY`, `FINVIZ_API_KEY`, `LLMQUANT_API_KEY`, `ALPACA_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY`, `ALPHAGBM_API_KEY`<br>Tools: `python`, `mcp`, `node`, `browser` | `./scripts/install-suite.sh finance-investment-standard` |
+| [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-skills) | 195 | `high` | `finance-investment-standard` | API: `TUSHARE_TOKEN`, `FMP_API_KEY`, `FINVIZ_API_KEY`, `LLMQUANT_API_KEY`, `ALPACA_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY`, `ALPHAGBM_API_KEY`<br>Tools: `python`, `mcp`, `node`, `browser` | `./scripts/install-suite.sh finance-investment-standard` |
 | [Official GSAP AI Skills Suite](https://github.com/greensock/gsap-skills) | 8 | `high` | `design-ui` | Tools: `node` | `./scripts/install-suite.sh gsap-skills` |
 | [LLMQuant Institutional Finance Suite](https://github.com/LLMQuant/skills) | 18 | `high` | `finance-trading` | API: `LLMQUANT_API_KEY`<br>Tools: `mcp`, `node` | `./scripts/install-suite.sh llmquant` |
+| [UZI Stock Research Suite](https://github.com/wbh604/UZI-Skill) | 1 | `high` | `finance-trading` | Tools: `python`, `browser` | `./scripts/install-suite.sh uzi-skill` |
 
 ## All Skills
 
@@ -544,6 +546,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `us-market-sentiment` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment) |
 | `us-stock-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/us-stock-analysis) |
 | `us-value-investing` | `L3 Specialist` | `finance-trading` | 3★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing) |
+| `uzi-skill` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/wbh604/UZI-Skill) |
 | `value-dividend-screener` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/value-dividend-screener) |
 | `vcp-screener` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/vcp-screener) |
 | `dasheng-html-anything-bridge` | `L3 Specialist` | `html-publishing` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge) |

@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-08-06 02:20:42",
+  "timestamp": "2026-08-06 02:31:55",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 393,
-    "audited_skills": 387,
+    "catalog_skills": 394,
+    "audited_skills": 388,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 387,
+    "resolved_skills": 388,
     "missing_skills": 0,
     "missing_env": 104,
     "duplicate_capabilities": 0,
-    "risky_hits": 11,
+    "risky_hits": 15,
     "missing_native_origins": 0,
     "standard_bundle_issues": 0
   },
@@ -442,6 +442,26 @@
       "pattern": "\\bsudo\\b"
     },
     {
+      "skill": "uzi-skill",
+      "file": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh",
+      "pattern": "curl\\s+[^\\n|]+\\|\\s*(sh|bash)"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/run.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/skills/deep-analysis/run.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
       "skill": "alphaear-predictor",
       "file": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py",
       "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
@@ -840,6 +860,10 @@
     {
       "skill": "global-stock-data",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/global-stock-data"
+    },
+    {
+      "skill": "uzi-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill"
     },
     {
       "skill": "yfinance-data",
