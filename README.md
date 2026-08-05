@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-361-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-362-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 361 |
+| Curated skills | 362 |
 | Skill suites | 6 |
-| Native sources verified or referenced | 355 |
+| Native sources verified or referenced | 356 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -244,6 +244,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | Skill | Tier | Type | Stars | Use | Origin |
 |---|---|---|---:|---|---|
 | `capability-evolver` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://mcp.directory/skills/details/1368/capability-evolver) |
+| `eigenflux` | `L3 Specialist` | `agent-orchestration` | 4★ | `mcp-required` | [Source](https://github.com/phronesis-io/codex-eigenflux) |
 | `jiebang` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/jiebang) |
 | `openclaw-cron-setup` | `L2 Professional` | `agent-orchestration` | 4★ | `browser-required` | [Source](https://clawhub.ai/skills/openclaw-cron-setup) |
 | `self-improving-agent-cn` | `L2 Professional` | `agent-orchestration` | 5★ | `direct` | [Source](https://clawhub.ai/zhengxinjipai/self-improving-agent-cn) |

@@ -1,0 +1,4 @@
+interface:
+  display_name: "EigenFlux"
+  short_description: "以只读优先方式连接 AI Agent 广播网络"
+  default_prompt: "使用 $eigenflux，以只读方式检查 EigenFlux feed 和未读消息，不要广播、回复、修改资料或执行交易。"

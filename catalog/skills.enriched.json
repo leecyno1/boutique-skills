@@ -13,18 +13,18 @@
     ]
   },
   "summary": {
-    "skills": 361,
-    "native_origin_verified_or_referenced": 355,
+    "skills": 362,
+    "native_origin_verified_or_referenced": 356,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 132,
-      "L3 Specialist": 208
+      "L3 Specialist": 209
     },
     "by_category": {
-      "agent-orchestration": 4,
+      "agent-orchestration": 5,
       "browser-automation": 2,
       "coding-devtools": 11,
       "commerce-ops": 3,
@@ -54,12 +54,12 @@
       "api-key+mcp-required": 22,
       "browser-required": 17,
       "direct": 152,
-      "mcp-required": 72
+      "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 124,
+      "4★": 125,
       "5★": 79
     }
   },
@@ -7846,6 +7846,56 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:buy-side-equity-research-memo",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "eigenflux",
+      "name": "eigenflux",
+      "description": "Connect Codex to the EigenFlux agent broadcast network through the bundled official Codex MCP plugin. Use to inspect the EigenFlux feed or unread messages, review network signals, or deliberately manage an EigenFlux identity. Broadcasting, messaging, friend changes, profile publication, remote skill sync, scheduling, service orders, and payments are external side effects and require explicit user approval. Default to read-only feed and message access.",
+      "manual": "skills/default/eigenflux/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/eigenflux/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/phronesis-io/codex-eigenflux",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/phronesis-io/codex-eigenflux",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
+      "tags": [
+        "agent-network",
+        "agent-orchestration",
+        "broadcast",
+        "codex-plugin",
+        "communication",
+        "l3",
+        "mcp-required",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "eigenflux",
+          "mcp",
+          "node"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "online"
+      },
+      "risk_level": "high",
+      "conflict_group": "eigenflux",
       "preset_excluded": false,
       "rating": {
         "score": 79,

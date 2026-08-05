@@ -5212,6 +5212,22 @@
       ]
     },
     {
+      "id": "eigenflux",
+      "name": "eigenflux",
+      "description": "Connect Codex to the EigenFlux agent broadcast network through the official MCP plugin, with local read-only defaults and explicit approval for publishing, messaging, profile changes, scheduling, orders, and payments.",
+      "manual": "skills/default/eigenflux/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/eigenflux/SKILL.md",
+      "source": "https://github.com/phronesis-io/codex-eigenflux",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "agent-network",
+        "broadcast",
+        "communication",
+        "codex-plugin"
+      ]
+    },
+    {
       "id": "tech-earnings-deepdive",
       "name": "tech-earnings-deepdive",
       "description": "Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers.",

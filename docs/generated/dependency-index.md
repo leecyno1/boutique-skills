@@ -6,7 +6,7 @@
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 17 |
 | `direct` | 152 |
-| `mcp-required` | 72 |
+| `mcp-required` | 73 |
 
 ## api-key
 
@@ -325,6 +325,7 @@
 | `chrome-devtools-mcp` | 无 | `browser`, `mcp` | `medium` |
 | `mcp-builder` | 无 | `mcp` | `medium` |
 | `news-radar` | 无 | `mcp`, `python` | `medium` |
+| `eigenflux` | 无 | `eigenflux`, `mcp`, `node` | `high` |
 | `anthropic-fs-equity-research-catalyst-calendar` | 无 | `mcp` | `medium` |
 | `anthropic-fs-equity-research-earnings-analysis` | 无 | `mcp` | `medium` |
 | `anthropic-fs-equity-research-earnings-preview` | 无 | `mcp`, `python` | `medium` |

@@ -201,6 +201,7 @@ DAY1GLOBAL_SKILLS = {
 
 EDITORIAL_SCORE_OVERRIDES = {
     "btc-bottom-model": 78,
+    "eigenflux": 79,
     "impeccable": 92,
     "macro-liquidity": 82,
     "scientific-illustrator": 93,
@@ -544,6 +545,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "khazix-skills": "writing-content",
         "humanizer-zh": "writing-content",
         "dbskill": "marketing-growth",
+        "eigenflux": "agent-orchestration",
         "guizang-social-card-skill": "media-generation",
         "ian-xiaohei-illustrations": "media-generation",
         "content-strategy": "marketing-growth",
@@ -655,6 +657,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "scientific-illustrator":
         api_keys = []
         tools = ["drawio", "mcp", "node", "python"]
+    if skill_id == "eigenflux":
+        api_keys = []
+        tools = ["eigenflux", "mcp", "node"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -691,6 +696,8 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     runtime = "online" if api_keys or skill_id == "scroll-world" or skill_id in DAY1GLOBAL_SKILLS or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
     if skill_id == "scientific-illustrator":
         runtime = "offline"
+    if skill_id == "eigenflux":
+        runtime = "online"
     return {
         "requires_api_keys": bool(api_keys),
         "api_keys": sorted(api_keys),
@@ -711,6 +718,8 @@ def conflict_group(skill_id: str, category: str) -> str:
 
 def risk_level(skill_id: str, deps: dict[str, Any], category: str) -> str:
     if skill_id == "claude-mem-plugin":
+        return "high"
+    if skill_id == "eigenflux":
         return "high"
     if skill_id == "html-anything":
         return "medium"

@@ -1,0 +1,10 @@
+Primary project: https://github.com/phronesis-io/eigenflux
+Primary project snapshot: 955d5b2eaae6e739f811242254b350e728671922
+Codex integration: https://github.com/phronesis-io/codex-eigenflux
+Codex integration snapshot: 04c591c0bd7ddae5cae7af1ec9d329ae0502eee3
+Codex plugin version: v0.1.5
+Plugin license: MIT License.
+Main project license: modified Apache License 2.0 with an EigenFlux trademark condition. The main service code is not mirrored; only its four official ef-* skill instruction trees are retained as an audited reference snapshot.
+Mirror note: plugin/ is the complete tracked official Codex plugin. references/upstream-skills contains ef-broadcast, ef-communication, ef-profile, and ef-trading from the main repository. Root SKILL.md, SOURCE.txt, and agents/openai.yaml are local catalog and safety integration files.
+Security note: plugin startup performs remote skill synchronization into ~/.agents/skills. Authentication sends email/OTP data and stores credentials in a per-agent home. The wider CLI supports public broadcasts, direct messages, profile publication, recurring automation, services, orders, and USDC settlement. Local routing defaults to read-only and requires explicit confirmation for every external mutation or payment.
+Reviewed: 2026-08-05.

@@ -1,0 +1,30 @@
+{
+  "name": "@phronesis-io/codex-eigenflux",
+  "version": "0.1.5",
+  "description": "EigenFlux agent broadcast network plugin for Codex (stdio MCP server + eigenflux CLI; periodic runs via a native thread automation, or a headless cron fallback with an optional result-log sink).",
+  "type": "module",
+  "private": false,
+  "files": [
+    ".codex-plugin",
+    ".mcp.json",
+    "assets",
+    "src",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "bump-version": "node scripts/set-version.mjs",
+    "test": "node --test src/*.test.mjs && bash -n scripts/heartbeat.sh"
+  },
+  "keywords": [
+    "eigenflux",
+    "codex",
+    "broadcast",
+    "agents",
+    "network"
+  ],
+  "author": "Phronesis",
+  "homepage": "https://www.eigenflux.ai",
+  "license": "MIT"
+}

@@ -26,7 +26,7 @@
 | DevOps / 云 / 数据库 (`devops-cloud`) | 0 |
 | 安全 / 审计 (`security-audit`) | 1 |
 | 本地 macOS / 桌面 (`local-macos`) | 0 |
-| 多 Agent / 自动调度 (`agent-orchestration`) | 4 |
+| 多 Agent / 自动调度 (`agent-orchestration`) | 5 |
 | 商业运营 (`commerce-ops`) | 3 |
 | 教育 / 学习 (`education-learning`) | 0 |
 
@@ -502,6 +502,7 @@
 | `capability-evolver` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `jiebang` | `L3 Specialist` | 4★ | `agent-orchestration`, `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media` |
 | `openclaw-cron-setup` | `L2 Professional` | 4★ | `agent-orchestration`, `browser-required`, `l2`, `online` |
+| `eigenflux` | `L3 Specialist` | 4★ | `agent-network`, `agent-orchestration`, `broadcast`, `codex-plugin`, `communication`, `l3`, `mcp-required`, `online` |
 
 ## 商业运营
 
