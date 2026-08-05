@@ -191,6 +191,22 @@ GSAP_SKILLS = {
     "gsap-utils",
 }
 
+DAY1GLOBAL_SKILLS = {
+    "btc-bottom-model",
+    "macro-liquidity",
+    "tech-earnings-deepdive",
+    "us-market-sentiment",
+    "us-value-investing",
+}
+
+EDITORIAL_SCORE_OVERRIDES = {
+    "btc-bottom-model": 78,
+    "macro-liquidity": 82,
+    "tech-earnings-deepdive": 85,
+    "us-market-sentiment": 76,
+    "us-value-investing": 72,
+}
+
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
     "bilibili-upload-bridge": "media-generation",
     "dasheng-finance-data": "finance-data",
@@ -496,6 +512,8 @@ def classify_category(skill_id: str, description: str) -> str:
         return "design-ui"
     if skill_id in GSAP_SKILLS:
         return "design-ui"
+    if skill_id in DAY1GLOBAL_SKILLS:
+        return "finance-trading"
     if skill_id in DASHENG_MEDIA_WORKFLOW_CATEGORIES:
         return DASHENG_MEDIA_WORKFLOW_CATEGORIES[skill_id]
     explicit = {
@@ -614,6 +632,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id in GSAP_SKILLS:
         api_keys = []
         tools = ["node"]
+    if skill_id in DAY1GLOBAL_SKILLS:
+        api_keys = []
+        tools = ["browser"]
     if skill_id == "impeccable":
         api_keys = []
         tools = ["browser", "node"]
@@ -656,7 +677,7 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
         access_mode = "browser-required"
     else:
         access_mode = "direct"
-    runtime = "online" if api_keys or skill_id == "scroll-world" or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
+    runtime = "online" if api_keys or skill_id == "scroll-world" or skill_id in DAY1GLOBAL_SKILLS or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
     return {
         "requires_api_keys": bool(api_keys),
         "api_keys": sorted(api_keys),
@@ -726,6 +747,8 @@ def score_item(item: dict[str, Any]) -> dict[str, Any]:
         score -= 100
     if confidence == "missing":
         score = min(score, 45)
+    if item["id"] in EDITORIAL_SCORE_OVERRIDES:
+        score = EDITORIAL_SCORE_OVERRIDES[item["id"]]
     score = max(0, min(100, score))
     stars = 5 if score >= 90 else 4 if score >= 75 else 3 if score >= 60 else 2 if score >= 40 else 1
     return {"score": score, "stars": stars, "rating_label": "★" * stars + "☆" * (5 - stars)}
@@ -777,6 +800,8 @@ def build_enriched() -> dict[str, Any]:
             tags.extend(["emil-kowalski", "design-animation-suite", "frontend-craft"])
         if skill_id in GSAP_SKILLS:
             tags.extend(["greensock", "gsap-skills", "design-animation-suite", "frontend-craft"])
+        if skill_id in DAY1GLOBAL_SKILLS:
+            tags.extend(["day1global-skills", "finance-suite", "investment-research"])
         if skill_id in tushare_backed:
             tags.extend(["tushare-backed", "china-market-data"])
             if "TUSHARE_TOKEN" not in deps["api_keys"]:
@@ -1125,6 +1150,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "global-stock-data": "Global-stock-data",
         "anthropic-fs": "Anthropic Financial Services",
         "alphaear": "AlphaEar",
+        "day1global-skills": "Day1Global Skills",
     }
     family_roles = {
         "llmquant": "SEC/13F/宏观、组合/风险、期权、机构研究",
@@ -1133,6 +1159,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "global-stock-data": "美股港股行情、K线、基本面、SEC、期权",
         "anthropic-fs": "机构研究、建模、PE/IB/财富管理",
         "alphaear": "新闻、情绪、信号、报告生成",
+        "day1global-skills": "科技股财报、宏观流动性、美股情绪、价值与 BTC 周期",
     }
     rows = []
     for row in source_rows:
@@ -1141,7 +1168,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
             "type": "组合包",
             "slot": family_roles.get(source_id, "Merged source family"),
             "item": family_labels.get(source_id, source_id),
-            "score": "-",
+            "score": str(row.get("score", "-")),
             "source": row.get("source") or row.get("origin") or row.get("source_url") or "",
         })
     return rows

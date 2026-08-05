@@ -4,7 +4,7 @@
 |---|---:|
 | `api-key` | 98 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 12 |
+| `browser-required` | 17 |
 | `direct` | 151 |
 | `mcp-required` | 71 |
 
@@ -145,15 +145,20 @@
 | `html-anything` | 无 | `browser`, `node` | `medium` |
 | `agent-browser` | 无 | `browser`, `python` | `medium` |
 | `url-to-markdown` | 无 | `browser` | `medium` |
+| `tech-earnings-deepdive` | 无 | `browser` | `medium` |
+| `macro-liquidity` | 无 | `browser` | `medium` |
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
 | `impeccable` | 无 | `browser`, `node` | `medium` |
 | `openclaw-cron-setup` | 无 | `browser` | `medium` |
+| `btc-bottom-model` | 无 | `browser` | `medium` |
+| `us-market-sentiment` | 无 | `browser` | `medium` |
 | `alphaear-search` | `TUSHARE_TOKEN` | `browser`, `python` | `medium` |
 | `baoyu-markdown-to-html` | 无 | `browser` | `medium` |
 | `market-news-analyst` | 无 | `browser`, `node`, `python` | `medium` |
 | `video-shotcraft` | 无 | `browser`, `ffmpeg`, `node` | `medium` |
+| `us-value-investing` | 无 | `browser` | `medium` |
 
 ## direct
 

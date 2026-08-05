@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-08-05 22:07:11",
+  "timestamp": "2026-08-05 22:30:50",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 354,
-    "audited_skills": 348,
+    "catalog_skills": 359,
+    "audited_skills": 353,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 348,
+    "resolved_skills": 353,
     "missing_skills": 0,
     "missing_env": 74,
     "duplicate_capabilities": 0,
@@ -826,6 +826,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/startup-analysis"
     },
     {
+      "skill": "tech-earnings-deepdive",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/tech-earnings-deepdive"
+    },
+    {
       "skill": "wb-xhs-account-profile",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/wb-xhs-account-profile"
     },
@@ -876,6 +880,10 @@
     {
       "skill": "ios-application-dev",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ios-application-dev"
+    },
+    {
+      "skill": "macro-liquidity",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/macro-liquidity"
     },
     {
       "skill": "pptx-generator",
@@ -1114,6 +1122,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-youtube-transcript"
     },
     {
+      "skill": "btc-bottom-model",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/btc-bottom-model"
+    },
+    {
       "skill": "dual-axis-skill-reviewer",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dual-axis-skill-reviewer"
     },
@@ -1152,6 +1164,10 @@
     {
       "skill": "tushare-openclaw-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/tushare-openclaw-skill"
+    },
+    {
+      "skill": "us-market-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/us-market-sentiment"
     },
     {
       "skill": "buddy-sings",
@@ -1448,6 +1464,10 @@
     {
       "skill": "video-shotcraft",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/video-shotcraft"
+    },
+    {
+      "skill": "us-value-investing",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/us-value-investing"
     },
     {
       "skill": "agentmail-cli",

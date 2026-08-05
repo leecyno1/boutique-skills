@@ -13,7 +13,7 @@
 | 媒体生成 / 处理 (`media-generation`) | 32 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
-| 金融 / 交易 (`finance-trading`) | 81 |
+| 金融 / 交易 (`finance-trading`) | 86 |
 | 金融 / 机构服务 (`finance-services`) | 53 |
 | 金融 / 数据源 (`finance-data`) | 21 |
 | 金融 / 知识库 (`finance-knowledge`) | 2 |
@@ -263,6 +263,8 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `tech-earnings-deepdive` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `earnings-research`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `online` |
+| `macro-liquidity` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `macro-liquidity`, `online` |
 | `llmquant-commodities` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-suite`, `finance-trading`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
 | `llmquant-credit` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-suite`, `finance-trading`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
 | `llmquant-crypto` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-suite`, `finance-trading`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
@@ -291,9 +293,12 @@
 | `uptrend-analyzer` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `online`, `trading_finance`, `tushare-supplement` |
 | `us-market-bubble-detector` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
 | `us-stock-analysis` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
+| `btc-bottom-model` | `L3 Specialist` | 4★ | `browser-required`, `crypto`, `day1global-skills`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `online` |
+| `us-market-sentiment` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `market-sentiment`, `online` |
 | `alphaear-search` | `L3 Specialist` | 3★ | `browser-required`, `china-market-data`, `finance-trading`, `l3`, `online`, `trading_finance`, `tushare-backed` |
 | `market-news-analyst` | `L3 Specialist` | 3★ | `browser-required`, `china-market-data`, `finance-trading`, `l3`, `online`, `trading_finance`, `tushare-supplement` |
 | `portfolio-manager` | `L3 Specialist` | 3★ | `finance-trading`, `l3`, `mcp-required`, `offline`, `trading_finance` |
+| `us-value-investing` | `L3 Specialist` | 3★ | `browser-required`, `day1global-skills`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `online`, `value-investing` |
 | `alphaear-reporter` | `L3 Specialist` | 3★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-backed` |
 | `alphaear-sentiment` | `L3 Specialist` | 3★ | `api-key`, `finance-trading`, `l3`, `online`, `trading_finance` |
 | `alphaear-stock` | `L3 Specialist` | 3★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `online`, `trading_finance`, `tushare-backed` |

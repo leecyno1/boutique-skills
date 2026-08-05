@@ -1,11 +1,11 @@
 # Boutique Skills Audit
 
-- Time: 2026-08-05 22:07:11
+- Time: 2026-08-05 22:30:50
 - Status: **WARN**
-- Catalog skills: 354
-- Audited skills: 348
+- Catalog skills: 359
+- Audited skills: 353
 - Legacy catalog skills: 42
-- Installed/Resolved: 348
+- Installed/Resolved: 353
 - Missing: 0
 - Missing env vars: 74
 - Duplicate capabilities: 0

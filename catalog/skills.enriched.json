@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 354,
-    "native_origin_verified_or_referenced": 348,
+    "skills": 359,
+    "native_origin_verified_or_referenced": 353,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 132,
-      "L3 Specialist": 201
+      "L3 Specialist": 206
     },
     "by_category": {
       "agent-orchestration": 4,
@@ -37,7 +37,7 @@
       "finance-knowledge": 2,
       "finance-monitor": 8,
       "finance-services": 53,
-      "finance-trading": 81,
+      "finance-trading": 86,
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
@@ -52,14 +52,14 @@
     "by_access_mode": {
       "api-key": 98,
       "api-key+mcp-required": 22,
-      "browser-required": 12,
+      "browser-required": 17,
       "direct": 151,
       "mcp-required": 71
     },
     "by_stars": {
       "1★": 6,
-      "3★": 151,
-      "4★": 120,
+      "3★": 152,
+      "4★": 124,
       "5★": 77
     }
   },
@@ -5225,6 +5225,55 @@
       }
     },
     {
+      "id": "tech-earnings-deepdive",
+      "name": "tech-earnings-deepdive",
+      "description": "Deep-dive technology-stock earnings and produce a multi-perspective investment memo. Use for quarterly or annual reports, earnings calls, revenue and margin changes, guidance, cash flow, valuation (DCF, reverse DCF, EV/EBITDA, PEG, or Rule of 40), management, competition, ownership, policy, position sizing, buy/sell/hold decisions, variant views, kill conditions, and monitoring triggers. Runs a 16-module A-P review, six investment lenses, primary-source evidence standards, multi-method valuation, anti-bias checks, and an actionable decision framework. Trigger even for brief requests such as analyzing NVDA's latest earnings or deciding whether to hold a technology stock. Use us-value-investing separately when a simplified long-term four-factor score is specifically requested.",
+      "manual": "skills/default/tech-earnings-deepdive/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/tech-earnings-deepdive/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "browser-required",
+        "day1global-skills",
+        "earnings-research",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "investment-research",
+        "l3",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:tech-earnings-deepdive",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "wb-xhs-account-profile",
       "name": "wb-xhs-account-profile",
       "description": "Use when the user wants WorkBuddy or another agent to remember an account's positioning, voice, boundaries, data, trust assets, personal IP story, content rules, content pipeline, or the transition from content verticality to persona verticality across sessions. Trigger phrases: \"账号档案\", \"记住我的账号\", \"写入记忆\", \"人设垂直\", \"内容垂直\", \"内容库存\", \"成长轨迹\", \"信任名片\", \"brand profile\", \"account memory\", \"style guide\". Do not use for one-off post drafting unless profile data is missing.",
@@ -5811,6 +5860,55 @@
       },
       "risk_level": "low",
       "conflict_group": "ios-application-dev",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "macro-liquidity",
+      "name": "macro-liquidity",
+      "description": "Macro liquidity monitoring and risk early-warning system. By tracking 4 core indicators (Fed Net Liquidity, SOFR Overnight Financing Rate, MOVE Treasury Volatility Index, Yen Carry Trade Signals), it provides real-time assessment of liquidity conditions in the global financial system, outputting liquidity ratings and risk response recommendations. When users mention topics such as liquidity, Fed balance sheet reduction (QT), TGA account, reverse repo ON RRP, SOFR rate, MOVE index, Treasury volatility, yen carry trade, USDJPY and interest rate differentials, impact of QT on markets, whether money is tight, liquidity inflection points, tightening financial conditions, etc., this skill should be used. Even if users ask broadly \"how is liquidity right now\" or \"is the Fed draining or injecting liquidity,\" this skill should be triggered to provide a structured analytical framework.",
+      "manual": "skills/default/macro-liquidity/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-liquidity/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "browser-required",
+        "day1global-skills",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "investment-research",
+        "l3",
+        "macro-liquidity",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:macro-liquidity",
       "preset_excluded": false,
       "rating": {
         "score": 82,
@@ -8703,6 +8801,55 @@
       }
     },
     {
+      "id": "btc-bottom-model",
+      "name": "btc-bottom-model",
+      "description": "Bitcoin cycle timing model with weighted scoring system. Tracks 13 indicators across 2 categories — Daily Pulse (4 indicators, 32 points) and Weekly Structure (9 indicators, 68 points) — producing a composite 0-100 Market Heat Score. Covers ETF flows, funding rate, long/short ratio, fear & greed index, LTH-MVRV, NUPL, SOPR (LTH + STH), LTH supply %, moving average multiples (365d MA, 200w MA), weekly RSI, and volume trends. Provides both buy AND sell recommendations across the full market cycle. Use this skill when users mention Bitcoin bottom-fishing, BTC cycle position, whether to buy or sell BTC, on-chain metrics, MVRV, NUPL, SOPR, LTH behavior, ETF inflows/outflows, funding rates, fear index, whether Bitcoin is overheated, miner cost, crypto market sentiment, BTC position sizing, or any question like \"Should I buy Bitcoin now?\" or \"Is BTC topping out?\" or \"What do on-chain indicators say?",
+      "manual": "skills/default/btc-bottom-model/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/btc-bottom-model/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "browser-required",
+        "crypto",
+        "day1global-skills",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "investment-research",
+        "l3",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:btc-bottom-model",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "dual-axis-skill-reviewer",
       "name": "dual-axis-skill-reviewer",
       "description": "Review skills in any project using a dual-axis method: (1) deterministic code-based checks (structure, scripts, tests, execution safety) and (2) LLM deep review findings. Use when you need reproducible quality scoring for `skills/*/SKILL.md`, want to gate merges with a score threshold (for example 90+), or need concrete improvement items for low-scoring skills. Works across projects via --project-root.",
@@ -9179,6 +9326,55 @@
       "preset_excluded": false,
       "rating": {
         "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "us-market-sentiment",
+      "name": "us-market-sentiment",
+      "description": "US stock market sentiment monitoring and position recommendation system. Evaluates market sentiment by tracking 5 core indicators (NAAIM Exposure Index, Institutional Equity Allocation, Retail Net Buying, S&P 500 Forward P/E Ratio, Hedge Fund Leverage) and outputs sentiment ratings and position recommendations. This skill should be used when the user mentions topics such as US stock sentiment, market overheating, greed/fear indicators, NAAIM, institutional positioning, retail sentiment, P/E valuation bubbles, hedge fund leverage, whether to reduce positions, market risk assessment, position management advice, market top/bottom signals, etc. Even if the user simply asks \"Is the US stock market risky right now?\" or \"Should I reduce my positions?\", this skill should be triggered to provide a structured analytical framework.",
+      "manual": "skills/default/us-market-sentiment/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-market-sentiment/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "browser-required",
+        "day1global-skills",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "investment-research",
+        "l3",
+        "market-sentiment",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:us-market-sentiment",
+      "preset_excluded": false,
+      "rating": {
+        "score": 76,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -12947,6 +13143,55 @@
       "preset_excluded": false,
       "rating": {
         "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "us-value-investing",
+      "name": "us-value-investing",
+      "description": "US stock value investing analysis framework. Systematically evaluates listed companies through 4 core dimensions (ROE sustainability, debt safety, free cash flow quality, economic moat assessment), outputting investment ratings and analytical reasoning. This skill should be used when users mention topics such as whether a US stock is worth holding long-term, fundamental analysis of a company, ROE analysis, debt ratio assessment, free cash flow, economic moat, Buffett-style stock picking, value investing screening, how to read a company's financial reports, whether a stock's valuation is reasonable, etc. Even if users simply ask something general like \"What do you think of stock XX?\" or \"Help me analyze XX's fundamentals,\" this skill should be triggered to provide a structured value investing analysis framework.",
+      "manual": "skills/default/us-value-investing/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-value-investing/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "browser-required",
+        "day1global-skills",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "investment-research",
+        "l3",
+        "online",
+        "value-investing"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:us-value-investing",
+      "preset_excluded": false,
+      "rating": {
+        "score": 72,
         "stars": 3,
         "rating_label": "★★★☆☆"
       }

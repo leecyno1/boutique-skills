@@ -1,0 +1,41 @@
+{
+  "schema_version": "2026.08.05",
+  "id": "day1global-skills",
+  "title": "Day1Global Investment Research Suite",
+  "description": "Curated US technology earnings, value investing, market sentiment, macro liquidity, and Bitcoin cycle research skills from Day1Global.",
+  "source": "https://github.com/star23/Day1Global-Skills",
+  "native_origin": "https://github.com/star23/Day1Global-Skills",
+  "homepage": "https://github.com/star23/Day1Global-Skills",
+  "license": "MIT",
+  "install_tier": "high",
+  "category": "finance-trading",
+  "horizontal_tier": "L3 Specialist",
+  "access_mode": "browser-required",
+  "requires_api_keys": false,
+  "api_keys": [],
+  "requires_tools": [
+    "browser"
+  ],
+  "editorial_score": 79,
+  "upstream": {
+    "stars": 1015,
+    "forks": 157,
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-04-15T01:28:53Z",
+    "verified_at": "2026-08-05",
+    "commit": "562c14b0c0bc84abff755181ead30ebea613d063"
+  },
+  "skills": [
+    "tech-earnings-deepdive",
+    "us-value-investing",
+    "us-market-sentiment",
+    "macro-liquidity",
+    "btc-bottom-model"
+  ],
+  "notes": [
+    "All five upstream skills are mirrored with MIT attribution and compatibility hardening.",
+    "Only tech-earnings-deepdive and macro-liquidity are promoted to named standard slots; the other three remain optional specialists.",
+    "The BTC convenience API is treated as untrusted and must be corroborated before recommendations are generated."
+  ]
+}

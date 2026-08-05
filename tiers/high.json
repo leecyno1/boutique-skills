@@ -5178,6 +5178,81 @@
         "scientific-visualization",
         "human-in-the-loop"
       ]
+    },
+    {
+      "id": "tech-earnings-deepdive",
+      "name": "tech-earnings-deepdive",
+      "description": "Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers.",
+      "manual": "skills/default/tech-earnings-deepdive/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/tech-earnings-deepdive/SKILL.md",
+      "source": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "finance",
+        "day1global-skills",
+        "earnings-research"
+      ]
+    },
+    {
+      "id": "us-value-investing",
+      "name": "us-value-investing",
+      "description": "Four-dimension US value-investing checklist covering sustainable ROE, debt safety, free-cash-flow quality, and economic moat.",
+      "manual": "skills/default/us-value-investing/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-value-investing/SKILL.md",
+      "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "finance",
+        "day1global-skills",
+        "value-investing"
+      ]
+    },
+    {
+      "id": "us-market-sentiment",
+      "name": "us-market-sentiment",
+      "description": "US market sentiment dashboard using NAAIM exposure, institutional allocation, retail flows, forward P/E, and hedge-fund leverage.",
+      "manual": "skills/default/us-market-sentiment/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-market-sentiment/SKILL.md",
+      "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "finance",
+        "day1global-skills",
+        "market-sentiment"
+      ]
+    },
+    {
+      "id": "macro-liquidity",
+      "name": "macro-liquidity",
+      "description": "Macro liquidity monitor for Fed net liquidity, SOFR funding stress, MOVE volatility, and yen carry-trade risk.",
+      "manual": "skills/default/macro-liquidity/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-liquidity/SKILL.md",
+      "source": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "finance",
+        "day1global-skills",
+        "macro-liquidity"
+      ]
+    },
+    {
+      "id": "btc-bottom-model",
+      "name": "btc-bottom-model",
+      "description": "Bitcoin cycle heat model using 13 market, derivatives, on-chain, momentum, and flow indicators with independently verified weighted scoring.",
+      "manual": "skills/default/btc-bottom-model/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/btc-bottom-model/SKILL.md",
+      "source": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "finance",
+        "crypto",
+        "day1global-skills"
+      ]
     }
   ]
 }

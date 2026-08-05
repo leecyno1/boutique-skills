@@ -2,7 +2,7 @@
   "schema_version": "2026.06.14",
   "id": "finance-investment-standard",
   "title": "Finance Investment Standard Suite",
-  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
+  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
   "source": "https://github.com/leecyno1/boutique-skills",
   "native_origin": "https://github.com/leecyno1/boutique-skills",
   "homepage": "https://github.com/leecyno1/boutique-skills#finance--investment-workflows",
@@ -53,6 +53,11 @@
     {
       "id": "alphaear",
       "source": "https://github.com/RKiding/Awesome-finance-skills"
+    },
+    {
+      "id": "day1global-skills",
+      "source": "https://github.com/star23/Day1Global-Skills",
+      "score": 79
     }
   ],
   "standard_slots": [
@@ -85,6 +90,11 @@
       "slot": "个股分析",
       "skill": "stock-analysis",
       "score": 84
+    },
+    {
+      "slot": "科技股财报深研",
+      "skill": "tech-earnings-deepdive",
+      "score": 85
     },
     {
       "slot": "估值建模",
@@ -125,6 +135,11 @@
       "slot": "宏观/政策",
       "skill": "llmquant-macro",
       "score": 84
+    },
+    {
+      "slot": "宏观流动性",
+      "skill": "macro-liquidity",
+      "score": 82
     },
     {
       "slot": "事件新闻",
@@ -351,7 +366,12 @@
     "policy-monitor",
     "stock-monitor-skill",
     "pybroker-backtest-skill",
-    "openclaw-stock-kb"
+    "openclaw-stock-kb",
+    "tech-earnings-deepdive",
+    "us-value-investing",
+    "us-market-sentiment",
+    "macro-liquidity",
+    "btc-bottom-model"
   ],
   "notes": [
     "This is the finance-domain standard suite, separate from the general no-duplicate standard bundle.",

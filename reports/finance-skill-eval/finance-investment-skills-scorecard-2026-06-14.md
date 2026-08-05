@@ -1,6 +1,7 @@
 # Finance / Investment Skills Scorecard
 
 Date: 2026-06-14
+Updated: 2026-08-05
 
 This report consolidates the existing finance-skill evaluation artifacts in `reports/finance-skill-eval/` with a fresh static review of the repository's finance and investment-related `SKILL.md` files.
 
@@ -34,6 +35,20 @@ Score interpretation:
 - 60-69: Keep as backup/template/lab item.
 - Below 60: Do not recommend for standard suite without rewrite or dependency fix.
 
+## 2026-08-05 Day1Global Addendum
+
+The five-skill [Day1Global-Skills](https://github.com/star23/Day1Global-Skills) source family was reviewed at snapshot `562c14b0c0bc84abff755181ead30ebea613d063` and added as an installable finance suite. The suite scores **79/100** overall.
+
+| Skill | Score | Verdict | Reason |
+|---|---:|---|---|
+| `tech-earnings-deepdive` | 85 | Standard slot | Strong technology-earnings workflow with 16 modules, six investment lenses, primary-source standards, valuation, variant view, pre-mortem, and action triggers. |
+| `macro-liquidity` | 82 | Standard slot | Focused Fed net-liquidity, SOFR, MOVE, and yen carry-trade dashboard that complements broader macro and policy tools. |
+| `btc-bottom-model` | 78 | Optional | Transparent 13-indicator model, but its convenience API lacks field-level provenance and published calibration evidence; the mirror requires independent verification. |
+| `us-market-sentiment` | 76 | Optional | Useful dashboard, but several institutional and prime-broker inputs are delayed, paywalled, or secondary-source only. |
+| `us-value-investing` | 72 | Suite-only | Easy four-factor checklist, but too coarse and overlapping to replace the current stock-analysis and valuation stack. |
+
+Detailed review: [GitHub Day1Global-Skills review](../source-discovery/github-day1global-skills-2026-08-05.md).
+
 ## Data And Infrastructure
 
 | Skill | Score | Verdict | Reason |
@@ -56,6 +71,7 @@ Score interpretation:
 |---|---:|---|---|
 | `policy-monitor` | 88 | Core for China policy-driven markets | Strong direct policy/regulatory monitoring role; fills a gap not covered by price/fundamental data. |
 | `llmquant-macro` | 84 | Core if LLMQuant is available | Strong router for macro dashboards, central bank previews, inflation/growth/liquidity, and portfolio impact. |
+| `macro-liquidity` | 82 | Core liquidity specialist | Focused no-key framework for Fed net liquidity, SOFR stress, MOVE volatility, and yen carry-trade risk. |
 | `llmquant-market-intelligence` | 84 | Core if LLMQuant is available | Clean market sentiment and event-probability routing; good high-level intelligence layer. |
 | `llmquant-events` | 84 | Core if LLMQuant is available | Better event abstraction than many single-purpose earnings/event skills. |
 | `macro-regime-detector` | 82 | Core/optional | Useful 1-2 year regime framework with scripts and explicit components; data dependencies apply. |
@@ -71,6 +87,7 @@ Score interpretation:
 | Skill | Score | Verdict | Reason |
 |---|---:|---|---|
 | `stock-analysis` | 84 | Core | Broad stock/crypto analysis, watchlists, alerts, dividend analysis, scoring, and rumor checks. Practical investor workflow coverage. |
+| `tech-earnings-deepdive` | 85 | Core for technology earnings | Deep A-P earnings framework with multi-lens confrontation, valuation, evidence hierarchy, anti-bias checks, and action triggers. |
 | `openclaw-stock-analyzer` | 83 | Core/optional | Strong value-investing workflow with Buffett/Duan Yongping framing, valuation, staging, earnings reading, and option suggestions; China-friendly and practical. |
 | `us-stock-analysis` | 80 | Core for US-heavy users | Good US stock fundamentals, technicals, valuation, comparisons, and report flow; overlaps with `stock-analysis`, but deeper US framing. |
 | `company-valuation` | 78 | Optional | Strong DCF/relative/SOTP methodology and assumptions; dependency and model/API references make it less standard than data-backed analysis plus targeted valuation. |
@@ -247,6 +264,7 @@ This is the recommended default set for an investor who wants broad coverage wit
 | Global lightweight data | `yfinance-data` | 78 | Lowest-friction US/global price and fundamentals fallback. | `funda-data` if configured; `llmquant-data` for institutional package. |
 | SEC/13F/macro data | `llmquant-data` | 86 | Source-grounded filings, holders, and macro primitives. | Skip if LLMQuant unavailable. |
 | Stock analysis | `stock-analysis` | 84 | Broad practical single-stock and watchlist workflow. | `us-stock-analysis` for US-only deep workflows; `openclaw-stock-analyzer` for value-investing variant. |
+| Technology earnings deep dive | `tech-earnings-deepdive` | 85 | Adds technology-specific earnings dissection, valuation, variant view, and kill-condition monitoring beyond the general stock workflow. | Anthropic earnings analysis and `earnings-recap` remain optional format alternatives. |
 | Valuation/modeling | `anthropic-fs-financial-analysis-dcf-model` | 84 | Best dedicated DCF/model deliverable skill. | `company-valuation` for lighter valuation; comps/3-statement as optional modeling add-ons. |
 | Growth screening | `canslim-screener` | 86 | Best growth-stock screener. | `finviz-screener` as general filter utility, not duplicate if both are desired. |
 | Technical setup | `vcp-screener` | 84 | Best executable VCP scanner. | `sepa-strategy` for manual trade-plan framework. |
@@ -254,6 +272,7 @@ This is the recommended default set for an investor who wants broad coverage wit
 | Dividend/value screening | `value-dividend-screener` | 82 | Best income/value screener. | `dividend-growth-pullback-screener`, Kanchi skills as optional. |
 | Market regime/breadth | `uptrend-analyzer` | 88 | Live-tested and directly actionable. | `market-breadth-analyzer`, `market-top-detector`, `ftd-detector`. |
 | Macro/policy | `policy-monitor` + `llmquant-macro` | 88 / 84 | Policy and macro transmission are distinct; keep both if macro matters. | `market-environment-analysis`, `macro-regime-detector` optional. |
+| Macro liquidity | `macro-liquidity` | 82 | Narrow, directly scannable liquidity dashboard for Fed balance-sheet plumbing, SOFR, MOVE, and yen carry risk. | Keep `llmquant-macro` for broader macro research. |
 | Events/news | `llmquant-events` | 84 | Broad event router avoids many single-purpose earnings skills. | `alphaear-news`, `economic-calendar-fetcher`, `earnings-calendar`. |
 | Options | `options-strategy-advisor` | 80 | Best standalone options pricing/Greeks/P&L tool. | Use `llmquant-options` instead if LLMQuant stack is available. |
 | Position sizing | `position-sizer` | 90 | Directly reduces execution risk; live-tested. | `exposure-coach`, `portfolio-manager`. |
@@ -266,11 +285,11 @@ This is the recommended default set for an investor who wants broad coverage wit
 | Research/reporting | `alphaear-reporter` | 82 | Compact report assembly layer for finance outputs. | Anthropic FS report templates as optional institutional formats. |
 | Knowledge base | `openclaw-stock-kb` | 78 | Local research-method knowledge base. | `llmquant-investor-lenses` if LLMQuant is configured. |
 
-Recommended default size: 20-22 skills, depending on whether LLMQuant is available.
+Recommended default size: 22-24 skills, depending on whether LLMQuant is available.
 
 Minimal no-LLMQuant standard set:
 
-`tushare-openclaw-skill`, `a-stock-data`, `yfinance-data`, `stock-analysis`, `anthropic-fs-financial-analysis-dcf-model`, `canslim-screener`, `vcp-screener`, `sepa-strategy`, `value-dividend-screener`, `uptrend-analyzer`, `policy-monitor`, `options-strategy-advisor`, `position-sizer`, `stock-monitor-skill`, `trader-memory-core`, `pybroker-backtest-skill`, `backtest-expert`, `data-quality-checker`, `alphaear-reporter`, `openclaw-stock-kb`.
+`tushare-openclaw-skill`, `a-stock-data`, `yfinance-data`, `stock-analysis`, `tech-earnings-deepdive`, `anthropic-fs-financial-analysis-dcf-model`, `canslim-screener`, `vcp-screener`, `sepa-strategy`, `value-dividend-screener`, `uptrend-analyzer`, `policy-monitor`, `macro-liquidity`, `options-strategy-advisor`, `position-sizer`, `stock-monitor-skill`, `trader-memory-core`, `pybroker-backtest-skill`, `backtest-expert`, `data-quality-checker`, `alphaear-reporter`, `openclaw-stock-kb`.
 
 Institutional enhanced add-ons:
 

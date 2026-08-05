@@ -1,0 +1,7 @@
+Upstream: https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive
+Snapshot: 562c14b0c0bc84abff755181ead30ebea613d063
+Imported: 2026-08-05
+License: MIT
+
+Boutique hardening: removed forced promotional output and replaced three references to
+unpublished files with self-contained valuation, investment-lens, and anti-bias guidance.

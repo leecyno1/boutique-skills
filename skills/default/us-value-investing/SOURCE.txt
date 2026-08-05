@@ -1,0 +1,7 @@
+Upstream: https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing
+Snapshot: 562c14b0c0bc84abff755181ead30ebea613d063
+Imported: 2026-08-05
+License: MIT
+
+Boutique hardening: removed the forced promotional footer. The analytical framework is
+otherwise preserved from upstream.
