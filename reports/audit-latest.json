@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-06 00:32:41",
+  "timestamp": "2026-08-06 02:20:42",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 363,
-    "audited_skills": 357,
+    "catalog_skills": 393,
+    "audited_skills": 387,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 357,
+    "resolved_skills": 387,
     "missing_skills": 0,
-    "missing_env": 74,
+    "missing_env": 104,
     "duplicate_capabilities": 0,
     "risky_hits": 11,
     "missing_native_origins": 0,
@@ -29,6 +29,126 @@
     {
       "skill": "claude-mem-plugin",
       "env": "OPENROUTER_API_KEY"
+    },
+    {
+      "skill": "alphagbm-alert",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-bps-backtest",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-buffett-analysis",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-chokepoint",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-company-profile",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-compare",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-duan-analysis",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-earnings-crush",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-fear-score",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-greeks",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-health-check",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-hedge-advisor",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-investment-thesis",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-iv-rank",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-macro-view",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-market-sentiment",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-marks-cycle",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-options-score",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-options-strategy",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-pnl-simulator",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-polymarket",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-stock-analysis",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-take-profit",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-tepper-signal",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-theme-research",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-unusual-activity",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-vix-status",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-vol-smile",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-vol-surface",
+      "env": "ALPHAGBM_API_KEY"
+    },
+    {
+      "skill": "alphagbm-watchlist",
+      "env": "ALPHAGBM_API_KEY"
     },
     {
       "skill": "agentmail-mcp",
@@ -876,6 +996,126 @@
     {
       "skill": "xiaohongshu-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/xiaohongshu-account-launch-expert"
+    },
+    {
+      "skill": "alphagbm-alert",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-alert"
+    },
+    {
+      "skill": "alphagbm-bps-backtest",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-bps-backtest"
+    },
+    {
+      "skill": "alphagbm-buffett-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-buffett-analysis"
+    },
+    {
+      "skill": "alphagbm-chokepoint",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-chokepoint"
+    },
+    {
+      "skill": "alphagbm-company-profile",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-company-profile"
+    },
+    {
+      "skill": "alphagbm-compare",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-compare"
+    },
+    {
+      "skill": "alphagbm-duan-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-duan-analysis"
+    },
+    {
+      "skill": "alphagbm-earnings-crush",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-earnings-crush"
+    },
+    {
+      "skill": "alphagbm-fear-score",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-fear-score"
+    },
+    {
+      "skill": "alphagbm-greeks",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-greeks"
+    },
+    {
+      "skill": "alphagbm-health-check",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-health-check"
+    },
+    {
+      "skill": "alphagbm-hedge-advisor",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-hedge-advisor"
+    },
+    {
+      "skill": "alphagbm-investment-thesis",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-investment-thesis"
+    },
+    {
+      "skill": "alphagbm-iv-rank",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-iv-rank"
+    },
+    {
+      "skill": "alphagbm-macro-view",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-macro-view"
+    },
+    {
+      "skill": "alphagbm-market-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-market-sentiment"
+    },
+    {
+      "skill": "alphagbm-marks-cycle",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-marks-cycle"
+    },
+    {
+      "skill": "alphagbm-options-score",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-options-score"
+    },
+    {
+      "skill": "alphagbm-options-strategy",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-options-strategy"
+    },
+    {
+      "skill": "alphagbm-pnl-simulator",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-pnl-simulator"
+    },
+    {
+      "skill": "alphagbm-polymarket",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-polymarket"
+    },
+    {
+      "skill": "alphagbm-stock-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-stock-analysis"
+    },
+    {
+      "skill": "alphagbm-take-profit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-take-profit"
+    },
+    {
+      "skill": "alphagbm-tepper-signal",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-tepper-signal"
+    },
+    {
+      "skill": "alphagbm-theme-research",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-theme-research"
+    },
+    {
+      "skill": "alphagbm-unusual-activity",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-unusual-activity"
+    },
+    {
+      "skill": "alphagbm-vix-status",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-vix-status"
+    },
+    {
+      "skill": "alphagbm-vol-smile",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-vol-smile"
+    },
+    {
+      "skill": "alphagbm-vol-surface",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-vol-surface"
+    },
+    {
+      "skill": "alphagbm-watchlist",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphagbm-watchlist"
     },
     {
       "skill": "android-native-dev",

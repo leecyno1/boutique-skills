@@ -5303,6 +5303,516 @@
       ]
     },
     {
+      "id": "alphagbm-alert",
+      "name": "alphagbm-alert",
+      "description": "Price, IV, activity, earnings, and VRP alert research workflows backed by the AlphaGBM API.",
+      "manual": "skills/default/alphagbm-alert/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-alert/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-bps-backtest",
+      "name": "alphagbm-bps-backtest",
+      "description": "Walk-forward Bull Put Spread backtests with signal and no-signal controls.",
+      "manual": "skills/default/alphagbm-bps-backtest/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-bps-backtest/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-buffett-analysis",
+      "name": "alphagbm-buffett-analysis",
+      "description": "Buffett-style business, moat, management, and valuation scorecard.",
+      "manual": "skills/default/alphagbm-buffett-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-buffett-analysis/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-chokepoint",
+      "name": "alphagbm-chokepoint",
+      "description": "AI supply-chain chokepoint research using concentration and irreplaceability factors.",
+      "manual": "skills/default/alphagbm-chokepoint/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-chokepoint/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-company-profile",
+      "name": "alphagbm-company-profile",
+      "description": "Persistent company research profiles with valuation bands, red flags, and event context.",
+      "manual": "skills/default/alphagbm-company-profile/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-company-profile/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-compare",
+      "name": "alphagbm-compare",
+      "description": "Side-by-side stock and option comparisons across scores, technicals, and valuation.",
+      "manual": "skills/default/alphagbm-compare/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-compare/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-duan-analysis",
+      "name": "alphagbm-duan-analysis",
+      "description": "Duan Yongping-inspired sell-put and covered-call research framework.",
+      "manual": "skills/default/alphagbm-duan-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-duan-analysis/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-earnings-crush",
+      "name": "alphagbm-earnings-crush",
+      "description": "Earnings implied-move, historical IV-crush, and hypothetical strategy analysis.",
+      "manual": "skills/default/alphagbm-earnings-crush/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-earnings-crush/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-fear-score",
+      "name": "alphagbm-fear-score",
+      "description": "Composite ticker-level fear score from volatility, momentum, and options signals.",
+      "manual": "skills/default/alphagbm-fear-score/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-fear-score/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-greeks",
+      "name": "alphagbm-greeks",
+      "description": "First- and second-order option Greeks with position aggregation and scenarios.",
+      "manual": "skills/default/alphagbm-greeks/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-greeks/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-health-check",
+      "name": "alphagbm-health-check",
+      "description": "Research knowledge-base health checks for stale profiles, thesis drift, and gaps.",
+      "manual": "skills/default/alphagbm-health-check/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-health-check/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-hedge-advisor",
+      "name": "alphagbm-hedge-advisor",
+      "description": "Scenario-driven downside hedge research for existing stock positions.",
+      "manual": "skills/default/alphagbm-hedge-advisor/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-hedge-advisor/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-investment-thesis",
+      "name": "alphagbm-investment-thesis",
+      "description": "Create and monitor structured investment theses and exit conditions.",
+      "manual": "skills/default/alphagbm-investment-thesis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-investment-thesis/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-iv-rank",
+      "name": "alphagbm-iv-rank",
+      "description": "IV Rank and IV Percentile analysis against 252-day history.",
+      "manual": "skills/default/alphagbm-iv-rank/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-iv-rank/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-macro-view",
+      "name": "alphagbm-macro-view",
+      "description": "Portfolio-linked tracking for VIX, yields, dollar, commodities, and macro indicators.",
+      "manual": "skills/default/alphagbm-macro-view/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-macro-view/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-market-sentiment",
+      "name": "alphagbm-market-sentiment",
+      "description": "Market regime dashboard using VIX, put/call, breadth, and sector rotation.",
+      "manual": "skills/default/alphagbm-market-sentiment/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-market-sentiment/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-marks-cycle",
+      "name": "alphagbm-marks-cycle",
+      "description": "Howard Marks-style market-cycle position score and offense/defense framing.",
+      "manual": "skills/default/alphagbm-marks-cycle/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-marks-cycle/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-options-score",
+      "name": "alphagbm-options-score",
+      "description": "Multi-factor ranking of option contracts by liquidity, IV, Greeks, and payoff.",
+      "manual": "skills/default/alphagbm-options-score/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-score/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-options-strategy",
+      "name": "alphagbm-options-strategy",
+      "description": "Multi-leg option strategy research from directional and volatility views.",
+      "manual": "skills/default/alphagbm-options-strategy/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-strategy/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-pnl-simulator",
+      "name": "alphagbm-pnl-simulator",
+      "description": "Option position P&L, breakeven, time, IV, and stress-scenario simulation.",
+      "manual": "skills/default/alphagbm-pnl-simulator/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-pnl-simulator/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-polymarket",
+      "name": "alphagbm-polymarket",
+      "description": "Prediction-market versus options-implied probability comparison.",
+      "manual": "skills/default/alphagbm-polymarket/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-polymarket/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-stock-analysis",
+      "name": "alphagbm-stock-analysis",
+      "description": "Five-pillar stock analysis across fundamentals, technicals, sentiment, flow, and valuation.",
+      "manual": "skills/default/alphagbm-stock-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-stock-analysis/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-take-profit",
+      "name": "alphagbm-take-profit",
+      "description": "Historical holdability and tiered profit-taking strategy comparison.",
+      "manual": "skills/default/alphagbm-take-profit/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-take-profit/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-tepper-signal",
+      "name": "alphagbm-tepper-signal",
+      "description": "David Tepper-inspired panic-condition signal using VIX, fear, and quality filters.",
+      "manual": "skills/default/alphagbm-tepper-signal/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-tepper-signal/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-theme-research",
+      "name": "alphagbm-theme-research",
+      "description": "Create and monitor ticker baskets organized around investment themes.",
+      "manual": "skills/default/alphagbm-theme-research/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-theme-research/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-unusual-activity",
+      "name": "alphagbm-unusual-activity",
+      "description": "Unusual options activity research using volume/OI, blocks, strikes, and premium flow.",
+      "manual": "skills/default/alphagbm-unusual-activity/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-unusual-activity/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-vix-status",
+      "name": "alphagbm-vix-status",
+      "description": "VIX regime classification with historical percentile and strategy context.",
+      "manual": "skills/default/alphagbm-vix-status/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vix-status/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-vol-smile",
+      "name": "alphagbm-vol-smile",
+      "description": "Single-expiry implied-volatility smile, skew, and risk-reversal analysis.",
+      "manual": "skills/default/alphagbm-vol-smile/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-smile/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-vol-surface",
+      "name": "alphagbm-vol-surface",
+      "description": "Cross-strike and cross-expiry implied-volatility surface analysis.",
+      "manual": "skills/default/alphagbm-vol-surface/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-surface/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
+      "id": "alphagbm-watchlist",
+      "name": "alphagbm-watchlist",
+      "description": "Watchlist monitoring for price, IV, activity, earnings, and score changes.",
+      "manual": "skills/default/alphagbm-watchlist/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-watchlist/SKILL.md",
+      "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
+      "requires_api_keys": true,
+      "api_keys": [
+        "ALPHAGBM_API_KEY"
+      ],
+      "groups": [
+        "finance",
+        "alphagbm",
+        "optional"
+      ]
+    },
+    {
       "id": "westockdata",
       "name": "westockdata",
       "description": "Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements.",

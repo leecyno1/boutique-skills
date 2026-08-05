@@ -199,6 +199,49 @@ DAY1GLOBAL_SKILLS = {
     "us-value-investing",
 }
 
+ALPHAGBM_SKILLS = {
+    "alphagbm-alert",
+    "alphagbm-bps-backtest",
+    "alphagbm-buffett-analysis",
+    "alphagbm-chokepoint",
+    "alphagbm-company-profile",
+    "alphagbm-compare",
+    "alphagbm-duan-analysis",
+    "alphagbm-earnings-crush",
+    "alphagbm-fear-score",
+    "alphagbm-greeks",
+    "alphagbm-health-check",
+    "alphagbm-hedge-advisor",
+    "alphagbm-investment-thesis",
+    "alphagbm-iv-rank",
+    "alphagbm-macro-view",
+    "alphagbm-market-sentiment",
+    "alphagbm-marks-cycle",
+    "alphagbm-options-score",
+    "alphagbm-options-strategy",
+    "alphagbm-pnl-simulator",
+    "alphagbm-polymarket",
+    "alphagbm-stock-analysis",
+    "alphagbm-take-profit",
+    "alphagbm-tepper-signal",
+    "alphagbm-theme-research",
+    "alphagbm-unusual-activity",
+    "alphagbm-vix-status",
+    "alphagbm-vol-smile",
+    "alphagbm-vol-surface",
+    "alphagbm-watchlist",
+}
+
+ALPHAGBM_MONITOR_SKILLS = {
+    "alphagbm-alert",
+    "alphagbm-company-profile",
+    "alphagbm-health-check",
+    "alphagbm-investment-thesis",
+    "alphagbm-macro-view",
+    "alphagbm-theme-research",
+    "alphagbm-watchlist",
+}
+
 EDITORIAL_SCORE_OVERRIDES = {
     "btc-bottom-model": 78,
     "eigenflux": 79,
@@ -339,6 +382,7 @@ CAPABILITY_RULES = [
 ]
 
 API_KEY_PATTERNS = {
+    "ALPHAGBM_API_KEY": ["alphagbm"],
     "AGENTMAIL_API_KEY": ["agentmail"],
     "IMA_API_KEY": ["ima"],
     "IMA_CLIENT_ID": ["ima"],
@@ -524,6 +568,8 @@ def extract_local_urls(skill_id: str) -> list[str]:
 
 
 def classify_category(skill_id: str, description: str) -> str:
+    if skill_id in ALPHAGBM_SKILLS:
+        return "finance-monitor" if skill_id in ALPHAGBM_MONITOR_SKILLS else "finance-trading"
     if skill_id.startswith("llmquant-"):
         return LLMQUANT_SKILL_CATEGORIES.get(skill_id, "finance-trading")
     if skill_id.startswith("anthropic-fs-"):
@@ -613,6 +659,8 @@ def classify_category(skill_id: str, description: str) -> str:
 
 
 def classify_horizontal(skill_id: str, category: str, origin_confidence: str) -> str:
+    if skill_id in ALPHAGBM_SKILLS:
+        return "L3 Specialist"
     if skill_id.startswith("llmquant-"):
         return "L2 Professional"
     if skill_id.startswith("anthropic-fs-"):
@@ -670,6 +718,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id in DAY1GLOBAL_SKILLS:
         api_keys = []
         tools = ["browser"]
+    if skill_id in ALPHAGBM_SKILLS:
+        api_keys = ["ALPHAGBM_API_KEY"]
+        tools = ["curl"]
     if skill_id == "impeccable":
         api_keys = []
         tools = ["browser", "node"]
@@ -802,6 +853,8 @@ def score_item(item: dict[str, Any]) -> dict[str, Any]:
         score = min(score, 45)
     if item["id"] in EDITORIAL_SCORE_OVERRIDES:
         score = EDITORIAL_SCORE_OVERRIDES[item["id"]]
+    if item["id"] in ALPHAGBM_SKILLS:
+        score = 82
     score = max(0, min(100, score))
     stars = 5 if score >= 90 else 4 if score >= 75 else 3 if score >= 60 else 2 if score >= 40 else 1
     return {"score": score, "stars": stars, "rating_label": "★" * stars + "☆" * (5 - stars)}
@@ -861,6 +914,8 @@ def build_enriched() -> dict[str, Any]:
             tags.extend(["greensock", "gsap-skills", "design-animation-suite", "frontend-craft"])
         if skill_id in DAY1GLOBAL_SKILLS:
             tags.extend(["day1global-skills", "finance-suite", "investment-research"])
+        if skill_id in ALPHAGBM_SKILLS:
+            tags.extend(["alphagbm", "finance-suite", "options-research", "api-backed"])
         if skill_id in tushare_backed:
             tags.extend(["tushare-backed", "china-market-data"])
             if "TUSHARE_TOKEN" not in deps["api_keys"]:
@@ -1210,6 +1265,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "anthropic-fs": "Anthropic Financial Services",
         "alphaear": "AlphaEar",
         "day1global-skills": "Day1Global Skills",
+        "alphagbm": "AlphaGBM",
     }
     family_roles = {
         "llmquant": "SEC/13F/宏观、组合/风险、期权、机构研究",
@@ -1219,6 +1275,7 @@ def finance_source_pack_rows(suite: dict[str, Any] | None) -> list[dict[str, str
         "anthropic-fs": "机构研究、建模、PE/IB/财富管理",
         "alphaear": "新闻、情绪、信号、报告生成",
         "day1global-skills": "科技股财报、宏观流动性、美股情绪、价值与 BTC 周期",
+        "alphagbm": "期权波动率、对冲、市场信号、投资框架与研究档案（可选源）",
     }
     rows = []
     for row in source_rows:

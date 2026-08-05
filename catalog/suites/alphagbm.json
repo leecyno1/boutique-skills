@@ -1,0 +1,69 @@
+{
+  "schema_version": "2026.08.06",
+  "id": "alphagbm",
+  "title": "AlphaGBM Options & Investment Research Suite",
+  "description": "Thirty AlphaGBM skills for options analytics, volatility, hedging, market signals, stock research, investment theses, watchlists, and AI supply-chain chokepoint analysis.",
+  "source": "https://github.com/AlphaGBM/skills",
+  "native_origin": "https://github.com/AlphaGBM/skills",
+  "homepage": "https://alphagbm.com",
+  "license": "MIT",
+  "install_tier": "high",
+  "category": "finance-trading",
+  "horizontal_tier": "L3 Specialist",
+  "access_mode": "api-key",
+  "requires_api_keys": true,
+  "api_keys": [
+    "ALPHAGBM_API_KEY"
+  ],
+  "requires_tools": [
+    "curl"
+  ],
+  "editorial_score": 82,
+  "upstream": {
+    "stars": 1703,
+    "forks": 220,
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-07-09T06:18:16Z",
+    "verified_at": "2026-08-06",
+    "commit": "6ecea742ed80b50c2b8789e1f4b709d8db8fef19"
+  },
+  "skills": [
+    "alphagbm-alert",
+    "alphagbm-bps-backtest",
+    "alphagbm-buffett-analysis",
+    "alphagbm-chokepoint",
+    "alphagbm-company-profile",
+    "alphagbm-compare",
+    "alphagbm-duan-analysis",
+    "alphagbm-earnings-crush",
+    "alphagbm-fear-score",
+    "alphagbm-greeks",
+    "alphagbm-health-check",
+    "alphagbm-hedge-advisor",
+    "alphagbm-investment-thesis",
+    "alphagbm-iv-rank",
+    "alphagbm-macro-view",
+    "alphagbm-market-sentiment",
+    "alphagbm-marks-cycle",
+    "alphagbm-options-score",
+    "alphagbm-options-strategy",
+    "alphagbm-pnl-simulator",
+    "alphagbm-polymarket",
+    "alphagbm-stock-analysis",
+    "alphagbm-take-profit",
+    "alphagbm-tepper-signal",
+    "alphagbm-theme-research",
+    "alphagbm-unusual-activity",
+    "alphagbm-vix-status",
+    "alphagbm-vol-smile",
+    "alphagbm-vol-surface",
+    "alphagbm-watchlist"
+  ],
+  "notes": [
+    "All 30 upstream skills are mirrored with MIT attribution and a shared safety/data contract.",
+    "Live market results require ALPHAGBM_API_KEY; bundled mock snapshots are illustrative and may be stale.",
+    "Keep this as an optional high-tier finance source because its options coverage substantially overlaps llmquant-options.",
+    "No skill in this suite may place orders, connect to a broker, or run unattended trading."
+  ]
+}

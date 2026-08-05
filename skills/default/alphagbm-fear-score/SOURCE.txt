@@ -1,0 +1,9 @@
+Upstream: https://github.com/AlphaGBM/skills
+Upstream skill: https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score
+Snapshot: 6ecea742ed80b50c2b8789e1f4b709d8db8fef19
+Imported: 2026-08-06
+License: MIT
+
+Boutique hardening: added explicit mock/live-data labeling, timestamp and
+contract-metadata requirements, independent corroboration, and a prohibition
+on broker connectivity, unattended trading, and personalized order directives.

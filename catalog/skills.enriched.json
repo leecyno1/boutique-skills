@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 363,
-    "native_origin_verified_or_referenced": 357,
+    "skills": 393,
+    "native_origin_verified_or_referenced": 387,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 133,
-      "L3 Specialist": 209
+      "L3 Specialist": 239
     },
     "by_category": {
       "agent-orchestration": 5,
@@ -35,9 +35,9 @@
       "docs-office": 10,
       "finance-data": 22,
       "finance-knowledge": 2,
-      "finance-monitor": 8,
+      "finance-monitor": 15,
       "finance-services": 53,
-      "finance-trading": 86,
+      "finance-trading": 109,
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
@@ -50,7 +50,7 @@
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 98,
+      "api-key": 128,
       "api-key+mcp-required": 22,
       "browser-required": 17,
       "direct": 153,
@@ -59,7 +59,7 @@
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 126,
+      "4★": 156,
       "5★": 79
     }
   },
@@ -5825,6 +5825,1566 @@
       "preset_excluded": false,
       "rating": {
         "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-alert",
+      "name": "alphagbm-alert",
+      "description": "Set price, IV, or activity-based alerts with contextual notifications. Alert types include IV rank threshold crossing, price support/resistance breaks, unusual activity detection, earnings approaching, and VRP signal changes. Triggers: \"alert me when AAPL IV rank above 80\", \"notify if NVDA drops below 850\", \"earnings alert for TSLA\", \"VRP alert\", \"set price alert\", \"alert when IV spikes\", \"notify on unusual activity\", \"my alerts\", \"delete alert\"",
+      "manual": "skills/default/alphagbm-alert/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-alert/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-alert",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-bps-backtest",
+      "name": "alphagbm-bps-backtest",
+      "description": "Full walk-forward Bull Put Spread backtest over ~8 years of daily history. Runs both the signal (FearScore ≥ 60 entry) version AND a no-signal control in the same request, so you can quantify whether the fear-entry rule actually delivers alpha for this ticker under your parameters. Returns equity curve, 4 KPIs (annualized return / win rate / max drawdown / Sharpe), trade ledger, and a plain-language takeaway. Triggers: \"backtest BPS on QQQ\", \"bull put spread backtest\", \"does FearScore work on SPY\", \"what DTE for BPS\", \"optimal bull put spread delta\", \"BPS strategy backtest\", \"credit spread backtest\", \"backtest short put spread\"",
+      "manual": "skills/default/alphagbm-bps-backtest/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-bps-backtest/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-bps-backtest",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-buffett-analysis",
+      "name": "alphagbm-buffett-analysis",
+      "description": "Warren Buffett-lens scorecard for any ticker. Scores 4 dimensions 0-100 each (business / circle of competence, moat / durable advantage, management / capital allocation, valuation / fair price vs 10Y treasury) and returns a weighted overall HOLDABLE / WATCHABLE / AVOID verdict. This is NOT a generic fundamental screener — it's Buffett's specific framework mechanically applied: sector simplicity, gross margin + ROE + profit margin thresholds, FCF yield vs treasury, and dividend-continuity as management proxy. Triggers: \"Buffett analysis AAPL\", \"score KO with Buffett lens\", \"would Buffett buy MSFT\", \"JNJ Buffett scorecard\", \"AAPL moat analysis\", \"fair price vs bonds\", \"Buffett-style verdict on NVDA\", \"long-term hold analysis\"",
+      "manual": "skills/default/alphagbm-buffett-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-buffett-analysis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-buffett-analysis",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-chokepoint",
+      "name": "alphagbm-chokepoint",
+      "description": "Serenity-style \"Chokepoint Theory\" applied to AI supply chains. Identifies physically irreplaceable bottleneck suppliers — small-cap near-monopolies buried 4–7 layers deep — whose capacity constraints force violent repricing when demand outgrows supply. Uses a 5-factor scoring model (Concentration, Irreplaceability, Qualification Gate, Discovery Gap, Demand Tension) to screen and rank candidates. This is AlphaGBM's independent reading of Serenity (@aleabitoreddit)'s publicly shared methodology — NOT affiliated with or endorsed by Serenity. Triggers: \"chokepoint analysis\", \"AI supply chain bottleneck\", \"find the shiso leaf\", \"Serenity-style screen\", \"which small-caps own the bottleneck\", \"InP substrate play\", \"co-packaged optics chokepoint\", \"irreplaceable supplier in AI buildout\", \"supply chain concentration risk\"",
+      "manual": "skills/default/alphagbm-chokepoint/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-chokepoint/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-chokepoint",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-company-profile",
+      "name": "alphagbm-company-profile",
+      "description": "Build and maintain company research profiles on AlphaGBM — auto-generated from fundamentals, PE/PB Band history, financial red flags, and event radar. Each profile is one user+ticker record that the system refreshes on schedule. Use when: creating a watchlist of companies to track, pulling up a saved research file, refreshing a profile's market data, or checking PE/PB bands. Triggers on: \"add AAPL to my knowledge base\", \"show my profile for NVDA\", \"refresh my TSLA profile\", \"list my tracked companies\", \"PE band for META\", \"what's in my research brain\", \"创建公司档案\", \"我的投研档案\".",
+      "manual": "skills/default/alphagbm-company-profile/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-company-profile/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-company-profile",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-compare",
+      "name": "alphagbm-compare",
+      "description": "Side-by-side comparison of 2-5 stocks or options across GBM Five Pillars scores, options metrics, technicals, and valuations. Identifies the winner by category. Triggers: \"compare AAPL vs MSFT\", \"NVDA or AMD\", \"which is cheaper TSLA or META options\", \"tech stock comparison\", \"side by side\", \"versus\", \"which is better\", \"compare options\", \"cheapest IV\", \"best value stock\"",
+      "manual": "skills/default/alphagbm-compare/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-compare/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-compare",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-duan-analysis",
+      "name": "alphagbm-duan-analysis",
+      "description": "Duan-Yongping-style seller playbook for any ticker: Sell Put at your \"willing buy\" price, Covered Call for yield enhancement, and a Panic-Buy context read off current VIX. The response is three tightly-scoped analysis cards — not a generic options screener — derived from the specific framework that made Duan Yongping famous in Chinese retail investing (seller-only, rent-collection logic, never a buyer of options). Triggers: \"Duan Yongping style AAPL\", \"sell put NVDA willing to buy at 120\", \"covered call yield TSLA\", \"should I sell AAPL put here\", \"seller strategy MSFT\", \"Duan-style analysis\", \"premium collection setup\", \"nationalist seller playbook\"",
+      "manual": "skills/default/alphagbm-duan-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-duan-analysis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-duan-analysis",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-earnings-crush",
+      "name": "alphagbm-earnings-crush",
+      "description": "Full earnings-season IV analysis: historical crush, implied move forecast, IV Rank strategy tag, and a priced Iron Condor quote ready to trade. Triggers: \"earnings crush AAPL\", \"NVDA IV before earnings\", \"implied move MSFT\", \"iron condor for META\", \"IV rank AAPL earnings\", \"earnings play TSLA\", \"should I short premium before AMZN earnings\", \"post-earnings IV drop\", \"straddle before earnings\", \"pre-earnings strategy\"",
+      "manual": "skills/default/alphagbm-earnings-crush/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-earnings-crush/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-earnings-crush",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-fear-score",
+      "name": "alphagbm-fear-score",
+      "description": "Per-ticker panic index (0-100) that weights six real signals: VIX, IV Rank, RSI-14, options volume anomaly, Put/Call ratio, and consecutive-down days. Scores ≥ 60 trigger a Bull Put Spread entry signal. Based on the FearDesk methodology; tested at ~10.8% annualized ROC for BPS entries on signal vs ~3.5% unconditional. Triggers: \"fear score QQQ\", \"is NVDA oversold\", \"panic index SPY\", \"BPS signal TSLA\", \"is it fear time\", \"BPS entry timing\", \"when to sell put\", \"is AAPL panic\", \"contrarian entry signal\", \"oversold reading\", \"VIX plus RSI\"",
+      "manual": "skills/default/alphagbm-fear-score/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-fear-score/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-fear-score",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-greeks",
+      "name": "alphagbm-greeks",
+      "description": "Greeks dashboard for any option contract or multi-leg position. Covers first-order Greeks (Delta, Gamma, Theta, Vega, Rho) and second-order Greeks (Charm, Vanna, Volga). Returns individual and position-level Greeks with scenario heatmaps. Use when: checking option sensitivities, managing position risk, understanding theta decay, analyzing gamma exposure, hedging a portfolio. Triggers on: \"Greeks for AAPL 220 call\", \"position Greeks\", \"theta decay analysis\", \"gamma exposure NVDA\", \"delta of my position\", \"vega risk SPY straddle\".",
+      "manual": "skills/default/alphagbm-greeks/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-greeks/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-greeks",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-health-check",
+      "name": "alphagbm-health-check",
+      "description": "Weekly diagnostic report on a user's research knowledge base — flags stale profiles (not updated in weeks), thesis drift (AI detects original premise no longer holds), and orphan pages (profiles with no thesis, themes with missing profiles). Returns an overall 0-100 health score with specific action recommendations. Use when: auditing knowledge base state, triggering a fresh report, reviewing what needs attention. Triggers on: \"health check my research\", \"what's stale\", \"any drift\", \"generate a report\", \"研究库体检\", \"过期档案\", \"论据偏离\", \"孤立主题\".",
+      "manual": "skills/default/alphagbm-health-check/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-health-check/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-health-check",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-hedge-advisor",
+      "name": "alphagbm-hedge-advisor",
+      "description": "Scenario-driven hedge recommendations for an existing stock position. Takes ticker + cost basis + purpose, auto-classifies the holding situation (falling knife / bottom-fishing / gain-protection / normal) and returns concrete Long Put, Collar, or Tier-down recommendations with live strikes and premiums from the current option chain. Triggers: \"hedge my AAPL\", \"protect my NVDA gains\", \"collar strategy MSFT\", \"long put for TSLA\", \"how to hedge falling knife COIN\", \"reduce risk BABA\", \"lock in gains META\", \"downside protection\", \"portfolio hedge\", \"insurance for position\"",
+      "manual": "skills/default/alphagbm-hedge-advisor/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-hedge-advisor/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-hedge-advisor",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-investment-thesis",
+      "name": "alphagbm-investment-thesis",
+      "description": "Record and track the \"why I bought\" and \"when I sell\" for each position. Each thesis is attached to a company profile: buy reasons in prose, sell conditions as structured triggers (price drop, PE spike, thesis breach). The system monitors conditions automatically and flips the thesis to \"triggered\" when one fires. Use when: writing buy logic, setting exit triggers, reviewing active theses, seeing which triggered. Triggers on: \"write a thesis for NVDA\", \"why did I buy AAPL\", \"set a stop loss logic on TSLA\", \"which theses are triggered\", \"update my thesis\", \"投资论据\", \"卖出条件\", \"买入理由\", \"论据被打破\".",
+      "manual": "skills/default/alphagbm-investment-thesis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-investment-thesis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-investment-thesis",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-iv-rank",
+      "name": "alphagbm-iv-rank",
+      "description": "IV Rank and IV Percentile analysis showing where current implied volatility stands relative to its 252-day history. Returns IV rank (0-100), IV percentile (0-100), IV history data, and trading signals based on IV zone. Use when: deciding whether to buy or sell premium, checking if IV is high or low, timing volatility trades, screening for IV extremes. Triggers on: \"IV rank AAPL\", \"is NVDA IV high\", \"IV percentile SPY\", \"historical IV TSLA\", \"is volatility cheap for META\", \"IV rank scan\", \"should I sell premium\".",
+      "manual": "skills/default/alphagbm-iv-rank/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-iv-rank/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-iv-rank",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-macro-view",
+      "name": "alphagbm-macro-view",
+      "description": "Track the macro variables that actually move your portfolio — VIX, US10Y, DXY, gold, oil, etc. — with auto-computed impact on user's holdings. Each tracked indicator returns current value, change, and AI-generated impact analysis linked to the user's profiles. Use when: adding a macro indicator, pulling current macro dashboard, asking how VIX affects the portfolio. Triggers on: \"track VIX\", \"current 10-year yield\", \"how's the dollar doing\", \"add gold to my macro watch\", \"remove US10Y\", \"宏观指标\", \"美债利率\", \"美元指数\", \"VIX恐慌指数\".",
+      "manual": "skills/default/alphagbm-macro-view/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-macro-view/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-macro-view",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-market-sentiment",
+      "name": "alphagbm-market-sentiment",
+      "description": "Market-wide sentiment dashboard with VIX, Put/Call ratio, Fear & Greed Index, market breadth, and sector rotation analysis. Classifies current regime as risk-on, risk-off, or neutral. Triggers: \"market sentiment\", \"is the market fearful\", \"VIX analysis\", \"put call ratio\", \"market breadth\", \"fear and greed\", \"risk on or risk off\", \"advance decline\", \"new highs new lows\", \"sector rotation\", \"market regime\"",
+      "manual": "skills/default/alphagbm-market-sentiment/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-market-sentiment/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-market-sentiment",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-marks-cycle",
+      "name": "alphagbm-marks-cycle",
+      "description": "Howard Marks-style market cycle position 0-100, with 0 = panic bottom (hard offense) and 100 = euphoric top (hard defense). Blends VIX (40%) + SPY IV Rank (25%) + Put/Call ratio (20%) + valuation percentile (15%) into a single number and maps to an offense-vs-defense posture. Free endpoint, no auth, 5-min cache — the goal is to make \"where are we in the cycle\" a one-call lookup. Triggers: \"where is the market in the cycle\", \"Howard Marks style cycle read\", \"am I supposed to be offensive or defensive\", \"is this a buying cycle\", \"cycle position right now\", \"Marks cycle score\", \"sentiment read for SPY\"",
+      "manual": "skills/default/alphagbm-marks-cycle/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-marks-cycle/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-marks-cycle",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-options-score",
+      "name": "alphagbm-options-score",
+      "description": "Score and rank options contracts for any ticker using AlphaGBM's multi-factor scoring model (liquidity, IV attractiveness, Greeks balance, risk/reward). Returns scored option chains with the best contracts highlighted. Use when: evaluating which option to trade, finding the best strike/expiry, ranking options by quality. Triggers on: \"score AAPL options\", \"best options for NVDA\", \"which TSLA call should I buy\", \"option chain for SPY\", \"rank META puts\".",
+      "manual": "skills/default/alphagbm-options-score/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-score/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-options-score",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-options-strategy",
+      "name": "alphagbm-options-strategy",
+      "description": "Recommends optimal multi-leg option strategies based on your market view (bullish, bearish, neutral, volatile). Supports 15+ strategy templates including spreads, condors, straddles, and income plays. Returns full P&L profile, breakevens, and probability of profit. Use when: choosing an options strategy, planning a trade around earnings, building a multi-leg position, comparing strategy alternatives. Triggers on: \"options strategy for AAPL\", \"bullish strategy NVDA\", \"what's the best play on TSLA earnings\", \"iron condor SPY\", \"bear put spread META\", \"income strategy for GOOGL\", \"neutral play on QQQ\".",
+      "manual": "skills/default/alphagbm-options-strategy/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-strategy/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-options-strategy",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-pnl-simulator",
+      "name": "alphagbm-pnl-simulator",
+      "description": "P&L simulation engine for any single-leg or multi-leg option position. Generates profit/loss diagrams at expiry, P&L over time, what-if scenarios (price, IV, time), breakeven analysis, and probability distributions. Use when: testing a trade idea, visualizing risk/reward, running what-if scenarios, checking breakeven points, stress-testing a position. Triggers on: \"simulate PnL for AAPL bull call spread\", \"what if NVDA drops 10%\", \"P&L diagram\", \"test my iron condor\", \"breakeven analysis\", \"stress test my position\", \"what happens at expiry\".",
+      "manual": "skills/default/alphagbm-pnl-simulator/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-pnl-simulator/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-pnl-simulator",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-polymarket",
+      "name": "alphagbm-polymarket",
+      "description": "Integrates prediction market data (Polymarket) with options analysis to surface mispricing signals between event probabilities and options-implied probabilities. Triggers: \"polymarket signals\", \"prediction market vs options\", \"event probability\", \"rate cut odds\", \"election odds vs options\", \"polymarket arbitrage\", \"implied probability mismatch\", \"prediction market data\", \"event-driven options\"",
+      "manual": "skills/default/alphagbm-polymarket/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-polymarket/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-polymarket",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-stock-analysis",
+      "name": "alphagbm-stock-analysis",
+      "description": "AI-powered stock analysis using AlphaGBM's Five Pillars framework (Fundamental, Technical, Sentiment, Flow, Valuation) with real market data. Returns a 1-10 composite score with actionable signals. Use when: analyzing any stock ticker, evaluating buy/sell decisions, comparing stock fundamentals, assessing risk levels. Triggers on: \"analyze AAPL\", \"what do you think about NVDA\", \"should I buy TSLA\", \"stock analysis for META\", \"is SPY overvalued\", \"risk assessment for GOOGL\".",
+      "manual": "skills/default/alphagbm-stock-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-stock-analysis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-stock-analysis",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-take-profit",
+      "name": "alphagbm-take-profit",
+      "description": "Quantifies whether a stock is suitable for long-term holding or requires tiered profit-taking — using a novel \"rollercoaster rate\" metric (probability that an entry's paper profit reaches +50% then falls back >50% from peak before exit). Runs 15 exit strategies over ~10 years of daily history per ticker and returns medians for each. First query for a new ticker takes ~30s and gets cached globally; subsequent queries are instant. Triggers: \"should I hold TQQQ long-term\", \"take-profit strategy for NVDA\", \"is AAPL holdable\", \"rollercoaster rate for TSLA\", \"sell strategy COIN\", \"when to sell NVDA\", \"profit-taking plan for QQQ\", \"exit strategy for my stock\", \"leveraged ETF hold analysis\"",
+      "manual": "skills/default/alphagbm-take-profit/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-take-profit/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-take-profit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-tepper-signal",
+      "name": "alphagbm-tepper-signal",
+      "description": "Quantified version of David Tepper's 2009 (+132%) and 2020 (+82%) panic-buy playbook. Detects whether current conditions match Tepper's signal: VIX ≥ 35 AND FearScore ≥ 80 AND quality filter (large-cap, positive margin). Only fires during genuine market panics — the rest of the time it returns the \"waiting\" state, which is ~80% of all days per Tepper's own framework. The API reuses our existing FearScore module, so the signal is directly comparable to the multi-indicator panic index. Triggers: \"is this a Tepper buy signal\", \"panic-buy detector SPY\", \"should I buy the panic\", \"Tepper style entry check\", \"are we at a panic bottom\", \"is VIX 35+ and fear 80+\", \"historical bottom signal today\"",
+      "manual": "skills/default/alphagbm-tepper-signal/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-tepper-signal/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-tepper-signal",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-theme-research",
+      "name": "alphagbm-theme-research",
+      "description": "Group related tickers into investment themes — AI infra, HK dividend, EV supply chain, biotech catalysts — with theme-level AI summary and news keyword monitoring. Each theme is a named bag of tickers plus keywords the system watches for you. Use when: creating a themed basket, pulling up a theme's aggregated view, adding/removing tickers, monitoring news around a topic. Triggers on: \"create an AI infra theme\", \"show my themes\", \"add MSFT to AI theme\", \"what's happening in HK dividend\", \"主题研究\", \"AI基建\", \"港股高息\", \"投资主题\".",
+      "manual": "skills/default/alphagbm-theme-research/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-theme-research/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-theme-research",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-unusual-activity",
+      "name": "alphagbm-unusual-activity",
+      "description": "Detects unusual options activity and smart money signals. Monitors volume/OI ratio spikes, large block trades, unusual strike/expiry combinations, and net premium flow. Triggers: \"unusual options activity\", \"smart money AAPL\", \"large trades NVDA\", \"who's buying TSLA puts\", \"options flow\", \"block trades\", \"sweep orders\", \"unusual volume\", \"dark pool activity\", \"whale trades\"",
+      "manual": "skills/default/alphagbm-unusual-activity/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-unusual-activity/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-unusual-activity",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-vix-status",
+      "name": "alphagbm-vix-status",
+      "description": "Current VIX level + 5-tier fear-thermometer classification + option-seller strategy hint. Translates the single VIX number into actionable trading guidance (calm / normal / seller sweet spot / caution / extreme fear). Includes current percentile vs 1-year history and how many days the market spent in each tier. Triggers: \"what's VIX\", \"VIX level\", \"is market calm\", \"market fear gauge\", \"should I sell premium now\", \"VIX tier\", \"VIX strategy\", \"volatility environment\", \"fear index\", \"should I buy protection\", \"is this a good time for BPS\".",
+      "manual": "skills/default/alphagbm-vix-status/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vix-status/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-vix-status",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-vol-smile",
+      "name": "alphagbm-vol-smile",
+      "description": "2D volatility smile and skew analysis for a single expiration date. Maps IV across strikes to reveal put skew, call skew, and smile shape. Returns smile curve data, skew metrics (25-delta skew, risk reversal), and shape classification. Use when: analyzing put/call skew, checking if puts are expensive, understanding directional fear in options pricing, finding skew trades. Triggers on: \"vol smile AAPL\", \"skew analysis NVDA\", \"put skew for TSLA\", \"is the smile steep for SPY\", \"volatility skew META\", \"smile shape for GOOGL\".",
+      "manual": "skills/default/alphagbm-vol-smile/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-smile/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-vol-smile",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-vol-surface",
+      "name": "alphagbm-vol-surface",
+      "description": "3D volatility surface analysis mapping implied volatility across strikes (moneyness) and expirations. Shows whether options are cheap or expensive at every point on the surface. Returns surface grid data, ATM term structure, skew by expiry, and surface anomalies. Use when: checking if IV is expensive, analyzing term structure, finding mispriced options, understanding volatility dynamics. Triggers on: \"vol surface AAPL\", \"is NVDA IV expensive\", \"volatility term structure SPY\", \"surface analysis TSLA\", \"IV surface META\", \"show me the vol surface\".",
+      "manual": "skills/default/alphagbm-vol-surface/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-surface/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-suite",
+        "finance-trading",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:alphagbm-vol-surface",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "alphagbm-watchlist",
+      "name": "alphagbm-watchlist",
+      "description": "Monitor a list of tickers for key changes in price, IV rank, unusual activity, earnings dates, and score changes. Supports custom watchlists and a default \"hot options\" list. Triggers: \"add AAPL to watchlist\", \"my watchlist\", \"watch NVDA TSLA META\", \"watchlist alerts\", \"remove SPY from watchlist\", \"hot options\", \"what's on my watchlist\", \"watchlist summary\", \"daily watchlist\"",
+      "manual": "skills/default/alphagbm-watchlist/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-watchlist/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-monitor",
+      "category_label": "金融 / 监控预警",
+      "tags": [
+        "alphagbm",
+        "api-backed",
+        "api-key",
+        "finance",
+        "finance-monitor",
+        "finance-suite",
+        "l3",
+        "online",
+        "optional",
+        "options-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ALPHAGBM_API_KEY"
+        ],
+        "required_tools": [
+          "curl"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "alphagbm-watchlist",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
         "stars": 4,
         "rating_label": "★★★★☆"
       }

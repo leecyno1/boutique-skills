@@ -2,7 +2,7 @@
   "schema_version": "2026.06.14",
   "id": "finance-investment-standard",
   "title": "Finance Investment Standard Suite",
-  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
+  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, AlphaGBM, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
   "source": "https://github.com/leecyno1/boutique-skills",
   "native_origin": "https://github.com/leecyno1/boutique-skills",
   "homepage": "https://github.com/leecyno1/boutique-skills#finance--investment-workflows",
@@ -20,7 +20,8 @@
     "ALPACA_API_KEY",
     "IMA_API_KEY",
     "IMA_CLIENT_ID",
-    "OPENAI_API_KEY"
+    "OPENAI_API_KEY",
+    "ALPHAGBM_API_KEY"
   ],
   "requires_tools": [
     "python",
@@ -58,6 +59,11 @@
       "id": "day1global-skills",
       "source": "https://github.com/star23/Day1Global-Skills",
       "score": 79
+    },
+    {
+      "id": "alphagbm",
+      "source": "https://github.com/AlphaGBM/skills",
+      "score": 82
     }
   ],
   "standard_slots": [
@@ -371,11 +377,42 @@
     "us-value-investing",
     "us-market-sentiment",
     "macro-liquidity",
-    "btc-bottom-model"
+    "btc-bottom-model",
+    "alphagbm-alert",
+    "alphagbm-bps-backtest",
+    "alphagbm-buffett-analysis",
+    "alphagbm-chokepoint",
+    "alphagbm-company-profile",
+    "alphagbm-compare",
+    "alphagbm-duan-analysis",
+    "alphagbm-earnings-crush",
+    "alphagbm-fear-score",
+    "alphagbm-greeks",
+    "alphagbm-health-check",
+    "alphagbm-hedge-advisor",
+    "alphagbm-investment-thesis",
+    "alphagbm-iv-rank",
+    "alphagbm-macro-view",
+    "alphagbm-market-sentiment",
+    "alphagbm-marks-cycle",
+    "alphagbm-options-score",
+    "alphagbm-options-strategy",
+    "alphagbm-pnl-simulator",
+    "alphagbm-polymarket",
+    "alphagbm-stock-analysis",
+    "alphagbm-take-profit",
+    "alphagbm-tepper-signal",
+    "alphagbm-theme-research",
+    "alphagbm-unusual-activity",
+    "alphagbm-vix-status",
+    "alphagbm-vol-smile",
+    "alphagbm-vol-surface",
+    "alphagbm-watchlist"
   ],
   "notes": [
     "This is the finance-domain standard suite, separate from the general no-duplicate standard bundle.",
     "It intentionally includes full source families requested by the curator plus the scored finance standard slots.",
+    "AlphaGBM is included as an optional source family; it complements but does not replace llmquant-options or options-strategy-advisor because their capability overlap is high.",
     "Use ./scripts/install-suite.sh finance-investment-standard --dry-run to preview the install list."
   ]
 }

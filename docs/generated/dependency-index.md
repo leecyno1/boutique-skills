@@ -2,7 +2,7 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 98 |
+| `api-key` | 128 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 17 |
 | `direct` | 153 |
@@ -14,6 +14,36 @@
 |---|---|---|---|
 | `claude-mem-plugin` | `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `OPENROUTER_API_KEY` | 无 | `high` |
 | `github` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
+| `alphagbm-alert` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-bps-backtest` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-buffett-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-chokepoint` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-company-profile` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-compare` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-duan-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-earnings-crush` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-fear-score` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-greeks` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-health-check` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-hedge-advisor` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-investment-thesis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-iv-rank` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-macro-view` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-market-sentiment` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-marks-cycle` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-options-score` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-options-strategy` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-pnl-simulator` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-polymarket` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-stock-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-take-profit` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-tepper-signal` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-theme-research` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-unusual-activity` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-vix-status` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-vol-smile` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-vol-surface` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
+| `alphagbm-watchlist` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `a-stock-data` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `agentmail-toolkit` | `AGENTMAIL_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `akshare-stock` | `TUSHARE_TOKEN` | `python` | `medium` |

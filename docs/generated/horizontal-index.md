@@ -4,7 +4,7 @@
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
 | `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 133 |
-| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 209 |
+| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 239 |
 
 ## L1 Foundation
 
@@ -215,6 +215,36 @@
 | `wechat-account-launch-expert` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/wechat-account-launch-expert) |
 | `x-twitter-cold-start-expert` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/x-twitter-cold-start-expert) |
 | `xiaohongshu-account-launch-expert` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/xiaohongshu-account-launch-expert) |
+| `alphagbm-alert` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert) |
+| `alphagbm-bps-backtest` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest) |
+| `alphagbm-buffett-analysis` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis) |
+| `alphagbm-chokepoint` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint) |
+| `alphagbm-company-profile` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile) |
+| `alphagbm-compare` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare) |
+| `alphagbm-duan-analysis` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis) |
+| `alphagbm-earnings-crush` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush) |
+| `alphagbm-fear-score` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score) |
+| `alphagbm-greeks` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks) |
+| `alphagbm-health-check` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check) |
+| `alphagbm-hedge-advisor` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor) |
+| `alphagbm-investment-thesis` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis) |
+| `alphagbm-iv-rank` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank) |
+| `alphagbm-macro-view` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view) |
+| `alphagbm-market-sentiment` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment) |
+| `alphagbm-marks-cycle` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle) |
+| `alphagbm-options-score` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score) |
+| `alphagbm-options-strategy` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy) |
+| `alphagbm-pnl-simulator` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator) |
+| `alphagbm-polymarket` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket) |
+| `alphagbm-stock-analysis` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis) |
+| `alphagbm-take-profit` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit) |
+| `alphagbm-tepper-signal` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal) |
+| `alphagbm-theme-research` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research) |
+| `alphagbm-unusual-activity` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity) |
+| `alphagbm-vix-status` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status) |
+| `alphagbm-vol-smile` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile) |
+| `alphagbm-vol-surface` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
+| `alphagbm-watchlist` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
 | `macro-liquidity` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `alphaear-deepear-lite` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-deepear-lite) |
 | `alphaear-logic-visualizer` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-logic-visualizer) |

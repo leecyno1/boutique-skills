@@ -13,11 +13,11 @@
 | 媒体生成 / 处理 (`media-generation`) | 34 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
-| 金融 / 交易 (`finance-trading`) | 86 |
+| 金融 / 交易 (`finance-trading`) | 109 |
 | 金融 / 机构服务 (`finance-services`) | 53 |
 | 金融 / 数据源 (`finance-data`) | 22 |
 | 金融 / 知识库 (`finance-knowledge`) | 2 |
-| 金融 / 监控预警 (`finance-monitor`) | 8 |
+| 金融 / 监控预警 (`finance-monitor`) | 15 |
 | 政策 / 宏观监控 (`policy-monitoring`) | 1 |
 | 法律 / 合规 / 税务 (`legal-compliance`) | 2 |
 | 效率 / 知识管理 (`productivity-pkm`) | 2 |
@@ -266,6 +266,29 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `tech-earnings-deepdive` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `earnings-research`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `online` |
+| `alphagbm-bps-backtest` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-buffett-analysis` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-chokepoint` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-compare` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-duan-analysis` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-earnings-crush` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-fear-score` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-greeks` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-hedge-advisor` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-iv-rank` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-market-sentiment` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-marks-cycle` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-options-score` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-options-strategy` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-pnl-simulator` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-polymarket` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-stock-analysis` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-take-profit` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-tepper-signal` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-unusual-activity` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-vix-status` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-vol-smile` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-vol-surface` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-suite`, `finance-trading`, `l3`, `online`, `optional`, `options-research` |
 | `macro-liquidity` | `L3 Specialist` | 4★ | `browser-required`, `day1global-skills`, `finance`, `finance-suite`, `finance-trading`, `investment-research`, `l3`, `macro-liquidity`, `online` |
 | `llmquant-commodities` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-suite`, `finance-trading`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
 | `llmquant-credit` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-suite`, `finance-trading`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
@@ -448,6 +471,13 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `alphagbm-alert` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-company-profile` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-health-check` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-investment-thesis` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-macro-view` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-theme-research` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
+| `alphagbm-watchlist` | `L3 Specialist` | 4★ | `alphagbm`, `api-backed`, `api-key`, `finance`, `finance-monitor`, `finance-suite`, `l3`, `online`, `optional`, `options-research` |
 | `llmquant-events` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-monitor`, `finance-suite`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
 | `llmquant-macro` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-monitor`, `finance-suite`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |
 | `llmquant-market-intelligence` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance`, `finance-monitor`, `finance-suite`, `institutional-research`, `l2`, `llmquant`, `mcp-required`, `online` |

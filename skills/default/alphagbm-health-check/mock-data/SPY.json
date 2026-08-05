@@ -1,0 +1,235 @@
+{
+  "ticker": "SPY",
+  "name": "SPDR S&P 500 ETF Trust",
+  "market": "US",
+  "snapshot_date": "2026-04-09",
+
+  "stock": {
+    "price": 681.15,
+    "change_pct": 0.35,
+    "volume": 78000000,
+    "avg_volume_20d": 72000000,
+    "market_cap_b": null,
+    "pe_ratio": 24.8,
+    "forward_pe": 22.2,
+    "peg_ratio": null,
+    "dividend_yield": 1.18,
+    "beta": 1.00,
+    "52w_high": 718.50,
+    "52w_low": 545.80,
+    "rsi_14": 48.5,
+    "macd_signal": "bearish",
+    "sma_50": 695.20,
+    "sma_200": 648.80,
+    "sector": "Broad Market ETF",
+    "industry": "S&P 500 Index"
+  },
+
+  "options": {
+    "iv_30d": 18.8,
+    "iv_60d": 17.5,
+    "iv_90d": 16.8,
+    "hv_20d": 16.2,
+    "hv_60d": 14.8,
+    "vrp": 2.6,
+    "iv_rank": 42,
+    "iv_percentile": 38,
+    "put_call_ratio": 1.12,
+    "total_call_oi": 14500000,
+    "total_put_oi": 16240000,
+    "total_call_volume": 3500000,
+    "total_put_volume": 3920000,
+    "skew_25d": -3.0,
+    "next_earnings": null,
+    "days_to_earnings": null,
+
+    "term_structure": [
+      {"expiry": "2026-04-11", "dte": 2, "atm_iv": 22.0},
+      {"expiry": "2026-04-14", "dte": 5, "atm_iv": 20.5},
+      {"expiry": "2026-04-17", "dte": 8, "atm_iv": 19.8},
+      {"expiry": "2026-04-25", "dte": 16, "atm_iv": 19.2},
+      {"expiry": "2026-05-02", "dte": 23, "atm_iv": 18.5},
+      {"expiry": "2026-05-16", "dte": 37, "atm_iv": 17.8},
+      {"expiry": "2026-06-20", "dte": 72, "atm_iv": 17.2},
+      {"expiry": "2026-09-18", "dte": 162, "atm_iv": 16.8},
+      {"expiry": "2026-12-18", "dte": 253, "atm_iv": 17.0}
+    ],
+
+    "vol_surface": [
+      {
+        "expiry": "2026-04-25",
+        "strikes": [
+          {"strike": 655, "moneyness": 0.962, "call_iv": 22.8, "put_iv": 23.5},
+          {"strike": 665, "moneyness": 0.976, "call_iv": 21.0, "put_iv": 21.5},
+          {"strike": 675, "moneyness": 0.991, "call_iv": 19.5, "put_iv": 19.8},
+          {"strike": 680, "moneyness": 0.998, "call_iv": 19.2, "put_iv": 19.4},
+          {"strike": 685, "moneyness": 1.006, "call_iv": 19.3, "put_iv": 19.5},
+          {"strike": 695, "moneyness": 1.020, "call_iv": 19.8, "put_iv": 20.2},
+          {"strike": 710, "moneyness": 1.042, "call_iv": 20.5, "put_iv": 21.0}
+        ]
+      },
+      {
+        "expiry": "2026-05-16",
+        "strikes": [
+          {"strike": 655, "moneyness": 0.962, "call_iv": 20.5, "put_iv": 21.2},
+          {"strike": 665, "moneyness": 0.976, "call_iv": 19.2, "put_iv": 19.8},
+          {"strike": 675, "moneyness": 0.991, "call_iv": 18.2, "put_iv": 18.5},
+          {"strike": 680, "moneyness": 0.998, "call_iv": 17.8, "put_iv": 18.0},
+          {"strike": 685, "moneyness": 1.006, "call_iv": 17.9, "put_iv": 18.2},
+          {"strike": 695, "moneyness": 1.020, "call_iv": 18.5, "put_iv": 18.8},
+          {"strike": 710, "moneyness": 1.042, "call_iv": 19.2, "put_iv": 19.8}
+        ]
+      }
+    ],
+
+    "chain_sample": [
+      {
+        "expiry": "2026-04-25",
+        "type": "call",
+        "strike": 685,
+        "bid": 10.20,
+        "ask": 10.35,
+        "last": 10.28,
+        "volume": 145000,
+        "open_interest": 320000,
+        "iv": 19.3,
+        "delta": 0.47,
+        "gamma": 0.012,
+        "theta": -0.18,
+        "vega": 0.58,
+        "rho": 0.18,
+        "score": 7.0,
+        "score_breakdown": {
+          "liquidity": 10,
+          "iv_attractiveness": 5.5,
+          "greeks_balance": 7.0,
+          "risk_reward": 5.5
+        }
+      },
+      {
+        "expiry": "2026-04-25",
+        "type": "put",
+        "strike": 675,
+        "bid": 8.80,
+        "ask": 8.95,
+        "last": 8.88,
+        "volume": 118000,
+        "open_interest": 350000,
+        "iv": 19.8,
+        "delta": -0.44,
+        "gamma": 0.011,
+        "theta": -0.16,
+        "vega": 0.56,
+        "rho": -0.16,
+        "score": 6.8,
+        "score_breakdown": {
+          "liquidity": 10,
+          "iv_attractiveness": 5.0,
+          "greeks_balance": 6.5,
+          "risk_reward": 5.5
+        }
+      },
+      {
+        "expiry": "2026-04-11",
+        "type": "put",
+        "strike": 670,
+        "bid": 2.85,
+        "ask": 2.92,
+        "last": 2.88,
+        "volume": 195000,
+        "open_interest": 450000,
+        "iv": 22.5,
+        "delta": -0.22,
+        "gamma": 0.018,
+        "theta": -0.42,
+        "vega": 0.22,
+        "rho": -0.05,
+        "score": 6.2,
+        "score_breakdown": {
+          "liquidity": 10,
+          "iv_attractiveness": 4.5,
+          "greeks_balance": 5.5,
+          "risk_reward": 5.0
+        }
+      }
+    ],
+
+    "strategies": [
+      {
+        "name": "Protective Collar",
+        "legs": [
+          {"type": "put", "strike": 665, "action": "buy", "price": 5.80},
+          {"type": "call", "strike": 700, "action": "sell", "price": 5.20}
+        ],
+        "max_profit": 1825,
+        "max_loss": 1675,
+        "breakeven": 681.75,
+        "pop": 52.5,
+        "risk_reward_ratio": 1.09,
+        "recommendation_score": 7.0
+      },
+      {
+        "name": "Iron Condor",
+        "legs": [
+          {"type": "put", "strike": 655, "action": "buy", "price": 2.50},
+          {"type": "put", "strike": 665, "action": "sell", "price": 5.80},
+          {"type": "call", "strike": 700, "action": "sell", "price": 5.20},
+          {"type": "call", "strike": 710, "action": "buy", "price": 2.80}
+        ],
+        "max_profit": 570,
+        "max_loss": 430,
+        "breakeven_lower": 659.30,
+        "breakeven_upper": 705.70,
+        "pop": 60.5,
+        "risk_reward_ratio": 1.33,
+        "recommendation_score": 7.2
+      },
+      {
+        "name": "0DTE Put Credit Spread",
+        "legs": [
+          {"type": "put", "strike": 670, "action": "sell", "price": 1.65},
+          {"type": "put", "strike": 665, "action": "buy", "price": 0.85}
+        ],
+        "max_profit": 80,
+        "max_loss": 420,
+        "breakeven": 674.20,
+        "pop": 72.8,
+        "risk_reward_ratio": 0.19,
+        "recommendation_score": 6.0
+      }
+    ]
+  },
+
+  "earnings_history": [],
+
+  "unusual_activity": [
+    {"date": "2026-04-09", "type": "put", "strike": 660, "expiry": "2026-04-25", "volume": 105000, "oi": 32000, "vol_oi_ratio": 3.28, "premium": 10500000, "sentiment": "bearish_hedge"},
+    {"date": "2026-04-08", "type": "call", "strike": 710, "expiry": "2026-05-16", "volume": 82000, "oi": 28000, "vol_oi_ratio": 2.93, "premium": 12300000, "sentiment": "bullish"}
+  ],
+
+  "gbm_analysis": {
+    "overall_score": 6.2,
+    "signal": "neutral",
+    "pillars": {
+      "fundamental": {"score": 6.5, "summary": "Aggregate PE 24.8x slightly above 10yr average, earnings growth moderate at 9%"},
+      "technical": {"score": 5.8, "summary": "Below 50 SMA ($695), above 200 SMA ($649), MACD bearish, RSI 48.5 neutral"},
+      "sentiment": {"score": 5.5, "summary": "Put/Call ratio 1.12 mildly defensive, VIX at 22.8 elevated"},
+      "flow": {"score": 6.5, "summary": "Mixed institutional flow, hedging activity elevated, some dip-buying in May expiry"},
+      "valuation": {"score": 6.0, "summary": "5.2% below 52w high, forward PE 22.2x slightly rich vs historical norms"}
+    },
+    "risk_level": 4,
+    "risk_factors": ["Trade policy uncertainty — tariff escalation", "Fed policy path unclear", "Earnings season beginning — sector rotation risk"],
+    "target_price": {"bull": 730, "base": 700, "bear": 620},
+    "recommendation": "Range-bound with downside bias near-term. Iron condors and credit spreads optimal. Wait for VIX > 25 for aggressive put selling."
+  },
+
+  "market_sentiment": {
+    "vix": 22.8,
+    "vix_percentile": 62,
+    "fear_greed_index": 38,
+    "fear_greed_label": "fear",
+    "spy_put_call": 1.05,
+    "sector_rotation": "late_cycle",
+    "market_breadth": {"advance_decline": 0.85, "new_highs_lows": 0.6}
+  }
+}

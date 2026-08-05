@@ -1,13 +1,13 @@
 # Boutique Skills Audit
 
-- Time: 2026-08-06 00:32:41
+- Time: 2026-08-06 02:20:42
 - Status: **WARN**
-- Catalog skills: 363
-- Audited skills: 357
+- Catalog skills: 393
+- Audited skills: 387
 - Legacy catalog skills: 42
-- Installed/Resolved: 357
+- Installed/Resolved: 387
 - Missing: 0
-- Missing env vars: 74
+- Missing env vars: 104
 - Duplicate capabilities: 0
 - Risk hits: 11
 - Missing native origins: 0
@@ -20,6 +20,36 @@
 - claude-mem-plugin: `ANTHROPIC_API_KEY`
 - claude-mem-plugin: `GEMINI_API_KEY`
 - claude-mem-plugin: `OPENROUTER_API_KEY`
+- alphagbm-alert: `ALPHAGBM_API_KEY`
+- alphagbm-bps-backtest: `ALPHAGBM_API_KEY`
+- alphagbm-buffett-analysis: `ALPHAGBM_API_KEY`
+- alphagbm-chokepoint: `ALPHAGBM_API_KEY`
+- alphagbm-company-profile: `ALPHAGBM_API_KEY`
+- alphagbm-compare: `ALPHAGBM_API_KEY`
+- alphagbm-duan-analysis: `ALPHAGBM_API_KEY`
+- alphagbm-earnings-crush: `ALPHAGBM_API_KEY`
+- alphagbm-fear-score: `ALPHAGBM_API_KEY`
+- alphagbm-greeks: `ALPHAGBM_API_KEY`
+- alphagbm-health-check: `ALPHAGBM_API_KEY`
+- alphagbm-hedge-advisor: `ALPHAGBM_API_KEY`
+- alphagbm-investment-thesis: `ALPHAGBM_API_KEY`
+- alphagbm-iv-rank: `ALPHAGBM_API_KEY`
+- alphagbm-macro-view: `ALPHAGBM_API_KEY`
+- alphagbm-market-sentiment: `ALPHAGBM_API_KEY`
+- alphagbm-marks-cycle: `ALPHAGBM_API_KEY`
+- alphagbm-options-score: `ALPHAGBM_API_KEY`
+- alphagbm-options-strategy: `ALPHAGBM_API_KEY`
+- alphagbm-pnl-simulator: `ALPHAGBM_API_KEY`
+- alphagbm-polymarket: `ALPHAGBM_API_KEY`
+- alphagbm-stock-analysis: `ALPHAGBM_API_KEY`
+- alphagbm-take-profit: `ALPHAGBM_API_KEY`
+- alphagbm-tepper-signal: `ALPHAGBM_API_KEY`
+- alphagbm-theme-research: `ALPHAGBM_API_KEY`
+- alphagbm-unusual-activity: `ALPHAGBM_API_KEY`
+- alphagbm-vix-status: `ALPHAGBM_API_KEY`
+- alphagbm-vol-smile: `ALPHAGBM_API_KEY`
+- alphagbm-vol-surface: `ALPHAGBM_API_KEY`
+- alphagbm-watchlist: `ALPHAGBM_API_KEY`
 - agentmail-mcp: `AGENTMAIL_API_KEY`
 - funda-data: `FUNDA_API_KEY`
 - llmquant-commodities: `LLMQUANT_API_KEY`

@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-363-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-393-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 363 |
-| Skill suites | 6 |
-| Native sources verified or referenced | 357 |
+| Curated skills | 393 |
+| Skill suites | 7 |
+| Native sources verified or referenced | 387 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -126,12 +126,12 @@ Finance skills now have a dedicated **Finance Investment Standard Suite**. It is
 
 | Metric | Value |
 |---|---:|
-| Finance-related skills | 173 |
-| Finance investment standard suite | 164 skills |
+| Finance-related skills | 203 |
+| Finance investment standard suite | 194 skills |
 | Finance data skills | 22 |
-| Finance trading/research skills | 86 |
+| Finance trading/research skills | 109 |
 | Institutional finance services | 53 |
-| Finance monitor/risk skills | 8 |
+| Finance monitor/risk skills | 15 |
 
 ### Finance Investment Standard Suite
 
@@ -146,6 +146,7 @@ This standard suite lists merged upstream source packs and representative standa
 | 组合包 | 机构研究、建模、PE/IB/财富管理 | Anthropic Financial Services | - | [Source](https://github.com/anthropics/financial-services) |
 | 组合包 | 新闻、情绪、信号、报告生成 | AlphaEar | - | [Source](https://github.com/RKiding/Awesome-finance-skills) |
 | 组合包 | 科技股财报、宏观流动性、美股情绪、价值与 BTC 周期 | Day1Global Skills | 79 | [Source](https://github.com/star23/Day1Global-Skills) |
+| 组合包 | 期权波动率、对冲、市场信号、投资框架与研究档案（可选源） | AlphaGBM | 82 | [Source](https://github.com/AlphaGBM/skills) |
 | 单品 | A股结构化数据 | `tushare-openclaw-skill` | 95 | [Source](https://github.com/DayDreammy/tushare-openclaw-skill) |
 | 单品 | A股全栈行情/题材数据 | `a-stock-data` | 88 | [Source](https://github.com/simonlin1212/a-stock-data) |
 | 单品 | 美股港股全栈数据 | `global-stock-data` | 88 | [Source](https://github.com/simonlin1212/global-stock-data) |
@@ -232,10 +233,11 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 
 | Suite | Skills | Tier | Category | Requirements | Install |
 |---|---:|---|---|---|---|
+| [AlphaGBM Options & Investment Research Suite](https://github.com/AlphaGBM/skills) | 30 | `high` | `finance-trading` | API: `ALPHAGBM_API_KEY`<br>Tools: `curl` | `./scripts/install-suite.sh alphagbm` |
 | [Anthropic Financial Services Suite](https://github.com/anthropics/financial-services) | 66 | `high` | `finance-services` | Tools: `mcp` | `./scripts/install-suite.sh anthropic-financial-services` |
 | [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 29 | `high` | `marketing-growth` | Tools: `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
 | [Day1Global Investment Research Suite](https://github.com/star23/Day1Global-Skills) | 5 | `high` | `finance-trading` | Tools: `browser` | `./scripts/install-suite.sh day1global-skills` |
-| [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-skills) | 164 | `high` | `finance-investment-standard` | API: `TUSHARE_TOKEN`, `FMP_API_KEY`, `FINVIZ_API_KEY`, `LLMQUANT_API_KEY`, `ALPACA_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY`<br>Tools: `python`, `mcp`, `node`, `browser` | `./scripts/install-suite.sh finance-investment-standard` |
+| [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-skills) | 194 | `high` | `finance-investment-standard` | API: `TUSHARE_TOKEN`, `FMP_API_KEY`, `FINVIZ_API_KEY`, `LLMQUANT_API_KEY`, `ALPACA_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY`, `ALPHAGBM_API_KEY`<br>Tools: `python`, `mcp`, `node`, `browser` | `./scripts/install-suite.sh finance-investment-standard` |
 | [Official GSAP AI Skills Suite](https://github.com/greensock/gsap-skills) | 8 | `high` | `design-ui` | Tools: `node` | `./scripts/install-suite.sh gsap-skills` |
 | [LLMQuant Institutional Finance Suite](https://github.com/LLMQuant/skills) | 18 | `high` | `finance-trading` | API: `LLMQUANT_API_KEY`<br>Tools: `mcp`, `node` | `./scripts/install-suite.sh llmquant` |
 
@@ -367,6 +369,13 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `yfinance-data` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data) |
 | `llmquant-investor-lenses` | `L2 Professional` | `finance-knowledge` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-investor-lenses) |
 | `openclaw-stock-kb` | `L2 Professional` | `finance-knowledge` | 5★ | `direct` | [Source](https://github.com/freestylefly/openclaw-stock-kb) |
+| `alphagbm-alert` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert) |
+| `alphagbm-company-profile` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile) |
+| `alphagbm-health-check` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check) |
+| `alphagbm-investment-thesis` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis) |
+| `alphagbm-macro-view` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view) |
+| `alphagbm-theme-research` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research) |
+| `alphagbm-watchlist` | `L3 Specialist` | `finance-monitor` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
 | `llmquant-events` | `L2 Professional` | `finance-monitor` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-events) |
 | `llmquant-macro` | `L2 Professional` | `finance-monitor` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-macro) |
 | `llmquant-market-intelligence` | `L2 Professional` | `finance-monitor` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-market-intelligence) |
@@ -438,6 +447,29 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `alphaear-sentiment` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-sentiment) |
 | `alphaear-signal-tracker` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-signal-tracker) |
 | `alphaear-stock` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-stock) |
+| `alphagbm-bps-backtest` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest) |
+| `alphagbm-buffett-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis) |
+| `alphagbm-chokepoint` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint) |
+| `alphagbm-compare` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare) |
+| `alphagbm-duan-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis) |
+| `alphagbm-earnings-crush` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush) |
+| `alphagbm-fear-score` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score) |
+| `alphagbm-greeks` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks) |
+| `alphagbm-hedge-advisor` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor) |
+| `alphagbm-iv-rank` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank) |
+| `alphagbm-market-sentiment` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment) |
+| `alphagbm-marks-cycle` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle) |
+| `alphagbm-options-score` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score) |
+| `alphagbm-options-strategy` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy) |
+| `alphagbm-pnl-simulator` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator) |
+| `alphagbm-polymarket` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket) |
+| `alphagbm-stock-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis) |
+| `alphagbm-take-profit` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit) |
+| `alphagbm-tepper-signal` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal) |
+| `alphagbm-unusual-activity` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity) |
+| `alphagbm-vix-status` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status) |
+| `alphagbm-vol-smile` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile) |
+| `alphagbm-vol-surface` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
 | `bayesian-intrinsic-growth-valuation` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
 | `breadth-chart-analyst` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
 | `breakout-trade-planner` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breakout-trade-planner) |
