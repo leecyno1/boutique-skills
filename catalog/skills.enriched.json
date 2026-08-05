@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-05",
+  "generated_at": "2026-08-06",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -13,14 +13,14 @@
     ]
   },
   "summary": {
-    "skills": 362,
-    "native_origin_verified_or_referenced": 356,
+    "skills": 363,
+    "native_origin_verified_or_referenced": 357,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
-      "L2 Professional": 132,
+      "L2 Professional": 133,
       "L3 Specialist": 209
     },
     "by_category": {
@@ -33,7 +33,7 @@
       "data-analysis": 9,
       "design-ui": 39,
       "docs-office": 10,
-      "finance-data": 21,
+      "finance-data": 22,
       "finance-knowledge": 2,
       "finance-monitor": 8,
       "finance-services": 53,
@@ -53,13 +53,13 @@
       "api-key": 98,
       "api-key+mcp-required": 22,
       "browser-required": 17,
-      "direct": 152,
+      "direct": 153,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 125,
+      "4★": 126,
       "5★": 79
     }
   },
@@ -9521,6 +9521,53 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:us-market-sentiment",
+      "preset_excluded": false,
+      "rating": {
+        "score": 76,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "westockdata",
+      "name": "westockdata",
+      "description": ">-",
+      "manual": "skills/default/westockdata/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/westockdata/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4",
+        "origin_type": "npm",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-06",
+        "mirror_source_url": "https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "finance-data",
+      "category_label": "金融 / 数据源",
+      "tags": [
+        "cross-market-data",
+        "direct",
+        "finance",
+        "finance-data",
+        "l2",
+        "offline",
+        "optional"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "westockdata",
       "preset_excluded": false,
       "rating": {
         "score": 76,

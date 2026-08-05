@@ -3,7 +3,7 @@
 | 层级 | 定义 | 数量 |
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
-| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 132 |
+| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 133 |
 | `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 209 |
 
 ## L1 Foundation
@@ -152,6 +152,7 @@
 | `seedance2-skill` | 媒体生成 / 处理 | 4★ | `api-key` | [origin](https://github.com/dexhunter/seedance2-skill) |
 | `tavily-search` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/tavily-ai/tavily-python) |
 | `tushare-openclaw-skill` | 金融 / 数据源 | 4★ | `api-key` | [origin](https://github.com/DayDreammy/tushare-openclaw-skill) |
+| `westockdata` | 金融 / 数据源 | 4★ | `direct` | [origin](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
 | `vision-analysis` | 媒体生成 / 处理 | 3★ | `api-key+mcp-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `agentmail` | 设计 / UI | 3★ | `api-key` | [origin](https://github.com/agentmail-to/agentmail-skills) |
 | `ai-image-generation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/inference-sh/skills/tree/main/tools/image/ai-image-generation) |

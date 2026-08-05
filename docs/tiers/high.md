@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`362`
+- 技能数量：`363`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -372,3 +372,4 @@
 | `us-market-sentiment` | US market sentiment dashboard using NAAIM exposure, institutional allocation, retail flows, forward P/E, and hedge-fund leverage. | [skills/default/us-market-sentiment/SKILL.md](../../skills/default/us-market-sentiment/SKILL.md) | [source](https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment) |
 | `macro-liquidity` | Macro liquidity monitor for Fed net liquidity, SOFR funding stress, MOVE volatility, and yen carry-trade risk. | [skills/default/macro-liquidity/SKILL.md](../../skills/default/macro-liquidity/SKILL.md) | [source](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `btc-bottom-model` | Bitcoin cycle heat model using 13 market, derivatives, on-chain, momentum, and flow indicators with independently verified weighted scoring. | [skills/default/btc-bottom-model/SKILL.md](../../skills/default/btc-bottom-model/SKILL.md) | [source](https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model) |
+| `westockdata` | Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements. | [skills/default/westockdata/SKILL.md](../../skills/default/westockdata/SKILL.md) | [source](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |

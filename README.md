@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-362-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-363-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 362 |
+| Curated skills | 363 |
 | Skill suites | 6 |
-| Native sources verified or referenced | 356 |
+| Native sources verified or referenced | 357 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -126,9 +126,9 @@ Finance skills now have a dedicated **Finance Investment Standard Suite**. It is
 
 | Metric | Value |
 |---|---:|
-| Finance-related skills | 172 |
+| Finance-related skills | 173 |
 | Finance investment standard suite | 164 skills |
-| Finance data skills | 21 |
+| Finance data skills | 22 |
 | Finance trading/research skills | 86 |
 | Institutional finance services | 53 |
 | Finance monitor/risk skills | 8 |
@@ -363,6 +363,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `llmquant-etfs` | `L2 Professional` | `finance-data` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-etfs) |
 | `openclaw-stock-data-skill` | `L2 Professional` | `finance-data` | 4★ | `api-key` | [Source](https://github.com/1018466411/openclaw-stock-data-skill) |
 | `tushare-openclaw-skill` | `L2 Professional` | `finance-data` | 4★ | `api-key` | [Source](https://github.com/DayDreammy/tushare-openclaw-skill) |
+| `westockdata` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
 | `yfinance-data` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data) |
 | `llmquant-investor-lenses` | `L2 Professional` | `finance-knowledge` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-investor-lenses) |
 | `openclaw-stock-kb` | `L2 Professional` | `finance-knowledge` | 5★ | `direct` | [Source](https://github.com/freestylefly/openclaw-stock-kb) |

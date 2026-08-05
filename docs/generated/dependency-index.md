@@ -5,7 +5,7 @@
 | `api-key` | 98 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 17 |
-| `direct` | 152 |
+| `direct` | 153 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -309,6 +309,7 @@
 | `uptrend-analyzer` | 无 | `python` | `medium` |
 | `us-market-bubble-detector` | 无 | `python` | `medium` |
 | `us-stock-analysis` | 无 | `python` | `medium` |
+| `westockdata` | 无 | `node` | `medium` |
 | `buddy-sings` | 无 | `ffmpeg` | `low` |
 | `marketingskills` | 无 | 无 | `low` |
 | `docx` | 无 | 无 | `low` |

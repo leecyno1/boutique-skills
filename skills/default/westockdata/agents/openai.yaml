@@ -1,0 +1,4 @@
+interface:
+  display_name: "WeStock Data"
+  short_description: "用固定版本 CLI 查询 A/H/US 股票与 ETF 数据"
+  default_prompt: "使用 $westockdata 查询指定标的，并标注市场、币种、数据时间与交叉核验结果。"

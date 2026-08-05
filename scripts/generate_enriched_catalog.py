@@ -209,6 +209,7 @@ EDITORIAL_SCORE_OVERRIDES = {
     "us-market-sentiment": 76,
     "us-value-investing": 72,
     "video-autopilot-kit": 88,
+    "westockdata": 76,
 }
 
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
@@ -426,10 +427,16 @@ def dedupe_default_skills() -> list[dict[str, Any]]:
     return [by_id[k] for k in sorted(by_id)]
 
 
-def detect_native_origin(skill_id: str, item: dict[str, Any], overrides: dict[str, str], preset_exclusions: set[str]) -> dict[str, Any]:
+def detect_native_origin(
+    skill_id: str,
+    item: dict[str, Any],
+    overrides: dict[str, str],
+    preset_exclusions: set[str],
+    previous_origins: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     mirror = item.get("source", "")
     if skill_id in preset_exclusions:
-        return {
+        origin = {
             "origin_url": None,
             "origin_type": "agent-preset",
             "origin_confidence": "agent_preset_excluded",
@@ -438,10 +445,17 @@ def detect_native_origin(skill_id: str, item: dict[str, Any], overrides: dict[st
             "needs_origin_review": False,
             "excluded_reason": "Provided by target agent runtime; not installed from this registry.",
         }
-    if skill_id in overrides:
+    elif skill_id in overrides:
         url = overrides[skill_id]
-        origin_type = "github" if "github.com" in url else "clawhub" if "claw" in url.lower() else "website"
-        return {
+        if "github.com" in url:
+            origin_type = "github"
+        elif "npmjs.com" in url:
+            origin_type = "npm"
+        elif "claw" in url.lower():
+            origin_type = "clawhub"
+        else:
+            origin_type = "website"
+        origin = {
             "origin_url": url,
             "origin_type": origin_type,
             "origin_confidence": "verified_override",
@@ -449,26 +463,39 @@ def detect_native_origin(skill_id: str, item: dict[str, Any], overrides: dict[st
             "mirror_source_url": mirror,
             "needs_origin_review": False,
         }
-    local_urls = extract_local_urls(skill_id)
-    if local_urls:
-        url = local_urls[0]
-        return {
-            "origin_url": url,
-            "origin_type": "github" if "github.com" in url else "website",
-            "origin_confidence": "local_reference",
-            "origin_verified_at": TODAY,
-            "mirror_source_url": mirror,
-            "needs_origin_review": False,
-        }
-    return {
-        "origin_url": None,
-        "origin_type": None,
-        "origin_confidence": "missing",
-        "origin_verified_at": None,
-        "mirror_source_url": mirror,
-        "needs_origin_review": True,
-        "source_is_mirror": bool(MIRROR_PATTERN.search(mirror)),
-    }
+    else:
+        local_urls = extract_local_urls(skill_id)
+        if local_urls:
+            url = local_urls[0]
+            origin = {
+                "origin_url": url,
+                "origin_type": "github" if "github.com" in url else "website",
+                "origin_confidence": "local_reference",
+                "origin_verified_at": TODAY,
+                "mirror_source_url": mirror,
+                "needs_origin_review": False,
+            }
+        else:
+            origin = {
+                "origin_url": None,
+                "origin_type": None,
+                "origin_confidence": "missing",
+                "origin_verified_at": None,
+                "mirror_source_url": mirror,
+                "needs_origin_review": True,
+                "source_is_mirror": bool(MIRROR_PATTERN.search(mirror)),
+            }
+
+    previous = previous_origins.get(skill_id, {})
+    identity_fields = (
+        "origin_url",
+        "origin_type",
+        "origin_confidence",
+        "needs_origin_review",
+    )
+    if previous and all(previous.get(key) == origin.get(key) for key in identity_fields):
+        origin["origin_verified_at"] = previous.get("origin_verified_at")
+    return origin
 
 
 def extract_local_urls(skill_id: str) -> list[str]:
@@ -529,6 +556,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "global-stock-data": "finance-data",
         "openclaw-stock-data-skill": "finance-data",
         "tushare-openclaw-skill": "finance-data",
+        "westockdata": "finance-data",
         "yfinance-data": "finance-data",
         "openclaw-stock-kb": "finance-knowledge",
         "stock-monitor-skill": "finance-monitor",
@@ -660,6 +688,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "eigenflux":
         api_keys = []
         tools = ["eigenflux", "mcp", "node"]
+    if skill_id == "westockdata":
+        api_keys = []
+        tools = ["node"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -799,6 +830,12 @@ def load_suites() -> list[dict[str, Any]]:
 
 def build_enriched() -> dict[str, Any]:
     overrides = load_json(ORIGIN_OVERRIDES, {})
+    previous_catalog = load_json(ENRICHED_PATH, {})
+    previous_origins = {
+        item["id"]: item.get("origin", {})
+        for item in previous_catalog.get("skills", [])
+        if item.get("id")
+    }
     preset_exclusions = load_preset_exclusions()
     tushare_routing = load_json(TUSHARE_ROUTING, {})
     tushare_backed = {item.get("skill_id") for item in tushare_routing.get("convert_to_tushare_backed", [])}
@@ -808,7 +845,7 @@ def build_enriched() -> dict[str, Any]:
         skill_id = base["id"]
         frontmatter = parse_frontmatter(skill_id)
         description = norm(frontmatter.get("description") or base.get("description") or "No description.")
-        origin = detect_native_origin(skill_id, base, overrides, preset_exclusions)
+        origin = detect_native_origin(skill_id, base, overrides, preset_exclusions, previous_origins)
         category = classify_category(skill_id, description)
         horizontal = classify_horizontal(skill_id, category, origin["origin_confidence"])
         deps = infer_dependencies(skill_id, description, base.get("api_keys", []))

@@ -1,0 +1,9 @@
+Discovery source: https://www.xiaohongshu.com/user/profile/6874b3410000000007031f43/6a630734000000001101b791
+Public WorkBuddy market archive: https://github.com/infometa/workbuddyskills/tree/2bd6db6fe5678650e8272adafabbdceba61c3544/skills/westockdata
+Runtime package: https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4
+Runtime package version: 1.0.4
+Runtime shasum: b434e6ca4b434455201f1d8af56da435f518b678
+Runtime integrity: sha512-Cr4IS69wJ6aFdaDv7Sh/Zwf1FEj+8BHxegIltjWg4bswjV2SfbG9VmM0YN4SwfaLJlP1INzM0Ed3LXP+3WpjSA==
+License: No license declared for the npm runtime or the WorkBuddy archive. The executable and archived upstream SKILL.md are not redistributed.
+Mirror note: this directory contains a local, independently written safety and routing adapter only. It invokes the exact reviewed npm package version at runtime.
+Reviewed: 2026-08-05.

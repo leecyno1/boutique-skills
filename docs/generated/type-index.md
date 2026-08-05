@@ -15,7 +15,7 @@
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 86 |
 | 金融 / 机构服务 (`finance-services`) | 53 |
-| 金融 / 数据源 (`finance-data`) | 21 |
+| 金融 / 数据源 (`finance-data`) | 22 |
 | 金融 / 知识库 (`finance-knowledge`) | 2 |
 | 金融 / 监控预警 (`finance-monitor`) | 8 |
 | 政策 / 宏观监控 (`policy-monitoring`) | 1 |
@@ -424,6 +424,7 @@
 | `akshare-stock` | `L2 Professional` | 4★ | `china-market-data`, `direct`, `finance-data`, `l2`, `offline`, `tushare-backed` |
 | `openclaw-stock-data-skill` | `L2 Professional` | 4★ | `a-share`, `api-key`, `data`, `finance`, `finance-data`, `high-frequency`, `l2`, `online` |
 | `tushare-openclaw-skill` | `L2 Professional` | 4★ | `a-share`, `api-key`, `china-market-data`, `data`, `finance`, `finance-data`, `l2`, `online`, `tushare-backed` |
+| `westockdata` | `L2 Professional` | 4★ | `cross-market-data`, `direct`, `finance`, `finance-data`, `l2`, `offline`, `optional` |
 | `anthropic-fs-lseg-bond-futures-basis` | `L3 Specialist` | 3★ | `anthropic-financial-services`, `enterprise-data`, `finance`, `finance-data`, `finance-suite`, `institutional-finance`, `l3`, `lseg`, `mcp-required`, `offline` |
 | `anthropic-fs-lseg-bond-relative-value` | `L3 Specialist` | 3★ | `anthropic-financial-services`, `enterprise-data`, `finance`, `finance-data`, `finance-suite`, `institutional-finance`, `l3`, `lseg`, `mcp-required`, `offline` |
 | `anthropic-fs-lseg-equity-research` | `L3 Specialist` | 3★ | `anthropic-financial-services`, `china-market-data`, `enterprise-data`, `finance`, `finance-data`, `finance-suite`, `institutional-finance`, `l3`, `lseg`, `mcp-required`, `online`, `tushare-supplement` |
