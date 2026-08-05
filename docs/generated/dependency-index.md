@@ -6,7 +6,7 @@
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 17 |
 | `direct` | 152 |
-| `mcp-required` | 71 |
+| `mcp-required` | 72 |
 
 ## api-key
 
@@ -321,6 +321,7 @@
 
 | Skill | API Key | Tools | 风险 |
 |---|---|---|---|
+| `scientific-illustrator` | 无 | `drawio`, `mcp`, `node`, `python` | `medium` |
 | `chrome-devtools-mcp` | 无 | `browser`, `mcp` | `medium` |
 | `mcp-builder` | 无 | `mcp` | `medium` |
 | `news-radar` | 无 | `mcp`, `python` | `medium` |

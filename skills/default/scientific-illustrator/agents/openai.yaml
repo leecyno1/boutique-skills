@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scientific Illustrator"
+  short_description: "在 Draw.io、PowerPoint 或 WPS 中制作可编辑科研插图"
+  default_prompt: "使用 $scientific-illustrator，把我的参考图复刻成可编辑科研插图并完成结构与渲染审查。"

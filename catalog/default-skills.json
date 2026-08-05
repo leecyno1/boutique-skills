@@ -7236,6 +7236,22 @@
           ]
         },
         {
+          "id": "scientific-illustrator",
+          "name": "scientific-illustrator",
+          "description": "Design, recreate, audit, and correct scientific figures as editable objects in Draw.io Desktop, Microsoft PowerPoint, or WPS Presentation through a local MCP plugin.",
+          "manual": "skills/default/scientific-illustrator/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/scientific-illustrator/SKILL.md",
+          "source": "https://github.com/icebird1998/scientific-illustrator",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "research-figures",
+            "scientific-visualization",
+            "editable-diagrams",
+            "codex-plugin"
+          ]
+        },
+        {
           "id": "tech-earnings-deepdive",
           "name": "tech-earnings-deepdive",
           "description": "Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers.",

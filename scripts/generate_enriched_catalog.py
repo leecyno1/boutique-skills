@@ -203,6 +203,7 @@ EDITORIAL_SCORE_OVERRIDES = {
     "btc-bottom-model": 78,
     "impeccable": 92,
     "macro-liquidity": 82,
+    "scientific-illustrator": 93,
     "tech-earnings-deepdive": 85,
     "us-market-sentiment": 76,
     "us-value-investing": 72,
@@ -554,6 +555,7 @@ def classify_category(skill_id: str, description: str) -> str:
         "video-autopilot-kit": "media-generation",
         "video-shotcraft": "media-generation",
         "paper-framework-figure-studio-pro": "media-generation",
+        "scientific-illustrator": "media-generation",
         "media-downloader": "media-generation",
         "minimax-pdf": "docs-office",
         "vision-analysis": "media-generation",
@@ -650,6 +652,9 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "paper-framework-figure-studio-pro":
         api_keys = []
         tools = ["python"]
+    if skill_id == "scientific-illustrator":
+        api_keys = []
+        tools = ["drawio", "mcp", "node", "python"]
     if skill_id == "scroll-world":
         api_keys = []
         tools = ["ffmpeg", "higgsfield", "python"]
@@ -684,6 +689,8 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     else:
         access_mode = "direct"
     runtime = "online" if api_keys or skill_id == "scroll-world" or skill_id in DAY1GLOBAL_SKILLS or any(word in haystack for word in ["web", "api", "search", "reader", "news"]) else "offline"
+    if skill_id == "scientific-illustrator":
+        runtime = "offline"
     return {
         "requires_api_keys": bool(api_keys),
         "api_keys": sorted(api_keys),

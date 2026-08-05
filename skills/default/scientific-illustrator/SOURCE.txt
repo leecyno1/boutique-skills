@@ -1,0 +1,10 @@
+Primary source: https://github.com/icebird1998/scientific-illustrator
+Requested legacy source: https://github.com/icebird1998/drawio-scientific-illustrator
+Imported from upstream HEAD: e0d2a44ad8a686cf5859f286d78df4879ff86c30
+Upstream release: v1.5.3
+License: MIT License.
+Migration note: the upstream author identifies scientific-illustrator as the upgraded integrated successor and states that future updates will be made only there. The legacy repository name remains a trigger alias in the local routing layer.
+Mirror note: the complete tracked upstream plugin, six nested native skills, three local MCP servers, Office.js assets, platform bridges, tests, and installation metadata are mirrored. The root SKILL.md, SOURCE.txt, and agents/openai.yaml are local catalog integration files.
+Compatibility note: requires Node.js plus draw.io Desktop, Microsoft PowerPoint, or WPS Presentation for the selected route. Python is used by the macOS PowerPoint/WPS bridge. The Codex plugin must be registered before MCP tools become available.
+Security note: MCP and Office.js bridges bind to localhost; Office.js uses a random session token and does not automatically trust certificates. The tools can modify Draw.io and presentation documents, so this skill is classified as medium operational risk.
+Reviewed: 2026-08-05.
