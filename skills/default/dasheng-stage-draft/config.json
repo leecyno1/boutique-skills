@@ -30,7 +30,8 @@
     ],
     "manifests": [
       "draft_manifest.json",
-      "final_structure_snapshot.json"
+      "final_structure_snapshot.json",
+      "03_IllustrationIntents_<topic>.json"
     ],
     "gates": [
       "final_structure_snapshot.json"
@@ -41,5 +42,7 @@
     "traceability": "Every claim must trace to external source",
     "no_internal_stats": "Never include intake statistics in article content",
     "baseline_only": "No style DNA injection, no channel customization"
+    ,
+    "metaphor_illustration_gate": "Required metaphor/example illustration intents must be generated and embedded before Draft assets are complete"
   }
 }

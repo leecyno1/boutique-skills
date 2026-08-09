@@ -2,9 +2,10 @@
 
 ## 总目录约定
 
-- 引擎：`/Volumes/PSSD/Projects/公众号文章/引擎`
-- Skills：`/Volumes/PSSD/Projects/公众号文章/skills`
-- 产物：`/Volumes/PSSD/Projects/公众号文章/产物`
+- 引擎：`${DASHENG_PROJECT_ROOT:-.}/引擎`
+- Skills：`${DASHENG_PROJECT_ROOT:-.}/skills`
+- 产物：`~/Desktop/自媒体创作`（可通过 `DASHENG_OUTPUT_ROOT` 覆盖）
+- 项目根目录：只放代码、配置、SOP、skill，不放文章、图片、音频、视频、字幕、审核页或训练缓存
 
 ## 控制中心
 
@@ -15,6 +16,7 @@
 
 | 阶段 | 交给下游的最小集合 |
 | --- | --- |
+| Video Style Training（可选） | `style_profile.json`、`training_manifest.json`，供视频通路引用 |
 | Intake | 原始链接清单、来源摘要、采集结论 |
 | Brief | 独立题卡、核心判断、证据缺口、研究入口、来源包 |
 | Draft | 分题标准初稿、证据清单、待补证据项、最终结构确认 |
@@ -58,6 +60,20 @@
 - `wechat_article_manifest.json`
 - `talking_head_video_manifest.json`
 - `podcast_manifest.json`
+- 可选：引用 `~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json`
+
+## Video Style Training 最小交付集合
+
+- `training_manifest.json`
+- `per_video/*/analysis.json`
+- `style_profile.json`
+- `style_profile.md`
+
+说明：
+
+- 默认目录：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`
+- 样板视频源文件只记录路径，不复制进项目仓库。
+- 超大视频的压缩上传副本只能写入 `<style_id>/_upload_cache/`。
 
 ## Publish 最小交付集合
 
@@ -66,8 +82,13 @@
 - `channel_packs/<topic_id>/<channel>/channel_pack.json`
 - `channel_packs/<topic_id>/<channel>/execution_request.json`
 - `channel_packs/<topic_id>/<channel>/verification_request.json`
+- `channel_packs/<topic_id>/<channel>/platform_form_validation.json`（发布前平台字段 Gate）
 - `channel_packs/<topic_id>/<channel>/publish_payload.json`（执行器统一输入）
 - `channel_packs/<topic_id>/<channel>/publish_result.json`（执行器或人工发布后回填）
+- `channel_packs/<topic_id>/<channel>/<task_id>/channel_pack.json`（矩阵任务独立发布包）
+- `channel_packs/<topic_id>/<channel>/<task_id>/publish_result_history.json`（不可覆盖的任务重试历史）
+- `channel_packs/<topic_id>/<channel>/<task_id>/publish_results/attempt-XXXX.json`（单次尝试回执）
+- `channel_packs/<topic_id>/<channel>/<task_id>/publish_retry_request.json`（失败分类、退避时间和人工动作）
 - `channel_execution_manifest.json`
 - `publish_verification_report.json`
 - `publish_manifest.json`
@@ -75,7 +96,11 @@
 说明：
 
 - 只有 `channel_execution_manifest.json` 不能视为发布成功。
+- `platform_form_validation.json` 存在阻断错误时，不得生成或执行真实发布命令。
+- 发布前平台字段 Gate 与发布后 Publish Guard 是两道独立检查，不能互相替代。
 - 必须通过 `scripts/record_publish_result.py` 写回平台 URL、草稿 ID、截图或错误状态。
+- 带 `task_id` 的结果以 `task_id` 为唯一身份；只有旧包才回退到 `(topic_id, channel)`。同平台多账号不得互相覆盖。
+- 失败重试请求只允许生成计划，必须包含 `automatic_execution=false` 和 `requires_user_confirmation=true`。
 - 必须同时存在 `publish_verification_report.json`，并且平台状态通过验真，才能对外汇报“已发布”；草稿只能回报“已推草稿”。
 - `published_links` 只允许写入 `status=published`、`verification_status=verified` 且存在正式 `platform_url` 的结果。
 - `draft_records` 只允许写入 `status=draft|scheduled`、`verification_status=verified` 且存在 `draft_id` 的结果。

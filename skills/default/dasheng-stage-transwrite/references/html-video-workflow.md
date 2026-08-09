@@ -2,7 +2,7 @@
 
 ## Default Path
 
-For `talking_head_video`, use `/Volumes/PSSD/html-video` as the production renderer.
+For `talking_head_video`, use `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}` as the production renderer.
 
 The stage builder writes:
 

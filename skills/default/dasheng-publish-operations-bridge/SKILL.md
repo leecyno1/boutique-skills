@@ -22,7 +22,7 @@ cadence, interaction, experiment design, and post-publish review.
 
 - Repository: `https://github.com/chenjin-cmd/agent-skills-launch-pack_`
 - Root env: `AGENT_SKILLS_LAUNCH_PACK_ROOT`
-- Default root: `/Volumes/PSSD/agent-skills-launch-pack`
+- Default root: `${AGENT_SKILLS_LAUNCH_PACK_ROOT:-vendor/reserved/publish/agent-skills-launch-pack}`
 - Registry: `configs/publish/upstream_repos.json`
 
 Do not vendor the upstream skills into this repository or install them into
@@ -68,7 +68,7 @@ change the recommendation.
 1. Validate that the request and channel pack belong to the same topic and
    channel.
 2. Resolve the external root from `AGENT_SKILLS_LAUNCH_PACK_ROOT`, falling back
-   to `/Volumes/PSSD/agent-skills-launch-pack`.
+   to `${AGENT_SKILLS_LAUNCH_PACK_ROOT:-vendor/reserved/publish/agent-skills-launch-pack}`.
 3. Read only the mapped upstream `SKILL.md`. Read its `references/` playbook
    only when the request asks for a full launch plan, account audit, content
    calendar, or matrix experiment.

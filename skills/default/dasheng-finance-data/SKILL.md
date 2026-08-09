@@ -9,7 +9,7 @@ stage: on-demand
 
 ## 定位
 
-本 skill 借鉴 `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/a-stock-data` 的数据源优先级：
+本 skill 借鉴 `${BOUTIQUE_OPENCLAW_SKILLS_ROOT:-vendor/reserved/catalog/boutique-openclaw-skills}/skills/default/a-stock-data` 的数据源优先级：
 
 - 行情/指数时间序列：优先使用东方财富 `push2his` 直连接口生成 K 线图表；接口断连时自动切换百度股市通 K 线。
 - 实时估值/市值/PE/PB：使用腾讯财经 `qt.gtimg.cn`。

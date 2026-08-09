@@ -26,7 +26,8 @@
       "transwrite_manifest.json",
       "wechat_article_manifest.json",
       "talking_head_video_manifest.json",
-      "podcast_manifest.json"
+      "podcast_manifest.json",
+      "illustration_intents.json"
     ],
     "video_lane_files": [
       "talking_head_video/video_storyboard.json",

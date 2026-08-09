@@ -29,7 +29,7 @@ Stage 3 Draft 是大声自媒体创作工作台的核心写作阶段，负责将
 - `--asset-specs-file` - 可选，按 `topic_id` 提供 `chart_specs` / `image_specs`，用于 Draft 内直接生成图表与配图
 - `--chartjs-file` - 可选，本地 Chart.js v4.4.4 UMD 文件；未提供时使用项目 `vendor/chart.umd.min.js`
 - `--run-id` - 自定义运行ID（默认自动生成）
-- `--output-dir` - 自定义输出目录
+- `--output-dir` - 自定义输出目录；默认应位于 `~/Desktop/自媒体创作/05_初稿生成/<run_id>`，不要写入项目根目录
 
 ### 金融数据增强输入
 
@@ -54,6 +54,7 @@ Stage 3 Draft 是大声自媒体创作工作台的核心写作阶段，负责将
 - `03_ReasoningSheet_<topic>.json` - 论证结构JSON（供 Draft 资产绑定 claim）
 - `03_质量门禁_<topic>.json` - 单篇初稿质量门禁
 - `03_DraftAssets_<topic>.json` - Draft 内已嵌入图表与配图规格（`chart_specs` / `image_specs`）
+- `03_IllustrationIntents_<topic>.json` - 原文比喻、举例、类比、拟人和抽象机制的柠檬漫画触发与渠道适配意图
 
 ## 执行方式
 
@@ -71,7 +72,7 @@ console.log(result);
 // {
 //   success: true,
 //   run_id: '2026-04-14_120000',
-//   out_dir: '/Volumes/PSSD/Projects/公众号文章/产物/05_初稿生成/2026-04-14_120000',
+//   out_dir: '~/Desktop/自媒体创作/05_初稿生成/2026-04-14_120000',
 //   draft_count: 3,
 //   draft_files: ['...', '...', '...'],
 //   manifest_file: '.../draft_manifest.json',
@@ -117,6 +118,9 @@ python3 scripts/build_stage3_draft.py \
 - 表格标签类放在 `<td>` 内部的 `<span>` 上，不放到 `<td>` 本身。
 - HTML 根内容区必须 `contenteditable="true"`，并提供编辑/预览切换、全选、保存下载。
 - 配图优先使用与正文场景、人物、机构、产业链、城市空间直接相关的图片或主题视觉；不得把文章大纲包装成无信息量的“研究框架图”。图片必须压缩后 base64 嵌入，最长边不超过 1200px，JPEG 75 左右。
+- 生成正文后必须调用 `dasheng-lemon-illustrations` 做一次语义扫描。原文出现有认知价值的比喻、举例、类比、拟人或抽象机制时，生成 `illustration_intents`；关键词只负责召回，最终由 Agent 判断是否值得画。
+- 公众号正文漫画使用柠檬人，优先单幅 16:9 或 2-3 格微漫画，紧跟触发它的段落，不得统一堆到文末。长文通常保留 4-8 个高价值漫画锚点，不能每段都画。
+- 漫画只解释概念和例子，不得替代真实图表、网页、表格、文档、地图或来源证据。未完成必需漫画时，`illustration_status=pending_agent_generation`，Draft 资产状态保持 incomplete。
 - 真实图表和配图必须绑定 `claim_id` / 数据来源；数据未核验时不得生成假曲线，`draft_manifest.json` 必须标记 `asset_status: incomplete`。
 - 发布到微信公众号前，canvas 图表建议截图替换为静态图，避免编辑器白屏。
 
@@ -124,6 +128,7 @@ python3 scripts/build_stage3_draft.py \
 
 生成初稿时，在需要配图/链接的位置使用以下标注：
 - `{{image: 描述内容}}` - 配图占位
+- `{{lemon: intent_id|原文比喻或举例|核心意思|柠檬人动作}}` - 柠檬漫画锚点
 - `{{chart: claim_id|图表描述|数据来源或待补来源}}` - 图表占位
 - `{{link: URL|显示文字}}` - 链接占位
 - `{{ref: 来源名称}}` - 参考文献标注

@@ -9,7 +9,7 @@ description: Use when Dasheng draft or transwrite needs HTML Anything templates,
 
 Use the external `html-anything` repository as the design/template reference library for Dasheng HTML outputs. This is a local-first visual language source, not the fact engine.
 
-`html-anything` is an external dependency, not vendored into this repo and not version-locked. Default path: `/Users/lichengyin/Documents/html一切`; override with `HTML_ANYTHING_ROOT`.
+`html-anything` is an external dependency, not vendored into this repo and not version-locked. Default path: `${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}`; override with `HTML_ANYTHING_ROOT`.
 
 Check or install before first use:
 
@@ -28,9 +28,9 @@ python3 scripts/ensure_video_external_deps.py --dep html-anything --mode install
 ## Source Paths
 
 ```text
-${HTML_ANYTHING_ROOT:-/Users/lichengyin/Documents/html一切}/next/src/lib/templates/skills/
-${HTML_ANYTHING_ROOT:-/Users/lichengyin/Documents/html一切}/nonfarm-hyperframes-10s-playable.html
-${HTML_ANYTHING_ROOT:-/Users/lichengyin/Documents/html一切}/docs/cover.html
+${HTML_ANYTHING_ROOT:-${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}}/next/src/lib/templates/skills/
+${HTML_ANYTHING_ROOT:-${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}}/nonfarm-hyperframes-10s-playable.html
+${HTML_ANYTHING_ROOT:-${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}}/docs/cover.html
 ```
 
 ## Draft Usage
@@ -97,7 +97,7 @@ python3 scripts/render_html_anything_timeline_pack.py \
 ## Quick Inspection
 
 ```bash
-find "${HTML_ANYTHING_ROOT:-/Users/lichengyin/Documents/html一切}/next/src/lib/templates/skills" -maxdepth 2 -name SKILL.md
+find "${HTML_ANYTHING_ROOT:-${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}}/next/src/lib/templates/skills" -maxdepth 2 -name SKILL.md
 ```
 
 Open only the templates needed for the current surface. Avoid loading all 75 skills into context.

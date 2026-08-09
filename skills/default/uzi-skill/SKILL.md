@@ -1,7 +1,7 @@
 ---
-name: uzi-skill
+name: uzi
 description: A-share, Hong Kong, and US stock analysis skill for deep research, quick scans, investor panel review, hot-money/LHB analysis, trap detection, valuation, IC memos, and Bloomberg-style HTML reports.
-version: 3.9.1
+version: 3.9.4
 author: FloatFu-true
 license: MIT
 metadata:
@@ -54,14 +54,3 @@ python3 run.py <ticker> --school F --no-browser
 4. For hot-money analysis, apply LHB seat matching and `is_in_range()` before making a short-term judgment.
 5. For trap detection, scan all eight signals and include concrete evidence when risk is non-trivial.
 6. For report template or UI changes, update tests, version metadata, and release notes together.
-
-## Boutique Safety And Data Contract
-
-- Investor and public-figure personas are simulated analytical frameworks. Their votes are not endorsements, quotations, current opinions, or evidence that those people use this project.
-- Explain the expected time and token cost before starting deep mode. Prefer the narrowest workflow that answers the request.
-- Run locally with `--no-browser` by default. Never use `--remote`, expose a report through a tunnel, install Cloudflared, install browsers or system packages, or persist a Xueqiu login/cookie profile without explicit user consent.
-- Respect source terms and rate limits. Prefer official filings, exchange disclosures, and structured APIs over scraping. Never bypass access controls.
-- For each decision-critical value, report retrieval time, ticker, market, currency, units, period, and source URL. Label stale, missing, inferred, cached, and fallback values, and cross-check them against a primary or second reputable source.
-- FCF, EBITDA, or other proxy-derived valuation inputs must be disclosed prominently. Do not present a confident target price, ideal price, or buy zone when valuation depends on a rough proxy.
-- Treat `强烈买入`, `买入`, buy zones, ideal prices, stop losses, position sizes, and panel verdicts as hypothetical research outputs, not personalized instructions. Never connect to a broker, place an order, or run unattended trading.
-- Trap detection reports risk signals and supporting evidence. Do not declare fraud or misconduct without adequate primary evidence.

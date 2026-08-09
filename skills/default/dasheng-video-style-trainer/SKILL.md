@@ -15,6 +15,11 @@ This is not a mainline gate. The canonical chain remains:
 
 Video training is an optional asset generator like article paradigm learning. Use it when the user provides many sample videos, names a target creator style, or asks future videos to follow a learned editing/visual rhythm.
 
+For continuous creator monitoring and daily incremental learning, delegate to
+`dasheng-video-self-learning`. The trainer owns one training run; the
+self-learning module owns discovery, deduplication, scheduling, knowledge-base
+updates, and rolling candidate profiles.
+
 ## Storage Rule
 
 All videos, upload caches, training reports, rendered previews, audio, subtitles, and other generated media must stay outside the repo.

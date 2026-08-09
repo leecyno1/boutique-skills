@@ -126,11 +126,3 @@ Pricing: 1 option-analysis credit per call; 5-min cache per ticker (cache hits f
 ---
 
 *Powered by [AlphaGBM](https://alphagbm.com) — Real-data options & research intelligence. 10K+ users.*
-
-## Boutique Safety And Data Contract
-
-- Treat every bundled `mock-data/` file as an illustrative, potentially stale snapshot. Never present it as current market data. If a referenced mock file is absent, state that plainly instead of inventing a result.
-- Live AlphaGBM results require `ALPHAGBM_API_KEY`. For every live claim, report retrieval time, symbol, market, currency, and data window; for options also report expiry, strike, option type, and contract multiplier.
-- Independently corroborate decision-critical prices, corporate events, volatility, open interest, and model outputs with a primary or second reputable source. Separate API facts, calculations, assumptions, and interpretation.
-- Treat labels such as `STRONG_BUY`, `BUY`, `SELL`, `AVOID`, panic-buy, and suggested orders as framework outputs, not personalized instructions. Explain uncertainty, downside, liquidity, tax, and assignment risk where relevant.
-- Never place, route, or schedule an order, connect to a broker, or run unattended trading. Produce research and hypothetical scenarios only; require the user to verify current quotes and make the final decision.

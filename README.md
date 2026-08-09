@@ -260,7 +260,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `baoyu-image-gen` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `flutter-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
-| `frontend-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
+| `frontend-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
 | `fullstack-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `ios-application-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
 | `react-native-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
@@ -587,7 +587,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `dasheng-stage-transwrite` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite) |
 | `dasheng-video-director` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director) |
 | `dasheng-video-explainer-html` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-explainer-html) |
-| `dasheng-video-roughcut` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut) |
+| `dasheng-video-roughcut` | `L3 Specialist` | `media-generation` | 3★ | `mcp-required` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut) |
 | `dasheng-video-style-trainer` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-style-trainer) |
 | `dasheng-video-talking-head` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-talking-head) |
 | `gemini-image-service` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://ai.google.dev/gemini-api/docs/image-generation) |

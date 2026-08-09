@@ -7,13 +7,13 @@ description: Use when Dasheng Publish needs to prepare, upload, or package Bilib
 
 ## Role
 
-Bridge Dasheng Publish channel packs to external B站 upload tools. Prefer `biliup-rs`; use `social-auto-upload` as fallback. Both are external dependencies, not vendored and not version-locked.
+Bridge Dasheng Publish channel packs to B站 upload tools. Prefer `biliup-rs`; use the project-local, ignored `social-auto-upload` upstream as fallback. Both remain independently updateable and are not version-locked by the main repository.
 
 Default roots:
 
 ```bash
-${BILIUP_RS_ROOT:-/Volumes/PSSD/biliup-rs}
-${SOCIAL_AUTO_UPLOAD_ROOT:-/Volumes/PSSD/social-auto-upload}
+${BILIUP_RS_ROOT:-${BILIUP_RS_ROOT:-vendor/reserved/publish/biliup-rs}}
+${SOCIAL_AUTO_UPLOAD_ROOT:-${DASHENG_PROJECT_ROOT:-.}/vendor/publish/social-auto-upload}
 ```
 
 ## Inputs

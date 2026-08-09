@@ -48,7 +48,7 @@ belt app run falai/flux-dev-lora --input '{"prompt": "a cat astronaut in space"}
 ## Browse All Image Apps
 
 ```bash
-belt app store --category image
+belt app list --category image
 ```
 
 ## Examples
@@ -161,7 +161,7 @@ npx skills add inference-sh/skills@ai-video-generation
 npx skills add inference-sh/skills@ai-avatar-video
 ```
 
-Browse all apps: `belt app store`
+Browse all apps: `belt app list`
 
 ## Documentation
 

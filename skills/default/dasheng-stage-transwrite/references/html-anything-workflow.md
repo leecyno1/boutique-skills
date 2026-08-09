@@ -2,7 +2,7 @@
 
 ## Role
 
-Use `/Users/lichengyin/Documents/html一切` as a local template and visual reference library.
+Use `${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}` as a local template and visual reference library.
 
 Good references:
 

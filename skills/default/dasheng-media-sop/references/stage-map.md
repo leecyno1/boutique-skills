@@ -1,5 +1,24 @@
 # 阶段地图
 
+## 0.6 Video Style Training（可选）
+
+- 目标：从用户提供的大量样板视频中学习可复用的视频风格 DNA。
+- 常见输入：博主/栏目样板视频目录、`style_id`、博主名、平台名。
+- 交付：`training_manifest.json`、`per_video/*/analysis.json`、`style_profile.json`、`style_profile.md`。
+- 默认输出：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`。
+- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video` 和 `explainer_html_video` 只引用 `style_profile.json`。
+- 禁止：把样板视频、压缩上传副本、训练报告或渲染预览写入项目根目录或 `skills/`。
+
+## 0.7 Video Self Learning（可选、定时）
+
+- 目标：每天增量发现目标博主的新视频，按视频 ID 去重后学习导演、设计、分镜、转场、制作、图表和审美规律。
+- 入口：`python3 scripts/run_mainline_stage.py video-self-learn`。
+- 默认时间：每天 `22:00 Asia/Shanghai`。
+- 交付：逐视频 `analysis.json / analysis.md`、博主滚动候选画像、导演候选手册、审美手册、技术栈复现映射和进化日志。
+- 默认输出：`~/Desktop/自媒体创作/00_范式学习/视频训练/每日博主自学习/`。
+- 技术栈：`yt-dlp -> claude-real-video -> Codex Agent -> knowledge base`。
+- 约束：技术栈判断只能写为复现建议；自动规则必须保持候选状态，不能覆盖已批准 DNA。
+
 ## 1. Intake
 
 - 目标：采集原始来源，保留链接，形成当天底稿与报告。
@@ -23,6 +42,7 @@
 - 交付：`03_标准初稿_<topic>.md`、`03_初稿_报告.md`、`draft_manifest.json`
 - 结构规则：优先 `开篇 + 三段论 + 结尾` 或 `开篇 + 4 章 + 结尾`，一级标题不得超过 `4` 个。
 - 内容规则：只写标准事实稿，不注入账号 DNA 和平台腔；主动补数据、表格和权威来源。
+- 漫画规则：扫描原文比喻、举例、类比、拟人和抽象机制，输出 `03_IllustrationIntents_<topic>.json`，调用 `dasheng-lemon-illustrations` 生成柠檬人漫画并嵌入对应段落。
 
 ## 4. Transwrite
 
@@ -30,10 +50,11 @@
 - 常见输入：`draft_manifest.json`、`final_structure_snapshot.json`、`transwrite_decision.json`。
 - 三条通路：
   - 公众号：Style DNA / humanize / 封面 / 微信 HTML 转写
-  - 口播视频：真人口播可选、HTML 视觉层、音频、主动/被动对齐、渲染计划
+  - 口播视频：真人口播可选、HTML 视觉层、音频、主动/被动对齐、渲染计划；可选引用 `video-style-training` 产出的 `style_profile.json`
   - 播客：Coze / MiniMax API 请求包
 - 交付：`04_转写计划.md`、`transwrite_manifest.json`、每题 lane manifest。
 - 备注：不补事实、不重做图表；外部 API/素材缺失必须显式标记。
+- 漫画继承：公众号和视频共用 Draft illustration intents；公众号保留段后漫画，视频导演改造成全屏或透明叠加的 setup-action-result 分镜。
 
 ## 5. Publish
 
@@ -43,9 +64,10 @@
   - 公众号：`baoyu-post-to-wechat` / `wechat-multi-publisher` / `md2wechat`
   - 微博：`baoyu-post-to-weibo`
   - X：`baoyu-post-to-x`
-  - 小红书：`dasheng-xhs-publish-bridge` → `all-in-one` / `xhs-skills` / `spider-xhs` / MCP / 持久化浏览器 fallback
-  - 抖音：`douyin-upload-skill` / `social-auto-upload` / 持久化浏览器 fallback
-  - B站：`bilibili-upload-bridge` / `biliup-rs` / 人工投稿包
+  - 小红书：`social-auto-upload-bridge` / API-first / MCP / 持久化浏览器 fallback
+  - 抖音：`social-auto-upload-bridge` / `douyin-upload-skill` / 持久化浏览器 fallback
+  - B站：`social-auto-upload-bridge` / `bilibili-upload-bridge` / `biliup-rs` / 人工投稿包
+  - 视频号：`social-auto-upload-bridge` / 持久化浏览器 / 人工投稿包
   - 播客：人工上传或音频平台 API
   - 验真：`record_publish_result.py` 回填 + `publish_verification_report.json` + `publish_guard.py`
 - 交付：`07_发布包.md`、`07_发布计划.md`、`channel_execution_manifest.json`、`publish_verification_report.json`、`publish_guard_report.json/md`、`publish_manifest.json`

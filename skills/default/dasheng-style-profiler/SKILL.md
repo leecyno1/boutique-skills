@@ -11,7 +11,7 @@ description: 面向自媒体作者的文风 DNA 提取与分析技能。从历�
 
 ## 默认路径
 
-- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-/Volumes/PSSD/Projects/公众号文章}`
+- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-${DASHENG_PROJECT_ROOT:-.}}`
 - 风格画像输出：`${DASHENG_WORKSPACE}/风格库/{作者}/风格画像.md`
 
 ## 输入要求

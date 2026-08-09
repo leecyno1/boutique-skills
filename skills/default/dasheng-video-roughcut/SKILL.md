@@ -1,6 +1,6 @@
 ---
 name: dasheng-video-roughcut
-description: Use when rough-cutting Chinese talking-head video with local FunASR transcription, silence trimming, repetition/filler detection, subtitles, and an audit page.
+description: "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path, the guarded Palmier MCP experimental path, or the Jianying production fallback."
 ---
 
 # Dasheng Video Roughcut｜口播视频粗剪
@@ -24,15 +24,62 @@ description: Use when rough-cutting Chinese talking-head video with local FunASR
 - 渲染：FFmpeg
 - 音频增强：FFmpeg 开源滤镜 `afftdn`、`dynaudnorm`、`acompressor`、`loudnorm`、`alimiter`
 - 审核：本地 HTML 审核页
+- 剪映生产通路：剪映专业版 `智能粗剪`、`智能剪口播`、美颜/滤镜、音频优化、人声美化、导出
+- Palmier 实验通路：Agent 审核 EDL -> Palmier MCP 精确波纹删除/基础调色/导出 -> FFmpeg 响度和 QC
 
 ## 双路径实验
 
-当前口播粗剪保留两条并行路径：
+当前口播粗剪保留三条路径：
 
-- 路径 A：`FunASR -> Agent 字幕/语义整理 -> FFmpeg 精剪 -> HTML 审核页`，作为可复现主链路。
-- 路径 B：`剪映专业版 -> 时间线片段右键 -> 智能剪口播`，作为实验通路，用于测试剪映内置去水词、去重复和停顿识别能力。
+- 路径 A：`FunASR -> Agent 字幕/语义整理 -> FFmpeg 精剪 -> HTML 审核页`，作为可复现、可追溯的工程基准链路。
+- 路径 B：`剪映专业版 -> 智能粗剪 -> 智能剪口播 -> 导出工作拷贝 -> 重新导入 -> 参数/音频处理 -> 最终导出`，作为真人口播生产高速链路。
+- 路径 C：`本地 ASR -> Agent 审核删除清单 -> Palmier MCP ripple delete -> 基础调色/导出 -> FFmpeg 响度与 QC`，作为替代脆弱 Computer Use 的实验链路。
 
-剪映路径只测试剪映自己的智能剪口播结果，不再叠加 Agent 根据原提纲做二次语义检查。
+外部候选 `auto-editor` 只作为静音、节奏和口播清理算法参考，不是第四条生产路径。只有在独立样本中证明不会吞字、误删数字或破坏中文语义后，才允许通过 `dasheng-video-editing-bridge` 做受控实验；实验输出仍须回到本 Skill 的审核和 QC 门禁。
+
+剪映路径优先依赖剪映自身的粗剪、剪口播和基础美化能力，不叠加 Agent 根据原提纲做二次语义检查。Agent 只负责流程记录、导出核验、门禁判断和必要的专名问题清单。
+
+生产默认已恢复为“剪映 + Record & Replay”。Palmier 仅保留为 benchmark，不自动进入生产任务。原因是它尚未证明在剪口播自然度、停顿识别、重复处理和人工复听质量上优于剪映。
+
+## Palmier MCP 实验通路
+
+仅在用户明确要求进行 Palmier 对照实验时启用：
+
+- `/Applications/PalmierPro.app` 存在且已打开。
+- MCP 地址 `${PALMIER_MCP_URL:-http://127.0.0.1:19789/mcp}` 可用。
+- 外部源码位于 `${PALMIER_PRO_ROOT:-${PALMIER_PRO_ROOT:-vendor/reserved/video/palmier-pro}}`。
+- 删除区间已由 Agent 或用户审核，且每段都有 `reason` 和 `reviewed: true`。
+
+允许操作：`create_project`、`import_media`、`create_timeline`、`ripple_delete_ranges`、`apply_color`、`export_video`。
+
+暂时禁用：`remove_words`、依赖 `undo` 回滚、`remove_silence`、逐碎片 `denoise_audio`、把 `close_project` 成功当作工程已可靠保存的证据。
+
+标准顺序：
+
+1. 本地 ASR 和 Agent 生成明确的 `delete_ranges`，不让 Palmier 自主决定删词。
+2. 用 `scripts/palmier_roughcut_contract.py --plan palmier_plan.json` 做预检。
+3. 通过 MCP 创建项目、导入媒体、建立时间线，并一次性执行审核后的 `ripple_delete_ranges`。
+4. 只做保守基础调色，不承诺剪映同等级的人脸美颜。
+5. 导出 H.264/AAC 文件到 `~/Desktop/自媒体创作/<task>/`。
+6. 用 FFmpeg 做响度归一化和完整解码检查；Palmier 当前音量上限不足以保证交付响度。
+7. 写入实际删除帧数、导出时长、音视频流、音频连续性和超时状态，再运行结果校验器。
+8. 即使 `route_status=experimental_pass`，也只代表技术导出通过，不代表粗剪质量超过剪映；不得自动提升为生产默认。
+
+2026-07-12 样本结果：原片 `625.868s`，Palmier 剪后并清尾 `563.067s`；42 个审核区间共删除 1,797 帧/59.9 秒。最终文件经 FFmpeg 归一化后平均约 `-17.2 dB`、峰值约 `-1.4 dB`，完整解码通过。该样本证明受控 EDL 路径可用，但不足以把 Palmier 提升为默认生产路由。
+
+## 环节拆解
+
+粗剪是真人口播视频的第一道门禁，不是导演剪辑的一部分。它只回答一个问题：这条口播是否已经足够流畅，可以进入包装、分镜、动画和字幕精修。
+
+标准顺序：
+
+1. `source_intake`: 记录原片路径、时长、分辨率、音频状态、是否已有字幕。
+2. `asr_or_jianying_analysis`: 走 FunASR/Whisper/FunASR+Agent 或剪映智能剪口播，识别水词、重复、停顿、错话重启。
+3. `delete_candidates`: 生成删除候选，必须记录原因：水词、重复、长停顿、错话重说、自我修正、无效开头结尾。
+4. `roughcut_review`: 用户或 Agent 审核候选；高风险语义删除不得自动通过。
+5. `roughcut_render`: 输出审核后粗剪视频和字幕/转写包。
+6. `roughcut_polish`: 仅允许基础画面和声音修整，例如美颜、滤镜、音量、人声增强、降噪；不得进入导演包装、贴纸动效或智能包装。
+7. `roughcut_gate`: 判断是否允许进入 `dasheng-video-talking-head`；不过关时只允许生成问题清单和分镜审阅，不允许终片渲染。
 
 ## 标准命令
 
@@ -41,7 +88,7 @@ description: Use when rough-cutting Chinese talking-head video with local FunASR
 ```bash
 .venv_media/bin/python scripts/video_roughcut_funasr.py \
   --input-video "/path/to/source.mp4" \
-  --output-dir "产物/06_转写生产/<run_id>/talking_head_video/roughcut" \
+  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut" \
   --mode balanced
 ```
 
@@ -53,7 +100,7 @@ description: Use when rough-cutting Chinese talking-head video with local FunASR
 python3 scripts/video_roughcut_agent_align.py \
   --source-video "/path/to/source.mp4" \
   --segments-json "roughcut/work/segments.json" \
-  --output-dir "roughcut_agent_refine"
+  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut_agent_refine"
 ```
 
 Agent 输出 `agent_plan.json` 后渲染：
@@ -63,7 +110,7 @@ python3 scripts/video_roughcut_agent_align.py \
   --source-video "/path/to/source.mp4" \
   --segments-json "roughcut/work/segments.json" \
   --agent-plan "roughcut_agent_refine/agent_plan.json" \
-  --output-dir "roughcut_agent_refine"
+  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut_agent_refine"
 ```
 
 首次使用媒体环境：
@@ -92,6 +139,10 @@ python3 scripts/video_roughcut_agent_align.py \
 - `review/reviewed_output_loud.srt`（保存并重剪后生成）
 - `review/reviewed_output_loud_softsub.mp4`（保存并重剪后生成）
 - `review/proofread_agent_input.md`（保存并重剪后生成）
+- 剪映路径必须额外记录：
+  - `jianying_first_pass_export`: 智能粗剪/剪口播后的第一版工作拷贝
+  - `jianying_final_export`: 重新导入、参数调整后的最终粗剪导出
+  - `jianying_operation_log`: 草稿名、时间线名、原片时长、第一版时长、最终版时长、剪口播识别数量、参数调整项
 
 ## 审核方式
 
@@ -107,28 +158,54 @@ PORT=8899 node review_server.js
 - 点击“保存并重剪”生成审核后视频、SRT、软字幕视频和 Agent 字幕校对输入包。
 - 字幕显示默认小字号，可关闭或调整。
 
-## 剪映智能剪口播实验通路
+## 剪映生产粗剪通路
 
 适用条件：
 
 - 用户本机已安装剪映专业版。
 - 用户允许用剪映草稿作为交付物或由助理继续云端接力。
-- 当前目标是验证剪映自身的去水词能力，而不是追求完全可复现的开源流水线。
+- 当前目标是快速得到“可继续导演剪辑”的真人口播粗剪素材，而不是追求完全可复现的开源流水线。
 
 操作顺序：
 
 1. 新建干净剪映草稿。
 2. 导入口播原片。
-3. 对素材执行“根据选中素材新建时间线”，确保原片先入时间线。
-4. 在时间线片段上右键选择“智能剪口播”。
-5. 保持剪映默认识别结果和类别勾选，点击剪映的应用/删除按钮。
-6. 记录草稿路径、原始时长、剪后时长、识别无效词数量和剪映时间线名称。
+3. 把素材放入时间线；必须在时间线片段上操作，不从素材库直接触发口播 AI。
+4. 先运行 `智能粗剪`。如果出现提示词窗口，输入清晰中文要求：删除口误、重说、重复口头禅和无效停顿；保留数据、公司名、关键判断和完整逻辑链路；不要误删关键观点。
+5. 等待粗剪/片段分割完成，抽查开头、中段、结尾是否仍有大段废话、错话和重说。
+6. 再运行 `智能剪口播`，观察并记录剪映识别出的类别、数量和阈值，例如语气词、重复、停顿、静音阈值。
+7. 应用剪口播删除结果后，导出第一版工作拷贝到桌面或 `~/Desktop/自媒体创作/<run_id>/roughcut/`。这一步的目的不是终稿，而是把复杂时间线压成轻量素材，让剪映后续参数调整和最终导出更快。
+8. 重新导入第一版工作拷贝，建立第二阶段时间线。
+9. 调整视频参数：美颜、美体或轻度滤镜只做基础形象修整，避免脸部失真、字幕漂移、过度磨皮和强塑料感。
+10. 调整音频参数：放大音量、优化音频、人声增强/美化和必要降噪；确认没有爆音、金属音和明显抽吸感。
+11. 导出最终粗剪视频，记录最终路径、时长、分辨率和音频状态。
+12. 生成或填写 `roughcut_gate_report.json`；只有门禁通过，才能进入真人导演剪辑。
+
+默认剪映提示词：
+
+```text
+删除口误、重说、重复口头禅、无效停顿和无意义铺垫；保留完整逻辑链路、关键判断、公司名、股票名、年份、数字和数据结论；剪辑节奏要流畅，不要吞字，不要把一句完整判断剪断。
+```
 
 注意：
 
 - 不要从素材库直接右键触发“智能剪口播”；那会进入“选择文本插入时间线”模式，不是自动去水词路径。
+- 不要使用录屏里的拼音输入作为自动化动作；所有提示词都用明确中文。
+- “导出后再次导入上一版 MP4”是剪映生产通路的标准必选步骤，记录为 `roughcut_working_copy` / `jianying_first_pass_export`；必须同时记录第一版导出和最终导出，不能混淆两个版本。
+- `智能包装` 不纳入标准粗剪流程。当前测试效果不稳定，容易引入无关包装、模板化素材和不可控改动；需要导演包装时交给 `dasheng-video-talking-head` 单独处理。
 - 剪映草稿主时间线文件在新版剪映中可能被封装或加密，不能假设可用普通 JSON 解析。
-- 当前剪映路径的交付重点是草稿和 UI 结果，不强制自动导出视频。
+- 剪映路径的最低交付是最终粗剪 MP4 加操作记录；如果用户或助理要继续接力，可同步保留本地草稿或上传云草稿。
+
+## Record & Replay 维护
+
+当剪映 UI 路径变化、粗剪质量异常、或用户要求重新录屏时：
+
+- 先开启 Record & Replay，再执行剪映操作。
+- 录制内容必须覆盖完整主路径：导入 -> 入时间线 -> 智能粗剪 -> 智能剪口播 -> 检查删除结果 -> 导出工作拷贝 -> 重新导入 -> 视频/音频参数调整 -> 最终导出或保存草稿。
+- 录制结束后，把稳定结论写入全局 `video-rough-cut` skill 的 `references/recorded-workflow-summary.md`。
+- 本 skill 只保留抽象规则和门禁；具体按钮、控件名、弹窗行为写到录制参考里。
+- 如果录屏中出现会员、登录、云处理、权限、崩溃或 UI 路径不一致，记录为 caveat，不要写成稳定步骤。
+- 如果误点 `智能包装` 或其他效果实验，必须在记录中标记为 `discarded_experiment`，不得写入标准粗剪链路。
 
 ## 剪辑策略
 
@@ -136,19 +213,39 @@ PORT=8899 node review_server.js
 - 删除长静音时保留少量呼吸间隔。
 - 删除纯口水句，如单独的“嗯、呃、这个、那个”。
 - 删除相邻重复句，保留更完整的一句；高风险语义候选必须让用户审核确认。
+- 删除明显错话、重说、半句话重启、口播自我修正时，必须保留后一版更完整表达，并在审核页标注“错话/重说/自我修正”原因。
+- 粗剪输出必须先过审核门禁，才能进入真人导演剪辑；如果还有大量“这个、那个、嗯、其实、就是、然后”、明显重复句或专名识别错误，不得直接进入终片渲染。
 - 语义删改必须进入 `delete_segments.json`，供审核页追溯。
 - 更精细的口水词、口吃、重复表达，优先走 Agent 整理稿对齐剪辑：Agent 按原口播顺序整理文字，脚本用差异对齐反推删除区间。
 - Agent 整理稿不得重构文章，只能在原始口播顺序上做轻量删改、断句和专名修正；否则无法稳定映射回视频时间轴。
+
+## 粗剪门禁
+
+进入导演剪辑前必须生成并通过 `roughcut_gate_report.json`：
+
+- `asr_quality`: 专名、股票/公司名、数字和年份不能大面积错误；低质量 ASR 只能生成候选，不允许终渲染。
+- `filler_density`: 无效口头词密度过高时必须继续剪口播。
+- `repeat_density`: 相邻重复、重说、错话重启必须进入删除候选。
+- `continuity`: 剪后语音不能出现吞字、突兀跳切、逻辑断裂或明显音量断层。
+- `jianying_audit`: 如果使用剪映路径，必须记录识别数量、分类、阈值、原片时长、第一版工作拷贝时长、最终导出时长和抽查结果。
+- `jianying_polish`: 如果使用剪映路径，必须记录视频参数调整和音频参数调整；不得包含 `智能包装`。
+- `review_status`: 用户或 Agent 审核明确通过后，才允许后续 `dasheng-video-talking-head` 读取该视频。
+- `render_allowed`: 只有上述条件满足时才为 `true`；否则只能输出分镜审阅页和待处理清单。
+- `opening_review`: 发布版前 30 秒必须逐句人工复听；不得以“呃/嗯/大家好”起手，不得保留重复字、半句重启和明显口误。
+- `hook_deadline`: 核心判断默认必须在前 5 秒出现。若内容需要铺垫，最长不得超过 8 秒，并必须先给冲突或结果。
+- `jianying_reimport_listen`: 剪映第一版导出并重新导入后，必须从头到尾复听一次。智能剪口播通过不等于人工粗剪通过。
+- `repetition_scan`: ASR 出现相邻重复字、连续“嗯/呃”、同一句重复时，必须生成复听时间点；不得直接进入导演包装。
 
 ## 音频策略
 
 - 默认对输出视频应用降噪、动态音量平衡、压缩、响度提升和限幅。
 - 当前内置滤镜：`highpass -> lowpass -> afftdn -> dynaudnorm -> acompressor -> loudnorm(I=-14) -> alimiter`。
+- 剪映路径可使用剪映内置音量放大、人声增强/美化和降噪；必须抽听确认没有爆音、金属音、抽吸声或音画不同步。
 - 如果录音底噪很重，可后续升级接入 RNNoise / DeepFilterNet，但默认先用 FFmpeg 内置开源滤镜，减少部署复杂度。
 
-## 视觉滤镜后处理
+## 视觉参数后处理
 
-- 粗剪后如需暖光电影风格、轻磨皮增白、低风险轻拉瘦，调用 `dasheng-video-open-filter`。
+- 剪映路径可在重新导入第一版工作拷贝后做基础美颜、滤镜和画面参数调整；默认只做低风险增强，不做强瘦身、不做夸张滤镜。
 - 原视频已经烧录大字幕时，滤镜环节默认不再封装 softsub，避免出现两套字幕。
 - 远景侧脸素材不默认做局部 FaceMesh 拉瘦，优先用轻微整体横向瘦身，避免人物和字幕漂移。
 

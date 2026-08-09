@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-06",
+  "generated_at": "2026-08-09",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -50,11 +50,11 @@
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 128,
+      "api-key": 127,
       "api-key+mcp-required": 22,
       "browser-required": 18,
       "direct": 153,
-      "mcp-required": 73
+      "mcp-required": 74
     },
     "by_stars": {
       "1★": 6,
@@ -5051,55 +5051,6 @@
       }
     },
     {
-      "id": "dasheng-video-roughcut",
-      "name": "dasheng-video-roughcut",
-      "description": "Use when rough-cutting Chinese talking-head video with local FunASR transcription, silence trimming, repetition/filler detection, subtitles, and an audit page.",
-      "manual": "skills/default/dasheng-video-roughcut/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-roughcut/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l3",
-        "media-generation",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "ffmpeg",
-          "node"
-        ],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-video-roughcut",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "dasheng-video-style-trainer",
       "name": "dasheng-video-style-trainer",
       "description": "Use when learning reusable video style DNA from many sample videos, training a blogger/channel editing style, or applying a learned style profile to Dasheng talking-head and no-human explainer video workflows.",
@@ -5424,7 +5375,7 @@
     {
       "id": "tech-earnings-deepdive",
       "name": "tech-earnings-deepdive",
-      "description": "Deep-dive technology-stock earnings and produce a multi-perspective investment memo. Use for quarterly or annual reports, earnings calls, revenue and margin changes, guidance, cash flow, valuation (DCF, reverse DCF, EV/EBITDA, PEG, or Rule of 40), management, competition, ownership, policy, position sizing, buy/sell/hold decisions, variant views, kill conditions, and monitoring triggers. Runs a 16-module A-P review, six investment lenses, primary-source evidence standards, multi-method valuation, anti-bias checks, and an actionable decision framework. Trigger even for brief requests such as analyzing NVDA's latest earnings or deciding whether to hold a technology stock. Use us-value-investing separately when a simplified long-term four-factor score is specifically requested.",
+      "description": "Tech Stock Earnings Deep Dive Analysis and Multi-Perspective Investment Memo System (v3.0). Covers 16 major analysis modules (A-P), 6 investment philosophy perspectives, institutional-grade evidence standards, anti-bias framework, and actionable decision system. When users mention topics such as tech company earnings analysis, quarterly/annual report interpretation, earnings call, revenue growth analysis, margin changes, guidance, valuation models, DCF, reverse DCF, EV/EBITDA, PEG, Rule of 40, management analysis, competitive landscape, position sizing, whether to buy/sell/add to a tech stock position, how to interpret a company's latest earnings, doing a deep dive, multi-angle valuation, how investment masters view a company, variant view, key forces, kill conditions, ownership structure, executive team, partner ecosystem, macro policy impact, etc., this skill should be used. Even if the user simply asks \"help me look at NVDA's latest earnings\" or \"how did META do this quarter\" or \"should I keep holding MSFT,\" this skill should be triggered to provide comprehensive earnings analysis and a multi-perspective investment memo. This skill complements the us-value-investing skill — us-value-investing focuses on long-term value four-dimensional scoring, while this skill focuses on in-depth dissection of the latest earnings, comprehensive judgment across multiple investment philosophies, and actionable position decisions.",
       "manual": "skills/default/tech-earnings-deepdive/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/tech-earnings-deepdive/SKILL.md",
       "install_tiers": [
@@ -7579,6 +7530,54 @@
       }
     },
     {
+      "id": "frontend-dev",
+      "name": "frontend-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "manual": "skills/default/frontend-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-09",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "default_sentinel",
+        "direct",
+        "l2",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "frontend-dev",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "ios-application-dev",
       "name": "iosdev-cn",
       "description": "iOS application development guide covering UIKit, SnapKit, and SwiftUI. Includes touch targets, safe areas, navigation patterns, Dynamic Type, Dark Mode, accessibility, collection views, common UI components, and SwiftUI design guidelines. For detailed references on specific topics, see the reference files. Use when: developing iOS apps, implementing UI, reviewing iOS code, working with UIKit/SnapKit/SwiftUI layouts, building iPhone interfaces, Swift mobile development, Apple HIG compliance, iOS accessibility implementation.",
@@ -7817,7 +7816,7 @@
     {
       "id": "agent-reach",
       "name": "agent-reach",
-      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客)。",
+      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。",
       "manual": "skills/default/agent-reach/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agent-reach/SKILL.md",
       "install_tiers": [
@@ -8010,7 +8009,7 @@
     {
       "id": "guizang-ppt-skill",
       "name": "guizang-ppt-skill",
-      "description": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、章节幕封、数据大字报、图片网格等模板。提供两种风格：① \"电子杂志 × 电子墨水\"（衬线 + 流体背景 + 暖色） ② \"瑞士国际主义\"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到\"杂志风 PPT\"、\"瑞士风 PPT\"、\"Swiss Style\"、\"horizontal swipe deck\"时使用。",
+      "description": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① \"电子杂志 × 电子墨水\"（衬线 + 流体背景 + 暖色） ② \"瑞士国际主义\"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到\"杂志风 PPT\"、\"瑞士风 PPT\"、\"Swiss Style\"、\"horizontal swipe deck\"时使用。",
       "manual": "skills/default/guizang-ppt-skill/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/guizang-ppt-skill/SKILL.md",
       "install_tiers": [
@@ -14763,6 +14762,56 @@
       }
     },
     {
+      "id": "dasheng-video-roughcut",
+      "name": "dasheng-video-roughcut",
+      "description": "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path, the guarded Palmier MCP experimental path, or the Jianying production fallback.",
+      "manual": "skills/default/dasheng-video-roughcut/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-roughcut/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "l3",
+        "mcp-required",
+        "media-generation",
+        "offline",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg",
+          "mcp",
+          "node"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "dasheng-video-roughcut",
+      "preset_excluded": false,
+      "rating": {
+        "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "dasheng-xhs-publish-bridge",
       "name": "dasheng-xhs-publish-bridge",
       "description": "Use when Dasheng Publish needs to route Xiaohongshu publishing or content access through API-first CLI, MCP, or browser fallback bridges.",
@@ -18151,59 +18200,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "image-generation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "frontend-dev",
-      "name": "frontend-design",
-      "description": "Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. Builds complete, visually striking web pages with real media, advanced motion, and compelling copy. Use when: building landing pages, marketing sites, product pages, dashboards, generating media assets (image/video/audio/music), writing conversion copy, creating generative art, or implementing cinematic scroll animations.",
-      "manual": "skills/default/frontend-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "api-key",
-        "coding-devtools",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg",
-          "node"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "frontend-dev",
       "preset_excluded": false,
       "rating": {
         "score": 68,

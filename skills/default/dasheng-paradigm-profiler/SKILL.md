@@ -27,9 +27,9 @@ description: Use when users provide standard articles, content templates, succes
 
 ## 默认路径
 
-- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-/Volumes/PSSD/Projects/公众号文章}`
-- 范式画像输出：`${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/00_范式画像.md`
-- 结构化画像：`${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/paradigm_profile.yaml`
+- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-${DASHENG_PROJECT_ROOT:-.}}`
+- 范式画像输出：`${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/00_范式画像.md`
+- 结构化画像：`${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/paradigm_profile.yaml`
 
 ## 输入要求
 
@@ -48,7 +48,7 @@ description: Use when users provide standard articles, content templates, succes
 4. 总结场景适配：适合什么题材、不适合什么题材、使用前置条件。
 5. 总结渠道适配：公众号、小红书、短视频、社群等各自如何变形。
 6. 输出 `00_范式画像.md`、`paradigm_profile.yaml`、`paradigm_prompt_block.md`、`paradigm_manifest.json`。
-7. 请求用户校准，用户确认后固化到当前 run 的 `产物/00_范式学习/{run_id}/{profile_slug}/`。
+7. 请求用户校准，用户确认后固化到当前 run 的 `~/Desktop/自媒体创作/00_范式学习/{run_id}/{profile_slug}/`。
 
 ## 执行方式
 
@@ -101,10 +101,10 @@ python3 scripts/build_paradigm_profile.py sample.md --run-id 2026-05-06_120000 -
 
 最终画像默认保存到：
 
-- `${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/00_范式画像.md`
-- `${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/paradigm_profile.yaml`
-- `${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/paradigm_prompt_block.md`
-- `${DASHENG_WORKSPACE}/产物/00_范式学习/{run_id}/{profile_slug}/paradigm_manifest.json`
+- `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/00_范式画像.md`
+- `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/paradigm_profile.yaml`
+- `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/paradigm_prompt_block.md`
+- `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_范式学习/{run_id}/{profile_slug}/paradigm_manifest.json`
 
 ## 质量红线
 

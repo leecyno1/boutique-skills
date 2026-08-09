@@ -92,11 +92,11 @@
 | `behavior-validator` | `L2 Professional` | 5★ | `behavior-testing`, `coding-devtools`, `direct`, `l2`, `online`, `openclaw-official`, `quality-assurance` |
 | `android-native-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `flutter-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
+| `frontend-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `ios-application-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
 | `baoyu-image-gen` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `coding-devtools`, `l2`, `online` |
-| `frontend-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `fullstack-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `react-native-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 
@@ -194,7 +194,6 @@
 | `dasheng-stage-transwrite` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-director` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-explainer-html` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
-| `dasheng-video-roughcut` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-style-trainer` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-talking-head` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `social-auto-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
@@ -202,6 +201,7 @@
 | `guizang-social-card-skill` | `L2 Professional` | 4★ | `api-key`, `creator`, `design`, `l2`, `media-generation`, `online`, `social-card` |
 | `seedance2-skill` | `L2 Professional` | 4★ | `api-key`, `l2`, `media`, `media-generation`, `online`, `prompt`, `video` |
 | `buddy-sings` | `L3 Specialist` | 4★ | `default_sentinel`, `direct`, `l3`, `media-generation`, `minimax_official`, `offline` |
+| `dasheng-video-roughcut` | `L3 Specialist` | 3★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `l3`, `mcp-required`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `video-shotcraft` | `L3 Specialist` | 3★ | `browser-required`, `l3`, `media-generation`, `online`, `product-video`, `remotion` |
 | `baoyu-comic` | `L3 Specialist` | 3★ | `api-key`, `baoyu`, `l3`, `media-generation`, `online` |
 | `baoyu-compress-image` | `L3 Specialist` | 3★ | `api-key`, `baoyu`, `l3`, `media-generation`, `online` |

@@ -41,7 +41,7 @@
   "metadata": {
     "runner": {
       "script": "${OPENCLAW_WORKSPACE}/scripts/run_hotspot_radar.py",
-      "stage_root": "${OPENCLAW_WORKSPACE}/产物/00_热点捕捉",
+      "stage_root": "${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/00_热点捕捉",
       "manifest": "hotspot_radar_manifest.json"
     },
     "requirements": {

@@ -32,11 +32,11 @@ Use the stdlib-only launcher `trader_memory_cli.py` for all CLI work. It transpa
 
 ```bash
 # From inside the repo
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py store --state-dir state/theses list
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store --state-dir state/theses list
 
 # From any other cwd (cron, profile, distribution runner) — point the launcher at the repo
 export CLAUDE_TRADING_SKILLS_REPO=/path/to/claude-trading-skills
-python3 "$CLAUDE_TRADING_SKILLS_REPO/skills/default/trader-memory-core/scripts/trader_memory_cli.py" \
+python3 "$CLAUDE_TRADING_SKILLS_REPO/skills/trader-memory-core/scripts/trader_memory_cli.py" \
   store --state-dir /path/to/state/theses list
 ```
 
@@ -61,7 +61,7 @@ Do **not** treat the thesis store as unavailable and do **not** mutate `state/th
 Read the screener's JSON output and convert to thesis using the appropriate adapter.
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py ingest \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py ingest \
   --source kanchi-dividend-sop \
   --input reports/kanchi_entry_signals_2026-03-14.json \
   --state-dir state/theses/
@@ -95,7 +95,7 @@ the `manual` source with a free-form JSON file (a single object or an array):
 ```
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py ingest \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py ingest \
   --source manual --input amd.json --state-dir state/theses/
 ```
 
@@ -127,7 +127,7 @@ python3 .../trader_memory_cli.py store --state-dir state/theses/ open-position <
 ### 2. Query — Search and list theses
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py store \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store \
   --state-dir state/theses/ list --ticker AAPL --status ACTIVE
 ```
 
@@ -142,7 +142,7 @@ plain `YYYY-MM-DD` (widened to midnight UTC) or a full ISO timestamp.
 **State transition** (IDEA → ENTRY_READY only):
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py store --state-dir state/theses/ \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store --state-dir state/theses/ \
   transition <id> ENTRY_READY --reason "validated" [--event-date YYYY-MM-DD]
 ```
 
@@ -288,7 +288,7 @@ Use `thesis_store.link_report(state_dir, thesis_id, skill, file, date)` to cross
 ### 4. Review — Check due dates and monitoring status
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py review \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py review \
   --state-dir state/theses/ review-due --as-of 2026-04-15
 ```
 
@@ -297,7 +297,7 @@ List theses with `next_review_date <= as_of`. Use with kanchi-dividend-review-mo
 ### 5. Postmortem — Close and reflect
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py review \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py review \
   --state-dir state/theses/ postmortem th_aapl_div_20260314_a3f1
 ```
 
@@ -306,7 +306,7 @@ Generate a structured postmortem in `state/journal/`. If FMP API key is availabl
 **Summary statistics:**
 
 ```bash
-python3 skills/default/trader-memory-core/scripts/trader_memory_cli.py review \
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py review \
   --state-dir state/theses/ summary
 ```
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Bridge Dasheng transwrite video manifests to the local html-video renderer.",
   "type": "bridge",
-  "external_project": "${HTML_VIDEO_ROOT:-/Volumes/PSSD/html-video}",
+  "external_project": "${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}",
   "external_dependency": {
     "name": "html-video",
     "repo": "https://github.com/nexu-io/html-video.git",

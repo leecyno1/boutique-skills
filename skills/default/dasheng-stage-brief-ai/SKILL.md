@@ -11,9 +11,9 @@ description: AI-driven topic generation for Dasheng workflow. Analyzes intake da
 
 ## 默认路径
 
-- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-/Volumes/PSSD/Projects/公众号文章}`
-- 输入：`产物/01_内容采集/{run_id}/`
-- 输出：`产物/02_Brief/{run_id}/`
+- `DASHENG_WORKSPACE=${DASHENG_WORKSPACE:-${DASHENG_PROJECT_ROOT:-.}}`
+- 输入：`~/Desktop/自媒体创作/01_内容采集/{run_id}/`
+- 输出：`~/Desktop/自媒体创作/02_内容聚合及选题分析/{run_id}/`
 
 ## 核心改进
 
@@ -192,7 +192,7 @@ AI 为每个话题生成完整的选题卡片：
 
 运行批次：`2026-04-04_204231`
 生成方式：`AI 推理`
-输入来源：`/Volumes/PSSD/Projects/公众号文章/产物/01_内容采集/2026-04-04_204231/`
+输入来源：`~/Desktop/自媒体创作/01_内容采集/2026-04-04_204231/`
 
 ## 本轮原则
 
@@ -257,8 +257,8 @@ AI 为每个话题生成完整的选题卡片：
 ```bash
 cd "${DASHENG_WORKSPACE}"
 python3 scripts/brief_ai_generator.py \
-  --intake-dir "产物/01_内容采集/2026-04-04_204231" \
-  --output-dir "产物/02_Brief/2026-04-04_204231" \
+  --intake-dir "~/Desktop/自媒体创作/01_内容采集/2026-04-04_204231" \
+  --output-dir "~/Desktop/自媒体创作/02_内容聚合及选题分析/2026-04-04_204231" \
   --candidate-count 10
 ```
 
@@ -268,15 +268,15 @@ python3 scripts/brief_ai_generator.py \
 ```bash
 # 旧系统
 python3 scripts/phase2_rebuilder.py \
-  "产物/01_内容采集/2026-04-04_204231/raw/intake_records.json" \
-  "产物/02_Brief/2026-04-04_204231_rule"
+  "~/Desktop/自媒体创作/01_内容采集/2026-04-04_204231/raw/intake_records.json" \
+  "~/Desktop/自媒体创作/02_内容聚合及选题分析/2026-04-04_204231_rule"
 
 # 新系统（通过 skill）
-# 使用 dasheng-stage-brief-ai 生成选题到 产物/02_Brief/2026-04-04_204231_ai
+# 使用 dasheng-stage-brief-ai 生成选题到 ~/Desktop/自媒体创作/02_内容聚合及选题分析/2026-04-04_204231_ai
 
 # 对比
-diff 产物/02_Brief/2026-04-04_204231_rule/02_编辑Brief库.md \
-     产物/02_Brief/2026-04-04_204231_ai/02_编辑Brief库.md
+diff ~/Desktop/自媒体创作/02_内容聚合及选题分析/2026-04-04_204231_rule/02_编辑Brief库.md \
+     ~/Desktop/自媒体创作/02_内容聚合及选题分析/2026-04-04_204231_ai/02_编辑Brief库.md
 ```
 
 ## 质量保证

@@ -15,8 +15,8 @@ from pathlib import Path
 
 import pytest
 
-REPO_ROOT = Path(__file__).resolve().parents[5]
-LAUNCHER = Path(__file__).resolve().parent.parent / "trader_memory_cli.py"
+REPO_ROOT = Path(__file__).resolve().parents[4]
+LAUNCHER = REPO_ROOT / "skills" / "trader-memory-core" / "scripts" / "trader_memory_cli.py"
 
 
 def _run(args, *, env=None, cwd=None):
@@ -341,5 +341,5 @@ def test_subcommand_resolves_to_existing_target(sub):
         "ingest": "thesis_ingest.py",
         "review": "thesis_review.py",
     }
-    target = Path(__file__).resolve().parent.parent / targets[sub]
+    target = REPO_ROOT / "skills" / "trader-memory-core" / "scripts" / targets[sub]
     assert target.is_file(), f"missing target: {target}"

@@ -11,7 +11,7 @@ description: Use when creating or updating Feishu docs from markdown in this rep
 
 ## 本地实现
 
-- 脚本：`/Volumes/PSSD/Projects/公众号文章/scripts/send_feishu_report.py`
+- 脚本：`${DASHENG_PROJECT_ROOT:-.}/scripts/send_feishu_report.py`
 
 ## 核心规则
 

@@ -7,14 +7,14 @@
     {
       "name": "biliup-rs",
       "repo": "https://github.com/biliup/biliup-rs.git",
-      "default_root": "${BILIUP_RS_ROOT:-/Volumes/PSSD/biliup-rs}",
+      "default_root": "${BILIUP_RS_ROOT:-vendor/reserved/publish/biliup-rs}",
       "version_locked": false,
       "role": "primary"
     },
     {
       "name": "social-auto-upload",
       "repo": "https://github.com/dreammis/social-auto-upload.git",
-      "default_root": "${SOCIAL_AUTO_UPLOAD_ROOT:-/Volumes/PSSD/social-auto-upload}",
+      "default_root": "${SOCIAL_AUTO_UPLOAD_ROOT:-vendor/publish/social-auto-upload}",
       "version_locked": false,
       "role": "fallback"
     }
