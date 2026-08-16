@@ -1,0 +1,115 @@
+# Boutique Skills 交接给 Qoder
+
+更新时间：2026-08-16
+
+## 仓库信息
+
+- 路径：/Volumes/PSSD/Projects/boutique-skills
+- 默认分支：main
+- GitHub：https://github.com/leecyno1/boutique-skills
+- Gitee：https://gitee.com/leecyno1/boutique-skills
+- 当前提交：b9a4a62 Add reviewed Dasheng VOX video skills
+- 当前技能数：396
+- 标准包：34 个 Skill + 2 个组合包
+
+本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
+
+## 最近完成
+
+| Skill | 评分 | 定位 |
+|---|---:|---|
+| dasheng-vox-skills | 90/100，5 星 | VOX 视频统一编排、Manifest、Provider 路由、Shotcraft、Gemini、Remotion、QC |
+| dasheng-video-omni-browser | 82/100，4 星 | 使用已登录 Chrome Gemini Omni 逐镜生成约 10 秒视频 |
+
+已完成：
+
+- 更新 catalog/default-skills.json、catalog/native-origin-overrides.json。
+- 加入高档套件 catalog/suites/dasheng-media-workflow.json。
+- 生成 catalog/skills.enriched.json、tiers/high.json 和相关文档索引。
+- 添加 reports/source-discovery/dasheng-vox-skills-review-2026-08-16.md。
+- 修复 Shotcraft 安装路径发现逻辑。
+- 为 Gemini 视频下载增加 Google API 域名校验。
+- 未重复收录已有的 video-shotcraft、frontend-design、dasheng-video-director。
+
+## 关键目录
+
+- skills/default/<name>/：Skill 主文件、配置、Agent 展示信息和来源说明。
+- catalog/default-skills.json：基础注册表。
+- catalog/native-origin-overrides.json：来源核验覆盖。
+- catalog/suites/：组合套件。
+- scripts/generate_enriched_catalog.py：生成评分、依赖和文档索引。
+- scripts/audit_skills.py：全库审计。
+- scripts/install-suite.sh：套件安装和 dry-run。
+- reports/source-discovery/：评审报告。
+
+## 新 Skill 更新流程
+
+1. 先在本地搜索同名和同能力 Skill，避免重复。
+2. 再检查来源仓库、SKILL.md、脚本、依赖、许可证和最近提交。
+3. 评估功能覆盖、可执行性、质量控制、移植性、安全、来源和维护价值。
+4. 评分建议：90 分以上 5 星；75–89 分 4 星；60–74 分 3 星；低于 60 分不入库。
+5. 每个候选添加 reports/source-discovery/<name>-review-YYYY-MM-DD.md。
+6. 将文件放入 skills/default/<name>/，删除 __pycache__、临时文件、运行媒体和凭证。
+7. 添加 SOURCE.txt，记录来源、许可证、快照提交和移植修正。
+8. 更新基础目录、来源覆盖、评分覆盖和相关套件。
+9. 重新生成目录：
+
+   python3 scripts/generate_enriched_catalog.py
+
+10. 检查安装预览：
+
+   ./scripts/install-suite.sh <suite-id> --dry-run
+
+## 验证命令
+
+    python3 -m json.tool catalog/default-skills.json >/dev/null
+    python3 -m json.tool catalog/native-origin-overrides.json >/dev/null
+    python3 -m py_compile skills/default/<name>/scripts/*.py
+    python3 scripts/audit_skills.py --report /tmp/boutique-audit.md --json /tmp/boutique-audit.json
+    git diff --check
+
+有对应测试时运行对应 pytest。若 pytest 未安装，应明确记录为测试环境缺失，不要误报成代码失败。
+
+## Git 规则
+
+- 禁止使用 git reset --hard、git clean、git checkout -- 覆盖工作区。
+- 提交前使用白名单 git add。
+- 当前以下四个文件已有用户改动，不能回滚、覆盖或代提交：
+
+    reports/finance-skill-eval/tushare-eval/standard-finance-skills-recommendation.json
+    reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.html
+    reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.json
+    reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.md
+
+- 提交前确认 git diff --cached --name-only 不含以上文件。
+- 提交后同步两个远端：
+
+    git push origin main
+    git push gitee-leecyno1 main
+    git fetch origin main --quiet
+    git fetch gitee-leecyno1 main --quiet
+    git rev-parse HEAD origin/main gitee-leecyno1/main
+
+## 定时维护建议
+
+每周或每两周：
+
+1. 扫描新候选和上游更新。
+2. 检查已入库 Skill 的来源仓库是否有新提交。
+3. 对最近更新或高使用频率 Skill 重跑评分。
+4. 清理重复能力和失效来源。
+5. 运行目录生成、安装 dry-run 和全库审计。
+6. 只提交本轮变更，并同步 GitHub/Gitee。
+
+记录位置：新增候选和评分报告放在 reports/source-discovery/；问题放在 findings.md；来源和版本变化写入 SOURCE.txt 与提交记录。
+
+## 已知限制
+
+- dasheng-video-omni-browser 依赖用户已有 Chrome 登录态和 Gemini 网页 UI，不是稳定 API。
+- dasheng-vox-skills 的完整导演 CLI、Remotion 工程和实际媒体产物仍在 /Volumes/PSSD/Projects/公众号文章；本仓库收录的是可复用编排核心和必要参考文件。
+- 全库审计可能报告其他 Skill 的环境变量或风险扫描提示，先确认是否属于本轮改动。
+- 真实 Gemini 在线生成、Chrome 下载和平台登录不在静态验证范围内。
+
+## 接手完成标准
+
+Qoder 接手后应能根据来源链接或本地 Skill 目录完成搜索、评分、去重、入库、目录生成、安装 dry-run、全库审计，并在保留用户改动的前提下同步 GitHub 和 Gitee。
