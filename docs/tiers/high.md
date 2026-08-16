@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`394`
+- 技能数量：`396`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -404,3 +404,5 @@
 | `alphagbm-watchlist` | Watchlist monitoring for price, IV, activity, earnings, and score changes. | [skills/default/alphagbm-watchlist/SKILL.md](../../skills/default/alphagbm-watchlist/SKILL.md) | [source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
 | `westockdata` | Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements. | [skills/default/westockdata/SKILL.md](../../skills/default/westockdata/SKILL.md) | [source](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
 | `uzi-skill` | Application-style A-share, Hong Kong, and US stock-research suite with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and source-controlled HTML reports. | [skills/default/uzi-skill/SKILL.md](../../skills/default/uzi-skill/SKILL.md) | [source](https://github.com/wbh604/UZI-Skill) |
+| `dasheng-video-omni-browser` | Use an existing signed-in Chrome Gemini Omni session to generate one approximately 10-second VOX clip per approved reference image, with a bundled manifest builder and explicit safety boundaries. | [skills/default/dasheng-video-omni-browser/SKILL.md](../../skills/default/dasheng-video-omni-browser/SKILL.md) | [source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser) |
+| `dasheng-vox-skills` | Orchestrate evidence-led VOX video production with script and storyboard gates, a resumable shot manifest, Shotcraft and Remotion routing, official Gemini or signed-in browser generation, and per-shot QC. | [skills/default/dasheng-vox-skills/SKILL.md](../../skills/default/dasheng-vox-skills/SKILL.md) | [source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |

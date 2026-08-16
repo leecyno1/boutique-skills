@@ -5842,6 +5842,38 @@
         "equity-research",
         "optional"
       ]
+    },
+    {
+      "id": "dasheng-video-omni-browser",
+      "name": "dasheng-video-omni-browser",
+      "description": "Use an existing signed-in Chrome Gemini Omni session to generate one approximately 10-second VOX clip per approved reference image, with a bundled manifest builder and explicit safety boundaries.",
+      "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
+      "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "dasheng_media_workflow",
+        "media-generation",
+        "browser-automation",
+        "optional"
+      ]
+    },
+    {
+      "id": "dasheng-vox-skills",
+      "name": "dasheng-vox-skills",
+      "description": "Orchestrate evidence-led VOX video production with script and storyboard gates, a resumable shot manifest, Shotcraft and Remotion routing, official Gemini or signed-in browser generation, and per-shot QC.",
+      "manual": "skills/default/dasheng-vox-skills/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
+      "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": [
+        "dasheng_media_workflow",
+        "media-generation",
+        "video-orchestration",
+        "optional"
+      ]
     }
   ]
 }

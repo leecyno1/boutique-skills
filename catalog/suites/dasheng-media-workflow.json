@@ -7,6 +7,8 @@
   "install_tier": "high",
   "category": "marketing-growth",
   "requires_tools": [
+    "browser",
+    "ffmpeg",
     "node",
     "python"
   ],
@@ -34,12 +36,15 @@
     "dasheng-style-profiler",
     "dasheng-video-director",
     "dasheng-video-explainer-html",
+    "dasheng-video-omni-browser",
     "dasheng-video-roughcut",
     "dasheng-video-style-trainer",
     "dasheng-video-talking-head",
+    "dasheng-vox-skills",
     "dasheng-xhs-publish-bridge",
     "feishu-doc-creator",
     "jiebang",
-    "social-auto-upload-bridge"
+    "social-auto-upload-bridge",
+    "video-shotcraft"
   ]
 }

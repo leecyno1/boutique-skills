@@ -4,7 +4,7 @@
 |---|---:|
 | `api-key` | 127 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 18 |
+| `browser-required` | 20 |
 | `direct` | 153 |
 | `mcp-required` | 74 |
 
@@ -173,10 +173,12 @@
 |---|---|---|---|
 | `html-anything` | 无 | `browser`, `node` | `medium` |
 | `impeccable` | 无 | `browser`, `node` | `medium` |
+| `dasheng-vox-skills` | 无 | `browser`, `ffmpeg`, `node`, `python` | `medium` |
 | `agent-browser` | 无 | `browser`, `python` | `medium` |
 | `url-to-markdown` | 无 | `browser` | `medium` |
 | `uzi-skill` | 无 | `browser`, `python` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
+| `dasheng-video-omni-browser` | 无 | `browser`, `python` | `medium` |
 | `macro-liquidity` | 无 | `browser` | `medium` |
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |

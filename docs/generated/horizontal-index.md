@@ -4,7 +4,7 @@
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
 | `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 133 |
-| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 240 |
+| `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 242 |
 
 ## L1 Foundation
 
@@ -176,6 +176,7 @@
 |---|---|---:|---|---|
 | `claude-mem-plugin` | 记忆 / 上下文基础设施 | 5★ | `api-key` | [origin](https://github.com/thedotmack/claude-mem) |
 | `scientific-illustrator` | 媒体生成 / 处理 | 5★ | `mcp-required` | [origin](https://github.com/icebird1998/scientific-illustrator) |
+| `dasheng-vox-skills` | 媒体生成 / 处理 | 5★ | `browser-required` | [origin](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
 | `video-autopilot-kit` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/Hao0321/video-autopilot-kit) |
 | `uzi-skill` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/wbh604/UZI-Skill) |
 | `baoyu-format-markdown` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
@@ -245,6 +246,7 @@
 | `alphagbm-vol-smile` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile) |
 | `alphagbm-vol-surface` | 金融 / 交易 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
 | `alphagbm-watchlist` | 金融 / 监控预警 | 4★ | `api-key` | [origin](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
+| `dasheng-video-omni-browser` | 媒体生成 / 处理 | 4★ | `browser-required` | [origin](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser) |
 | `macro-liquidity` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `alphaear-deepear-lite` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-deepear-lite) |
 | `alphaear-logic-visualizer` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-logic-visualizer) |

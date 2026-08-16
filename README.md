@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-394-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-396-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%202%20packs-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -68,9 +68,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 394 |
+| Curated skills | 396 |
 | Skill suites | 8 |
-| Native sources verified or referenced | 388 |
+| Native sources verified or referenced | 390 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 34 skills + 2 packs |
@@ -236,7 +236,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 |---|---:|---|---|---|---|
 | [AlphaGBM Options & Investment Research Suite](https://github.com/AlphaGBM/skills) | 30 | `high` | `finance-trading` | API: `ALPHAGBM_API_KEY`<br>Tools: `curl` | `./scripts/install-suite.sh alphagbm` |
 | [Anthropic Financial Services Suite](https://github.com/anthropics/financial-services) | 66 | `high` | `finance-services` | Tools: `mcp` | `./scripts/install-suite.sh anthropic-financial-services` |
-| [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 29 | `high` | `marketing-growth` | Tools: `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
+| [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 32 | `high` | `marketing-growth` | Tools: `browser`, `ffmpeg`, `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
 | [Day1Global Investment Research Suite](https://github.com/star23/Day1Global-Skills) | 5 | `high` | `finance-trading` | Tools: `browser` | `./scripts/install-suite.sh day1global-skills` |
 | [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-skills) | 195 | `high` | `finance-investment-standard` | API: `TUSHARE_TOKEN`, `FMP_API_KEY`, `FINVIZ_API_KEY`, `LLMQUANT_API_KEY`, `ALPACA_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY`, `ALPHAGBM_API_KEY`<br>Tools: `python`, `mcp`, `node`, `browser` | `./scripts/install-suite.sh finance-investment-standard` |
 | [Official GSAP AI Skills Suite](https://github.com/greensock/gsap-skills) | 8 | `high` | `design-ui` | Tools: `node` | `./scripts/install-suite.sh gsap-skills` |
@@ -587,9 +587,11 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `dasheng-stage-transwrite` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite) |
 | `dasheng-video-director` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director) |
 | `dasheng-video-explainer-html` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-explainer-html) |
+| `dasheng-video-omni-browser` | `L3 Specialist` | `media-generation` | 4★ | `browser-required` | [Source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser) |
 | `dasheng-video-roughcut` | `L3 Specialist` | `media-generation` | 3★ | `mcp-required` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut) |
 | `dasheng-video-style-trainer` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-style-trainer) |
 | `dasheng-video-talking-head` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-talking-head) |
+| `dasheng-vox-skills` | `L3 Specialist` | `media-generation` | 5★ | `browser-required` | [Source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
 | `gemini-image-service` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://ai.google.dev/gemini-api/docs/image-generation) |
 | `gif-sticker-maker` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
 | `guizang-social-card-skill` | `L2 Professional` | `media-generation` | 4★ | `api-key` | [Source](https://github.com/op7418/guizang-social-card-skill) |

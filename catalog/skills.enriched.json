@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-09",
+  "generated_at": "2026-08-16",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 394,
-    "native_origin_verified_or_referenced": 388,
+    "skills": 396,
+    "native_origin_verified_or_referenced": 390,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
       "L2 Professional": 133,
-      "L3 Specialist": 240
+      "L3 Specialist": 242
     },
     "by_category": {
       "agent-orchestration": 5,
@@ -41,7 +41,7 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
-      "media-generation": 34,
+      "media-generation": 36,
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 2,
@@ -52,15 +52,15 @@
     "by_access_mode": {
       "api-key": 127,
       "api-key+mcp-required": 22,
-      "browser-required": 18,
+      "browser-required": 20,
       "direct": 153,
       "mcp-required": 74
     },
     "by_stars": {
       "1★": 6,
       "3★": 152,
-      "4★": 157,
-      "5★": 79
+      "4★": 158,
+      "5★": 80
     }
   },
   "skills": [
@@ -3655,6 +3655,58 @@
       "preset_excluded": false,
       "rating": {
         "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "dasheng-vox-skills",
+      "name": "dasheng-vox-skills",
+      "description": "Orchestrate complete VOX-style editorial video production from content distillation, creator-led script rewriting, retention design and review storyboards through approved director shots, Shotcraft shot-card binding, real-page 2.5D motion, Codex reference images, official Gemini API or signed-in Chrome Gemini Omni generation, Remotion re-editing, narration-bound subtitles, and final QC. Use when creating, continuing, repairing, or productizing VOX explainers, evidence-led Remotion scenes, paper-collage B-roll, Gemini/Omni/Veo image-to-video batches, or an existing VOX manifest.",
+      "manual": "skills/default/dasheng-vox-skills/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-16",
+        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "browser-required",
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "l3",
+        "media-generation",
+        "online",
+        "optional",
+        "self-media-ops",
+        "video-orchestration"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg",
+          "node",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "dasheng-vox-skills",
+      "preset_excluded": false,
+      "rating": {
+        "score": 90,
         "stars": 5,
         "rating_label": "★★★★★"
       }
@@ -7476,6 +7528,56 @@
       },
       "risk_level": "low",
       "conflict_group": "content-strategy",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "dasheng-video-omni-browser",
+      "name": "dasheng-video-omni-browser",
+      "description": "Turn approved VOX reference images into one approximately 10-second clip per director shot by operating the user's signed-in Gemini Omni page in Chrome, then return the downloaded clips for Remotion editing. Use when Gemini API access is unavailable but the Chrome session is already signed in.",
+      "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-16",
+        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "browser-automation",
+        "browser-required",
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "l3",
+        "media-generation",
+        "online",
+        "optional",
+        "self-media-ops"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "dasheng-video-omni-browser",
       "preset_excluded": false,
       "rating": {
         "score": 82,

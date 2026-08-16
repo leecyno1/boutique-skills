@@ -1,0 +1,7 @@
+Source: https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser
+Local source path: /Volumes/PSSD/Projects/公众号文章/skills/dasheng-video-omni-browser
+Base source commit: 7ef04a98223a8019eafd885da56a748419f2d90c
+Snapshot note: imported from the local 2026-08-16 working tree because the latest browser executor updates were not committed upstream yet.
+License: MIT License (source project).
+Mirror note: scripts/video_vox_omni_pack.py is bundled from the source project's scripts directory so the installed Skill can build its own handoff manifest.
+Reviewed: 2026-08-16.

@@ -252,6 +252,8 @@ EDITORIAL_SCORE_OVERRIDES = {
     "us-market-sentiment": 76,
     "us-value-investing": 72,
     "video-autopilot-kit": 88,
+    "dasheng-video-omni-browser": 82,
+    "dasheng-vox-skills": 90,
     "westockdata": 76,
     "uzi-skill": 86,
 }
@@ -273,9 +275,11 @@ DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
     "dasheng-style-profiler": "writing-content",
     "dasheng-video-director": "media-generation",
     "dasheng-video-explainer-html": "media-generation",
+    "dasheng-video-omni-browser": "media-generation",
     "dasheng-video-roughcut": "media-generation",
     "dasheng-video-style-trainer": "media-generation",
     "dasheng-video-talking-head": "media-generation",
+    "dasheng-vox-skills": "media-generation",
     "dasheng-xhs-publish-bridge": "marketing-growth",
     "feishu-doc-creator": "docs-office",
     "jiebang": "agent-orchestration",
@@ -732,6 +736,12 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id == "video-autopilot-kit":
         api_keys = []
         tools = ["ffmpeg", "python"]
+    if skill_id == "dasheng-video-omni-browser":
+        api_keys = []
+        tools = ["browser", "python"]
+    if skill_id == "dasheng-vox-skills":
+        api_keys = []
+        tools = ["browser", "ffmpeg", "node", "python"]
     if skill_id == "paper-framework-figure-studio-pro":
         api_keys = []
         tools = ["python"]
@@ -765,6 +775,10 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
             "social-auto-upload-bridge",
         }:
             tools = sorted(set(tools + ["node"]))
+        elif skill_id == "dasheng-video-omni-browser":
+            tools = ["browser", "python"]
+        elif skill_id == "dasheng-vox-skills":
+            tools = ["browser", "ffmpeg", "node", "python"]
         elif skill_id in {"dasheng-finance-data", "dasheng-hotspot-radar", "feishu-doc-creator"}:
             tools = sorted(set(tools + ["python"]))
         else:
