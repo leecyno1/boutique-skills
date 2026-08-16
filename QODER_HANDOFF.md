@@ -4,10 +4,10 @@
 
 ## 仓库信息
 
-- 路径：/Volumes/PSSD/Projects/boutique-skills
+- 路径：/Volumes/PSSD/Projects/boutique-openclaw-skills
 - 默认分支：main
-- GitHub：https://github.com/leecyno1/boutique-skills
-- Gitee：https://gitee.com/leecyno1/boutique-skills
+- GitHub：https://github.com/leecyno1/boutique-openclaw-skills
+- Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills
 - 当前提交：b9a4a62 Add reviewed Dasheng VOX video skills
 - 当前技能数：396
 - 标准包：34 个 Skill + 2 个组合包
@@ -85,10 +85,8 @@
 - 提交后同步两个远端：
 
     git push origin main
-    git push gitee-leecyno1 main
     git fetch origin main --quiet
-    git fetch gitee-leecyno1 main --quiet
-    git rev-parse HEAD origin/main gitee-leecyno1/main
+    git rev-parse HEAD origin/main
 
 ## 定时维护建议
 

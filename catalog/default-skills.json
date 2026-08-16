@@ -2286,6 +2286,516 @@
           ]
         },
         {
+          "id": "alphagbm-alert",
+          "name": "alphagbm-alert",
+          "description": "Price, IV, activity, earnings, and VRP alert research workflows backed by the AlphaGBM API.",
+          "manual": "skills/default/alphagbm-alert/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-alert/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-bps-backtest",
+          "name": "alphagbm-bps-backtest",
+          "description": "Walk-forward Bull Put Spread backtests with signal and no-signal controls.",
+          "manual": "skills/default/alphagbm-bps-backtest/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-bps-backtest/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-buffett-analysis",
+          "name": "alphagbm-buffett-analysis",
+          "description": "Buffett-style business, moat, management, and valuation scorecard.",
+          "manual": "skills/default/alphagbm-buffett-analysis/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-buffett-analysis/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-chokepoint",
+          "name": "alphagbm-chokepoint",
+          "description": "AI supply-chain chokepoint research using concentration and irreplaceability factors.",
+          "manual": "skills/default/alphagbm-chokepoint/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-chokepoint/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-company-profile",
+          "name": "alphagbm-company-profile",
+          "description": "Persistent company research profiles with valuation bands, red flags, and event context.",
+          "manual": "skills/default/alphagbm-company-profile/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-company-profile/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-compare",
+          "name": "alphagbm-compare",
+          "description": "Side-by-side stock and option comparisons across scores, technicals, and valuation.",
+          "manual": "skills/default/alphagbm-compare/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-compare/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-duan-analysis",
+          "name": "alphagbm-duan-analysis",
+          "description": "Duan Yongping-inspired sell-put and covered-call research framework.",
+          "manual": "skills/default/alphagbm-duan-analysis/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-duan-analysis/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-earnings-crush",
+          "name": "alphagbm-earnings-crush",
+          "description": "Earnings implied-move, historical IV-crush, and hypothetical strategy analysis.",
+          "manual": "skills/default/alphagbm-earnings-crush/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-earnings-crush/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-fear-score",
+          "name": "alphagbm-fear-score",
+          "description": "Composite ticker-level fear score from volatility, momentum, and options signals.",
+          "manual": "skills/default/alphagbm-fear-score/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-fear-score/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-greeks",
+          "name": "alphagbm-greeks",
+          "description": "First- and second-order option Greeks with position aggregation and scenarios.",
+          "manual": "skills/default/alphagbm-greeks/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-greeks/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-health-check",
+          "name": "alphagbm-health-check",
+          "description": "Research knowledge-base health checks for stale profiles, thesis drift, and gaps.",
+          "manual": "skills/default/alphagbm-health-check/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-health-check/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-hedge-advisor",
+          "name": "alphagbm-hedge-advisor",
+          "description": "Scenario-driven downside hedge research for existing stock positions.",
+          "manual": "skills/default/alphagbm-hedge-advisor/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-hedge-advisor/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-investment-thesis",
+          "name": "alphagbm-investment-thesis",
+          "description": "Create and monitor structured investment theses and exit conditions.",
+          "manual": "skills/default/alphagbm-investment-thesis/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-investment-thesis/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-iv-rank",
+          "name": "alphagbm-iv-rank",
+          "description": "IV Rank and IV Percentile analysis against 252-day history.",
+          "manual": "skills/default/alphagbm-iv-rank/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-iv-rank/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-macro-view",
+          "name": "alphagbm-macro-view",
+          "description": "Portfolio-linked tracking for VIX, yields, dollar, commodities, and macro indicators.",
+          "manual": "skills/default/alphagbm-macro-view/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-macro-view/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-market-sentiment",
+          "name": "alphagbm-market-sentiment",
+          "description": "Market regime dashboard using VIX, put/call, breadth, and sector rotation.",
+          "manual": "skills/default/alphagbm-market-sentiment/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-market-sentiment/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-marks-cycle",
+          "name": "alphagbm-marks-cycle",
+          "description": "Howard Marks-style market-cycle position score and offense/defense framing.",
+          "manual": "skills/default/alphagbm-marks-cycle/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-marks-cycle/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-options-score",
+          "name": "alphagbm-options-score",
+          "description": "Multi-factor ranking of option contracts by liquidity, IV, Greeks, and payoff.",
+          "manual": "skills/default/alphagbm-options-score/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-score/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-options-strategy",
+          "name": "alphagbm-options-strategy",
+          "description": "Multi-leg option strategy research from directional and volatility views.",
+          "manual": "skills/default/alphagbm-options-strategy/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-strategy/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-pnl-simulator",
+          "name": "alphagbm-pnl-simulator",
+          "description": "Option position P&L, breakeven, time, IV, and stress-scenario simulation.",
+          "manual": "skills/default/alphagbm-pnl-simulator/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-pnl-simulator/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-polymarket",
+          "name": "alphagbm-polymarket",
+          "description": "Prediction-market versus options-implied probability comparison.",
+          "manual": "skills/default/alphagbm-polymarket/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-polymarket/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-stock-analysis",
+          "name": "alphagbm-stock-analysis",
+          "description": "Five-pillar stock analysis across fundamentals, technicals, sentiment, flow, and valuation.",
+          "manual": "skills/default/alphagbm-stock-analysis/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-stock-analysis/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-take-profit",
+          "name": "alphagbm-take-profit",
+          "description": "Historical holdability and tiered profit-taking strategy comparison.",
+          "manual": "skills/default/alphagbm-take-profit/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-take-profit/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-tepper-signal",
+          "name": "alphagbm-tepper-signal",
+          "description": "David Tepper-inspired panic-condition signal using VIX, fear, and quality filters.",
+          "manual": "skills/default/alphagbm-tepper-signal/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-tepper-signal/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-theme-research",
+          "name": "alphagbm-theme-research",
+          "description": "Create and monitor ticker baskets organized around investment themes.",
+          "manual": "skills/default/alphagbm-theme-research/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-theme-research/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-unusual-activity",
+          "name": "alphagbm-unusual-activity",
+          "description": "Unusual options activity research using volume/OI, blocks, strikes, and premium flow.",
+          "manual": "skills/default/alphagbm-unusual-activity/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-unusual-activity/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-vix-status",
+          "name": "alphagbm-vix-status",
+          "description": "VIX regime classification with historical percentile and strategy context.",
+          "manual": "skills/default/alphagbm-vix-status/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vix-status/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-vol-smile",
+          "name": "alphagbm-vol-smile",
+          "description": "Single-expiry implied-volatility smile, skew, and risk-reversal analysis.",
+          "manual": "skills/default/alphagbm-vol-smile/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-smile/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-vol-surface",
+          "name": "alphagbm-vol-surface",
+          "description": "Cross-strike and cross-expiry implied-volatility surface analysis.",
+          "manual": "skills/default/alphagbm-vol-surface/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-surface/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
+          "id": "alphagbm-watchlist",
+          "name": "alphagbm-watchlist",
+          "description": "Watchlist monitoring for price, IV, activity, earnings, and score changes.",
+          "manual": "skills/default/alphagbm-watchlist/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-watchlist/SKILL.md",
+          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
+          "requires_api_keys": true,
+          "api_keys": [
+            "ALPHAGBM_API_KEY"
+          ],
+          "groups": [
+            "finance",
+            "alphagbm",
+            "optional"
+          ]
+        },
+        {
           "id": "android-native-dev",
           "name": "android-native-dev",
           "description": "Android native application development and UI design guide.",
@@ -3728,20 +4238,6 @@
           ]
         },
         {
-          "id": "bilibili-upload-bridge",
-          "name": "bilibili-upload-bridge",
-          "description": "Use when Dasheng Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.",
-          "manual": "skills/default/bilibili-upload-bridge/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/bilibili-upload-bridge/SKILL.md",
-          "source": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "self_media"
-          ]
-        },
-        {
           "id": "behavior-validator",
           "name": "behavior-validator",
           "description": "Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts.",
@@ -3754,6 +4250,20 @@
             "openclaw-official",
             "quality-assurance",
             "behavior-testing"
+          ]
+        },
+        {
+          "id": "bilibili-upload-bridge",
+          "name": "bilibili-upload-bridge",
+          "description": "Use when Dasheng Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.",
+          "manual": "skills/default/bilibili-upload-bridge/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/bilibili-upload-bridge/SKILL.md",
+          "source": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "dasheng_media_workflow",
+            "self_media"
           ]
         },
         {
@@ -3805,6 +4315,21 @@
           "api_keys": [],
           "groups": [
             "trading_finance"
+          ]
+        },
+        {
+          "id": "btc-bottom-model",
+          "name": "btc-bottom-model",
+          "description": "Bitcoin cycle heat model using 13 market, derivatives, on-chain, momentum, and flow indicators with independently verified weighted scoring.",
+          "manual": "skills/default/btc-bottom-model/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/btc-bottom-model/SKILL.md",
+          "source": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "crypto",
+            "day1global-skills"
           ]
         },
         {
@@ -4157,6 +4682,22 @@
           ]
         },
         {
+          "id": "dasheng-video-omni-browser",
+          "name": "dasheng-video-omni-browser",
+          "description": "Use an existing signed-in Chrome Gemini Omni session to generate one approximately 10-second VOX clip per approved reference image, with a bundled manifest builder and explicit safety boundaries.",
+          "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
+          "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "dasheng_media_workflow",
+            "media-generation",
+            "browser-automation",
+            "optional"
+          ]
+        },
+        {
           "id": "dasheng-video-roughcut",
           "name": "dasheng-video-roughcut",
           "description": "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path, the guarded Palmier MCP experimental path, or the Jianying production fallback.",
@@ -4196,6 +4737,22 @@
           "groups": [
             "dasheng_media_workflow",
             "self_media"
+          ]
+        },
+        {
+          "id": "dasheng-vox-skills",
+          "name": "dasheng-vox-skills",
+          "description": "Orchestrate evidence-led VOX video production with script and storyboard gates, a resumable shot manifest, Shotcraft and Remotion routing, official Gemini or signed-in browser generation, and per-shot QC.",
+          "manual": "skills/default/dasheng-vox-skills/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
+          "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "dasheng_media_workflow",
+            "media-generation",
+            "video-orchestration",
+            "optional"
           ]
         },
         {
@@ -4527,6 +5084,22 @@
           ]
         },
         {
+          "id": "eigenflux",
+          "name": "eigenflux",
+          "description": "Connect Codex to the EigenFlux agent broadcast network through the official MCP plugin, with local read-only defaults and explicit approval for publishing, messaging, profile changes, scheduling, orders, and payments.",
+          "manual": "skills/default/eigenflux/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/eigenflux/SKILL.md",
+          "source": "https://github.com/phronesis-io/codex-eigenflux",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "agent-network",
+            "broadcast",
+            "communication",
+            "codex-plugin"
+          ]
+        },
+        {
           "id": "emil-design-eng",
           "name": "emil-design-eng",
           "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
@@ -4851,6 +5424,118 @@
           ]
         },
         {
+          "id": "gsap-core",
+          "name": "gsap-core",
+          "description": "Official GSAP skill for core tweens, targets, properties, easing, staggers, callbacks, control methods, and matchMedia.",
+          "manual": "skills/default/gsap-core/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-core/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-frameworks",
+          "name": "gsap-frameworks",
+          "description": "Official GSAP integration guidance for Vue, Svelte, Nuxt, Next.js, Astro, vanilla JavaScript, and framework lifecycle cleanup.",
+          "manual": "skills/default/gsap-frameworks/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-frameworks/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-performance",
+          "name": "gsap-performance",
+          "description": "Official GSAP skill for animation performance, transform and opacity choices, batching, cleanup, reduced motion, and avoiding layout thrashing.",
+          "manual": "skills/default/gsap-performance/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-performance/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-plugins",
+          "name": "gsap-plugins",
+          "description": "Official GSAP skill for Flip, Draggable, Observer, SplitText, MorphSVG, DrawSVG, MotionPath, CustomEase, and other plugins.",
+          "manual": "skills/default/gsap-plugins/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-plugins/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-plugins",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-react",
+          "name": "gsap-react",
+          "description": "Official GSAP skill for React integration with useGSAP, gsap.context, refs, cleanup, Strict Mode, and route transitions.",
+          "manual": "skills/default/gsap-react/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-react/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-scrolltrigger",
+          "name": "gsap-scrolltrigger",
+          "description": "Official GSAP skill for ScrollTrigger setup, scrub, pinning, snapping, batching, scroller proxies, responsive refresh, and cleanup.",
+          "manual": "skills/default/gsap-scrolltrigger/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-scrolltrigger/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-timeline",
+          "name": "gsap-timeline",
+          "description": "Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing.",
+          "manual": "skills/default/gsap-timeline/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-timeline/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
+          "id": "gsap-utils",
+          "name": "gsap-utils",
+          "description": "Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute.",
+          "manual": "skills/default/gsap-utils/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-utils/SKILL.md",
+          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "gsap-skills",
+            "design-animation"
+          ]
+        },
+        {
           "id": "guizang-ppt-skill",
           "name": "guizang-ppt-skill",
           "description": "文章一键生成网页 PPT，自动提炼要点，支持墨水与瑞士风版式，可导出 PDF/PNG。",
@@ -5027,6 +5712,20 @@
           "groups": [
             "taste-skill",
             "design-ui"
+          ]
+        },
+        {
+          "id": "impeccable",
+          "name": "impeccable",
+          "description": "Production-grade frontend design, redesign, critique, audit, polish, accessibility, responsive, typography, motion, and design-system workflows with focused commands and local detectors.",
+          "manual": "skills/default/impeccable/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
+          "source": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "design-ui",
+            "frontend-craft"
           ]
         },
         {
@@ -5523,6 +6222,21 @@
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/llmquant-strategies/SKILL.md"
         },
         {
+          "id": "macro-liquidity",
+          "name": "macro-liquidity",
+          "description": "Macro liquidity monitor for Fed net liquidity, SOFR funding stress, MOVE volatility, and yen carry-trade risk.",
+          "manual": "skills/default/macro-liquidity/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-liquidity/SKILL.md",
+          "source": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "day1global-skills",
+            "macro-liquidity"
+          ]
+        },
+        {
           "id": "macro-regime-detector",
           "name": "macro-regime-detector",
           "description": "Detect structural macro regime transitions (1-2 year horizon) using cross-asset ratio analysis.",
@@ -5932,6 +6646,21 @@
           ]
         },
         {
+          "id": "paper-framework-figure-studio-pro",
+          "name": "paper-framework-figure-studio-pro",
+          "description": "Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow.",
+          "manual": "skills/default/paper-framework-figure-studio-pro/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/paper-framework-figure-studio-pro/SKILL.md",
+          "source": "https://github.com/c-narcissus/paper-framework-figure-studio-pro",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "research-figures",
+            "scientific-visualization",
+            "human-in-the-loop"
+          ]
+        },
+        {
           "id": "paperless-docs",
           "name": "paperless-ngx",
           "description": "Manage documents in Paperless-ngx - search, upload, tag, and retrieve.",
@@ -6196,6 +6925,22 @@
           "api_keys": [],
           "groups": [
             "trading_finance"
+          ]
+        },
+        {
+          "id": "scientific-illustrator",
+          "name": "scientific-illustrator",
+          "description": "Design, recreate, audit, and correct scientific figures as editable objects in Draw.io Desktop, Microsoft PowerPoint, or WPS Presentation through a local MCP plugin.",
+          "manual": "skills/default/scientific-illustrator/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/scientific-illustrator/SKILL.md",
+          "source": "https://github.com/icebird1998/scientific-illustrator",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "research-figures",
+            "scientific-visualization",
+            "editable-diagrams",
+            "codex-plugin"
           ]
         },
         {
@@ -6604,6 +7349,21 @@
           "groups": []
         },
         {
+          "id": "tech-earnings-deepdive",
+          "name": "tech-earnings-deepdive",
+          "description": "Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers.",
+          "manual": "skills/default/tech-earnings-deepdive/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/tech-earnings-deepdive/SKILL.md",
+          "source": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "day1global-skills",
+            "earnings-research"
+          ]
+        },
+        {
           "id": "technical-analyst",
           "name": "technical-analyst",
           "description": "This skill should be used when analyzing weekly price charts for stocks, stock indices, cryptocurrencies, or forex pairs.",
@@ -6752,6 +7512,21 @@
           ]
         },
         {
+          "id": "us-market-sentiment",
+          "name": "us-market-sentiment",
+          "description": "US market sentiment dashboard using NAAIM exposure, institutional allocation, retail flows, forward P/E, and hedge-fund leverage.",
+          "manual": "skills/default/us-market-sentiment/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-market-sentiment/SKILL.md",
+          "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "day1global-skills",
+            "market-sentiment"
+          ]
+        },
+        {
           "id": "us-stock-analysis",
           "name": "us-stock-analysis",
           "description": "Comprehensive US stock analysis including fundamental analysis (financial metrics, business quality, valuation), technical analysis (indicators, chart patterns, support/resistance), stock comparisons, and investment repo",
@@ -6765,6 +7540,21 @@
           ]
         },
         {
+          "id": "us-value-investing",
+          "name": "us-value-investing",
+          "description": "Four-dimension US value-investing checklist covering sustainable ROE, debt safety, free-cash-flow quality, and economic moat.",
+          "manual": "skills/default/us-value-investing/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-value-investing/SKILL.md",
+          "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "day1global-skills",
+            "value-investing"
+          ]
+        },
+        {
           "id": "using-superpowers",
           "name": "using-superpowers",
           "description": "Use when starting any conversation to check and apply relevant skills.",
@@ -6775,6 +7565,22 @@
           "api_keys": [],
           "groups": [
             "default_sentinel"
+          ]
+        },
+        {
+          "id": "uzi-skill",
+          "name": "uzi-skill",
+          "description": "Application-style A-share, Hong Kong, and US stock-research suite with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and source-controlled HTML reports.",
+          "manual": "skills/default/uzi-skill/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/uzi-skill/SKILL.md",
+          "source": "https://github.com/wbh604/UZI-Skill",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "a-share",
+            "equity-research",
+            "optional"
           ]
         },
         {
@@ -6819,6 +7625,37 @@
           "api_keys": [],
           "groups": [
             "default_sentinel"
+          ]
+        },
+        {
+          "id": "video-autopilot-kit",
+          "name": "video-autopilot-kit",
+          "description": "Operate ffmpeg-first short-form and long-form video production, CapCut draft automation, delivery QA, interview packaging, competitor teardown, and channel review with calibrated gates.",
+          "manual": "skills/default/video-autopilot-kit/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-autopilot-kit/SKILL.md",
+          "source": "https://github.com/Hao0321/video-autopilot-kit",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "media-generation",
+            "short-video",
+            "ffmpeg",
+            "capcut"
+          ]
+        },
+        {
+          "id": "video-shotcraft",
+          "name": "video-shotcraft",
+          "description": "Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates.",
+          "manual": "skills/default/video-shotcraft/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-shotcraft/SKILL.md",
+          "source": "https://github.com/Vincentwei1021/video-shotcraft",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "media-generation",
+            "remotion",
+            "product-video"
           ]
         },
         {
@@ -6973,6 +7810,21 @@
           ]
         },
         {
+          "id": "westockdata",
+          "name": "westockdata",
+          "description": "Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements.",
+          "manual": "skills/default/westockdata/SKILL.md",
+          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/westockdata/SKILL.md",
+          "source": "https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4",
+          "requires_api_keys": false,
+          "api_keys": [],
+          "groups": [
+            "finance",
+            "cross-market-data",
+            "optional"
+          ]
+        },
+        {
           "id": "writing-plans",
           "name": "writing-plans",
           "description": "Use when writing implementation plans from specs before editing code.",
@@ -7061,858 +7913,6 @@
           "api_keys": [],
           "groups": [
             "trading_finance"
-          ]
-        },
-        {
-          "id": "impeccable",
-          "name": "impeccable",
-          "description": "Production-grade frontend design, redesign, critique, audit, polish, accessibility, responsive, typography, motion, and design-system workflows with focused commands and local detectors.",
-          "manual": "skills/default/impeccable/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
-          "source": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "design-ui",
-            "frontend-craft"
-          ]
-        },
-        {
-          "id": "gsap-core",
-          "name": "gsap-core",
-          "description": "Official GSAP skill for core tweens, targets, properties, easing, staggers, callbacks, control methods, and matchMedia.",
-          "manual": "skills/default/gsap-core/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-core/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-frameworks",
-          "name": "gsap-frameworks",
-          "description": "Official GSAP integration guidance for Vue, Svelte, Nuxt, Next.js, Astro, vanilla JavaScript, and framework lifecycle cleanup.",
-          "manual": "skills/default/gsap-frameworks/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-frameworks/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-performance",
-          "name": "gsap-performance",
-          "description": "Official GSAP skill for animation performance, transform and opacity choices, batching, cleanup, reduced motion, and avoiding layout thrashing.",
-          "manual": "skills/default/gsap-performance/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-performance/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-plugins",
-          "name": "gsap-plugins",
-          "description": "Official GSAP skill for Flip, Draggable, Observer, SplitText, MorphSVG, DrawSVG, MotionPath, CustomEase, and other plugins.",
-          "manual": "skills/default/gsap-plugins/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-plugins/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-plugins",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-react",
-          "name": "gsap-react",
-          "description": "Official GSAP skill for React integration with useGSAP, gsap.context, refs, cleanup, Strict Mode, and route transitions.",
-          "manual": "skills/default/gsap-react/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-react/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-react",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-scrolltrigger",
-          "name": "gsap-scrolltrigger",
-          "description": "Official GSAP skill for ScrollTrigger setup, scrub, pinning, snapping, batching, scroller proxies, responsive refresh, and cleanup.",
-          "manual": "skills/default/gsap-scrolltrigger/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-scrolltrigger/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-timeline",
-          "name": "gsap-timeline",
-          "description": "Official GSAP skill for timelines, the position parameter, labels, nesting, defaults, playback, and animation sequencing.",
-          "manual": "skills/default/gsap-timeline/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-timeline/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "gsap-utils",
-          "name": "gsap-utils",
-          "description": "Official GSAP skill for gsap.utils helpers including clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe, and distribute.",
-          "manual": "skills/default/gsap-utils/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gsap-utils/SKILL.md",
-          "source": "https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "gsap-skills",
-            "design-animation"
-          ]
-        },
-        {
-          "id": "video-shotcraft",
-          "name": "video-shotcraft",
-          "description": "Create cinematic product videos with Remotion using shot recipe cards, real product screenshots, 2.5D camera moves, beat-synced cuts, reusable code assets, and structured review gates.",
-          "manual": "skills/default/video-shotcraft/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-shotcraft/SKILL.md",
-          "source": "https://github.com/Vincentwei1021/video-shotcraft",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "media-generation",
-            "remotion",
-            "product-video"
-          ]
-        },
-        {
-          "id": "video-autopilot-kit",
-          "name": "video-autopilot-kit",
-          "description": "Operate ffmpeg-first short-form and long-form video production, CapCut draft automation, delivery QA, interview packaging, competitor teardown, and channel review with calibrated gates.",
-          "manual": "skills/default/video-autopilot-kit/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-autopilot-kit/SKILL.md",
-          "source": "https://github.com/Hao0321/video-autopilot-kit",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "media-generation",
-            "short-video",
-            "ffmpeg",
-            "capcut"
-          ]
-        },
-        {
-          "id": "paper-framework-figure-studio-pro",
-          "name": "paper-framework-figure-studio-pro",
-          "description": "Design publication-ready research-paper framework, architecture, pipeline, method, system-flow, and mechanism figures through a source-grounded S0-S5 human-in-the-loop workflow.",
-          "manual": "skills/default/paper-framework-figure-studio-pro/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/paper-framework-figure-studio-pro/SKILL.md",
-          "source": "https://github.com/c-narcissus/paper-framework-figure-studio-pro",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "research-figures",
-            "scientific-visualization",
-            "human-in-the-loop"
-          ]
-        },
-        {
-          "id": "scientific-illustrator",
-          "name": "scientific-illustrator",
-          "description": "Design, recreate, audit, and correct scientific figures as editable objects in Draw.io Desktop, Microsoft PowerPoint, or WPS Presentation through a local MCP plugin.",
-          "manual": "skills/default/scientific-illustrator/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/scientific-illustrator/SKILL.md",
-          "source": "https://github.com/icebird1998/scientific-illustrator",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "research-figures",
-            "scientific-visualization",
-            "editable-diagrams",
-            "codex-plugin"
-          ]
-        },
-        {
-          "id": "eigenflux",
-          "name": "eigenflux",
-          "description": "Connect Codex to the EigenFlux agent broadcast network through the official MCP plugin, with local read-only defaults and explicit approval for publishing, messaging, profile changes, scheduling, orders, and payments.",
-          "manual": "skills/default/eigenflux/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/eigenflux/SKILL.md",
-          "source": "https://github.com/phronesis-io/codex-eigenflux",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "agent-network",
-            "broadcast",
-            "communication",
-            "codex-plugin"
-          ]
-        },
-        {
-          "id": "tech-earnings-deepdive",
-          "name": "tech-earnings-deepdive",
-          "description": "Institutional-style technology earnings deep dive with 16 research modules, six investment lenses, multi-method valuation, variant view, anti-bias checks, and action triggers.",
-          "manual": "skills/default/tech-earnings-deepdive/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/tech-earnings-deepdive/SKILL.md",
-          "source": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "day1global-skills",
-            "earnings-research"
-          ]
-        },
-        {
-          "id": "us-value-investing",
-          "name": "us-value-investing",
-          "description": "Four-dimension US value-investing checklist covering sustainable ROE, debt safety, free-cash-flow quality, and economic moat.",
-          "manual": "skills/default/us-value-investing/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-value-investing/SKILL.md",
-          "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "day1global-skills",
-            "value-investing"
-          ]
-        },
-        {
-          "id": "us-market-sentiment",
-          "name": "us-market-sentiment",
-          "description": "US market sentiment dashboard using NAAIM exposure, institutional allocation, retail flows, forward P/E, and hedge-fund leverage.",
-          "manual": "skills/default/us-market-sentiment/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/us-market-sentiment/SKILL.md",
-          "source": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "day1global-skills",
-            "market-sentiment"
-          ]
-        },
-        {
-          "id": "macro-liquidity",
-          "name": "macro-liquidity",
-          "description": "Macro liquidity monitor for Fed net liquidity, SOFR funding stress, MOVE volatility, and yen carry-trade risk.",
-          "manual": "skills/default/macro-liquidity/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-liquidity/SKILL.md",
-          "source": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "day1global-skills",
-            "macro-liquidity"
-          ]
-        },
-        {
-          "id": "btc-bottom-model",
-          "name": "btc-bottom-model",
-          "description": "Bitcoin cycle heat model using 13 market, derivatives, on-chain, momentum, and flow indicators with independently verified weighted scoring.",
-          "manual": "skills/default/btc-bottom-model/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/btc-bottom-model/SKILL.md",
-          "source": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "crypto",
-            "day1global-skills"
-          ]
-        },
-        {
-          "id": "alphagbm-alert",
-          "name": "alphagbm-alert",
-          "description": "Price, IV, activity, earnings, and VRP alert research workflows backed by the AlphaGBM API.",
-          "manual": "skills/default/alphagbm-alert/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-alert/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-bps-backtest",
-          "name": "alphagbm-bps-backtest",
-          "description": "Walk-forward Bull Put Spread backtests with signal and no-signal controls.",
-          "manual": "skills/default/alphagbm-bps-backtest/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-bps-backtest/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-buffett-analysis",
-          "name": "alphagbm-buffett-analysis",
-          "description": "Buffett-style business, moat, management, and valuation scorecard.",
-          "manual": "skills/default/alphagbm-buffett-analysis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-buffett-analysis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-chokepoint",
-          "name": "alphagbm-chokepoint",
-          "description": "AI supply-chain chokepoint research using concentration and irreplaceability factors.",
-          "manual": "skills/default/alphagbm-chokepoint/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-chokepoint/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-company-profile",
-          "name": "alphagbm-company-profile",
-          "description": "Persistent company research profiles with valuation bands, red flags, and event context.",
-          "manual": "skills/default/alphagbm-company-profile/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-company-profile/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-compare",
-          "name": "alphagbm-compare",
-          "description": "Side-by-side stock and option comparisons across scores, technicals, and valuation.",
-          "manual": "skills/default/alphagbm-compare/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-compare/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-duan-analysis",
-          "name": "alphagbm-duan-analysis",
-          "description": "Duan Yongping-inspired sell-put and covered-call research framework.",
-          "manual": "skills/default/alphagbm-duan-analysis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-duan-analysis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-earnings-crush",
-          "name": "alphagbm-earnings-crush",
-          "description": "Earnings implied-move, historical IV-crush, and hypothetical strategy analysis.",
-          "manual": "skills/default/alphagbm-earnings-crush/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-earnings-crush/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-fear-score",
-          "name": "alphagbm-fear-score",
-          "description": "Composite ticker-level fear score from volatility, momentum, and options signals.",
-          "manual": "skills/default/alphagbm-fear-score/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-fear-score/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-greeks",
-          "name": "alphagbm-greeks",
-          "description": "First- and second-order option Greeks with position aggregation and scenarios.",
-          "manual": "skills/default/alphagbm-greeks/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-greeks/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-health-check",
-          "name": "alphagbm-health-check",
-          "description": "Research knowledge-base health checks for stale profiles, thesis drift, and gaps.",
-          "manual": "skills/default/alphagbm-health-check/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-health-check/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-hedge-advisor",
-          "name": "alphagbm-hedge-advisor",
-          "description": "Scenario-driven downside hedge research for existing stock positions.",
-          "manual": "skills/default/alphagbm-hedge-advisor/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-hedge-advisor/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-investment-thesis",
-          "name": "alphagbm-investment-thesis",
-          "description": "Create and monitor structured investment theses and exit conditions.",
-          "manual": "skills/default/alphagbm-investment-thesis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-investment-thesis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-iv-rank",
-          "name": "alphagbm-iv-rank",
-          "description": "IV Rank and IV Percentile analysis against 252-day history.",
-          "manual": "skills/default/alphagbm-iv-rank/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-iv-rank/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-macro-view",
-          "name": "alphagbm-macro-view",
-          "description": "Portfolio-linked tracking for VIX, yields, dollar, commodities, and macro indicators.",
-          "manual": "skills/default/alphagbm-macro-view/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-macro-view/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-market-sentiment",
-          "name": "alphagbm-market-sentiment",
-          "description": "Market regime dashboard using VIX, put/call, breadth, and sector rotation.",
-          "manual": "skills/default/alphagbm-market-sentiment/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-market-sentiment/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-marks-cycle",
-          "name": "alphagbm-marks-cycle",
-          "description": "Howard Marks-style market-cycle position score and offense/defense framing.",
-          "manual": "skills/default/alphagbm-marks-cycle/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-marks-cycle/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-options-score",
-          "name": "alphagbm-options-score",
-          "description": "Multi-factor ranking of option contracts by liquidity, IV, Greeks, and payoff.",
-          "manual": "skills/default/alphagbm-options-score/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-score/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-options-strategy",
-          "name": "alphagbm-options-strategy",
-          "description": "Multi-leg option strategy research from directional and volatility views.",
-          "manual": "skills/default/alphagbm-options-strategy/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-options-strategy/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-pnl-simulator",
-          "name": "alphagbm-pnl-simulator",
-          "description": "Option position P&L, breakeven, time, IV, and stress-scenario simulation.",
-          "manual": "skills/default/alphagbm-pnl-simulator/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-pnl-simulator/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-polymarket",
-          "name": "alphagbm-polymarket",
-          "description": "Prediction-market versus options-implied probability comparison.",
-          "manual": "skills/default/alphagbm-polymarket/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-polymarket/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-stock-analysis",
-          "name": "alphagbm-stock-analysis",
-          "description": "Five-pillar stock analysis across fundamentals, technicals, sentiment, flow, and valuation.",
-          "manual": "skills/default/alphagbm-stock-analysis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-stock-analysis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-take-profit",
-          "name": "alphagbm-take-profit",
-          "description": "Historical holdability and tiered profit-taking strategy comparison.",
-          "manual": "skills/default/alphagbm-take-profit/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-take-profit/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-tepper-signal",
-          "name": "alphagbm-tepper-signal",
-          "description": "David Tepper-inspired panic-condition signal using VIX, fear, and quality filters.",
-          "manual": "skills/default/alphagbm-tepper-signal/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-tepper-signal/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-theme-research",
-          "name": "alphagbm-theme-research",
-          "description": "Create and monitor ticker baskets organized around investment themes.",
-          "manual": "skills/default/alphagbm-theme-research/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-theme-research/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-unusual-activity",
-          "name": "alphagbm-unusual-activity",
-          "description": "Unusual options activity research using volume/OI, blocks, strikes, and premium flow.",
-          "manual": "skills/default/alphagbm-unusual-activity/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-unusual-activity/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-vix-status",
-          "name": "alphagbm-vix-status",
-          "description": "VIX regime classification with historical percentile and strategy context.",
-          "manual": "skills/default/alphagbm-vix-status/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vix-status/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-vol-smile",
-          "name": "alphagbm-vol-smile",
-          "description": "Single-expiry implied-volatility smile, skew, and risk-reversal analysis.",
-          "manual": "skills/default/alphagbm-vol-smile/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-smile/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-vol-surface",
-          "name": "alphagbm-vol-surface",
-          "description": "Cross-strike and cross-expiry implied-volatility surface analysis.",
-          "manual": "skills/default/alphagbm-vol-surface/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-surface/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-watchlist",
-          "name": "alphagbm-watchlist",
-          "description": "Watchlist monitoring for price, IV, activity, earnings, and score changes.",
-          "manual": "skills/default/alphagbm-watchlist/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-watchlist/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "westockdata",
-          "name": "westockdata",
-          "description": "Version-pinned optional CLI adapter for querying A-share, Hong Kong, and US quotes, K-lines, financial statements, flows, technical indicators, shareholders, dividends, ETFs, boards, and calendars, with explicit provenance and cross-check requirements.",
-          "manual": "skills/default/westockdata/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/westockdata/SKILL.md",
-          "source": "https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "cross-market-data",
-            "optional"
-          ]
-        },
-        {
-          "id": "uzi-skill",
-          "name": "uzi-skill",
-          "description": "Application-style A-share, Hong Kong, and US stock-research suite with data collection, valuation, investor-panel simulation, LHB analysis, risk-signal detection, portfolio comparison, and source-controlled HTML reports.",
-          "manual": "skills/default/uzi-skill/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/uzi-skill/SKILL.md",
-          "source": "https://github.com/wbh604/UZI-Skill",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "a-share",
-            "equity-research",
-            "optional"
-          ]
-        },
-        {
-          "id": "dasheng-video-omni-browser",
-          "name": "dasheng-video-omni-browser",
-          "description": "Use an existing signed-in Chrome Gemini Omni session to generate one approximately 10-second VOX clip per approved reference image, with a bundled manifest builder and explicit safety boundaries.",
-          "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
-          "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "media-generation",
-            "browser-automation",
-            "optional"
-          ]
-        },
-        {
-          "id": "dasheng-vox-skills",
-          "name": "dasheng-vox-skills",
-          "description": "Orchestrate evidence-led VOX video production with script and storyboard gates, a resumable shot manifest, Shotcraft and Remotion routing, official Gemini or signed-in browser generation, and per-shot QC.",
-          "manual": "skills/default/dasheng-vox-skills/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
-          "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "media-generation",
-            "video-orchestration",
-            "optional"
           ]
         }
       ]

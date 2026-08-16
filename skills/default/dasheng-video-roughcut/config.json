@@ -2,7 +2,7 @@
   "name": "dasheng-video-roughcut",
   "version": "0.1.0",
   "stage": "video",
-  "description": "真人口播粗剪：FunASR/FFmpeg 基准链路、Palmier MCP 实验链路，以及剪映生产兜底链路。",
+  "description": "真人口播粗剪：FunASR/FFmpeg 基准链路，以及现有剪映生产链路。",
   "runner": "python",
   "entry": "../../scripts/video_roughcut_funasr.py",
   "inputs": {
@@ -12,7 +12,6 @@
     "optional": [
       "hotwords",
       "agent_plan.json",
-      "palmier_plan.json",
       "jianying_draft"
     ]
   },
@@ -21,8 +20,6 @@
     "review page",
     "roughcut mp4",
     "roughcut srt",
-    "palmier operation manifest",
-    "palmier roughcut export",
     "jianying first-pass export",
     "jianying final export",
     "jianying operation log"
@@ -30,27 +27,6 @@
   "hitl": true,
   "routes": {
     "default": "jianying_replay",
-    "palmier_mcp": {
-      "enabled": false,
-      "status": "benchmark_only",
-      "mcp_url": "${PALMIER_MCP_URL:-http://127.0.0.1:19789/mcp}",
-      "allowed_operations": [
-        "create_project",
-        "import_media",
-        "create_timeline",
-        "ripple_delete_ranges",
-        "apply_color",
-        "export_video"
-      ],
-      "blocked_operations": [
-        "remove_words",
-        "undo",
-        "remove_silence",
-        "denoise_audio_per_fragment",
-        "close_project_as_persistence_proof"
-      ],
-      "postprocess": ["ffmpeg_loudness_normalization", "ffmpeg_qc"]
-    },
     "jianying": {
       "enabled": true,
       "status": "production_default",

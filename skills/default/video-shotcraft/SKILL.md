@@ -5,7 +5,7 @@ description: Create cinematic product videos from shot recipe cards, a validated
 
 # video-shotcraft：电影感产品视频制作
 
-一个自包含的制作能力库：104 张镜头配方卡（附 demo 实现源码与动态样片
+一个自包含的制作能力库：152 张镜头配方卡（附 demo 实现源码与动态样片
 画廊）、一支已验收的完整宣传片模板、可复用组件与音频资产、六阶段工作流。
 当前 focus 是 web/桌面产品宣传片，但镜头卡本身是通用动效词汇——
 也可以单独抽卡做任意视频里的单个镜头。
@@ -124,8 +124,10 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
 
 5. **强节奏 BGM 的片子，所有转场和动效必须卡在拍上。**
    用户已选好音乐 → 开工前先做节奏分析（librosa 网格拟合求真实
-   BPM/相位 + 带通找鼓点重音），时间线用拍号 `beatF(n)` 写，渲后从
-   成片抽音轨回测切点误差 ≤3f。方法论见 `references/music-beat-sync.md`。
+   BPM/相位 + kick/snare/hihat 三分类鼓点定位），网格按瞬态覆盖率
+   验收通过后才分镜；时间线用拍号 `beatF(n)` 写，稀疏重音钉真实
+   瞬态而非网格插值点，渲后从成片抽音轨回测切点误差 ≤3f。
+   方法论见 `references/music-beat-sync.md`。
    配了 BGM 的片子终渲固定交付两版：带 BGM 版 + 无 BGM 版（保留 SFX），
    靠 `bgm` inputProp 从同一时间线渲出，方便用户后期自配音乐。
 
@@ -163,6 +165,10 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
 对照 `references/aesthetic-rules.md` 自检；阶段 6 读
 `references/sound-design.md`；卡点片全程贴 `references/music-beat-sync.md`。
 
+所有模式成片交付后，默认询问用户一次是否需要同时导出**剪映工程文件**
+（可在剪映里改字幕内容/字号/颜色、分镜头变速/重排、调整或替换音频）；
+用户需要或直接点名导出时，读 `references/jianying-export.md` 执行。
+
 ## 何时读哪个文件
 
 | 时机 | 读 |
@@ -176,6 +182,7 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
 | 逐镜头实现 | 该镜头卡全文 + 按“参考实现”定位的准确 demo 源码全文 + assets/lib/ 对应组件 |
 | 声音设计 | sound-design.md + assets/audio/ |
 | 验收 | final-review.md + aesthetic-rules.md 全文过 checklist（独立 subagent 执行） |
+| 成片交付后（剪映工程导出） | jianying-export.md + `jianying-export/` 平台模块 |
 
 ## 资产使用方式
 
@@ -195,11 +202,18 @@ SFX；只有完整分镜确认后才进入最终素材采集。用户从 Gallery
   长样本与轻音素材各有名单需特殊处理（sound-design 4.1）。
 - `demos/` 各卡实现源码：多数为自包含灰阶 demo（部分 import
   `demos/_fixtures/Fixtures.tsx` 的假 UI 场景件，个别 import
-  `demos/_textures/` 的真实页面纹理），copy 进 Remotion 项目即可跑。
+  `demos/_textures/` 的真实页面纹理），copy 进 Remotion 项目即可跑；
+  个别 demo 用到 `@remotion/motion-blur`（CameraMotionBlur），需
+  `npm i @remotion/motion-blur`，名单见 `demos/README.md`。
 - `template/` 完整可渲染工程：`npm install && npx remotion render
   src/index.ts AiflPromo out/promo.mp4`。
+- `jianying-export/` 剪映工程导出模块：`mac_draft.py`（Mac 剪映 11.2
+  实测通过）、`windows_draft.py`（按上游支持路径实现，未真机验证）、
+  `smoke_test.py`（新环境先跑的最小冒烟测试）。流程、时间线提取与建轨
+  方法见 `references/jianying-export.md`；需 venv + `pip install
+  pyJianYingDraft`。
 - `gallery/` 静态画廊：优先直接给用户在线版
   https://vincentwei1021.github.io/video-shotcraft/library.html ；
   本地跑则先 `gallery/fetch-media.sh` 拉样片（mp4 不在 git 里），再
-  `cd gallery && python3 -m http.server 4178`。104 卡 161 条动态样片
+  `cd gallery && python3 -m http.server 4178`。152 卡 209 条动态样片
   可浏览/搜索/多选复制卡名——适合让用户看着样片挑镜头。

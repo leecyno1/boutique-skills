@@ -2,11 +2,11 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 127 |
+| `api-key` | 130 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 20 |
 | `direct` | 153 |
-| `mcp-required` | 74 |
+| `mcp-required` | 73 |
 
 ## api-key
 
@@ -51,6 +51,7 @@
 | `baoyu-article-illustrator` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `baoyu-youtube-transcript` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg`, `python` | `medium` |
+| `dasheng-vox-skills` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg` | `medium` |
 | `dual-axis-skill-reviewer` | `OPENAI_API_KEY` | 无 | `medium` |
 | `guizang-social-card-skill` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg` | `medium` |
 | `ima` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
@@ -77,6 +78,7 @@
 | `breakout-trade-planner` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `canslim-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `company-valuation` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
+| `dasheng-video-omni-browser` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg` | `medium` |
 | `data-quality-checker` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `dividend-growth-pullback-screener` | `FINVIZ_API_KEY`, `FMP_API_KEY` | `python` | `medium` |
 | `downtrend-duration-analyzer` | `FMP_API_KEY` | 无 | `medium` |
@@ -126,6 +128,7 @@
 | `vcp-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `agentmail` | `AGENTMAIL_API_KEY` | `browser` | `medium` |
 | `ai-image-generation` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `OPENAI_API_KEY` | 无 | `medium` |
+| `frontend-dev` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg`, `node` | `medium` |
 | `fullstack-dev` | `JWT_SECRET` | `browser`, `node`, `python` | `medium` |
 | `media-downloader` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `PEXELS_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-docx` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
@@ -265,6 +268,7 @@
 | `self-improving-agent-cn` | 无 | 无 | `low` |
 | `skill-designer` | 无 | 无 | `low` |
 | `skill-integration-tester` | 无 | `python` | `low` |
+| `social-content` | 无 | `ffmpeg` | `low` |
 | `stitch-design-taste` | 无 | 无 | `low` |
 | `strategy-pivot-designer` | 无 | 无 | `low` |
 | `telegram-reader` | 无 | 无 | `low` |
@@ -294,7 +298,8 @@
 | `dasheng-stage-transwrite` | 无 | 无 | `low` |
 | `dasheng-style-profiler` | 无 | 无 | `low` |
 | `dasheng-video-director` | 无 | 无 | `low` |
-| `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node` | `low` |
+| `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node`, `python` | `low` |
+| `dasheng-video-roughcut` | 无 | `ffmpeg`, `node` | `low` |
 | `dasheng-video-style-trainer` | 无 | 无 | `low` |
 | `dasheng-video-talking-head` | 无 | `ffmpeg`, `node`, `python` | `low` |
 | `douyin-account-launch-expert` | 无 | 无 | `low` |
@@ -314,11 +319,9 @@
 | `android-native-dev` | 无 | 无 | `low` |
 | `content-strategy` | 无 | 无 | `low` |
 | `flutter-dev` | 无 | 无 | `low` |
-| `frontend-dev` | 无 | `node` | `low` |
 | `ios-application-dev` | 无 | 无 | `low` |
 | `pptx-generator` | 无 | `node` | `low` |
 | `shader-dev` | 无 | 无 | `low` |
-| `social-content` | 无 | `ffmpeg` | `low` |
 | `alphaear-deepear-lite` | 无 | `python` | `medium` |
 | `alphaear-logic-visualizer` | 无 | `python` | `medium` |
 | `alphaear-news` | 无 | `python` | `medium` |
@@ -425,6 +428,5 @@
 | `anthropic-fs-wealth-management-investment-proposal` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-portfolio-rebalance` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-tax-loss-harvesting` | 无 | `mcp` | `medium` |
-| `dasheng-video-roughcut` | 无 | `ffmpeg`, `mcp`, `node` | `medium` |
 | `dasheng-xhs-publish-bridge` | 无 | `browser`, `mcp`, `node` | `medium` |
 | `portfolio-manager` | 无 | `mcp`, `python` | `medium` |

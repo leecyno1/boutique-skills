@@ -2,12 +2,12 @@
 
 ## Default Path
 
-For `talking_head_video`, use `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}` as the production renderer.
+For `explainer_html_video`, `vox_explainer_video`, and `talking_head_video`, use `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}` as the scene renderer. Remotion remains the master timeline.
 
 The stage builder writes:
 
 - `video_storyboard.json`
-- `talking_head_script.md`
+- `voiceover_script.md` or `talking_head_script.md`
 - `html_overlay.html`
 - `render_plan.json`
 - `html_video_project_vars.json`
@@ -16,21 +16,21 @@ The stage builder writes:
 Run the bridge:
 
 ```bash
-python3 scripts/transwrite_html_video_bridge.py \
-  --video-manifest <talking_head_video_manifest.json>
+.venv/bin/python scripts/transwrite_html_video_bridge.py \
+  --video-manifest <video_lane_manifest.json>
 ```
 
 Only execute rendering when explicitly needed:
 
 ```bash
-python3 scripts/transwrite_html_video_bridge.py \
-  --video-manifest <talking_head_video_manifest.json> \
+.venv/bin/python scripts/transwrite_html_video_bridge.py \
+  --video-manifest <video_lane_manifest.json> \
   --execute render
 ```
 
 ## Mode Selection
 
-- No human media: synthetic voice + html-video visual frames.
+- No human media: 16:9 synthetic voice + html-video visual scenes + Remotion master timeline.
 - Human audio/video: transcribe first, then align visuals to the human timeline.
 
 ## Quality Bar

@@ -176,7 +176,7 @@ The agent spins up a Cloudflare Tunnel and gives you a `https://xxx.trycloudflar
 | `/stock-deep-analyzer:screen AAPL` | 5 quant screens · value / growth / quality / GARP / short |
 | `/stock-deep-analyzer:dd BABA` | Due-diligence checklist · 21 items across 5 workstreams |
 | `/stock-deep-analyzer:quick-scan 00700.HK` | 30-second sanity check |
-| `/stock-deep-analyzer:panel-only 600519` | Just run the 51-investor jury — no HTML report |
+| `/stock-deep-analyzer:panel-only 600519` | Just run the 66-investor jury — no HTML report |
 | `/stock-deep-analyzer:scan-trap 600519` | Pump-and-dump / trap detection (8 signals) |
 | `/stock-deep-analyzer:segmental-model 300308` | 🆕 Bottom-up segmental revenue model · 3-scenario × 3-year projection · cross-checks top-down DCF |
 
@@ -341,7 +341,7 @@ A: Yes. `/stock-deep-analyzer:analyze-stock AAPL`, `/stock-deep-analyzer:analyze
 **Q: Can I use English company names?**
 A: Best: use ticker codes (`BABA` / `00700.HK` / `600519.SH`). Name-resolution works for Chinese names (`贵州茅台` → `600519.SH`); for English names prefer the ticker.
 
-**Q: Does the 51-investor panel quote real investors?**
+**Q: Does the 66-investor panel quote real investors?**
 A: Yes. The `quotes-knowledge-base.md` contains real published quotes from 45+ investors (22 Western, 23 Chinese), each with source URLs (Berkshire letters, Oaktree memos, books, interviews). Agents are instructed to mimic each investor's voice **using these real quotes**, not fabricate a "Buffett-style" line.
 
 **Q: Is this investment advice?**

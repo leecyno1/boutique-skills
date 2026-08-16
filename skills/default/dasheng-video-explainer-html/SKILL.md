@@ -1,11 +1,11 @@
 ---
 name: dasheng-video-explainer-html
-description: Use when turning a Dasheng HTML article into a no-human vertical explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.
+description: Use when turning a Dasheng HTML article into a no-human finance explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.
 ---
 
 # Dasheng Video Explainer HTML
 
-正式 1:1 无真人口播交付必须遵循 `docs/technical/no-human-square-video-production-standard.md`。
+正式无真人财经视频默认横版 16:9，并遵循 `docs/technical/no-human-square-video-production-standard.md`；1:1 与 9:16 是适配规格。
 
 ## Role
 
@@ -16,25 +16,25 @@ Build the无真人出镜科普 production line. The article is the fact source; 
 Build the template router, extract the article into a storyboard, then expand it into an HTML Anything video timeline:
 
 ```bash
-python3 scripts/build_html_anything_template_router.py \
+.venv/bin/python scripts/build_html_anything_template_router.py \
   --output configs/video/html_anything_template_router.json
 
-python3 scripts/video_explainer_storyboard.py \
+.venv/bin/python scripts/video_explainer_storyboard.py \
   --html <article.html> \
   --template-router configs/video/html_anything_template_router.json \
   --output <explainer_storyboard.json> \
   --preview-html <storyboard_preview.html>
 
-python3 scripts/build_storyboard_template_review_table.py \
+.venv/bin/python scripts/build_storyboard_template_review_table.py \
   --storyboard <explainer_storyboard.json> \
   --output <storyboard_template_review.html>
 
-python3 scripts/extract_template_preview_frames.py \
+.venv/bin/python scripts/extract_template_preview_frames.py \
   --template-data <template_showcase_data.json> \
   --video <template_showcase_silent.mp4> \
   --output-dir <template_previews_dir>
 
-python3 scripts/build_html_anything_video_timeline.py \
+.venv/bin/python scripts/build_html_anything_video_timeline.py \
   --storyboard <explainer_storyboard.json> \
   --article-html <article.html> \
   --template-router configs/video/html_anything_template_router.json \
@@ -92,7 +92,7 @@ Default state machine:
 - Reuse a coherent footage family as visual connective tissue across the hook, chapter transitions, process explanations, calculation scenes, and recap. Change the selected time range, crop, motion, mask, color treatment, and overlay logic so continuity does not become obvious repetition.
 - A real-B-roll scene must carry source title, publisher/channel, URL, source time range, download date, local path, scene usage, rights-review status, and `evidence_role=context` unless the footage visibly proves the exact claim.
 - Combine tools inside a shot when it improves explanation: real video may be the moving base layer while HTML Video or Remotion supplies numbers, rule diagrams, timelines, chart annotations, and captions. Do not force one shot to use only one tool.
-- For formal square delivery, keep the authored HTML scene, frame-exact Remotion overlays/charts/captions, and audio master as separate layers until the final render. Do not flatten the HTML scene to a still before Remotion.
+- For formal delivery, keep the authored HTML scene, frame-exact Remotion overlays/charts/captions, and audio master as separate layers until the final render. Do not flatten the HTML scene to a still before Remotion.
 - A real-video window counts toward footage share only when moving footage remains visibly present in the final composite; footage hidden behind a fully opaque panel does not count.
 - Generate narration with MiniMax CLI (`mmx`). For review/final videos, prefer per-scene TTS or provider timestamps so each scene duration comes from real audio duration. A single continuous TTS file with text-length timing is only acceptable for rough preview.
 - Default no-human narration is `tianxin_xiaoling` at `1.2x` speed. If narration feels slow, compress the visual timeline by the same ratio as the voice; do not speed up voice alone and leave visuals drifting.
@@ -107,7 +107,7 @@ Default state machine:
 - Consume Draft `illustration_intents.json` before inventing new metaphors. Explicit examples and analogies become setup-action-result scenes; simple metaphors normally run 4-7 seconds and example micro-stories 7-12 seconds.
 - Lemon illustrations are schematic visual metaphors. They must not replace article charts, tables, source screenshots, documents, maps, or verified data.
 - A generated lemon image is source material. Build live scene motion with separately timed character/prop/path/annotation layers; a flattened illustration with zoom/pan alone is not a production animation.
-- Use external `html-video` as the default renderer via `dasheng-html-video-bridge`; install on demand with `scripts/ensure_video_external_deps.py`.
+- Use external `html-video` as the default scene renderer via `dasheng-html-video-bridge`; Remotion remains the master timeline.
 - Use external `html-anything` only as visual/template reference via `dasheng-html-anything-bridge`; install on demand with `scripts/ensure_video_external_deps.py`.
 - No generic framework diagrams when article data can support a concrete chart/table.
 - Charts, tables, and line graphs must be backed by article data, source images, or verified data pulls. Never draw decorative or fake lines for a data scene.
@@ -129,6 +129,8 @@ Default state machine:
 - Before TTS, material generation, or video render, produce `storyboard_template_review.html` and ask for user approval. This page must show one row per scene with time, voiceover, core meaning, evidence refs, template id, template screenshot/placeholder, motion plan, risk notes, and review decision controls.
 - Require the user/exported `storyboard_review_decision.json` before production. Validate it with `scripts/validate_storyboard_review_gate.py --storyboard <storyboard.json> --decision <storyboard_review_decision.json> --output <storyboard_review_gate.json>`.
 - Do not proceed if the gate report has `status != approved` or `render_allowed != true`.
+- After storyboard approval, build `claim_evidence_ledger.json` and require `claim_evidence_gate.status=pass` before TTS, B-roll generation, chart rendering, or final composition.
+- The final delivery must include `final_delivery_manifest.json`; its video path, duration, dimensions, FPS, and SHA-256 must describe the exact file checked by `video_render_qc.py`.
 - If a template has no screenshot, show a visible “暂无模板截图” placeholder and the required preview path. Do not fake a screenshot or hide the missing preview.
 - Prefer real template screenshots from `scripts/extract_template_preview_frames.py`, template `preview.png`, or a renderer still. Do not substitute unrelated scene frames as template screenshots unless the table explicitly labels them as scene previews.
 - macOS `say` is only a smoke-test fallback; it is not acceptable for final voiceover unless explicitly requested.
@@ -147,7 +149,7 @@ mmx quota --no-color
 Default render command shape:
 
 ```bash
-python3 scripts/render_html_anything_scene_pack_animated.py \
+.venv/bin/python scripts/render_html_anything_scene_pack_animated.py \
   --manifest <scene_pack_manifest.json> \
   --output-dir <render_output_dir> \
   --with-voice \
@@ -186,13 +188,13 @@ Default AI image command shape:
 ```bash
 mmx image generate \
   --prompt "<article-specific visual prompt>" \
-  --aspect-ratio 9:16 \
+  --aspect-ratio 16:9 \
   --out <image.jpg>
 ```
 
 ## Style Targets
 
-- Vertical finance/documentary style for mobile publish; horizontal `16:9` is acceptable for Bilibili, template review, and sample evaluation unless the channel requires vertical.
+- Horizontal `16:9` finance/documentary style is the default master. Generate `1:1` or `9:16` as separate publish adaptations when required.
 - Default voice: MiniMax `tianxin_xiaoling`, speed `1.2`, warm investor-chat delivery. Keep rhetorical pauses in the script but avoid slow TTS pacing.
 - Default BGM: light technology explainer / data reveal. Keep BGM low under the voice and use chapter risers sparingly.
 - BGM must not remain at one flat level for the whole video. Keep the narration body restrained, allow a small lift during chapter bridges, and use a controlled recap/outro lift without masking speech.

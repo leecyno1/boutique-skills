@@ -1,6 +1,6 @@
 ---
 name: dasheng-stage-transwrite
-description: Use when converting confirmed Dasheng drafts into channel-ready WeChat article, talking-head video, and podcast production packages.
+description: Use when converting confirmed Dasheng drafts into channel-ready WeChat article, ordinary faceless explainer, VOX investigative explainer, talking-head video, and opt-in podcast production packages.
 ---
 
 # Dasheng Stage: Transwrite｜转写生产
@@ -26,7 +26,7 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 
 缺少 `final_structure_snapshot.json` 或 `transwrite_decision.json` 时禁止执行。
 
-## 三条通路
+## 三类通路
 
 ### 1. wechat_article｜公众号文章
 
@@ -34,19 +34,24 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 
 - 调用 Style DNA / humanize 规则做文字调教
 - 内容扩展、节奏重排、微信格式转写
-- 可选调用 `baoyu-cover-image` / `baoyu-imagine` 生成封面
+- 封面如需生成，统一走当前已就绪的 MiniMax CLI `mmx`；本地 Baoyu 路线只负责 Markdown/HTML 排版
 - 最终输出 `wechat_article.final.md` 与 `wechat_article.final.html`
 - 最终必须有 `wechat_article_qc_report.json`，确认图表、表格、图片、事实锚点没有丢失
 - 读取 Draft 的 `03_IllustrationIntents_<topic>.json`。公众号版必须保留已确认的柠檬漫画，并紧跟原比喻/举例段落；humanize 新增重要比喻时补充 intent 后再生成，不得无记录地临时配图。
 - 漫画采用 `dasheng-lemon-illustrations`，长文通常 4-8 个高价值认知锚点；不得把漫画集中堆在文末，也不得用漫画替代真实证据。
-- 公众号排版必须遵守 `configs/publish/wechat_layout_rules.json`：H2 使用阿拉伯数字大标题并左对齐，不用居中块状标题；表格内文字约 12px，单元格紧凑，避免手机端换行挤压；正文不得全篇蓝色或全篇加粗。
+- 公众号排版必须遵守 `configs/publish/wechat_layout_rules.json`：除“引言”外，H2 使用阿拉伯数字大标题并左对齐，不用居中块状标题；表格内文字约 12px，单元格紧凑，避免手机端换行挤压；正文不得全篇蓝色或全篇加粗。
+- 博士署名或“资本奏鸣曲”内容默认独占读取 `引擎/00_控制中心/rewrite_dna_profiles/doctor-capital-sonata.yaml`，不得并行混入其他作者 DNA。
+- 开头硬约束：先给可核验出处的名人名言，再进入“引言”；引言必须使用具体故事、人物场景或段子切入，最后自然翻转到核心判断。禁止用摘要、新闻清单或“本文将分析”替代引言。
+- 正文硬约束：删除不增加事实、机制或判断的段落；同一结论只完整表达一次；每节最多保留两个比喻，避免用连续漂亮话填充字数。
+- 强调语言：风险/反转使用 `mark-red`，事实/核心结论使用 `mark-blue`，全文最重要的一句话使用 `mark-underline`；每 500 个中文字符最多约 3 处强调，不得整段染色。
+- 图表硬约束：标题只出现一次，放在 HTML 图表卡顶部，静态 PNG 内不再绘制标题；图表标题约 16px，图源放在下方；白底轻网格，统一蓝红金调色，禁止仪表盘式大标题和重复图注。
+- 素材硬约束：真实图片优先，尽可能选择横版，推荐 16:9，优先使用宽高比不低于 1.35 的素材；存在同等横版素材时不得使用方图或竖图。
 
 继承技能：
 
 - `dasheng-style-profiler`
 - `wechat-style-profiler`
 - `baoyu-markdown-to-html`
-- `baoyu-cover-image`
 - `scripts/wechat_layout_variants.py`（生成候选排版预览，并可做最终 HTML 版式后处理）
 
 文字洁癖：
@@ -55,7 +60,7 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - 少用“一方面...另一方面...”
 - 避免把事实稿洗成模板腔
 
-### 2. talking_head_video｜口播视频
+### 2. 视频｜三条独立 Lane
 
 目标：
 
@@ -64,19 +69,23 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - 支持真人音频 / 合成音频
 - 支持主动对齐（跟随已有音频）/ 被动对齐（跟随动画配音）
 
-默认渲染器：
+正式路由：
 
-- `dasheng-html-video-bridge`
-- `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}`
-- 默认模板：`frame-liquid-bg-hero`，可按题材切换 `frame-data-chart-nyt`、`frame-electric-studio`、`frame-light-leak-cinema`
+- `explainer_html_video`：无真人财经，默认横版 `16:9`；`1:1`、`9:16` 保留为发布适配规格。
+- `vox_explainer_video`：问题驱动的调查解释视频，默认横版 `16:9`；以中心问题、证据地图、历史、机制、真人/现场证据、反证和有限结论组织全片，不能退化成文章章节朗读。
+- `talking_head_video`：有头口播统一 Lane。真人模式以批准后的真人原片/人声为时间锚点；数字人模式先由 `dasheng-digital-human-talking-head` 用授权肖像和 MiniMax 音频生成本地人物源，并以 MiniMax 原音频为时间锚点。
+- Remotion 是三条 Lane 的主时间轴；HTML Video、GSAP、HyperFrames、Lottie 是场景动画层；FFmpeg 负责终检和封装。
+- `video-use`、`freecut`、Seedance 等继续保留在注册表，只在导演明确命中或主路由失败时启用。
 
 典型模式：
 
-- 用户有真人口播素材：`human video/audio -> transcription -> timeline -> HTML visual layer -> html-video/FFmpeg compose`
-- 用户没有真人口播素材：`draft script -> MiniMax CLI TTS -> animation timeline -> html-video render`
+- 真人口播：`human video/audio -> transcription -> claim/evidence -> HTML scene layer -> Remotion compose -> FFmpeg QC`
+- 数字人口播：`authorized portrait + MiniMax audio -> local JoyVASA/LivePortrait presenter source -> claim/evidence -> HTML scene layer -> Remotion compose -> FFmpeg QC`
+- 无真人财经：`Draft HTML -> voiceover -> claim/evidence -> real footage + HTML scenes -> Remotion compose -> FFmpeg QC`
+- VOX 调查解释：`Draft HTML -> central question/evidence map -> archival/news/interview research -> counterargument -> HTML/Remotion editorial compose -> FFmpeg QC`
 - 视频生成必须先走导演审核门禁：`script/storyboard -> storyboard_template_review.html -> storyboard_review_decision.json -> storyboard_review_gate.json -> TTS/material/render`。审核表必须一行一个分镜，并包含模板截图或缺失占位、模板 ID、口播、核心意思、证据资产、动效/运镜、风险点、审核控件。
-- `scripts/build_stage4_transwrite.py` 会在 `talking_head_video` lane 内默认调用 `scripts/dasheng_video_director.py` 生成 `director_scene_plan/scene_plan.json`、`storyboard_template_review.html` 和 `director_checkpoint.json`。lane 初始状态为 `pending_director_review`，不得直接进入素材生成或终渲染。
-- 如果提供 `srt` / `agent_proofread_srt` / `captions_json`，导演包走真人口播分镜；如果没有真人字幕但 Draft 有 `html_file`，导演包先走无真人 HTML 科普分镜作为审核方案。
+- `scripts/build_stage4_transwrite.py` 会按实际模式分别写入 `explainer_html_video/`、`vox_explainer_video/` 或 `talking_head_video/`。旧决策若把无真人任务写成 `talking_head_video`，会兼容迁移到 `explainer_html_video`，但新任务必须显式选择正确 Lane。
+- storyboard 通过后还必须依次通过 `claim_evidence_gate`、`renderer_asset_gate`、`renderer_contract_gate` 和完整 `video_render_qc`。
 - `storyboard_review_gate.json` 必须由 `scripts/validate_storyboard_review_gate.py` 生成，且 `status=approved`、`render_allowed=true` 才能继续。
 - 若已有 TemplateShowcase 视频，先用 `scripts/extract_template_preview_frames.py` 抽取模板截图，再生成 `storyboard_template_review.html`；没有截图的模板必须显示“缺失占位”，不得用无关画面冒充。
 
@@ -86,10 +95,12 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - `dasheng-html-anything-bridge`
 - `dasheng-video-style-trainer`（仅引用已训练的 `style_profile.json`，不在本阶段存放样板视频）
 - `dasheng-video-talking-head`
+- `dasheng-digital-human-talking-head`
 - `dasheng-video-explainer-html`
+- `dasheng-video-vox`
 - `dasheng-lemon-illustrations`（消费 Draft illustration intent，将比喻/举例改造成全屏或透明叠加漫画分镜）
 - `motion-frames`
-- `remotion-best-practices`（复杂透明合成兜底）
+- `remotion-best-practices`（正式主时间轴）
 - `WhisperX` / `stable-ts`
 - MiniMax CLI `mmx`（生产配音、配乐、图片生成、口播音频）
 - `FFmpeg`
@@ -107,8 +118,12 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - 字幕必须覆盖完整口播全文，不能只显示分镜摘要；必须输出 timed JSON/SRT，并与当前语音句子同步。
 - 字幕显示文本中的年份、百分比、数量、计数优先转为阿拉伯数字，例如 `2022-2025`、`50%`、`3个月`。
 - 最终视频必须做 midpoint contact sheet 抽检，检查穿模、遮盖、字幕/底栏压图、模板同质化和无意义内容。
+- 无真人财经默认输出 `1920x1080`、30fps、16:9；需要方形或竖版时从同一导演计划生成独立适配版本，不能简单拉伸。
+- `final_delivery_manifest.json` 必须登记最终视频、字幕、门禁报告、完整 QC、尺寸、时长和 SHA-256；其视频必须与 QC 实际检测文件完全一致。
 
 ### 3. podcast｜播客
+
+默认关闭。只有 `transwrite_decision.json` 同时把 `podcast` 写入 `lanes`，并明确设置 `podcast.enabled=true` 时才生成播客任务包；不得因为进入 Transwrite 或检测到 MiniMax 已登录而自动开启。
 
 目标：
 
@@ -128,7 +143,7 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
 ## 标准命令
 
 ```bash
-python3 scripts/build_stage4_transwrite.py \
+.venv/bin/python scripts/build_stage4_transwrite.py \
   --draft-manifest ~/Desktop/自媒体创作/05_初稿生成/<run_id>/draft_manifest.json \
   --transwrite-decision ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_decision.json
 ```
@@ -136,7 +151,7 @@ python3 scripts/build_stage4_transwrite.py \
 统一入口：
 
 ```bash
-python3 scripts/run_mainline_stage.py transwrite --run-id <run_id>
+.venv/bin/python scripts/run_mainline_stage.py transwrite --run-id <run_id>
 ```
 
 ## transwrite_decision.json 示例
@@ -149,30 +164,31 @@ python3 scripts/run_mainline_stage.py transwrite --run-id <run_id>
   "topics": [
     {
       "topic_id": "topic-demo",
-      "lanes": ["wechat_article", "talking_head_video", "podcast"],
+      "lanes": ["wechat_article", "vox_explainer_video", "podcast"],
       "wechat_article": {
         "dna_profile": "project_or_user_default",
         "humanize": true,
         "cover_generation": {"enabled": true}
       },
-      "talking_head_video": {
-        "base_video": "/path/to/user-talking-head.mp4",
+      "vox_explainer_video": {
+        "central_question": "这个现象背后的决定变量是什么？",
         "visual_layer": {
-          "mode": "html_overlay",
-          "background": "transparent"
+          "mode": "editorial_investigation_composite",
+          "background": "opaque"
         },
-        "audio": {"mode": "human_audio"},
+        "audio": {"mode": "synthetic_audio"},
         "alignment": {
-          "mode": "active_to_existing_audio",
-          "engine": "whisperx"
+          "mode": "passive_to_generated_audio"
         },
         "render": {
-          "engine": "html-video",
+          "engine": "remotion",
+          "scene_renderer": "html-video",
           "template_id": "frame-liquid-bg-hero",
-          "aspect_ratios": ["9:16", "16:9"]
+          "aspect_ratios": ["16:9", "1:1", "9:16"]
         }
       },
       "podcast": {
+        "enabled": true,
         "provider": "minimax",
         "mode": "solo"
       }
@@ -181,7 +197,7 @@ python3 scripts/run_mainline_stage.py transwrite --run-id <run_id>
 }
 ```
 
-如果没有真人口播素材，把 `base_video` 移除，并把 `audio.mode` 改为 `synthetic_audio`；系统会走被动对齐路径。
+普通文章型无头视频使用 `explainer_html_video`；调查型 VOX 使用 `vox_explainer_video`；真人和数字人有头任务统一使用 `talking_head_video`。真人任务提供 `base_video`、SRT/字幕或人声音频；数字人任务提供授权肖像、MiniMax 音频、字幕或时间戳，并先生成 `presenter_source_manifest.json`。
 
 ## 标准输出
 
@@ -191,7 +207,18 @@ python3 scripts/run_mainline_stage.py transwrite --run-id <run_id>
   - `wechat_article/wechat_article_manifest.json`
   - `wechat_article/agent_rewrite_prompt.md`
   - `wechat_article/cover_prompt.md`
+  - `explainer_html_video/explainer_html_video_manifest.json`
+  - `explainer_html_video/voiceover_script.md`
+  - `explainer_html_video/video_production_contract.json`
+  - `explainer_html_video/delivery/final_delivery_manifest.template.json`
+  - `vox_explainer_video/vox_explainer_video_manifest.json`
+  - `vox_explainer_video/voiceover_script.md`
+  - `vox_explainer_video/video_production_contract.json`
+  - `vox_explainer_video/delivery/final_delivery_manifest.template.json`
   - `talking_head_video/talking_head_video_manifest.json`
+  - `talking_head_video/presenter_source_manifest.json`
+  - `talking_head_video/digital_human_job.json`（数字人模式）
+  - `talking_head_video/digital_human_qc.json`（数字人模式）
   - `talking_head_video/video_storyboard.json`
   - `talking_head_video/storyboard_template_review.html`
   - `talking_head_video/storyboard_review_decision.json`
@@ -225,7 +252,7 @@ python3 scripts/run_mainline_stage.py transwrite --run-id <run_id>
 
 1. 不在本阶段补事实、补数据或重做图表；这些都必须回到 Draft。
 2. Python 脚本只生成包、提示词、请求体和 manifest；真正的 DNA/humanize、生图、渲染、播客 API 调用由 Agent/技能执行。
-3. 有真人素材与无真人素材走同一个 video lane，只通过配置切换。
+3. 真人、普通无头和 VOX 调查解释使用独立 Lane；旧配置只做兼容迁移。
 4. 外部 API 或素材缺失时必须显式写入状态，不得把计划当成完成品。
 5. `transwrite_manifest.json` 是进入 Publish 的唯一正式输入。
 6. Agent/技能完成生产后，必须更新对应 lane manifest 的 `final_artifacts`、`qc.status` 和 lane `status`，否则 Publish 只能等待。

@@ -1,5 +1,31 @@
 # Changelog
 
+## v3.6.1 — 2026-08-09
+
+### 修复：龙虎榜在"回看窗口内无上榜记录"时崩溃（#45）
+
+`dragon_tiger_board()` 的 `buy_data` / `sell_data` 只在 `if records:` 分支内赋值，
+而第 3 步「机构买卖统计」**无条件**遍历这两个变量。回看窗口内没有上榜记录时分支不
+执行，变量从未绑定：
+
+```python
+dragon_tiger_board("600519", "2026-08-05", 30)
+# UnboundLocalError: local variable 'buy_data' referenced before assignment
+```
+
+危害不只是报错：**大市值 / 低换手率标的常态无上榜**（贵州茅台即是），等于这类票调用
+即崩；而且调用方无法区分「这段时间没上榜」和「接口出问题了」，容易误判。
+
+修复为在条件分支前初始化空列表，空窗口返回语义一致的空结构：
+`{"records": [], "seats": {"buy": [], "sell": []}, "institution": {...0}}`。
+
+已用 AST 扫描全文件同类模式（只在条件分支赋值、却在分支外读取），确认无其他实例。
+
+感谢 [@tongflau-dongzhu](https://github.com/tongflau-dongzhu) 的报告——根因、复现和
+修复方案都写得很清楚。
+
+---
+
 ## v3.6.0 — 2026-07-31
 
 ### 修复：北交所老号段（43/83/87）返回僵尸数据且不报错

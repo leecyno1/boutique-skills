@@ -118,7 +118,7 @@
       "score": 100,
       "access_mode": "direct",
       "conflict_group": "brainstorming",
-      "origin_url": "https://github.com/baz-scm/agentskills/tree/main/skills/brainstorming",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
       "note": "Use before creative feature, component, behavior, or product design work."
     },
     {
@@ -184,7 +184,7 @@
       "score": 100,
       "access_mode": "direct",
       "conflict_group": "task",
-      "origin_url": "https://github.com/openclaw/skills/tree/main/skills/amirbrooks/task",
+      "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/task",
       "note": "Tasker docstore task management via tool-dispatch. Use for task lists, due today/overdue, week planning, add/move/complete, or explicit /task commands."
     },
     {
@@ -239,7 +239,7 @@
       "score": 92,
       "access_mode": "direct",
       "conflict_group": "data-analyst",
-      "origin_url": "https://github.com/openclaw/skills/blob/main/skills/oyi77/data-analyst/SKILL.md",
+      "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/data-analyst",
       "note": "Data visualization, report generation, SQL queries, and spreadsheet automation. Transform your AI agent into a data-savvy analyst that turns raw data into actionable insights."
     },
     {
@@ -349,7 +349,7 @@
       "score": 81,
       "access_mode": "mcp-required",
       "conflict_group": "news-radar",
-      "origin_url": "https://github.com/airinghost/TrendRadar",
+      "origin_url": "https://github.com/sansan0/TrendRadar",
       "note": "Comprehensive news aggregation from TrendRadar MCP server with focus on high-frequency international data sources. Retrieve trending topics, breaking news, sentiment analysis, and source diversity metrics. Use when you need global news coverage, trend analysis, or news monitoring across multiple international sources. Supports filtering by topic, region, time range, and source reliability."
     },
     {

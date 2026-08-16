@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-08-02T08:45:22",
-  "checked": 332,
+  "generated_at": "2026-08-16T11:36:02",
+  "checked": 372,
   "summary": {
-    "current": 290,
-    "metadata_only_root_no_skill_md": 31,
-    "source_path_missing": 11
+    "current": 296,
+    "metadata_only_root_no_skill_md": 35,
+    "source_path_missing": 8,
+    "would_update": 33
   },
   "results": [
     {
@@ -31,10 +32,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 27777,
-        "forks": 2347,
-        "pushed_at": "2026-07-31T06:43:56Z",
-        "updated_at": "2026-08-02T00:10:11Z",
+        "stars": 28974,
+        "forks": 2463,
+        "pushed_at": "2026-08-14T20:53:33Z",
+        "updated_at": "2026-08-16T03:28:39Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -52,10 +53,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 25909,
-        "forks": 2169,
-        "pushed_at": "2026-08-01T20:15:49Z",
-        "updated_at": "2026-08-02T00:25:56Z",
+        "stars": 26183,
+        "forks": 2190,
+        "pushed_at": "2026-08-14T20:38:13Z",
+        "updated_at": "2026-08-16T03:31:08Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -73,10 +74,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 165651,
-        "forks": 19697,
-        "pushed_at": "2026-07-24T20:12:36Z",
-        "updated_at": "2026-08-02T00:40:32Z",
+        "stars": 169578,
+        "forks": 20188,
+        "pushed_at": "2026-08-13T18:09:56Z",
+        "updated_at": "2026-08-16T03:28:07Z",
         "default_branch": "main",
         "license": null
       },
@@ -94,10 +95,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 51,
+        "stars": 57,
         "forks": 9,
         "pushed_at": "2026-03-02T07:37:11Z",
-        "updated_at": "2026-07-13T11:02:33Z",
+        "updated_at": "2026-08-14T03:30:26Z",
         "default_branch": "master",
         "license": null
       },
@@ -113,18 +114,23 @@
       "ref": "main",
       "path": "skills/subagent-driven-development",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 264798,
-        "forks": 23640,
-        "pushed_at": "2026-07-31T17:52:07Z",
-        "updated_at": "2026-08-02T00:36:24Z",
+        "stars": 272533,
+        "forks": 24370,
+        "pushed_at": "2026-08-13T00:36:31Z",
+        "updated_at": "2026-08-16T03:32:10Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/subagent-driven-development/SKILL.md",
+        "skills/default/subagent-driven-development/implementer-prompt.md",
+        "skills/default/subagent-driven-development/re-review-prompt.md",
+        "skills/default/subagent-driven-development/task-reviewer-prompt.md"
+      ],
       "added": [],
-      "same": 7
+      "same": 3
     },
     {
       "skill_id": "task",
@@ -150,10 +156,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 1732,
-        "forks": 134,
+        "stars": 1734,
+        "forks": 133,
         "pushed_at": "2026-07-26T17:37:41Z",
-        "updated_at": "2026-07-31T13:48:27Z",
+        "updated_at": "2026-08-11T08:23:50Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -169,18 +175,23 @@
       "ref": "main",
       "path": "skills/using-superpowers",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 264798,
-        "forks": 23640,
-        "pushed_at": "2026-07-31T17:52:07Z",
-        "updated_at": "2026-08-02T00:36:24Z",
+        "stars": 272533,
+        "forks": 24370,
+        "pushed_at": "2026-08-13T00:36:31Z",
+        "updated_at": "2026-08-16T03:32:10Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 5
+      "changed": [
+        "skills/default/using-superpowers/SKILL.md",
+        "skills/default/using-superpowers/references/codex-tools.md"
+      ],
+      "added": [
+        "skills/default/using-superpowers/references/hermes-tools.md"
+      ],
+      "same": 3
     },
     {
       "skill_id": "verification-before-completion",
@@ -192,10 +203,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 264798,
-        "forks": 23640,
-        "pushed_at": "2026-07-31T17:52:07Z",
-        "updated_at": "2026-08-02T00:36:24Z",
+        "stars": 272533,
+        "forks": 24370,
+        "pushed_at": "2026-08-13T00:36:31Z",
+        "updated_at": "2026-08-16T03:32:10Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -211,18 +222,20 @@
       "ref": "main",
       "path": "skills/writing-skills",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 264798,
-        "forks": 23640,
-        "pushed_at": "2026-07-31T17:52:07Z",
-        "updated_at": "2026-08-02T00:36:24Z",
+        "stars": 272533,
+        "forks": 24370,
+        "pushed_at": "2026-08-13T00:36:31Z",
+        "updated_at": "2026-08-16T03:32:10Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/writing-skills/render-graphs.js"
+      ],
       "added": [],
-      "same": 7
+      "same": 6
     },
     {
       "skill_id": "html-anything",
@@ -234,10 +247,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 8035,
-        "forks": 786,
-        "pushed_at": "2026-07-28T09:50:53Z",
-        "updated_at": "2026-08-01T20:43:33Z",
+        "stars": 8308,
+        "forks": 811,
+        "pushed_at": "2026-08-11T08:56:59Z",
+        "updated_at": "2026-08-16T01:12:18Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -255,12 +268,33 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 89260,
-        "forks": 7771,
-        "pushed_at": "2026-08-01T04:09:38Z",
-        "updated_at": "2026-08-02T00:02:20Z",
+        "stars": 90843,
+        "forks": 7933,
+        "pushed_at": "2026-08-14T02:52:05Z",
+        "updated_at": "2026-08-16T02:59:06Z",
         "default_branch": "main",
         "license": "Apache-2.0"
+      },
+      "changed": [],
+      "added": [],
+      "same": 0
+    },
+    {
+      "skill_id": "scientific-illustrator",
+      "url": "https://github.com/icebird1998/scientific-illustrator",
+      "owner": "icebird1998",
+      "repo": "scientific-illustrator",
+      "ref": "main",
+      "path": "",
+      "is_file": false,
+      "status": "metadata_only_root_no_skill_md",
+      "upstream": {
+        "stars": 549,
+        "forks": 45,
+        "pushed_at": "2026-08-08T08:20:23Z",
+        "updated_at": "2026-08-16T02:49:30Z",
+        "default_branch": "main",
+        "license": "MIT"
       },
       "changed": [],
       "added": [],
@@ -276,10 +310,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -297,10 +331,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -318,10 +352,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -339,10 +373,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 1029,
-        "forks": 81,
-        "pushed_at": "2026-07-31T18:04:55Z",
-        "updated_at": "2026-08-01T07:36:11Z",
+        "stars": 1054,
+        "forks": 85,
+        "pushed_at": "2026-08-13T18:04:30Z",
+        "updated_at": "2026-08-14T21:47:02Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -360,10 +394,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -383,8 +417,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -416,10 +450,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 9073,
-        "forks": 1056,
-        "pushed_at": "2026-07-29T10:44:31Z",
-        "updated_at": "2026-08-02T00:29:25Z",
+        "stars": 9515,
+        "forks": 1099,
+        "pushed_at": "2026-08-14T05:36:40Z",
+        "updated_at": "2026-08-16T02:15:17Z",
         "default_branch": "main",
         "license": "NOASSERTION"
       },
@@ -437,10 +471,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -458,10 +492,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -477,18 +511,22 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/discord-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/discord-reader/README.md",
+        "skills/default/discord-reader/SKILL.md",
+        "skills/default/discord-reader/references/commands.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 0
     },
     {
       "skill_id": "edge-concept-synthesizer",
@@ -500,10 +538,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -521,10 +559,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -542,10 +580,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -563,10 +601,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -584,10 +622,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -605,10 +643,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -628,8 +666,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -647,10 +685,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -668,10 +706,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -687,18 +725,22 @@
       "ref": "main",
       "path": "plugins/ui-tools/skills/generative-ui",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/generative-ui/README.md",
+        "skills/default/generative-ui/SKILL.md",
+        "skills/default/generative-ui/references/chart_js.md"
+      ],
       "added": [],
-      "same": 5
+      "same": 2
     },
     {
       "skill_id": "gpt-taste",
@@ -710,10 +752,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -731,10 +773,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -752,10 +794,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -773,10 +815,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -794,10 +836,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -815,10 +857,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -836,10 +878,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -857,10 +899,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -878,10 +920,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 12831,
-        "forks": 758,
+        "stars": 13640,
+        "forks": 803,
         "pushed_at": "2026-07-29T17:36:08Z",
-        "updated_at": "2026-08-01T23:50:22Z",
+        "updated_at": "2026-08-16T03:29:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -899,10 +941,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -941,10 +983,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 8868,
-        "forks": 1091,
+        "stars": 9497,
+        "forks": 1195,
         "pushed_at": "2026-06-03T11:35:43Z",
-        "updated_at": "2026-08-01T17:27:51Z",
+        "updated_at": "2026-08-16T03:03:55Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -962,10 +1004,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -983,10 +1025,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1004,16 +1046,84 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 1
+    },
+    {
+      "skill_id": "impeccable",
+      "url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+      "owner": "pbakaus",
+      "repo": "impeccable",
+      "ref": "main",
+      "path": "plugin/skills/impeccable",
+      "is_file": false,
+      "status": "would_update",
+      "upstream": {
+        "stars": 59455,
+        "forks": 3638,
+        "pushed_at": "2026-08-16T02:03:22Z",
+        "updated_at": "2026-08-16T03:23:40Z",
+        "default_branch": "main",
+        "license": "Apache-2.0"
+      },
+      "changed": [
+        "skills/default/impeccable/SKILL.md",
+        "skills/default/impeccable/reference/android.md",
+        "skills/default/impeccable/reference/bolder.md",
+        "skills/default/impeccable/reference/craft-floor.md",
+        "skills/default/impeccable/reference/critique.md",
+        "skills/default/impeccable/reference/degraded/asset-producer.md",
+        "skills/default/impeccable/reference/degraded/finish-reviewer.md",
+        "skills/default/impeccable/reference/distill.md",
+        "skills/default/impeccable/reference/doctor.md",
+        "skills/default/impeccable/reference/document.md",
+        "skills/default/impeccable/reference/extract.md",
+        "skills/default/impeccable/reference/hooks.md",
+        "skills/default/impeccable/reference/init.md",
+        "skills/default/impeccable/reference/ios.md",
+        "skills/default/impeccable/reference/new-work.md",
+        "skills/default/impeccable/reference/overdrive.md",
+        "skills/default/impeccable/reference/polish.md",
+        "skills/default/impeccable/reference/quieter.md",
+        "skills/default/impeccable/reference/visualize.md",
+        "skills/default/impeccable/scripts/concept-seed.mjs",
+        "skills/default/impeccable/scripts/context-signals.mjs",
+        "skills/default/impeccable/scripts/context.mjs",
+        "skills/default/impeccable/scripts/detector/browser/injected/index.mjs",
+        "skills/default/impeccable/scripts/detector/cli/main.mjs",
+        "skills/default/impeccable/scripts/detector/design-system.mjs",
+        "skills/default/impeccable/scripts/detector/detect-antipatterns-browser.js",
+        "skills/default/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+        "skills/default/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+        "skills/default/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+        "skills/default/impeccable/scripts/detector/rules/checks.mjs",
+        "skills/default/impeccable/scripts/detector/shared/color.mjs",
+        "skills/default/impeccable/scripts/doctor.mjs",
+        "skills/default/impeccable/scripts/embed-prompt.mjs",
+        "skills/default/impeccable/scripts/generate-image.mjs",
+        "skills/default/impeccable/scripts/hook-before-edit.mjs",
+        "skills/default/impeccable/scripts/hook-lib.mjs",
+        "skills/default/impeccable/scripts/lib/is-generated.mjs",
+        "skills/default/impeccable/scripts/lib/staleness-deep.mjs",
+        "skills/default/impeccable/scripts/lib/staleness.mjs",
+        "skills/default/impeccable/scripts/live-accept.mjs",
+        "skills/default/impeccable/scripts/live-copy-edit-agent.mjs",
+        "skills/default/impeccable/scripts/live.mjs",
+        "skills/default/impeccable/scripts/live/svelte-ast.mjs",
+        "skills/default/impeccable/scripts/live/svelte-component.mjs",
+        "skills/default/impeccable/scripts/pin.mjs",
+        "skills/default/impeccable/scripts/serve-question.mjs"
+      ],
+      "added": [],
+      "same": 102
     },
     {
       "skill_id": "improve-animations",
@@ -1025,10 +1135,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1046,10 +1156,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1067,10 +1177,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 18883,
-        "forks": 2093,
-        "pushed_at": "2026-08-01T07:07:23Z",
-        "updated_at": "2026-08-01T16:46:40Z",
+        "stars": 19711,
+        "forks": 2146,
+        "pushed_at": "2026-08-14T13:29:50Z",
+        "updated_at": "2026-08-16T02:38:56Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1086,18 +1196,22 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/linkedin-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/linkedin-reader/README.md",
+        "skills/default/linkedin-reader/SKILL.md",
+        "skills/default/linkedin-reader/references/commands.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 0
     },
     {
       "skill_id": "minimalist-ui",
@@ -1109,10 +1223,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1130,10 +1244,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 384850,
-        "forks": 80874,
-        "pushed_at": "2026-08-02T00:40:16Z",
-        "updated_at": "2026-08-02T00:42:20Z",
+        "stars": 386419,
+        "forks": 81212,
+        "pushed_at": "2026-08-16T03:32:16Z",
+        "updated_at": "2026-08-16T03:31:36Z",
         "default_branch": "main",
         "license": "NOASSERTION"
       },
@@ -1151,10 +1265,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 114,
+        "stars": 118,
         "forks": 29,
         "pushed_at": "2026-02-12T15:57:25Z",
-        "updated_at": "2026-08-01T04:20:08Z",
+        "updated_at": "2026-08-13T10:46:33Z",
         "default_branch": "master",
         "license": "NOASSERTION"
       },
@@ -1170,18 +1284,21 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/opencli-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/opencli-reader/README.md",
+        "skills/default/opencli-reader/SKILL.md"
+      ],
       "added": [],
-      "same": 4
+      "same": 2
     },
     {
       "skill_id": "pick-ui-library",
@@ -1193,10 +1310,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1214,10 +1331,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1235,10 +1352,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 23657,
-        "forks": 1286,
-        "pushed_at": "2026-07-27T11:31:12Z",
-        "updated_at": "2026-08-02T00:29:58Z",
+        "stars": 29616,
+        "forks": 1659,
+        "pushed_at": "2026-08-13T20:49:43Z",
+        "updated_at": "2026-08-16T03:26:22Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1256,10 +1373,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1277,10 +1394,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 6827,
-        "forks": 775,
+        "stars": 8218,
+        "forks": 933,
         "pushed_at": "2026-07-29T04:44:56Z",
-        "updated_at": "2026-08-02T00:29:55Z",
+        "updated_at": "2026-08-16T03:12:20Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1298,10 +1415,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1319,10 +1436,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1340,10 +1457,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 70025,
-        "forks": 4829,
+        "stars": 76865,
+        "forks": 5259,
         "pushed_at": "2026-07-23T16:01:24Z",
-        "updated_at": "2026-08-02T00:38:49Z",
+        "updated_at": "2026-08-16T03:24:50Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1361,10 +1478,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1380,18 +1497,20 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/telegram-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/telegram-reader/README.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 2
     },
     {
       "skill_id": "twitter-reader",
@@ -1401,18 +1520,22 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/twitter-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/twitter-reader/README.md",
+        "skills/default/twitter-reader/SKILL.md",
+        "skills/default/twitter-reader/references/commands.md"
+      ],
       "added": [],
-      "same": 4
+      "same": 1
     },
     {
       "skill_id": "yc-reader",
@@ -1422,18 +1545,20 @@
       "ref": "main",
       "path": "plugins/social-readers/skills/yc-reader",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/yc-reader/README.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 2
     },
     {
       "skill_id": "chrome-devtools-mcp",
@@ -1445,10 +1570,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 48340,
-        "forks": 3293,
-        "pushed_at": "2026-08-02T00:04:41Z",
-        "updated_at": "2026-08-02T00:40:09Z",
+        "stars": 49230,
+        "forks": 3430,
+        "pushed_at": "2026-08-16T00:05:52Z",
+        "updated_at": "2026-08-16T03:30:40Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -1466,16 +1591,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 48
+    },
+    {
+      "skill_id": "video-autopilot-kit",
+      "url": "https://github.com/Hao0321/video-autopilot-kit",
+      "owner": "Hao0321",
+      "repo": "video-autopilot-kit",
+      "ref": "main",
+      "path": "",
+      "is_file": false,
+      "status": "metadata_only_root_no_skill_md",
+      "upstream": {
+        "stars": 1804,
+        "forks": 297,
+        "pushed_at": "2026-08-13T10:05:33Z",
+        "updated_at": "2026-08-15T17:21:18Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 0
     },
     {
       "skill_id": "dasheng-finance-data",
@@ -1489,8 +1635,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1508,10 +1654,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 31888,
-        "forks": 4693,
-        "pushed_at": "2026-07-31T22:23:38Z",
-        "updated_at": "2026-08-01T22:08:50Z",
+        "stars": 32278,
+        "forks": 4805,
+        "pushed_at": "2026-08-14T22:44:12Z",
+        "updated_at": "2026-08-16T01:49:11Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1529,16 +1675,41 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 1424,
-        "forks": 214,
+        "stars": 1473,
+        "forks": 226,
         "pushed_at": "2026-07-26T08:24:52Z",
-        "updated_at": "2026-08-01T23:47:30Z",
+        "updated_at": "2026-08-16T03:30:02Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
       "changed": [],
       "added": [],
       "same": 5
+    },
+    {
+      "skill_id": "uzi-skill",
+      "url": "https://github.com/wbh604/UZI-Skill",
+      "owner": "wbh604",
+      "repo": "UZI-Skill",
+      "ref": "main",
+      "path": "",
+      "is_file": false,
+      "status": "would_update",
+      "upstream": {
+        "stars": 6353,
+        "forks": 899,
+        "pushed_at": "2026-08-12T07:20:34Z",
+        "updated_at": "2026-08-16T01:58:34Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [
+        "skills/default/uzi-skill/README.md",
+        "skills/default/uzi-skill/README_EN.md",
+        "skills/default/uzi-skill/package.json"
+      ],
+      "added": [],
+      "same": 11
     },
     {
       "skill_id": "yfinance-data",
@@ -1548,18 +1719,21 @@
       "ref": "main",
       "path": "plugins/market-analysis/skills/yfinance-data",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/yfinance-data/README.md",
+        "skills/default/yfinance-data/SKILL.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 1
     },
     {
       "skill_id": "baoyu-format-markdown",
@@ -1571,10 +1745,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1592,10 +1766,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1613,10 +1787,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1634,10 +1808,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1657,8 +1831,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1676,10 +1850,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 462,
-        "forks": 67,
+        "stars": 543,
+        "forks": 77,
         "pushed_at": "2026-07-08T12:08:12Z",
-        "updated_at": "2026-08-01T14:16:00Z",
+        "updated_at": "2026-08-15T15:45:16Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1699,8 +1873,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1716,18 +1890,21 @@
       "ref": "main",
       "path": "skills/dasheng-html-video-bridge",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dasheng-html-video-bridge/SKILL.md",
+        "skills/default/dasheng-html-video-bridge/config.json"
+      ],
       "added": [],
-      "same": 2
+      "same": 0
     },
     {
       "skill_id": "dasheng-media-sop",
@@ -1737,18 +1914,23 @@
       "ref": "main",
       "path": "skills/dasheng-media-sop",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dasheng-media-sop/references/file-contracts.md",
+        "skills/default/dasheng-media-sop/references/stage-contract.md",
+        "skills/default/dasheng-media-sop/references/stage-map.md",
+        "skills/default/dasheng-media-sop/references/stage-module-map.md"
+      ],
       "added": [],
-      "same": 10
+      "same": 6
     },
     {
       "skill_id": "dasheng-paradigm-profiler",
@@ -1762,8 +1944,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1779,18 +1961,18 @@
       "ref": "main",
       "path": "skills/dasheng-publish-operations-bridge",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1
     },
     {
       "skill_id": "dasheng-stage-brief-ai",
@@ -1804,8 +1986,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1825,8 +2007,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1846,14 +2028,14 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 1
+      "same": 2
     },
     {
       "skill_id": "dasheng-stage-rewrite-v3",
@@ -1867,8 +2049,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1884,18 +2066,22 @@
       "ref": "main",
       "path": "skills/dasheng-stage-transwrite",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dasheng-stage-transwrite/SKILL.md",
+        "skills/default/dasheng-stage-transwrite/config.json",
+        "skills/default/dasheng-stage-transwrite/references/html-video-workflow.md"
+      ],
       "added": [],
-      "same": 4
+      "same": 1
     },
     {
       "skill_id": "dasheng-style-profiler",
@@ -1909,8 +2095,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -1926,18 +2112,18 @@
       "ref": "main",
       "path": "skills/dasheng-video-director",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 2
     },
     {
       "skill_id": "dasheng-video-explainer-html",
@@ -1947,39 +2133,20 @@
       "ref": "main",
       "path": "skills/dasheng-video-explainer-html",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dasheng-video-explainer-html/SKILL.md"
+      ],
       "added": [],
-      "same": 2
-    },
-    {
-      "skill_id": "dasheng-video-roughcut",
-      "url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
-      "owner": "leecyno1",
-      "repo": "dasheng-media-workflow-skills",
-      "ref": "main",
-      "path": "skills/dasheng-video-roughcut",
-      "is_file": false,
-      "status": "current",
-      "upstream": {
-        "stars": 5,
-        "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
-        "default_branch": "main",
-        "license": "MIT"
-      },
-      "changed": [],
-      "added": [],
-      "same": 2
+      "same": 1
     },
     {
       "skill_id": "dasheng-video-style-trainer",
@@ -1989,18 +2156,18 @@
       "ref": "main",
       "path": "skills/dasheng-video-style-trainer",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 3
     },
     {
       "skill_id": "dasheng-video-talking-head",
@@ -2010,18 +2177,21 @@
       "ref": "main",
       "path": "skills/dasheng-video-talking-head",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dasheng-video-talking-head/SKILL.md",
+        "skills/default/dasheng-video-talking-head/config.json"
+      ],
       "added": [],
-      "same": 2
+      "same": 0
     },
     {
       "skill_id": "douyin-account-launch-expert",
@@ -2033,10 +2203,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 462,
-        "forks": 67,
+        "stars": 543,
+        "forks": 77,
         "pushed_at": "2026-07-08T12:08:12Z",
-        "updated_at": "2026-08-01T14:16:00Z",
+        "updated_at": "2026-08-15T15:45:16Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2056,8 +2226,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2075,10 +2245,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2098,8 +2268,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2115,18 +2285,41 @@
       "ref": "main",
       "path": "plugins/startup-tools/skills/startup-analysis",
       "is_file": false,
+      "status": "would_update",
+      "upstream": {
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [
+        "skills/default/startup-analysis/README.md"
+      ],
+      "added": [],
+      "same": 4
+    },
+    {
+      "skill_id": "tech-earnings-deepdive",
+      "url": "https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive",
+      "owner": "star23",
+      "repo": "Day1Global-Skills",
+      "ref": "main",
+      "path": "tech-earnings-deepdive",
+      "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 1032,
+        "forks": 159,
+        "pushed_at": "2026-04-15T01:28:53Z",
+        "updated_at": "2026-08-15T10:28:20Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 5
+      "same": 1
     },
     {
       "skill_id": "wb-xhs-account-profile",
@@ -2138,10 +2331,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2159,10 +2352,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2180,10 +2373,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2201,10 +2394,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2222,10 +2415,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2243,10 +2436,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 103,
-        "forks": 21,
+        "stars": 127,
+        "forks": 28,
         "pushed_at": "2026-08-01T18:23:57Z",
-        "updated_at": "2026-08-01T15:54:04Z",
+        "updated_at": "2026-08-16T00:06:52Z",
         "default_branch": "main",
         "license": null
       },
@@ -2264,10 +2457,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 462,
-        "forks": 67,
+        "stars": 543,
+        "forks": 77,
         "pushed_at": "2026-07-08T12:08:12Z",
-        "updated_at": "2026-08-01T14:16:00Z",
+        "updated_at": "2026-08-15T15:45:16Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2285,10 +2478,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 462,
-        "forks": 67,
+        "stars": 543,
+        "forks": 77,
         "pushed_at": "2026-07-08T12:08:12Z",
-        "updated_at": "2026-08-01T14:16:00Z",
+        "updated_at": "2026-08-15T15:45:16Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2306,16 +2499,646 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 462,
-        "forks": 67,
+        "stars": 543,
+        "forks": 77,
         "pushed_at": "2026-07-08T12:08:12Z",
-        "updated_at": "2026-08-01T14:16:00Z",
+        "updated_at": "2026-08-15T15:45:16Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 3
+    },
+    {
+      "skill_id": "alphagbm-alert",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-alert",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-bps-backtest",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-bps-backtest",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-buffett-analysis",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-buffett-analysis",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-chokepoint",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-chokepoint",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-company-profile",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-company-profile",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-compare",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-compare",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-duan-analysis",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-duan-analysis",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-earnings-crush",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-earnings-crush",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-fear-score",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-fear-score",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-greeks",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-greeks",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-health-check",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-health-check",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-hedge-advisor",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-hedge-advisor",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-investment-thesis",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-investment-thesis",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-iv-rank",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-iv-rank",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-macro-view",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-macro-view",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-market-sentiment",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-market-sentiment",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-marks-cycle",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-marks-cycle",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-options-score",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-options-score",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-options-strategy",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-options-strategy",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-pnl-simulator",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-pnl-simulator",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-polymarket",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-polymarket",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-stock-analysis",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-stock-analysis",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-take-profit",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-take-profit",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-tepper-signal",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-tepper-signal",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-theme-research",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-theme-research",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-unusual-activity",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-unusual-activity",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-vix-status",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-vix-status",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-vol-smile",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-vol-smile",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-vol-surface",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-vol-surface",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
+    },
+    {
+      "skill_id": "alphagbm-watchlist",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
+      "owner": "AlphaGBM",
+      "repo": "skills",
+      "ref": "main",
+      "path": "skills/alphagbm-watchlist",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1858,
+        "forks": 234,
+        "pushed_at": "2026-07-09T06:18:18Z",
+        "updated_at": "2026-08-16T00:56:00Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
     },
     {
       "skill_id": "android-native-dev",
@@ -2327,10 +3150,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2348,10 +3171,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 42642,
-        "forks": 6713,
+        "stars": 44413,
+        "forks": 6974,
         "pushed_at": "2026-07-29T05:41:15Z",
-        "updated_at": "2026-08-01T23:59:31Z",
+        "updated_at": "2026-08-16T03:03:38Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2369,10 +3192,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2388,18 +3211,20 @@
       "ref": "main",
       "path": "skills/frontend-dev",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/frontend-dev/SKILL.md"
+      ],
       "added": [],
-      "same": 17
+      "same": 16
     },
     {
       "skill_id": "ios-application-dev",
@@ -2411,16 +3236,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 10
+    },
+    {
+      "skill_id": "macro-liquidity",
+      "url": "https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity",
+      "owner": "star23",
+      "repo": "Day1Global-Skills",
+      "ref": "main",
+      "path": "macro-liquidity",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1032,
+        "forks": 159,
+        "pushed_at": "2026-04-15T01:28:53Z",
+        "updated_at": "2026-08-15T10:28:20Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
     },
     {
       "skill_id": "pptx-generator",
@@ -2432,10 +3278,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2453,10 +3299,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2474,10 +3320,10 @@
       "is_file": false,
       "status": "source_path_missing",
       "upstream": {
-        "stars": 42642,
-        "forks": 6713,
+        "stars": 44413,
+        "forks": 6974,
         "pushed_at": "2026-07-29T05:41:15Z",
-        "updated_at": "2026-08-01T23:59:31Z",
+        "updated_at": "2026-08-16T03:03:38Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2495,16 +3341,16 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 63988,
-        "forks": 5284,
-        "pushed_at": "2026-07-25T10:20:07Z",
-        "updated_at": "2026-08-02T00:43:10Z",
+        "stars": 72058,
+        "forks": 6125,
+        "pushed_at": "2026-08-12T03:39:49Z",
+        "updated_at": "2026-08-16T03:31:44Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 8
+      "same": 9
     },
     {
       "skill_id": "agentmail-mcp",
@@ -2518,8 +3364,8 @@
       "upstream": {
         "stars": 60,
         "forks": 17,
-        "pushed_at": "2026-07-29T00:30:10Z",
-        "updated_at": "2026-08-01T09:41:15Z",
+        "pushed_at": "2026-08-13T23:27:41Z",
+        "updated_at": "2026-08-13T23:27:44Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2537,10 +3383,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2558,10 +3404,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -2579,37 +3425,16 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 22930,
-        "forks": 1658,
-        "pushed_at": "2026-07-22T14:10:33Z",
-        "updated_at": "2026-08-02T00:32:43Z",
+        "stars": 24122,
+        "forks": 1727,
+        "pushed_at": "2026-08-07T03:58:08Z",
+        "updated_at": "2026-08-16T03:32:32Z",
         "default_branch": "main",
         "license": "AGPL-3.0"
       },
       "changed": [],
       "added": [],
-      "same": 17
-    },
-    {
-      "skill_id": "impeccable",
-      "url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-      "owner": "pbakaus",
-      "repo": "impeccable",
-      "ref": "main",
-      "path": "plugin/skills/impeccable",
-      "is_file": false,
-      "status": "current",
-      "upstream": {
-        "stars": 53723,
-        "forks": 3197,
-        "pushed_at": "2026-08-01T19:18:53Z",
-        "updated_at": "2026-08-02T00:42:35Z",
-        "default_branch": "main",
-        "license": "Apache-2.0"
-      },
-      "changed": [],
-      "added": [],
-      "same": 147
+      "same": 20
     },
     {
       "skill_id": "llmquant-commodities",
@@ -2621,10 +3446,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2642,10 +3467,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2663,10 +3488,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2684,10 +3509,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2705,10 +3530,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2726,10 +3551,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2747,10 +3572,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2768,10 +3593,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2789,10 +3614,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2810,10 +3635,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2831,10 +3656,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2852,10 +3677,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2873,10 +3698,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2894,10 +3719,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2915,10 +3740,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2936,10 +3761,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2957,10 +3782,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2978,10 +3803,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 181,
-        "forks": 22,
+        "stars": 191,
+        "forks": 24,
         "pushed_at": "2026-05-30T17:16:44Z",
-        "updated_at": "2026-08-01T02:55:17Z",
+        "updated_at": "2026-08-15T05:22:27Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -2999,10 +3824,10 @@
       "is_file": false,
       "status": "source_path_missing",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3034,10 +3859,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3055,10 +3880,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3076,10 +3901,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3097,10 +3922,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3118,10 +3943,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3139,10 +3964,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 619,
+        "stars": 624,
         "forks": 96,
         "pushed_at": "2026-07-15T09:24:20Z",
-        "updated_at": "2026-08-01T03:03:42Z",
+        "updated_at": "2026-08-15T15:19:52Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3160,16 +3985,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 619,
+        "stars": 624,
         "forks": 96,
         "pushed_at": "2026-07-15T09:24:20Z",
-        "updated_at": "2026-08-01T03:03:42Z",
+        "updated_at": "2026-08-15T15:19:52Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 3
+    },
+    {
+      "skill_id": "eigenflux",
+      "url": "https://github.com/phronesis-io/codex-eigenflux",
+      "owner": "phronesis-io",
+      "repo": "codex-eigenflux",
+      "ref": "main",
+      "path": "",
+      "is_file": false,
+      "status": "metadata_only_root_no_skill_md",
+      "upstream": {
+        "stars": 0,
+        "forks": 0,
+        "pushed_at": "2026-08-04T06:43:35Z",
+        "updated_at": "2026-08-04T06:43:47Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 0
     },
     {
       "skill_id": "etf-premium",
@@ -3181,10 +4027,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3202,10 +4048,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 619,
+        "stars": 624,
         "forks": 96,
         "pushed_at": "2026-07-15T09:24:20Z",
-        "updated_at": "2026-08-01T03:03:42Z",
+        "updated_at": "2026-08-15T15:19:52Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3223,10 +4069,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3244,10 +4090,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3265,16 +4111,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 24
+    },
+    {
+      "skill_id": "paper-framework-figure-studio-pro",
+      "url": "https://github.com/c-narcissus/paper-framework-figure-studio-pro",
+      "owner": "c-narcissus",
+      "repo": "paper-framework-figure-studio-pro",
+      "ref": "main",
+      "path": "",
+      "is_file": false,
+      "status": "metadata_only_root_no_skill_md",
+      "upstream": {
+        "stars": 1877,
+        "forks": 105,
+        "pushed_at": "2026-07-10T10:08:51Z",
+        "updated_at": "2026-08-15T11:27:55Z",
+        "default_branch": "main",
+        "license": null
+      },
+      "changed": [],
+      "added": [],
+      "same": 0
     },
     {
       "skill_id": "policy-monitor",
@@ -3286,10 +4153,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 4,
+        "stars": 5,
         "forks": 0,
-        "pushed_at": "2026-08-01T11:59:56Z",
-        "updated_at": "2026-08-01T12:00:06Z",
+        "pushed_at": "2026-08-16T03:17:01Z",
+        "updated_at": "2026-08-16T03:17:13Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3307,10 +4174,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 619,
+        "stars": 624,
         "forks": 96,
         "pushed_at": "2026-07-15T09:24:20Z",
-        "updated_at": "2026-08-01T03:03:42Z",
+        "updated_at": "2026-08-15T15:19:52Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3328,10 +4195,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3349,10 +4216,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 619,
+        "stars": 624,
         "forks": 96,
         "pushed_at": "2026-07-15T09:24:20Z",
-        "updated_at": "2026-08-01T03:03:42Z",
+        "updated_at": "2026-08-15T15:19:52Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3370,10 +4237,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3389,18 +4256,24 @@
       "ref": "main",
       "path": "skills/trader-memory-core",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/trader-memory-core/scripts/tests/test_thesis_review.py",
+        "skills/default/trader-memory-core/scripts/tests/test_thesis_store.py",
+        "skills/default/trader-memory-core/scripts/tests/test_thesis_store_futures.py",
+        "skills/default/trader-memory-core/scripts/thesis_review.py",
+        "skills/default/trader-memory-core/scripts/thesis_store.py"
+      ],
       "added": [],
-      "same": 17
+      "same": 12
     },
     {
       "skill_id": "uptrend-analyzer",
@@ -3412,10 +4285,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3431,18 +4304,21 @@
       "ref": "main",
       "path": "skills/us-market-bubble-detector",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/us-market-bubble-detector/scripts/bubble_scorer.py",
+        "skills/default/us-market-bubble-detector/scripts/tests/test_skill_contract.py"
+      ],
       "added": [],
-      "same": 9
+      "same": 7
     },
     {
       "skill_id": "us-stock-analysis",
@@ -3454,10 +4330,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3473,18 +4349,23 @@
       "ref": "main",
       "path": "",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 8231,
-        "forks": 1511,
-        "pushed_at": "2026-07-30T22:41:10Z",
-        "updated_at": "2026-08-02T00:13:44Z",
+        "stars": 8782,
+        "forks": 1605,
+        "pushed_at": "2026-08-09T02:46:03Z",
+        "updated_at": "2026-08-16T03:04:42Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/a-stock-data/CHANGELOG.md",
+        "skills/default/a-stock-data/README.md",
+        "skills/default/a-stock-data/README_en.md",
+        "skills/default/a-stock-data/SKILL.md"
+      ],
       "added": [],
-      "same": 5
+      "same": 1
     },
     {
       "skill_id": "agentmail-toolkit",
@@ -3496,10 +4377,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 85,
-        "forks": 25,
-        "pushed_at": "2026-07-25T00:47:02Z",
-        "updated_at": "2026-07-26T01:28:08Z",
+        "stars": 87,
+        "forks": 26,
+        "pushed_at": "2026-08-11T22:41:18Z",
+        "updated_at": "2026-08-15T00:14:53Z",
         "default_branch": "main",
         "license": null
       },
@@ -3538,10 +4419,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3559,10 +4440,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3580,16 +4461,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 9
+    },
+    {
+      "skill_id": "btc-bottom-model",
+      "url": "https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model",
+      "owner": "star23",
+      "repo": "Day1Global-Skills",
+      "ref": "main",
+      "path": "btc-bottom-model",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1032,
+        "forks": 159,
+        "pushed_at": "2026-04-15T01:28:53Z",
+        "updated_at": "2026-08-15T10:28:20Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
     },
     {
       "skill_id": "dual-axis-skill-reviewer",
@@ -3599,18 +4501,23 @@
       "ref": "main",
       "path": "skills/dual-axis-skill-reviewer",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/dual-axis-skill-reviewer/SKILL.md",
+        "skills/default/dual-axis-skill-reviewer/references/scoring_rubric.md",
+        "skills/default/dual-axis-skill-reviewer/scripts/run_dual_axis_review.py",
+        "skills/default/dual-axis-skill-reviewer/scripts/tests/test_run_dual_axis_review.py"
+      ],
       "added": [],
-      "same": 6
+      "same": 2
     },
     {
       "skill_id": "guizang-social-card-skill",
@@ -3622,10 +4529,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 5781,
-        "forks": 465,
+        "stars": 6354,
+        "forks": 517,
         "pushed_at": "2026-07-01T16:39:11Z",
-        "updated_at": "2026-08-01T23:52:02Z",
+        "updated_at": "2026-08-16T00:36:51Z",
         "default_branch": "main",
         "license": "AGPL-3.0"
       },
@@ -3643,10 +4550,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 4,
+        "stars": 5,
         "forks": 0,
-        "pushed_at": "2026-08-01T11:59:56Z",
-        "updated_at": "2026-08-01T12:00:06Z",
+        "pushed_at": "2026-08-16T03:17:01Z",
+        "updated_at": "2026-08-16T03:17:13Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3685,10 +4592,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 10,
+        "stars": 11,
         "forks": 0,
-        "pushed_at": "2026-08-01T05:59:08Z",
-        "updated_at": "2026-07-15T11:36:38Z",
+        "pushed_at": "2026-08-13T15:56:04Z",
+        "updated_at": "2026-08-12T06:55:28Z",
         "default_branch": "main",
         "license": null
       },
@@ -3706,10 +4613,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 43827,
-        "forks": 2976,
-        "pushed_at": "2026-08-01T23:28:08Z",
-        "updated_at": "2026-08-01T23:27:15Z",
+        "stars": 44299,
+        "forks": 3032,
+        "pushed_at": "2026-08-16T00:23:48Z",
+        "updated_at": "2026-08-16T03:05:38Z",
         "default_branch": "dev",
         "license": "GPL-3.0"
       },
@@ -3727,10 +4634,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 43827,
-        "forks": 2976,
-        "pushed_at": "2026-08-01T23:28:08Z",
-        "updated_at": "2026-08-01T23:27:15Z",
+        "stars": 44299,
+        "forks": 3032,
+        "pushed_at": "2026-08-16T00:23:48Z",
+        "updated_at": "2026-08-16T03:05:38Z",
         "default_branch": "dev",
         "license": "GPL-3.0"
       },
@@ -3748,10 +4655,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 3090,
-        "forks": 296,
+        "stars": 3298,
+        "forks": 312,
         "pushed_at": "2026-02-18T13:00:03Z",
-        "updated_at": "2026-08-02T00:33:49Z",
+        "updated_at": "2026-08-16T03:25:02Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3769,10 +4676,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 1340,
-        "forks": 173,
+        "stars": 1359,
+        "forks": 174,
         "pushed_at": "2026-07-30T13:33:19Z",
-        "updated_at": "2026-07-31T03:01:50Z",
+        "updated_at": "2026-08-14T16:24:11Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -3790,16 +4697,37 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 14,
+        "stars": 16,
         "forks": 2,
         "pushed_at": "2026-02-08T05:44:00Z",
-        "updated_at": "2026-04-07T09:26:01Z",
+        "updated_at": "2026-08-02T09:19:04Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 6
+    },
+    {
+      "skill_id": "us-market-sentiment",
+      "url": "https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment",
+      "owner": "star23",
+      "repo": "Day1Global-Skills",
+      "ref": "main",
+      "path": "us-market-sentiment",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1032,
+        "forks": 159,
+        "pushed_at": "2026-04-15T01:28:53Z",
+        "updated_at": "2026-08-15T10:28:20Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [],
+      "added": [],
+      "same": 1
     },
     {
       "skill_id": "buddy-sings",
@@ -3811,10 +4739,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3832,10 +4760,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 42642,
-        "forks": 6713,
+        "stars": 44413,
+        "forks": 6974,
         "pushed_at": "2026-07-29T05:41:15Z",
-        "updated_at": "2026-08-01T23:59:31Z",
+        "updated_at": "2026-08-16T03:03:38Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -3853,10 +4781,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3874,10 +4802,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3895,10 +4823,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3916,10 +4844,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3937,10 +4865,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3958,10 +4886,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -3979,10 +4907,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4000,10 +4928,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4021,10 +4949,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4042,10 +4970,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4063,10 +4991,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4084,10 +5012,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4105,10 +5033,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4126,10 +5054,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4147,10 +5075,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4168,10 +5096,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4189,10 +5117,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4210,10 +5138,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4231,10 +5159,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4252,10 +5180,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4273,10 +5201,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4294,10 +5222,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4315,10 +5243,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4336,10 +5264,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4357,10 +5285,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4378,10 +5306,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4399,10 +5327,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4420,10 +5348,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4441,10 +5369,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4462,10 +5390,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4483,10 +5411,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4504,10 +5432,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4525,10 +5453,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4546,10 +5474,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4567,10 +5495,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4588,10 +5516,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4609,10 +5537,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4630,10 +5558,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4651,10 +5579,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4672,10 +5600,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4693,10 +5621,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4714,10 +5642,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4735,10 +5663,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4756,10 +5684,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4777,10 +5705,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4798,10 +5726,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4819,10 +5747,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4840,10 +5768,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4861,10 +5789,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4882,10 +5810,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4903,10 +5831,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4924,10 +5852,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4945,10 +5873,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4966,10 +5894,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -4987,10 +5915,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5008,10 +5936,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5029,10 +5957,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5050,10 +5978,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5071,10 +5999,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5092,10 +6020,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5113,10 +6041,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5134,10 +6062,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5155,10 +6083,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5176,10 +6104,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5197,10 +6125,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5218,10 +6146,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5239,10 +6167,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 33935,
-        "forks": 5018,
-        "pushed_at": "2026-07-22T18:24:37Z",
-        "updated_at": "2026-08-01T22:41:49Z",
+        "stars": 34292,
+        "forks": 5106,
+        "pushed_at": "2026-08-04T14:41:29Z",
+        "updated_at": "2026-08-16T01:21:54Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5260,16 +6188,40 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
       "same": 5
+    },
+    {
+      "skill_id": "dasheng-video-roughcut",
+      "url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-roughcut",
+      "owner": "leecyno1",
+      "repo": "dasheng-media-workflow-skills",
+      "ref": "main",
+      "path": "skills/dasheng-video-roughcut",
+      "is_file": false,
+      "status": "would_update",
+      "upstream": {
+        "stars": 5,
+        "forks": 1,
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
+      "changed": [
+        "skills/default/dasheng-video-roughcut/SKILL.md",
+        "skills/default/dasheng-video-roughcut/config.json"
+      ],
+      "added": [],
+      "same": 0
     },
     {
       "skill_id": "dasheng-xhs-publish-bridge",
@@ -5283,8 +6235,8 @@
       "upstream": {
         "stars": 5,
         "forks": 1,
-        "pushed_at": "2026-07-27T14:59:42Z",
-        "updated_at": "2026-07-27T15:01:17Z",
+        "pushed_at": "2026-08-14T04:20:19Z",
+        "updated_at": "2026-08-14T04:20:35Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5302,10 +6254,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5321,18 +6273,97 @@
       "ref": "main",
       "path": "",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3152,
-        "forks": 276,
-        "pushed_at": "2026-07-28T07:18:42Z",
-        "updated_at": "2026-08-02T00:27:18Z",
+        "stars": 5156,
+        "forks": 445,
+        "pushed_at": "2026-08-14T04:17:16Z",
+        "updated_at": "2026-08-16T03:33:39Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
+      "changed": [
+        "skills/default/video-shotcraft/README.md",
+        "skills/default/video-shotcraft/README_CN.md",
+        "skills/default/video-shotcraft/README_JA.md",
+        "skills/default/video-shotcraft/SKILL.md",
+        "skills/default/video-shotcraft/references/music-beat-sync.md",
+        "skills/default/video-shotcraft/references/pipeline.md"
+      ],
+      "added": [
+        "skills/default/video-shotcraft/references/jianying-export.md",
+        "skills/default/video-shotcraft/references/shots/ATTRIBUTION.md",
+        "skills/default/video-shotcraft/references/shots/camera/basic-3d-scene.md",
+        "skills/default/video-shotcraft/references/shots/camera/cursor-flyover.md",
+        "skills/default/video-shotcraft/references/shots/camera/terminal-3d.md",
+        "skills/default/video-shotcraft/references/shots/data/avatar-grid-radial-build-colorize.md",
+        "skills/default/video-shotcraft/references/shots/data/counter-confetti.md",
+        "skills/default/video-shotcraft/references/shots/data/hatch-depth.md",
+        "skills/default/video-shotcraft/references/shots/effects/assemble-then-type-flyin.md",
+        "skills/default/video-shotcraft/references/shots/effects/aurora-bloom-bg-flip.md",
+        "skills/default/video-shotcraft/references/shots/effects/dashboard-glow-highlight-pill.md",
+        "skills/default/video-shotcraft/references/shots/effects/radial-ripple-phone-chips.md",
+        "skills/default/video-shotcraft/references/shots/effects/scan-bracket-sweep.md",
+        "skills/default/video-shotcraft/references/shots/effects/scanline-annotate-focus.md",
+        "skills/default/video-shotcraft/references/shots/effects/scanline-assemble-flyin.md",
+        "skills/default/video-shotcraft/references/shots/interaction/chip-grid-single-select-blackout.md",
+        "skills/default/video-shotcraft/references/shots/interaction/chip-lift-to-user-pill.md",
+        "skills/default/video-shotcraft/references/shots/interaction/glass-pill-dictation-typing.md",
+        "skills/default/video-shotcraft/references/shots/interaction/picker-carousel-feature-cycle.md",
+        "skills/default/video-shotcraft/references/shots/opening/fracture.md",
+        "skills/default/video-shotcraft/references/shots/outro/grain-dissolve.md",
+        "skills/default/video-shotcraft/references/shots/outro/logo-shrink-wordmark-lockup.md",
+        "skills/default/video-shotcraft/references/shots/rhythm/quad-split-parallel-scenes.md",
+        "skills/default/video-shotcraft/references/shots/transition/cube-navigation.md",
+        "skills/default/video-shotcraft/references/shots/transition/gradient-transition.md",
+        "skills/default/video-shotcraft/references/shots/transition/mosaic-reframe.md",
+        "skills/default/video-shotcraft/references/shots/transition/white-flash-logo-simplify-cut.md",
+        "skills/default/video-shotcraft/references/shots/typography/blur-slide.md",
+        "skills/default/video-shotcraft/references/shots/typography/brace-expand.md",
+        "skills/default/video-shotcraft/references/shots/typography/countdown-arc-scatter.md",
+        "skills/default/video-shotcraft/references/shots/typography/flying-words.md",
+        "skills/default/video-shotcraft/references/shots/typography/glitch-cycle.md",
+        "skills/default/video-shotcraft/references/shots/typography/outline-word-fill.md",
+        "skills/default/video-shotcraft/references/shots/typography/pill-chip-slot-cycle-handled.md",
+        "skills/default/video-shotcraft/references/shots/typography/scramble.md",
+        "skills/default/video-shotcraft/references/shots/typography/typing-code-block.md",
+        "skills/default/video-shotcraft/references/shots/typography/vertical-word-roll-blur-cycle.md",
+        "skills/default/video-shotcraft/references/shots/typography/word-relay-geometry.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/avatar-bracket-carousel.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/bezier-source-converge-merge.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/card-stack.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/carousel-3d.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/doc-park-left-pill-deal.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/floating-glossy-label-pills.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/list-reveal.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/product-card-progressive-assemble.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/radial-wave.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/research-card-stack-scroll.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/svg-shape-morph.md",
+        "skills/default/video-shotcraft/references/shots/ui-entrance/value-stagger-gradient.md"
+      ],
+      "same": 111
+    },
+    {
+      "skill_id": "us-value-investing",
+      "url": "https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing",
+      "owner": "star23",
+      "repo": "Day1Global-Skills",
+      "ref": "main",
+      "path": "us-value-investing",
+      "is_file": false,
+      "status": "current",
+      "upstream": {
+        "stars": 1032,
+        "forks": 159,
+        "pushed_at": "2026-04-15T01:28:53Z",
+        "updated_at": "2026-08-15T10:28:20Z",
+        "default_branch": "main",
+        "license": "MIT"
+      },
       "changed": [],
       "added": [],
-      "same": 117
+      "same": 1
     },
     {
       "skill_id": "agentmail-cli",
@@ -5346,8 +6377,8 @@
       "upstream": {
         "stars": 35,
         "forks": 7,
-        "pushed_at": "2026-07-28T19:37:44Z",
-        "updated_at": "2026-07-23T06:39:56Z",
+        "pushed_at": "2026-08-03T18:12:56Z",
+        "updated_at": "2026-08-09T01:35:42Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5365,10 +6396,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5386,10 +6417,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5407,10 +6438,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2746,
+        "stars": 2775,
         "forks": 362,
         "pushed_at": "2026-03-29T05:03:47Z",
-        "updated_at": "2026-08-01T14:55:00Z",
+        "updated_at": "2026-08-13T14:34:51Z",
         "default_branch": "main",
         "license": "Apache-2.0"
       },
@@ -5428,10 +6459,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5449,10 +6480,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5470,10 +6501,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5491,10 +6522,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5512,10 +6543,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5533,10 +6564,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5554,10 +6585,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5575,10 +6606,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 24426,
-        "forks": 2720,
+        "stars": 25028,
+        "forks": 2791,
         "pushed_at": "2026-07-04T16:25:18Z",
-        "updated_at": "2026-08-02T00:40:11Z",
+        "updated_at": "2026-08-16T02:27:48Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5596,10 +6627,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5617,10 +6648,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5638,10 +6669,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5659,10 +6690,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5680,10 +6711,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5701,10 +6732,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5722,10 +6753,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5743,10 +6774,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5764,10 +6795,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5785,10 +6816,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5806,10 +6837,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5825,18 +6856,20 @@
       "ref": "main",
       "path": "skills/economic-calendar-fetcher",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/economic-calendar-fetcher/scripts/tests/test_get_economic_calendar.py"
+      ],
       "added": [],
-      "same": 4
+      "same": 3
     },
     {
       "skill_id": "edge-candidate-agent",
@@ -5848,10 +6881,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5869,10 +6902,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5890,10 +6923,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5909,18 +6942,22 @@
       "ref": "main",
       "path": "skills/exposure-coach",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/exposure-coach/SKILL.md",
+        "skills/default/exposure-coach/scripts/calculate_exposure.py",
+        "skills/default/exposure-coach/scripts/tests/test_calculate_exposure.py"
+      ],
       "added": [],
-      "same": 6
+      "same": 3
     },
     {
       "skill_id": "finance-sentiment",
@@ -5930,18 +6967,20 @@
       "ref": "main",
       "path": "plugins/data-providers/skills/finance-sentiment",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/finance-sentiment/README.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 2
     },
     {
       "skill_id": "finance-skill-creator",
@@ -5953,10 +6992,10 @@
       "is_file": false,
       "status": "source_path_missing",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5974,10 +7013,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -5995,10 +7034,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6016,10 +7055,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6037,10 +7076,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 673,
-        "forks": 94,
-        "pushed_at": "2026-07-26T13:44:40Z",
-        "updated_at": "2026-08-01T19:12:05Z",
+        "stars": 702,
+        "forks": 97,
+        "pushed_at": "2026-08-03T15:41:46Z",
+        "updated_at": "2026-08-15T21:26:32Z",
         "default_branch": "main",
         "license": null
       },
@@ -6058,10 +7097,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6079,10 +7118,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6100,10 +7139,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6119,18 +7158,26 @@
       "ref": "main",
       "path": "skills/macro-regime-detector",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 29
+      "changed": [
+        "skills/default/macro-regime-detector/SKILL.md",
+        "skills/default/macro-regime-detector/scripts/fmp_client.py",
+        "skills/default/macro-regime-detector/scripts/macro_regime_detector.py",
+        "skills/default/macro-regime-detector/scripts/tests/test_fmp_client.py",
+        "skills/default/macro-regime-detector/scripts/tests/test_main_cli.py"
+      ],
+      "added": [
+        "skills/default/macro-regime-detector/requirements.txt"
+      ],
+      "same": 24
     },
     {
       "skill_id": "market-environment-analysis",
@@ -6142,10 +7189,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6163,10 +7210,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6184,10 +7231,10 @@
       "is_file": false,
       "status": "source_path_missing",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6205,10 +7252,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6226,10 +7273,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6247,10 +7294,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3529,
-        "forks": 349,
-        "pushed_at": "2026-07-31T20:25:31Z",
-        "updated_at": "2026-08-01T07:10:44Z",
+        "stars": 3562,
+        "forks": 365,
+        "pushed_at": "2026-08-14T20:26:07Z",
+        "updated_at": "2026-08-15T23:13:45Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6268,10 +7315,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6289,10 +7336,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6308,18 +7355,20 @@
       "ref": "main",
       "path": "skills/pead-screener",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/pead-screener/scripts/tests/test_pead_screener.py"
+      ],
       "added": [],
-      "same": 15
+      "same": 14
     },
     {
       "skill_id": "position-sizer",
@@ -6331,10 +7380,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6373,10 +7422,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6394,10 +7443,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6415,10 +7464,10 @@
       "is_file": false,
       "status": "metadata_only_root_no_skill_md",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6436,10 +7485,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6476,18 +7525,21 @@
       "ref": "main",
       "path": "plugins/market-analysis/skills/stock-correlation",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/stock-correlation/README.md",
+        "skills/default/stock-correlation/SKILL.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 1
     },
     {
       "skill_id": "stock-daily-analysis-skill",
@@ -6499,10 +7551,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 225,
-        "forks": 62,
+        "stars": 233,
+        "forks": 64,
         "pushed_at": "2026-02-04T11:34:49Z",
-        "updated_at": "2026-07-31T23:08:49Z",
+        "updated_at": "2026-08-13T14:58:33Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6518,18 +7570,20 @@
       "ref": "main",
       "path": "plugins/market-analysis/skills/stock-liquidity",
       "is_file": false,
-      "status": "current",
+      "status": "would_update",
       "upstream": {
-        "stars": 3097,
-        "forks": 357,
-        "pushed_at": "2026-07-21T20:33:47Z",
-        "updated_at": "2026-08-01T23:41:17Z",
+        "stars": 3170,
+        "forks": 367,
+        "pushed_at": "2026-08-15T20:44:14Z",
+        "updated_at": "2026-08-16T02:54:01Z",
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
+      "changed": [
+        "skills/default/stock-liquidity/SKILL.md"
+      ],
       "added": [],
-      "same": 3
+      "same": 2
     },
     {
       "skill_id": "stock-monitor-skill",
@@ -6541,10 +7595,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 43,
+        "stars": 45,
         "forks": 7,
         "pushed_at": "2026-02-03T04:39:18Z",
-        "updated_at": "2026-07-06T07:04:30Z",
+        "updated_at": "2026-08-07T02:44:33Z",
         "default_branch": "main",
         "license": "NOASSERTION"
       },
@@ -6562,10 +7616,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6583,10 +7637,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6604,10 +7658,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6625,10 +7679,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 2547,
-        "forks": 593,
-        "pushed_at": "2026-08-01T05:24:20Z",
-        "updated_at": "2026-08-02T00:10:36Z",
+        "stars": 2646,
+        "forks": 612,
+        "pushed_at": "2026-08-13T15:46:20Z",
+        "updated_at": "2026-08-15T20:52:54Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6646,10 +7700,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6688,10 +7742,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 673,
-        "forks": 94,
-        "pushed_at": "2026-07-26T13:44:40Z",
-        "updated_at": "2026-08-01T19:12:05Z",
+        "stars": 702,
+        "forks": 97,
+        "pushed_at": "2026-08-03T15:41:46Z",
+        "updated_at": "2026-08-15T21:26:32Z",
         "default_branch": "main",
         "license": null
       },
@@ -6709,10 +7763,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6730,10 +7784,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 398,
+        "stars": 399,
         "forks": 44,
         "pushed_at": "2026-01-25T12:49:13Z",
-        "updated_at": "2026-07-28T00:55:01Z",
+        "updated_at": "2026-08-15T15:47:42Z",
         "default_branch": "main",
         "license": null
       },
@@ -6751,10 +7805,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6772,10 +7826,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6793,10 +7847,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6814,10 +7868,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6835,10 +7889,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 7543,
-        "forks": 851,
+        "stars": 7631,
+        "forks": 863,
         "pushed_at": "2025-11-21T17:42:12Z",
-        "updated_at": "2026-08-01T22:53:46Z",
+        "updated_at": "2026-08-16T01:31:01Z",
         "default_branch": "master",
         "license": "MIT"
       },
@@ -6856,10 +7910,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6877,10 +7931,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 4,
+        "stars": 5,
         "forks": 0,
-        "pushed_at": "2026-08-01T11:59:56Z",
-        "updated_at": "2026-08-01T12:00:06Z",
+        "pushed_at": "2026-08-16T03:17:01Z",
+        "updated_at": "2026-08-16T03:17:13Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6898,10 +7952,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6919,10 +7973,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -6940,10 +7994,10 @@
       "is_file": false,
       "status": "current",
       "upstream": {
-        "stars": 13198,
-        "forks": 1131,
+        "stars": 13366,
+        "forks": 1143,
         "pushed_at": "2026-04-18T09:48:47Z",
-        "updated_at": "2026-08-01T09:39:26Z",
+        "updated_at": "2026-08-16T01:20:40Z",
         "default_branch": "main",
         "license": "MIT"
       },

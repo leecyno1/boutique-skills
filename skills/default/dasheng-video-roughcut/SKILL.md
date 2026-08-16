@@ -1,6 +1,6 @@
 ---
 name: dasheng-video-roughcut
-description: "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path, the guarded Palmier MCP experimental path, or the Jianying production fallback."
+description: "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path or the existing Jianying production path."
 ---
 
 # Dasheng Video Roughcut｜口播视频粗剪
@@ -25,47 +25,19 @@ description: "Use when rough-cutting Chinese talking-head video with the reprodu
 - 音频增强：FFmpeg 开源滤镜 `afftdn`、`dynaudnorm`、`acompressor`、`loudnorm`、`alimiter`
 - 审核：本地 HTML 审核页
 - 剪映生产通路：剪映专业版 `智能粗剪`、`智能剪口播`、美颜/滤镜、音频优化、人声美化、导出
-- Palmier 实验通路：Agent 审核 EDL -> Palmier MCP 精确波纹删除/基础调色/导出 -> FFmpeg 响度和 QC
 
 ## 双路径实验
 
-当前口播粗剪保留三条路径：
+当前口播粗剪保留两条路径：
 
 - 路径 A：`FunASR -> Agent 字幕/语义整理 -> FFmpeg 精剪 -> HTML 审核页`，作为可复现、可追溯的工程基准链路。
 - 路径 B：`剪映专业版 -> 智能粗剪 -> 智能剪口播 -> 导出工作拷贝 -> 重新导入 -> 参数/音频处理 -> 最终导出`，作为真人口播生产高速链路。
-- 路径 C：`本地 ASR -> Agent 审核删除清单 -> Palmier MCP ripple delete -> 基础调色/导出 -> FFmpeg 响度与 QC`，作为替代脆弱 Computer Use 的实验链路。
 
 外部候选 `auto-editor` 只作为静音、节奏和口播清理算法参考，不是第四条生产路径。只有在独立样本中证明不会吞字、误删数字或破坏中文语义后，才允许通过 `dasheng-video-editing-bridge` 做受控实验；实验输出仍须回到本 Skill 的审核和 QC 门禁。
 
 剪映路径优先依赖剪映自身的粗剪、剪口播和基础美化能力，不叠加 Agent 根据原提纲做二次语义检查。Agent 只负责流程记录、导出核验、门禁判断和必要的专名问题清单。
 
-生产默认已恢复为“剪映 + Record & Replay”。Palmier 仅保留为 benchmark，不自动进入生产任务。原因是它尚未证明在剪口播自然度、停顿识别、重复处理和人工复听质量上优于剪映。
-
-## Palmier MCP 实验通路
-
-仅在用户明确要求进行 Palmier 对照实验时启用：
-
-- `/Applications/PalmierPro.app` 存在且已打开。
-- MCP 地址 `${PALMIER_MCP_URL:-http://127.0.0.1:19789/mcp}` 可用。
-- 外部源码位于 `${PALMIER_PRO_ROOT:-${PALMIER_PRO_ROOT:-vendor/reserved/video/palmier-pro}}`。
-- 删除区间已由 Agent 或用户审核，且每段都有 `reason` 和 `reviewed: true`。
-
-允许操作：`create_project`、`import_media`、`create_timeline`、`ripple_delete_ranges`、`apply_color`、`export_video`。
-
-暂时禁用：`remove_words`、依赖 `undo` 回滚、`remove_silence`、逐碎片 `denoise_audio`、把 `close_project` 成功当作工程已可靠保存的证据。
-
-标准顺序：
-
-1. 本地 ASR 和 Agent 生成明确的 `delete_ranges`，不让 Palmier 自主决定删词。
-2. 用 `scripts/palmier_roughcut_contract.py --plan palmier_plan.json` 做预检。
-3. 通过 MCP 创建项目、导入媒体、建立时间线，并一次性执行审核后的 `ripple_delete_ranges`。
-4. 只做保守基础调色，不承诺剪映同等级的人脸美颜。
-5. 导出 H.264/AAC 文件到 `~/Desktop/自媒体创作/<task>/`。
-6. 用 FFmpeg 做响度归一化和完整解码检查；Palmier 当前音量上限不足以保证交付响度。
-7. 写入实际删除帧数、导出时长、音视频流、音频连续性和超时状态，再运行结果校验器。
-8. 即使 `route_status=experimental_pass`，也只代表技术导出通过，不代表粗剪质量超过剪映；不得自动提升为生产默认。
-
-2026-07-12 样本结果：原片 `625.868s`，Palmier 剪后并清尾 `563.067s`；42 个审核区间共删除 1,797 帧/59.9 秒。最终文件经 FFmpeg 归一化后平均约 `-17.2 dB`、峰值约 `-1.4 dB`，完整解码通过。该样本证明受控 EDL 路径可用，但不足以把 Palmier 提升为默认生产路由。
+生产默认使用“剪映 + Record & Replay”，本地 FunASR/FFmpeg 路线作为可复现、可追溯的工程基准。
 
 ## 环节拆解
 

@@ -5,19 +5,19 @@ description: Use when Dasheng transwrite needs no-human or human-material talkin
 
 # Dasheng HTML Video Bridge
 
-正式 1:1 无真人口播交付必须遵循 `docs/technical/no-human-square-video-production-standard.md`。
+正式无真人财经视频默认横版 16:9，并遵循 `docs/technical/no-human-square-video-production-standard.md`；1:1 与 9:16 是独立适配规格。
 
 ## Role
 
-Use the external `html-video` repository as the default renderer for Dasheng video transwrite. This skill turns a confirmed Draft into an executable html-video project package; it does not research facts or rewrite the article thesis.
+Use the external `html-video` repository as the scene renderer for Dasheng video transwrite. Remotion owns the master timeline; this skill does not research facts or rewrite the article thesis.
 
 `html-video` is an external dependency, not vendored into this repo and not version-locked. Default path: `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}`; override with `HTML_VIDEO_ROOT`.
 
 Check or install before first use:
 
 ```bash
-python3 scripts/ensure_video_external_deps.py --dep html-video --mode check
-python3 scripts/ensure_video_external_deps.py --dep html-video --mode install --install-node-deps
+.venv/bin/python scripts/ensure_video_external_deps.py --dep html-video --mode check
+.venv/bin/python scripts/ensure_video_external_deps.py --dep html-video --mode install --install-node-deps
 ```
 
 For Dasheng no-human explainer scenes, external `html-video` must also provide `gsap` and `lottie-web`; `ensure_video_external_deps.py --install-node-deps` checks and installs them in the external repo.
@@ -25,13 +25,13 @@ For Dasheng no-human explainer scenes, external `html-video` must also provide `
 Optional Lottie authoring uses external `diffusionstudio/lottie` (`text-to-lottie`) as a verified Skia Skottie player and scene workspace. It is an external dependency, not vendored or version-locked:
 
 ```bash
-python3 scripts/ensure_video_external_deps.py --dep text-to-lottie --mode check
-python3 scripts/ensure_video_external_deps.py --dep text-to-lottie --mode install --install-node-deps
+.venv/bin/python scripts/ensure_video_external_deps.py --dep text-to-lottie --mode check
+.venv/bin/python scripts/ensure_video_external_deps.py --dep text-to-lottie --mode install --install-node-deps
 ```
 
 ## Inputs
 
-- `talking_head_video_manifest.json`
+- `explainer_html_video_manifest.json` or `talking_head_video_manifest.json`
 - `video_storyboard.json`
 - `talking_head_script.md`
 - `storyboard_template_review.html` or equivalent approved pre-render scene/template contact table
@@ -45,7 +45,7 @@ Resolve the root from `HTML_VIDEO_ROOT` or `${HTML_VIDEO_ROOT:-vendor/reserved/r
 ```bash
 HTML_VIDEO_ROOT="${HTML_VIDEO_ROOT:-${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}}"
 node "$HTML_VIDEO_ROOT/packages/cli/dist/bin.js" doctor --cwd "$HTML_VIDEO_ROOT"
-node "$HTML_VIDEO_ROOT/packages/cli/dist/bin.js" search-templates --intent "<intent>" --aspect 9:16 --top 5 --cwd "$HTML_VIDEO_ROOT"
+node "$HTML_VIDEO_ROOT/packages/cli/dist/bin.js" search-templates --intent "<intent>" --aspect 16:9 --top 5 --cwd "$HTML_VIDEO_ROOT"
 ```
 
 Prefer these templates for market commentary:
@@ -61,23 +61,23 @@ Prefer these templates for market commentary:
 Generate a project plan without mutating html-video:
 
 ```bash
-python3 scripts/transwrite_html_video_bridge.py \
-  --video-manifest <talking_head_video_manifest.json>
+.venv/bin/python scripts/transwrite_html_video_bridge.py \
+  --video-manifest <video_lane_manifest.json>
 ```
 
 Create and preview a real html-video project only when the user asks to render:
 
 ```bash
-python3 scripts/transwrite_html_video_bridge.py \
-  --video-manifest <talking_head_video_manifest.json> \
+.venv/bin/python scripts/transwrite_html_video_bridge.py \
+  --video-manifest <video_lane_manifest.json> \
   --execute create
 ```
 
 Render MP4:
 
 ```bash
-python3 scripts/transwrite_html_video_bridge.py \
-  --video-manifest <talking_head_video_manifest.json> \
+.venv/bin/python scripts/transwrite_html_video_bridge.py \
+  --video-manifest <video_lane_manifest.json> \
   --execute render
 ```
 
@@ -106,14 +106,14 @@ Rules:
 - The table must include template screenshots or explicit missing-preview placeholders for every scene.
 - When a TemplateShowcase MP4 exists, use `scripts/extract_template_preview_frames.py` to build a `template_previews/` directory and pass it into the review table generator.
 - Final captions must be full timed subtitles, not shortened scene prompts. Generate JSON/SRT cues from the full narration, keep them synchronized to the voice timeline from real audio timing, and normalize years/quantities to Arabic numerals in display text.
-- For formal 1:1 delivery, use live HTML Video as the authored scene layer and Remotion as the frame-exact chart/caption/master-timeline layer. Remotion must contribute visible output; it cannot be an empty wrapper around a pre-rendered MP4.
+- For formal delivery, use live HTML Video as the authored scene layer and Remotion as the frame-exact chart/caption/master-timeline layer. Remotion must contribute visible output; it cannot be an empty wrapper around a pre-rendered MP4.
 - When scene-authored motion is already present, disable generic ambient sweep, scan-line, and light-sweep injection. Production motion must come from the approved scene design.
 - If MiniMax CLI shows a request URL containing `/v1/v1/`, remove `/v1` from `MINIMAX_BASE_URL` or `base_url`; the CLI appends the API version path itself.
 
 Default voice render entry:
 
 ```bash
-python3 scripts/render_html_anything_scene_pack_animated.py \
+.venv/bin/python scripts/render_html_anything_scene_pack_animated.py \
   --manifest <scene_pack_manifest.json> \
   --output-dir <render_dir> \
   --with-voice \

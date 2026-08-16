@@ -17,6 +17,21 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 ENRICHED_CATALOG = ROOT / "catalog" / "skills.enriched.json"
 SKILLS_DIR = ROOT / "skills" / "default"
+WRAPPER_ORIGINS = ROOT / "catalog" / "wrapper-origins.json"
+
+
+def load_wrapper_allowlist() -> set[str]:
+    """Skills whose upstream URL is a whole repo or docs page (informational
+    origin, not a SKILL.md path). We should not flag them as
+    metadata_only_root_no_skill_md when the local SKILL.md exists."""
+    try:
+        data = json.loads(WRAPPER_ORIGINS.read_text(encoding="utf-8"))
+        return set(data.get("wrappers", []))
+    except FileNotFoundError:
+        return set()
+
+
+WRAPPER_SKILLS = load_wrapper_allowlist()
 MAX_ROOT_FILES = 200
 MAX_ROOT_BYTES = 2_000_000
 EXCLUDED_PARTS = {".git", "node_modules", "__pycache__", ".next", "dist", ".venv", "canvas-fonts"}
@@ -305,6 +320,12 @@ def check_source(source: GitHubSource, token: str | None, apply: bool) -> dict:
     base_path = source.path
     status, files = tree_files_for_source(source, token, ref)
     if status != "ok":
+        if (
+            status == "metadata_only_root_no_skill_md"
+            and source.skill_id in WRAPPER_SKILLS
+            and (SKILLS_DIR / source.skill_id / "SKILL.md").exists()
+        ):
+            status = "wrapper_origin"
         return {**asdict(source), "status": status, "ref": ref, "upstream": metadata, "changed": [], "added": [], "same": 0}
     changed = []
     added = []

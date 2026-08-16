@@ -58,6 +58,8 @@
 - `04_转写计划.md`
 - `transwrite_manifest.json`
 - `wechat_article_manifest.json`
+- `explainer_html_video_manifest.json`
+- `vox_explainer_video_manifest.json`
 - `talking_head_video_manifest.json`
 - `podcast_manifest.json`
 - 可选：引用 `~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json`

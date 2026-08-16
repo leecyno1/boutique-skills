@@ -4,11 +4,11 @@
 |---|---:|
 | 核心 Agent 能力 (`core-agent`) | 20 |
 | 搜索 / 研究 / 情报 (`search-research`) | 17 |
-| 浏览器 / 自动化 (`browser-automation`) | 2 |
+| 浏览器 / 自动化 (`browser-automation`) | 3 |
 | 编程 / 工程工具 (`coding-devtools`) | 11 |
 | 数据分析 (`data-analysis`) | 9 |
 | 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 39 |
+| 设计 / UI (`design-ui`) | 40 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
 | 媒体生成 / 处理 (`media-generation`) | 36 |
 | 写作 / 内容 (`writing-content`) | 13 |
@@ -81,6 +81,7 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `dasheng-video-omni-browser` | `L3 Specialist` | 3★ | `api-key`, `browser-automation`, `dasheng_media_workflow`, `l3`, `media-generation`, `online`, `optional` |
 | `oracle` | `L3 Specialist` | 3★ | `api-key`, `browser-automation`, `l3`, `online` |
 | `notebooklm-skill` | `L2 Professional` | 3★ | `api-key`, `browser-automation`, `default_sentinel`, `l2`, `online` |
 
@@ -92,11 +93,11 @@
 | `behavior-validator` | `L2 Professional` | 5★ | `behavior-testing`, `coding-devtools`, `direct`, `l2`, `online`, `openclaw-official`, `quality-assurance` |
 | `android-native-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `flutter-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
-| `frontend-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `ios-application-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
 | `baoyu-image-gen` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `coding-devtools`, `l2`, `online` |
+| `frontend-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `fullstack-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `react-native-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 
@@ -120,8 +121,8 @@
 |---|---|---:|---|
 | `feishu-doc-creator` | `L2 Professional` | 5★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `docs-office`, `l2`, `offline`, `self-media-ops`, `self_media` |
 | `nano-pdf` | `L2 Professional` | 5★ | `direct`, `docs-office`, `l2`, `offline` |
+| `social-content` | `L2 Professional` | 5★ | `default_sentinel`, `direct`, `docs-office`, `l2`, `offline` |
 | `pptx-generator` | `L2 Professional` | 4★ | `default_sentinel`, `direct`, `docs-office`, `l2`, `minimax_official`, `offline` |
-| `social-content` | `L2 Professional` | 4★ | `default_sentinel`, `direct`, `docs-office`, `l2`, `offline` |
 | `lark-calendar` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `online` |
 | `minimax-docx` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `minimax_official`, `online` |
 | `minimax-pdf` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `minimax_official`, `online` |
@@ -171,6 +172,7 @@
 | `agentmail-toolkit` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 | `animation` | `L2 Professional` | 4★ | `api-key`, `design-ui`, `l2`, `online` |
 | `baoyu-article-illustrator` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `design-ui`, `l2`, `online` |
+| `dasheng-vox-skills` | `L2 Professional` | 4★ | `api-key`, `dasheng_media_workflow`, `design-ui`, `l2`, `media-generation`, `online`, `optional`, `video-orchestration` |
 | `agentmail` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 
 ## HTML 发布 / 视觉出版
@@ -195,6 +197,7 @@
 | `dasheng-stage-transwrite` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-director` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-explainer-html` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
+| `dasheng-video-roughcut` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-style-trainer` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-talking-head` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `social-auto-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
@@ -203,7 +206,6 @@
 | `guizang-social-card-skill` | `L2 Professional` | 4★ | `api-key`, `creator`, `design`, `l2`, `media-generation`, `online`, `social-card` |
 | `seedance2-skill` | `L2 Professional` | 4★ | `api-key`, `l2`, `media`, `media-generation`, `online`, `prompt`, `video` |
 | `buddy-sings` | `L3 Specialist` | 4★ | `default_sentinel`, `direct`, `l3`, `media-generation`, `minimax_official`, `offline` |
-| `dasheng-video-roughcut` | `L3 Specialist` | 3★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `l3`, `mcp-required`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `video-shotcraft` | `L3 Specialist` | 3★ | `browser-required`, `l3`, `media-generation`, `online`, `product-video`, `remotion` |
 | `baoyu-comic` | `L3 Specialist` | 3★ | `api-key`, `baoyu`, `l3`, `media-generation`, `online` |
 | `baoyu-compress-image` | `L3 Specialist` | 3★ | `api-key`, `baoyu`, `l3`, `media-generation`, `online` |

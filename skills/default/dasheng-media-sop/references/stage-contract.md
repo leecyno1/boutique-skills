@@ -29,6 +29,15 @@ Optional asset generators may emit `paradigm_manifest.json` or `training_manifes
   - `selected_topics.json`
   - `brief_manifest.json`
 
+## Draft Contract
+
+- Formal upstream input: `selected_topics.json` + `topic_cards.json`，且 Brief Gate 已批准。
+- Formal output root: `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/05_初稿生成/<run_id>/`。
+- Draft 只生成研究、可复核数据、图表、正文配图、Reasoning Sheet、标准初稿、自包含离线 HTML、事实核查和质量门禁。
+- Draft 不生成公众号渠道终稿或封面，不执行 Transwrite，不登录账号、不上传草稿、不调用平台发布工具。
+- Per-topic `draft_result.json` must include `stage=draft`, `next_stage=transwrite`, and `next_stage_authorized=false`.
+- Canonical stage outputs are `draft_manifest.json` + `final_structure_snapshot.json`; completion only makes Transwrite eligible for later approval and never authorizes it automatically.
+
 ## Transwrite Contract
 
 - Formal upstream input: `draft_manifest.json`
@@ -36,6 +45,8 @@ Optional asset generators may emit `paradigm_manifest.json` or `training_manifes
 - Optional upstream assets: `paradigm_profile.yaml`, `video-style-training/style_profile.json`
 - Lanes:
   - `wechat_article`
+  - `explainer_html_video`
+  - `vox_explainer_video`
   - `talking_head_video`
   - `podcast`
 - Outputs:

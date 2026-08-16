@@ -13,7 +13,7 @@
   "entry": "scripts/transwrite_html_video_bridge.py",
   "inputs": {
     "required": [
-      "talking_head_video_manifest.json",
+      "explainer_html_video_manifest.json or talking_head_video_manifest.json",
       "html_video_project_plan.json",
       "html_video_project_vars.json"
     ],
@@ -26,6 +26,6 @@
   "outputs": [
     "html_video_execution.json",
     "html-video preview html",
-    "mp4 render when explicitly executed"
+    "scene MP4 render when explicitly executed for Remotion composition"
   ]
 }

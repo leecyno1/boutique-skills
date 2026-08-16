@@ -6,7 +6,7 @@
 - 常见输入：博主/栏目样板视频目录、`style_id`、博主名、平台名。
 - 交付：`training_manifest.json`、`per_video/*/analysis.json`、`style_profile.json`、`style_profile.md`。
 - 默认输出：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`。
-- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video` 和 `explainer_html_video` 只引用 `style_profile.json`。
+- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video`、`explainer_html_video` 和 `vox_explainer_video` 只引用 `style_profile.json`。
 - 禁止：把样板视频、压缩上传副本、训练报告或渲染预览写入项目根目录或 `skills/`。
 
 ## 0.7 Video Self Learning（可选、定时）
@@ -39,18 +39,20 @@
 
 - 目标：形成标准初稿，默认是 `4000-8000` 字长文底稿，并供编辑直接改造成终稿。
 - 常见输入：确认题目、核心判断、骨架、来源包。
+- 默认输出：`${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/05_初稿生成/<run_id>/`。
 - 交付：`03_标准初稿_<topic>.md`、`03_初稿_报告.md`、`draft_manifest.json`
 - 结构规则：优先 `开篇 + 三段论 + 结尾` 或 `开篇 + 4 章 + 结尾`，一级标题不得超过 `4` 个。
 - 内容规则：只写标准事实稿，不注入账号 DNA 和平台腔；主动补数据、表格和权威来源。
 - 漫画规则：扫描原文比喻、举例、类比、拟人和抽象机制，输出 `03_IllustrationIntents_<topic>.json`，调用 `dasheng-lemon-illustrations` 生成柠檬人漫画并嵌入对应段落。
+- 边界：只完成内容、数据和正文视觉资产；不生成公众号渠道终稿/封面，不执行 Transwrite，不登录账号、不上传或发布。完成时只标记下一候选阶段为 Transwrite，且默认未授权。
 
 ## 4. Transwrite
 
-- 目标：把确认后的 Draft 转成公众号文章、口播视频和播客生产包。
+- 目标：把确认后的 Draft 转成公众号文章、普通无头、VOX 调查解释、真人口播和播客生产包。
 - 常见输入：`draft_manifest.json`、`final_structure_snapshot.json`、`transwrite_decision.json`。
-- 三条通路：
+- 三类通路：
   - 公众号：Style DNA / humanize / 封面 / 微信 HTML 转写
-  - 口播视频：真人口播可选、HTML 视觉层、音频、主动/被动对齐、渲染计划；可选引用 `video-style-training` 产出的 `style_profile.json`
+  - 视频：普通无头、VOX 调查解释、真人口播使用独立 Lane；共享 Remotion 主时间轴、证据门禁和最终 QC
   - 播客：Coze / MiniMax API 请求包
 - 交付：`04_转写计划.md`、`transwrite_manifest.json`、每题 lane manifest。
 - 备注：不补事实、不重做图表；外部 API/素材缺失必须显式标记。
