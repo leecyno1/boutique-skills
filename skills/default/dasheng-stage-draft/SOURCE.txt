@@ -2,3 +2,5 @@ Source: https://github.com/leecyno1/dasheng-media-workflow-skills
 Local source path: /Volumes/PSSD/Projects/公众号文章/skills/dasheng-stage-draft
 Upstream path: https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-draft
 License: MIT License (copied from source project LICENSE at import time).
+
+Portability patch (2026-08-19): removed references to the deleted dasheng-finance-data skill; finance chart requests now describe the generic data adapter.

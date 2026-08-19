@@ -13,14 +13,14 @@
     ]
   },
   "summary": {
-    "skills": 403,
-    "native_origin_verified_or_referenced": 397,
+    "skills": 402,
+    "native_origin_verified_or_referenced": 396,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
-      "L2 Professional": 137,
+      "L2 Professional": 136,
       "L3 Specialist": 245
     },
     "by_category": {
@@ -33,7 +33,7 @@
       "data-analysis": 9,
       "design-ui": 41,
       "docs-office": 9,
-      "finance-data": 22,
+      "finance-data": 21,
       "finance-knowledge": 2,
       "finance-monitor": 15,
       "finance-services": 53,
@@ -53,13 +53,13 @@
       "api-key": 99,
       "api-key+mcp-required": 22,
       "browser-required": 27,
-      "direct": 182,
+      "direct": 181,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
       "3★": 133,
-      "4★": 176,
+      "4★": 175,
       "5★": 88
     }
   },
@@ -4345,54 +4345,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-data",
-      "preset_excluded": false,
-      "rating": {
-        "score": 86,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "dasheng-finance-data",
-      "name": "dasheng-finance-data",
-      "description": "Draft 阶段按需金融数据增强工具。用于把 A 股/指数行情、估值与时间序列数据转成可直接嵌入 Draft HTML 的 Chart.js `chart_specs`。",
-      "manual": "skills/default/dasheng-finance-data/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-finance-data/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "finance-data",
-      "category_label": "金融 / 数据源",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "finance-data",
-        "l2",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "medium",
-      "conflict_group": "dasheng-finance-data",
       "preset_excluded": false,
       "rating": {
         "score": 86,

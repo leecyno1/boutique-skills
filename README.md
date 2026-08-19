@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-403-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-402-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-30%20skills%20%2B%201%20pack-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -70,9 +70,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 403 |
+| Curated skills | 402 |
 | Skill suites | 8 |
-| Native sources verified or referenced | 397 |
+| Native sources verified or referenced | 396 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 30 skills + 1 pack |
@@ -123,9 +123,9 @@ Finance skills now have a dedicated **Finance Investment Standard Suite**. It is
 
 | Metric | Value |
 |---|---:|
-| Finance-related skills | 204 |
+| Finance-related skills | 203 |
 | Finance investment standard suite | 34 skills |
-| Finance data skills | 22 |
+| Finance data skills | 21 |
 | Finance trading/research skills | 110 |
 | Institutional finance services | 53 |
 | Finance monitor/risk skills | 15 |
@@ -236,7 +236,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 |---|---:|---|---|---|---|
 | [AlphaGBM Options & Investment Research Suite](https://github.com/AlphaGBM/skills) | 30 | `high` | `finance-trading` | API: `ALPHAGBM_API_KEY`<br>Tools: `curl` | `./scripts/install-suite.sh alphagbm` |
 | [Anthropic Financial Services Suite](https://github.com/anthropics/financial-services) | 66 | `high` | `finance-services` | Tools: `mcp` | `./scripts/install-suite.sh anthropic-financial-services` |
-| [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 32 | `high` | `marketing-growth` | Tools: `browser`, `ffmpeg`, `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
+| [大圣自媒体工作流](https://github.com/leecyno1/dasheng-media-workflow-skills) | 31 | `high` | `marketing-growth` | Tools: `browser`, `ffmpeg`, `node`, `python` | `./scripts/install-suite.sh dasheng-media-workflow` |
 | [Day1Global Investment Research Suite](https://github.com/star23/Day1Global-Skills) | 5 | `high` | `finance-trading` | Tools: `browser` | `./scripts/install-suite.sh day1global-skills` |
 | [Finance Investment Standard Suite](https://github.com/leecyno1/boutique-openclaw-skills) | 34 | `high` | `finance-investment-standard` | API: `ALPHAGBM_API_KEY`, `FINVIZ_API_KEY`, `FMP_API_KEY`, `LLMQUANT_API_KEY`, `TUSHARE_TOKEN`<br>Tools: `browser`, `curl`, `mcp`, `node`, `python` | `./scripts/install-suite.sh finance-investment-standard` |
 | [Official GSAP AI Skills Suite](https://github.com/greensock/gsap-skills) | 8 | `high` | `design-ui` | Tools: `node` | `./scripts/install-suite.sh gsap-skills` |
@@ -365,7 +365,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `anthropic-fs-spglobal-earnings-preview-beta` | `L3 Specialist` | `finance-data` | 3★ | `mcp-required` | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/earnings-preview-beta) |
 | `anthropic-fs-spglobal-funding-digest` | `L3 Specialist` | `finance-data` | 3★ | `mcp-required` | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/funding-digest) |
 | `anthropic-fs-spglobal-tear-sheet` | `L3 Specialist` | `finance-data` | 3★ | `mcp-required` | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/tear-sheet) |
-| `dasheng-finance-data` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
 | `funda-data` | `L2 Professional` | `finance-data` | 4★ | `api-key+mcp-required` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/funda-data) |
 | `global-stock-data` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://github.com/simonlin1212/global-stock-data) |
 | `llmquant-data` | `L2 Professional` | `finance-data` | 4★ | `api-key+mcp-required` | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-data) |

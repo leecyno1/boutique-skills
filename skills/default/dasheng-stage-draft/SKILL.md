@@ -33,7 +33,7 @@ Stage 3 Draft 是大声自媒体创作工作台的核心写作阶段，负责将
 
 ### 金融数据增强输入
 
-`topic_cards.json` 或 `--asset-specs-file` 可添加 `finance_chart_requests`。Draft 会调用 `dasheng-finance-data` / `scripts/finance_data_adapter.py` 拉取 A 股或指数 K 线，并自动生成 `chart_specs`。
+`topic_cards.json` 或 `--asset-specs-file` 可添加 `finance_chart_requests`。Draft 会调用金融数据适配层拉取 A 股或指数 K 线，并自动生成 `chart_specs`。
 该字段也支持全球市场品种（Yahoo Finance Chart API 直连优先，本地缓存 / yfinance 兜底）、中国宏观/地产数据（东方财富数据中心宏观报表）与经济日历（FMP，需 `FMP_API_KEY`），用于宏观、利率、汇率、商品、地产、股债组合等文章。
 如果任一金融图表请求失败，`03_DraftAssets_<topic>.json` 与 `draft_manifest.json` 会写入 `asset_failures.finance_charts`，并把 `asset_status` 标记为 `incomplete`。
 
@@ -149,7 +149,7 @@ Draft阶段支持人工+AI迭代循环：
 如果 Intake 阶段存在相关主题的文章或视频链接，须附在初稿末尾，供编辑回看和拓展思路。
 
 Draft 阶段如需真实数据、图表或配图，由当前运行 Agent 主动搜索、核验、生成并嵌入 HTML；不得把图表计划留给不存在的下游阶段。
-金融行情、指数走势、个股对比、跨资产市场数据、中国宏观/地产、经济日历统计图优先使用 `dasheng-finance-data` 生成 `chart_specs`，避免手写行情或宏观数据。
+金融行情、指数走势、个股对比、跨资产市场数据、中国宏观/地产、经济日历统计图 优先使用可用的金融数据工具生成 `chart_specs`，避免手写行情或宏观数据。
 
 ## 下游阶段
 

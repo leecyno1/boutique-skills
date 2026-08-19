@@ -5,7 +5,7 @@
 | `api-key` | 99 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 27 |
-| `direct` | 182 |
+| `direct` | 181 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -260,7 +260,6 @@
 | `yc-reader` | 无 | `python` | `low` |
 | `video-autopilot-kit` | 无 | `ffmpeg`, `python` | `low` |
 | `a-stock-data` | 无 | `python` | `medium` |
-| `dasheng-finance-data` | 无 | `python` | `medium` |
 | `global-stock-data` | 无 | `python` | `medium` |
 | `yfinance-data` | 无 | `python` | `medium` |
 | `agent-eval` | 无 | 无 | `low` |

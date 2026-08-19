@@ -260,7 +260,6 @@ EDITORIAL_SCORE_OVERRIDES = {
 
 DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
     "bilibili-upload-bridge": "media-generation",
-    "dasheng-finance-data": "finance-data",
     "dasheng-hotspot-radar": "search-research",
     "dasheng-html-anything-bridge": "html-publishing",
     "dasheng-html-video-bridge": "media-generation",
@@ -790,7 +789,7 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
             tools = ["browser", "python"]
         elif skill_id == "dasheng-vox-skills":
             tools = ["browser", "ffmpeg", "node", "python"]
-        elif skill_id in {"dasheng-finance-data", "dasheng-hotspot-radar", "feishu-doc-creator"}:
+        elif skill_id in {"dasheng-hotspot-radar", "feishu-doc-creator"}:
             tools = sorted(set(tools + ["python"]))
         else:
             tools = []

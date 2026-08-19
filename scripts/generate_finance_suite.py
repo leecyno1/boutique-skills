@@ -41,7 +41,7 @@ def third_party_key_penalty(api_keys: list[str]) -> int:
 
 # (slot, slot_label, [candidate skill ids in tie-break order])
 FINANCE_SLOTS = [
-    ("a-share-data", "A股数据底座", ["tushare-openclaw-skill", "a-stock-data", "dasheng-finance-data", "akshare-stock", "openclaw-stock-data-skill"]),
+    ("a-share-data", "A股数据底座", ["tushare-openclaw-skill", "a-stock-data", "akshare-stock", "openclaw-stock-data-skill"]),
     ("global-market-data", "美股/港股全栈数据", ["global-stock-data", "yfinance-data"]),
     ("institutional-data", "SEC/13F/机构数据", ["llmquant-data", "funda-data"]),
     ("macro", "宏观研究", ["llmquant-macro", "llmquant-market-intelligence", "market-environment-analysis"]),

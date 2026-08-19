@@ -15,7 +15,7 @@
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 110 |
 | 金融 / 机构服务 (`finance-services`) | 53 |
-| 金融 / 数据源 (`finance-data`) | 22 |
+| 金融 / 数据源 (`finance-data`) | 21 |
 | 金融 / 知识库 (`finance-knowledge`) | 2 |
 | 金融 / 监控预警 (`finance-monitor`) | 15 |
 | 政策 / 宏观监控 (`policy-monitoring`) | 1 |
@@ -445,7 +445,6 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `a-stock-data` | `L2 Professional` | 4★ | `a-share`, `china-market-data`, `direct`, `finance`, `finance-data`, `l2`, `offline`, `standard`, `tushare-supplement` |
-| `dasheng-finance-data` | `L2 Professional` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `finance-data`, `l2`, `offline`, `self-media-ops`, `self_media` |
 | `global-stock-data` | `L2 Professional` | 4★ | `direct`, `finance`, `finance-data`, `global-market`, `l2`, `offline`, `standard` |
 | `yfinance-data` | `L2 Professional` | 4★ | `china-market-data`, `direct`, `finance-data`, `l2`, `offline`, `trading_finance`, `tushare-supplement` |
 | `funda-data` | `L2 Professional` | 4★ | `api-key+mcp-required`, `finance-data`, `l2`, `online`, `trading_finance` |

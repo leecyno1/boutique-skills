@@ -2432,20 +2432,6 @@
       ]
     },
     {
-      "id": "dasheng-finance-data",
-      "name": "dasheng-finance-data",
-      "description": "Draft 阶段按需金融数据增强工具。用于把 A 股/指数行情、估值与时间序列数据转成可直接嵌入 Draft HTML 的 Chart.js `chart_specs`。",
-      "manual": "skills/default/dasheng-finance-data/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-finance-data/SKILL.md",
-      "source": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "dasheng_media_workflow",
-        "self_media"
-      ]
-    },
-    {
       "id": "dasheng-hotspot-radar",
       "name": "dasheng-hotspot-radar",
       "description": "Use when an agent needs a standalone no-login hotspot/news radar for Dasheng workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.",

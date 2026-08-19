@@ -3,7 +3,7 @@
 | 层级 | 定义 | 数量 |
 |---|---|---:|
 | `L1 Foundation` | 跨 Agent、跨领域、高通用、低冲突的基础能力 | 21 |
-| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 137 |
+| `L2 Professional` | 常用专业工作流，适合多数生产环境按需安装 | 136 |
 | `L3 Specialist` | 领域强绑定、依赖明显或适合专家场景的能力 | 245 |
 
 ## L1 Foundation
@@ -108,7 +108,6 @@
 | `writing-plans` | 写作 / 内容 | 5★ | `direct` | [origin](https://skills.sh/obra/superpowers/writing-plans) |
 | `yc-reader` | 搜索 / 研究 / 情报 | 5★ | `direct` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/yc-reader) |
 | `a-stock-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/simonlin1212/a-stock-data) |
-| `dasheng-finance-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
 | `global-stock-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/simonlin1212/global-stock-data) |
 | `yfinance-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data) |
 | `android-native-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/android-native-dev) |

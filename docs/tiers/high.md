@@ -2,7 +2,7 @@
 
 完整专家档，包含中档全部能力，并加入默认生图、Baoyu 创作套件、金融交易研究、AlphaEar 与高级分析技能。
 
-- 技能数量：`403`
+- 技能数量：`402`
 - 安装命令：`./scripts/install-tier.sh high`
 - JSON 清单：`tiers/high.json`
 
@@ -164,7 +164,6 @@
 | `codex-responses-tooling` | 高级版默认生图技能：读取本机 Codex Responses API 配置，流式调用 image_generation 并保存图片结果。 | [skills/default/codex-responses-tooling/GUIDE.md](../../skills/default/codex-responses-tooling/GUIDE.md) | [source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `company-valuation` | Estimate the intrinsic value of a public company using DCF, relative (peer multiple) and sum-of-parts (SOTP) methods, then triangulate to an implied share price with upside/downside versus the current market price. | [skills/default/company-valuation/README.md](../../skills/default/company-valuation/README.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/company-valuation) |
 | `content-strategy` | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. | [skills/default/content-strategy/GUIDE.md](../../skills/default/content-strategy/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/content-strategy) |
-| `dasheng-finance-data` | Draft 阶段按需金融数据增强工具。用于把 A 股/指数行情、估值与时间序列数据转成可直接嵌入 Draft HTML 的 Chart.js `chart_specs`。 | [skills/default/dasheng-finance-data/SKILL.md](../../skills/default/dasheng-finance-data/SKILL.md) | [source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
 | `dasheng-hotspot-radar` | Use when an agent needs a standalone no-login hotspot/news radar for Dasheng workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage. | [skills/default/dasheng-hotspot-radar/SKILL.md](../../skills/default/dasheng-hotspot-radar/SKILL.md) | [source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
 | `dasheng-html-anything-bridge` | Use when Dasheng draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references. | [skills/default/dasheng-html-anything-bridge/SKILL.md](../../skills/default/dasheng-html-anything-bridge/SKILL.md) | [source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge) |
 | `dasheng-html-video-bridge` | Use when Dasheng transwrite needs no-human or human-material talking-head videos rendered through the local html-video project. | [skills/default/dasheng-html-video-bridge/SKILL.md](../../skills/default/dasheng-html-video-bridge/SKILL.md) | [source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge) |
