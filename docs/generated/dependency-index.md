@@ -2,10 +2,10 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 130 |
+| `api-key` | 129 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 20 |
-| `direct` | 153 |
+| `browser-required` | 21 |
+| `direct` | 158 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -45,13 +45,14 @@
 | `alphagbm-vol-surface` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-watchlist` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `a-stock-data` | `TUSHARE_TOKEN` | `python` | `medium` |
+| `agent-architecture-audit` | `OPENAI_API_KEY` | 无 | `medium` |
 | `agentmail-toolkit` | `AGENTMAIL_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `akshare-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `animation` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `baoyu-article-illustrator` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `baoyu-youtube-transcript` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg`, `python` | `medium` |
-| `dasheng-vox-skills` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg` | `medium` |
+| `book-to-skill` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
 | `dual-axis-skill-reviewer` | `OPENAI_API_KEY` | 无 | `medium` |
 | `guizang-social-card-skill` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `ffmpeg` | `medium` |
 | `ima` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
@@ -78,7 +79,6 @@
 | `breakout-trade-planner` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `canslim-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `company-valuation` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
-| `dasheng-video-omni-browser` | `GEMINI_API_KEY`, `IMA_API_KEY`, `IMA_CLIENT_ID` | `browser`, `ffmpeg` | `medium` |
 | `data-quality-checker` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `dividend-growth-pullback-screener` | `FINVIZ_API_KEY`, `FMP_API_KEY` | `python` | `medium` |
 | `downtrend-duration-analyzer` | `FMP_API_KEY` | 无 | `medium` |
@@ -133,7 +133,6 @@
 | `media-downloader` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `PEXELS_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-docx` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `minimax-multimodal-toolkit` | `IMA_API_KEY`, `IMA_CLIENT_ID`, `MINIMAX_API_KEY` | `browser`, `ffmpeg` | `medium` |
-| `minimax-pdf` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `minimax-xlsx` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `node`, `python` | `medium` |
 | `notebooklm-skill` | `GEMINI_API_KEY` | `browser` | `medium` |
 | `react-native-dev` | `IMA_API_KEY`, `IMA_CLIENT_ID` | `node`, `python` | `medium` |
@@ -186,6 +185,7 @@
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
+| `notebooklm-py` | 无 | `browser` | `medium` |
 | `openclaw-cron-setup` | 无 | `browser` | `medium` |
 | `btc-bottom-model` | 无 | `browser` | `medium` |
 | `us-market-sentiment` | 无 | `browser` | `medium` |
@@ -213,6 +213,7 @@
 | `verification-before-completion` | 无 | 无 | `low` |
 | `weather` | 无 | 无 | `low` |
 | `writing-skills` | 无 | 无 | `low` |
+| `agent-harness-construction` | 无 | 无 | `low` |
 | `animation-vocabulary` | 无 | 无 | `low` |
 | `apple-design` | 无 | 无 | `low` |
 | `backtest-expert` | 无 | 无 | `low` |
@@ -243,6 +244,7 @@
 | `gsap-scrolltrigger` | 无 | `node` | `low` |
 | `gsap-timeline` | 无 | `node` | `low` |
 | `gsap-utils` | 无 | `node` | `low` |
+| `gstack` | 无 | 无 | `low` |
 | `high-end-visual-design` | 无 | 无 | `low` |
 | `humanizer-zh` | 无 | 无 | `low` |
 | `ian-xiaohei-illustrations` | 无 | 无 | `low` |
@@ -279,6 +281,8 @@
 | `dasheng-finance-data` | 无 | `python` | `medium` |
 | `global-stock-data` | 无 | `python` | `medium` |
 | `yfinance-data` | 无 | `python` | `medium` |
+| `agent-eval` | 无 | 无 | `low` |
+| `agent-introspection-debugging` | 无 | 无 | `low` |
 | `baoyu-format-markdown` | 无 | 无 | `low` |
 | `baoyu-infographic` | 无 | 无 | `low` |
 | `baoyu-skills` | 无 | 无 | `low` |
@@ -286,6 +290,7 @@
 | `bilibili-upload-bridge` | 无 | `ffmpeg`, `node` | `low` |
 | `capability-evolver` | 无 | 无 | `low` |
 | `channels-account-launch-expert` | 无 | 无 | `low` |
+| `colleague-skill` | 无 | 无 | `low` |
 | `dasheng-html-anything-bridge` | 无 | 无 | `low` |
 | `dasheng-html-video-bridge` | 无 | `ffmpeg`, `node` | `low` |
 | `dasheng-media-sop` | 无 | 无 | `low` |

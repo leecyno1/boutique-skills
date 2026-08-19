@@ -1,0 +1,5 @@
+Source: https://github.com/titanwings/colleague-skill
+Base source commit: dot-skill @ 2026-08-19
+License: MIT
+Stars at import: 23407
+Imported by: scripts/weekly_curation.py on 2026-08-19 (score 85).

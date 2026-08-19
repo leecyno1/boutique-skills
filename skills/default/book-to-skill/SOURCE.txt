@@ -1,0 +1,5 @@
+Source: https://github.com/virgiliojr94/book-to-skill
+Base source commit: master @ 2026-08-19
+License: MIT
+Stars at import: 22886
+Imported by: scripts/weekly_curation.py on 2026-08-19 (score 85).

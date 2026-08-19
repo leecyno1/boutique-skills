@@ -1,16 +1,16 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-08-16
+更新时间：2026-08-19
 
 ## 仓库信息
 
 - 路径：/Volumes/PSSD/Projects/boutique-openclaw-skills
 - 默认分支：main
-- GitHub：https://github.com/leecyno1/boutique-openclaw-skills
-- Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills
-- 当前提交：b9a4a62 Add reviewed Dasheng VOX video skills
+- GitHub：https://github.com/leecyno1/boutique-openclaw-skills（远端 origin）
+- Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee）
 - 当前技能数：396
-- 标准包：34 个 Skill + 2 个组合包
+- 标准包：34 个 Skill（上限 40，packs 为参考推荐不随包安装）
+- 金融投资标准组合：34 个 Skill（能力位去重，上限 40）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
@@ -36,11 +36,16 @@
 - skills/default/<name>/：Skill 主文件、配置、Agent 展示信息和来源说明。
 - catalog/default-skills.json：基础注册表。
 - catalog/native-origin-overrides.json：来源核验覆盖。
-- catalog/suites/：组合套件。
+- catalog/suites/：组合套件（含金融投资标准组合）。
 - scripts/generate_enriched_catalog.py：生成评分、依赖和文档索引。
+- scripts/generate_finance_suite.py：生成金融组合（能力位去重，<= 40）。
+- scripts/weekly_curation.py：周度发现/评分/入库/出库。
+- scripts/weekly_cycle.sh：周度全流程编排（含发布）。
+- scripts/publish_weekly.sh：白名单提交并推送 GitHub+Gitee。
 - scripts/audit_skills.py：全库审计。
 - scripts/install-suite.sh：套件安装和 dry-run。
 - reports/source-discovery/：评审报告。
+- reports/weekly-curation/：周度发现/出库报告。
 
 ## 新 Skill 更新流程
 
@@ -73,7 +78,7 @@
 ## Git 规则
 
 - 禁止使用 git reset --hard、git clean、git checkout -- 覆盖工作区。
-- 提交前使用白名单 git add。
+- 提交前使用白名单 git add（scripts/publish_weekly.sh 已内置）。
 - 当前以下四个文件已有用户改动，不能回滚、覆盖或代提交：
 
     reports/finance-skill-eval/tushare-eval/standard-finance-skills-recommendation.json
@@ -82,13 +87,28 @@
     reports/finance-skill-eval/tushare-eval/tushare-finance-skill-evaluation.md
 
 - 提交前确认 git diff --cached --name-only 不含以上文件。
-- 提交后同步两个远端：
+- 提交后同步两个远端（publish_weekly.sh 自动完成）：
 
     git push origin main
+    git push gitee main
     git fetch origin main --quiet
-    git rev-parse HEAD origin/main
+    git fetch gitee main --quiet
+    git rev-parse HEAD origin/main gitee/main
 
-## 定时维护建议
+## 周度自动治理（2026-08-19 新增）
+
+每周定时任务（Qoder 会话 schedule，周六 09:00 Asia/Shanghai）执行：
+
+    ./scripts/weekly_cycle.sh
+
+流程：发现（GitHub 搜索+评分+高分入库）→ 出库（上游失效/低分/被支配）→ 重建目录 → 刷新金融组合 → 审计 → 测试 → 双远端发布。
+
+- 入库门槛：候选 >= 75 分且含 SKILL.md 且 >= 20 星且一年内活跃且无能力重叠；60-74 分进人工复核清单。
+- 出库规则：上游 404 / 内部评分 < 60 / 同冲突组内被高出 >= 15 分的同类支配且自身 <= 70 分。
+- 标准组合 <= 40 base skills（一能力一技能）；金融组合 <= 40（能力位取最高分）。
+- 详见 docs/WEEKLY_CURATION.md。
+
+## 定时维护建议（月度深度评审，可与周度自动流程互补）
 
 每周或每两周：
 

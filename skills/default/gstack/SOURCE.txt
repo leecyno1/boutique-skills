@@ -1,0 +1,5 @@
+Source: https://github.com/garrytan/gstack
+Base source commit: main @ 2026-08-19
+License: MIT
+Stars at import: 128613
+Imported by: scripts/weekly_curation.py on 2026-08-19 (score 80).

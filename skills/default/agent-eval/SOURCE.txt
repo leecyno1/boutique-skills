@@ -1,0 +1,5 @@
+Source: https://github.com/affaan-m/ECC
+Base source commit: main @ 2026-08-19
+License: MIT
+Stars at import: 241000
+Imported by: scripts/weekly_curation.py on 2026-08-19 (score 80).

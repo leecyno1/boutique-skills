@@ -1,4 +1,19 @@
-.PHONY: audit sync enrich upstream-check upstream-apply install-standard bundle assets
+.PHONY: audit sync enrich upstream-check upstream-apply install-standard bundle assets weekly discover prune finance-suite publish
+
+weekly:
+	./scripts/weekly_cycle.sh
+
+discover:
+	python3 scripts/weekly_curation.py discover --import-approved
+
+prune:
+	python3 scripts/weekly_curation.py prune --apply
+
+finance-suite:
+	python3 scripts/generate_finance_suite.py
+
+publish:
+	./scripts/publish_weekly.sh
 
 audit:
 	python3 scripts/audit_skills.py

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-19T11:34:08",
+  "checked_upstreams": 374,
+  "suggestions": [
+    {
+      "skill": "minimax-pdf",
+      "reason": "dominated_duplicate",
+      "detail": "conflict group 'document-pdf' has a member scoring 92"
+    }
+  ],
+  "applied": [
+    "minimax-pdf"
+  ]
+}

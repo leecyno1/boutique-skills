@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-16 16:07:43",
+  "timestamp": "2026-08-19 11:34:08",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 396,
-    "audited_skills": 390,
+    "catalog_skills": 403,
+    "audited_skills": 397,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 390,
+    "resolved_skills": 397,
     "missing_skills": 0,
-    "missing_env": 116,
+    "missing_env": 104,
     "duplicate_capabilities": 0,
     "risky_hits": 15,
     "missing_native_origins": 0,
@@ -235,10 +235,6 @@
       "env": "AGENTMAIL_API_KEY"
     },
     {
-      "skill": "agentmail-toolkit",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "baoyu-image-gen",
       "env": "ARK_API_KEY"
     },
@@ -260,10 +256,6 @@
     },
     {
       "skill": "baoyu-image-gen",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
       "env": "OPENROUTER_API_KEY"
     },
     {
@@ -273,14 +265,6 @@
     {
       "skill": "baoyu-image-gen",
       "env": "ZAI_API_KEY"
-    },
-    {
-      "skill": "dasheng-vox-skills",
-      "env": "GEMINI_API_KEY"
-    },
-    {
-      "skill": "dual-axis-skill-reviewer",
-      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "lark-calendar",
@@ -299,16 +283,8 @@
       "env": "PAPERLESS_TOKEN"
     },
     {
-      "skill": "tavily-search",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "agentmail-cli",
       "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "alphaear-sentiment",
-      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "baoyu-post-to-wechat",
@@ -329,10 +305,6 @@
     {
       "skill": "canslim-screener",
       "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "dasheng-video-omni-browser",
-      "env": "GEMINI_API_KEY"
     },
     {
       "skill": "dividend-growth-pullback-screener",
@@ -359,10 +331,6 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "edge-hint-extractor",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "exposure-coach",
       "env": "FMP_API_KEY"
     },
@@ -387,10 +355,6 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "inference-skills",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "institutional-flow-tracker",
       "env": "FMP_API_KEY"
     },
@@ -411,10 +375,6 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "oracle",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "pair-trade-screener",
       "env": "FMP_API_KEY"
     },
@@ -433,10 +393,6 @@
     {
       "skill": "signal-postmortem",
       "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "stock-daily-analysis-skill",
-      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "theme-detector",
@@ -465,10 +421,6 @@
     {
       "skill": "ai-image-generation",
       "env": "GEMINI_API_KEY"
-    },
-    {
-      "skill": "ai-image-generation",
-      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "fullstack-dev",
@@ -630,6 +582,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scientific-illustrator"
     },
     {
+      "skill": "agent-harness-construction",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-harness-construction"
+    },
+    {
       "skill": "animation-vocabulary",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/animation-vocabulary"
     },
@@ -748,6 +704,10 @@
     {
       "skill": "gsap-utils",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-utils"
+    },
+    {
+      "skill": "gstack",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gstack"
     },
     {
       "skill": "high-end-visual-design",
@@ -882,6 +842,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/yc-reader"
     },
     {
+      "skill": "dasheng-vox-skills",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-vox-skills"
+    },
+    {
       "skill": "agent-browser",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-browser"
     },
@@ -922,6 +886,14 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/yfinance-data"
     },
     {
+      "skill": "agent-eval",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-eval"
+    },
+    {
+      "skill": "agent-introspection-debugging",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-introspection-debugging"
+    },
+    {
       "skill": "baoyu-format-markdown",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-format-markdown"
     },
@@ -948,6 +920,10 @@
     {
       "skill": "channels-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/channels-account-launch-expert"
+    },
+    {
+      "skill": "colleague-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/colleague-skill"
     },
     {
       "skill": "dasheng-html-anything-bridge",
@@ -1202,6 +1178,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/content-strategy"
     },
     {
+      "skill": "dasheng-video-omni-browser",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-omni-browser"
+    },
+    {
       "skill": "flutter-dev",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/flutter-dev"
     },
@@ -1322,6 +1302,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/news-radar"
     },
     {
+      "skill": "notebooklm-py",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/notebooklm-py"
+    },
+    {
       "skill": "openclaw-cron-setup",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-cron-setup"
     },
@@ -1422,6 +1406,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/a-stock-data"
     },
     {
+      "skill": "agent-architecture-audit",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-architecture-audit"
+    },
+    {
       "skill": "agentmail-toolkit",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agentmail-toolkit"
     },
@@ -1446,12 +1434,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-youtube-transcript"
     },
     {
-      "skill": "btc-bottom-model",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/btc-bottom-model"
+      "skill": "book-to-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/book-to-skill"
     },
     {
-      "skill": "dasheng-vox-skills",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-vox-skills"
+      "skill": "btc-bottom-model",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/btc-bottom-model"
     },
     {
       "skill": "dual-axis-skill-reviewer",
@@ -1866,10 +1854,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/company-valuation"
     },
     {
-      "skill": "dasheng-video-omni-browser",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-omni-browser"
-    },
-    {
       "skill": "data-quality-checker",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/data-quality-checker"
     },
@@ -2088,10 +2072,6 @@
     {
       "skill": "minimax-multimodal-toolkit",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-multimodal-toolkit"
-    },
-    {
-      "skill": "minimax-pdf",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-pdf"
     },
     {
       "skill": "minimax-xlsx",

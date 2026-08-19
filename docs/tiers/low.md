@@ -2,7 +2,7 @@
 
 稳定基础档，适合首次安装和轻量生产环境。只包含通用协作、搜索、文档、基础媒体和安全工作流。
 
-- 技能数量：`69`
+- 技能数量：`68`
 - 安装命令：`./scripts/install-tier.sh low`
 - JSON 清单：`tiers/low.json`
 
@@ -44,7 +44,6 @@
 | `minimax-multimodal-toolkit` | Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform. | [skills/default/minimax-multimodal-toolkit/GUIDE.md](../../skills/default/minimax-multimodal-toolkit/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-multimodal-toolkit) |
 | `minimax-music-gen` | Use when user wants to generate music, songs, or audio tracks. | [skills/default/minimax-music-gen/GUIDE.md](../../skills/default/minimax-music-gen/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-gen) |
 | `minimax-music-playlist` | Generate personalized music playlists by analyzing the user's music taste and generation feedback history. | [skills/default/minimax-music-playlist/GUIDE.md](../../skills/default/minimax-music-playlist/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-playlist) |
-| `minimax-pdf` | Use this skill when visual quality and design identity matter for a PDF. | [skills/default/minimax-pdf/GUIDE.md](../../skills/default/minimax-pdf/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-pdf) |
 | `minimax-web-search` | 使用 MiniMax MCP 进行网络搜索。触发条件：(1) 用户要求进行网络搜索、在线搜索、查找信息 (2) 需要查询最新资讯、新闻、资料 (3) 使用 MiniMax 的 web_search 功能 | [skills/default/minimax-web-search/GUIDE.md](../../skills/default/minimax-web-search/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-web-search) |
 | `minimax-xlsx` | Open, create, read, analyze, edit, or validate Excel/spreadsheet files (. | [skills/default/minimax-xlsx/GUIDE.md](../../skills/default/minimax-xlsx/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-xlsx) |
 | `model-usage` | Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. | [skills/default/model-usage/GUIDE.md](../../skills/default/model-usage/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/model-usage) |

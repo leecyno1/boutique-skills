@@ -1,0 +1,5 @@
+Source: https://github.com/teng-lin/notebooklm-py
+Base source commit: main @ 2026-08-19
+License: MIT
+Stars at import: 18792
+Imported by: scripts/weekly_curation.py on 2026-08-19 (score 85).

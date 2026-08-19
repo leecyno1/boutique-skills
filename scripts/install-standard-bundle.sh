@@ -37,13 +37,10 @@ fi
 readarray_output="$(python3 - <<'PY' "$BUNDLE_JSON"
 import json, sys
 payload=json.load(open(sys.argv[1], encoding='utf-8'))
-print(int(payload.get('max_skills') or 30))
+print(int(payload.get('max_skills') or 40))
 print(len(payload.get('skills', [])))
 for item in payload.get('skills', []):
     print(item['skill'])
-for pack in payload.get('skill_packs', []):
-    for skill in pack.get('skills', []):
-        print(skill)
 PY
 )"
 MAX_SKILLS="$(printf '%s\n' "$readarray_output" | sed -n '1p')"
@@ -60,7 +57,12 @@ if [[ "$BASE_SKILL_COUNT" -gt "$MAX_SKILLS" ]]; then
   exit 1
 fi
 
-echo "[INFO] Standard bundle skills: ${#SKILLS[@]} (${BASE_SKILL_COUNT} base + pack expansion)"
+if [[ ${#SKILLS[@]} -gt 40 ]]; then
+  echo "[ERROR] standard bundle installs ${#SKILLS[@]} skills; the cap is 40" >&2
+  exit 1
+fi
+
+echo "[INFO] Standard bundle skills: ${#SKILLS[@]} (base only; skill_packs are reference recommendations)"
 echo "[INFO] Target: $TARGET"
 mkdir -p "$TARGET"
 

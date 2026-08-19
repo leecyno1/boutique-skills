@@ -1,38 +1,38 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-16",
+  "generated_at": "2026-08-19",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
     "mirror_sources_are_not_native": true,
     "missing_origin_max_stars": 2,
-    "standard_bundle_max_skills": 34,
+    "standard_bundle_max_skills": 40,
     "preset_excluded_agents": [
       "hermes",
       "open"
     ]
   },
   "summary": {
-    "skills": 396,
-    "native_origin_verified_or_referenced": 390,
+    "skills": 403,
+    "native_origin_verified_or_referenced": 397,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
-      "L2 Professional": 134,
-      "L3 Specialist": 241
+      "L2 Professional": 137,
+      "L3 Specialist": 245
     },
     "by_category": {
-      "agent-orchestration": 5,
-      "browser-automation": 3,
-      "coding-devtools": 11,
-      "commerce-ops": 3,
+      "agent-orchestration": 6,
+      "browser-automation": 2,
+      "coding-devtools": 13,
+      "commerce-ops": 4,
       "communication": 1,
       "core-agent": 20,
       "data-analysis": 9,
-      "design-ui": 40,
-      "docs-office": 10,
+      "design-ui": 41,
+      "docs-office": 9,
       "finance-data": 22,
       "finance-knowledge": 2,
       "finance-monitor": 15,
@@ -41,26 +41,26 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
-      "media-generation": 34,
+      "media-generation": 36,
       "memory-context": 1,
       "policy-monitoring": 1,
-      "productivity-pkm": 2,
-      "search-research": 17,
+      "productivity-pkm": 3,
+      "search-research": 18,
       "security-audit": 1,
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 130,
+      "api-key": 129,
       "api-key+mcp-required": 22,
-      "browser-required": 18,
-      "direct": 153,
+      "browser-required": 21,
+      "direct": 158,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
-      "3★": 153,
-      "4★": 157,
-      "5★": 80
+      "3★": 151,
+      "4★": 163,
+      "5★": 83
     }
   },
   "skills": [
@@ -841,6 +841,48 @@
       "preset_excluded": false,
       "rating": {
         "score": 93,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "agent-harness-construction",
+      "name": "agent-harness-construction",
+      "description": "Design and optimize AI agent action spaces, tool definitions, and observation formatting for higher completion rates. Use when defining or revising an agent's tool set, action space, or observation format.",
+      "manual": "skills/default/agent-harness-construction/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/affaan-m/ECC",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/affaan-m/ECC",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "agent-harness-construction",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
         "stars": 5,
         "rating_label": "★★★★★"
       }
@@ -2224,6 +2266,48 @@
       },
       "risk_level": "low",
       "conflict_group": "gsap-utils",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "gstack",
+      "name": "gstack",
+      "description": "Router for the gstack skill suite. (gstack)",
+      "manual": "skills/default/gstack/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/garrytan/gstack",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/garrytan/gstack",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "gstack",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -3707,6 +3791,58 @@
       }
     },
     {
+      "id": "dasheng-vox-skills",
+      "name": "dasheng-vox-skills",
+      "description": "Orchestrate complete VOX-style editorial video production from content distillation, creator-led script rewriting, retention design and review storyboards through approved director shots, Shotcraft shot-card binding, real-page 2.5D motion, Codex reference images, official Gemini API or signed-in Chrome Gemini Omni generation, Remotion re-editing, narration-bound subtitles, and final QC. Use when creating, continuing, repairing, or productizing VOX explainers, evidence-led Remotion scenes, paper-collage B-roll, Gemini/Omni/Veo image-to-video batches, or an existing VOX manifest.",
+      "manual": "skills/default/dasheng-vox-skills/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-16",
+        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "browser-required",
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "l3",
+        "media-generation",
+        "online",
+        "optional",
+        "self-media-ops",
+        "video-orchestration"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg",
+          "node",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "dasheng-vox-skills",
+      "preset_excluded": false,
+      "rating": {
+        "score": 90,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "agent-browser",
       "name": "agent-browser",
       "description": "Headless browser automation CLI for AI agents. Use when interacting with websites — navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, scraping, testing web apps, downloading files, or automating any browser task. Triggers on requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data\", \"test this web app\", \"login to a site\", \"monitor a page\", or any task requiring programmatic web interaction.",
@@ -4184,6 +4320,90 @@
       }
     },
     {
+      "id": "agent-eval",
+      "name": "agent-eval",
+      "description": "Head-to-head comparison of coding agents (Claude Code, Aider, Codex, etc.) on custom tasks with pass rate, cost, time, and consistency metrics. Use when choosing between coding agents, or when a change to an agent setup needs measured pass rate, cost, and time rather than an impression.",
+      "manual": "skills/default/agent-eval/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/affaan-m/ECC",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/affaan-m/ECC",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "productivity-pkm",
+      "category_label": "效率 / 知识管理",
+      "tags": [
+        "direct",
+        "l3",
+        "offline",
+        "productivity-pkm"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "agent-eval",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "agent-introspection-debugging",
+      "name": "agent-introspection-debugging",
+      "description": "Structured self-debugging workflow for AI agent failures using capture, diagnosis, contained recovery, and introspection reports. Use when an agent run fails and you need a reproducible diagnosis instead of a retry.",
+      "manual": "skills/default/agent-introspection-debugging/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/affaan-m/ECC",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/affaan-m/ECC",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
+      "tags": [
+        "agent-orchestration",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "agent-introspection-debugging",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "baoyu-format-markdown",
       "name": "baoyu-format-markdown",
       "description": "Formats plain text or markdown files with frontmatter, titles, summaries, headings, bold, lists, and code blocks. Use when user asks to \"format markdown\", \"beautify article\", \"add formatting\", or improve article layout. Outputs to {filename}-formatted.md.",
@@ -4486,6 +4706,48 @@
       },
       "risk_level": "low",
       "conflict_group": "channels-account-launch-expert",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "colleague-skill",
+      "name": "colleague-skill",
+      "description": "Unified meta-skill engine for distilling colleague, relationship, or celebrity characters into reusable Skills. | 统一的 meta-skill 引擎，把 colleague、relationship、celebrity 三类对象蒸馏成可复用 Skill。",
+      "manual": "skills/default/colleague-skill/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/titanwings/colleague-skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/titanwings/colleague-skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "colleague-skill",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -7581,6 +7843,56 @@
       }
     },
     {
+      "id": "dasheng-video-omni-browser",
+      "name": "dasheng-video-omni-browser",
+      "description": "Turn approved VOX reference images into one approximately 10-second clip per director shot by operating the user's signed-in Gemini Omni page in Chrome, then return the downloaded clips for Remotion editing. Use when Gemini API access is unavailable but the Chrome session is already signed in.",
+      "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-16",
+        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "browser-automation",
+        "browser-required",
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "l3",
+        "media-generation",
+        "online",
+        "optional",
+        "self-media-ops"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "dasheng-video-omni-browser",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "flutter-dev",
       "name": "flutter-dev",
       "description": "Flutter cross-platform development guide covering widget patterns, Riverpod/Bloc state management, GoRouter navigation, performance optimization, and platform-specific implementations. Includes const optimization, responsive layouts, testing strategies, and DevTools profiling. Use when: building Flutter apps, implementing state management (Riverpod/Bloc), setting up GoRouter navigation, creating custom widgets, optimizing performance, writing widget tests, cross-platform development.",
@@ -9092,6 +9404,50 @@
       }
     },
     {
+      "id": "notebooklm-py",
+      "name": "notebooklm-py",
+      "description": "Complete API for Google NotebookLM - full programmatic access including features not in the web UI. Create notebooks, add sources, generate all artifact types, download in multiple formats. Activates on explicit /notebooklm or intent like \"create a podcast about X",
+      "manual": "skills/default/notebooklm-py/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/teng-lin/notebooklm-py",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/teng-lin/notebooklm-py",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "browser-required",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "notebooklm-py",
+      "preset_excluded": false,
+      "rating": {
+        "score": 81,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "openclaw-cron-setup",
       "name": "cron-setup",
       "description": "OpenClaw Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。支持主会话系统事件和独立会话执行，可配置投递到聊天频道或 Webhook。",
@@ -10268,6 +10624,50 @@
       }
     },
     {
+      "id": "agent-architecture-audit",
+      "name": "agent-architecture-audit",
+      "description": "Full-stack diagnostic for agent and LLM applications. Audits the 12-layer agent stack for wrapper regression, memory pollution, tool discipline failures, hidden repair loops, and rendering corruption. Produces severity-ranked findings with code-first fixes. Essential for developers building agent applications, autonomous loops, or any LLM-powered feature. Use when an agent or LLM feature misbehaves and the failing layer is unknown, or before shipping an agent stack.",
+      "manual": "skills/default/agent-architecture-audit/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/affaan-m/ECC",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/affaan-m/ECC",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "api-key",
+        "coding-devtools",
+        "l2",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "agent-architecture-audit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "agentmail-toolkit",
       "name": "agentmail-toolkit",
       "description": "Add email capabilities to AI agents using popular frameworks. Provides pre-built tools for TypeScript and Python frameworks including Vercel AI SDK, LangChain, Clawdbot, OpenAI Agents SDK, and LiveKit Agents. Use when integrating AgentMail with agent frameworks that need email send/receive tools.",
@@ -10563,6 +10963,53 @@
       }
     },
     {
+      "id": "book-to-skill",
+      "name": "book-to-skill",
+      "description": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, or Claude Code, apply an author's frameworks while working, or build a reusable knowledge base from a file.",
+      "manual": "skills/default/book-to-skill/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/virgiliojr94/book-to-skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/virgiliojr94/book-to-skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "api-key",
+        "coding-devtools",
+        "l2",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "GH_TOKEN",
+          "GITHUB_TOKEN"
+        ],
+        "required_tools": [
+          "gh"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "book-to-skill",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "btc-bottom-model",
       "name": "btc-bottom-model",
       "description": "Bitcoin cycle timing model with weighted scoring system. Tracks 13 indicators across 2 categories — Daily Pulse (4 indicators, 32 points) and Weekly Structure (9 indicators, 68 points) — producing a composite 0-100 Market Heat Score. Covers ETF flows, funding rate, long/short ratio, fear & greed index, LTH-MVRV, NUPL, SOPR (LTH + STH), LTH supply %, moving average multiples (365d MA, 200w MA), weekly RSI, and volume trends. Provides both buy AND sell recommendations across the full market cycle. Use this skill when users mention Bitcoin bottom-fishing, BTC cycle position, whether to buy or sell BTC, on-chain metrics, MVRV, NUPL, SOPR, LTH behavior, ETF inflows/outflows, funding rates, fear index, whether Bitcoin is overheated, miner cost, crypto market sentiment, BTC position sizing, or any question like \"Should I buy Bitcoin now?\" or \"Is BTC topping out?\" or \"What do on-chain indicators say?",
@@ -10604,59 +11051,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:btc-bottom-model",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "dasheng-vox-skills",
-      "name": "dasheng-vox-skills",
-      "description": "Orchestrate complete VOX-style editorial video production from content distillation, creator-led script rewriting, retention design and review storyboards through approved director shots, Shotcraft shot-card binding, real-page 2.5D motion, Codex reference images, official Gemini API or signed-in Chrome Gemini Omni generation, Remotion re-editing, narration-bound subtitles, and final QC. Use when creating, continuing, repairing, or productizing VOX explainers, evidence-led Remotion scenes, paper-collage B-roll, Gemini/Omni/Veo image-to-video batches, or an existing VOX manifest.",
-      "manual": "skills/default/dasheng-vox-skills/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-vox-skills/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-16",
-        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "api-key",
-        "dasheng_media_workflow",
-        "design-ui",
-        "l2",
-        "media-generation",
-        "online",
-        "optional",
-        "video-orchestration"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "GEMINI_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "dasheng-vox-skills",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -15821,58 +16215,6 @@
       }
     },
     {
-      "id": "dasheng-video-omni-browser",
-      "name": "dasheng-video-omni-browser",
-      "description": "Turn approved VOX reference images into one approximately 10-second clip per director shot by operating the user's signed-in Gemini Omni page in Chrome, then return the downloaded clips for Remotion editing. Use when Gemini API access is unavailable but the Chrome session is already signed in.",
-      "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-16",
-        "mirror_source_url": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "browser-automation",
-      "category_label": "浏览器 / 自动化",
-      "tags": [
-        "api-key",
-        "browser-automation",
-        "dasheng_media_workflow",
-        "l3",
-        "media-generation",
-        "online",
-        "optional"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "GEMINI_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "dasheng-video-omni-browser",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "data-quality-checker",
       "name": "data-quality-checker",
       "description": "Validate data quality in market analysis documents and blog articles before publication. Use when checking for price scale inconsistencies (ETF vs futures), instrument notation errors, date/day-of-week mismatches, allocation total errors, and unit mismatches. Supports English and Japanese content. Advisory mode -- flags issues as warnings for human review, not as blockers.",
@@ -18515,55 +18857,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "minimax-multimodal-toolkit",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "minimax-pdf",
-      "name": "minimax-pdf",
-      "description": "Use this skill when visual quality and design identity matter for a PDF. CREATE (generate from scratch): \"make a PDF\", \"generate a report\", \"write a proposal\", \"create a resume\", \"beautiful PDF\", \"professional document\", \"cover page\", \"polished PDF\", \"client-ready document\". FILL (complete form fields): \"fill in the form\", \"fill out this PDF\", \"complete the form fields\", \"write values into PDF\", \"what fields does this PDF have\". REFORMAT (apply design to an existing doc): \"reformat this document\", \"apply our style\", \"convert this Markdown/text to PDF\", \"make this doc look good\", \"re-style this PDF\". This skill uses a token-based design system: color, typography, and spacing are derived from the document type and flow through every page. The output is print-ready. Prefer this skill when appearance matters, not just when any PDF output is needed.",
-      "manual": "skills/default/minimax-pdf/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-pdf/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-pdf",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-pdf",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "docs-office",
-      "category_label": "文档 / 办公",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "docs-office",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "document-pdf",
       "preset_excluded": false,
       "rating": {
         "score": 68,

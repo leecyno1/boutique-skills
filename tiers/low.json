@@ -468,20 +468,6 @@
       ]
     },
     {
-      "id": "minimax-pdf",
-      "name": "minimax-pdf",
-      "description": "Use this skill when visual quality and design identity matter for a PDF.",
-      "manual": "skills/default/minimax-pdf/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-pdf/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-pdf",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "minimax_official",
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "minimax-web-search",
       "name": "minimax-web-search",
       "description": "使用 MiniMax MCP 进行网络搜索。触发条件：(1) 用户要求进行网络搜索、在线搜索、查找信息 (2) 需要查询最新资讯、新闻、资料 (3) 使用 MiniMax 的 web_search 功能",

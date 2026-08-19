@@ -1,425 +1,329 @@
 {
-  "schema_version": "2026.06.14",
+  "schema_version": "2026.08.19",
   "id": "finance-investment-standard",
   "title": "Finance Investment Standard Suite",
-  "description": "Standard finance and investment skill combination that bundles LLMQuant, Claude Trading Skills, a-stock-data, Anthropic Financial Services, AlphaEar, Day1Global, AlphaGBM, UZI Skill, and the highest-scored investment workflow skills for data, research, screening, trading plans, portfolio risk, monitoring, backtesting, reporting, and knowledge support.",
-  "source": "https://github.com/leecyno1/boutique-skills",
-  "native_origin": "https://github.com/leecyno1/boutique-skills",
-  "homepage": "https://github.com/leecyno1/boutique-skills#finance--investment-workflows",
+  "description": "金融投资标准组合（进阶）：面向金融投资用户的数据、研究、筛选、交易计划、仓位、期权、组合风控、监控、回测、复盘与报告全链路能力位组合。每个能力位只保留评分最高的技能，总量不超过 40 个。",
+  "source": "https://github.com/leecyno1/boutique-openclaw-skills",
+  "native_origin": "https://github.com/leecyno1/boutique-openclaw-skills",
+  "homepage": "",
   "license": "MIT",
   "install_tier": "high",
   "category": "finance-investment-standard",
   "horizontal_tier": "L3 Specialist",
-  "access_mode": "api-key+mcp-required",
+  "access_mode": "api-key",
   "requires_api_keys": true,
   "api_keys": [
-    "TUSHARE_TOKEN",
-    "FMP_API_KEY",
+    "ALPHAGBM_API_KEY",
     "FINVIZ_API_KEY",
+    "FMP_API_KEY",
     "LLMQUANT_API_KEY",
-    "ALPACA_API_KEY",
-    "IMA_API_KEY",
-    "IMA_CLIENT_ID",
-    "OPENAI_API_KEY",
-    "ALPHAGBM_API_KEY"
+    "TUSHARE_TOKEN"
   ],
   "requires_tools": [
-    "python",
+    "browser",
+    "curl",
     "mcp",
     "node",
-    "browser"
+    "python"
   ],
   "scorecard": "reports/finance-skill-eval/finance-investment-skills-scorecard-2026-06-14.md",
   "included_sources": [
     {
       "id": "llmquant",
-      "source": "https://github.com/LLMQuant/skills"
+      "title": "LLMQuant Institutional Finance",
+      "source": "https://github.com/LLMQuant/skills",
+      "score": 81,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "claude-trading-skills",
-      "source": "https://github.com/tradermonty/claude-trading-skills"
+      "title": "Claude Trading Skills",
+      "source": "https://github.com/tradermonty/claude-trading-skills",
+      "score": 84,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "a-stock-data",
-      "source": "https://github.com/simonlin1212/a-stock-data"
+      "title": "A-stock-data",
+      "source": "https://github.com/simonlin1212/a-stock-data",
+      "score": 78,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "global-stock-data",
-      "source": "https://github.com/simonlin1212/global-stock-data"
+      "title": "Global-stock-data",
+      "source": "https://github.com/simonlin1212/global-stock-data",
+      "score": 86,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "anthropic-fs",
-      "source": "https://github.com/anthropics/financial-services"
-    },
-    {
-      "id": "alphaear",
-      "source": "https://github.com/RKiding/Awesome-finance-skills"
-    },
-    {
-      "id": "day1global-skills",
-      "source": "https://github.com/star23/Day1Global-Skills",
-      "score": 79
+      "title": "Anthropic Financial Services",
+      "source": "https://github.com/anthropics/financial-services",
+      "score": 74,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "alphagbm",
+      "title": "AlphaGBM Options & Research",
       "source": "https://github.com/AlphaGBM/skills",
-      "score": 82
+      "score": 82,
+      "role": "upstream source family; representative skills only"
     },
     {
       "id": "uzi-skill",
+      "title": "UZI Skill",
       "source": "https://github.com/wbh604/UZI-Skill",
-      "score": 86
+      "score": 86,
+      "role": "upstream source family; representative skills only"
     }
   ],
   "standard_slots": [
     {
       "slot": "A股结构化数据",
+      "capability": "a-share-data",
       "skill": "tushare-openclaw-skill",
-      "score": 95
-    },
-    {
-      "slot": "A股全栈行情/题材数据",
-      "skill": "a-stock-data",
-      "score": 88
-    },
-    {
-      "slot": "美股港股全栈数据",
-      "skill": "global-stock-data",
-      "score": 88
-    },
-    {
-      "slot": "全球轻量数据",
-      "skill": "yfinance-data",
       "score": 78
     },
     {
-      "slot": "SEC/13F/宏观数据",
+      "slot": "美股/港股全栈数据",
+      "capability": "global-market-data",
+      "skill": "global-stock-data",
+      "score": 86
+    },
+    {
+      "slot": "SEC/13F/机构数据",
+      "capability": "institutional-data",
       "skill": "llmquant-data",
-      "score": 86
+      "score": 81
     },
     {
-      "slot": "个股分析",
-      "skill": "stock-analysis",
-      "score": 84
-    },
-    {
-      "slot": "科技股财报深研",
-      "skill": "tech-earnings-deepdive",
-      "score": 85
-    },
-    {
-      "slot": "估值建模",
-      "skill": "anthropic-fs-financial-analysis-dcf-model",
-      "score": 84
-    },
-    {
-      "slot": "成长股筛选",
-      "skill": "canslim-screener",
-      "score": 86
-    },
-    {
-      "slot": "技术形态筛选",
-      "skill": "vcp-screener",
-      "score": 84
-    },
-    {
-      "slot": "交易计划",
-      "skill": "sepa-strategy",
-      "score": 84
-    },
-    {
-      "slot": "股息价值筛选",
-      "skill": "value-dividend-screener",
-      "score": 82
-    },
-    {
-      "slot": "市场宽度/趋势",
-      "skill": "uptrend-analyzer",
-      "score": 88
-    },
-    {
-      "slot": "宏观/政策",
-      "skill": "policy-monitor",
-      "score": 88
-    },
-    {
-      "slot": "宏观/政策",
+      "slot": "宏观研究",
+      "capability": "macro",
       "skill": "llmquant-macro",
-      "score": 84
+      "score": 81
+    },
+    {
+      "slot": "宏观/政策跟踪",
+      "capability": "policy",
+      "skill": "policy-monitor",
+      "score": 79
     },
     {
       "slot": "宏观流动性",
+      "capability": "macro-liquidity",
       "skill": "macro-liquidity",
       "score": 82
     },
     {
-      "slot": "事件新闻",
+      "slot": "事件与新闻",
+      "capability": "event-news",
       "skill": "llmquant-events",
-      "score": 84
+      "score": 81
     },
     {
-      "slot": "期权",
-      "skill": "options-strategy-advisor",
-      "score": 80
-    },
-    {
-      "slot": "期权",
-      "skill": "llmquant-options",
-      "score": 84
-    },
-    {
-      "slot": "仓位管理",
-      "skill": "position-sizer",
-      "score": 90
-    },
-    {
-      "slot": "组合/风险",
-      "skill": "llmquant-risk",
-      "score": 84
-    },
-    {
-      "slot": "组合/风险",
-      "skill": "llmquant-portfolio",
-      "score": 84
-    },
-    {
-      "slot": "自选股监控",
-      "skill": "stock-monitor-skill",
-      "score": 88
-    },
-    {
-      "slot": "Thesis 记忆",
-      "skill": "trader-memory-core",
-      "score": 84
-    },
-    {
-      "slot": "回测引擎",
-      "skill": "pybroker-backtest-skill",
-      "score": 90
-    },
-    {
-      "slot": "回测审查",
-      "skill": "backtest-expert",
+      "slot": "综合个股研究",
+      "capability": "stock-analysis",
+      "skill": "uzi-skill",
       "score": 86
     },
     {
-      "slot": "数据质量",
-      "skill": "data-quality-checker",
+      "slot": "科技股财报深研",
+      "capability": "tech-earnings",
+      "skill": "tech-earnings-deepdive",
+      "score": 85
+    },
+    {
+      "slot": "财报前预案/复盘",
+      "capability": "earnings-cycle",
+      "skill": "anthropic-fs-equity-research-earnings-preview",
+      "score": 74
+    },
+    {
+      "slot": "成长股筛选",
+      "capability": "screener-growth",
+      "skill": "canslim-screener",
+      "score": 71
+    },
+    {
+      "slot": "技术形态筛选",
+      "capability": "screener-technical",
+      "skill": "vcp-screener",
+      "score": 71
+    },
+    {
+      "slot": "股息/价值筛选",
+      "capability": "screener-value",
+      "skill": "value-dividend-screener",
+      "score": 71
+    },
+    {
+      "slot": "美股全市场筛选",
+      "capability": "screener-us",
+      "skill": "finviz-screener",
+      "score": 71
+    },
+    {
+      "slot": "主题研究",
+      "capability": "theme-research",
+      "skill": "alphagbm-theme-research",
       "score": 82
     },
     {
-      "slot": "报告生成",
-      "skill": "alphaear-reporter",
+      "slot": "估值建模",
+      "capability": "valuation",
+      "skill": "bayesian-intrinsic-growth-valuation",
+      "score": 79
+    },
+    {
+      "slot": "买方研究备忘录",
+      "capability": "equity-research-memo",
+      "skill": "buy-side-equity-research-memo",
+      "score": 79
+    },
+    {
+      "slot": "市场宽度/趋势",
+      "capability": "technical-trend",
+      "skill": "uptrend-analyzer",
+      "score": 79
+    },
+    {
+      "slot": "美股市场情绪",
+      "capability": "market-sentiment",
+      "skill": "alphagbm-market-sentiment",
       "score": 82
+    },
+    {
+      "slot": "交易计划",
+      "capability": "trade-plan",
+      "skill": "sepa-strategy",
+      "score": 71
+    },
+    {
+      "slot": "仓位管理",
+      "capability": "position-sizing",
+      "skill": "position-sizer",
+      "score": 71
+    },
+    {
+      "slot": "期权策略",
+      "capability": "options",
+      "skill": "alphagbm-options-strategy",
+      "score": 82
+    },
+    {
+      "slot": "组合管理",
+      "capability": "portfolio",
+      "skill": "llmquant-portfolio",
+      "score": 81
+    },
+    {
+      "slot": "组合风险",
+      "capability": "risk",
+      "skill": "llmquant-risk",
+      "score": 81
+    },
+    {
+      "slot": "自选股监控",
+      "capability": "monitoring",
+      "skill": "alphagbm-watchlist",
+      "score": 82
+    },
+    {
+      "slot": "持仓 Thesis 记忆",
+      "capability": "thesis-memory",
+      "skill": "trader-memory-core",
+      "score": 79
+    },
+    {
+      "slot": "回测引擎",
+      "capability": "backtest-engine",
+      "skill": "alphagbm-bps-backtest",
+      "score": 82
+    },
+    {
+      "slot": "回测审查",
+      "capability": "backtest-review",
+      "skill": "backtest-expert",
+      "score": 92
+    },
+    {
+      "slot": "交易后验复盘",
+      "capability": "postmortem",
+      "skill": "alphaear-predictor",
+      "score": 79
+    },
+    {
+      "slot": "量化策略",
+      "capability": "quant-strategy",
+      "skill": "llmquant-strategies",
+      "score": 81
+    },
+    {
+      "slot": "ETF 研究",
+      "capability": "etf",
+      "skill": "llmquant-etfs",
+      "score": 81
+    },
+    {
+      "slot": "投研报告生成",
+      "capability": "report",
+      "skill": "alphaear-reporter",
+      "score": 71
     },
     {
       "slot": "金融知识库",
+      "capability": "knowledge-base",
       "skill": "openclaw-stock-kb",
-      "score": 78
+      "score": 92
+    },
+    {
+      "slot": "数据质量",
+      "capability": "data-quality",
+      "skill": "data-quality-checker",
+      "score": 71
     }
   ],
   "skills": [
-    "llmquant-commodities",
-    "llmquant-credit",
-    "llmquant-crypto",
-    "llmquant-data",
-    "llmquant-equities",
-    "llmquant-equity-derivatives",
-    "llmquant-etfs",
-    "llmquant-events",
-    "llmquant-investor-lenses",
-    "llmquant-macro",
-    "llmquant-market-intelligence",
-    "llmquant-options",
-    "llmquant-portfolio",
-    "llmquant-portfolio-lab",
-    "llmquant-prediction-markets",
-    "llmquant-rates-fx",
-    "llmquant-risk",
-    "llmquant-strategies",
-    "backtest-expert",
-    "breadth-chart-analyst",
-    "breakout-trade-planner",
-    "canslim-screener",
-    "data-quality-checker",
-    "dividend-growth-pullback-screener",
-    "downtrend-duration-analyzer",
-    "dual-axis-skill-reviewer",
-    "earnings-calendar",
-    "earnings-preview",
-    "earnings-recap",
-    "earnings-trade-analyzer",
-    "economic-calendar-fetcher",
-    "edge-candidate-agent",
-    "edge-concept-synthesizer",
-    "edge-hint-extractor",
-    "edge-pipeline-orchestrator",
-    "edge-signal-aggregator",
-    "edge-strategy-designer",
-    "edge-strategy-reviewer",
-    "etf-premium",
-    "exposure-coach",
-    "finviz-screener",
-    "ftd-detector",
-    "ibd-distribution-day-monitor",
-    "institutional-flow-tracker",
-    "kanchi-dividend-review-monitor",
-    "kanchi-dividend-sop",
-    "kanchi-dividend-us-tax-accounting",
-    "macro-regime-detector",
-    "market-breadth-analyzer",
-    "market-environment-analysis",
-    "market-news-analyst",
-    "market-top-detector",
-    "options-strategy-advisor",
-    "pair-trade-screener",
-    "parabolic-short-trade-planner",
-    "pead-screener",
-    "position-sizer",
-    "scenario-analyzer",
-    "sector-analyst",
-    "signal-postmortem",
-    "skill-designer",
-    "skill-idea-miner",
-    "skill-integration-tester",
-    "stanley-druckenmiller-investment",
-    "strategy-pivot-designer",
-    "technical-analyst",
-    "theme-detector",
-    "trade-hypothesis-ideator",
-    "trader-memory-core",
-    "uptrend-analyzer",
-    "us-market-bubble-detector",
-    "us-stock-analysis",
-    "value-dividend-screener",
-    "vcp-screener",
-    "a-stock-data",
-    "global-stock-data",
-    "anthropic-fs-equity-research-catalyst-calendar",
-    "anthropic-fs-equity-research-earnings-analysis",
-    "anthropic-fs-equity-research-earnings-preview",
-    "anthropic-fs-equity-research-idea-generation",
-    "anthropic-fs-equity-research-initiating-coverage",
-    "anthropic-fs-equity-research-model-update",
-    "anthropic-fs-equity-research-morning-note",
-    "anthropic-fs-equity-research-sector-overview",
-    "anthropic-fs-equity-research-thesis-tracker",
-    "anthropic-fs-financial-analysis-3-statement-model",
-    "anthropic-fs-financial-analysis-audit-xls",
-    "anthropic-fs-financial-analysis-clean-data-xls",
-    "anthropic-fs-financial-analysis-competitive-analysis",
-    "anthropic-fs-financial-analysis-comps-analysis",
-    "anthropic-fs-financial-analysis-dcf-model",
-    "anthropic-fs-financial-analysis-deck-refresh",
-    "anthropic-fs-financial-analysis-ib-check-deck",
-    "anthropic-fs-financial-analysis-lbo-model",
-    "anthropic-fs-financial-analysis-ppt-template-creator",
-    "anthropic-fs-financial-analysis-pptx-author",
-    "anthropic-fs-financial-analysis-skill-creator",
-    "anthropic-fs-financial-analysis-xlsx-author",
-    "anthropic-fs-fund-admin-accrual-schedule",
-    "anthropic-fs-fund-admin-break-trace",
-    "anthropic-fs-fund-admin-gl-recon",
-    "anthropic-fs-fund-admin-nav-tieout",
-    "anthropic-fs-fund-admin-roll-forward",
-    "anthropic-fs-fund-admin-variance-commentary",
-    "anthropic-fs-investment-banking-buyer-list",
-    "anthropic-fs-investment-banking-cim-builder",
-    "anthropic-fs-investment-banking-datapack-builder",
-    "anthropic-fs-investment-banking-deal-tracker",
-    "anthropic-fs-investment-banking-merger-model",
-    "anthropic-fs-investment-banking-pitch-deck",
-    "anthropic-fs-investment-banking-process-letter",
-    "anthropic-fs-investment-banking-strip-profile",
-    "anthropic-fs-investment-banking-teaser",
-    "anthropic-fs-lseg-bond-futures-basis",
-    "anthropic-fs-lseg-bond-relative-value",
-    "anthropic-fs-lseg-equity-research",
-    "anthropic-fs-lseg-fixed-income-portfolio",
-    "anthropic-fs-lseg-fx-carry-trade",
-    "anthropic-fs-lseg-macro-rates-monitor",
-    "anthropic-fs-lseg-option-vol-analysis",
-    "anthropic-fs-lseg-swap-curve-strategy",
-    "anthropic-fs-operations-kyc-doc-parse",
-    "anthropic-fs-operations-kyc-rules",
-    "anthropic-fs-private-equity-ai-readiness",
-    "anthropic-fs-private-equity-dd-checklist",
-    "anthropic-fs-private-equity-dd-meeting-prep",
-    "anthropic-fs-private-equity-deal-screening",
-    "anthropic-fs-private-equity-deal-sourcing",
-    "anthropic-fs-private-equity-ic-memo",
-    "anthropic-fs-private-equity-portfolio-monitoring",
-    "anthropic-fs-private-equity-returns-analysis",
-    "anthropic-fs-private-equity-unit-economics",
-    "anthropic-fs-private-equity-value-creation-plan",
-    "anthropic-fs-spglobal-earnings-preview-beta",
-    "anthropic-fs-spglobal-funding-digest",
-    "anthropic-fs-spglobal-tear-sheet",
-    "anthropic-fs-wealth-management-client-report",
-    "anthropic-fs-wealth-management-client-review",
-    "anthropic-fs-wealth-management-financial-plan",
-    "anthropic-fs-wealth-management-investment-proposal",
-    "anthropic-fs-wealth-management-portfolio-rebalance",
-    "anthropic-fs-wealth-management-tax-loss-harvesting",
-    "alphaear-deepear-lite",
-    "alphaear-logic-visualizer",
-    "alphaear-news",
-    "alphaear-predictor",
-    "alphaear-reporter",
-    "alphaear-search",
-    "alphaear-sentiment",
-    "alphaear-signal-tracker",
-    "alphaear-stock",
     "tushare-openclaw-skill",
-    "yfinance-data",
-    "stock-analysis",
-    "sepa-strategy",
+    "global-stock-data",
+    "llmquant-data",
+    "llmquant-macro",
     "policy-monitor",
-    "stock-monitor-skill",
-    "pybroker-backtest-skill",
-    "openclaw-stock-kb",
-    "tech-earnings-deepdive",
-    "us-value-investing",
-    "us-market-sentiment",
     "macro-liquidity",
-    "btc-bottom-model",
-    "alphagbm-alert",
-    "alphagbm-bps-backtest",
-    "alphagbm-buffett-analysis",
-    "alphagbm-chokepoint",
-    "alphagbm-company-profile",
-    "alphagbm-compare",
-    "alphagbm-duan-analysis",
-    "alphagbm-earnings-crush",
-    "alphagbm-fear-score",
-    "alphagbm-greeks",
-    "alphagbm-health-check",
-    "alphagbm-hedge-advisor",
-    "alphagbm-investment-thesis",
-    "alphagbm-iv-rank",
-    "alphagbm-macro-view",
-    "alphagbm-market-sentiment",
-    "alphagbm-marks-cycle",
-    "alphagbm-options-score",
-    "alphagbm-options-strategy",
-    "alphagbm-pnl-simulator",
-    "alphagbm-polymarket",
-    "alphagbm-stock-analysis",
-    "alphagbm-take-profit",
-    "alphagbm-tepper-signal",
+    "llmquant-events",
+    "uzi-skill",
+    "tech-earnings-deepdive",
+    "anthropic-fs-equity-research-earnings-preview",
+    "canslim-screener",
+    "vcp-screener",
+    "value-dividend-screener",
+    "finviz-screener",
     "alphagbm-theme-research",
-    "alphagbm-unusual-activity",
-    "alphagbm-vix-status",
-    "alphagbm-vol-smile",
-    "alphagbm-vol-surface",
+    "bayesian-intrinsic-growth-valuation",
+    "buy-side-equity-research-memo",
+    "uptrend-analyzer",
+    "alphagbm-market-sentiment",
+    "sepa-strategy",
+    "position-sizer",
+    "alphagbm-options-strategy",
+    "llmquant-portfolio",
+    "llmquant-risk",
     "alphagbm-watchlist",
-    "uzi-skill"
+    "trader-memory-core",
+    "alphagbm-bps-backtest",
+    "backtest-expert",
+    "alphaear-predictor",
+    "llmquant-strategies",
+    "llmquant-etfs",
+    "alphaear-reporter",
+    "openclaw-stock-kb",
+    "data-quality-checker"
   ],
   "notes": [
-    "This is the finance-domain standard suite, separate from the general no-duplicate standard bundle.",
-    "It intentionally includes full source families requested by the curator plus the scored finance standard slots.",
-    "AlphaGBM is included as an optional source family; it complements but does not replace llmquant-options or options-strategy-advisor because their capability overlap is high.",
-    "UZI Skill is an optional comprehensive A/HK/US equity-research application; its simulated personas and rough valuation fallbacks do not replace source-first research, audited models, or specialist data foundations.",
-    "Use ./scripts/install-suite.sh finance-investment-standard --dry-run to preview the install list."
-  ]
+    "Generated by scripts/generate_finance_suite.py; regenerate after catalog updates.",
+    "Capability-slot dedupe keeps only the highest-scored skill per slot.",
+    "Slot count 34, skill count 34 (max 40)."
+  ],
+  "generated_at": "2026-08-19"
 }

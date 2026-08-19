@@ -286,22 +286,12 @@ DASHENG_MEDIA_WORKFLOW_CATEGORIES = {
     "social-auto-upload-bridge": "media-generation",
 }
 
-STANDARD_BUNDLE_MAX_SKILLS = 34
+STANDARD_BUNDLE_MAX_SKILLS = 40
 
+# Reference packs are recommendations only: install-suite.sh covers their domains.
+# Trading skills moved to the finance-investment-standard suite; the design
+# animation pack stays as the single optional reference pack.
 STANDARD_BUNDLE_PACKS = [
-    {
-        "capability": "finance-trading-pack",
-        "pack": "claude-trading-skills",
-        "title": "Claude Trading Skills",
-        "category": "finance-trading",
-        "stars": 4,
-        "score": 84,
-        "access_mode": "direct",
-        "conflict_group": "finance-pack:claude-trading-skills",
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills",
-        "skills_origin_prefix": "https://github.com/tradermonty/claude-trading-skills",
-        "note": "Trading research, screeners, market regime, execution planning, options, position sizing, backtest review, thesis memory, and post-trade workflows.",
-    },
     {
         "capability": "design-animation-pack",
         "pack": "emilkowalski-skills",
@@ -313,7 +303,7 @@ STANDARD_BUNDLE_PACKS = [
         "conflict_group": "design-pack:emilkowalski-skills",
         "origin_url": "https://github.com/emilkowalski/skills",
         "skills_origin_prefix": "https://github.com/emilkowalski/skills",
-        "note": "Design engineering, Apple-style fluid interface principles, animation vocabulary, motion opportunity discovery, UI library selection, animation review, and motion improvement planning.",
+        "note": "Design engineering, Apple-style fluid interface principles, animation vocabulary, motion opportunity discovery, UI library selection, animation review, and motion improvement planning. Optional reference pack; install on demand.",
     }
 ]
 
@@ -1062,7 +1052,7 @@ def build_standard_bundle(enriched: dict[str, Any]) -> dict[str, Any]:
         "schema_version": enriched["schema_version"],
         "generated_at": TODAY,
         "max_skills": STANDARD_BUNDLE_MAX_SKILLS,
-        "dedupe_rule": "one highest-scored skill per capability and conflict_group; Open/Hermes preset skills excluded",
+        "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded",
         "overrides": {
             "pinned_capabilities": pinned,
             "excluded_skills": sorted(excluded),

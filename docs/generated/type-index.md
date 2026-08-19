@@ -3,12 +3,12 @@
 | 类型 | 数量 |
 |---|---:|
 | 核心 Agent 能力 (`core-agent`) | 20 |
-| 搜索 / 研究 / 情报 (`search-research`) | 17 |
-| 浏览器 / 自动化 (`browser-automation`) | 3 |
-| 编程 / 工程工具 (`coding-devtools`) | 11 |
+| 搜索 / 研究 / 情报 (`search-research`) | 18 |
+| 浏览器 / 自动化 (`browser-automation`) | 2 |
+| 编程 / 工程工具 (`coding-devtools`) | 13 |
 | 数据分析 (`data-analysis`) | 9 |
-| 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 40 |
+| 文档 / 办公 (`docs-office`) | 9 |
+| 设计 / UI (`design-ui`) | 41 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
 | 媒体生成 / 处理 (`media-generation`) | 36 |
 | 写作 / 内容 (`writing-content`) | 13 |
@@ -20,14 +20,14 @@
 | 金融 / 监控预警 (`finance-monitor`) | 15 |
 | 政策 / 宏观监控 (`policy-monitoring`) | 1 |
 | 法律 / 合规 / 税务 (`legal-compliance`) | 2 |
-| 效率 / 知识管理 (`productivity-pkm`) | 2 |
+| 效率 / 知识管理 (`productivity-pkm`) | 3 |
 | 记忆 / 上下文基础设施 (`memory-context`) | 1 |
 | 通信 / 社交集成 (`communication`) | 1 |
 | DevOps / 云 / 数据库 (`devops-cloud`) | 0 |
 | 安全 / 审计 (`security-audit`) | 1 |
 | 本地 macOS / 桌面 (`local-macos`) | 0 |
-| 多 Agent / 自动调度 (`agent-orchestration`) | 5 |
-| 商业运营 (`commerce-ops`) | 3 |
+| 多 Agent / 自动调度 (`agent-orchestration`) | 6 |
+| 商业运营 (`commerce-ops`) | 4 |
 | 教育 / 学习 (`education-learning`) | 0 |
 
 ## 核心 Agent 能力
@@ -72,6 +72,7 @@
 | `baoyu-url-to-markdown` | `L2 Professional` | 4★ | `baoyu`, `browser-required`, `l2`, `online`, `search-research` |
 | `minimax-web-search` | `L2 Professional` | 4★ | `api-key+mcp-required`, `default_sentinel`, `l2`, `minimax_local_compat`, `online`, `search-research` |
 | `news-radar` | `L2 Professional` | 4★ | `l2`, `mcp-required`, `online`, `search-research` |
+| `notebooklm-py` | `L2 Professional` | 4★ | `browser-required`, `l2`, `online`, `search-research` |
 | `paperless-docs` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `paperless-ngx-tools` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `tavily-search` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
@@ -81,7 +82,6 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
-| `dasheng-video-omni-browser` | `L3 Specialist` | 3★ | `api-key`, `browser-automation`, `dasheng_media_workflow`, `l3`, `media-generation`, `online`, `optional` |
 | `oracle` | `L3 Specialist` | 3★ | `api-key`, `browser-automation`, `l3`, `online` |
 | `notebooklm-skill` | `L2 Professional` | 3★ | `api-key`, `browser-automation`, `default_sentinel`, `l2`, `online` |
 
@@ -96,7 +96,9 @@
 | `ios-application-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
+| `agent-architecture-audit` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `baoyu-image-gen` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `coding-devtools`, `l2`, `online` |
+| `book-to-skill` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `frontend-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `fullstack-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
 | `react-native-dev` | `L2 Professional` | 3★ | `api-key`, `coding-devtools`, `default_sentinel`, `l2`, `minimax_official`, `online` |
@@ -125,7 +127,6 @@
 | `pptx-generator` | `L2 Professional` | 4★ | `default_sentinel`, `direct`, `docs-office`, `l2`, `minimax_official`, `offline` |
 | `lark-calendar` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `online` |
 | `minimax-docx` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `minimax_official`, `online` |
-| `minimax-pdf` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `docs-office`, `l2`, `minimax_official`, `online` |
 | `docx` | `L2 Professional` | 1★ | `direct`, `docs-office`, `l2`, `offline` |
 | `pdf` | `L2 Professional` | 1★ | `direct`, `docs-office`, `l2`, `offline` |
 | `pptx` | `L2 Professional` | 1★ | `direct`, `docs-office`, `l2`, `offline` |
@@ -134,6 +135,7 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `agent-harness-construction` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `animation-vocabulary` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `online`, `standard` |
 | `apple-design` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `online`, `standard` |
 | `brandkit` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
@@ -154,6 +156,7 @@
 | `gsap-scrolltrigger` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
 | `gsap-timeline` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
 | `gsap-utils` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
+| `gstack` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `high-end-visual-design` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `image-to-code` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `imagegen-frontend-mobile` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
@@ -172,7 +175,6 @@
 | `agentmail-toolkit` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 | `animation` | `L2 Professional` | 4★ | `api-key`, `design-ui`, `l2`, `online` |
 | `baoyu-article-illustrator` | `L2 Professional` | 4★ | `api-key`, `baoyu`, `design-ui`, `l2`, `online` |
-| `dasheng-vox-skills` | `L2 Professional` | 4★ | `api-key`, `dasheng_media_workflow`, `design-ui`, `l2`, `media-generation`, `online`, `optional`, `video-orchestration` |
 | `agentmail` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 
 ## HTML 发布 / 视觉出版
@@ -510,6 +512,7 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `proactive-agent` | `L2 Professional` | 5★ | `direct`, `l2`, `offline`, `productivity-pkm` |
+| `agent-eval` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `productivity-pkm` |
 | `ima` | `L2 Professional` | 4★ | `api-key`, `knowledge`, `l2`, `notes`, `online`, `productivity`, `productivity-pkm`, `standard` |
 
 ## 记忆 / 上下文基础设施
@@ -535,6 +538,7 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `self-improving-agent-cn` | `L2 Professional` | 5★ | `agent-orchestration`, `direct`, `l2`, `offline` |
+| `agent-introspection-debugging` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `capability-evolver` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `jiebang` | `L3 Specialist` | 4★ | `agent-orchestration`, `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media` |
 | `openclaw-cron-setup` | `L2 Professional` | 4★ | `agent-orchestration`, `browser-required`, `l2`, `online` |
@@ -544,6 +548,7 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `colleague-skill` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `skill-idea-miner` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline`, `trading_finance` |
 | `startup-analysis` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `online`, `trading_finance` |
 | `inference-skills` | `L3 Specialist` | 3★ | `api-key`, `commerce-ops`, `default_sentinel`, `l3`, `online` |
