@@ -50,10 +50,10 @@
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 100,
+      "api-key": 99,
       "api-key+mcp-required": 22,
       "browser-required": 27,
-      "direct": 181,
+      "direct": 182,
       "mcp-required": 73
     },
     "by_stars": {
@@ -4297,6 +4297,57 @@
       "preset_excluded": false,
       "rating": {
         "score": 88,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "a-stock-data",
+      "name": "a-stock-data",
+      "description": "当任务需要写代码实际获取A股数据时使用——拉取行情/K线(mootdx+腾讯+百度)、研报(东财+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业)、资金面(融资融券/大宗/股东户数/分红/资金流)、新闻、财务三表/F10、公告(巨潮)、打板(涨停池/连板/炸板率/重点监控池/日内异动)、ETF期权(T型报价/希腊字母/IV)、舆情互动(互动易/热榜/人气榜)等真实数据。十层数据源·47端点(含3官方备胎)·内嵌全部可运行代码，自包含零依赖外部文件；优先用通达信(mootdx)/腾讯(不封IP)，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。",
+      "manual": "skills/default/a-stock-data/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/a-stock-data/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/simonlin1212/a-stock-data",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/simonlin1212/a-stock-data",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "finance-data",
+      "category_label": "金融 / 数据源",
+      "tags": [
+        "a-share",
+        "china-market-data",
+        "direct",
+        "finance",
+        "finance-data",
+        "l2",
+        "offline",
+        "standard",
+        "tushare-supplement"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-data",
+      "preset_excluded": false,
+      "rating": {
+        "score": 86,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -11463,59 +11514,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 79,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "a-stock-data",
-      "name": "a-stock-data",
-      "description": "当任务需要写代码实际获取A股数据时使用——拉取行情/K线(mootdx+腾讯+百度)、研报(东财+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业)、资金面(融资融券/大宗/股东户数/分红/资金流)、新闻、财务三表/F10、公告(巨潮)、打板(涨停池/连板/炸板率/重点监控池/日内异动)、ETF期权(T型报价/希腊字母/IV)、舆情互动(互动易/热榜/人气榜)等真实数据。十层数据源·47端点(含3官方备胎)·内嵌全部可运行代码，自包含零依赖外部文件；优先用通达信(mootdx)/腾讯(不封IP)，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。",
-      "manual": "skills/default/a-stock-data/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/a-stock-data/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/simonlin1212/a-stock-data",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/simonlin1212/a-stock-data",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "finance-data",
-      "category_label": "金融 / 数据源",
-      "tags": [
-        "a-share",
-        "china-market-data",
-        "direct",
-        "finance",
-        "finance-data",
-        "l2",
-        "offline",
-        "standard",
-        "tushare-backed"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "TUSHARE_TOKEN"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "offline"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-data",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
         "stars": 4,
         "rating_label": "★★★★☆"
       }

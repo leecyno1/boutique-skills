@@ -54,16 +54,6 @@
   },
   "convert_to_tushare_backed": [
     {
-      "skill_id": "a-stock-data",
-      "score": 88,
-      "scenario": "A股基础数据",
-      "policy": "partial_replace_or_backend_option",
-      "verdict": "强适配：可优先接入或改为 Tushare 数据底座。",
-      "missing_or_blocked": [
-        "a-stock-data 当前内置多源直连；建议新增 Tushare provider，不建议全部删除原多源能力。"
-      ]
-    },
-    {
       "skill_id": "akshare-stock",
       "score": 82,
       "scenario": "A股基础数据",
@@ -762,6 +752,16 @@
       "verdict": "弱适配：Tushare 只能补充少量 A 股公开数据，不建议强行替换。",
       "missing_or_blocked": [
         "政策文本/新闻解读不由 Tushare 原生覆盖，需要政策源或新闻源。"
+      ]
+    },
+    {
+      "skill_id": "a-stock-data",
+      "score": 88,
+      "scenario": "A股基础数据",
+      "policy": "tushare_supplement_only",
+      "verdict": "技能本身零 key 多源直连（通达信/腾讯/百度/东财/巨潮），Tushare 仅作可选补充 provider，不作为硬依赖标记。",
+      "missing_or_blocked": [
+        "多源直连已覆盖研报/龙虎榜/两融/打板/舆情等 Tushare 免费档之外的能力；无需注册 Tushare 即可使用。"
       ]
     }
   ],

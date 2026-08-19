@@ -2,10 +2,10 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 100 |
+| `api-key` | 99 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 27 |
-| `direct` | 181 |
+| `direct` | 182 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -44,7 +44,6 @@
 | `alphagbm-vol-smile` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-vol-surface` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-watchlist` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `a-stock-data` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `agent-architecture-audit` | `OPENAI_API_KEY` | 无 | `medium` |
 | `agentmail-toolkit` | `AGENTMAIL_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `akshare-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
@@ -260,6 +259,7 @@
 | `writing-plans` | 无 | 无 | `low` |
 | `yc-reader` | 无 | `python` | `low` |
 | `video-autopilot-kit` | 无 | `ffmpeg`, `python` | `low` |
+| `a-stock-data` | 无 | `python` | `medium` |
 | `dasheng-finance-data` | 无 | `python` | `medium` |
 | `global-stock-data` | 无 | `python` | `medium` |
 | `yfinance-data` | 无 | `python` | `medium` |

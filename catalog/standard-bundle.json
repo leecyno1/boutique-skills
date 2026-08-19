@@ -25,7 +25,6 @@
     ],
     "skipped_capabilities_no_keyless_candidate": [
       "email-agent",
-      "finance-data",
       "ima-notes-knowledge",
       "media-download"
     ]
@@ -35,6 +34,7 @@
       "social-research": "agent-reach"
     },
     "excluded_skills": [
+      "a-stock-data",
       "akshare-stock",
       "claude-mem-plugin",
       "openclaw-stock-data-skill",

@@ -143,7 +143,7 @@ This standard suite lists merged upstream source packs and representative standa
 | 组合包 | 机构研究、建模、PE/IB/财富管理 | Anthropic Financial Services | 74 | [Source](https://github.com/anthropics/financial-services) |
 | 组合包 | 期权波动率、对冲、市场信号、投资框架与研究档案（可选源） | AlphaGBM | 82 | [Source](https://github.com/AlphaGBM/skills) |
 | 组合包 | A/港/美股综合研究、模拟评审团、龙虎榜、风险信号与 HTML 报告（可选源） | UZI Skill | 86 | [Source](https://github.com/wbh604/UZI-Skill) |
-| 单品 | A股数据底座 | `dasheng-finance-data` | 86 | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
+| 单品 | A股数据底座 | `a-stock-data` | 86 | [Source](https://github.com/simonlin1212/a-stock-data) |
 | 单品 | 美股/港股全栈数据 | `global-stock-data` | 86 | [Source](https://github.com/simonlin1212/global-stock-data) |
 | 单品 | SEC/13F/机构数据 | `llmquant-data` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-data) |
 | 单品 | 宏观研究 | `market-environment-analysis` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
@@ -352,7 +352,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `pptx` | `L2 Professional` | `docs-office` | 1★ | `direct` | Preset |
 | `pptx-generator` | `L2 Professional` | `docs-office` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
 | `social-content` | `L2 Professional` | `docs-office` | 5★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/social-content) |
-| `a-stock-data` | `L2 Professional` | `finance-data` | 4★ | `api-key` | [Source](https://github.com/simonlin1212/a-stock-data) |
+| `a-stock-data` | `L2 Professional` | `finance-data` | 4★ | `direct` | [Source](https://github.com/simonlin1212/a-stock-data) |
 | `akshare-stock` | `L2 Professional` | `finance-data` | 4★ | `api-key` | [Source](https://clawhub.ai/skills/new-akshare-stock) |
 | `anthropic-fs-lseg-bond-futures-basis` | `L3 Specialist` | `finance-data` | 3★ | `mcp-required` | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-futures-basis) |
 | `anthropic-fs-lseg-bond-relative-value` | `L3 Specialist` | `finance-data` | 3★ | `mcp-required` | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-relative-value) |

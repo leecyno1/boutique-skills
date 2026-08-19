@@ -82,7 +82,7 @@
     {
       "slot": "A股数据底座",
       "capability": "a-share-data",
-      "skill": "dasheng-finance-data",
+      "skill": "a-stock-data",
       "score": 86,
       "access": "direct",
       "api_keys": []
@@ -380,7 +380,7 @@
     }
   ],
   "skills": [
-    "dasheng-finance-data",
+    "a-stock-data",
     "global-stock-data",
     "llmquant-data",
     "market-environment-analysis",
