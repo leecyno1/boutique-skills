@@ -26,19 +26,21 @@
   <img src="https://img.shields.io/badge/SQLAlchemy-ORM-111827" alt="SQLAlchemy" />
 </p>
 
-<img src="assets/hero.png" alt="Boutique Skills curation principles" width="86%" />
+<img src="assets/hero-v2.png" alt="Boutique Skills curation principles" width="86%" />
 
 </div>
 
 ## 中文说明
 
-Boutique Skills 是一个面向 AI Agent 的精品技能合集。仓库把默认技能、标准配置组、横向分级、纵向分类、API Key/工具依赖、风险等级、冲突组和原生上游来源统一整理成可审计的注册表，目标是让用户安装后即获得一套少重复、低噪声、生产可用的能力组合。
+Boutique Skills 是一个面向 AI Agent 的精品技能注册表与编排中台。仓库把默认技能、标准组合、行业套件、横向分级、纵向分类、API Key/工具依赖、风险等级、冲突组和原生上游来源统一整理成可审计的注册表，目标是让用户安装后即获得一套少重复、低噪声、生产可用的能力组合。
 
-本仓库强调三件事：一是每个活跃 skill 都必须能追溯到 GitHub、ClawHub/CL.Up、skills.h 或官方项目站点；二是同一能力只推荐一个最佳 skill，避免 Web Search、PDF、Email、Finance Data 等能力重复安装；三是每月自动重建索引和审计报告，让 README、JSON Catalog 与安装包保持一致。
+本仓库强调四件事：一是每个活跃 skill 都必须能追溯到 GitHub、ClawHub/CL.Up、skills.h 或官方项目站点；二是同一能力只推荐一个最佳 skill，避免 Web Search、PDF、Email、Finance Data 等能力重复安装；三是两个组合尽量避免需要复杂注册的第三方服务 API key（大模型 key 与 GitHub 工具 token 豁免），标准组合零第三方 key 开箱即用；四是每周自动搜索 GitHub 新技能、评分入库、失效出库并同步 GitHub/Gitee 双远端，月度深度审计兜底。
+
+<p align="center"><img src="assets/weekly-pipeline.png" alt="Weekly curation pipeline" width="92%" /></p>
 
 ## Overview
 
-Boutique Skills is a platform-neutral, source-audited registry for AI agents and coding assistants. It keeps a full machine-readable catalog, a recommended no-duplicate bundle, generated indexes, and monthly audit automation in one place.
+Boutique Skills is a platform-neutral, source-audited registry for AI agents and coding assistants. It keeps a full machine-readable catalog, a keyless-friendly no-duplicate standard bundle, an advanced finance investment suite, generated indexes, weekly GitHub discovery/curation automation, and monthly deep audits in one place.
 
 ## Quick Start
 
@@ -77,9 +79,9 @@ Or install a grouped suite:
 
 ## Standard Bundle
 
-The standard bundle keeps one best skill per capability and excludes skills already supplied by the target agent runtime.
+The standard bundle targets daily users: one best skill per capability, no skills already supplied by the target agent runtime, and zero third-party registration keys (LLM keys and GitHub tokens are exempt) so it installs out of the box. Capabilities without a keyless candidate are skipped and listed in the bundle's `api_key_policy` field. For investment workflows use the finance suite instead.
 
-`a-stock-data` is included in the general standard bundle as the default A-share data skill. Use `./scripts/install-suite.sh finance-investment-standard --dry-run` or the finance profile when an investment workflow needs the full domain stack.
+<p align="center"><img src="assets/bundles-duo.png" alt="Standard bundle vs finance suite" width="92%" /></p>
 
 | Type | Capability | Skill / Pack | Stars | Use |
 |---|---|---|---:|---|
@@ -666,8 +668,10 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 
 - Every active skill must have a native upstream source; mirrors and copied installer paths are not treated as origins.
 - The standard bundle avoids duplicate capabilities by using conflict groups such as `web-search`, `html-publishing`, `document-pdf`, `email-agent`, and `finance-data`.
+- Bundles avoid third-party registration keys: the standard bundle hard-filters them, the finance suite penalizes them per capability slot; LLM keys and GitHub tokens are exempt.
+- Aggregator stores that re-package other repos' skills never auto-import.
 - Open and Hermes preset skills are excluded from bundle installs because the target agent already provides them.
-- Monthly automation regenerates the registry, indexes, README, standard bundle, and audit reports.
+- Weekly automation discovers, scores, imports, prunes, refreshes both bundles, and pushes to GitHub and Gitee; monthly audits remain the deep-review gate.
 
 ## Repository Map
 
@@ -676,20 +680,24 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `skills/default/` | Local skill sources |
 | `catalog/skills.enriched.json` | Full machine-readable registry |
 | `catalog/standard-bundle.json` | Recommended no-duplicate install set |
+| `catalog/suites/finance-investment-standard.json` | Finance investment suite (capability-slot dedupe) |
 | `catalog/native-origin-overrides.json` | Verified native upstream source map |
 | `catalog/presets/` | Open and Hermes preset exclusions |
 | `docs/generated/` | Generated human-readable indexes |
+| `scripts/weekly_cycle.sh` | Weekly discover/score/import/prune/publish pipeline |
 | `scripts/` | Install, sync, enrich, audit, and bundle tools |
 
 ## Maintenance
 
 ```bash
-python3 scripts/generate_enriched_catalog.py
-python3 scripts/audit_skills.py
+./scripts/weekly_cycle.sh                    # weekly: discover, score, prune, refresh bundles, publish
+python3 scripts/generate_enriched_catalog.py  # rebuild catalog, indexes, and README
+python3 scripts/generate_finance_suite.py     # rebuild the finance suite
+python3 scripts/audit_skills.py               # full-registry audit
 ./scripts/build-bundle.sh
 ```
 
-The scheduled workflow runs monthly from `.github/workflows/sync-audit.yml`.
+A weekly curation cycle runs every Saturday 09:00 (Asia/Shanghai) from the maintainer session — see [docs/WEEKLY_CURATION.md](docs/WEEKLY_CURATION.md). The scheduled workflow runs monthly from `.github/workflows/sync-audit.yml` as the deep-review gate.
 
 ## License
 
