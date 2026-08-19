@@ -1,7 +1,6 @@
 {
   "schema_version": "2026.06.04",
   "pinned_capabilities": {
-    "email-agent": "agentmail",
     "social-research": "agent-reach"
   },
   "excluded_skills": {

@@ -20,12 +20,31 @@ SKILLS_DIR = ROOT / "skills" / "default"
 
 MAX_SKILLS = 40
 
+# Bundle key policy: LLM keys and developer tool tokens are fine; third-party
+# registration keys are penalized during slot selection so keyless candidates
+# win whenever the slot has one. Slots whose every candidate needs a key keep
+# the best remaining option (finance data sources are rarely keyless).
+LLM_API_KEYS = {
+    "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GEMINI_API_KEY", "OPENROUTER_API_KEY",
+    "DEEPSEEK_API_KEY", "MOONSHOT_API_KEY", "QWEN_API_KEY", "DASHSCOPE_API_KEY",
+    "MINIMAX_API_KEY", "ZHIPU_API_KEY", "GLM_API_KEY", "BIGMODEL_API_KEY",
+    "TOGETHER_API_KEY", "GROQ_API_KEY", "XAI_API_KEY",
+}
+TOOL_TOKEN_EXEMPT = {"GITHUB_TOKEN", "GH_TOKEN"}
+THIRD_PARTY_KEY_PENALTY = 12
+
+
+def third_party_key_penalty(api_keys: list[str]) -> int:
+    if any(key not in LLM_API_KEYS and key not in TOOL_TOKEN_EXEMPT for key in api_keys):
+        return THIRD_PARTY_KEY_PENALTY
+    return 0
+
 # (slot, slot_label, [candidate skill ids in tie-break order])
 FINANCE_SLOTS = [
-    ("a-share-data", "A股结构化数据", ["tushare-openclaw-skill", "a-stock-data", "akshare-stock", "openclaw-stock-data-skill"]),
+    ("a-share-data", "A股数据底座", ["tushare-openclaw-skill", "a-stock-data", "dasheng-finance-data", "akshare-stock", "openclaw-stock-data-skill"]),
     ("global-market-data", "美股/港股全栈数据", ["global-stock-data", "yfinance-data"]),
     ("institutional-data", "SEC/13F/机构数据", ["llmquant-data", "funda-data"]),
-    ("macro", "宏观研究", ["llmquant-macro", "llmquant-market-intelligence"]),
+    ("macro", "宏观研究", ["llmquant-macro", "llmquant-market-intelligence", "market-environment-analysis"]),
     ("policy", "宏观/政策跟踪", ["policy-monitor"]),
     ("macro-liquidity", "宏观流动性", ["macro-liquidity"]),
     ("event-news", "事件与新闻", ["llmquant-events", "alphaear-news"]),
@@ -37,22 +56,22 @@ FINANCE_SLOTS = [
     ("screener-value", "股息/价值筛选", ["value-dividend-screener"]),
     ("screener-us", "美股全市场筛选", ["finviz-screener"]),
     ("theme-research", "主题研究", ["alphagbm-theme-research", "theme-detector"]),
-    ("valuation", "估值建模", ["bayesian-intrinsic-growth-valuation", "tam-adj-peg", "anthropic-fs-financial-analysis-dcf-model"]),
+    ("valuation", "估值建模", ["bayesian-intrinsic-growth-valuation", "tam-adj-peg", "company-valuation", "anthropic-fs-financial-analysis-dcf-model"]),
     ("equity-research-memo", "买方研究备忘录", ["buy-side-equity-research-memo", "anthropic-fs-equity-research-initiating-coverage"]),
-    ("technical-trend", "市场宽度/趋势", ["uptrend-analyzer", "technical-analyst", "breadth-chart-analyst"]),
-    ("market-sentiment", "美股市场情绪", ["alphagbm-market-sentiment", "us-market-sentiment"]),
-    ("trade-plan", "交易计划", ["sepa-strategy", "breakout-trade-planner"]),
+    ("technical-trend", "市场宽度/趋势", ["uptrend-analyzer", "technical-analyst", "market-breadth-analyzer", "breadth-chart-analyst"]),
+    ("market-sentiment", "美股市场情绪", ["us-market-sentiment", "alphagbm-market-sentiment"]),
+    ("trade-plan", "交易计划", ["sepa-strategy", "trade-hypothesis-ideator", "breakout-trade-planner"]),
     ("position-sizing", "仓位管理", ["position-sizer"]),
     ("options", "期权策略", ["alphagbm-options-strategy", "llmquant-options", "options-strategy-advisor"]),
     ("portfolio", "组合管理", ["llmquant-portfolio", "llmquant-portfolio-lab"]),
     ("risk", "组合风险", ["llmquant-risk"]),
-    ("monitoring", "自选股监控", ["alphagbm-watchlist", "stock-monitor-skill"]),
+    ("monitoring", "自选股监控", ["alphagbm-watchlist", "stock-monitor-skill", "alphaear-signal-tracker"]),
     ("thesis-memory", "持仓 Thesis 记忆", ["trader-memory-core"]),
     ("backtest-engine", "回测引擎", ["alphagbm-bps-backtest", "pybroker-backtest-skill"]),
     ("backtest-review", "回测审查", ["backtest-expert"]),
     ("postmortem", "交易后验复盘", ["signal-postmortem", "alphaear-predictor"]),
-    ("quant-strategy", "量化策略", ["llmquant-strategies"]),
-    ("etf", "ETF 研究", ["llmquant-etfs"]),
+    ("quant-strategy", "量化策略", ["llmquant-strategies", "serenity-alpha"]),
+    ("etf", "ETF 研究", ["llmquant-etfs", "etf-premium"]),
     ("report", "投研报告生成", ["alphaear-reporter"]),
     ("knowledge-base", "金融知识库", ["openclaw-stock-kb"]),
     ("data-quality", "数据质量", ["data-quality-checker"]),
@@ -110,7 +129,11 @@ def load_enriched() -> dict[str, dict]:
 
 
 def pick_best(candidates: list[str], enriched: dict[str, dict]) -> dict | None:
-    """Return the highest-scored locally available candidate; ties keep list order."""
+    """Return the best locally available candidate for a slot.
+
+    Ranking subtracts a penalty from third-party-key candidates so keyless
+    options win ties and near-ties; ties keep the candidate list order.
+    """
     available = []
     for skill_id in candidates:
         item = enriched.get(skill_id)
@@ -118,7 +141,13 @@ def pick_best(candidates: list[str], enriched: dict[str, dict]) -> dict | None:
             available.append(item)
     if not available:
         return None
-    return min(available, key=lambda item: (-item["rating"]["score"], candidates.index(item["id"])))
+
+    def rank(item: dict) -> tuple[int, int]:
+        score = item["rating"]["score"]
+        score -= third_party_key_penalty(item["dependencies"].get("api_keys") or [])
+        return (-score, candidates.index(item["id"]))
+
+    return min(available, key=rank)
 
 
 def build_suite(enriched: dict[str, dict]) -> dict:
@@ -133,6 +162,8 @@ def build_suite(enriched: dict[str, dict]) -> dict:
             "capability": slot,
             "skill": best["id"],
             "score": best["rating"]["score"],
+            "access": best["dependencies"]["access_mode"],
+            "api_keys": best["dependencies"].get("api_keys") or [],
         })
         selected_ids.append(best["id"])
         if len(selected_ids) >= MAX_SKILLS:
@@ -179,6 +210,7 @@ def build_suite(enriched: dict[str, dict]) -> dict:
         "notes": [
             "Generated by scripts/generate_finance_suite.py; regenerate after catalog updates.",
             "Capability-slot dedupe keeps only the highest-scored skill per slot.",
+            "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
             f"Slot count {len(slots)}, skill count {len(selected_ids)} (max {MAX_SKILLS}).",
         ],
         "generated_at": date.today().isoformat(),

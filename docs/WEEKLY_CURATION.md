@@ -63,8 +63,17 @@ python3 tests/test_tier_catalog.py
 
 | 组合 | 定位 | 数量 | 生成器 |
 |---|---|---:|---|
-| Standard Bundle (`catalog/standard-bundle.json`) | 日常用户基础场景，一能力一技能 | 34 base（上限 40） | `scripts/generate_enriched_catalog.py` |
+| Standard Bundle (`catalog/standard-bundle.json`) | 日常用户基础场景，一能力一技能，零第三方 key | 30 base（上限 40） | `scripts/generate_enriched_catalog.py` |
 | Finance Suite (`catalog/suites/finance-investment-standard.json`) | 金融投资用户进阶场景，能力位去重取最优 | 34（上限 40） | `scripts/generate_finance_suite.py` |
+
+### API Key 政策（2026-08-19 新增）
+
+两个组合尽量避免需要复杂注册的第三方服务 API key（大模型 key 与 GitHub 工具 token 豁免）：
+
+- **豁免 key**：主流大模型（OPENAI/ANTHROPIC/GEMINI/DEEPSEEK/MOONSHOT/QWEN/DASHSCOPE/MINIMAX/ZHIPU 等）与开发者工具 token（GITHUB_TOKEN/GH_TOKEN）。
+- **标准组合**：硬过滤——任何需要第三方 key 的技能不入组合；能力位无 keyless 候选时直接跳过该位（当前跳过：email-agent、finance-data、ima-notes-knowledge、media-download）。政策与跳过清单写入 `standard-bundle.json` 的 `api_key_policy` 字段。
+- **金融组合**：软惩罚（同位候选评分 -12）——同位存在 direct/browser 候选时必胜出；仅当整位无 keyless 候选才保留 key 类技能（当前 13/34 位，均为机构数据/美股筛选器/期权/组合风险等专业深水区，且 TUSHARE_TOKEN 类为免费注册）。每个能力位的 access 与 api_keys 字段已在 suite JSON 中标注，可自行取舍。
+- **误报修复**：key 检测已改为词边界匹配（修复 "ima" 误匹配 "image"），自签 secret（JWT_SECRET 等）不再计入 API key。
 
 - 标准组合安装只装 base skills；`skill_packs` 是参考推荐（Claude Trading Skills 已并入金融组合）。
 - 金融组合每个能力位（A股数据/全球数据/宏观/政策/筛选/估值/交易计划/仓位/期权/组合风控/监控/回测/复盘/报告/知识库等 34 位）只保留评分最高的技能。

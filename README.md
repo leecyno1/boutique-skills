@@ -11,7 +11,7 @@
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
 [![Skills](https://img.shields.io/badge/Skills-403-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
-[![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-34%20skills%20%2B%201%20pack-7c3aed)](catalog/standard-bundle.json)
+[![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-30%20skills%20%2B%201%20pack-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
@@ -73,7 +73,7 @@ Or install a grouped suite:
 | Native sources verified or referenced | 397 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
-| Standard bundle size | 34 skills + 1 pack |
+| Standard bundle size | 30 skills + 1 pack |
 
 ## Standard Bundle
 
@@ -95,27 +95,23 @@ The standard bundle keeps one best skill per capability and excludes skills alre
 | `skill` | `skill-authoring` | `skill-creator` | 5★ | `direct` |
 | `skill` | `security-review` | `skill-security-auditor` | 5★ | `direct` |
 | `skill` | `data-analysis` | `data-analyst` | 5★ | `direct` |
-| `skill` | `docs` | `minimax-docx` | 3★ | `api-key` |
-| `skill` | `spreadsheet` | `minimax-xlsx` | 3★ | `api-key` |
+| `skill` | `docs` | `minimax-docx` | 4★ | `direct` |
+| `skill` | `spreadsheet` | `minimax-xlsx` | 4★ | `direct` |
 | `skill` | `slides` | `pptx-generator` | 4★ | `direct` |
 | `skill` | `pdf` | `nano-pdf` | 5★ | `direct` |
 | `skill` | `frontend` | `generative-ui` | 5★ | `direct` |
-| `skill` | `fullstack` | `fullstack-dev` | 3★ | `api-key` |
+| `skill` | `fullstack` | `fullstack-dev` | 3★ | `browser-required` |
 | `skill` | `mcp` | `mcp-builder` | 4★ | `mcp-required` |
-| `skill` | `media-download` | `media-downloader` | 3★ | `api-key` |
 | `skill` | `image-generation` | `gemini-image-service` | 3★ | `api-key` |
 | `skill` | `research-news` | `news-radar` | 4★ | `mcp-required` |
-| `skill` | `article-illustration` | `ian-xiaohei-illustrations` | 5★ | `direct` |
+| `skill` | `article-illustration` | `baoyu-article-illustrator` | 5★ | `direct` |
 | `skill` | `social-research` | `agent-reach` | 4★ | `browser-required` |
 | `skill` | `html-publishing` | `html-anything` | 5★ | `browser-required` |
-| `skill` | `finance-data` | `a-stock-data` | 4★ | `api-key` |
 | `skill` | `finance-global-data` | `global-stock-data` | 4★ | `direct` |
 | `skill` | `content-strategy` | `content-strategy` | 4★ | `direct` |
 | `skill` | `writing` | `writing-skills` | 5★ | `direct` |
 | `skill` | `automation-followup` | `proactive-agent` | 5★ | `direct` |
 | `skill` | `cost-observability` | `model-usage` | 5★ | `direct` |
-| `skill` | `email-agent` | `agentmail` | 3★ | `api-key` |
-| `skill` | `ima-notes-knowledge` | `ima` | 4★ | `api-key` |
 | `skill` | `weather` | `weather` | 5★ | `direct` |
 | `pack` | `design-animation-pack` | [Emil Kowalski Design & Animation Skills](https://github.com/emilkowalski/skills) | 5★ | `direct` |
 
@@ -145,16 +141,16 @@ This standard suite lists merged upstream source packs and representative standa
 | 组合包 | 机构研究、建模、PE/IB/财富管理 | Anthropic Financial Services | 74 | [Source](https://github.com/anthropics/financial-services) |
 | 组合包 | 期权波动率、对冲、市场信号、投资框架与研究档案（可选源） | AlphaGBM | 82 | [Source](https://github.com/AlphaGBM/skills) |
 | 组合包 | A/港/美股综合研究、模拟评审团、龙虎榜、风险信号与 HTML 报告（可选源） | UZI Skill | 86 | [Source](https://github.com/wbh604/UZI-Skill) |
-| 单品 | A股结构化数据 | `tushare-openclaw-skill` | 78 | [Source](https://github.com/DayDreammy/tushare-openclaw-skill) |
+| 单品 | A股数据底座 | `dasheng-finance-data` | 86 | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-finance-data) |
 | 单品 | 美股/港股全栈数据 | `global-stock-data` | 86 | [Source](https://github.com/simonlin1212/global-stock-data) |
 | 单品 | SEC/13F/机构数据 | `llmquant-data` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-data) |
-| 单品 | 宏观研究 | `llmquant-macro` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-macro) |
+| 单品 | 宏观研究 | `market-environment-analysis` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
 | 单品 | 宏观/政策跟踪 | `policy-monitor` | 79 | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
 | 单品 | 宏观流动性 | `macro-liquidity` | 82 | [Source](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
-| 单品 | 事件与新闻 | `llmquant-events` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-events) |
+| 单品 | 事件与新闻 | `alphaear-news` | 79 | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-news) |
 | 单品 | 综合个股研究 | `uzi-skill` | 86 | [Source](https://github.com/wbh604/UZI-Skill) |
 | 单品 | 科技股财报深研 | `tech-earnings-deepdive` | 85 | [Source](https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive) |
-| 单品 | 财报前预案/复盘 | `anthropic-fs-equity-research-earnings-preview` | 74 | [Source](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/earnings-preview) |
+| 单品 | 财报前预案/复盘 | `earnings-preview` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | 单品 | 成长股筛选 | `canslim-screener` | 71 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/canslim-screener) |
 | 单品 | 技术形态筛选 | `vcp-screener` | 71 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/vcp-screener) |
 | 单品 | 股息/价值筛选 | `value-dividend-screener` | 71 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/value-dividend-screener) |
@@ -163,19 +159,19 @@ This standard suite lists merged upstream source packs and representative standa
 | 单品 | 估值建模 | `bayesian-intrinsic-growth-valuation` | 79 | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
 | 单品 | 买方研究备忘录 | `buy-side-equity-research-memo` | 79 | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/buy-side-equity-research-memo) |
 | 单品 | 市场宽度/趋势 | `uptrend-analyzer` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/uptrend-analyzer) |
-| 单品 | 美股市场情绪 | `alphagbm-market-sentiment` | 82 | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment) |
-| 单品 | 交易计划 | `sepa-strategy` | 71 | [Source](https://github.com/himself65/finance-skills) |
+| 单品 | 美股市场情绪 | `us-market-sentiment` | 76 | [Source](https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment) |
+| 单品 | 交易计划 | `trade-hypothesis-ideator` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trade-hypothesis-ideator) |
 | 单品 | 仓位管理 | `position-sizer` | 71 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/position-sizer) |
 | 单品 | 期权策略 | `alphagbm-options-strategy` | 82 | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy) |
 | 单品 | 组合管理 | `llmquant-portfolio` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-portfolio) |
 | 单品 | 组合风险 | `llmquant-risk` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-risk) |
-| 单品 | 自选股监控 | `alphagbm-watchlist` | 82 | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
+| 单品 | 自选股监控 | `alphaear-signal-tracker` | 79 | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-signal-tracker) |
 | 单品 | 持仓 Thesis 记忆 | `trader-memory-core` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trader-memory-core) |
 | 单品 | 回测引擎 | `alphagbm-bps-backtest` | 82 | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest) |
 | 单品 | 回测审查 | `backtest-expert` | 92 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert) |
 | 单品 | 交易后验复盘 | `alphaear-predictor` | 79 | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-predictor) |
-| 单品 | 量化策略 | `llmquant-strategies` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-strategies) |
-| 单品 | ETF 研究 | `llmquant-etfs` | 81 | [Source](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-etfs) |
+| 单品 | 量化策略 | `serenity-alpha` | 79 | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/serenity-alpha) |
+| 单品 | ETF 研究 | `etf-premium` | 79 | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | 单品 | 投研报告生成 | `alphaear-reporter` | 71 | [Source](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-reporter) |
 | 单品 | 金融知识库 | `openclaw-stock-kb` | 92 | [Source](https://github.com/freestylefly/openclaw-stock-kb) |
 | 单品 | 数据质量 | `data-quality-checker` | 71 | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker) |
@@ -265,10 +261,10 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `book-to-skill` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/virgiliojr94/book-to-skill) |
 | `flutter-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
-| `frontend-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
-| `fullstack-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
+| `frontend-dev` | `L2 Professional` | `coding-devtools` | 3★ | `browser-required` | [Source](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
+| `fullstack-dev` | `L2 Professional` | `coding-devtools` | 3★ | `browser-required` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `ios-application-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
-| `react-native-dev` | `L2 Professional` | `coding-devtools` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
+| `react-native-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
 | `shader-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
 | `colleague-skill` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/titanwings/colleague-skill) |
 | `inference-skills` | `L3 Specialist` | `commerce-ops` | 3★ | `api-key` | [Source](https://github.com/inference-sh/skills) |
@@ -293,24 +289,24 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `using-superpowers` | `L1 Foundation` | `core-agent` | 5★ | `direct` | [Source](https://github.com/obra/superpowers/tree/main/skills/using-superpowers) |
 | `verification-before-completion` | `L1 Foundation` | `core-agent` | 5★ | `direct` | [Source](https://github.com/obra/superpowers/tree/main/skills/verification-before-completion) |
 | `weather` | `L1 Foundation` | `core-agent` | 5★ | `direct` | [Source](https://open-meteo.com/) |
-| `web-search` | `L1 Foundation` | `core-agent` | 1★ | `api-key` | Preset |
+| `web-search` | `L1 Foundation` | `core-agent` | 1★ | `browser-required` | Preset |
 | `writing-skills` | `L1 Foundation` | `core-agent` | 5★ | `direct` | [Source](https://github.com/obra/superpowers/tree/main/skills/writing-skills) |
-| `baoyu-youtube-transcript` | `L2 Professional` | `data-analysis` | 4★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
+| `baoyu-youtube-transcript` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `data-analyst` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/data-analyst) |
 | `dual-axis-skill-reviewer` | `L2 Professional` | `data-analysis` | 4★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dual-axis-skill-reviewer) |
 | `edge-signal-aggregator` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-signal-aggregator) |
 | `edge-strategy-reviewer` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-reviewer) |
-| `minimax-xlsx` | `L2 Professional` | `data-analysis` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx) |
+| `minimax-xlsx` | `L2 Professional` | `data-analysis` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx) |
 | `scenario-analyzer` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | `skill-integration-tester` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-integration-tester) |
 | `xlsx` | `L2 Professional` | `data-analysis` | 1★ | `direct` | Preset |
 | `agent-harness-construction` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `agentmail` | `L2 Professional` | `design-ui` | 3★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-skills) |
 | `agentmail-toolkit` | `L2 Professional` | `design-ui` | 4★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-toolkit) |
-| `animation` | `L2 Professional` | `design-ui` | 4★ | `api-key` | [Source](https://github.com/bytesagain/ai-skills) |
+| `animation` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/bytesagain/ai-skills) |
 | `animation-vocabulary` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary) |
 | `apple-design` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
-| `baoyu-article-illustrator` | `L2 Professional` | `design-ui` | 4★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
+| `baoyu-article-illustrator` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `brandkit` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit) |
 | `design-taste-frontend` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill) |
 | `design-taste-frontend-v1` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1) |
@@ -348,7 +344,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `docx` | `L2 Professional` | `docs-office` | 1★ | `direct` | Preset |
 | `feishu-doc-creator` | `L2 Professional` | `docs-office` | 5★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/feishu-doc-creator) |
 | `lark-calendar` | `L2 Professional` | `docs-office` | 4★ | `api-key` | [Source](https://github.com/larksuite/oapi-sdk-nodejs) |
-| `minimax-docx` | `L2 Professional` | `docs-office` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
+| `minimax-docx` | `L2 Professional` | `docs-office` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
 | `nano-pdf` | `L2 Professional` | `docs-office` | 5★ | `direct` | [Source](https://github.com/steipete/clawdis/tree/main/skills/nano-pdf) |
 | `pdf` | `L2 Professional` | `docs-office` | 1★ | `direct` | Preset |
 | `pptx` | `L2 Professional` | `docs-office` | 1★ | `direct` | Preset |
@@ -480,23 +476,23 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `alphagbm-vol-smile` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile) |
 | `alphagbm-vol-surface` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
 | `bayesian-intrinsic-growth-valuation` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
-| `breadth-chart-analyst` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
+| `breadth-chart-analyst` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
 | `breakout-trade-planner` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breakout-trade-planner) |
 | `btc-bottom-model` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model) |
 | `buy-side-equity-research-memo` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/buy-side-equity-research-memo) |
 | `canslim-screener` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/canslim-screener) |
-| `company-valuation` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills) |
+| `company-valuation` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills) |
 | `data-quality-checker` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker) |
 | `dividend-growth-pullback-screener` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dividend-growth-pullback-screener) |
 | `downtrend-duration-analyzer` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/downtrend-duration-analyzer) |
 | `earnings-calendar` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-calendar) |
-| `earnings-preview` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills) |
+| `earnings-preview` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | `earnings-recap` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | `earnings-trade-analyzer` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-trade-analyzer) |
 | `economic-calendar-fetcher` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher) |
 | `edge-candidate-agent` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-candidate-agent) |
 | `edge-hint-extractor` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-hint-extractor) |
-| `estimate-analysis` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills) |
+| `estimate-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills) |
 | `etf-premium` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | `exposure-coach` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/exposure-coach) |
 | `finance-sentiment` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment) |
@@ -521,7 +517,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `macro-liquidity` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `macro-regime-detector` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/macro-regime-detector) |
 | `market-breadth-analyzer` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-breadth-analyzer) |
-| `market-environment-analysis` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
+| `market-environment-analysis` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
 | `market-news-analyst` | `L3 Specialist` | `finance-trading` | 3★ | `browser-required` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst) |
 | `market-top-detector` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-top-detector) |
 | `options-payoff` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills) |
@@ -533,7 +529,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `position-sizer` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/position-sizer) |
 | `pybroker-backtest-skill` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/gaaiyun/pybroker-backtest-skill) |
 | `saas-valuation-compression` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills) |
-| `sector-analyst` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst) |
+| `sector-analyst` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst) |
 | `sepa-strategy` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills) |
 | `serenity-alpha` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/serenity-alpha) |
 | `signal-postmortem` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/signal-postmortem) |
@@ -541,10 +537,10 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `stock-analysis` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/moinsen-dev/stock-analysis) |
 | `stock-correlation` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-correlation) |
 | `stock-daily-analysis-skill` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/chjm-ai/stock-daily-analysis-skill) |
-| `stock-liquidity` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity) |
+| `stock-liquidity` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity) |
 | `tam-adj-peg` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/tam-adj-peg) |
 | `tech-earnings-deepdive` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive) |
-| `technical-analyst` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst) |
+| `technical-analyst` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst) |
 | `theme-detector` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/theme-detector) |
 | `trade-hypothesis-ideator` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trade-hypothesis-ideator) |
 | `trader-memory-core` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trader-memory-core) |
@@ -579,17 +575,17 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `wechat-account-launch-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/wechat-account-launch-expert) |
 | `x-twitter-cold-start-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/x-twitter-cold-start-expert) |
 | `xiaohongshu-account-launch-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/xiaohongshu-account-launch-expert) |
-| `baoyu-comic` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
-| `baoyu-compress-image` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
-| `baoyu-cover-image` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
+| `baoyu-comic` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
+| `baoyu-compress-image` | `L3 Specialist` | `media-generation` | 3★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
+| `baoyu-cover-image` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
 | `baoyu-post-to-wechat` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-wechat) |
-| `baoyu-post-to-weibo` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
-| `baoyu-post-to-x` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
-| `baoyu-slide-deck` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck) |
-| `baoyu-xhs-images` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
+| `baoyu-post-to-weibo` | `L3 Specialist` | `media-generation` | 3★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
+| `baoyu-post-to-x` | `L3 Specialist` | `media-generation` | 3★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
+| `baoyu-slide-deck` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck) |
+| `baoyu-xhs-images` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
 | `bilibili-upload-bridge` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge) |
 | `buddy-sings` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
-| `codex-responses-tooling` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
+| `codex-responses-tooling` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `dasheng-html-video-bridge` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge) |
 | `dasheng-stage-transwrite` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite) |
 | `dasheng-video-director` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director) |
@@ -601,16 +597,16 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `dasheng-vox-skills` | `L3 Specialist` | `media-generation` | 5★ | `browser-required` | [Source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
 | `gemini-image-service` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://ai.google.dev/gemini-api/docs/image-generation) |
 | `gif-sticker-maker` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
-| `guizang-social-card-skill` | `L2 Professional` | `media-generation` | 4★ | `api-key` | [Source](https://github.com/op7418/guizang-social-card-skill) |
+| `guizang-social-card-skill` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/op7418/guizang-social-card-skill) |
 | `ian-xiaohei-illustrations` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
 | `media-downloader` | `L2 Professional` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/yizhiyanhua-ai/media-downloader.git) |
 | `minimax-image-understanding` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-image-understanding) |
-| `minimax-music-gen` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen) |
-| `minimax-music-playlist` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |
+| `minimax-music-gen` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen) |
+| `minimax-music-playlist` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |
 | `paper-framework-figure-studio-pro` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |
 | `reflection` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://playbooks.com/skills/openclaw/skills/reflection) |
 | `scientific-illustrator` | `L3 Specialist` | `media-generation` | 5★ | `mcp-required` | [Source](https://github.com/icebird1998/scientific-illustrator) |
-| `seedance2-skill` | `L2 Professional` | `media-generation` | 4★ | `api-key` | [Source](https://github.com/dexhunter/seedance2-skill) |
+| `seedance2-skill` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/dexhunter/seedance2-skill) |
 | `social-auto-upload-bridge` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/social-auto-upload-bridge) |
 | `video-autopilot-kit` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/Hao0321/video-autopilot-kit) |
 | `video-shotcraft` | `L3 Specialist` | `media-generation` | 3★ | `browser-required` | [Source](https://github.com/Vincentwei1021/video-shotcraft) |

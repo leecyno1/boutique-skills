@@ -2,10 +2,36 @@
   "schema_version": "2026.05.17",
   "generated_at": "2026-08-19",
   "max_skills": 40,
-  "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded",
+  "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
+  "api_key_policy": {
+    "exempt_keys": [
+      "ANTHROPIC_API_KEY",
+      "BIGMODEL_API_KEY",
+      "DASHSCOPE_API_KEY",
+      "DEEPSEEK_API_KEY",
+      "GEMINI_API_KEY",
+      "GH_TOKEN",
+      "GITHUB_TOKEN",
+      "GLM_API_KEY",
+      "GROQ_API_KEY",
+      "MINIMAX_API_KEY",
+      "MOONSHOT_API_KEY",
+      "OPENAI_API_KEY",
+      "OPENROUTER_API_KEY",
+      "QWEN_API_KEY",
+      "TOGETHER_API_KEY",
+      "XAI_API_KEY",
+      "ZHIPU_API_KEY"
+    ],
+    "skipped_capabilities_no_keyless_candidate": [
+      "email-agent",
+      "finance-data",
+      "ima-notes-knowledge",
+      "media-download"
+    ]
+  },
   "overrides": {
     "pinned_capabilities": {
-      "email-agent": "agentmail",
       "social-research": "agent-reach"
     },
     "excluded_skills": [
@@ -176,9 +202,9 @@
       "capability": "docs",
       "skill": "minimax-docx",
       "category": "docs-office",
-      "stars": 3,
-      "score": 68,
-      "access_mode": "api-key",
+      "stars": 4,
+      "score": 82,
+      "access_mode": "direct",
       "conflict_group": "document-docx",
       "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx",
       "note": "Professional DOCX document creation, editing, and formatting using OpenXML SDK (.NET). Three pipelines: (A) create new documents from scratch, (B) fill/edit content in existing documents, (C) apply template formatting with XSD validation gate-check. MUST use this skill whenever the user wants to produce, modify, or format a Word document — including when they say \"write a report\", \"draft a proposal\", \"make a contract\", \"fill in this form\", \"reformat to match this template\", or any task whose final output is a .docx file. Even if the user doesn't mention \"docx\" explicitly, if the task implies a printable/formal document, use this skill."
@@ -187,9 +213,9 @@
       "capability": "spreadsheet",
       "skill": "minimax-xlsx",
       "category": "data-analysis",
-      "stars": 3,
-      "score": 68,
-      "access_mode": "api-key",
+      "stars": 4,
+      "score": 82,
+      "access_mode": "direct",
       "conflict_group": "spreadsheet-xlsx",
       "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx",
       "note": "Open, create, read, analyze, edit, or validate Excel/spreadsheet files (.xlsx, .xlsm, .csv, .tsv). Use when the user asks to create, build, modify, analyze, read, validate, or format any Excel spreadsheet, financial model, pivot table, or tabular data file. Covers: creating new xlsx from scratch, reading and analyzing existing files, editing existing xlsx with zero format loss, formula recalculation and validation, and applying professional financial formatting standards. Triggers on 'spreadsheet', 'Excel', '.xlsx', '.csv', 'pivot table', 'financial model', 'formula', or any request to produce tabular data in Excel format."
@@ -232,8 +258,8 @@
       "skill": "fullstack-dev",
       "category": "coding-devtools",
       "stars": 3,
-      "score": 68,
-      "access_mode": "api-key",
+      "score": 71,
+      "access_mode": "browser-required",
       "conflict_group": "fullstack-dev",
       "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev",
       "note": "Full-stack backend architecture and frontend-backend integration guide. TRIGGER when: building a full-stack app, creating REST API with frontend, scaffolding backend service, building todo app, building CRUD app, building real-time app, building chat app, Express + React, Next.js API, Node.js backend, Python backend, Go backend, designing service layers, implementing error handling, managing config/auth, setting up API clients, implementing auth flows, handling file uploads, adding real-time features (SSE/WebSocket), hardening for production. DO NOT TRIGGER when: pure frontend UI work, pure CSS/styling, database schema only."
@@ -248,17 +274,6 @@
       "conflict_group": "mcp-builder",
       "origin_url": "https://modelcontextprotocol.io/docs/getting-started/intro",
       "note": "Use when building MCP servers or tools for external APIs and services."
-    },
-    {
-      "capability": "media-download",
-      "skill": "media-downloader",
-      "category": "media-generation",
-      "stars": 3,
-      "score": 68,
-      "access_mode": "api-key",
-      "conflict_group": "media-downloader",
-      "origin_url": "https://github.com/yizhiyanhua-ai/media-downloader.git",
-      "note": "智能媒体下载器。根据用户描述自动搜索和下载图片、视频片段，支持视频自动剪辑。 Smart media downloader. Automatically search and download images/video clips based on user description, with auto-trimming support. 触发方式 Triggers: \"下载图片\", \"找视频\", \"download media\", \"download images\", \"find video\", \"/media\""
     },
     {
       "capability": "image-generation",
@@ -284,14 +299,14 @@
     },
     {
       "capability": "article-illustration",
-      "skill": "ian-xiaohei-illustrations",
-      "category": "media-generation",
+      "skill": "baoyu-article-illustrator",
+      "category": "design-ui",
       "stars": 5,
       "score": 92,
       "access_mode": "direct",
-      "conflict_group": "ian-xiaohei-illustrations",
-      "origin_url": "https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations",
-      "note": "生成 Ian 风格的中文正文配图。用于用户要求为中文文章、帖子、博客、Notion 文档、工作流文档、方法论、流程、结构、状态、隐喻或观点生成“怪诞”“小黑”“手绘”“正文配图”“文章插图”“配图建议”“shot list”“去标题/改图”等任务；默认使用小黑 IP、纯白手绘、少量红橙蓝批注、简洁清爽但天马行空的视觉风格。"
+      "conflict_group": "baoyu-article-illustrator",
+      "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
+      "note": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\"."
     },
     {
       "capability": "social-research",
@@ -314,17 +329,6 @@
       "conflict_group": "html-publishing",
       "origin_url": "https://github.com/nexu-io/html-anything",
       "note": "Create publish-ready single-file HTML artifacts with the html-anything local agentic editor. Use when users need designed HTML articles, decks, posters, Xiaohongshu/X cards, web prototypes, data reports, or HTML/PNG export without a separate API key."
-    },
-    {
-      "capability": "finance-data",
-      "skill": "a-stock-data",
-      "category": "finance-data",
-      "stars": 4,
-      "score": 78,
-      "access_mode": "api-key",
-      "conflict_group": "finance-data",
-      "origin_url": "https://github.com/simonlin1212/a-stock-data",
-      "note": "当任务需要写代码实际获取A股数据时使用——拉取行情/K线(mootdx+腾讯+百度)、研报(东财+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业)、资金面(融资融券/大宗/股东户数/分红/资金流)、新闻、财务三表/F10、公告(巨潮)、打板(涨停池/连板/炸板率/重点监控池/日内异动)、ETF期权(T型报价/希腊字母/IV)、舆情互动(互动易/热榜/人气榜)等真实数据。十层数据源·47端点(含3官方备胎)·内嵌全部可运行代码，自包含零依赖外部文件；优先用通达信(mootdx)/腾讯(不封IP)，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。"
     },
     {
       "capability": "finance-global-data",
@@ -380,28 +384,6 @@
       "conflict_group": "model-usage",
       "origin_url": "https://clawhub.ai/steipete/model-usage",
       "note": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost JSON."
-    },
-    {
-      "capability": "email-agent",
-      "skill": "agentmail",
-      "category": "design-ui",
-      "stars": 3,
-      "score": 68,
-      "access_mode": "api-key",
-      "conflict_group": "email-agent",
-      "origin_url": "https://github.com/agentmail-to/agentmail-skills",
-      "note": "Give AI agents their own email inboxes using the AgentMail API. Use when building email agents, sending/receiving emails programmatically, managing inboxes, handling attachments, organizing with labels, creating drafts for human approval, or setting up real-time notifications via webhooks/websockets. Supports multi-tenant isolation with pods."
-    },
-    {
-      "capability": "ima-notes-knowledge",
-      "skill": "ima",
-      "category": "productivity-pkm",
-      "stars": 4,
-      "score": 78,
-      "access_mode": "api-key",
-      "conflict_group": "ima",
-      "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima",
-      "note": "Connect and use IMA notes, notebooks, and knowledge bases from OpenClaw or Hermes. Use when the user asks to initialize IMA, authorize IMA API access, verify API Key or Client ID from controlled config, sync notes, list notebooks, read notes, query knowledge bases, or troubleshoot IMA note/knowledge retrieval. Never ask users to paste real API keys in chat."
     },
     {
       "capability": "weather",

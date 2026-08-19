@@ -8,9 +8,10 @@
 - 默认分支：main
 - GitHub：https://github.com/leecyno1/boutique-openclaw-skills（远端 origin）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee）
-- 当前技能数：396
-- 标准包：34 个 Skill（上限 40，packs 为参考推荐不随包安装）
-- 金融投资标准组合：34 个 Skill（能力位去重，上限 40）
+- 当前技能数：403
+- 标准包：30 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）
+- 金融投资标准组合：34 个 Skill（能力位去重，上限 40；同位优先无 key 候选，仅 13 位保留专业数据源 key）
+- 组合 API Key 政策：大模型 key 与 GitHub 工具 token 豁免；第三方注册 key 在标准组合硬过滤、在金融组合同位软惩罚（详见 docs/WEEKLY_CURATION.md）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 

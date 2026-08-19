@@ -30,7 +30,7 @@
 | `url-to-markdown` | 核心 Agent 能力 | 4★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `github` | 核心 Agent 能力 | 4★ | `api-key` | [origin](https://github.com/github/github-mcp-server) |
 | `shell` | 核心 Agent 能力 | 1★ | `direct` | 待补 |
-| `web-search` | 核心 Agent 能力 | 1★ | `api-key` | 待补 |
+| `web-search` | 核心 Agent 能力 | 1★ | `browser-required` | 待补 |
 
 ## L2 Professional
 
@@ -38,9 +38,12 @@
 |---|---|---:|---|---|
 | `html-anything` | HTML 发布 / 视觉出版 | 5★ | `browser-required` | [origin](https://github.com/nexu-io/html-anything) |
 | `agent-harness-construction` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
+| `animation` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/bytesagain/ai-skills) |
 | `animation-vocabulary` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary) |
 | `apple-design` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
 | `backtest-expert` | 编程 / 工程工具 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert) |
+| `baoyu-article-illustrator` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
+| `baoyu-youtube-transcript` | 数据分析 | 5★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `behavior-validator` | 编程 / 工程工具 | 5★ | `direct` | [origin](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `brandkit` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit) |
 | `dasheng-hotspot-radar` | 搜索 / 研究 / 情报 | 5★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
@@ -69,6 +72,7 @@
 | `gsap-timeline` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
 | `gsap-utils` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
 | `gstack` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/garrytan/gstack) |
+| `guizang-social-card-skill` | 媒体生成 / 处理 | 5★ | `direct` | [origin](https://github.com/op7418/guizang-social-card-skill) |
 | `high-end-visual-design` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill) |
 | `humanizer-zh` | 写作 / 内容 | 5★ | `direct` | [origin](https://github.com/idao-cube/humanizer-zh) |
 | `ian-xiaohei-illustrations` | 媒体生成 / 处理 | 5★ | `direct` | [origin](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
@@ -92,6 +96,7 @@
 | `review-animations` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
 | `scenario-analyzer` | 数据分析 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills) |
 | `scroll-world` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
+| `seedance2-skill` | 媒体生成 / 处理 | 5★ | `direct` | [origin](https://github.com/dexhunter/seedance2-skill) |
 | `self-improving-agent-cn` | 多 Agent / 自动调度 | 5★ | `direct` | [origin](https://clawhub.ai/zhengxinjipai/self-improving-agent-cn) |
 | `skill-designer` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-designer) |
 | `skill-integration-tester` | 数据分析 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-integration-tester) |
@@ -109,7 +114,10 @@
 | `content-strategy` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy) |
 | `flutter-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
 | `ios-application-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
+| `minimax-docx` | 文档 / 办公 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
+| `minimax-xlsx` | 数据分析 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx) |
 | `pptx-generator` | 文档 / 办公 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
+| `react-native-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
 | `shader-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
 | `agent-reach` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
 | `agentmail-mcp` | 编程 / 工程工具 | 4★ | `api-key+mcp-required` | [origin](https://github.com/agentmail-to/agentmail-mcp) |
@@ -142,33 +150,25 @@
 | `agent-architecture-audit` | 编程 / 工程工具 | 4★ | `api-key` | [origin](https://github.com/affaan-m/ECC) |
 | `agentmail-toolkit` | 设计 / UI | 4★ | `api-key` | [origin](https://github.com/agentmail-to/agentmail-toolkit) |
 | `akshare-stock` | 金融 / 数据源 | 4★ | `api-key` | [origin](https://clawhub.ai/skills/new-akshare-stock) |
-| `animation` | 设计 / UI | 4★ | `api-key` | [origin](https://github.com/bytesagain/ai-skills) |
-| `baoyu-article-illustrator` | 设计 / UI | 4★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `baoyu-image-gen` | 编程 / 工程工具 | 4★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
-| `baoyu-youtube-transcript` | 数据分析 | 4★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `book-to-skill` | 编程 / 工程工具 | 4★ | `api-key` | [origin](https://github.com/virgiliojr94/book-to-skill) |
 | `dual-axis-skill-reviewer` | 数据分析 | 4★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dual-axis-skill-reviewer) |
-| `guizang-social-card-skill` | 媒体生成 / 处理 | 4★ | `api-key` | [origin](https://github.com/op7418/guizang-social-card-skill) |
 | `ima` | 效率 / 知识管理 | 4★ | `api-key` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
 | `lark-calendar` | 文档 / 办公 | 4★ | `api-key` | [origin](https://github.com/larksuite/oapi-sdk-nodejs) |
 | `openclaw-stock-data-skill` | 金融 / 数据源 | 4★ | `api-key` | [origin](https://github.com/1018466411/openclaw-stock-data-skill) |
 | `paperless-docs` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/paperless-ngx/paperless-ngx) |
 | `paperless-ngx-tools` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/paperless-ngx/paperless-ngx) |
-| `seedance2-skill` | 媒体生成 / 处理 | 4★ | `api-key` | [origin](https://github.com/dexhunter/seedance2-skill) |
 | `tavily-search` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/tavily-ai/tavily-python) |
 | `tushare-openclaw-skill` | 金融 / 数据源 | 4★ | `api-key` | [origin](https://github.com/DayDreammy/tushare-openclaw-skill) |
 | `westockdata` | 金融 / 数据源 | 4★ | `direct` | [origin](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
+| `frontend-dev` | 编程 / 工程工具 | 3★ | `browser-required` | [origin](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
+| `fullstack-dev` | 编程 / 工程工具 | 3★ | `browser-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `vision-analysis` | 媒体生成 / 处理 | 3★ | `api-key+mcp-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `agentmail` | 设计 / UI | 3★ | `api-key` | [origin](https://github.com/agentmail-to/agentmail-skills) |
 | `ai-image-generation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/inference-sh/skills/tree/main/tools/image/ai-image-generation) |
-| `frontend-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
-| `fullstack-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `media-downloader` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/yizhiyanhua-ai/media-downloader.git) |
-| `minimax-docx` | 文档 / 办公 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
 | `minimax-multimodal-toolkit` | 搜索 / 研究 / 情报 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-multimodal-toolkit) |
-| `minimax-xlsx` | 数据分析 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx) |
 | `notebooklm-skill` | 浏览器 / 自动化 | 3★ | `api-key` | [origin](https://github.com/PleasePrompto/notebooklm-skill) |
-| `react-native-dev` | 编程 / 工程工具 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
 | `docx` | 文档 / 办公 | 1★ | `direct` | 待补 |
 | `pdf` | 文档 / 办公 | 1★ | `direct` | 待补 |
 | `pptx` | 文档 / 办公 | 1★ | `direct` | 待补 |
@@ -185,10 +185,14 @@
 | `uzi-skill` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/wbh604/UZI-Skill) |
 | `agent-eval` | 效率 / 知识管理 | 4★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
 | `agent-introspection-debugging` | 多 Agent / 自动调度 | 4★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
+| `baoyu-comic` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
+| `baoyu-cover-image` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
 | `baoyu-format-markdown` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
 | `baoyu-infographic` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic) |
 | `baoyu-skills` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills) |
+| `baoyu-slide-deck` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck) |
 | `baoyu-translate` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-translate) |
+| `baoyu-xhs-images` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
 | `bilibili-upload-bridge` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge) |
 | `capability-evolver` | 多 Agent / 自动调度 | 4★ | `direct` | [origin](https://mcp.directory/skills/details/1368/capability-evolver) |
 | `channels-account-launch-expert` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/channels-account-launch-expert) |
@@ -262,18 +266,26 @@
 | `alphaear-predictor` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-predictor) |
 | `alphaear-signal-tracker` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-signal-tracker) |
 | `bayesian-intrinsic-growth-valuation` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
+| `breadth-chart-analyst` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
 | `buy-side-equity-research-memo` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/buy-side-equity-research-memo) |
+| `company-valuation` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills) |
+| `earnings-preview` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills) |
 | `eigenflux` | 多 Agent / 自动调度 | 4★ | `mcp-required` | [origin](https://github.com/phronesis-io/codex-eigenflux) |
+| `estimate-analysis` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills) |
 | `etf-premium` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills) |
 | `gf-dma-health-index` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/gf-dma-health-index) |
 | `hormuz-strait` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills) |
 | `kanchi-dividend-us-tax-accounting` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-us-tax-accounting) |
 | `market-breadth-analyzer` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-breadth-analyzer) |
+| `market-environment-analysis` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
 | `paper-framework-figure-studio-pro` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |
 | `policy-monitor` | 政策 / 宏观监控 | 4★ | `direct` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
+| `sector-analyst` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst) |
 | `serenity-alpha` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/serenity-alpha) |
 | `stanley-druckenmiller-investment` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/stanley-druckenmiller-investment) |
+| `stock-liquidity` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity) |
 | `tam-adj-peg` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/haskaomni/serenity-skill/tree/main/skills/tam-adj-peg) |
+| `technical-analyst` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst) |
 | `trade-hypothesis-ideator` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trade-hypothesis-ideator) |
 | `trader-memory-core` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trader-memory-core) |
 | `uptrend-analyzer` | 金融 / 交易 | 4★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/uptrend-analyzer) |
@@ -282,7 +294,10 @@
 | `btc-bottom-model` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model) |
 | `us-market-sentiment` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment) |
 | `buddy-sings` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
+| `codex-responses-tooling` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `marketingskills` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/coreyhaines31/marketingskills) |
+| `minimax-music-gen` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen) |
+| `minimax-music-playlist` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |
 | `alphaear-search` | 金融 / 交易 | 3★ | `browser-required` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-search) |
 | `anthropic-fs-equity-research-catalyst-calendar` | 金融 / 机构服务 | 3★ | `mcp-required` | [origin](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/catalyst-calendar) |
 | `anthropic-fs-equity-research-earnings-analysis` | 金融 / 机构服务 | 3★ | `mcp-required` | [origin](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/earnings-analysis) |
@@ -350,7 +365,10 @@
 | `anthropic-fs-wealth-management-investment-proposal` | 金融 / 机构服务 | 3★ | `mcp-required` | [origin](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal) |
 | `anthropic-fs-wealth-management-portfolio-rebalance` | 金融 / 机构服务 | 3★ | `mcp-required` | [origin](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance) |
 | `anthropic-fs-wealth-management-tax-loss-harvesting` | 金融 / 机构服务 | 3★ | `mcp-required` | [origin](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting) |
+| `baoyu-compress-image` | 媒体生成 / 处理 | 3★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
 | `baoyu-markdown-to-html` | 写作 / 内容 | 3★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-markdown-to-html) |
+| `baoyu-post-to-weibo` | 媒体生成 / 处理 | 3★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
+| `baoyu-post-to-x` | 媒体生成 / 处理 | 3★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
 | `dasheng-xhs-publish-bridge` | 营销 / 增长 | 3★ | `mcp-required` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-xhs-publish-bridge) |
 | `market-news-analyst` | 金融 / 交易 | 3★ | `browser-required` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst) |
 | `portfolio-manager` | 金融 / 交易 | 3★ | `mcp-required` | [origin](https://mcp.directory/skills/portfolio-manager) |
@@ -360,29 +378,18 @@
 | `alphaear-reporter` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-reporter) |
 | `alphaear-sentiment` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-sentiment) |
 | `alphaear-stock` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-stock) |
-| `baoyu-comic` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
-| `baoyu-compress-image` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
-| `baoyu-cover-image` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
 | `baoyu-post-to-wechat` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-wechat) |
-| `baoyu-post-to-weibo` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
-| `baoyu-post-to-x` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
-| `baoyu-slide-deck` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck) |
-| `baoyu-xhs-images` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
-| `breadth-chart-analyst` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
 | `breakout-trade-planner` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breakout-trade-planner) |
 | `canslim-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/canslim-screener) |
-| `company-valuation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
 | `data-quality-checker` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker) |
 | `dividend-growth-pullback-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dividend-growth-pullback-screener) |
 | `downtrend-duration-analyzer` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/downtrend-duration-analyzer) |
 | `earnings-calendar` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-calendar) |
-| `earnings-preview` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills) |
 | `earnings-recap` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills) |
 | `earnings-trade-analyzer` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-trade-analyzer) |
 | `economic-calendar-fetcher` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher) |
 | `edge-candidate-agent` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-candidate-agent) |
 | `edge-hint-extractor` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-hint-extractor) |
-| `estimate-analysis` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
 | `exposure-coach` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/exposure-coach) |
 | `finance-sentiment` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment) |
 | `finance-skill-creator` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/skill-creator/skills/skill-creator) |
@@ -395,7 +402,6 @@
 | `kanchi-dividend-review-monitor` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-review-monitor) |
 | `kanchi-dividend-sop` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-sop) |
 | `macro-regime-detector` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/macro-regime-detector) |
-| `market-environment-analysis` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
 | `market-top-detector` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-top-detector) |
 | `minimax-image-understanding` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-image-understanding) |
 | `options-payoff` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
@@ -407,19 +413,13 @@
 | `position-sizer` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/position-sizer) |
 | `pybroker-backtest-skill` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/gaaiyun/pybroker-backtest-skill) |
 | `saas-valuation-compression` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
-| `sector-analyst` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst) |
 | `sepa-strategy` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
 | `signal-postmortem` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/signal-postmortem) |
 | `stock-analysis` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/moinsen-dev/stock-analysis) |
 | `stock-correlation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-correlation) |
 | `stock-daily-analysis-skill` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/chjm-ai/stock-daily-analysis-skill) |
-| `stock-liquidity` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity) |
 | `stock-monitor-skill` | 金融 / 监控预警 | 3★ | `api-key` | [origin](https://github.com/chjm-ai/stock-monitor-skill) |
-| `technical-analyst` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst) |
 | `theme-detector` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/theme-detector) |
 | `value-dividend-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/value-dividend-screener) |
 | `vcp-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/vcp-screener) |
-| `codex-responses-tooling` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `gif-sticker-maker` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
-| `minimax-music-gen` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen) |
-| `minimax-music-playlist` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |

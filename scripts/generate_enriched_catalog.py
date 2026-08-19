@@ -395,6 +395,23 @@ API_KEY_PATTERNS = {
     "STOCK_API_KEY": ["stock_api_key", "data.diemeng", "diemeng"],
 }
 
+# Keys accepted inside the two bundles: mainstream LLM providers and standard
+# developer tooling tokens. Everything else is a third-party registration key
+# and bundles should avoid it whenever a keyless alternative exists.
+LLM_API_KEYS = {
+    "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GEMINI_API_KEY", "OPENROUTER_API_KEY",
+    "DEEPSEEK_API_KEY", "MOONSHOT_API_KEY", "QWEN_API_KEY", "DASHSCOPE_API_KEY",
+    "MINIMAX_API_KEY", "ZHIPU_API_KEY", "GLM_API_KEY", "BIGMODEL_API_KEY",
+    "TOGETHER_API_KEY", "GROQ_API_KEY", "XAI_API_KEY",
+}
+TOOL_TOKEN_EXEMPT = {"GITHUB_TOKEN", "GH_TOKEN"}
+# Runtime-generated secrets that never require external registration.
+SELF_GENERATED_SECRETS = {"JWT_SECRET", "SECRET_KEY"}
+
+
+def is_third_party_api_key(api_keys: list[str]) -> bool:
+    return any(key not in LLM_API_KEYS and key not in TOOL_TOKEN_EXEMPT for key in api_keys)
+
 TOOL_PATTERNS = {
     "browser": ["browser", "chrome", "web", "html-anything"],
     "mcp": ["mcp"],
@@ -672,9 +689,13 @@ def classify_horizontal(skill_id: str, category: str, origin_confidence: str) ->
 
 def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]) -> dict[str, Any]:
     haystack = f"{skill_id} {description}".lower()
-    api_keys = list(existing_keys)
+    api_keys = [key for key in existing_keys if key not in SELF_GENERATED_SECRETS]
     for key, patterns in API_KEY_PATTERNS.items():
-        if any(pattern in haystack for pattern in patterns) and key not in api_keys:
+        if key in api_keys:
+            continue
+        # Word-boundary matching: bare substrings like "ima" would otherwise
+        # match "image"/"minimal" and mislabel skills with foreign keys.
+        if any(re.search(rf"\b{re.escape(pattern)}\b", haystack) for pattern in patterns):
             api_keys.append(key)
     tools = []
     for tool, patterns in TOOL_PATTERNS.items():
@@ -1004,12 +1025,21 @@ def build_standard_bundle(enriched: dict[str, Any]) -> dict[str, Any]:
     excluded = set((overrides.get("excluded_skills", {}) or {}).keys())
     selected = []
     selected_conflicts = set()
+    skipped_no_keyless = []
     for capability, candidates in CAPABILITY_RULES:
         choices = [by_id[c] for c in candidates if c in by_id]
         choices = [c for c in choices if c["id"] not in excluded]
         choices = [c for c in choices if c["conflict_group"] not in selected_conflicts]
         if not choices:
             continue
+        # Bundle policy: no third-party registration keys. LLM keys and
+        # developer tool tokens are exempt; when every candidate needs one,
+        # the capability is skipped rather than forcing a signup on users.
+        keyless = [c for c in choices if not is_third_party_api_key(c["dependencies"]["api_keys"])]
+        if not keyless:
+            skipped_no_keyless.append(capability)
+            continue
+        choices = keyless
         pinned_skill = pinned.get(capability)
         pinned_choices = [choice for choice in choices if choice["id"] == pinned_skill]
         best = pinned_choices[0] if pinned_choices else sorted(choices, key=lambda s: (-s["rating"]["score"], risk_sort(s["risk_level"]), s["id"]))[0]
@@ -1052,7 +1082,11 @@ def build_standard_bundle(enriched: dict[str, Any]) -> dict[str, Any]:
         "schema_version": enriched["schema_version"],
         "generated_at": TODAY,
         "max_skills": STANDARD_BUNDLE_MAX_SKILLS,
-        "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded",
+        "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
+        "api_key_policy": {
+            "exempt_keys": sorted(LLM_API_KEYS | TOOL_TOKEN_EXEMPT),
+            "skipped_capabilities_no_keyless_candidate": sorted(skipped_no_keyless),
+        },
         "overrides": {
             "pinned_capabilities": pinned,
             "excluded_skills": sorted(excluded),

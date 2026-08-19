@@ -50,17 +50,17 @@
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 129,
+      "api-key": 100,
       "api-key+mcp-required": 22,
-      "browser-required": 21,
-      "direct": 158,
+      "browser-required": 27,
+      "direct": 181,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
-      "3★": 151,
-      "4★": 163,
-      "5★": 83
+      "3★": 133,
+      "4★": 176,
+      "5★": 88
     }
   },
   "skills": [
@@ -888,6 +888,49 @@
       }
     },
     {
+      "id": "animation",
+      "name": "animation",
+      "description": "Generate CSS and SVG animation code snippets using bash and Python. Use when building UI animations, keyframes, or transition effects.",
+      "manual": "skills/default/animation/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/animation/GUIDE.md",
+      "install_tiers": [
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/bytesagain/ai-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "animation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "animation-vocabulary",
       "name": "animation-vocabulary",
       "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
@@ -1021,6 +1064,95 @@
       },
       "risk_level": "low",
       "conflict_group": "backtest-expert",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "baoyu-article-illustrator",
+      "name": "baoyu-article-illustrator",
+      "description": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\".",
+      "manual": "skills/default/baoyu-article-illustrator/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-article-illustrator/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-article-illustrator",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "baoyu",
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-article-illustrator",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "baoyu-youtube-transcript",
+      "name": "baoyu-youtube-transcript",
+      "description": "Downloads YouTube video transcripts/subtitles and cover images by URL or video ID. Supports multiple languages, translation, chapters, and speaker identification. Caches raw data for fast re-formatting. Use when user asks to \"get YouTube transcript\", \"download subtitles\", \"get captions\", \"YouTube字幕\", \"YouTube封面\", \"视频封面\", \"video thumbnail\", \"video cover image\", or provides a YouTube URL and wants the transcript/subtitle text or cover image extracted.",
+      "manual": "skills/default/baoyu-youtube-transcript/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-youtube-transcript/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-youtube-transcript",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "data-analysis",
+      "category_label": "数据分析",
+      "tags": [
+        "baoyu",
+        "data-analysis",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-youtube-transcript",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -2316,6 +2448,54 @@
       }
     },
     {
+      "id": "guizang-social-card-skill",
+      "name": "guizang-social-card-skill",
+      "description": "Generate Guizang-style social card image sets, Live Photo motion cards, material-first Live Photo puzzle layouts, triple Live Photo collages, long-video-to-Live-Photo treatments, and WeChat official account cover pairs from articles, scripts, screenshots, product notes, subtitles, photos, or user-supplied videos. Use when the user asks for 小红书图文, Rednote/Xiaohongshu images, social cards, carousel images, 3:4 covers, Live Photo, 实况照片, 单视频实况拼图, 二宫格实况拼图, 三连实况拼图, 四宫格实况拼图, 微信公众号封面, WeChat 21:9 + 1:1 covers, Swiss Style, or magazine-style social images.",
+      "manual": "skills/default/guizang-social-card-skill/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/guizang-social-card-skill/SKILL.md",
+      "install_tiers": [
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/op7418/guizang-social-card-skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/op7418/guizang-social-card-skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "creator",
+        "design",
+        "direct",
+        "l2",
+        "media-generation",
+        "offline",
+        "social-card"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "guizang-social-card-skill",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "high-end-visual-design",
       "name": "high-end-visual-design",
       "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic.",
@@ -3344,6 +3524,51 @@
       },
       "risk_level": "low",
       "conflict_group": "scroll-world",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "seedance2-skill",
+      "name": "seedance2-skill",
+      "description": "Write effective prompts for Jimeng Seedance 2.0 multimodal AI video generation. Use when users want to create video prompts using text, images, videos, and audio inputs with the @ reference system. Covers camera movements, effects replication, video extension, editing, music beat-matching, e-commerce ads, short dramas, and educational content.",
+      "manual": "skills/default/seedance2-skill/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/seedance2-skill/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/dexhunter/seedance2-skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/dexhunter/seedance2-skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l2",
+        "media",
+        "media-generation",
+        "offline",
+        "prompt",
+        "video"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "seedance2-skill",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -4404,6 +4629,92 @@
       }
     },
     {
+      "id": "baoyu-comic",
+      "name": "baoyu-comic",
+      "description": "Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and batch-capable image generation. Use when user asks to create \"知识漫画\", \"教育漫画\", \"biography comic\", \"tutorial comic\", or \"Logicomix-style comic\".",
+      "manual": "skills/default/baoyu-comic/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-comic/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-comic",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-comic",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "baoyu-cover-image",
+      "name": "baoyu-cover-image",
+      "description": "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 11 color palettes and 7 rendering styles. Supports cinematic (2.35:1), widescreen (16:9), and square (1:1) aspects. Use when user asks to \"generate cover image\", \"create article cover\", or \"make cover\".",
+      "manual": "skills/default/baoyu-cover-image/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-cover-image/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-cover-image",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-cover-image",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "baoyu-format-markdown",
       "name": "baoyu-format-markdown",
       "description": "Formats plain text or markdown files with frontmatter, titles, summaries, headings, bold, lists, and code blocks. Use when user asks to \"format markdown\", \"beautify article\", \"add formatting\", or improve article layout. Outputs to {filename}-formatted.md.",
@@ -4533,6 +4844,49 @@
       }
     },
     {
+      "id": "baoyu-slide-deck",
+      "name": "baoyu-slide-deck",
+      "description": "Generates professional slide deck images from content. Creates outlines with style instructions, then generates individual slide images. Use when user asks to \"create slides\", \"make a presentation\", \"generate deck\", \"slide deck\", or \"PPT\".",
+      "manual": "skills/default/baoyu-slide-deck/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-slide-deck/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-slide-deck",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-slide-deck",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "baoyu-translate",
       "name": "baoyu-translate",
       "description": ">-",
@@ -4568,6 +4922,49 @@
       },
       "risk_level": "low",
       "conflict_group": "baoyu-translate",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "baoyu-xhs-images",
+      "name": "baoyu-xhs-images",
+      "description": "Generates infographic image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for social media engagement. Use when user mentions \"小红书图片\", \"小红书种草\", \"小绿书\", \"微信图文\", \"微信贴图\", \"image cards\", \"图片卡片\", baoyu-xhs-images, or wants social media infographic series.",
+      "manual": "skills/default/baoyu-xhs-images/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-xhs-images/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-xhs-images",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-xhs-images",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -8034,6 +8431,101 @@
       }
     },
     {
+      "id": "minimax-docx",
+      "name": "minimax-docx",
+      "description": "Professional DOCX document creation, editing, and formatting using OpenXML SDK (.NET). Three pipelines: (A) create new documents from scratch, (B) fill/edit content in existing documents, (C) apply template formatting with XSD validation gate-check. MUST use this skill whenever the user wants to produce, modify, or format a Word document — including when they say \"write a report\", \"draft a proposal\", \"make a contract\", \"fill in this form\", \"reformat to match this template\", or any task whose final output is a .docx file. Even if the user doesn't mention \"docx\" explicitly, if the task implies a printable/formal document, use this skill.",
+      "manual": "skills/default/minimax-docx/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-docx/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-docx",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "docs-office",
+      "category_label": "文档 / 办公",
+      "tags": [
+        "default_sentinel",
+        "direct",
+        "docs-office",
+        "l2",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "document-docx",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "minimax-xlsx",
+      "name": "minimax-xlsx",
+      "description": "Open, create, read, analyze, edit, or validate Excel/spreadsheet files (.xlsx, .xlsm, .csv, .tsv). Use when the user asks to create, build, modify, analyze, read, validate, or format any Excel spreadsheet, financial model, pivot table, or tabular data file. Covers: creating new xlsx from scratch, reading and analyzing existing files, editing existing xlsx with zero format loss, formula recalculation and validation, and applying professional financial formatting standards. Triggers on 'spreadsheet', 'Excel', '.xlsx', '.csv', 'pivot table', 'financial model', 'formula', or any request to produce tabular data in Excel format.",
+      "manual": "skills/default/minimax-xlsx/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-xlsx/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-xlsx",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "data-analysis",
+      "category_label": "数据分析",
+      "tags": [
+        "data-analysis",
+        "default_sentinel",
+        "direct",
+        "l2",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "spreadsheet-xlsx",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "pptx-generator",
       "name": "pptx-generator",
       "description": "Generate, edit, and read PowerPoint presentations. Create from scratch with PptxGenJS (cover, TOC, content, section divider, summary slides), edit existing PPTX via XML workflows, or extract text with markitdown. Triggers: PPT, PPTX, PowerPoint, presentation, slide, deck, slides.",
@@ -8074,6 +8566,55 @@
       },
       "risk_level": "low",
       "conflict_group": "document-pptx",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "react-native-dev",
+      "name": "react-native-dev",
+      "description": "React Native and Expo development guide covering components, styling, animations, navigation, state management, forms, networking, performance optimization, testing, native capabilities, and engineering (project structure, deployment, SDK upgrades, CI/CD). Use when: building React Native or Expo apps, implementing animations or native UI, managing state, fetching data, writing tests, optimizing performance, deploying to App Store/Play Store, setting up CI/CD, upgrading Expo SDK, or configuring Tailwind/NativeWind.",
+      "manual": "skills/default/react-native-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/react-native-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/react-native-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "default_sentinel",
+        "direct",
+        "l2",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "react-native-dev",
       "preset_excluded": false,
       "rating": {
         "score": 82,
@@ -8300,9 +8841,7 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "FUNDA_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
+          "FUNDA_API_KEY"
         ],
         "required_tools": [
           "mcp",
@@ -9336,8 +9875,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY"
         ],
         "required_tools": [
@@ -9776,6 +10313,51 @@
       }
     },
     {
+      "id": "breadth-chart-analyst",
+      "name": "breadth-chart-analyst",
+      "description": "This skill should be used when analyzing market breadth charts, specifically the S&P 500 Breadth Index (200-Day MA based) and the US Stock Market Uptrend Stock Ratio charts. Use this skill when the user provides breadth chart images for analysis, requests market breadth assessment, positioning strategy recommendations, or wants to understand medium-term strategic and short-term tactical market outlook based on breadth indicators. Also works WITHOUT chart images by fetching CSV data directly from public sources. All analysis and output are conducted in English.",
+      "manual": "skills/default/breadth-chart-analyst/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/breadth-chart-analyst/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/breadth-chart-analyst",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:breadth-chart-analyst",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "buy-side-equity-research-memo",
       "name": "buy-side-equity-research-memo",
       "description": "Generate source-backed buy-side equity research memos from a ticker, starting with investment view, target-price scenarios, SEC and IR-backed financial statement analysis, industry chain, competition, valuation, catalysts, variant perception, risks, and monitoring dashboard. Use when the user asks to analyze a stock or ticker, create a buy-side memo, investment committee note, deep equity research report, SOTP or scenario-driven stock analysis, or fund-manager-style company analysis.",
@@ -9815,6 +10397,95 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:buy-side-equity-research-memo",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "company-valuation",
+      "name": "company-valuation",
+      "description": "Estimate the intrinsic value of a public company using DCF, relative (peer multiple) and sum-of-parts (SOTP) methods, then triangulate to an implied share price with upside/downside versus the current market price. Use this skill whenever the user asks: \"what is AAPL worth\", \"valuation of NVDA\", \"fair value of TSLA\", \"intrinsic value\", \"DCF for MSFT\", \"build a DCF\", \"discounted cash flow\", \"WACC\", \"terminal value\", \"implied share price\", \"upside to fair value\", \"is X overvalued/undervalued\", \"relative valuation\", \"peer comparison valuation\", \"EV/EBITDA target\", \"SOTP\", \"sum of the parts\", \"how much is [company] worth\", \"price target from fundamentals\", \"value this company\", or any ticker in the context of computing intrinsic or relative valuation. Default to running ALL three methods (DCF + relative + SOTP-if-applicable) and presenting a blended implied price with a sensitivity table. Do not answer valuation questions from memory — always run the workflow.",
+      "manual": "skills/default/company-valuation/README.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/company-valuation/README.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/himself65/finance-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/company-valuation",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:company-valuation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "earnings-preview",
+      "name": "earnings-preview",
+      "description": "Generate a pre-earnings briefing for any stock using Yahoo Finance data. Use this skill whenever the user wants to prepare for an upcoming earnings report, understand what analysts expect, review a company's beat/miss track record, or get a quick overview before an earnings call. Triggers include: \"earnings preview for AAPL\", \"what to expect from TSLA earnings\", \"MSFT reports next week\", \"earnings preview\", \"pre-earnings analysis\", \"what are analysts expecting for NVDA\", \"earnings estimates for\", \"will GOOGL beat earnings\", \"earnings beat/miss history\", \"upcoming earnings\", \"before earnings\", \"earnings setup\", \"consensus estimates\", \"earnings whisper\", \"EPS expectations\", \"what's the street expecting\", \"earnings season preview\", any mention of preparing for or previewing an earnings report, or any request to understand expectations ahead of a company's earnings date. Always use this skill when the user mentions a ticker in context of upcoming earnings, even if they don't say \"preview\" explicitly.",
+      "manual": "skills/default/earnings-preview/README.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/earnings-preview/README.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/earnings-preview",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:earnings-preview",
       "preset_excluded": false,
       "rating": {
         "score": 79,
@@ -9865,6 +10536,52 @@
       },
       "risk_level": "high",
       "conflict_group": "eigenflux",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "estimate-analysis",
+      "name": "estimate-analysis",
+      "description": "Deep-dive into analyst estimates and revision trends for any stock using Yahoo Finance data. Use when the user wants to understand analyst estimate direction, how EPS or revenue forecasts changed over time, compare estimate distributions, or analyze growth projections across periods. Triggers: \"estimate analysis for AAPL\", \"analyst estimate trends for NVDA\", \"EPS revisions for TSLA\", \"how have estimates changed for MSFT\", \"estimate revisions\", \"EPS trend\", \"revenue estimates\", \"consensus changes\", \"analyst estimates\", \"estimate distribution\", \"growth estimates for\", \"estimate momentum\", \"revision trend\", \"forward estimates\", \"next quarter estimates\", \"annual estimates\", \"estimate spread\", \"bull vs bear estimates\", \"estimate range\", or any request about tracking or comparing analyst estimates/revisions. Use this skill when the user asks about estimates beyond a simple lookup — if they want context, trends, or analysis, this is the right skill.",
+      "manual": "skills/default/estimate-analysis/README.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/estimate-analysis/README.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/himself65/finance-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/estimate-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node",
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:estimate-analysis",
       "preset_excluded": false,
       "rating": {
         "score": 79,
@@ -10106,6 +10823,51 @@
       }
     },
     {
+      "id": "market-environment-analysis",
+      "name": "market-environment-analysis",
+      "description": "Comprehensive market environment analysis and reporting tool. Analyzes global markets including US, European, Asian markets, forex, commodities, and economic indicators. Provides risk-on/risk-off assessment, sector analysis, and technical indicator interpretation. Triggers on keywords like market analysis, market environment, global markets, trading environment, market conditions, investment climate, market sentiment, forex analysis, stock market analysis, 相場環境, 市場分析, マーケット状況, 投資環境.",
+      "manual": "skills/default/market-environment-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/market-environment-analysis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/market-environment-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:market-environment-analysis",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "paper-framework-figure-studio-pro",
       "name": "paper-framework-figure-studio-pro",
       "description": "Use when the user wants a human-in-the-loop workflow for research-paper framework figures, including paper-grounded architecture, pipeline, method, system/data-flow, or mechanism diagrams; S0-S5 candidate generation; image-only S2/S5; prompt-index ID coherence; source-faithful audits; checkpoint recovery; and a terminal human decision boundary after S5.",
@@ -10191,6 +10953,51 @@
       },
       "risk_level": "medium",
       "conflict_group": "policy-monitor",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "sector-analyst",
+      "name": "sector-analyst",
+      "description": "This skill should be used when analyzing sector rotation patterns and market cycle positioning. It fetches sector uptrend data from CSV (no API key required) and optionally accepts chart images for supplementary analysis. Use this skill when the user requests sector rotation analysis, cyclical vs defensive assessment, overbought/oversold identification, or market cycle phase estimation. All analysis and output are conducted in English.",
+      "manual": "skills/default/sector-analyst/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/sector-analyst/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/sector-analyst",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "online",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:sector-analyst",
       "preset_excluded": false,
       "rating": {
         "score": 79,
@@ -10291,6 +11098,51 @@
       }
     },
     {
+      "id": "stock-liquidity",
+      "name": "stock-liquidity",
+      "description": "Analyze stock liquidity using bid-ask spreads, volume profiles, order book depth, market impact estimates, and turnover ratios via Yahoo Finance data. Use this skill whenever the user asks about liquidity, trading costs, bid-ask spread, market depth, volume analysis, slippage, market impact, turnover ratio, or how easy/hard it is to trade a stock without moving the price. Triggers: \"how liquid is AAPL\", \"bid-ask spread\", \"volume analysis\", \"order book depth\", \"market impact of a large order\", \"turnover ratio\", \"slippage estimate\", \"can I trade 100k shares without moving the price\", \"liquidity comparison\", \"spread analysis\", \"ADTV\", \"Amihud illiquidity\", \"dollar volume\", \"execution cost estimate\", \"liquidity score\", penny stocks, small caps, or thinly traded securities.",
+      "manual": "skills/default/stock-liquidity/README.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/stock-liquidity/README.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/stock-liquidity",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:stock-liquidity",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "tam-adj-peg",
       "name": "tam-adj-peg",
       "description": "Evaluate a stock's valuation using TAM-Adj-PEG, adjusting traditional PEG by growth runway and quality. Use when the user provides a ticker or asks whether a growth stock's valuation is cheap, expensive, TAM-supported, runway-supported, quality-adjusted, or suitable as core growth, high-beta growth, turnaround, option-like, or cyclical exposure.",
@@ -10330,6 +11182,51 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:tam-adj-peg",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "technical-analyst",
+      "name": "technical-analyst",
+      "description": "This skill should be used when analyzing weekly price charts for stocks, stock indices, cryptocurrencies, or forex pairs. Use this skill when the user provides chart images and requests technical analysis, trend identification, support/resistance levels, scenario planning, or probability assessments based purely on chart data without consideration of news or fundamental factors.",
+      "manual": "skills/default/technical-analyst/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/technical-analyst/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/technical-analyst",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "online",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:technical-analyst",
       "preset_excluded": false,
       "rating": {
         "score": 79,
@@ -10766,98 +11663,6 @@
       }
     },
     {
-      "id": "animation",
-      "name": "animation",
-      "description": "Generate CSS and SVG animation code snippets using bash and Python. Use when building UI animations, keyframes, or transition effects.",
-      "manual": "skills/default/animation/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/animation/GUIDE.md",
-      "install_tiers": [
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/bytesagain/ai-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "api-key",
-        "design-ui",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "animation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "baoyu-article-illustrator",
-      "name": "baoyu-article-illustrator",
-      "description": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\".",
-      "manual": "skills/default/baoyu-article-illustrator/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-article-illustrator/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-article-illustrator",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "design-ui",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-article-illustrator",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "baoyu-image-gen",
       "name": "baoyu-image-gen",
       "description": "AI image generation with OpenAI GPT Image 2, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
@@ -10892,8 +11697,6 @@
           "BIGMODEL_API_KEY",
           "DASHSCOPE_API_KEY",
           "GOOGLE_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY",
           "OPENAI_API_KEY",
           "OPENROUTER_API_KEY",
@@ -10906,55 +11709,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "image-generation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "baoyu-youtube-transcript",
-      "name": "baoyu-youtube-transcript",
-      "description": "Downloads YouTube video transcripts/subtitles and cover images by URL or video ID. Supports multiple languages, translation, chapters, and speaker identification. Caches raw data for fast re-formatting. Use when user asks to \"get YouTube transcript\", \"download subtitles\", \"get captions\", \"YouTube字幕\", \"YouTube封面\", \"视频封面\", \"video thumbnail\", \"video cover image\", or provides a YouTube URL and wants the transcript/subtitle text or cover image extracted.",
-      "manual": "skills/default/baoyu-youtube-transcript/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-youtube-transcript/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-youtube-transcript",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "data-analysis",
-      "category_label": "数据分析",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "data-analysis",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "ffmpeg",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-youtube-transcript",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -11096,57 +11850,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "dual-axis-skill-reviewer",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "guizang-social-card-skill",
-      "name": "guizang-social-card-skill",
-      "description": "Generate Guizang-style social card image sets, Live Photo motion cards, material-first Live Photo puzzle layouts, triple Live Photo collages, long-video-to-Live-Photo treatments, and WeChat official account cover pairs from articles, scripts, screenshots, product notes, subtitles, photos, or user-supplied videos. Use when the user asks for 小红书图文, Rednote/Xiaohongshu images, social cards, carousel images, 3:4 covers, Live Photo, 实况照片, 单视频实况拼图, 二宫格实况拼图, 三连实况拼图, 四宫格实况拼图, 微信公众号封面, WeChat 21:9 + 1:1 covers, Swiss Style, or magazine-style social images.",
-      "manual": "skills/default/guizang-social-card-skill/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/guizang-social-card-skill/SKILL.md",
-      "install_tiers": [
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/op7418/guizang-social-card-skill",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/op7418/guizang-social-card-skill",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "creator",
-        "design",
-        "l2",
-        "media-generation",
-        "online",
-        "social-card"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "guizang-social-card-skill",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -11385,54 +12088,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "paperless-ngx-tools",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "seedance2-skill",
-      "name": "seedance2-skill",
-      "description": "Write effective prompts for Jimeng Seedance 2.0 multimodal AI video generation. Use when users want to create video prompts using text, images, videos, and audio inputs with the @ reference system. Covers camera movements, effects replication, video extension, editing, music beat-matching, e-commerce ads, short dramas, and educational content.",
-      "manual": "skills/default/seedance2-skill/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/seedance2-skill/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/dexhunter/seedance2-skill",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/dexhunter/seedance2-skill",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "l2",
-        "media",
-        "media-generation",
-        "online",
-        "prompt",
-        "video"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "seedance2-skill",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -11684,6 +12339,50 @@
       }
     },
     {
+      "id": "codex-responses-tooling",
+      "name": "codex-responses-tooling",
+      "description": "Use when generating images through the local Codex Responses API, especially when the agent should reuse ~/.codex/config.toml base_url and decode streamed image_generation results.",
+      "manual": "skills/default/codex-responses-tooling/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "high_default",
+        "l3",
+        "media-generation",
+        "media_generation",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "codex-responses-tooling",
+      "preset_excluded": false,
+      "rating": {
+        "score": 75,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "marketingskills",
       "name": "marketingskills",
       "description": "Marketing Skills Hub（上游: coreyhaines31/marketingskills）- 用于索引与选择营销类子技能（如 content-strategy、social-content）。",
@@ -11723,6 +12422,102 @@
       },
       "risk_level": "low",
       "conflict_group": "marketingskills",
+      "preset_excluded": false,
+      "rating": {
+        "score": 75,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "minimax-music-gen",
+      "name": "minimax-music-gen",
+      "description": "Use when user wants to generate music, songs, or audio tracks. Triggers on any request involving music creation, song writing, lyrics generation, audio production, or covers. Also triggers when user provides lyrics and wants them turned into a song, or describes a mood/scene and wants background music. Supports multilingual triggers — match equivalent phrases in any language. Do NOT use for music playback of existing files, music theory questions, or music recommendation without generation.",
+      "manual": "skills/default/minimax-music-gen/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-music-gen/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-gen",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "default_sentinel",
+        "direct",
+        "l3",
+        "media-generation",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "music-generation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 75,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "minimax-music-playlist",
+      "name": "minimax-music-playlist",
+      "description": "Generate personalized music playlists by analyzing the user's music taste and generation feedback history. Triggers on any request involving playlist generation, music taste profiling, or personalized music recommendations. Supports multilingual triggers — match equivalent phrases in any language.",
+      "manual": "skills/default/minimax-music-playlist/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-music-playlist/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-playlist",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "default_sentinel",
+        "direct",
+        "l3",
+        "media-generation",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "minimax-music-playlist",
       "preset_excluded": false,
       "rating": {
         "score": 75,
@@ -15166,6 +15961,51 @@
       }
     },
     {
+      "id": "baoyu-compress-image",
+      "name": "baoyu-compress-image",
+      "description": "Compresses images to WebP (default) or PNG with automatic tool selection. Use when user asks to \"compress image\", \"optimize image\", \"convert to webp\", or reduce image file size.",
+      "manual": "skills/default/baoyu-compress-image/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-compress-image/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-compress-image",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "browser-required",
+        "l3",
+        "media-generation",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "baoyu-compress-image",
+      "preset_excluded": false,
+      "rating": {
+        "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "baoyu-markdown-to-html",
       "name": "baoyu-markdown-to-html",
       "description": "Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, Mermaid (rendered to PNG via headless Chrome), PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for \"markdown to html\", \"convert md to html\", \"md 转 html\", \"微信外链转底部引用\", or needs styled HTML output from markdown.",
@@ -15203,6 +16043,98 @@
       },
       "risk_level": "medium",
       "conflict_group": "html-publishing",
+      "preset_excluded": false,
+      "rating": {
+        "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "baoyu-post-to-weibo",
+      "name": "baoyu-post-to-weibo",
+      "description": "Posts content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdown input via Chrome CDP. Use when user asks to \"post to Weibo\", \"发微博\", \"发布微博\", \"publish to Weibo\", \"share on Weibo\", \"写微博\", or \"微博头条文章\".",
+      "manual": "skills/default/baoyu-post-to-weibo/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-post-to-weibo/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-post-to-weibo",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "browser-required",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "baoyu-post-to-weibo",
+      "preset_excluded": false,
+      "rating": {
+        "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "baoyu-post-to-x",
+      "name": "baoyu-post-to-x",
+      "description": "Posts content and articles to X (Twitter). Supports regular posts with images/videos and X Articles (long-form Markdown). In Codex, honor explicit requests for the Codex Chrome plugin/@chrome by using the Chrome Extension workflow; otherwise use Chrome Computer Use when available and fall back to real Chrome CDP scripts only when allowed. Use when user asks to \"post to X\", \"tweet\", \"publish to Twitter\", or \"share on X\".",
+      "manual": "skills/default/baoyu-post-to-x/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-post-to-x/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-post-to-x",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "browser-required",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "baoyu-post-to-x",
       "preset_excluded": false,
       "rating": {
         "score": 74,
@@ -15645,146 +16577,6 @@
       }
     },
     {
-      "id": "baoyu-comic",
-      "name": "baoyu-comic",
-      "description": "Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and batch-capable image generation. Use when user asks to create \"知识漫画\", \"教育漫画\", \"biography comic\", \"tutorial comic\", or \"Logicomix-style comic\".",
-      "manual": "skills/default/baoyu-comic/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-comic/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-comic",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-comic",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-compress-image",
-      "name": "baoyu-compress-image",
-      "description": "Compresses images to WebP (default) or PNG with automatic tool selection. Use when user asks to \"compress image\", \"optimize image\", \"convert to webp\", or reduce image file size.",
-      "manual": "skills/default/baoyu-compress-image/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-compress-image/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-compress-image",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-compress-image",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-cover-image",
-      "name": "baoyu-cover-image",
-      "description": "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 11 color palettes and 7 rendering styles. Supports cinematic (2.35:1), widescreen (16:9), and square (1:1) aspects. Use when user asks to \"generate cover image\", \"create article cover\", or \"make cover\".",
-      "manual": "skills/default/baoyu-cover-image/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-cover-image/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-cover-image",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-cover-image",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "baoyu-post-to-wechat",
       "name": "baoyu-post-to-wechat",
       "description": "Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (贴图, formerly 图文) with multiple images. Markdown article workflows default to converting ordinary external links into bottom citations for WeChat-friendly output. Use when user mentions \"发布公众号\", \"post to wechat\", \"微信公众号\", or \"贴图/图文/文章\".",
@@ -15815,8 +16607,6 @@
         "requires_api_keys": true,
         "api_keys": [
           "ACCESS_TOKEN",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "WECHAT_AI_TOOLS_APP_SECRET",
           "WECHAT_APP_SECRET",
           "WECHAT_BAOYU_APP_SECRET"
@@ -15829,244 +16619,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "baoyu-post-to-wechat",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-post-to-weibo",
-      "name": "baoyu-post-to-weibo",
-      "description": "Posts content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdown input via Chrome CDP. Use when user asks to \"post to Weibo\", \"发微博\", \"发布微博\", \"publish to Weibo\", \"share on Weibo\", \"写微博\", or \"微博头条文章\".",
-      "manual": "skills/default/baoyu-post-to-weibo/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-post-to-weibo/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-post-to-weibo",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-post-to-weibo",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-post-to-x",
-      "name": "baoyu-post-to-x",
-      "description": "Posts content and articles to X (Twitter). Supports regular posts with images/videos and X Articles (long-form Markdown). In Codex, honor explicit requests for the Codex Chrome plugin/@chrome by using the Chrome Extension workflow; otherwise use Chrome Computer Use when available and fall back to real Chrome CDP scripts only when allowed. Use when user asks to \"post to X\", \"tweet\", \"publish to Twitter\", or \"share on X\".",
-      "manual": "skills/default/baoyu-post-to-x/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-post-to-x/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-post-to-x",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-post-to-x",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-slide-deck",
-      "name": "baoyu-slide-deck",
-      "description": "Generates professional slide deck images from content. Creates outlines with style instructions, then generates individual slide images. Use when user asks to \"create slides\", \"make a presentation\", \"generate deck\", \"slide deck\", or \"PPT\".",
-      "manual": "skills/default/baoyu-slide-deck/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-slide-deck/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-slide-deck",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-slide-deck",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "baoyu-xhs-images",
-      "name": "baoyu-xhs-images",
-      "description": "Generates infographic image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for social media engagement. Use when user mentions \"小红书图片\", \"小红书种草\", \"小绿书\", \"微信图文\", \"微信贴图\", \"image cards\", \"图片卡片\", baoyu-xhs-images, or wants social media infographic series.",
-      "manual": "skills/default/baoyu-xhs-images/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-xhs-images/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-xhs-images",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "l3",
-        "media-generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "baoyu-xhs-images",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "breadth-chart-analyst",
-      "name": "breadth-chart-analyst",
-      "description": "This skill should be used when analyzing market breadth charts, specifically the S&P 500 Breadth Index (200-Day MA based) and the US Stock Market Uptrend Stock Ratio charts. Use this skill when the user provides breadth chart images for analysis, requests market breadth assessment, positioning strategy recommendations, or wants to understand medium-term strategic and short-term tactical market outlook based on breadth indicators. Also works WITHOUT chart images by fetching CSV data directly from public sources. All analysis and output are conducted in English.",
-      "manual": "skills/default/breadth-chart-analyst/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/breadth-chart-analyst/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/breadth-chart-analyst",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:breadth-chart-analyst",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -16161,52 +16713,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:canslim-screener",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "company-valuation",
-      "name": "company-valuation",
-      "description": "Estimate the intrinsic value of a public company using DCF, relative (peer multiple) and sum-of-parts (SOTP) methods, then triangulate to an implied share price with upside/downside versus the current market price. Use this skill whenever the user asks: \"what is AAPL worth\", \"valuation of NVDA\", \"fair value of TSLA\", \"intrinsic value\", \"DCF for MSFT\", \"build a DCF\", \"discounted cash flow\", \"WACC\", \"terminal value\", \"implied share price\", \"upside to fair value\", \"is X overvalued/undervalued\", \"relative valuation\", \"peer comparison valuation\", \"EV/EBITDA target\", \"SOTP\", \"sum of the parts\", \"how much is [company] worth\", \"price target from fundamentals\", \"value this company\", or any ticker in the context of computing intrinsic or relative valuation. Default to running ALL three methods (DCF + relative + SOTP-if-applicable) and presenting a blended implied price with a sensitivity table. Do not answer valuation questions from memory — always run the workflow.",
-      "manual": "skills/default/company-valuation/README.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/company-valuation/README.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/himself65/finance-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/company-valuation",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:company-valuation",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -16397,55 +16903,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:earnings-calendar",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "earnings-preview",
-      "name": "earnings-preview",
-      "description": "Generate a pre-earnings briefing for any stock using Yahoo Finance data. Use this skill whenever the user wants to prepare for an upcoming earnings report, understand what analysts expect, review a company's beat/miss track record, or get a quick overview before an earnings call. Triggers include: \"earnings preview for AAPL\", \"what to expect from TSLA earnings\", \"MSFT reports next week\", \"earnings preview\", \"pre-earnings analysis\", \"what are analysts expecting for NVDA\", \"earnings estimates for\", \"will GOOGL beat earnings\", \"earnings beat/miss history\", \"upcoming earnings\", \"before earnings\", \"earnings setup\", \"consensus estimates\", \"earnings whisper\", \"EPS expectations\", \"what's the street expecting\", \"earnings season preview\", any mention of preparing for or previewing an earnings report, or any request to understand expectations ahead of a company's earnings date. Always use this skill when the user mentions a ticker in context of upcoming earnings, even if they don't say \"preview\" explicitly.",
-      "manual": "skills/default/earnings-preview/README.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/earnings-preview/README.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/earnings-preview",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "node",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:earnings-preview",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -16696,55 +17153,6 @@
       }
     },
     {
-      "id": "estimate-analysis",
-      "name": "estimate-analysis",
-      "description": "Deep-dive into analyst estimates and revision trends for any stock using Yahoo Finance data. Use when the user wants to understand analyst estimate direction, how EPS or revenue forecasts changed over time, compare estimate distributions, or analyze growth projections across periods. Triggers: \"estimate analysis for AAPL\", \"analyst estimate trends for NVDA\", \"EPS revisions for TSLA\", \"how have estimates changed for MSFT\", \"estimate revisions\", \"EPS trend\", \"revenue estimates\", \"consensus changes\", \"analyst estimates\", \"estimate distribution\", \"growth estimates for\", \"estimate momentum\", \"revision trend\", \"forward estimates\", \"next quarter estimates\", \"annual estimates\", \"estimate spread\", \"bull vs bear estimates\", \"estimate range\", or any request about tracking or comparing analyst estimates/revisions. Use this skill when the user asks about estimates beyond a simple lookup — if they want context, trends, or analysis, this is the right skill.",
-      "manual": "skills/default/estimate-analysis/README.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/estimate-analysis/README.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/himself65/finance-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/estimate-analysis",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "node",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:estimate-analysis",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "exposure-coach",
       "name": "exposure-coach",
       "description": "Generate a one-page Market Posture summary with net exposure ceiling, growth-vs-value bias, participation breadth, and new-entry-allowed vs cash-priority recommendation by integrating signals from breadth, regime, and flow analysis skills.",
@@ -16933,6 +17341,56 @@
       }
     },
     {
+      "id": "frontend-dev",
+      "name": "frontend-design",
+      "description": "Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. Builds complete, visually striking web pages with real media, advanced motion, and compelling copy. Use when: building landing pages, marketing sites, product pages, dashboards, generating media assets (image/video/audio/music), writing conversion copy, creating generative art, or implementing cinematic scroll animations.",
+      "manual": "skills/default/frontend-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-16",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "browser-required",
+        "coding-devtools",
+        "default_sentinel",
+        "l2",
+        "minimax_official",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg",
+          "node"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "frontend-dev",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "ftd-detector",
       "name": "ftd-detector",
       "description": "Detects Follow-Through Day (FTD) signals for market bottom confirmation using William O'Neil's methodology. Dual-index tracking (S&P 500 + NASDAQ) with state machine for rally attempt, FTD qualification, and post-FTD health monitoring. Use when user asks about market bottom signals, follow-through days, rally attempts, re-entry timing after corrections, or whether it's safe to increase equity exposure. Complementary to market-top-detector (defensive) - this skill is offensive (bottom confirmation).",
@@ -16978,6 +17436,56 @@
       }
     },
     {
+      "id": "fullstack-dev",
+      "name": "fullstack-dev",
+      "description": "Full-stack backend architecture and frontend-backend integration guide. TRIGGER when: building a full-stack app, creating REST API with frontend, scaffolding backend service, building todo app, building CRUD app, building real-time app, building chat app, Express + React, Next.js API, Node.js backend, Python backend, Go backend, designing service layers, implementing error handling, managing config/auth, setting up API clients, implementing auth flows, handling file uploads, adding real-time features (SSE/WebSocket), hardening for production. DO NOT TRIGGER when: pure frontend UI work, pure CSS/styling, database schema only.",
+      "manual": "skills/default/fullstack-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/fullstack-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/fullstack-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "browser-required",
+        "coding-devtools",
+        "default_sentinel",
+        "l2",
+        "minimax_official",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "node",
+          "python"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "fullstack-dev",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "gemini-image-service",
       "name": "gemini-image-service",
       "description": "使用 Gemini 第三方服务生成图片。读取 GEMINI_API_KEY/GEMINI_BASE_URL/GEMINI_IMAGE_MODEL。",
@@ -17007,9 +17515,7 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "GEMINI_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
+          "GEMINI_API_KEY"
         ],
         "required_tools": [],
         "access_mode": "api-key",
@@ -17303,54 +17809,6 @@
       }
     },
     {
-      "id": "market-environment-analysis",
-      "name": "market-environment-analysis",
-      "description": "Comprehensive market environment analysis and reporting tool. Analyzes global markets including US, European, Asian markets, forex, commodities, and economic indicators. Provides risk-on/risk-off assessment, sector analysis, and technical indicator interpretation. Triggers on keywords like market analysis, market environment, global markets, trading environment, market conditions, investment climate, market sentiment, forex analysis, stock market analysis, 相場環境, 市場分析, マーケット状況, 投資環境.",
-      "manual": "skills/default/market-environment-analysis/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/market-environment-analysis/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/market-environment-analysis",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:market-environment-analysis",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "market-top-detector",
       "name": "market-top-detector",
       "description": "Detects market top probability using O'Neil Distribution Days, Minervini Leading Stock Deterioration, and Monty Defensive Sector Rotation. Generates a 0-100 composite score with risk zone classification. Use when user asks about market top risk, distribution days, defensive rotation, leadership breakdown, or whether to reduce equity exposure. Focuses on 2-8 week tactical timing signals for 10-20% corrections.",
@@ -17430,8 +17888,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY"
         ],
         "required_tools": [],
@@ -17664,9 +18120,7 @@
         "requires_api_keys": true,
         "api_keys": [
           "ALPACA_API_KEY",
-          "FMP_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
+          "FMP_API_KEY"
         ],
         "required_tools": [],
         "access_mode": "api-key",
@@ -17866,54 +18320,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:saas-valuation-compression",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "sector-analyst",
-      "name": "sector-analyst",
-      "description": "This skill should be used when analyzing sector rotation patterns and market cycle positioning. It fetches sector uptrend data from CSV (no API key required) and optionally accepts chart images for supplementary analysis. Use this skill when the user requests sector rotation analysis, cyclical vs defensive assessment, overbought/oversold identification, or market cycle phase estimation. All analysis and output are conducted in English.",
-      "manual": "skills/default/sector-analyst/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/sector-analyst/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/sector-analyst",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:sector-analyst",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -18166,54 +18572,6 @@
       }
     },
     {
-      "id": "stock-liquidity",
-      "name": "stock-liquidity",
-      "description": "Analyze stock liquidity using bid-ask spreads, volume profiles, order book depth, market impact estimates, and turnover ratios via Yahoo Finance data. Use this skill whenever the user asks about liquidity, trading costs, bid-ask spread, market depth, volume analysis, slippage, market impact, turnover ratio, or how easy/hard it is to trade a stock without moving the price. Triggers: \"how liquid is AAPL\", \"bid-ask spread\", \"volume analysis\", \"order book depth\", \"market impact of a large order\", \"turnover ratio\", \"slippage estimate\", \"can I trade 100k shares without moving the price\", \"liquidity comparison\", \"spread analysis\", \"ADTV\", \"Amihud illiquidity\", \"dollar volume\", \"execution cost estimate\", \"liquidity score\", penny stocks, small caps, or thinly traded securities.",
-      "manual": "skills/default/stock-liquidity/README.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/stock-liquidity/README.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/stock-liquidity",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:stock-liquidity",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "stock-monitor-skill",
       "name": "stock-monitor",
       "description": "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。",
@@ -18256,54 +18614,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "stock-monitor-skill",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "technical-analyst",
-      "name": "technical-analyst",
-      "description": "This skill should be used when analyzing weekly price charts for stocks, stock indices, cryptocurrencies, or forex pairs. Use this skill when the user provides chart images and requests technical analysis, trend identification, support/resistance levels, scenario planning, or probability assessments based purely on chart data without consideration of news or fundamental factors.",
-      "manual": "skills/default/technical-analyst/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/technical-analyst/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/technical-analyst",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:technical-analyst",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -18485,8 +18795,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY"
         ],
         "required_tools": [
@@ -18589,8 +18897,6 @@
         "requires_api_keys": true,
         "api_keys": [
           "GEMINI_API_KEY",
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "OPENAI_API_KEY"
         ],
         "required_tools": [],
@@ -18599,111 +18905,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "image-generation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "frontend-dev",
-      "name": "frontend-design",
-      "description": "Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. Builds complete, visually striking web pages with real media, advanced motion, and compelling copy. Use when: building landing pages, marketing sites, product pages, dashboards, generating media assets (image/video/audio/music), writing conversion copy, creating generative art, or implementing cinematic scroll animations.",
-      "manual": "skills/default/frontend-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-16",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "api-key",
-        "coding-devtools",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "browser",
-          "ffmpeg",
-          "node"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "frontend-dev",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "fullstack-dev",
-      "name": "fullstack-dev",
-      "description": "Full-stack backend architecture and frontend-backend integration guide. TRIGGER when: building a full-stack app, creating REST API with frontend, scaffolding backend service, building todo app, building CRUD app, building real-time app, building chat app, Express + React, Next.js API, Node.js backend, Python backend, Go backend, designing service layers, implementing error handling, managing config/auth, setting up API clients, implementing auth flows, handling file uploads, adding real-time features (SSE/WebSocket), hardening for production. DO NOT TRIGGER when: pure frontend UI work, pure CSS/styling, database schema only.",
-      "manual": "skills/default/fullstack-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/fullstack-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/fullstack-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "api-key",
-        "coding-devtools",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "JWT_SECRET"
-        ],
-        "required_tools": [
-          "browser",
-          "node",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "fullstack-dev",
       "preset_excluded": false,
       "rating": {
         "score": 68,
@@ -18743,8 +18944,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "PEXELS_API_KEY"
         ],
         "required_tools": [
@@ -18755,55 +18954,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "media-downloader",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "minimax-docx",
-      "name": "minimax-docx",
-      "description": "Professional DOCX document creation, editing, and formatting using OpenXML SDK (.NET). Three pipelines: (A) create new documents from scratch, (B) fill/edit content in existing documents, (C) apply template formatting with XSD validation gate-check. MUST use this skill whenever the user wants to produce, modify, or format a Word document — including when they say \"write a report\", \"draft a proposal\", \"make a contract\", \"fill in this form\", \"reformat to match this template\", or any task whose final output is a .docx file. Even if the user doesn't mention \"docx\" explicitly, if the task implies a printable/formal document, use this skill.",
-      "manual": "skills/default/minimax-docx/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-docx/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-docx",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "docs-office",
-      "category_label": "文档 / 办公",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "docs-office",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "document-docx",
       "preset_excluded": false,
       "rating": {
         "score": 68,
@@ -18844,8 +18994,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY"
         ],
         "required_tools": [
@@ -18857,58 +19005,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "minimax-multimodal-toolkit",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "minimax-xlsx",
-      "name": "minimax-xlsx",
-      "description": "Open, create, read, analyze, edit, or validate Excel/spreadsheet files (.xlsx, .xlsm, .csv, .tsv). Use when the user asks to create, build, modify, analyze, read, validate, or format any Excel spreadsheet, financial model, pivot table, or tabular data file. Covers: creating new xlsx from scratch, reading and analyzing existing files, editing existing xlsx with zero format loss, formula recalculation and validation, and applying professional financial formatting standards. Triggers on 'spreadsheet', 'Excel', '.xlsx', '.csv', 'pivot table', 'financial model', 'formula', or any request to produce tabular data in Excel format.",
-      "manual": "skills/default/minimax-xlsx/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-xlsx/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-xlsx",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "data-analysis",
-      "category_label": "数据分析",
-      "tags": [
-        "api-key",
-        "data-analysis",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "node",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "spreadsheet-xlsx",
       "preset_excluded": false,
       "rating": {
         "score": 68,
@@ -18966,105 +19062,6 @@
       }
     },
     {
-      "id": "react-native-dev",
-      "name": "react-native-dev",
-      "description": "React Native and Expo development guide covering components, styling, animations, navigation, state management, forms, networking, performance optimization, testing, native capabilities, and engineering (project structure, deployment, SDK upgrades, CI/CD). Use when: building React Native or Expo apps, implementing animations or native UI, managing state, fetching data, writing tests, optimizing performance, deploying to App Store/Play Store, setting up CI/CD, upgrading Expo SDK, or configuring Tailwind/NativeWind.",
-      "manual": "skills/default/react-native-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/react-native-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/react-native-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "api-key",
-        "coding-devtools",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "node",
-          "python"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "react-native-dev",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "codex-responses-tooling",
-      "name": "codex-responses-tooling",
-      "description": "Use when generating images through the local Codex Responses API, especially when the agent should reuse ~/.codex/config.toml base_url and decode streamed image_generation results.",
-      "manual": "skills/default/codex-responses-tooling/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "high_default",
-        "l3",
-        "media-generation",
-        "media_generation",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "codex-responses-tooling",
-      "preset_excluded": false,
-      "rating": {
-        "score": 61,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "gif-sticker-maker",
       "name": "gif-sticker-maker",
       "description": "Convert photos (people, pets, objects, logos) into 4 animated GIF stickers with captions. Use when: user wants to create cartoon stickers, GIF expressions, emoji packs, animated avatars, or convert photos to Funko Pop / Pop Mart blind box style animations. Triggers: sticker, GIF, cartoon, emoji, expression pack, avatar animation.",
@@ -19097,8 +19094,6 @@
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID",
           "MINIMAX_API_KEY"
         ],
         "required_tools": [
@@ -19109,108 +19104,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "gif-sticker-maker",
-      "preset_excluded": false,
-      "rating": {
-        "score": 61,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "minimax-music-gen",
-      "name": "minimax-music-gen",
-      "description": "Use when user wants to generate music, songs, or audio tracks. Triggers on any request involving music creation, song writing, lyrics generation, audio production, or covers. Also triggers when user provides lyrics and wants them turned into a song, or describes a mood/scene and wants background music. Supports multilingual triggers — match equivalent phrases in any language. Do NOT use for music playback of existing files, music theory questions, or music recommendation without generation.",
-      "manual": "skills/default/minimax-music-gen/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-music-gen/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-gen",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-gen",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "l3",
-        "media-generation",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "music-generation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 61,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "minimax-music-playlist",
-      "name": "minimax-music-playlist",
-      "description": "Generate personalized music playlists by analyzing the user's music taste and generation feedback history. Triggers on any request involving playlist generation, music taste profiling, or personalized music recommendations. Supports multilingual triggers — match equivalent phrases in any language.",
-      "manual": "skills/default/minimax-music-playlist/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-music-playlist/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-music-playlist",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "l3",
-        "media-generation",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
-        "required_tools": [
-          "ffmpeg"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "minimax-music-playlist",
       "preset_excluded": false,
       "rating": {
         "score": 61,
@@ -19424,22 +19317,19 @@
       "primary_category": "core-agent",
       "category_label": "核心 Agent 能力",
       "tags": [
-        "api-key",
+        "browser-required",
         "core-agent",
         "l1",
         "online"
       ],
       "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "IMA_API_KEY",
-          "IMA_CLIENT_ID"
-        ],
+        "requires_api_keys": false,
+        "api_keys": [],
         "required_tools": [
           "browser",
           "ffmpeg"
         ],
-        "access_mode": "api-key",
+        "access_mode": "browser-required",
         "runtime": "online"
       },
       "risk_level": "medium",
