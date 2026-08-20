@@ -96,15 +96,22 @@ python3 tests/test_tier_catalog.py
 
 ## 使用频率遥测（2026-08-21 新增）
 
-`scripts/telemetry_collect.py` 从本机 Agent 会话日志（Qoder `~/.qoder/projects/` 与 Claude Code `~/.claude/projects/` 的 JSONL）统计每个 skill 的被调用频率：
+`scripts/telemetry_collect.py` 从本机 Agent 会话日志统计每个 skill 的被调用频率，支持三个运行时：
 
-- 识别两种调用形式：`Skill` tool_use（`input.skill`）与 `<command-name>/skill</command-name>` 斜杠命令（仅匹配已注册技能名）。
+| 运行时 | 日志位置 | 使用信号 |
+|---|---|---|
+| Qoder | `~/.qoder/projects/**/*.jsonl` | `Skill` tool_use（`input.skill`）与 `/skill` 斜杠命令 |
+| Claude Code | `~/.claude/projects/**/*.jsonl` | 同上（同构格式） |
+| Codex CLI | `~/.codex/sessions/` 与 `~/.codex/archived_sessions/` 的 rollout JSONL | **工具调用中读取技能的 SKILL.md 路径**（`skills/<name>/SKILL.md`）；`<skills_instructions>` 注入列表不计入 |
+
 - 输出：`reports/usage/usage-YYYY-MM-DD.{json,md}`（频率报告，含组合覆盖与未收录高频清单）与 `reports/usage/usage-scores.json`（机器可读加分）。
 - 评分联动：使用频率加分 0~8（log₂ 调用次数 × 时间衰减：≤7天 1.0 / ≤30天 0.7 / ≤90天 0.4 / 更久 0.15），在 `generate_enriched_catalog.py` 的 `score_item` 中叠加，无数据时为 0（向后兼容）。
+- 性能：首次全量扫描后，增量状态（`.scan-state.json`/`.scan-uses.json`，已 gitignore）记录文件指纹与已提取记录，后续运行只扫新增/变化文件（秒级）；Codex 历史约 68GB，4 进程并行首扫约 1 分钟。`--rescan-all` 强制全量。
 - 隐私红线：仅本地聚合技能名/时间戳/会话 ID/工作目录，不读取或存储任何消息内容，不上传。
 
 ```bash
-python3 scripts/telemetry_collect.py --days 30   # 手动采集
+python3 scripts/telemetry_collect.py --days 30               # 增量采集
+python3 scripts/telemetry_collect.py --days 30 --rescan-all  # 强制全量
 ```
 
 ## 定时执行
