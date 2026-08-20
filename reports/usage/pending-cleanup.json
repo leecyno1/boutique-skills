@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-08-21T07:54:57",
+  "status": "pending",
+  "source_report": "recommendations-2026-08-21.json",
+  "note": "uninstall is archive-based and runs only via scripts/uninstall_skills.py --confirm",
+  "items": [
+    {
+      "skill": "doc-coauthoring",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/doc-coauthoring",
+      "reason": "未收录且已 112 天未使用（历史 32 次）"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/wechat-title-generator",
+      "reason": "未收录且已 113 天未使用（历史 12 次）"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/wechat-title-generator",
+      "reason": "未收录且已 113 天未使用（历史 12 次）"
+    },
+    {
+      "skill": "wechat-topic-outline-planner",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/wechat-topic-outline-planner",
+      "reason": "未收录且已 113 天未使用（历史 12 次）"
+    },
+    {
+      "skill": "wechat-topic-outline-planner",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/wechat-topic-outline-planner",
+      "reason": "未收录且已 113 天未使用（历史 12 次）"
+    },
+    {
+      "skill": "web-artifacts-builder",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/web-artifacts-builder",
+      "reason": "未收录且已 139 天未使用（历史 11 次）"
+    },
+    {
+      "skill": "doc",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/doc",
+      "reason": "未收录且已 113 天未使用（历史 2 次）"
+    },
+    {
+      "skill": "analytics-data-analysis",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/analytics-data-analysis",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "baoyu-diagram",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/baoyu-diagram",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "baoyu-electron-extract",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/baoyu-electron-extract",
+      "reason": "未收录于仓库且从未记录到调用，已安装 83 天"
+    },
+    {
+      "skill": "changelog-generator",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/changelog-generator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "claude-api",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/claude-api",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "cloudflare-deploy",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/cloudflare-deploy",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "content-research-writer",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/content-research-writer",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "create-plan",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/create-plan",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "drafter-diagram",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/drafter-diagram",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "general-ppt",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/general-ppt",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "grill-me",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/grill-me",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "image-enhancer",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/image-enhancer",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "internal-comms",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/internal-comms",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "lead-research-assistant",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/lead-research-assistant",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "linear",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/linear",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "market-research-reports",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/market-research-reports",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "plugin-creator",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/plugin-creator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "qoderwork-ppt",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/qoderwork-ppt",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "quickbi-smartq-chat",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/quickbi-smartq-chat",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "setup-pre-commit",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/setup-pre-commit",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "slack-gif-creator",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/slack-gif-creator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "theme-factory",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/theme-factory",
+      "reason": "未收录于仓库且从未记录到调用，已安装 78 天"
+    },
+    {
+      "skill": "to-issues",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/to-issues",
+      "reason": "未收录于仓库且从未记录到调用，已安装 81 天"
+    },
+    {
+      "skill": "trade-performance-coach",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/trade-performance-coach",
+      "reason": "未收录于仓库且从未记录到调用，已安装 66 天"
+    },
+    {
+      "skill": "trading-skills-navigator",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/trading-skills-navigator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 66 天"
+    },
+    {
+      "skill": "vm-error-recovery",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/vm-error-recovery",
+      "reason": "未收录于仓库且从未记录到调用，已安装 82 天"
+    },
+    {
+      "skill": "windows-desktop-e2e",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/windows-desktop-e2e",
+      "reason": "未收录于仓库且从未记录到调用，已安装 79 天"
+    }
+  ]
+}

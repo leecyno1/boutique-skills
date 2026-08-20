@@ -117,6 +117,25 @@ python3 scripts/telemetry_collect.py --days 30               # 增量采集
 python3 scripts/telemetry_collect.py --days 30 --rescan-all  # 强制全量
 ```
 
+## 清理建议与确认卸载（2026-08-21 新增）
+
+周度流水线第 9 步运行 `scripts/usage_recommendations.py`，综合已安装技能（Codex/Qoder/agents/lingma 四运行时）、最新使用遥测与仓库注册表，把每个已装技能分为四级：
+
+| 分级 | 判定 | 动作 |
+|---|---|---|
+| keep | 近 30 天有调用 | 永久保护，绝不进入卸载建议 |
+| remove | 未收录且零调用满 60 天，或未收录且 90 天未用 | 写入 pending-cleanup.json 待用户确认 |
+| consider | 在册但零调用，或 30-90 天未用 | 仅供参考（组合瘦身边缘信号） |
+| discover | 未收录但高频（历史≥20 次或近30天≥5 次） | 反哺周度发现流程的入库候选 |
+
+**用户确认后才卸载**：`python3 scripts/uninstall_skills.py`（默认 dry-run 预览）→ `--confirm` 执行（或 `make cleanup-confirm`）。卸载为归档式（移入各运行时同级 `*-archive/` 目录，与 Codex 自身 skills-archive 惯例一致），不删除任何文件，`mv` 回原路径即可恢复；执行后写入 cleanup-receipts.jsonl 回执。执行器内置双重安全网：近 30 天有调用的技能即使出现在待确认清单中也会被拒绝卸载。
+
+```bash
+make recommendations   # 生成建议（周度流水线内含）
+make cleanup-preview   # 预览待卸载项
+make cleanup-confirm   # 确认执行归档式卸载
+```
+
 ## 定时执行
 
 由 Qoder 会话定时任务每周六 09:00（Asia/Shanghai）触发，执行
