@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-21T06:37:47",
+  "policy": "usage_bonus = min(6, 2*log2(calls+1)) * recency(<=7d:1.0, <=30d:0.7, <=90d:0.4, else:0.15); max bonus 8",
+  "bonuses": {
+    "wechat-draft-writer": 6,
+    "dasheng-sop-orchestrator": 4,
+    "dasheng-stage-intake-brief-draft": 6,
+    "dasheng-stage-brief-ai": 4,
+    "finance-data-router": 3,
+    "tushare-api": 1,
+    "apple-design": 1,
+    "pptx": 2,
+    "docx": 1,
+    "mmx-cli": 2,
+    "using-coze-cli": 2,
+    "wechat-article-extractor-skill": 1,
+    "agent-reach": 1,
+    "dasheng-stage-rewrite": 3,
+    "dasheng-stage-transwrite": 1,
+    "schedule": 2,
+    "brainstorming": 2,
+    "create-plugin": 2,
+    "idea-evaluator": 2,
+    "academic-research-suite": 2,
+    "pre-submission-reviewer": 2
+  }
+}

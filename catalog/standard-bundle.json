@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-19",
+  "generated_at": "2026-08-21",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -313,7 +313,7 @@
       "skill": "agent-reach",
       "category": "search-research",
       "stars": 4,
-      "score": 81,
+      "score": 82,
       "access_mode": "browser-required",
       "conflict_group": "agent-reach",
       "origin_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",

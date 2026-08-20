@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-19",
+  "generated_at": "2026-08-21",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -795,6 +795,54 @@
       }
     },
     {
+      "id": "apple-design",
+      "name": "apple-design",
+      "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+      "manual": "skills/default/apple-design/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/apple-design/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/apple-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/emilkowalski/skills/tree/main/skills/apple-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "animation",
+        "design",
+        "design-animation-suite",
+        "design-ui",
+        "direct",
+        "emil-kowalski",
+        "frontend-craft",
+        "l2",
+        "online",
+        "standard"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "apple-design",
+      "preset_excluded": false,
+      "rating": {
+        "score": 93,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "scientific-illustrator",
       "name": "scientific-illustrator",
       "description": "Design, recreate, audit, and correct scientific figures as editable objects in draw.io Desktop, Microsoft PowerPoint, or WPS Presentation using the bundled Scientific Illustrator Codex plugin and local MCP servers. Trigger on Scientific Illustrator, drawio-scientific-illustrator, editable scientific illustration, reference-image reconstruction, graphical abstract, research workflow diagram, Draw.io figure, or editable PPTX figure. Use paper-framework-figure-studio-pro first when the user needs paper-grounded concept exploration rather than editable reconstruction.",
@@ -971,54 +1019,6 @@
       },
       "risk_level": "low",
       "conflict_group": "animation-vocabulary",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "apple-design",
-      "name": "apple-design",
-      "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
-      "manual": "skills/default/apple-design/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/apple-design/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/apple-design",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/emilkowalski/skills/tree/main/skills/apple-design",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "animation",
-        "design",
-        "design-animation-suite",
-        "design-ui",
-        "direct",
-        "emil-kowalski",
-        "frontend-craft",
-        "l2",
-        "online",
-        "standard"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "online"
-      },
-      "risk_level": "low",
-      "conflict_group": "apple-design",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -4162,6 +4162,52 @@
       }
     },
     {
+      "id": "dasheng-stage-brief-ai",
+      "name": "dasheng-stage-brief-ai",
+      "description": "AI-driven topic generation for Dasheng workflow. Analyzes intake data to generate insightful, valuable, and actionable topic proposals with natural language titles and clear arguments.",
+      "manual": "skills/default/dasheng-stage-brief-ai/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-brief-ai/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "writing-content",
+      "category_label": "写作 / 内容",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "l3",
+        "offline",
+        "self-media-ops",
+        "self_media",
+        "writing-content"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-stage-brief-ai",
+      "preset_excluded": false,
+      "rating": {
+        "score": 89,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "mcp-builder",
       "name": "mcp-builder",
       "description": "Use when building MCP servers or tools for external APIs and services.",
@@ -4345,6 +4391,52 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-data",
+      "preset_excluded": false,
+      "rating": {
+        "score": 86,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "dasheng-stage-transwrite",
+      "name": "dasheng-stage-transwrite",
+      "description": "Use when converting confirmed Dasheng drafts into channel-ready WeChat article, ordinary faceless explainer, VOX investigative explainer, talking-head video, and opt-in podcast production packages.",
+      "manual": "skills/default/dasheng-stage-transwrite/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-transwrite/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-stage-transwrite",
       "preset_excluded": false,
       "rating": {
         "score": 86,
@@ -5389,52 +5481,6 @@
       }
     },
     {
-      "id": "dasheng-stage-brief-ai",
-      "name": "dasheng-stage-brief-ai",
-      "description": "AI-driven topic generation for Dasheng workflow. Analyzes intake data to generate insightful, valuable, and actionable topic proposals with natural language titles and clear arguments.",
-      "manual": "skills/default/dasheng-stage-brief-ai/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-brief-ai/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "writing-content",
-      "category_label": "写作 / 内容",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l3",
-        "offline",
-        "self-media-ops",
-        "self_media",
-        "writing-content"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-stage-brief-ai",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "dasheng-stage-draft",
       "name": "dasheng-stage-draft",
       "description": "Stage 3 Draft - 初稿生成（标准基线稿）",
@@ -5565,52 +5611,6 @@
       },
       "risk_level": "low",
       "conflict_group": "dasheng-stage-rewrite-v3",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "dasheng-stage-transwrite",
-      "name": "dasheng-stage-transwrite",
-      "description": "Use when converting confirmed Dasheng drafts into channel-ready WeChat article, ordinary faceless explainer, VOX investigative explainer, talking-head video, and opt-in podcast production packages.",
-      "manual": "skills/default/dasheng-stage-transwrite/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-transwrite/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l3",
-        "media-generation",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-stage-transwrite",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -6587,6 +6587,55 @@
       "preset_excluded": false,
       "rating": {
         "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "agent-reach",
+      "name": "agent-reach",
+      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。",
+      "manual": "skills/default/agent-reach/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agent-reach/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "browser-required",
+        "l2",
+        "online",
+        "research",
+        "search-research",
+        "social",
+        "standard"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg",
+          "gh"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "agent-reach",
+      "preset_excluded": false,
+      "rating": {
+        "score": 82,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -8667,55 +8716,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 82,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "agent-reach",
-      "name": "agent-reach",
-      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。",
-      "manual": "skills/default/agent-reach/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agent-reach/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "search-research",
-      "category_label": "搜索 / 研究 / 情报",
-      "tags": [
-        "browser-required",
-        "l2",
-        "online",
-        "research",
-        "search-research",
-        "social",
-        "standard"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser",
-          "ffmpeg",
-          "gh"
-        ],
-        "access_mode": "browser-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "agent-reach",
-      "preset_excluded": false,
-      "rating": {
-        "score": 81,
         "stars": 4,
         "rating_label": "★★★★☆"
       }

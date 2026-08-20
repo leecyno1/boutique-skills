@@ -421,5 +421,5 @@
     "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
     "Slot count 34, skill count 34 (max 40)."
   ],
-  "generated_at": "2026-08-19"
+  "generated_at": "2026-08-21"
 }

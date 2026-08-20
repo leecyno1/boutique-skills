@@ -41,7 +41,8 @@
 - scripts/generate_enriched_catalog.py：生成评分、依赖和文档索引。
 - scripts/generate_finance_suite.py：生成金融组合（能力位去重，<= 40）。
 - scripts/weekly_curation.py：周度发现/评分/入库/出库。
-- scripts/weekly_cycle.sh：周度全流程编排（含发布）。
+- scripts/telemetry_collect.py：本地使用频率遥测（扫描 Qoder/Claude Code 会话 JSONL，输出 reports/usage/ 周报与 usage-scores.json，评分联动 +0~8 分；仅本地聚合不读取消息内容）。
+- scripts/weekly_cycle.sh：周度全流程编排（含遥测与发布）。
 - scripts/publish_weekly.sh：白名单提交并推送 GitHub+Gitee。
 - scripts/audit_skills.py：全库审计。
 - scripts/install-suite.sh：套件安装和 dry-run。

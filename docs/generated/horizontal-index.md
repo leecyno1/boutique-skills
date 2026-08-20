@@ -37,10 +37,10 @@
 | Skill | 类型 | 星级 | 使用条件 | 原生来源 |
 |---|---|---:|---|---|
 | `html-anything` | HTML 发布 / 视觉出版 | 5★ | `browser-required` | [origin](https://github.com/nexu-io/html-anything) |
+| `apple-design` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
 | `agent-harness-construction` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
 | `animation` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/bytesagain/ai-skills) |
 | `animation-vocabulary` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary) |
-| `apple-design` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
 | `backtest-expert` | 编程 / 工程工具 | 5★ | `direct` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert) |
 | `baoyu-article-illustrator` | 设计 / UI | 5★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `baoyu-youtube-transcript` | 数据分析 | 5★ | `direct` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
@@ -110,6 +110,7 @@
 | `a-stock-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/simonlin1212/a-stock-data) |
 | `global-stock-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/simonlin1212/global-stock-data) |
 | `yfinance-data` | 金融 / 数据源 | 4★ | `direct` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data) |
+| `agent-reach` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
 | `android-native-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/android-native-dev) |
 | `content-strategy` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy) |
 | `flutter-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
@@ -119,7 +120,6 @@
 | `pptx-generator` | 文档 / 办公 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
 | `react-native-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
 | `shader-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
-| `agent-reach` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
 | `agentmail-mcp` | 编程 / 工程工具 | 4★ | `api-key+mcp-required` | [origin](https://github.com/agentmail-to/agentmail-mcp) |
 | `baoyu-url-to-markdown` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `funda-data` | 金融 / 数据源 | 4★ | `api-key+mcp-required` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/funda-data) |
@@ -180,7 +180,9 @@
 | `claude-mem-plugin` | 记忆 / 上下文基础设施 | 5★ | `api-key` | [origin](https://github.com/thedotmack/claude-mem) |
 | `scientific-illustrator` | 媒体生成 / 处理 | 5★ | `mcp-required` | [origin](https://github.com/icebird1998/scientific-illustrator) |
 | `dasheng-vox-skills` | 媒体生成 / 处理 | 5★ | `browser-required` | [origin](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
+| `dasheng-stage-brief-ai` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai) |
 | `video-autopilot-kit` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/Hao0321/video-autopilot-kit) |
+| `dasheng-stage-transwrite` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite) |
 | `uzi-skill` | 金融 / 交易 | 4★ | `browser-required` | [origin](https://github.com/wbh604/UZI-Skill) |
 | `agent-eval` | 效率 / 知识管理 | 4★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
 | `agent-introspection-debugging` | 多 Agent / 自动调度 | 4★ | `direct` | [origin](https://github.com/affaan-m/ECC) |
@@ -201,11 +203,9 @@
 | `dasheng-media-sop` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-media-sop) |
 | `dasheng-paradigm-profiler` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-paradigm-profiler) |
 | `dasheng-publish-operations-bridge` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-publish-operations-bridge) |
-| `dasheng-stage-brief-ai` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai) |
 | `dasheng-stage-draft` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-draft) |
 | `dasheng-stage-publish` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-publish) |
 | `dasheng-stage-rewrite-v3` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-rewrite-v3) |
-| `dasheng-stage-transwrite` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-transwrite) |
 | `dasheng-style-profiler` | 写作 / 内容 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-style-profiler) |
 | `dasheng-video-director` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director) |
 | `dasheng-video-explainer-html` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-explainer-html) |

@@ -19,6 +19,7 @@
 | 风险 | low +10，medium +4，high -8 |
 | 使用门槛 | direct +8，browser/mcp +3 |
 | 文档描述 | 有描述 +7 |
+| 本地使用频率 | +0~8（log₂ 调用次数 × 时间衰减，来自 scripts/telemetry_collect.py 本地遥测；无数据时为 0） |
 | 预置排除 | Open/Hermes 已预置的 skill 不进入标准配置组 |
 
 ## 后续月评增强

@@ -94,6 +94,19 @@ python3 tests/test_tier_catalog.py
 - 出库周报：`reports/weekly-curation/prune-YYYY-MM-DD.{md,json}`
 - 入库评审：`reports/source-discovery/<skill>-review-YYYY-MM-DD.md`
 
+## 使用频率遥测（2026-08-21 新增）
+
+`scripts/telemetry_collect.py` 从本机 Agent 会话日志（Qoder `~/.qoder/projects/` 与 Claude Code `~/.claude/projects/` 的 JSONL）统计每个 skill 的被调用频率：
+
+- 识别两种调用形式：`Skill` tool_use（`input.skill`）与 `<command-name>/skill</command-name>` 斜杠命令（仅匹配已注册技能名）。
+- 输出：`reports/usage/usage-YYYY-MM-DD.{json,md}`（频率报告，含组合覆盖与未收录高频清单）与 `reports/usage/usage-scores.json`（机器可读加分）。
+- 评分联动：使用频率加分 0~8（log₂ 调用次数 × 时间衰减：≤7天 1.0 / ≤30天 0.7 / ≤90天 0.4 / 更久 0.15），在 `generate_enriched_catalog.py` 的 `score_item` 中叠加，无数据时为 0（向后兼容）。
+- 隐私红线：仅本地聚合技能名/时间戳/会话 ID/工作目录，不读取或存储任何消息内容，不上传。
+
+```bash
+python3 scripts/telemetry_collect.py --days 30   # 手动采集
+```
+
 ## 定时执行
 
 由 Qoder 会话定时任务每周六 09:00（Asia/Shanghai）触发，执行

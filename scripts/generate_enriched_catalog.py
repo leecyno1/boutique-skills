@@ -19,6 +19,7 @@ ENRICHED_PATH = ROOT / "catalog" / "skills.enriched.json"
 STANDARD_BUNDLE_PATH = ROOT / "catalog" / "standard-bundle.json"
 STANDARD_BUNDLE_OVERRIDES = ROOT / "catalog" / "standard-bundle-overrides.json"
 TUSHARE_ROUTING = ROOT / "catalog" / "tushare-finance-routing.json"
+USAGE_SCORES_PATH = ROOT / "reports" / "usage" / "usage-scores.json"
 TIERS_DIR = ROOT / "tiers"
 DOC_TIERS_DIR = ROOT / "docs" / "tiers"
 MANUALS_DOC = ROOT / "docs" / "SKILL_MANUALS.md"
@@ -29,6 +30,25 @@ SCORING_PATH = ROOT / "docs" / "generated" / "scoring-model.md"
 README_PATH = ROOT / "README.md"
 MARKER_START = "<!-- SKILLS_INDEX:START -->"
 MARKER_END = "<!-- SKILLS_INDEX:END -->"
+
+
+def load_usage_bonuses() -> dict[str, int]:
+    """Per-skill usage bonus (0..8) from scripts/telemetry_collect.py.
+
+    Missing or malformed file yields no bonuses so the generator keeps
+    working on fresh checkouts without local telemetry.
+    """
+    if not USAGE_SCORES_PATH.exists():
+        return {}
+    try:
+        data = json.loads(USAGE_SCORES_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    bonuses = data.get("bonuses", {})
+    return {skill: int(bonus) for skill, bonus in bonuses.items() if isinstance(bonus, (int, float))}
+
+
+USAGE_BONUSES = load_usage_bonuses()
 
 TODAY = date.today().isoformat()
 MIRROR_PATTERN = re.compile(r"leecyno1/(?:auto-install-Openclaw|boutique-(?:openclaw-)?skills)", re.I)
@@ -882,6 +902,7 @@ def score_item(item: dict[str, Any]) -> dict[str, Any]:
         score -= 100
     if confidence == "missing":
         score = min(score, 45)
+    score += USAGE_BONUSES.get(item["id"], 0)
     if item["id"] in EDITORIAL_SCORE_OVERRIDES:
         score = EDITORIAL_SCORE_OVERRIDES[item["id"]]
     if item["id"] in ALPHAGBM_SKILLS:
@@ -1176,6 +1197,7 @@ def render_scoring_model() -> str:
 | 风险 | low +10，medium +4，high -8 |
 | 使用门槛 | direct +8，browser/mcp +3 |
 | 文档描述 | 有描述 +7 |
+| 本地使用频率 | +0~8（log₂ 调用次数 × 时间衰减，来自 scripts/telemetry_collect.py 本地遥测；无数据时为 0） |
 | 预置排除 | Open/Hermes 已预置的 skill 不进入标准配置组 |
 
 ## 后续月评增强

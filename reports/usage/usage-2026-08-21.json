@@ -1,0 +1,381 @@
+{
+  "generated_at": "2026-08-21T06:37:47",
+  "window_days": 30,
+  "session_files_scanned": 122,
+  "skill_calls_total": 61,
+  "skill_calls_recent": 61,
+  "distinct_skills_used": 21,
+  "privacy": "local aggregation only: skill names, timestamps, session ids, working directories; no message content stored",
+  "skills": {
+    "wechat-draft-writer": {
+      "calls": 18,
+      "sessions": 18,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-20T11:15:53.595000+00:00",
+      "first_used": "2026-08-03T23:16:36.965000+00:00",
+      "days_since_last_use": 0.5,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 18
+    },
+    "dasheng-sop-orchestrator": {
+      "calls": 8,
+      "sessions": 8,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-07T08:44:40.134000+00:00",
+      "first_used": "2026-08-03T23:16:53.032000+00:00",
+      "days_since_last_use": 13.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 8
+    },
+    "dasheng-stage-intake-brief-draft": {
+      "calls": 7,
+      "sessions": 7,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-20T08:54:29.200000+00:00",
+      "first_used": "2026-08-03T23:16:59.679000+00:00",
+      "days_since_last_use": 0.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 7
+    },
+    "dasheng-stage-brief-ai": {
+      "calls": 6,
+      "sessions": 6,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-03T23:17:07.885000+00:00",
+      "first_used": "2026-08-03T23:17:07.885000+00:00",
+      "days_since_last_use": 17.0,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 6
+    },
+    "finance-data-router": {
+      "calls": 4,
+      "sessions": 4,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-05T10:01:25.015000+00:00",
+      "first_used": "2026-08-05T09:52:18.087000+00:00",
+      "days_since_last_use": 15.5,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "pptx": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-07-31T02:26:35.502752+00:00",
+      "first_used": "2026-07-24T13:47:50.814317+00:00",
+      "days_since_last_use": 20.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "dasheng-stage-rewrite": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-20T16:59:02.354000+00:00",
+      "first_used": "2026-08-20T16:36:08.526000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "tushare-api": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-05T09:52:24.223000+00:00",
+      "first_used": "2026-08-05T09:52:24.223000+00:00",
+      "days_since_last_use": 15.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "apple-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-07-24T03:24:37.999838+00:00",
+      "first_used": "2026-07-24T03:24:37.999838+00:00",
+      "days_since_last_use": 27.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "docx": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-07-28T22:41:23.840389+00:00",
+      "first_used": "2026-07-28T22:41:23.840389+00:00",
+      "days_since_last_use": 23.0,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "mmx-cli": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T23:45:50.532621+00:00",
+      "first_used": "2026-08-15T23:45:50.532621+00:00",
+      "days_since_last_use": 5.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "using-coze-cli": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T23:45:58.448025+00:00",
+      "first_used": "2026-08-15T23:45:58.448025+00:00",
+      "days_since_last_use": 5.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "wechat-article-extractor-skill": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-01T11:17:28.962325+00:00",
+      "first_used": "2026-08-01T11:17:28.962325+00:00",
+      "days_since_last_use": 19.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "agent-reach": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-03T12:29:21.900221+00:00",
+      "first_used": "2026-08-03T12:29:21.900221+00:00",
+      "days_since_last_use": 17.4,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "dasheng-stage-transwrite": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-07T08:44:27.839000+00:00",
+      "first_used": "2026-08-07T08:44:27.839000+00:00",
+      "days_since_last_use": 13.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "schedule": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-19T02:06:58.418996+00:00",
+      "first_used": "2026-08-19T02:06:58.418996+00:00",
+      "days_since_last_use": 1.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "brainstorming": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-18T15:25:04.915374+00:00",
+      "first_used": "2026-08-18T15:25:04.915374+00:00",
+      "days_since_last_use": 2.3,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "create-plugin": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T14:21:29.922308+00:00",
+      "first_used": "2026-08-15T14:21:29.922308+00:00",
+      "days_since_last_use": 5.3,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "idea-evaluator": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T14:22:36.493144+00:00",
+      "first_used": "2026-08-15T14:22:36.493144+00:00",
+      "days_since_last_use": 5.3,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "academic-research-suite": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T14:47:01.066288+00:00",
+      "first_used": "2026-08-15T14:47:01.066288+00:00",
+      "days_since_last_use": 5.3,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "pre-submission-reviewer": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-18T15:26:50.410279+00:00",
+      "first_used": "2026-08-18T15:26:50.410279+00:00",
+      "days_since_last_use": 2.3,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    }
+  },
+  "bundle_coverage": {
+    "standard_bundle": {
+      "size": 30,
+      "used": 2,
+      "unused": [
+        "agent-browser",
+        "baoyu-article-illustrator",
+        "content-strategy",
+        "data-analyst",
+        "find-skills",
+        "fullstack-dev",
+        "gemini-image-service",
+        "generative-ui",
+        "github",
+        "global-stock-data",
+        "html-anything",
+        "mcp-builder",
+        "minimax-docx",
+        "minimax-xlsx",
+        "model-usage",
+        "multi-search-engine",
+        "nano-pdf",
+        "news-radar",
+        "planning-with-files",
+        "pptx-generator",
+        "proactive-agent",
+        "skill-creator",
+        "skill-security-auditor",
+        "task",
+        "url-to-markdown",
+        "verification-before-completion",
+        "weather",
+        "writing-skills"
+      ]
+    },
+    "finance_suite": {
+      "size": 34,
+      "used": 0,
+      "unused": [
+        "a-stock-data",
+        "alphaear-news",
+        "alphaear-predictor",
+        "alphaear-reporter",
+        "alphaear-signal-tracker",
+        "alphagbm-bps-backtest",
+        "alphagbm-options-strategy",
+        "alphagbm-theme-research",
+        "backtest-expert",
+        "bayesian-intrinsic-growth-valuation",
+        "buy-side-equity-research-memo",
+        "canslim-screener",
+        "data-quality-checker",
+        "earnings-preview",
+        "etf-premium",
+        "finviz-screener",
+        "global-stock-data",
+        "llmquant-data",
+        "llmquant-portfolio",
+        "llmquant-risk",
+        "macro-liquidity",
+        "market-environment-analysis",
+        "openclaw-stock-kb",
+        "policy-monitor",
+        "position-sizer",
+        "serenity-alpha",
+        "tech-earnings-deepdive",
+        "trade-hypothesis-ideator",
+        "trader-memory-core",
+        "uptrend-analyzer",
+        "us-market-sentiment",
+        "uzi-skill",
+        "value-dividend-screener",
+        "vcp-screener"
+      ]
+    }
+  }
+}

@@ -135,10 +135,10 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
+| `apple-design` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `online`, `standard` |
 | `agent-harness-construction` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `animation` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `animation-vocabulary` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `online`, `standard` |
-| `apple-design` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `online`, `standard` |
 | `baoyu-article-illustrator` | `L2 Professional` | 5★ | `baoyu`, `design-ui`, `direct`, `l2`, `offline` |
 | `brandkit` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `design-taste-frontend` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
@@ -196,13 +196,13 @@
 | `seedance2-skill` | `L2 Professional` | 5★ | `direct`, `l2`, `media`, `media-generation`, `offline`, `prompt`, `video` |
 | `dasheng-vox-skills` | `L3 Specialist` | 5★ | `browser-required`, `dasheng-media-workflow`, `dasheng_media_workflow`, `l3`, `media-generation`, `online`, `optional`, `self-media-ops`, `video-orchestration` |
 | `video-autopilot-kit` | `L3 Specialist` | 4★ | `capcut`, `direct`, `ffmpeg`, `l3`, `media-generation`, `offline`, `short-video` |
+| `dasheng-stage-transwrite` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `baoyu-comic` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-cover-image` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-slide-deck` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-xhs-images` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `bilibili-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-html-video-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
-| `dasheng-stage-transwrite` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-director` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-explainer-html` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-roughcut` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
@@ -233,12 +233,12 @@
 | `humanizer-zh` | `L2 Professional` | 5★ | `creator`, `direct`, `l2`, `offline`, `polish`, `writing`, `writing-content` |
 | `khazix-skills` | `L2 Professional` | 5★ | `creator`, `direct`, `l2`, `offline`, `research`, `writing`, `writing-content` |
 | `writing-plans` | `L2 Professional` | 5★ | `direct`, `l2`, `offline`, `writing-content` |
+| `dasheng-stage-brief-ai` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |
 | `baoyu-format-markdown` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `offline`, `writing-content` |
 | `baoyu-infographic` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `offline`, `writing-content` |
 | `baoyu-skills` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `offline`, `writing-content` |
 | `baoyu-translate` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `offline`, `writing-content` |
 | `dasheng-paradigm-profiler` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |
-| `dasheng-stage-brief-ai` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |
 | `dasheng-stage-draft` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |
 | `dasheng-stage-rewrite-v3` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |
 | `dasheng-style-profiler` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `offline`, `self-media-ops`, `self_media`, `writing-content` |

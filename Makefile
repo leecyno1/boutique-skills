@@ -1,4 +1,7 @@
-.PHONY: audit sync enrich upstream-check upstream-apply install-standard bundle assets weekly discover prune finance-suite publish
+.PHONY: audit sync enrich upstream-check upstream-apply install-standard bundle assets weekly discover prune finance-suite publish telemetry
+
+telemetry:
+	python3 scripts/telemetry_collect.py --days 30
 
 weekly:
 	./scripts/weekly_cycle.sh

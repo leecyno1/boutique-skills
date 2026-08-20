@@ -150,9 +150,9 @@
 | `url-to-markdown` | 无 | `browser` | `medium` |
 | `uzi-skill` | 无 | `browser`, `python` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
+| `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `dasheng-video-omni-browser` | 无 | `browser`, `python` | `medium` |
 | `macro-liquidity` | 无 | `browser` | `medium` |
-| `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
 | `notebooklm-py` | 无 | `browser` | `medium` |
@@ -189,10 +189,10 @@
 | `verification-before-completion` | 无 | 无 | `low` |
 | `weather` | 无 | 无 | `low` |
 | `writing-skills` | 无 | 无 | `low` |
+| `apple-design` | 无 | 无 | `low` |
 | `agent-harness-construction` | 无 | 无 | `low` |
 | `animation` | 无 | 无 | `low` |
 | `animation-vocabulary` | 无 | 无 | `low` |
-| `apple-design` | 无 | 无 | `low` |
 | `backtest-expert` | 无 | 无 | `low` |
 | `baoyu-article-illustrator` | 无 | 无 | `low` |
 | `baoyu-youtube-transcript` | 无 | `ffmpeg`, `python` | `low` |
@@ -258,8 +258,10 @@
 | `twitter-reader` | 无 | 无 | `low` |
 | `writing-plans` | 无 | 无 | `low` |
 | `yc-reader` | 无 | `python` | `low` |
+| `dasheng-stage-brief-ai` | 无 | 无 | `low` |
 | `video-autopilot-kit` | 无 | `ffmpeg`, `python` | `low` |
 | `a-stock-data` | 无 | `python` | `medium` |
+| `dasheng-stage-transwrite` | 无 | 无 | `low` |
 | `global-stock-data` | 无 | `python` | `medium` |
 | `yfinance-data` | 无 | `python` | `medium` |
 | `agent-eval` | 无 | 无 | `low` |
@@ -281,11 +283,9 @@
 | `dasheng-media-sop` | 无 | 无 | `low` |
 | `dasheng-paradigm-profiler` | 无 | 无 | `low` |
 | `dasheng-publish-operations-bridge` | 无 | 无 | `low` |
-| `dasheng-stage-brief-ai` | 无 | 无 | `low` |
 | `dasheng-stage-draft` | 无 | 无 | `low` |
 | `dasheng-stage-publish` | 无 | 无 | `low` |
 | `dasheng-stage-rewrite-v3` | 无 | 无 | `low` |
-| `dasheng-stage-transwrite` | 无 | 无 | `low` |
 | `dasheng-style-profiler` | 无 | 无 | `low` |
 | `dasheng-video-director` | 无 | 无 | `low` |
 | `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node`, `python` | `low` |
