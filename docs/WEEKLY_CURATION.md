@@ -103,6 +103,9 @@ python3 tests/test_tier_catalog.py
 | Qoder | `~/.qoder/projects/**/*.jsonl` | `Skill` tool_use（`input.skill`）与 `/skill` 斜杠命令 |
 | Claude Code | `~/.claude/projects/**/*.jsonl` | 同上（同构格式） |
 | Codex CLI | `~/.codex/sessions/` 与 `~/.codex/archived_sessions/` 的 rollout JSONL | **工具调用中读取技能的 SKILL.md 路径**（`skills/<name>/SKILL.md`）；`<skills_instructions>` 注入列表不计入 |
+| Kimi Code | `~/.kimi-code/sessions/**/wire.jsonl` | `tool.call` 事件且 `name="Skill"`（args.skill） |
+
+已探测但不接入的运行时（无技能使用信号或无会话数据）：Gemini CLI（会话为 tmp 检查点格式，无结构化工具日志）、OpenCode（SQLite 中无实质会话）、GitHub Copilot CLI（ACP 后端，无 Agent Skills 机制）、cagent/Lingma/MarsCode/OpenClaw 生态（无技能机制或无数据）。新装上述以外的 Agent CLI 时，在 `SESSION_ROOTS` 中追加日志根目录并按格式扩展 `extract_uses_worker` 即可。
 
 - 输出：`reports/usage/usage-YYYY-MM-DD.{json,md}`（频率报告，含组合覆盖与未收录高频清单）与 `reports/usage/usage-scores.json`（机器可读加分）。
 - 评分联动：使用频率加分 0~8（log₂ 调用次数 × 时间衰减：≤7天 1.0 / ≤30天 0.7 / ≤90天 0.4 / 更久 0.15），在 `generate_enriched_catalog.py` 的 `score_item` 中叠加，无数据时为 0（向后兼容）。

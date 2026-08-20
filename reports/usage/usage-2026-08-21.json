@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-21T07:31:20",
+  "generated_at": "2026-08-21T07:34:37",
   "window_days": 30,
-  "session_files_scanned": 3,
+  "session_files_scanned": 11,
   "session_files_skipped_unchanged": 2221,
-  "skill_calls_total": 33825,
-  "skill_calls_recent": 12769,
+  "skill_calls_total": 33827,
+  "skill_calls_recent": 12771,
   "distinct_skills_used": 749,
   "by_source": {
     "qoder": 61,
-    "codex": 33764
+    "codex": 33766
   },
   "privacy": "local aggregation only: skill names, timestamps, session ids, working directories; no message content stored",
   "skills": {
@@ -112,18 +112,18 @@
       "recent_calls": 22
     },
     "e2e-testing": {
-      "calls": 1067,
+      "calls": 1068,
       "sessions": 23,
       "projects": 13,
       "sources": [
         "codex"
       ],
-      "last_used": "2026-08-20T23:28:28.832000+00:00",
+      "last_used": "2026-08-20T23:32:02.661000+00:00",
       "first_used": "2026-06-01T06:31:16.710000+00:00",
       "days_since_last_use": 0.0,
       "in_registry": false,
       "usage_bonus": 6,
-      "recent_calls": 1016
+      "recent_calls": 1017
     },
     "using-superpowers": {
       "calls": 888,
@@ -337,18 +337,18 @@
       "recent_calls": 245
     },
     "production-audit": {
-      "calls": 322,
+      "calls": 323,
       "sessions": 37,
       "projects": 18,
       "sources": [
         "codex"
       ],
-      "last_used": "2026-08-20T23:28:28.832000+00:00",
+      "last_used": "2026-08-20T23:32:02.661000+00:00",
       "first_used": "2026-06-03T22:28:11.741000+00:00",
       "days_since_last_use": 0.0,
       "in_registry": false,
       "usage_bonus": 6,
-      "recent_calls": 238
+      "recent_calls": 239
     },
     "improve-codebase-architecture": {
       "calls": 300,
@@ -1005,7 +1005,7 @@
       ],
       "last_used": "2026-08-04T15:08:58.111000+00:00",
       "first_used": "2026-06-25T23:28:07.916000+00:00",
-      "days_since_last_use": 16.3,
+      "days_since_last_use": 16.4,
       "in_registry": false,
       "usage_bonus": 4,
       "recent_calls": 5
@@ -1104,7 +1104,7 @@
       ],
       "last_used": "2026-08-14T05:33:59.215000+00:00",
       "first_used": "2026-07-24T07:52:44.088000+00:00",
-      "days_since_last_use": 6.7,
+      "days_since_last_use": 6.8,
       "in_registry": false,
       "usage_bonus": 6,
       "recent_calls": 67
@@ -5695,7 +5695,7 @@
       ],
       "last_used": "2026-08-13T03:09:15.474000+00:00",
       "first_used": "2026-08-13T03:06:24.331000+00:00",
-      "days_since_last_use": 7.8,
+      "days_since_last_use": 7.9,
       "in_registry": false,
       "usage_bonus": 3,
       "recent_calls": 4
@@ -6536,7 +6536,7 @@
       ],
       "last_used": "2026-08-13T00:43:51.903000+00:00",
       "first_used": "2026-08-05T15:47:10.990000+00:00",
-      "days_since_last_use": 7.9,
+      "days_since_last_use": 8.0,
       "in_registry": false,
       "usage_bonus": 3,
       "recent_calls": 3
@@ -7880,7 +7880,7 @@
       ],
       "last_used": "2026-08-13T00:45:38.023000+00:00",
       "first_used": "2026-08-13T00:43:51.903000+00:00",
-      "days_since_last_use": 7.9,
+      "days_since_last_use": 8.0,
       "in_registry": false,
       "usage_bonus": 2,
       "recent_calls": 2
@@ -7894,7 +7894,7 @@
       ],
       "last_used": "2026-08-13T00:45:38.023000+00:00",
       "first_used": "2026-08-13T00:43:51.903000+00:00",
-      "days_since_last_use": 7.9,
+      "days_since_last_use": 8.0,
       "in_registry": false,
       "usage_bonus": 2,
       "recent_calls": 2
@@ -7908,7 +7908,7 @@
       ],
       "last_used": "2026-08-13T00:45:38.023000+00:00",
       "first_used": "2026-08-13T00:43:51.903000+00:00",
-      "days_since_last_use": 7.9,
+      "days_since_last_use": 8.0,
       "in_registry": false,
       "usage_bonus": 2,
       "recent_calls": 2
@@ -7922,7 +7922,7 @@
       ],
       "last_used": "2026-08-13T00:45:38.023000+00:00",
       "first_used": "2026-08-13T00:43:51.903000+00:00",
-      "days_since_last_use": 7.9,
+      "days_since_last_use": 8.0,
       "in_registry": false,
       "usage_bonus": 2,
       "recent_calls": 2
@@ -8556,20 +8556,6 @@
       "in_registry": true,
       "usage_bonus": 3,
       "recent_calls": 2
-    },
-    "schedule": {
-      "calls": 1,
-      "sessions": 1,
-      "projects": 1,
-      "sources": [
-        "qoder"
-      ],
-      "last_used": "2026-08-19T02:06:58.418996+00:00",
-      "first_used": "2026-08-19T02:06:58.418996+00:00",
-      "days_since_last_use": 1.9,
-      "in_registry": false,
-      "usage_bonus": 2,
-      "recent_calls": 1
     },
     "create-plugin": {
       "calls": 1,
@@ -9294,7 +9280,7 @@
       ],
       "last_used": "2026-06-16T05:34:36.496000+00:00",
       "first_used": "2026-06-16T05:34:36.496000+00:00",
-      "days_since_last_use": 65.7,
+      "days_since_last_use": 65.8,
       "in_registry": true,
       "usage_bonus": 1,
       "recent_calls": 0
@@ -9308,7 +9294,7 @@
       ],
       "last_used": "2026-06-16T05:34:36.497000+00:00",
       "first_used": "2026-06-16T05:34:36.497000+00:00",
-      "days_since_last_use": 65.7,
+      "days_since_last_use": 65.8,
       "in_registry": true,
       "usage_bonus": 1,
       "recent_calls": 0
@@ -9322,7 +9308,7 @@
       ],
       "last_used": "2026-06-16T05:34:36.503000+00:00",
       "first_used": "2026-06-16T05:34:36.503000+00:00",
-      "days_since_last_use": 65.7,
+      "days_since_last_use": 65.8,
       "in_registry": true,
       "usage_bonus": 1,
       "recent_calls": 0
@@ -9490,7 +9476,7 @@
       ],
       "last_used": "2026-08-13T03:09:15.474000+00:00",
       "first_used": "2026-08-13T03:09:15.474000+00:00",
-      "days_since_last_use": 7.8,
+      "days_since_last_use": 7.9,
       "in_registry": false,
       "usage_bonus": 1,
       "recent_calls": 1
@@ -9504,7 +9490,7 @@
       ],
       "last_used": "2026-08-13T03:09:15.474000+00:00",
       "first_used": "2026-08-13T03:09:15.474000+00:00",
-      "days_since_last_use": 7.8,
+      "days_since_last_use": 7.9,
       "in_registry": false,
       "usage_bonus": 1,
       "recent_calls": 1
@@ -10489,6 +10475,20 @@
       "usage_bonus": 1,
       "recent_calls": 1
     },
+    "schedule": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-19T02:06:58.418996+00:00",
+      "first_used": "2026-08-19T02:06:58.418996+00:00",
+      "days_since_last_use": 1.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
     "dir": {
       "calls": 1,
       "sessions": 1,
@@ -10533,10 +10533,9 @@
     },
     "finance_suite": {
       "size": 34,
-      "used": 26,
+      "used": 27,
       "unused": [
         "alphagbm-bps-backtest",
-        "alphagbm-options-strategy",
         "alphagbm-theme-research",
         "canslim-screener",
         "finviz-screener",

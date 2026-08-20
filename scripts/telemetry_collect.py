@@ -10,6 +10,8 @@ Data sources (auto-detected, read-only):
                                       that reads a skill's SKILL.md — the
                                       skills_instructions injection blocks are
                                       ignored)
+  - ~/.kimi-code/sessions/**/*.jsonl  (Kimi Code CLI wire logs; a use is a
+                                      tool.call event named "Skill")
 
 Qoder/Claude Code use the Skill tool_use form (input.skill) plus slash
 commands. Only skill names, timestamps, session ids, and working directories
@@ -51,6 +53,7 @@ SESSION_ROOTS = [
     (Path.home() / ".claude" / "projects", "claude-code"),
     (Path.home() / ".codex" / "sessions", "codex"),
     (Path.home() / ".codex" / "archived_sessions", "codex"),
+    (Path.home() / ".kimi-code" / "sessions", "kimi-code"),
 ]
 
 COMMAND_NAME_RE = re.compile(r"<command-name>\s*/?([A-Za-z0-9_.-]+)\s*</command-name>")
@@ -124,6 +127,52 @@ def extract_uses_worker(args: tuple[str, str, tuple[str, ...]]) -> list[dict]:
                     uses.extend(
                         _uses_from_tool_call_text(text, parse_timestamp(obj.get("timestamp")), session_id, cwd, source)
                     )
+        except OSError:
+            pass
+        return uses
+
+    if source == "kimi-code":
+        # wire.jsonl rows: {type: "context.append_loop_event", time: epoch-ms,
+        # event: {type: "tool.call", name: "Skill", args: ...}}. Session id
+        # comes from the session_<uuid> path segment; cwd is not recorded.
+        session_id = ""
+        for part in path.parts:
+            if part.startswith("session_"):
+                session_id = part[len("session_"):]
+                break
+        try:
+            with open(path, encoding="utf-8", errors="ignore") as handle:
+                for line in handle:
+                    if len(line) > MAX_LINE_BYTES or '"tool.call"' not in line or '"Skill"' not in line:
+                        continue
+                    try:
+                        obj = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    event = obj.get("event") or {}
+                    if not isinstance(event, dict) or event.get("type") != "tool.call":
+                        continue
+                    if (event.get("name") or "") != "Skill":
+                        continue
+                    args = event.get("args")
+                    skill = None
+                    if isinstance(args, str):
+                        try:
+                            args = json.loads(args)
+                        except json.JSONDecodeError:
+                            args = None
+                    if isinstance(args, dict):
+                        skill = args.get("skill") or args.get("name")
+                    if isinstance(skill, str) and skill.strip():
+                        ts = None
+                        raw_time = obj.get("time")
+                        if isinstance(raw_time, (int, float)):
+                            ts = datetime.fromtimestamp(raw_time / 1000.0, tz=timezone.utc)
+                        uses.append({
+                            "skill": skill.strip(), "timestamp": ts,
+                            "session": session_id or path.stem, "cwd": "",
+                            "source": source, "form": "tool_use",
+                        })
         except OSError:
             pass
         return uses

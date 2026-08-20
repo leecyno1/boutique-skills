@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T07:31:20",
+  "generated_at": "2026-08-21T07:34:37",
   "policy": "usage_bonus = min(6, 2*log2(calls+1)) * recency(<=7d:1.0, <=30d:0.7, <=90d:0.4, else:0.15); max bonus 8",
   "bonuses": {
     "wechat-draft-writer": 6,
@@ -17,7 +17,6 @@
     "agent-reach": 6,
     "dasheng-stage-rewrite": 6,
     "dasheng-stage-transwrite": 6,
-    "schedule": 2,
     "brainstorming": 6,
     "create-plugin": 2,
     "idea-evaluator": 6,
@@ -711,6 +710,7 @@
     "chrome-control": 3,
     "institutional-flow-tracker": 6,
     "finance-sentiment": 3,
+    "schedule": 2,
     "dir": 1,
     "1": 2
   }
