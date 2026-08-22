@@ -4,8 +4,8 @@
 |---|---:|
 | `api-key` | 100 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 27 |
-| `direct` | 182 |
+| `browser-required` | 28 |
+| `direct` | 201 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -49,12 +49,12 @@
 | `ima` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `tushare-openclaw-skill` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `akshare-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
+| `gpt-image` | `OPENAI_API_KEY` | 无 | `medium` |
 | `openclaw-stock-data-skill` | `STOCK_API_KEY` | `python` | `medium` |
 | `agentmail-toolkit` | `AGENTMAIL_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `tavily-search` | `OPENAI_API_KEY`, `TAVILY_API_KEY` | `browser`, `python` | `medium` |
 | `agent-architecture-audit` | `OPENAI_API_KEY` | 无 | `medium` |
 | `book-to-skill` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
-| `gpt-image` | `OPENAI_API_KEY` | 无 | `medium` |
 | `lark-calendar` | `FEISHU_APP_SECRET` | 无 | `medium` |
 | `paperless-docs` | `PAPERLESS_TOKEN` | 无 | `medium` |
 | `paperless-ngx-tools` | `PAPERLESS_TOKEN` | 无 | `medium` |
@@ -62,17 +62,16 @@
 | `institutional-flow-tracker` | `FMP_API_KEY` | `python` | `medium` |
 | `macro-regime-detector` | `FMP_API_KEY` | 无 | `medium` |
 | `alphaear-sentiment` | `OPENAI_API_KEY` | `python` | `medium` |
-| `alphaear-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `baoyu-post-to-wechat` | `ACCESS_TOKEN`, `WECHAT_AI_TOOLS_APP_SECRET`, `WECHAT_APP_SECRET`, `WECHAT_BAOYU_APP_SECRET` | `browser` | `medium` |
 | `economic-calendar-fetcher` | `FMP_API_KEY` | `node`, `python` | `medium` |
-| `pybroker-backtest-skill` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `stock-analysis` | `TUSHARE_TOKEN` | `node`, `python` | `medium` |
 | `value-dividend-screener` | `FINVIZ_API_KEY`, `FMP_API_KEY` | `python` | `medium` |
 | `finance-sentiment` | `ADANOS_API_KEY` | `python` | `medium` |
-| `media-downloader` | `PEXELS_API_KEY` | `ffmpeg` | `medium` |
+| `alphaear-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `finance-skill-creator` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `gemini-image-service` | `GEMINI_API_KEY` | 无 | `medium` |
 | `position-sizer` | `TUSHARE_TOKEN` | `python` | `medium` |
+| `pybroker-backtest-skill` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `sepa-strategy` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `stock-monitor-skill` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `agentmail-cli` | `AGENTMAIL_API_KEY` | 无 | `medium` |
@@ -84,12 +83,14 @@
 | `kanchi-dividend-review-monitor` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `kanchi-dividend-sop` | `FMP_API_KEY` | `python` | `medium` |
 | `market-top-detector` | `FMP_API_KEY` | `python` | `medium` |
+| `media-downloader` | `PEXELS_API_KEY` | `ffmpeg` | `medium` |
 | `minimax-image-understanding` | `MINIMAX_API_KEY` | 无 | `medium` |
 | `options-strategy-advisor` | `FMP_API_KEY` | 无 | `medium` |
 | `stock-daily-analysis-skill` | `OPENAI_API_KEY` | `python` | `medium` |
 | `theme-detector` | `FINVIZ_API_KEY`, `FMP_API_KEY` | 无 | `medium` |
 | `breakout-trade-planner` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `canslim-screener` | `FMP_API_KEY` | `python` | `medium` |
+| `cli-batches` | `OPENAI_API_KEY` | 无 | `medium` |
 | `downtrend-duration-analyzer` | `FMP_API_KEY` | 无 | `medium` |
 | `earnings-calendar` | `FMP_API_KEY` | `browser`, `python` | `medium` |
 | `earnings-trade-analyzer` | `FMP_API_KEY` | `node`, `python` | `medium` |
@@ -108,7 +109,6 @@
 | `stock-correlation` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `vcp-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `agentmail` | `AGENTMAIL_API_KEY` | `browser` | `medium` |
-| `ai-image-generation` | `GEMINI_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `minimax-multimodal-toolkit` | `MINIMAX_API_KEY` | `browser`, `ffmpeg` | `medium` |
 | `notebooklm-skill` | `GEMINI_API_KEY` | `browser` | `medium` |
 | `gif-sticker-maker` | `MINIMAX_API_KEY` | `ffmpeg` | `medium` |
@@ -151,8 +151,8 @@
 | `dasheng-vox-skills` | 无 | `browser`, `ffmpeg`, `node`, `python` | `medium` |
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `uzi-skill` | 无 | `browser`, `python` | `medium` |
-| `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
+| `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
 | `dasheng-video-omni-browser` | 无 | `browser`, `python` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
 | `macro-liquidity` | 无 | `browser` | `medium` |
@@ -161,11 +161,12 @@
 | `market-news-analyst` | 无 | `browser`, `node`, `python` | `medium` |
 | `video-shotcraft` | 无 | `browser`, `ffmpeg`, `node` | `medium` |
 | `baoyu-markdown-to-html` | 无 | `browser` | `medium` |
-| `baoyu-post-to-weibo` | 无 | `browser`, `ffmpeg` | `medium` |
-| `baoyu-post-to-x` | 无 | `browser`, `ffmpeg` | `medium` |
 | `btc-bottom-model` | 无 | `browser` | `medium` |
 | `alphaear-search` | `TUSHARE_TOKEN` | `browser`, `python` | `medium` |
+| `baoyu-post-to-weibo` | 无 | `browser`, `ffmpeg` | `medium` |
+| `baoyu-post-to-x` | 无 | `browser`, `ffmpeg` | `medium` |
 | `us-market-sentiment` | 无 | `browser` | `medium` |
+| `abusing-dpapi-for-credential-access` | 无 | `browser` | `medium` |
 | `baoyu-compress-image` | 无 | `browser` | `medium` |
 | `frontend-dev` | 无 | `browser`, `ffmpeg`, `node` | `medium` |
 | `us-value-investing` | 无 | `browser` | `medium` |
@@ -190,40 +191,40 @@
 | `verification-before-completion` | 无 | 无 | `low` |
 | `weather` | 无 | 无 | `low` |
 | `writing-skills` | 无 | 无 | `low` |
-| `animation-vocabulary` | 无 | 无 | `low` |
 | `apple-design` | 无 | 无 | `low` |
 | `backtest-expert` | 无 | 无 | `low` |
-| `brandkit` | 无 | 无 | `low` |
-| `find-animation-opportunities` | 无 | 无 | `low` |
-| `high-end-visual-design` | 无 | 无 | `low` |
-| `image-to-code` | 无 | 无 | `low` |
 | `minimalist-ui` | 无 | 无 | `low` |
-| `review-animations` | 无 | 无 | `low` |
-| `seedance2-skill` | 无 | 无 | `low` |
+| `animation-vocabulary` | 无 | 无 | `low` |
 | `baoyu-article-illustrator` | 无 | 无 | `low` |
 | `behavior-validator` | 无 | 无 | `low` |
-| `dasheng-hotspot-radar` | 无 | `python` | `low` |
+| `brandkit` | 无 | 无 | `low` |
 | `design-taste-frontend` | 无 | 无 | `low` |
 | `emil-design-eng` | 无 | 无 | `low` |
-| `feishu-doc-creator` | 无 | `python` | `low` |
+| `find-animation-opportunities` | 无 | 无 | `low` |
 | `gsap-plugins` | 无 | `node` | `low` |
 | `gsap-timeline` | 无 | `node` | `low` |
 | `guizang-social-card-skill` | 无 | `ffmpeg` | `low` |
+| `high-end-visual-design` | 无 | 无 | `low` |
 | `humanizer-zh` | 无 | 无 | `low` |
 | `ian-xiaohei-illustrations` | 无 | 无 | `low` |
+| `image-to-code` | 无 | 无 | `low` |
 | `improve-animations` | 无 | 无 | `low` |
 | `pick-ui-library` | 无 | 无 | `low` |
+| `review-animations` | 无 | 无 | `low` |
 | `scroll-world` | 无 | `ffmpeg`, `higgsfield`, `python` | `low` |
-| `skill-integration-tester` | 无 | `python` | `low` |
+| `seedance2-skill` | 无 | 无 | `low` |
 | `writing-plans` | 无 | 无 | `low` |
-| `generative-ui` | 无 | 无 | `low` |
 | `gsap-core` | 无 | `node` | `low` |
-| `twitter-reader` | 无 | 无 | `low` |
+| `dasheng-hotspot-radar` | 无 | `python` | `low` |
 | `dbskill` | 无 | 无 | `low` |
+| `feishu-doc-creator` | 无 | `python` | `low` |
+| `generative-ui` | 无 | 无 | `low` |
 | `khazix-skills` | 无 | 无 | `low` |
 | `nano-pdf` | 无 | 无 | `low` |
 | `openclaw-stock-kb` | 无 | `python` | `low` |
+| `skill-integration-tester` | 无 | `python` | `low` |
 | `social-content` | 无 | `ffmpeg` | `low` |
+| `twitter-reader` | 无 | 无 | `low` |
 | `data-analyst` | 无 | `python` | `low` |
 | `gsap-frameworks` | 无 | `node` | `low` |
 | `gsap-performance` | 无 | `node` | `low` |
@@ -234,9 +235,15 @@
 | `scenario-analyzer` | 无 | `python` | `low` |
 | `skill-designer` | 无 | 无 | `low` |
 | `a-stock-data` | 无 | `python` | `medium` |
+| `adaptyv` | 无 | 无 | `low` |
+| `aeon` | 无 | `python` | `low` |
 | `agent-harness-construction` | 无 | 无 | `low` |
+| `analytical-method-validation` | 无 | 无 | `low` |
 | `animation` | 无 | 无 | `low` |
+| `anndata` | 无 | `python` | `low` |
+| `arbor` | 无 | `python` | `low` |
 | `baoyu-youtube-transcript` | 无 | `ffmpeg`, `python` | `low` |
+| `cli-backup-sync` | 无 | `python` | `low` |
 | `design-taste-frontend-v1` | 无 | 无 | `low` |
 | `discord-reader` | 无 | `node` | `low` |
 | `edge-concept-synthesizer` | 无 | 无 | `low` |
@@ -254,6 +261,8 @@
 | `linkedin-reader` | 无 | `python` | `low` |
 | `multi-search-engine` | 无 | 无 | `low` |
 | `opencli-reader` | 无 | `python` | `low` |
+| `ponytail-audit` | 无 | 无 | `low` |
+| `ponytail-help` | 无 | 无 | `low` |
 | `redesign-existing-projects` | 无 | 无 | `low` |
 | `reflection` | 无 | 无 | `low` |
 | `self-improving-agent-cn` | 无 | 无 | `low` |
@@ -262,53 +271,62 @@
 | `telegram-reader` | 无 | 无 | `low` |
 | `yc-reader` | 无 | `python` | `low` |
 | `agent-introspection-debugging` | 无 | 无 | `low` |
-| `dasheng-html-anything-bridge` | 无 | 无 | `low` |
 | `dasheng-html-video-bridge` | 无 | `ffmpeg`, `node` | `low` |
-| `dasheng-media-sop` | 无 | 无 | `low` |
-| `dasheng-stage-transwrite` | 无 | 无 | `low` |
 | `dasheng-video-director` | 无 | 无 | `low` |
-| `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node`, `python` | `low` |
-| `dasheng-video-roughcut` | 无 | `ffmpeg`, `node` | `low` |
-| `dasheng-video-style-trainer` | 无 | 无 | `low` |
 | `dasheng-video-talking-head` | 无 | `ffmpeg`, `node`, `python` | `low` |
-| `yfinance-data` | 无 | `python` | `medium` |
 | `baoyu-cover-image` | 无 | 无 | `low` |
 | `baoyu-format-markdown` | 无 | 无 | `low` |
 | `baoyu-infographic` | 无 | 无 | `low` |
-| `baoyu-xhs-images` | 无 | 无 | `low` |
 | `bilibili-upload-bridge` | 无 | `ffmpeg`, `node` | `low` |
-| `dasheng-paradigm-profiler` | 无 | 无 | `low` |
+| `dasheng-html-anything-bridge` | 无 | 无 | `low` |
+| `dasheng-media-sop` | 无 | 无 | `low` |
 | `dasheng-publish-operations-bridge` | 无 | 无 | `low` |
 | `dasheng-stage-brief-ai` | 无 | 无 | `low` |
 | `dasheng-stage-draft` | 无 | 无 | `low` |
 | `dasheng-stage-publish` | 无 | 无 | `low` |
 | `dasheng-stage-rewrite-v3` | 无 | 无 | `low` |
+| `dasheng-stage-transwrite` | 无 | 无 | `low` |
 | `dasheng-style-profiler` | 无 | 无 | `low` |
-| `douyin-account-launch-expert` | 无 | 无 | `low` |
-| `jiebang` | 无 | 无 | `low` |
+| `dasheng-video-explainer-html` | 无 | `ffmpeg`, `node`, `python` | `low` |
+| `dasheng-video-roughcut` | 无 | `ffmpeg`, `node` | `low` |
+| `dasheng-video-style-trainer` | 无 | 无 | `low` |
 | `social-auto-upload-bridge` | 无 | `ffmpeg`, `node` | `low` |
-| `x-twitter-cold-start-expert` | 无 | 无 | `low` |
 | `video-autopilot-kit` | 无 | `ffmpeg`, `python` | `low` |
+| `yfinance-data` | 无 | `python` | `medium` |
 | `baoyu-skills` | 无 | 无 | `low` |
+| `baoyu-xhs-images` | 无 | 无 | `low` |
+| `dasheng-paradigm-profiler` | 无 | 无 | `low` |
+| `douyin-account-launch-expert` | 无 | 无 | `low` |
+| `gpt-image-2-style-library` | 无 | 无 | `low` |
+| `jiebang` | 无 | 无 | `low` |
 | `wb-xhs-topic-bank` | 无 | 无 | `low` |
-| `wechat-account-launch-expert` | 无 | 无 | `low` |
-| `xiaohongshu-account-launch-expert` | 无 | 无 | `low` |
+| `x-twitter-cold-start-expert` | 无 | 无 | `low` |
 | `baoyu-slide-deck` | 无 | 无 | `low` |
 | `wb-xhs-account-profile` | 无 | 无 | `low` |
 | `wb-xhs-humanize-compliance` | 无 | 无 | `low` |
 | `wb-xhs-low-follower-pattern` | 无 | 无 | `low` |
 | `wb-xhs-monetization-backsolve` | 无 | 无 | `low` |
 | `wb-xhs-schedule-review` | 无 | 无 | `low` |
+| `wechat-account-launch-expert` | 无 | 无 | `low` |
+| `xiaohongshu-account-launch-expert` | 无 | 无 | `low` |
+| `abusing-shadow-credentials-for-privesc` | 无 | 无 | `low` |
 | `agent-eval` | 无 | 无 | `low` |
+| `analyzing-active-directory-acl-abuse` | 无 | 无 | `low` |
 | `baoyu-comic` | 无 | 无 | `low` |
 | `baoyu-translate` | 无 | 无 | `low` |
 | `capability-evolver` | 无 | 无 | `low` |
 | `channels-account-launch-expert` | 无 | 无 | `low` |
+| `cli-a2a` | 无 | 无 | `low` |
+| `cli-chat` | 无 | 无 | `low` |
+| `cli-compression` | 无 | 无 | `low` |
+| `code-review` | 无 | 无 | `low` |
 | `colleague-skill` | 无 | 无 | `low` |
 | `etf-premium` | 无 | `python` | `medium` |
-| `gpt-image-2-style-library` | 无 | 无 | `low` |
 | `market-environment-analysis` | 无 | `python` | `medium` |
 | `policy-monitor` | 无 | 无 | `medium` |
+| `ponytail-debt` | 无 | 无 | `low` |
+| `ponytail-gain` | 无 | 无 | `low` |
+| `ponytail-review` | 无 | 无 | `low` |
 | `skill-idea-miner` | 无 | 无 | `low` |
 | `startup-analysis` | 无 | 无 | `low` |
 | `alphaear-news` | 无 | `python` | `medium` |
@@ -337,6 +355,8 @@
 | `uptrend-analyzer` | 无 | `python` | `medium` |
 | `us-market-bubble-detector` | 无 | `python` | `medium` |
 | `us-stock-analysis` | 无 | `python` | `medium` |
+| `achieving-cmmc-level-2-compliance` | 无 | 无 | `medium` |
+| `acquiring-disk-image-with-dd-and-dcfldd` | 无 | 无 | `medium` |
 | `alphaear-deepear-lite` | 无 | `python` | `medium` |
 | `breadth-chart-analyst` | 无 | `python` | `medium` |
 | `estimate-analysis` | 无 | `node`, `python` | `medium` |

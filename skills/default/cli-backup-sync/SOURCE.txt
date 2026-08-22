@@ -1,0 +1,5 @@
+Source: https://github.com/diegosouzapw/OmniRoute
+Base source commit: release/v3.8.50 @ 2026-08-22
+License: MIT
+Stars at import: 52708
+Imported by: scripts/weekly_curation.py on 2026-08-22 (score 80).

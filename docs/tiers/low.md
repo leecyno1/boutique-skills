@@ -2,7 +2,7 @@
 
 稳定基础档，适合首次安装和轻量生产环境。只包含通用协作、搜索、文档、基础媒体和安全工作流。
 
-- 技能数量：`68`
+- 技能数量：`67`
 - 安装命令：`./scripts/install-tier.sh low`
 - JSON 清单：`tiers/low.json`
 
@@ -17,7 +17,6 @@
 | `agentmail-mcp` | AgentMail MCP server for email tools in AI assistants. | [skills/default/agentmail-mcp/GUIDE.md](../../skills/default/agentmail-mcp/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-mcp) |
 | `agentmail-toolkit` | Add email capabilities to AI agents using popular frameworks. | [skills/default/agentmail-toolkit/GUIDE.md](../../skills/default/agentmail-toolkit/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-toolkit) |
 | `ima` | Connect IMA notes, notebooks, and knowledge bases from OpenClaw or Hermes with safe authorization checks and read-only verification. | [skills/default/ima/GUIDE.md](../../skills/default/ima/GUIDE.md) | [source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
-| `ai-image-generation` | Generate AI images with GPT-Image-2, FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference. | [skills/default/ai-image-generation/GUIDE.md](../../skills/default/ai-image-generation/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/ai-image-generation) |
 | `akshare-stock` | A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。 | [skills/default/akshare-stock/GUIDE.md](../../skills/default/akshare-stock/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/akshare-stock) |
 | `android-native-dev` | Android native application development and UI design guide. | [skills/default/android-native-dev/GUIDE.md](../../skills/default/android-native-dev/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/android-native-dev) |
 | `brainstorming` | Use before creative feature, component, behavior, or product design work. | [skills/default/brainstorming/GUIDE.md](../../skills/default/brainstorming/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/brainstorming) |

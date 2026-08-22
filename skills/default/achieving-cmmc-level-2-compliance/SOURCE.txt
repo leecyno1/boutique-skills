@@ -1,0 +1,5 @@
+Source: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+Base source commit: main @ 2026-08-22
+License: Apache-2.0
+Stars at import: 30521
+Imported by: scripts/weekly_curation.py on 2026-08-22 (score 80).

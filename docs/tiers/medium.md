@@ -2,7 +2,7 @@
 
 增强生产档，包含低档全部能力，并加入官方 MiniMax、本地增强、规划、图像、文档和常用扩展。
 
-- 技能数量：`86`
+- 技能数量：`85`
 - 安装命令：`./scripts/install-tier.sh medium`
 - JSON 清单：`tiers/medium.json`
 
@@ -16,7 +16,6 @@
 | `agentmail-cli` | Send and receive emails programmatically using the AgentMail CLI. | [skills/default/agentmail-cli/GUIDE.md](../../skills/default/agentmail-cli/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-cli) |
 | `agentmail-mcp` | AgentMail MCP server for email tools in AI assistants. | [skills/default/agentmail-mcp/GUIDE.md](../../skills/default/agentmail-mcp/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-mcp) |
 | `agentmail-toolkit` | Add email capabilities to AI agents using popular frameworks. | [skills/default/agentmail-toolkit/GUIDE.md](../../skills/default/agentmail-toolkit/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-toolkit) |
-| `ai-image-generation` | Generate AI images with GPT-Image-2, FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference. | [skills/default/ai-image-generation/GUIDE.md](../../skills/default/ai-image-generation/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/ai-image-generation) |
 | `akshare-stock` | A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。 | [skills/default/akshare-stock/GUIDE.md](../../skills/default/akshare-stock/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/akshare-stock) |
 | `android-native-dev` | Android native application development and UI design guide. | [skills/default/android-native-dev/GUIDE.md](../../skills/default/android-native-dev/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/android-native-dev) |
 | `animation` | Generate CSS and SVG animation code snippets using bash and Python. | [skills/default/animation/GUIDE.md](../../skills/default/animation/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation) |

@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-19 11:34:08",
+  "timestamp": "2026-08-22 09:22:08",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 403,
-    "audited_skills": 397,
+    "catalog_skills": 424,
+    "audited_skills": 418,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 397,
+    "resolved_skills": 418,
     "missing_skills": 0,
-    "missing_env": 104,
+    "missing_env": 102,
     "duplicate_capabilities": 0,
     "risky_hits": 15,
     "missing_native_origins": 0,
@@ -29,6 +29,62 @@
     {
       "skill": "claude-mem-plugin",
       "env": "OPENROUTER_API_KEY"
+    },
+    {
+      "skill": "llmquant-macro",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-credit",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-portfolio",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-portfolio-lab",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-risk",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-options",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-investor-lenses",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-commodities",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-data",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-equities",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-equity-derivatives",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-rates-fx",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-strategies",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "agentmail-mcp",
+      "env": "AGENTMAIL_API_KEY"
     },
     {
       "skill": "alphagbm-alert",
@@ -151,90 +207,6 @@
       "env": "ALPHAGBM_API_KEY"
     },
     {
-      "skill": "agentmail-mcp",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "funda-data",
-      "env": "FUNDA_API_KEY"
-    },
-    {
-      "skill": "llmquant-commodities",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-credit",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-crypto",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-data",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-equities",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-equity-derivatives",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-etfs",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-events",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-investor-lenses",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-macro",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-market-intelligence",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-options",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-portfolio",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-portfolio-lab",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-prediction-markets",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-rates-fx",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-risk",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "llmquant-strategies",
-      "env": "LLMQUANT_API_KEY"
-    },
-    {
-      "skill": "agentmail-toolkit",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
       "skill": "baoyu-image-gen",
       "env": "ARK_API_KEY"
     },
@@ -267,12 +239,40 @@
       "env": "ZAI_API_KEY"
     },
     {
-      "skill": "lark-calendar",
-      "env": "FEISHU_APP_SECRET"
+      "skill": "llmquant-crypto",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-etfs",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-events",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-market-intelligence",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "llmquant-prediction-markets",
+      "env": "LLMQUANT_API_KEY"
+    },
+    {
+      "skill": "funda-data",
+      "env": "FUNDA_API_KEY"
     },
     {
       "skill": "openclaw-stock-data-skill",
       "env": "STOCK_API_KEY"
+    },
+    {
+      "skill": "agentmail-toolkit",
+      "env": "AGENTMAIL_API_KEY"
+    },
+    {
+      "skill": "lark-calendar",
+      "env": "FEISHU_APP_SECRET"
     },
     {
       "skill": "paperless-docs",
@@ -283,8 +283,12 @@
       "env": "PAPERLESS_TOKEN"
     },
     {
-      "skill": "agentmail-cli",
-      "env": "AGENTMAIL_API_KEY"
+      "skill": "institutional-flow-tracker",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "macro-regime-detector",
+      "env": "FMP_API_KEY"
     },
     {
       "skill": "baoyu-post-to-wechat",
@@ -303,8 +307,28 @@
       "env": "WECHAT_BAOYU_APP_SECRET"
     },
     {
-      "skill": "canslim-screener",
+      "skill": "economic-calendar-fetcher",
       "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "value-dividend-screener",
+      "env": "FINVIZ_API_KEY"
+    },
+    {
+      "skill": "value-dividend-screener",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "finance-sentiment",
+      "env": "ADANOS_API_KEY"
+    },
+    {
+      "skill": "gemini-image-service",
+      "env": "GEMINI_API_KEY"
+    },
+    {
+      "skill": "agentmail-cli",
+      "env": "AGENTMAIL_API_KEY"
     },
     {
       "skill": "dividend-growth-pullback-screener",
@@ -312,6 +336,38 @@
     },
     {
       "skill": "dividend-growth-pullback-screener",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "exposure-coach",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "kanchi-dividend-sop",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "market-top-detector",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "media-downloader",
+      "env": "PEXELS_API_KEY"
+    },
+    {
+      "skill": "options-strategy-advisor",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "theme-detector",
+      "env": "FINVIZ_API_KEY"
+    },
+    {
+      "skill": "theme-detector",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "canslim-screener",
       "env": "FMP_API_KEY"
     },
     {
@@ -327,18 +383,6 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "economic-calendar-fetcher",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "exposure-coach",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "finance-sentiment",
-      "env": "ADANOS_API_KEY"
-    },
-    {
       "skill": "finviz-screener",
       "env": "FINVIZ_API_KEY"
     },
@@ -347,31 +391,7 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "gemini-image-service",
-      "env": "GEMINI_API_KEY"
-    },
-    {
       "skill": "ibd-distribution-day-monitor",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "institutional-flow-tracker",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "kanchi-dividend-sop",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "macro-regime-detector",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "market-top-detector",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "options-strategy-advisor",
       "env": "FMP_API_KEY"
     },
     {
@@ -395,40 +415,12 @@
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "theme-detector",
-      "env": "FINVIZ_API_KEY"
-    },
-    {
-      "skill": "theme-detector",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "value-dividend-screener",
-      "env": "FINVIZ_API_KEY"
-    },
-    {
-      "skill": "value-dividend-screener",
-      "env": "FMP_API_KEY"
-    },
-    {
       "skill": "vcp-screener",
       "env": "FMP_API_KEY"
     },
     {
       "skill": "agentmail",
       "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "ai-image-generation",
-      "env": "GEMINI_API_KEY"
-    },
-    {
-      "skill": "fullstack-dev",
-      "env": "JWT_SECRET"
-    },
-    {
-      "skill": "media-downloader",
-      "env": "PEXELS_API_KEY"
     },
     {
       "skill": "notebooklm-skill",
@@ -459,6 +451,21 @@
     {
       "skill": "uzi-skill",
       "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill/skills/deep-analysis/run.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "minimax-docx",
+      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/env_check.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "minimax-docx",
+      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/setup.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "minimax-xlsx",
+      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py",
       "pattern": "\\bsudo\\b"
     },
     {
@@ -495,21 +502,6 @@
       "skill": "vcp-screener",
       "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vcp-screener/scripts/tests/test_historical_vcp.py",
       "pattern": "rm\\s+-rf\\s+/"
-    },
-    {
-      "skill": "minimax-docx",
-      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/env_check.sh",
-      "pattern": "\\bsudo\\b"
-    },
-    {
-      "skill": "minimax-docx",
-      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/setup.sh",
-      "pattern": "\\bsudo\\b"
-    },
-    {
-      "skill": "minimax-xlsx",
-      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py",
-      "pattern": "\\bsudo\\b"
     }
   ],
   "resolved": [
@@ -570,32 +562,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/writing-skills"
     },
     {
-      "skill": "html-anything",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/html-anything"
-    },
-    {
-      "skill": "claude-mem-plugin",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/claude-mem-plugin"
-    },
-    {
-      "skill": "scientific-illustrator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scientific-illustrator"
-    },
-    {
-      "skill": "agent-harness-construction",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-harness-construction"
-    },
-    {
-      "skill": "animation-vocabulary",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/animation-vocabulary"
-    },
-    {
       "skill": "apple-design",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/apple-design"
     },
     {
       "skill": "backtest-expert",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/backtest-expert"
+    },
+    {
+      "skill": "html-anything",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/html-anything"
+    },
+    {
+      "skill": "minimalist-ui",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimalist-ui"
+    },
+    {
+      "skill": "animation-vocabulary",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/animation-vocabulary"
+    },
+    {
+      "skill": "baoyu-article-illustrator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-article-illustrator"
     },
     {
       "skill": "behavior-validator",
@@ -606,20 +594,200 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/brandkit"
     },
     {
-      "skill": "dasheng-hotspot-radar",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-hotspot-radar"
+      "skill": "design-taste-frontend",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/design-taste-frontend"
     },
     {
-      "skill": "data-analyst",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/data-analyst"
+      "skill": "emil-design-eng",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/emil-design-eng"
+    },
+    {
+      "skill": "find-animation-opportunities",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/find-animation-opportunities"
+    },
+    {
+      "skill": "gsap-plugins",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-plugins"
+    },
+    {
+      "skill": "gsap-timeline",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-timeline"
+    },
+    {
+      "skill": "guizang-social-card-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/guizang-social-card-skill"
+    },
+    {
+      "skill": "high-end-visual-design",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/high-end-visual-design"
+    },
+    {
+      "skill": "humanizer-zh",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/humanizer-zh"
+    },
+    {
+      "skill": "ian-xiaohei-illustrations",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ian-xiaohei-illustrations"
+    },
+    {
+      "skill": "image-to-code",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/image-to-code"
+    },
+    {
+      "skill": "improve-animations",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/improve-animations"
+    },
+    {
+      "skill": "pick-ui-library",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pick-ui-library"
+    },
+    {
+      "skill": "review-animations",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/review-animations"
+    },
+    {
+      "skill": "scroll-world",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scroll-world"
+    },
+    {
+      "skill": "seedance2-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/seedance2-skill"
+    },
+    {
+      "skill": "writing-plans",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/writing-plans"
+    },
+    {
+      "skill": "claude-mem-plugin",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/claude-mem-plugin"
+    },
+    {
+      "skill": "gsap-core",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-core"
+    },
+    {
+      "skill": "mcp-builder",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/mcp-builder"
+    },
+    {
+      "skill": "dasheng-hotspot-radar",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-hotspot-radar"
     },
     {
       "skill": "dbskill",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dbskill"
     },
     {
-      "skill": "design-taste-frontend",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/design-taste-frontend"
+      "skill": "feishu-doc-creator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/feishu-doc-creator"
+    },
+    {
+      "skill": "generative-ui",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/generative-ui"
+    },
+    {
+      "skill": "khazix-skills",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/khazix-skills"
+    },
+    {
+      "skill": "nano-pdf",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/nano-pdf"
+    },
+    {
+      "skill": "openclaw-stock-kb",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-stock-kb"
+    },
+    {
+      "skill": "skill-integration-tester",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-integration-tester"
+    },
+    {
+      "skill": "social-content",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/social-content"
+    },
+    {
+      "skill": "twitter-reader",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/twitter-reader"
+    },
+    {
+      "skill": "data-analyst",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/data-analyst"
+    },
+    {
+      "skill": "gsap-frameworks",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-frameworks"
+    },
+    {
+      "skill": "gsap-performance",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-performance"
+    },
+    {
+      "skill": "gsap-react",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-react"
+    },
+    {
+      "skill": "gsap-scrolltrigger",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-scrolltrigger"
+    },
+    {
+      "skill": "gsap-utils",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-utils"
+    },
+    {
+      "skill": "proactive-agent",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/proactive-agent"
+    },
+    {
+      "skill": "scenario-analyzer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scenario-analyzer"
+    },
+    {
+      "skill": "scientific-illustrator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scientific-illustrator"
+    },
+    {
+      "skill": "skill-designer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-designer"
+    },
+    {
+      "skill": "a-stock-data",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/a-stock-data"
+    },
+    {
+      "skill": "adaptyv",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/adaptyv"
+    },
+    {
+      "skill": "aeon",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/aeon"
+    },
+    {
+      "skill": "agent-harness-construction",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-harness-construction"
+    },
+    {
+      "skill": "analytical-method-validation",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/analytical-method-validation"
+    },
+    {
+      "skill": "animation",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/animation"
+    },
+    {
+      "skill": "anndata",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anndata"
+    },
+    {
+      "skill": "arbor",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/arbor"
+    },
+    {
+      "skill": "baoyu-youtube-transcript",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-youtube-transcript"
+    },
+    {
+      "skill": "cli-backup-sync",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/cli-backup-sync"
     },
     {
       "skill": "design-taste-frontend-v1",
@@ -650,80 +818,20 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/edge-strategy-reviewer"
     },
     {
-      "skill": "emil-design-eng",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/emil-design-eng"
-    },
-    {
-      "skill": "feishu-doc-creator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/feishu-doc-creator"
-    },
-    {
-      "skill": "find-animation-opportunities",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/find-animation-opportunities"
-    },
-    {
       "skill": "full-output-enforcement",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/full-output-enforcement"
     },
     {
-      "skill": "generative-ui",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/generative-ui"
+      "skill": "global-stock-data",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/global-stock-data"
     },
     {
       "skill": "gpt-taste",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gpt-taste"
     },
     {
-      "skill": "gsap-core",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-core"
-    },
-    {
-      "skill": "gsap-frameworks",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-frameworks"
-    },
-    {
-      "skill": "gsap-performance",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-performance"
-    },
-    {
-      "skill": "gsap-plugins",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-plugins"
-    },
-    {
-      "skill": "gsap-react",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-react"
-    },
-    {
-      "skill": "gsap-scrolltrigger",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-scrolltrigger"
-    },
-    {
-      "skill": "gsap-timeline",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-timeline"
-    },
-    {
-      "skill": "gsap-utils",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gsap-utils"
-    },
-    {
       "skill": "gstack",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gstack"
-    },
-    {
-      "skill": "high-end-visual-design",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/high-end-visual-design"
-    },
-    {
-      "skill": "humanizer-zh",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/humanizer-zh"
-    },
-    {
-      "skill": "ian-xiaohei-illustrations",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ian-xiaohei-illustrations"
-    },
-    {
-      "skill": "image-to-code",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/image-to-code"
     },
     {
       "skill": "imagegen-frontend-mobile",
@@ -738,48 +846,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/impeccable"
     },
     {
-      "skill": "improve-animations",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/improve-animations"
-    },
-    {
       "skill": "industrial-brutalist-ui",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/industrial-brutalist-ui"
-    },
-    {
-      "skill": "khazix-skills",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/khazix-skills"
     },
     {
       "skill": "linkedin-reader",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/linkedin-reader"
     },
     {
-      "skill": "minimalist-ui",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimalist-ui"
-    },
-    {
       "skill": "multi-search-engine",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/multi-search-engine"
-    },
-    {
-      "skill": "nano-pdf",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/nano-pdf"
-    },
-    {
-      "skill": "openclaw-stock-kb",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-stock-kb"
     },
     {
       "skill": "opencli-reader",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/opencli-reader"
     },
     {
-      "skill": "pick-ui-library",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pick-ui-library"
+      "skill": "ponytail-audit",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-audit"
     },
     {
-      "skill": "proactive-agent",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/proactive-agent"
+      "skill": "ponytail-help",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-help"
     },
     {
       "skill": "redesign-existing-projects",
@@ -790,32 +878,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/reflection"
     },
     {
-      "skill": "review-animations",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/review-animations"
-    },
-    {
-      "skill": "scenario-analyzer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scenario-analyzer"
-    },
-    {
-      "skill": "scroll-world",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/scroll-world"
-    },
-    {
       "skill": "self-improving-agent-cn",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/self-improving-agent-cn"
-    },
-    {
-      "skill": "skill-designer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-designer"
-    },
-    {
-      "skill": "skill-integration-tester",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-integration-tester"
-    },
-    {
-      "skill": "social-content",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/social-content"
     },
     {
       "skill": "stitch-design-taste",
@@ -830,20 +894,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/telegram-reader"
     },
     {
-      "skill": "twitter-reader",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/twitter-reader"
-    },
-    {
-      "skill": "writing-plans",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/writing-plans"
-    },
-    {
       "skill": "yc-reader",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/yc-reader"
     },
     {
-      "skill": "dasheng-vox-skills",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-vox-skills"
+      "skill": "agent-introspection-debugging",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-introspection-debugging"
+    },
+    {
+      "skill": "dasheng-html-video-bridge",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-html-video-bridge"
+    },
+    {
+      "skill": "dasheng-video-director",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-director"
+    },
+    {
+      "skill": "dasheng-video-talking-head",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-talking-head"
+    },
+    {
+      "skill": "url-to-markdown",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/url-to-markdown"
     },
     {
       "skill": "agent-browser",
@@ -854,44 +926,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/chrome-devtools-mcp"
     },
     {
-      "skill": "mcp-builder",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/mcp-builder"
+      "skill": "dasheng-vox-skills",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-vox-skills"
     },
     {
-      "skill": "url-to-markdown",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/url-to-markdown"
-    },
-    {
-      "skill": "video-autopilot-kit",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/video-autopilot-kit"
-    },
-    {
-      "skill": "dasheng-finance-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-finance-data"
-    },
-    {
-      "skill": "github",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/github"
-    },
-    {
-      "skill": "global-stock-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/global-stock-data"
-    },
-    {
-      "skill": "uzi-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill"
-    },
-    {
-      "skill": "yfinance-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/yfinance-data"
-    },
-    {
-      "skill": "agent-eval",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-eval"
-    },
-    {
-      "skill": "agent-introspection-debugging",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-introspection-debugging"
+      "skill": "baoyu-cover-image",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-cover-image"
     },
     {
       "skill": "baoyu-format-markdown",
@@ -902,44 +942,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-infographic"
     },
     {
-      "skill": "baoyu-skills",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-skills"
-    },
-    {
-      "skill": "baoyu-translate",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-translate"
-    },
-    {
       "skill": "bilibili-upload-bridge",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/bilibili-upload-bridge"
-    },
-    {
-      "skill": "capability-evolver",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/capability-evolver"
-    },
-    {
-      "skill": "channels-account-launch-expert",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/channels-account-launch-expert"
-    },
-    {
-      "skill": "colleague-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/colleague-skill"
     },
     {
       "skill": "dasheng-html-anything-bridge",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-html-anything-bridge"
     },
     {
-      "skill": "dasheng-html-video-bridge",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-html-video-bridge"
-    },
-    {
       "skill": "dasheng-media-sop",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-media-sop"
-    },
-    {
-      "skill": "dasheng-paradigm-profiler",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-paradigm-profiler"
     },
     {
       "skill": "dasheng-publish-operations-bridge",
@@ -970,10 +982,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-style-profiler"
     },
     {
-      "skill": "dasheng-video-director",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-director"
-    },
-    {
       "skill": "dasheng-video-explainer-html",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-explainer-html"
     },
@@ -986,32 +994,84 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-style-trainer"
     },
     {
-      "skill": "dasheng-video-talking-head",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-talking-head"
+      "skill": "social-auto-upload-bridge",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/social-auto-upload-bridge"
+    },
+    {
+      "skill": "video-autopilot-kit",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/video-autopilot-kit"
+    },
+    {
+      "skill": "yfinance-data",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/yfinance-data"
+    },
+    {
+      "skill": "agent-reach",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-reach"
+    },
+    {
+      "skill": "baoyu-skills",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-skills"
+    },
+    {
+      "skill": "baoyu-xhs-images",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-xhs-images"
+    },
+    {
+      "skill": "dasheng-paradigm-profiler",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-paradigm-profiler"
     },
     {
       "skill": "douyin-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/douyin-account-launch-expert"
     },
     {
+      "skill": "github",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/github"
+    },
+    {
+      "skill": "gpt-image-2-style-library",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gpt-image-2-style-library"
+    },
+    {
       "skill": "jiebang",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/jiebang"
     },
     {
-      "skill": "skill-idea-miner",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-idea-miner"
+      "skill": "llmquant-macro",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-macro"
     },
     {
-      "skill": "social-auto-upload-bridge",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/social-auto-upload-bridge"
+      "skill": "wb-xhs-topic-bank",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/wb-xhs-topic-bank"
     },
     {
-      "skill": "startup-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/startup-analysis"
+      "skill": "x-twitter-cold-start-expert",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/x-twitter-cold-start-expert"
     },
     {
-      "skill": "tech-earnings-deepdive",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tech-earnings-deepdive"
+      "skill": "baoyu-slide-deck",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-slide-deck"
+    },
+    {
+      "skill": "llmquant-credit",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-credit"
+    },
+    {
+      "skill": "llmquant-portfolio",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-portfolio"
+    },
+    {
+      "skill": "llmquant-portfolio-lab",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-portfolio-lab"
+    },
+    {
+      "skill": "llmquant-risk",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-risk"
+    },
+    {
+      "skill": "uzi-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill"
     },
     {
       "skill": "wb-xhs-account-profile",
@@ -1034,20 +1094,160 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/wb-xhs-schedule-review"
     },
     {
-      "skill": "wb-xhs-topic-bank",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/wb-xhs-topic-bank"
-    },
-    {
       "skill": "wechat-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/wechat-account-launch-expert"
     },
     {
-      "skill": "x-twitter-cold-start-expert",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/x-twitter-cold-start-expert"
-    },
-    {
       "skill": "xiaohongshu-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/xiaohongshu-account-launch-expert"
+    },
+    {
+      "skill": "abusing-shadow-credentials-for-privesc",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/abusing-shadow-credentials-for-privesc"
+    },
+    {
+      "skill": "agent-eval",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-eval"
+    },
+    {
+      "skill": "analyzing-active-directory-acl-abuse",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/analyzing-active-directory-acl-abuse"
+    },
+    {
+      "skill": "baoyu-comic",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-comic"
+    },
+    {
+      "skill": "baoyu-translate",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-translate"
+    },
+    {
+      "skill": "capability-evolver",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/capability-evolver"
+    },
+    {
+      "skill": "channels-account-launch-expert",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/channels-account-launch-expert"
+    },
+    {
+      "skill": "cli-a2a",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/cli-a2a"
+    },
+    {
+      "skill": "cli-chat",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/cli-chat"
+    },
+    {
+      "skill": "cli-compression",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/cli-compression"
+    },
+    {
+      "skill": "code-review",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/code-review"
+    },
+    {
+      "skill": "colleague-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/colleague-skill"
+    },
+    {
+      "skill": "etf-premium",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/etf-premium"
+    },
+    {
+      "skill": "llmquant-options",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-options"
+    },
+    {
+      "skill": "market-environment-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-environment-analysis"
+    },
+    {
+      "skill": "policy-monitor",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/policy-monitor"
+    },
+    {
+      "skill": "ponytail-debt",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-debt"
+    },
+    {
+      "skill": "ponytail-gain",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-gain"
+    },
+    {
+      "skill": "ponytail-review",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-review"
+    },
+    {
+      "skill": "skill-idea-miner",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-idea-miner"
+    },
+    {
+      "skill": "startup-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/startup-analysis"
+    },
+    {
+      "skill": "tech-earnings-deepdive",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tech-earnings-deepdive"
+    },
+    {
+      "skill": "alphaear-news",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-news"
+    },
+    {
+      "skill": "llmquant-investor-lenses",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-investor-lenses"
+    },
+    {
+      "skill": "baoyu-url-to-markdown",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-url-to-markdown"
+    },
+    {
+      "skill": "content-strategy",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/content-strategy"
+    },
+    {
+      "skill": "llmquant-commodities",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-commodities"
+    },
+    {
+      "skill": "llmquant-data",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-data"
+    },
+    {
+      "skill": "llmquant-equities",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-equities"
+    },
+    {
+      "skill": "llmquant-equity-derivatives",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-equity-derivatives"
+    },
+    {
+      "skill": "llmquant-rates-fx",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-rates-fx"
+    },
+    {
+      "skill": "llmquant-strategies",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-strategies"
+    },
+    {
+      "skill": "market-breadth-analyzer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-breadth-analyzer"
+    },
+    {
+      "skill": "minimax-docx",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx"
+    },
+    {
+      "skill": "minimax-xlsx",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx"
+    },
+    {
+      "skill": "trader-memory-core",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/trader-memory-core"
+    },
+    {
+      "skill": "agentmail-mcp",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agentmail-mcp"
     },
     {
       "skill": "alphagbm-alert",
@@ -1174,76 +1374,40 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/android-native-dev"
     },
     {
-      "skill": "content-strategy",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/content-strategy"
+      "skill": "baoyu-image-gen",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-image-gen"
+    },
+    {
+      "skill": "buy-side-equity-research-memo",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/buy-side-equity-research-memo"
     },
     {
       "skill": "dasheng-video-omni-browser",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-video-omni-browser"
     },
     {
+      "skill": "dual-axis-skill-reviewer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dual-axis-skill-reviewer"
+    },
+    {
       "skill": "flutter-dev",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/flutter-dev"
-    },
-    {
-      "skill": "ios-application-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ios-application-dev"
-    },
-    {
-      "skill": "macro-liquidity",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/macro-liquidity"
-    },
-    {
-      "skill": "pptx-generator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pptx-generator"
-    },
-    {
-      "skill": "shader-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/shader-dev"
-    },
-    {
-      "skill": "agent-reach",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-reach"
-    },
-    {
-      "skill": "agentmail-mcp",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agentmail-mcp"
-    },
-    {
-      "skill": "baoyu-url-to-markdown",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-url-to-markdown"
-    },
-    {
-      "skill": "funda-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/funda-data"
     },
     {
       "skill": "guizang-ppt-skill",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/guizang-ppt-skill"
     },
     {
-      "skill": "llmquant-commodities",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-commodities"
+      "skill": "ima",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ima"
     },
     {
-      "skill": "llmquant-credit",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-credit"
+      "skill": "ios-application-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ios-application-dev"
     },
     {
       "skill": "llmquant-crypto",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-crypto"
-    },
-    {
-      "skill": "llmquant-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-data"
-    },
-    {
-      "skill": "llmquant-equities",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-equities"
-    },
-    {
-      "skill": "llmquant-equity-derivatives",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-equity-derivatives"
     },
     {
       "skill": "llmquant-etfs",
@@ -1254,48 +1418,68 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-events"
     },
     {
-      "skill": "llmquant-investor-lenses",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-investor-lenses"
-    },
-    {
-      "skill": "llmquant-macro",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-macro"
-    },
-    {
       "skill": "llmquant-market-intelligence",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-market-intelligence"
-    },
-    {
-      "skill": "llmquant-options",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-options"
-    },
-    {
-      "skill": "llmquant-portfolio",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-portfolio"
-    },
-    {
-      "skill": "llmquant-portfolio-lab",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-portfolio-lab"
     },
     {
       "skill": "llmquant-prediction-markets",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-prediction-markets"
     },
     {
-      "skill": "llmquant-rates-fx",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-rates-fx"
-    },
-    {
-      "skill": "llmquant-risk",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-risk"
-    },
-    {
-      "skill": "llmquant-strategies",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/llmquant-strategies"
+      "skill": "macro-liquidity",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/macro-liquidity"
     },
     {
       "skill": "minimax-web-search",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-web-search"
+    },
+    {
+      "skill": "paper-framework-figure-studio-pro",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/paper-framework-figure-studio-pro"
+    },
+    {
+      "skill": "pptx-generator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pptx-generator"
+    },
+    {
+      "skill": "react-native-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/react-native-dev"
+    },
+    {
+      "skill": "sector-analyst",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/sector-analyst"
+    },
+    {
+      "skill": "shader-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/shader-dev"
+    },
+    {
+      "skill": "tushare-openclaw-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tushare-openclaw-skill"
+    },
+    {
+      "skill": "akshare-stock",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/akshare-stock"
+    },
+    {
+      "skill": "alphaear-predictor",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor"
+    },
+    {
+      "skill": "bayesian-intrinsic-growth-valuation",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/bayesian-intrinsic-growth-valuation"
+    },
+    {
+      "skill": "codex-responses-tooling",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/codex-responses-tooling"
+    },
+    {
+      "skill": "company-valuation",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/company-valuation"
+    },
+    {
+      "skill": "funda-data",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/funda-data"
     },
     {
       "skill": "news-radar",
@@ -1310,84 +1494,40 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-cron-setup"
     },
     {
-      "skill": "alphaear-deepear-lite",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-deepear-lite"
+      "skill": "technical-analyst",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/technical-analyst"
     },
     {
       "skill": "alphaear-logic-visualizer",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-logic-visualizer"
     },
     {
-      "skill": "alphaear-news",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-news"
-    },
-    {
-      "skill": "alphaear-predictor",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor"
-    },
-    {
       "skill": "alphaear-signal-tracker",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker"
     },
     {
-      "skill": "bayesian-intrinsic-growth-valuation",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/bayesian-intrinsic-growth-valuation"
+      "skill": "anthropic-fs-equity-research-catalyst-calendar",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-catalyst-calendar"
     },
     {
-      "skill": "buy-side-equity-research-memo",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/buy-side-equity-research-memo"
+      "skill": "earnings-preview",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-preview"
     },
     {
-      "skill": "eigenflux",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/eigenflux"
+      "skill": "gpt-image",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gpt-image"
     },
     {
-      "skill": "etf-premium",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/etf-premium"
+      "skill": "market-news-analyst",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-news-analyst"
     },
     {
-      "skill": "gf-dma-health-index",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gf-dma-health-index"
+      "skill": "openclaw-stock-data-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-stock-data-skill"
     },
     {
-      "skill": "hormuz-strait",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/hormuz-strait"
-    },
-    {
-      "skill": "kanchi-dividend-us-tax-accounting",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/kanchi-dividend-us-tax-accounting"
-    },
-    {
-      "skill": "market-breadth-analyzer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-breadth-analyzer"
-    },
-    {
-      "skill": "paper-framework-figure-studio-pro",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/paper-framework-figure-studio-pro"
-    },
-    {
-      "skill": "policy-monitor",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/policy-monitor"
-    },
-    {
-      "skill": "serenity-alpha",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/serenity-alpha"
-    },
-    {
-      "skill": "stanley-druckenmiller-investment",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stanley-druckenmiller-investment"
-    },
-    {
-      "skill": "tam-adj-peg",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tam-adj-peg"
-    },
-    {
-      "skill": "trade-hypothesis-ideator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/trade-hypothesis-ideator"
-    },
-    {
-      "skill": "trader-memory-core",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/trader-memory-core"
+      "skill": "portfolio-manager",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/portfolio-manager"
     },
     {
       "skill": "uptrend-analyzer",
@@ -1402,36 +1542,84 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/us-stock-analysis"
     },
     {
-      "skill": "a-stock-data",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/a-stock-data"
+      "skill": "video-shotcraft",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/video-shotcraft"
     },
     {
-      "skill": "agent-architecture-audit",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-architecture-audit"
+      "skill": "achieving-cmmc-level-2-compliance",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/achieving-cmmc-level-2-compliance"
+    },
+    {
+      "skill": "acquiring-disk-image-with-dd-and-dcfldd",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/acquiring-disk-image-with-dd-and-dcfldd"
     },
     {
       "skill": "agentmail-toolkit",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agentmail-toolkit"
     },
     {
-      "skill": "akshare-stock",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/akshare-stock"
+      "skill": "alphaear-deepear-lite",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-deepear-lite"
     },
     {
-      "skill": "animation",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/animation"
+      "skill": "breadth-chart-analyst",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/breadth-chart-analyst"
     },
     {
-      "skill": "baoyu-article-illustrator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-article-illustrator"
+      "skill": "eigenflux",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/eigenflux"
     },
     {
-      "skill": "baoyu-image-gen",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-image-gen"
+      "skill": "estimate-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/estimate-analysis"
     },
     {
-      "skill": "baoyu-youtube-transcript",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-youtube-transcript"
+      "skill": "gf-dma-health-index",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gf-dma-health-index"
+    },
+    {
+      "skill": "hormuz-strait",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/hormuz-strait"
+    },
+    {
+      "skill": "kanchi-dividend-us-tax-accounting",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/kanchi-dividend-us-tax-accounting"
+    },
+    {
+      "skill": "serenity-alpha",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/serenity-alpha"
+    },
+    {
+      "skill": "stanley-druckenmiller-investment",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stanley-druckenmiller-investment"
+    },
+    {
+      "skill": "stock-liquidity",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-liquidity"
+    },
+    {
+      "skill": "tam-adj-peg",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tam-adj-peg"
+    },
+    {
+      "skill": "tavily-search",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tavily-search"
+    },
+    {
+      "skill": "trade-hypothesis-ideator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/trade-hypothesis-ideator"
+    },
+    {
+      "skill": "agent-architecture-audit",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agent-architecture-audit"
+    },
+    {
+      "skill": "anthropic-fs-financial-analysis-dcf-model",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-dcf-model"
+    },
+    {
+      "skill": "baoyu-markdown-to-html",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-markdown-to-html"
     },
     {
       "skill": "book-to-skill",
@@ -1442,24 +1630,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/btc-bottom-model"
     },
     {
-      "skill": "dual-axis-skill-reviewer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dual-axis-skill-reviewer"
-    },
-    {
-      "skill": "guizang-social-card-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/guizang-social-card-skill"
-    },
-    {
-      "skill": "ima",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ima"
+      "skill": "dasheng-xhs-publish-bridge",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-xhs-publish-bridge"
     },
     {
       "skill": "lark-calendar",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/lark-calendar"
-    },
-    {
-      "skill": "openclaw-stock-data-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-stock-data-skill"
     },
     {
       "skill": "paperless-docs",
@@ -1470,48 +1646,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/paperless-ngx-tools"
     },
     {
-      "skill": "seedance2-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/seedance2-skill"
-    },
-    {
-      "skill": "tavily-search",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tavily-search"
-    },
-    {
-      "skill": "tushare-openclaw-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tushare-openclaw-skill"
-    },
-    {
-      "skill": "us-market-sentiment",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/us-market-sentiment"
-    },
-    {
-      "skill": "westockdata",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/westockdata"
-    },
-    {
-      "skill": "buddy-sings",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/buddy-sings"
-    },
-    {
-      "skill": "marketingskills",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/marketingskills"
-    },
-    {
       "skill": "alphaear-search",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-search"
     },
     {
-      "skill": "anthropic-fs-equity-research-catalyst-calendar",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-catalyst-calendar"
+      "skill": "anthropic-fs-financial-analysis-comps-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-comps-analysis"
     },
     {
-      "skill": "anthropic-fs-equity-research-earnings-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-earnings-analysis"
+      "skill": "data-quality-checker",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/data-quality-checker"
     },
     {
-      "skill": "anthropic-fs-equity-research-earnings-preview",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-earnings-preview"
+      "skill": "institutional-flow-tracker",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/institutional-flow-tracker"
+    },
+    {
+      "skill": "macro-regime-detector",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/macro-regime-detector"
+    },
+    {
+      "skill": "alphaear-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-sentiment"
     },
     {
       "skill": "anthropic-fs-equity-research-idea-generation",
@@ -1520,14 +1676,6 @@
     {
       "skill": "anthropic-fs-equity-research-initiating-coverage",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-initiating-coverage"
-    },
-    {
-      "skill": "anthropic-fs-equity-research-model-update",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-model-update"
-    },
-    {
-      "skill": "anthropic-fs-equity-research-morning-note",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-morning-note"
     },
     {
       "skill": "anthropic-fs-equity-research-sector-overview",
@@ -1542,24 +1690,96 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-3-statement-model"
     },
     {
+      "skill": "anthropic-fs-financial-analysis-competitive-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-competitive-analysis"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-wealth-management-portfolio-rebalance"
+    },
+    {
+      "skill": "baoyu-post-to-weibo",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-weibo"
+    },
+    {
+      "skill": "baoyu-post-to-x",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-x"
+    },
+    {
+      "skill": "marketingskills",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/marketingskills"
+    },
+    {
+      "skill": "us-market-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/us-market-sentiment"
+    },
+    {
+      "skill": "westockdata",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/westockdata"
+    },
+    {
+      "skill": "anthropic-fs-equity-research-earnings-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-earnings-analysis"
+    },
+    {
+      "skill": "anthropic-fs-equity-research-earnings-preview",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-earnings-preview"
+    },
+    {
+      "skill": "anthropic-fs-lseg-equity-research",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-equity-research"
+    },
+    {
+      "skill": "anthropic-fs-lseg-fixed-income-portfolio",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-fixed-income-portfolio"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-wechat"
+    },
+    {
+      "skill": "buddy-sings",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/buddy-sings"
+    },
+    {
+      "skill": "economic-calendar-fetcher",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/economic-calendar-fetcher"
+    },
+    {
+      "skill": "minimax-music-gen",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-music-gen"
+    },
+    {
+      "skill": "minimax-music-playlist",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-music-playlist"
+    },
+    {
+      "skill": "stock-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-analysis"
+    },
+    {
+      "skill": "value-dividend-screener",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/value-dividend-screener"
+    },
+    {
+      "skill": "abusing-dpapi-for-credential-access",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/abusing-dpapi-for-credential-access"
+    },
+    {
+      "skill": "anthropic-fs-equity-research-model-update",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-model-update"
+    },
+    {
+      "skill": "anthropic-fs-equity-research-morning-note",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-equity-research-morning-note"
+    },
+    {
       "skill": "anthropic-fs-financial-analysis-audit-xls",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-audit-xls"
     },
     {
       "skill": "anthropic-fs-financial-analysis-clean-data-xls",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-clean-data-xls"
-    },
-    {
-      "skill": "anthropic-fs-financial-analysis-competitive-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-competitive-analysis"
-    },
-    {
-      "skill": "anthropic-fs-financial-analysis-comps-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-comps-analysis"
-    },
-    {
-      "skill": "anthropic-fs-financial-analysis-dcf-model",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-financial-analysis-dcf-model"
     },
     {
       "skill": "anthropic-fs-financial-analysis-deck-refresh",
@@ -1658,14 +1878,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-bond-relative-value"
     },
     {
-      "skill": "anthropic-fs-lseg-equity-research",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-equity-research"
-    },
-    {
-      "skill": "anthropic-fs-lseg-fixed-income-portfolio",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-fixed-income-portfolio"
-    },
-    {
       "skill": "anthropic-fs-lseg-fx-carry-trade",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-lseg-fx-carry-trade"
     },
@@ -1758,36 +1970,48 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-wealth-management-investment-proposal"
     },
     {
-      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-wealth-management-portfolio-rebalance"
-    },
-    {
       "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/anthropic-fs-wealth-management-tax-loss-harvesting"
     },
     {
-      "skill": "baoyu-markdown-to-html",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-markdown-to-html"
+      "skill": "baoyu-compress-image",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-compress-image"
     },
     {
-      "skill": "dasheng-xhs-publish-bridge",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dasheng-xhs-publish-bridge"
+      "skill": "finance-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finance-sentiment"
     },
     {
-      "skill": "market-news-analyst",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-news-analyst"
+      "skill": "frontend-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/frontend-dev"
     },
     {
-      "skill": "portfolio-manager",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/portfolio-manager"
+      "skill": "alphaear-stock",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-stock"
     },
     {
-      "skill": "video-shotcraft",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/video-shotcraft"
+      "skill": "finance-skill-creator",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finance-skill-creator"
     },
     {
-      "skill": "us-value-investing",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/us-value-investing"
+      "skill": "gemini-image-service",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gemini-image-service"
+    },
+    {
+      "skill": "position-sizer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/position-sizer"
+    },
+    {
+      "skill": "pybroker-backtest-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pybroker-backtest-skill"
+    },
+    {
+      "skill": "sepa-strategy",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/sepa-strategy"
+    },
+    {
+      "skill": "stock-monitor-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-monitor-skill"
     },
     {
       "skill": "agentmail-cli",
@@ -1798,140 +2022,20 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-reporter"
     },
     {
-      "skill": "alphaear-sentiment",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-sentiment"
-    },
-    {
-      "skill": "alphaear-stock",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-stock"
-    },
-    {
-      "skill": "baoyu-comic",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-comic"
-    },
-    {
-      "skill": "baoyu-compress-image",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-compress-image"
-    },
-    {
-      "skill": "baoyu-cover-image",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-cover-image"
-    },
-    {
-      "skill": "baoyu-post-to-wechat",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-wechat"
-    },
-    {
-      "skill": "baoyu-post-to-weibo",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-weibo"
-    },
-    {
-      "skill": "baoyu-post-to-x",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-post-to-x"
-    },
-    {
-      "skill": "baoyu-slide-deck",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-slide-deck"
-    },
-    {
-      "skill": "baoyu-xhs-images",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/baoyu-xhs-images"
-    },
-    {
-      "skill": "breadth-chart-analyst",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/breadth-chart-analyst"
-    },
-    {
-      "skill": "breakout-trade-planner",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/breakout-trade-planner"
-    },
-    {
-      "skill": "canslim-screener",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/canslim-screener"
-    },
-    {
-      "skill": "company-valuation",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/company-valuation"
-    },
-    {
-      "skill": "data-quality-checker",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/data-quality-checker"
-    },
-    {
       "skill": "dividend-growth-pullback-screener",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/dividend-growth-pullback-screener"
-    },
-    {
-      "skill": "downtrend-duration-analyzer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/downtrend-duration-analyzer"
-    },
-    {
-      "skill": "earnings-calendar",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-calendar"
-    },
-    {
-      "skill": "earnings-preview",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-preview"
     },
     {
       "skill": "earnings-recap",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-recap"
     },
     {
-      "skill": "earnings-trade-analyzer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-trade-analyzer"
-    },
-    {
-      "skill": "economic-calendar-fetcher",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/economic-calendar-fetcher"
-    },
-    {
-      "skill": "edge-candidate-agent",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/edge-candidate-agent"
-    },
-    {
-      "skill": "edge-hint-extractor",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/edge-hint-extractor"
-    },
-    {
-      "skill": "estimate-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/estimate-analysis"
-    },
-    {
       "skill": "exposure-coach",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/exposure-coach"
     },
     {
-      "skill": "finance-sentiment",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finance-sentiment"
-    },
-    {
-      "skill": "finance-skill-creator",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finance-skill-creator"
-    },
-    {
-      "skill": "finviz-screener",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finviz-screener"
-    },
-    {
-      "skill": "ftd-detector",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ftd-detector"
-    },
-    {
-      "skill": "gemini-image-service",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gemini-image-service"
-    },
-    {
-      "skill": "ibd-distribution-day-monitor",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ibd-distribution-day-monitor"
-    },
-    {
       "skill": "inference-skills",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/inference-skills"
-    },
-    {
-      "skill": "institutional-flow-tracker",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/institutional-flow-tracker"
     },
     {
       "skill": "kanchi-dividend-review-monitor",
@@ -1942,28 +2046,88 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/kanchi-dividend-sop"
     },
     {
-      "skill": "macro-regime-detector",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/macro-regime-detector"
-    },
-    {
-      "skill": "market-environment-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-environment-analysis"
-    },
-    {
       "skill": "market-top-detector",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/market-top-detector"
+    },
+    {
+      "skill": "media-downloader",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/media-downloader"
     },
     {
       "skill": "minimax-image-understanding",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-image-understanding"
     },
     {
-      "skill": "options-payoff",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/options-payoff"
-    },
-    {
       "skill": "options-strategy-advisor",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/options-strategy-advisor"
+    },
+    {
+      "skill": "stock-daily-analysis-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-daily-analysis-skill"
+    },
+    {
+      "skill": "theme-detector",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/theme-detector"
+    },
+    {
+      "skill": "us-value-investing",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/us-value-investing"
+    },
+    {
+      "skill": "vision-analysis",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vision-analysis"
+    },
+    {
+      "skill": "breakout-trade-planner",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/breakout-trade-planner"
+    },
+    {
+      "skill": "canslim-screener",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/canslim-screener"
+    },
+    {
+      "skill": "cli-batches",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/cli-batches"
+    },
+    {
+      "skill": "downtrend-duration-analyzer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/downtrend-duration-analyzer"
+    },
+    {
+      "skill": "earnings-calendar",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-calendar"
+    },
+    {
+      "skill": "earnings-trade-analyzer",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/earnings-trade-analyzer"
+    },
+    {
+      "skill": "edge-candidate-agent",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/edge-candidate-agent"
+    },
+    {
+      "skill": "edge-hint-extractor",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/edge-hint-extractor"
+    },
+    {
+      "skill": "finviz-screener",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/finviz-screener"
+    },
+    {
+      "skill": "ftd-detector",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ftd-detector"
+    },
+    {
+      "skill": "fullstack-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/fullstack-dev"
+    },
+    {
+      "skill": "ibd-distribution-day-monitor",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ibd-distribution-day-monitor"
+    },
+    {
+      "skill": "options-payoff",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/options-payoff"
     },
     {
       "skill": "oracle",
@@ -1982,124 +2146,36 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pead-screener"
     },
     {
-      "skill": "position-sizer",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/position-sizer"
-    },
-    {
-      "skill": "pybroker-backtest-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pybroker-backtest-skill"
-    },
-    {
       "skill": "saas-valuation-compression",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/saas-valuation-compression"
-    },
-    {
-      "skill": "sector-analyst",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/sector-analyst"
-    },
-    {
-      "skill": "sepa-strategy",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/sepa-strategy"
     },
     {
       "skill": "signal-postmortem",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/signal-postmortem"
     },
     {
-      "skill": "stock-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-analysis"
-    },
-    {
       "skill": "stock-correlation",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-correlation"
-    },
-    {
-      "skill": "stock-daily-analysis-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-daily-analysis-skill"
-    },
-    {
-      "skill": "stock-liquidity",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-liquidity"
-    },
-    {
-      "skill": "stock-monitor-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/stock-monitor-skill"
-    },
-    {
-      "skill": "technical-analyst",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/technical-analyst"
-    },
-    {
-      "skill": "theme-detector",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/theme-detector"
-    },
-    {
-      "skill": "value-dividend-screener",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/value-dividend-screener"
     },
     {
       "skill": "vcp-screener",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vcp-screener"
     },
     {
-      "skill": "vision-analysis",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vision-analysis"
-    },
-    {
       "skill": "agentmail",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/agentmail"
-    },
-    {
-      "skill": "ai-image-generation",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ai-image-generation"
-    },
-    {
-      "skill": "frontend-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/frontend-dev"
-    },
-    {
-      "skill": "fullstack-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/fullstack-dev"
-    },
-    {
-      "skill": "media-downloader",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/media-downloader"
-    },
-    {
-      "skill": "minimax-docx",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx"
     },
     {
       "skill": "minimax-multimodal-toolkit",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-multimodal-toolkit"
     },
     {
-      "skill": "minimax-xlsx",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx"
-    },
-    {
       "skill": "notebooklm-skill",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/notebooklm-skill"
     },
     {
-      "skill": "react-native-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/react-native-dev"
-    },
-    {
-      "skill": "codex-responses-tooling",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/codex-responses-tooling"
-    },
-    {
       "skill": "gif-sticker-maker",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/gif-sticker-maker"
-    },
-    {
-      "skill": "minimax-music-gen",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-music-gen"
-    },
-    {
-      "skill": "minimax-music-playlist",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-music-playlist"
     }
   ]
 }

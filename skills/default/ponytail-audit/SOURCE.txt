@@ -1,0 +1,5 @@
+Source: https://github.com/DietrichGebert/ponytail
+Base source commit: main @ 2026-08-22
+License: MIT
+Stars at import: 107515
+Imported by: scripts/weekly_curation.py on 2026-08-22 (score 80).

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-22T09:22:01",
+  "checked_upstreams": 382,
+  "suggestions": [
+    {
+      "skill": "ai-image-generation",
+      "reason": "dominated_duplicate",
+      "detail": "conflict group 'image-generation' has a member scoring 85"
+    }
+  ],
+  "applied": [
+    "ai-image-generation"
+  ]
+}

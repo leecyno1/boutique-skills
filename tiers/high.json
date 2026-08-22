@@ -145,19 +145,6 @@
       ]
     },
     {
-      "id": "ai-image-generation",
-      "name": "ai-image-generation",
-      "description": "Generate AI images with GPT-Image-2, FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference.",
-      "manual": "skills/default/ai-image-generation/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ai-image-generation/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/ai-image-generation",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "akshare-stock",
       "name": "akshare-stock",
       "description": "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。",
@@ -5950,6 +5937,216 @@
       "groups": [
         "trading_finance"
       ]
+    },
+    {
+      "id": "ponytail-audit",
+      "name": "ponytail-audit",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "manual": "skills/default/ponytail-audit/SKILL.md",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ponytail-debt",
+      "name": "ponytail-debt",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "manual": "skills/default/ponytail-debt/SKILL.md",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ponytail-gain",
+      "name": "ponytail-gain",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "manual": "skills/default/ponytail-gain/SKILL.md",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ponytail-help",
+      "name": "ponytail-help",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "manual": "skills/default/ponytail-help/SKILL.md",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ponytail-review",
+      "name": "ponytail-review",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "manual": "skills/default/ponytail-review/SKILL.md",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "code-review",
+      "name": "code-review",
+      "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
+      "manual": "skills/default/code-review/SKILL.md",
+      "source": "https://github.com/shareAI-lab/learn-claude-code",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cli-a2a",
+      "name": "cli-a2a",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 340 providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
+      "manual": "skills/default/cli-a2a/SKILL.md",
+      "source": "https://github.com/diegosouzapw/OmniRoute",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cli-backup-sync",
+      "name": "cli-backup-sync",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 340 providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
+      "manual": "skills/default/cli-backup-sync/SKILL.md",
+      "source": "https://github.com/diegosouzapw/OmniRoute",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cli-batches",
+      "name": "cli-batches",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 340 providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
+      "manual": "skills/default/cli-batches/SKILL.md",
+      "source": "https://github.com/diegosouzapw/OmniRoute",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cli-chat",
+      "name": "cli-chat",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 340 providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
+      "manual": "skills/default/cli-chat/SKILL.md",
+      "source": "https://github.com/diegosouzapw/OmniRoute",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cli-compression",
+      "name": "cli-compression",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 340 providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 450+ contributors",
+      "manual": "skills/default/cli-compression/SKILL.md",
+      "source": "https://github.com/diegosouzapw/OmniRoute",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "adaptyv",
+      "name": "adaptyv",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "manual": "skills/default/adaptyv/SKILL.md",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "aeon",
+      "name": "aeon",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "manual": "skills/default/aeon/SKILL.md",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "analytical-method-validation",
+      "name": "analytical-method-validation",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "manual": "skills/default/analytical-method-validation/SKILL.md",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "anndata",
+      "name": "anndata",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "manual": "skills/default/anndata/SKILL.md",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "arbor",
+      "name": "arbor",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "manual": "skills/default/arbor/SKILL.md",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "abusing-dpapi-for-credential-access",
+      "name": "abusing-dpapi-for-credential-access",
+      "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+      "manual": "skills/default/abusing-dpapi-for-credential-access/SKILL.md",
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "abusing-shadow-credentials-for-privesc",
+      "name": "abusing-shadow-credentials-for-privesc",
+      "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+      "manual": "skills/default/abusing-shadow-credentials-for-privesc/SKILL.md",
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "achieving-cmmc-level-2-compliance",
+      "name": "achieving-cmmc-level-2-compliance",
+      "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+      "manual": "skills/default/achieving-cmmc-level-2-compliance/SKILL.md",
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "acquiring-disk-image-with-dd-and-dcfldd",
+      "name": "acquiring-disk-image-with-dd-and-dcfldd",
+      "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+      "manual": "skills/default/acquiring-disk-image-with-dd-and-dcfldd/SKILL.md",
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "analyzing-active-directory-acl-abuse",
+      "name": "analyzing-active-directory-acl-abuse",
+      "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+      "manual": "skills/default/analyzing-active-directory-acl-abuse/SKILL.md",
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
     }
   ]
 }
