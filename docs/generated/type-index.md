@@ -3,14 +3,14 @@
 | 类型 | 数量 |
 |---|---:|
 | 核心 Agent 能力 (`core-agent`) | 20 |
-| 搜索 / 研究 / 情报 (`search-research`) | 18 |
+| 搜索 / 研究 / 情报 (`search-research`) | 19 |
 | 浏览器 / 自动化 (`browser-automation`) | 2 |
 | 编程 / 工程工具 (`coding-devtools`) | 13 |
 | 数据分析 (`data-analysis`) | 9 |
 | 文档 / 办公 (`docs-office`) | 9 |
 | 设计 / UI (`design-ui`) | 41 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
-| 媒体生成 / 处理 (`media-generation`) | 36 |
+| 媒体生成 / 处理 (`media-generation`) | 37 |
 | 写作 / 内容 (`writing-content`) | 13 |
 | 营销 / 增长 (`marketing-growth`) | 18 |
 | 金融 / 交易 (`finance-trading`) | 110 |
@@ -74,6 +74,7 @@
 | `news-radar` | `L2 Professional` | 4★ | `l2`, `mcp-required`, `online`, `search-research` |
 | `notebooklm-py` | `L2 Professional` | 4★ | `browser-required`, `l2`, `online`, `search-research` |
 | `tavily-search` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
+| `gpt-image` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `paperless-docs` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `paperless-ngx-tools` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `minimax-multimodal-toolkit` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `l2`, `minimax_official`, `online`, `search-research` |
@@ -209,6 +210,7 @@
 | `video-autopilot-kit` | `L3 Specialist` | 4★ | `capcut`, `direct`, `ffmpeg`, `l3`, `media-generation`, `offline`, `short-video` |
 | `baoyu-slide-deck` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-comic` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
+| `gpt-image-2-style-library` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
 | `dasheng-video-omni-browser` | `L3 Specialist` | 4★ | `browser-automation`, `browser-required`, `dasheng-media-workflow`, `dasheng_media_workflow`, `l3`, `media-generation`, `online`, `optional`, `self-media-ops` |
 | `paper-framework-figure-studio-pro` | `L3 Specialist` | 4★ | `direct`, `human-in-the-loop`, `l3`, `media-generation`, `online`, `research-figures`, `scientific-visualization` |
 | `codex-responses-tooling` | `L3 Specialist` | 4★ | `direct`, `high_default`, `l3`, `media-generation`, `media_generation`, `online` |

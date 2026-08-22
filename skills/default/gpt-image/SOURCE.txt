@@ -1,0 +1,7 @@
+Source: https://github.com/wuyoscar/GPT-Image2-Skill
+Upstream path: skills/gpt-image
+Commit: 068dd9e24aadc8731e46f38548ca4dcd94515d35 (2026-08-10)
+License: MIT
+Stars at import: 4800
+Imported: 2026-08-22 by user request (manual import)
+Note: requires OPENAI_API_KEY (LLM-provider key, exempt from third-party-key policy); CLI via gpt-image/uv/uvx.

@@ -1,0 +1,7 @@
+Source: https://github.com/freestylefly/awesome-gpt-image-2
+Upstream path: agents/skills/gpt-image-2-style-library
+Commit: 3a9c63baa03e6bbe2f28c89a2654cf9845466646 (2026-08-21)
+License: MIT
+Stars at import: 11654
+Imported: 2026-08-22 by user request (manual import)
+Note: prompt-engineering skill only (style template library, no API calls).

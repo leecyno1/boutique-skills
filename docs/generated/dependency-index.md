@@ -2,10 +2,10 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 99 |
+| `api-key` | 100 |
 | `api-key+mcp-required` | 22 |
 | `browser-required` | 27 |
-| `direct` | 181 |
+| `direct` | 182 |
 | `mcp-required` | 73 |
 
 ## api-key
@@ -54,6 +54,7 @@
 | `tavily-search` | `OPENAI_API_KEY`, `TAVILY_API_KEY` | `browser`, `python` | `medium` |
 | `agent-architecture-audit` | `OPENAI_API_KEY` | 无 | `medium` |
 | `book-to-skill` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
+| `gpt-image` | `OPENAI_API_KEY` | 无 | `medium` |
 | `lark-calendar` | `FEISHU_APP_SECRET` | 无 | `medium` |
 | `paperless-docs` | `PAPERLESS_TOKEN` | 无 | `medium` |
 | `paperless-ngx-tools` | `PAPERLESS_TOKEN` | 无 | `medium` |
@@ -305,6 +306,7 @@
 | `channels-account-launch-expert` | 无 | 无 | `low` |
 | `colleague-skill` | 无 | 无 | `low` |
 | `etf-premium` | 无 | `python` | `medium` |
+| `gpt-image-2-style-library` | 无 | 无 | `low` |
 | `market-environment-analysis` | 无 | `python` | `medium` |
 | `policy-monitor` | 无 | 无 | `medium` |
 | `skill-idea-miner` | 无 | 无 | `low` |

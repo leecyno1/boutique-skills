@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-21",
+  "generated_at": "2026-08-22",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -13,15 +13,15 @@
     ]
   },
   "summary": {
-    "skills": 402,
-    "native_origin_verified_or_referenced": 396,
+    "skills": 404,
+    "native_origin_verified_or_referenced": 398,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 21,
-      "L2 Professional": 136,
-      "L3 Specialist": 245
+      "L2 Professional": 137,
+      "L3 Specialist": 246
     },
     "by_category": {
       "agent-orchestration": 6,
@@ -41,25 +41,25 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 18,
-      "media-generation": 36,
+      "media-generation": 37,
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 3,
-      "search-research": 18,
+      "search-research": 19,
       "security-audit": 1,
       "writing-content": 13
     },
     "by_access_mode": {
-      "api-key": 99,
+      "api-key": 100,
       "api-key+mcp-required": 22,
       "browser-required": 27,
-      "direct": 181,
+      "direct": 182,
       "mcp-required": 73
     },
     "by_stars": {
       "1★": 6,
       "3★": 101,
-      "4★": 190,
+      "4★": 192,
       "5★": 105
     }
   },
@@ -6858,6 +6858,48 @@
       }
     },
     {
+      "id": "gpt-image-2-style-library",
+      "name": "gpt-image-2-style-library",
+      "description": "Choose GPT-Image2 / gpt-image-2 visual styles and industrial prompt templates from the awesome-gpt-image-2 style library. Use when an agent needs to create, rewrite, classify, or improve image-generation prompts with repository-backed templates, categories, style tags, scene tags, pitfalls, and example cases.",
+      "manual": "skills/default/gpt-image-2-style-library/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image-2-style-library/GUIDE.md",
+      "install_tiers": [
+        "medium"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/freestylefly/awesome-gpt-image-2",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/freestylefly/awesome-gpt-image-2/tree/main/agents/skills/gpt-image-2-style-library",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "image-generation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "llmquant-options",
       "name": "llmquant-options",
       "description": "Router skill for LLMQuant options workflows. Use when the user needs IV rank, option scoring, strategy construction, Greeks, P&L simulation, volatility surface, unusual activity, earnings IV crush, backtests, or hedges.",
@@ -12479,6 +12521,50 @@
       },
       "risk_level": "medium",
       "conflict_group": "dasheng-xhs-publish-bridge",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "gpt-image",
+      "name": "gpt-image",
+      "description": "Use this skill whenever a user asks to generate, create, draw, render, or edit images with GPT Image 2 / gpt-image-2, text-to-image, reference-image editing, inpainting, posters, typography, Chinese text, UI mockups, diagrams, or gallery prompts. Analyze the user's prompt, search the bundled Reference Gallery/craft files for matching design patterns, confer on direction when useful, then call the packaged `gpt-image` CLI or bundled `scripts/generate.py`. Do not write new image-generation code unless explicitly asked to modify this repo.",
+      "manual": "skills/default/gpt-image/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image/GUIDE.md",
+      "install_tiers": [
+        "medium"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/wuyoscar/GPT-Image2-Skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/wuyoscar/GPT-Image2-Skill/tree/main/skills/gpt-image",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "api-key",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "image-generation",
       "preset_excluded": false,
       "rating": {
         "score": 78,

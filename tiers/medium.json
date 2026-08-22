@@ -90,25 +90,6 @@
       ]
     },
     {
-      "id": "ima",
-      "name": "ima",
-      "description": "Connect IMA notes, notebooks, and knowledge bases from OpenClaw or Hermes with safe authorization checks and read-only verification.",
-      "manual": "skills/default/ima/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima/GUIDE.md",
-      "source": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima",
-      "requires_api_keys": true,
-      "api_keys": [
-        "IMA_API_KEY",
-        "IMA_CLIENT_ID"
-      ],
-      "groups": [
-        "notes",
-        "knowledge",
-        "productivity",
-        "standard"
-      ]
-    },
-    {
       "id": "ai-image-generation",
       "name": "ai-image-generation",
       "description": "Generate AI images with GPT-Image-2, FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference.",
@@ -385,6 +366,30 @@
       "groups": []
     },
     {
+      "id": "gpt-image",
+      "name": "gpt-image",
+      "description": "GPT Image 2 生成/编辑 Agent runbook：文生图、参考图编辑、inpainting，内置 24 类参考图库与 craft 提示词工艺，通过打包 CLI（gpt-image/uv）执行，需 OPENAI_API_KEY。",
+      "manual": "skills/default/gpt-image/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image/GUIDE.md",
+      "source": "https://github.com/wuyoscar/GPT-Image2-Skill/tree/main/skills/gpt-image",
+      "requires_api_keys": true,
+      "api_keys": [
+        "OPENAI_API_KEY"
+      ],
+      "groups": []
+    },
+    {
+      "id": "gpt-image-2-style-library",
+      "name": "gpt-image-2-style-library",
+      "description": "GPT-Image2 工业级提示词引擎与风格模板库（470+ 案例逆向工程、20+ 模板）：把图像生成意图转化为生产级提示词。纯提示词工程，零 API key。",
+      "manual": "skills/default/gpt-image-2-style-library/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image-2-style-library/GUIDE.md",
+      "source": "https://github.com/freestylefly/awesome-gpt-image-2/tree/main/agents/skills/gpt-image-2-style-library",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
       "id": "guizang-ppt-skill",
       "name": "guizang-ppt-skill",
       "description": "文章一键生成网页 PPT，自动提炼要点，支持墨水与瑞士风版式，可导出 PDF/PNG。",
@@ -459,6 +464,25 @@
         "media-generation"
       ],
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ian-xiaohei-illustrations/SKILL.md"
+    },
+    {
+      "id": "ima",
+      "name": "ima",
+      "description": "Connect IMA notes, notebooks, and knowledge bases from OpenClaw or Hermes with safe authorization checks and read-only verification.",
+      "manual": "skills/default/ima/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima/GUIDE.md",
+      "source": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima",
+      "requires_api_keys": true,
+      "api_keys": [
+        "IMA_API_KEY",
+        "IMA_CLIENT_ID"
+      ],
+      "groups": [
+        "notes",
+        "knowledge",
+        "productivity",
+        "standard"
+      ]
     },
     {
       "id": "inference-skills",

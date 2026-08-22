@@ -379,5 +379,7 @@
   "agent-eval": "https://github.com/affaan-m/ECC",
   "agent-harness-construction": "https://github.com/affaan-m/ECC",
   "agent-introspection-debugging": "https://github.com/affaan-m/ECC",
-  "gstack": "https://github.com/garrytan/gstack"
+  "gstack": "https://github.com/garrytan/gstack",
+  "gpt-image-2-style-library": "https://github.com/freestylefly/awesome-gpt-image-2",
+  "gpt-image": "https://github.com/wuyoscar/GPT-Image2-Skill"
 }

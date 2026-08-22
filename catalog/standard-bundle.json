@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-08-21",
+  "generated_at": "2026-08-22",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -277,14 +277,14 @@
     },
     {
       "capability": "image-generation",
-      "skill": "gemini-image-service",
+      "skill": "gpt-image-2-style-library",
       "category": "media-generation",
-      "stars": 3,
-      "score": 73,
-      "access_mode": "api-key",
+      "stars": 4,
+      "score": 85,
+      "access_mode": "direct",
       "conflict_group": "image-generation",
-      "origin_url": "https://ai.google.dev/gemini-api/docs/image-generation",
-      "note": "使用 Gemini 第三方服务生成图片。读取 GEMINI_API_KEY/GEMINI_BASE_URL/GEMINI_IMAGE_MODEL。"
+      "origin_url": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "note": "Choose GPT-Image2 / gpt-image-2 visual styles and industrial prompt templates from the awesome-gpt-image-2 style library. Use when an agent needs to create, rewrite, classify, or improve image-generation prompts with repository-backed templates, categories, style tags, scene tags, pitfalls, and example cases."
     },
     {
       "capability": "research-news",

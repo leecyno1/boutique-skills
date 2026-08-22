@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-402-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-404-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-30%20skills%20%2B%201%20pack-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -70,9 +70,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 402 |
+| Curated skills | 404 |
 | Skill suites | 8 |
-| Native sources verified or referenced | 396 |
+| Native sources verified or referenced | 398 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 30 skills + 1 pack |
@@ -104,7 +104,7 @@ The standard bundle targets daily users: one best skill per capability, no skill
 | `skill` | `frontend` | `generative-ui` | 5★ | `direct` |
 | `skill` | `fullstack` | `fullstack-dev` | 3★ | `browser-required` |
 | `skill` | `mcp` | `mcp-builder` | 5★ | `mcp-required` |
-| `skill` | `image-generation` | `gemini-image-service` | 3★ | `api-key` |
+| `skill` | `image-generation` | `gpt-image-2-style-library` | 4★ | `direct` |
 | `skill` | `research-news` | `news-radar` | 4★ | `mcp-required` |
 | `skill` | `article-illustration` | `baoyu-article-illustrator` | 5★ | `direct` |
 | `skill` | `social-research` | `agent-reach` | 4★ | `browser-required` |
@@ -598,6 +598,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `dasheng-vox-skills` | `L3 Specialist` | `media-generation` | 5★ | `browser-required` | [Source](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
 | `gemini-image-service` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://ai.google.dev/gemini-api/docs/image-generation) |
 | `gif-sticker-maker` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
+| `gpt-image-2-style-library` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/freestylefly/awesome-gpt-image-2) |
 | `guizang-social-card-skill` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/op7418/guizang-social-card-skill) |
 | `ian-xiaohei-illustrations` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
 | `media-downloader` | `L2 Professional` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/yizhiyanhua-ai/media-downloader.git) |
@@ -622,6 +623,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `dasheng-hotspot-radar` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
 | `discord-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/discord-reader) |
 | `edge-pipeline-orchestrator` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator) |
+| `gpt-image` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/wuyoscar/GPT-Image2-Skill) |
 | `linkedin-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/linkedin-reader) |
 | `minimax-multimodal-toolkit` | `L2 Professional` | `search-research` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-multimodal-toolkit) |
 | `minimax-web-search` | `L2 Professional` | `search-research` | 4★ | `api-key+mcp-required` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-web-search) |
