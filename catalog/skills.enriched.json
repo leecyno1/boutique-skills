@@ -6864,7 +6864,8 @@
       "manual": "skills/default/gpt-image-2-style-library/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image-2-style-library/GUIDE.md",
       "install_tiers": [
-        "medium"
+        "medium",
+        "high"
       ],
       "origin": {
         "origin_url": "https://github.com/freestylefly/awesome-gpt-image-2",
@@ -12535,7 +12536,8 @@
       "manual": "skills/default/gpt-image/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/gpt-image/GUIDE.md",
       "install_tiers": [
-        "medium"
+        "medium",
+        "high"
       ],
       "origin": {
         "origin_url": "https://github.com/wuyoscar/GPT-Image2-Skill",
