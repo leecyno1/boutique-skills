@@ -81,4 +81,13 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 32. Patch source policy metadata | complete | Preset exclusions do not count as missing origins |
 | 33. Regenerate registry outputs | complete | Enriched catalog and README refreshed |
 | 34. Run full verification | complete | JSON/audit/install checks rerun |
-| 35. Mark goal complete | in_progress | Goal marked complete after verification |
+| 35. Mark goal complete | complete | Enriched summary (2026-08-22) reports needs_origin_review=0, 418 verified origins |
+
+## Memory Recovery (2026-09-11)
+
+| Phase | Status | Output |
+|---|---|---|
+| 36. Recover lost session context | complete | Parsed 2026-09-08 transcript; restored Quest status and pending work list |
+| 37. Correct stale memory files | complete | QODER_HANDOFF.md counts refreshed to 424 registered / 560 dirs; findings.md re-dated |
+| 38. Document memory recovery order | complete | New QODER_HANDOFF.md section listing on-disk memory sources |
+| 39. Fix remote README broken images | pending | 3 untracked assets + hero.png deletion still uncommitted; awaiting 2026-09-12 weekly Quest or manual push |

@@ -1,6 +1,6 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-08-19
+更新时间：2026-09-11
 
 ## 仓库信息
 
@@ -8,12 +8,33 @@
 - 默认分支：main
 - GitHub：https://github.com/leecyno1/boutique-openclaw-skills（远端 origin）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee）
-- 当前技能数：403
+- 当前技能数：424（catalog/skills.enriched.json，生成于 2026-08-22）；skills/default/ 目录 560 个（含未注册候选与套件成员）
+- 横向分层：high 424 / medium 85 / low 67（累积分层，非互斥）
+- 来源核验：418 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
 - 标准包：30 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）
 - 金融投资标准组合：34 个 Skill（能力位去重，上限 40；同位优先无 key 候选，仅 13 位保留专业数据源 key）
 - 组合 API Key 政策：大模型 key 与 GitHub 工具 token 豁免；第三方注册 key 在标准组合硬过滤、在金融组合同位软惩罚（详见 docs/WEEKLY_CURATION.md）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
+
+## 当前待办（2026-09-11 恢复）
+
+仓库 HEAD = origin/main = gitee/main = `a8b4624`（2026-08-22），无未推送提交。工作区有 6 项自 2026-08-19 起刻意保留的未提交变更：
+
+| 项 | 状态 | 说明 |
+|---|---|---|
+| `scripts/publish_weekly.sh` | modified | 2026-09-08 修复：白名单补 `assets/` 与 `.gitignore`，防止图片永久漏提交 |
+| `.gitignore` | modified | 排除 `reports/usage/.scan-{state,uses}.json` 遥测缓存（约 7.4 MB） |
+| `assets/hero-v2.png` | untracked | README L29 引用，两个远端 404 |
+| `assets/weekly-pipeline.png` | untracked | README L39 引用，两个远端 404 |
+| `assets/bundles-duo.png` | untracked | README L84 引用，两个远端 404 |
+| `assets/hero.png` | deleted（本地） | 已被 hero-v2 取代，远端仍存在，删除未提交 |
+
+P0 未决：远端 README 三张图仍是裂图。根因是 `026c424`（2026-08-19）只提交了 README.md 与生成脚本，图片本体被白名单挡住。
+
+周度治理缺口：Quest 未在 2026-08-29、2026-09-05 触发（调度器/客户端未在线）。下一次预期触发 **2026-09-12（周六）09:00 Asia/Shanghai**，届时 `weekly_cycle.sh` 第 10 步会经修复后的白名单自动带上上述 6 项并推送双远端，裂图随之修复。若客户端届时不在线则会再跳过一周——需要时改为手动提交推送。
+
+`reports/usage/pending-cleanup.json` 的 `items` 为空，没有待用户确认的卸载项。
 
 ## 最近完成
 
@@ -135,3 +156,16 @@
 ## 接手完成标准
 
 Qoder 接手后应能根据来源链接或本地 Skill 目录完成搜索、评分、去重、入库、目录生成、安装 dry-run、全库审计，并在保留用户改动的前提下同步 GitHub 和 Gitee。
+
+## 记忆位置与上下文恢复（2026-09-11 补记）
+
+会话上下文可能整体丢失，且新会话不一定挂载 `SearchMemory`/`UpdateMemory` 或 `schedule` MCP 工具。此时按下列顺序从磁盘恢复，不要凭印象作答：
+
+1. 本文件（仓库根 `QODER_HANDOFF.md`）：流程、规则、待办，是唯一的权威长期记忆。
+2. `task_plan.md` / `progress.md`：历史阶段与验证结论（origin/index/scoring 升级已于 2026-08 完成，needs_origin_review = 0）。
+3. `findings.md`：问题清单，按日期分批记录。
+4. 会话转录：`~/.qoder/projects/-Volumes-PSSD-Projects-boutique-openclaw-skills/transcript/*.jsonl`，可解析出历次用户指令、工具调用与结论。
+5. 结构化仓库知识（RepoWiki）：`~/.qoder/knowledges/boutique-openclaw-skills/main__zh-CN/` 与仓库内 `.qoder/repowiki/`（2026-09-09 生成，完好）。
+6. 客观事实以 `git log` / `git status` / `catalog/skills.enriched.json` 的 `summary` 为准，记忆文件与它们冲突时以仓库为准并回写记忆。
+
+Quest（定时任务）由 `schedule` MCP 服务管理，不在本仓库内，也不等于本地 cron。该工具未挂载时无法查询或重建 Quest，只能从 `reports/weekly-curation/` 的最新日期推断是否真的触发过，并在本文件登记预期触发时间。

@@ -17,3 +17,8 @@ optimization/skillopt-runs/*
 !optimization/skillopt-runs/.gitkeep
 optimization/datasets/skillopt/**/raw/
 optimization/datasets/skillopt/**/downloaded/
+reports/usage/.scan-state.json
+reports/usage/.scan-uses.json
+
+# Qoder local RepoWiki knowledge (generated, mirrored in ~/.qoder/knowledges/)
+.qoder/

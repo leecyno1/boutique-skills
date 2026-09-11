@@ -27,9 +27,11 @@ else
 fi
 
 git add -- \
+  .gitignore \
   README.md \
   QODER_HANDOFF.md \
   Makefile \
+  assets/ \
   catalog/ \
   categories/ \
   docs/ \
