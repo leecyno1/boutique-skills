@@ -1,0 +1,5 @@
+Source: https://github.com/googleworkspace/cli
+Base source commit: main @ 2026-09-12
+License: Apache-2.0
+Stars at import: 30946
+Imported by: scripts/weekly_curation.py on 2026-09-12 (score 80).

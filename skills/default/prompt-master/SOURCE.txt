@@ -1,0 +1,5 @@
+Source: https://github.com/nidhinjs/prompt-master
+Base source commit: main @ 2026-09-12
+License: MIT
+Stars at import: 12650
+Imported by: scripts/weekly_curation.py on 2026-09-12 (score 85).

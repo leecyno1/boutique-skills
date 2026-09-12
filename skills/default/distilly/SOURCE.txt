@@ -1,0 +1,5 @@
+Source: https://github.com/titanwings/distilly
+Base source commit: dot-skill @ 2026-09-12
+License: MIT
+Stars at import: 24625
+Imported by: scripts/weekly_curation.py on 2026-09-12 (score 85).

@@ -402,5 +402,18 @@
   "abusing-shadow-credentials-for-privesc": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
   "achieving-cmmc-level-2-compliance": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
   "acquiring-disk-image-with-dd-and-dcfldd": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
-  "analyzing-active-directory-acl-abuse": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
+  "analyzing-active-directory-acl-abuse": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+  "distilly": "https://github.com/titanwings/distilly",
+  "prompt-master": "https://github.com/nidhinjs/prompt-master",
+  "defuddle": "https://github.com/kepano/obsidian-skills",
+  "json-canvas": "https://github.com/kepano/obsidian-skills",
+  "knap": "https://github.com/kepano/obsidian-skills",
+  "obsidian-bases": "https://github.com/kepano/obsidian-skills",
+  "obsidian-cli": "https://github.com/kepano/obsidian-skills",
+  "gws-admin-reports": "https://github.com/googleworkspace/cli",
+  "gws-calendar-agenda": "https://github.com/googleworkspace/cli",
+  "gws-calendar-insert": "https://github.com/googleworkspace/cli",
+  "gws-calendar": "https://github.com/googleworkspace/cli",
+  "gws-chat-send": "https://github.com/googleworkspace/cli",
+  "huashu-design": "https://github.com/alchaincyf/huashu-design"
 }

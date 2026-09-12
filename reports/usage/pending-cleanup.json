@@ -1,7 +1,26 @@
 {
-  "generated_at": "2026-08-22T09:22:14",
+  "generated_at": "2026-09-12T09:55:20",
   "status": "pending",
-  "source_report": "recommendations-2026-08-22.json",
+  "source_report": "recommendations-2026-09-12.json",
   "note": "uninstall is archive-based and runs only via scripts/uninstall_skills.py --confirm",
-  "items": []
+  "items": [
+    {
+      "skill": "grill-with-docs",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/grill-with-docs",
+      "reason": "未收录且已 103 天未使用（历史 1 次）"
+    },
+    {
+      "skill": "mcp-server-patterns",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/mcp-server-patterns",
+      "reason": "未收录且已 100 天未使用（历史 1 次）"
+    },
+    {
+      "skill": "recursive-decision-ledger",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/recursive-decision-ledger",
+      "reason": "未收录且已 103 天未使用（历史 1 次）"
+    }
+  ]
 }

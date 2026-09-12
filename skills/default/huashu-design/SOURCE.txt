@@ -1,0 +1,5 @@
+Source: https://github.com/alchaincyf/huashu-design
+Base source commit: master @ 2026-09-12
+License: MIT
+Stars at import: 24066
+Imported by: scripts/weekly_curation.py on 2026-09-12 (score 80).
