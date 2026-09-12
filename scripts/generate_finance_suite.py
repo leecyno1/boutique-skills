@@ -189,8 +189,8 @@ def build_suite(enriched: dict[str, dict]) -> dict:
             "仓位、期权、组合风控、监控、回测、复盘与报告全链路能力位组合。"
             "每个能力位只保留评分最高的技能，总量不超过 %d 个。" % MAX_SKILLS
         ),
-        "source": "https://github.com/leecyno1/boutique-openclaw-skills",
-        "native_origin": "https://github.com/leecyno1/boutique-openclaw-skills",
+        "source": "https://github.com/leecyno1/boutique-skills",
+        "native_origin": "https://github.com/leecyno1/boutique-skills",
         "homepage": "",
         "license": "MIT",
         "install_tier": "high",

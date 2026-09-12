@@ -90,4 +90,6 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 36. Recover lost session context | complete | Parsed 2026-09-08 transcript; restored Quest status and pending work list |
 | 37. Correct stale memory files | complete | QODER_HANDOFF.md counts refreshed to 424 registered / 560 dirs; findings.md re-dated |
 | 38. Document memory recovery order | complete | New QODER_HANDOFF.md section listing on-disk memory sources |
-| 39. Fix remote README broken images | pending | 3 untracked assets + hero.png deletion still uncommitted; awaiting 2026-09-12 weekly Quest or manual push |
+| 39. Fix remote README broken images | complete | Commit `2cdfd9f` added 3 assets, dropped hero.png, pushed origin + gitee |
+| 40. Update stale GitHub repo URL references | complete | Generator, suite JSON and README row all point to leecyno1/boutique-skills; origin URL repointed |
+| 41. Add memory files to publish whitelist | complete | findings.md and task_plan.md added to publish_weekly.sh whitelist |

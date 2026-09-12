@@ -6,8 +6,9 @@
 
 - 路径：/Volumes/PSSD/Projects/boutique-openclaw-skills
 - 默认分支：main
-- GitHub：https://github.com/leecyno1/boutique-openclaw-skills（远端 origin）
-- Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee）
+- GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
+- Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
+- 注意：本地目录名仍是 boutique-openclaw-skills，仓库内出现该字符串的路径（会话转录目录、RepoWiki 目录、审计报告里的绝对路径）是目录名不是仓库名，不要改。
 - 当前技能数：424（catalog/skills.enriched.json，生成于 2026-08-22）；skills/default/ 目录 560 个（含未注册候选与套件成员）
 - 横向分层：high 424 / medium 85 / low 67（累积分层，非互斥）
 - 来源核验：418 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
@@ -17,22 +18,22 @@
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-09-11 恢复）
+## 当前待办（2026-09-11 更新）
 
-仓库 HEAD = origin/main = gitee/main = `a8b4624`（2026-08-22），无未推送提交。工作区有 6 项自 2026-08-19 起刻意保留的未提交变更：
+仓库 HEAD = origin/main = gitee/main = `2cdfd9f`，工作区干净。
 
-| 项 | 状态 | 说明 |
-|---|---|---|
-| `scripts/publish_weekly.sh` | modified | 2026-09-08 修复：白名单补 `assets/` 与 `.gitignore`，防止图片永久漏提交 |
-| `.gitignore` | modified | 排除 `reports/usage/.scan-{state,uses}.json` 遥测缓存（约 7.4 MB） |
-| `assets/hero-v2.png` | untracked | README L29 引用，两个远端 404 |
-| `assets/weekly-pipeline.png` | untracked | README L39 引用，两个远端 404 |
-| `assets/bundles-duo.png` | untracked | README L84 引用，两个远端 404 |
-| `assets/hero.png` | deleted（本地） | 已被 hero-v2 取代，远端仍存在，删除未提交 |
+已解决（`2cdfd9f`，2026-09-11 推送双远端）：
 
-P0 未决：远端 README 三张图仍是裂图。根因是 `026c424`（2026-08-19）只提交了 README.md 与生成脚本，图片本体被白名单挡住。
+- 远端 README 三张裂图修复：`assets/hero-v2.png`、`assets/weekly-pipeline.png`、`assets/bundles-duo.png` 已入库，被 `hero-v2` 取代的 `assets/hero.png` 已删除。根因是 `026c424`（2026-08-19）提交时白名单不含 `assets/`。
+- `scripts/publish_weekly.sh` 白名单补上 `assets/` 与 `.gitignore`，周度流程不会再漏提交图片。
+- `.gitignore` 排除 `reports/usage/.scan-{state,uses}.json` 遥测缓存（约 7.4 MB）与 `.qoder/`（本机生成的 RepoWiki，另有一份在 `~/.qoder/knowledges/`）。
+- 记忆文件校正：技能数、findings 分批、task_plan 悬空阶段结项。
+- GitHub 仓库改名为 `leecyno1/boutique-skills`（推送时远端返回 moved 提示；旧 URL 仍重定向，`git ls-remote` 新旧地址同指同一提交）。已修正三处遗留引用：`scripts/generate_finance_suite.py` 的硬编码 source/native_origin（生成器源头）、`catalog/suites/finance-investment-standard.json`、`README.md` 的 Finance Investment Standard Suite 行——三者一致，下次重新生成目录不会回退。`origin` 远端地址已指向新名。Gitee 仓库未改名，`publish_weekly.sh` 的 `GITEE_URL` 保持原值。
+- `scripts/publish_weekly.sh` 白名单补上 `findings.md` 与 `task_plan.md`，这两个记忆文件从此会随周度流程自动入库。
 
-周度治理缺口：Quest 未在 2026-08-29、2026-09-05 触发（调度器/客户端未在线）。下一次预期触发 **2026-09-12（周六）09:00 Asia/Shanghai**，届时 `weekly_cycle.sh` 第 10 步会经修复后的白名单自动带上上述 6 项并推送双远端，裂图随之修复。若客户端届时不在线则会再跳过一周——需要时改为手动提交推送。
+未决：
+
+1. 周度治理缺口：Quest 未在 2026-08-29、2026-09-05 触发（调度器/客户端未在线），`reports/weekly-curation/` 与 `reports/usage/` 最新日期停在 2026-08-22。下次预期触发 **2026-09-12（周六）09:00 Asia/Shanghai**；积压的图片、配置与记忆变更已提前清空，届时只需跑常规周度流程。若客户端不在线会再跳过一周。
 
 `reports/usage/pending-cleanup.json` 的 `items` 为空，没有待用户确认的卸载项。
 

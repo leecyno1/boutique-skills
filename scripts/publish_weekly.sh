@@ -30,6 +30,8 @@ git add -- \
   .gitignore \
   README.md \
   QODER_HANDOFF.md \
+  findings.md \
+  task_plan.md \
   Makefile \
   assets/ \
   catalog/ \
