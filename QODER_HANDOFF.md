@@ -20,9 +20,9 @@
 
 ## 当前待办（2026-09-11 更新）
 
-仓库 HEAD = origin/main = gitee/main = `2cdfd9f`，工作区干净。
+工作区干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希，每次周度提交都会失效）。2026-09-11 的两轮提交分别修复了远端 README 裂图与仓库改名引用。
 
-已解决（`2cdfd9f`，2026-09-11 推送双远端）：
+已解决：
 
 - 远端 README 三张裂图修复：`assets/hero-v2.png`、`assets/weekly-pipeline.png`、`assets/bundles-duo.png` 已入库，被 `hero-v2` 取代的 `assets/hero.png` 已删除。根因是 `026c424`（2026-08-19）提交时白名单不含 `assets/`。
 - `scripts/publish_weekly.sh` 白名单补上 `assets/` 与 `.gitignore`，周度流程不会再漏提交图片。
