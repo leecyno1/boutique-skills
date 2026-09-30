@@ -10,8 +10,12 @@
 - `memu` 许可证核验：GitHub licensee 报 NOASSERTION，实际 `LICENSE.txt` 是逐字 Apache-2.0 正文（仅因缩进与附加版权段识别失败），已在 `skills/default/memu/SOURCE.txt` 记录核验结论与日期。
 - **月度上游检查卡死并修复**：补跑 `check_upstream_updates.py` 时 2 小时只处理 60/436 个技能，且 GitHub core 配额整点重置后仍为 5000 —— 说明一次成功调用都没发出。根因是 2026-09-12 那类 TLS 指纹切断当晚复发：Python urllib 访问 `api.github.com` 在 0.5–1.7 秒内抛 `SSL: UNEXPECTED_EOF_WHILE_READING`，同一时刻 curl 访问同端点 200/0.5 秒。该脚本当时没有回退，`api_get` 三次重试全部失败后抛错，每个技能被记为 error。已把 `weekly_curation.py` 的加固版回退（`_curl_fetch` / `_api_get_curl` / `_curl_config_escape`，token 走 `curl --config -` stdin）移植进 `check_upstream_updates.py`，并给只在 `--apply` 路径使用的 `raw_file_bytes` 补上同样的回退；`tests/test_curl_token_hygiene.py` 改为对两个脚本同时断言。修复后吞吐从约 30 技能/小时升到约 39 技能/分钟，436 个来源约 11 分钟跑完。实测：repo 元数据 1.2 秒、1122 条 tree 2.1 秒、404 仍返回 None。
 
+- **git 自身的 HTTPS 传输也被切断，publish 步骤当场失败并已加固**：提交 `d5462b8` 后 `git push origin main` 报 `LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443`，`git ls-remote` 与 `-c http.version=HTTP/1.1` 同样失败；同一时刻 `curl https://github.com/` 返回 200/1.8 秒、`curl` 访问 `info/refs?service=git-receive-pack` 返回 401/0.64 秒（未带凭证的预期响应），本地代理 127.0.0.1:7890 对 GitHub 仍不通。即被切的是 git 的 TLS 握手，不是主机可达性。`publish_weekly.sh` 因 `set -e` 在 push 处退出，Gitee 已推成功而 GitHub 落后一个提交，两远端一度分叉。已用 SSH 显式 URL 补推（`git push git@github.com:leecyno1/boutique-skills.git main`，不改 remote 配置），并用 `git fetch <ssh-url> main:refs/remotes/origin/main` 修正陈旧的跟踪引用，三方 SHA 重新一致。
+- **`publish_weekly.sh` 增加 SSH 回退**：新增 `ssh_url_for`（仅把 `https://github.com/*` 改写为 `git@github.com:*`，Gitee 与已是 SSH 的 URL 返回空）、`push_remote`（HTTPS 失败→SSH 重推→回写跟踪引用）、`resolve_remote_head`（校验改用 `git ls-remote`，HTTPS 取不到再走 SSH，不再依赖 `git fetch` + `git rev-parse origin/main`，避免跟踪引用陈旧误判分叉）。验证：`bash -n` 通过；URL 改写三例正确；两个远端的 `resolve_remote_head` 实测均返回 `d5462b8`。含义：周度 Quest 在同类网络条件下不会再卡在发布步骤。
+
 待观察：
 
+- GitHub 传输层切断的层次在扩大：当晚 20:45 Python urllib 正常，23:30 Python 被切而 curl 与 git 正常，23:55 起 git 的 HTTPS 握手也被切、curl 仍正常，SSH 全程可用。三者是独立通道，判断连通性必须分别测，不能由 curl 通推断 git 通。
 - 两份 curl 回退代码目前重复存在于 `weekly_curation.py` 与 `check_upstream_updates.py`。token 处理属安全敏感逻辑，重复副本容易只加固一处（本次正是如此）。后续可抽 `scripts/github_transport.py` 共用，但需同时改测试的按路径加载方式（`sys.path` 不含 `scripts/`），不在本轮动。
 - Python OpenSSL 指纹切断是间歇性的：当晚 20:45 与 21:07 两次实测 Python 直连正常（发现/出库阶段全程走 urllib），23:30 后转为全断。因此不能以单次连通性测试判断本轮流水线是否会走回退路径。
 

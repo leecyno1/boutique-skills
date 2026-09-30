@@ -75,20 +75,65 @@ if ! git remote | grep -qx gitee; then
   echo "[INFO] added gitee remote: $GITEE_URL"
 fi
 
+# Some networks cut git's own TLS handshake to github.com (LibreSSL
+# SSL_ERROR_SYSCALL) while plain curl to the same host still works, which used
+# to abort the publish step and leave GitHub behind Gitee. Fall back to SSH.
+ssh_url_for() {
+  case "$1" in
+    https://github.com/*) echo "git@github.com:${1#https://github.com/}" ;;
+    *) echo "" ;;
+  esac
+}
+
+push_remote() {
+  local remote="$1" url fallback
+  url="$(git remote get-url "$remote")"
+  if git push "$remote" main; then
+    return 0
+  fi
+  fallback="$(ssh_url_for "$url")"
+  if [[ -z "$fallback" ]]; then
+    echo "[ERROR] push to $remote failed and no SSH fallback exists for $url" >&2
+    return 1
+  fi
+  echo "[WARN] HTTPS push to $remote failed; retrying over SSH: $fallback"
+  GIT_SSH_COMMAND="ssh -o ConnectTimeout=20" git push "$fallback" main || return 1
+  # Keep the remote-tracking ref truthful even though the push bypassed it.
+  GIT_SSH_COMMAND="ssh -o ConnectTimeout=20" \
+    git fetch "$fallback" "main:refs/remotes/${remote}/main" --quiet || true
+}
+
+resolve_remote_head() {
+  local remote="$1" url fallback sha
+  url="$(git remote get-url "$remote")"
+  sha="$(git ls-remote "$url" main 2>/dev/null | cut -f1)"
+  if [[ -z "$sha" ]]; then
+    fallback="$(ssh_url_for "$url")"
+    if [[ -n "$fallback" ]]; then
+      sha="$(GIT_SSH_COMMAND="ssh -o ConnectTimeout=20" git ls-remote "$fallback" main 2>/dev/null | cut -f1)"
+    fi
+  fi
+  if [[ -z "$sha" ]]; then
+    echo "[ERROR] cannot resolve $remote main; both HTTPS and SSH failed" >&2
+    return 1
+  fi
+  echo "$sha"
+}
+
 echo "[INFO] pushing GitHub (origin)"
-git push origin main
+push_remote origin
 
 echo "[INFO] pushing Gitee (gitee)"
-git push gitee main
+push_remote gitee
 
-git fetch origin main --quiet
-git fetch gitee main --quiet
-echo "[INFO] HEAD:        $(git rev-parse HEAD)"
-echo "[INFO] origin/main: $(git rev-parse origin/main)"
-echo "[INFO] gitee/main:  $(git rev-parse gitee/main)"
+HEAD_SHA="$(git rev-parse HEAD)"
+ORIGIN_SHA="$(resolve_remote_head origin)"
+GITEE_SHA="$(resolve_remote_head gitee)"
+echo "[INFO] HEAD:        $HEAD_SHA"
+echo "[INFO] origin/main: $ORIGIN_SHA"
+echo "[INFO] gitee/main:  $GITEE_SHA"
 
-if [[ "$(git rev-parse HEAD)" == "$(git rev-parse origin/main)" \
-   && "$(git rev-parse HEAD)" == "$(git rev-parse gitee/main)" ]]; then
+if [[ "$HEAD_SHA" == "$ORIGIN_SHA" && "$HEAD_SHA" == "$GITEE_SHA" ]]; then
   echo "[DONE] GitHub and Gitee are in sync."
 else
   echo "[ERROR] remotes diverge; check manually" >&2
