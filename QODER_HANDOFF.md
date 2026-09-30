@@ -28,8 +28,12 @@
 1. **周度治理 Quest 处于手动暂停**：id `70f2e60c-b189-445f-ab92-6e4e642f9975`（`0 9 * * 6` Asia/Shanghai）当前 `enabled=false`、`pauseReason=manual`，因此 2026-09-19、2026-09-26 未触发，2026-09-30 为手动补漏。是否重新启用属用户裁决，不代为开启；下次自然触发点为每周六 09:00。
 2. **Qoder 侧归档目录已被清空**：`~/.qoder/skills-archive` 不存在，而 `~/.qoder/skills` 有 260/311 个目录 mtime 为 2026-09-16 —— 当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原，归档副本同时丢失（`reports/usage/cleanup-receipts.jsonl` 里的 `to` 路径已失效，无法 `mv` 回滚）。Codex 侧未受影响：`~/.codex/skills-archive` 22 项完好，2026-09-12 归档的三项仍未复活。含义：归档式卸载对 Qoder 客户端重装不具持久性，卸载建议应当轮确认执行，不要跨周悬挂。
 3. **陈旧重复检出**：`/Volumes/PSSD/Projects/boutique-skills` 与本仓库同指 `leecyno1/boutique-skills`，停在 `e16c7a0`（2026-08-16）且从未 fetch；其工作区含 4 个受保护 tushare-eval 文件的未提交改动（生成时间 2026-06-18，比本仓库已提交的 2026-06-14 新，从未入库）。本轮未触碰该目录，保留/同步/归档待用户裁决。
-4. **月度上游检查逾期**：`reports/upstream-check-latest.md` 停在 2026-08-16（45 天），`make upstream-check` 未跑。
+4. **上游漂移已量化，修复未做**：2026-09-30 补跑 `make upstream-check`（436 个来源）→ `current` 187、`would_update` 114（275 改 / 291 新增文件）、`source_path_missing` 40、`metadata_only_root_no_skill_md` 58、`wrapper_origin` 35、`error` 1（`apk-redteam-pipeline`，curl 传输 HTTP 0，瞬时，重跑即消）。两处结构性变化已逐一核实，不是检测误报：
+   - `AlphaGBM/skills` 把 `skills/<name>` 重组为 `skills/<category>/<name>`（commodities / core / digital-assets / options / stocks），本仓库 30 个 `alphagbm-*` 的 origin 路径全部失效；上游现存 27 个 SKILL.md，`alphagbm-alert` 等已删除。
+   - `anthropics/financial-services` 删掉整个 `plugins/vertical-plugins/wealth-management`。6 个 `anthropic-fs-wealth-management-*` 中只有 `client-review` 有去处（`plugins/agent-plugins/meeting-prep-agent/skills/client-review`），其余 5 个（portfolio-rebalance、client-report、financial-plan、investment-proposal、tax-loss-harvesting）上游已无对应。
+   - **治理盲区**：`weekly_curation.py prune` 只做 repo 级存活检查（`/repos/{owner}/{repo}` 返回 200 即视为存活），检测不到路径级删除，所以上述 5 个孤儿技能不会被自动出库。只有月度 `check_upstream_updates.py` 能发现，而目前没有任何流程消费它的结论。修 origin 路径与决定是否出库，都属下一轮工作。
 5. **7 项本地卸载建议待确认**（`reports/usage/pending-cleanup.json`，绝不自动执行）：qoder 侧 `wechat-topic-outline-planner`、`doc`、`openclaw-stock`、`openclaw-stock-analyzer`、`stock_datasource`；codex 侧 `lin-lefeng-perspective`、`sun-lumin-perspective`。确认后 `python3 scripts/uninstall_skills.py --confirm`。
+6. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
 
 ## 最近完成（2026-09-30 补漏周度治理）
 

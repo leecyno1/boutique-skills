@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import re
+import ssl
 import subprocess
 import sys
 import time
@@ -80,11 +81,61 @@ def gh_token() -> str | None:
     return token or None
 
 
+def _curl_config_escape(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+
+
+def _curl_fetch(
+    url: str, token: str | None, accept: str | None = None, timeout: int = 20
+) -> tuple[int | None, bytes | None]:
+    """Fetch a URL via curl, returning (status, body).
+
+    Some networks cut Python's OpenSSL TLS fingerprint mid-handshake while
+    letting curl through, so this is the transport fallback. Headers go in via
+    `--config -` on stdin so the token stays out of `ps`.
+    """
+    command = ["curl", "-sSL", "--max-time", str(timeout), "-w", "\n%{http_code}"]
+    config = b""
+    lines = []
+    if accept:
+        lines.append(f'header = "Accept: {_curl_config_escape(accept)}"')
+    if token:
+        lines.append(f'header = "Authorization: Bearer {_curl_config_escape(token)}"')
+    if lines:
+        command += ["--config", "-"]
+        config = ("\n".join(lines) + "\n").encode("utf-8")
+    command.append(url)
+    try:
+        result = subprocess.run(
+            command, input=config, capture_output=True, check=False, timeout=timeout + 5
+        )
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return None, None
+    body, _, status_text = result.stdout.rpartition(b"\n")
+    try:
+        return int(status_text.strip()), body
+    except ValueError:
+        return None, None
+
+
+def _api_get_curl(endpoint: str, token: str | None) -> dict | list | None:
+    """curl-backed api_get fallback; mirrors its 403/404 -> None semantics."""
+    status, body = _curl_fetch(
+        endpoint, token, accept="application/vnd.github+json", timeout=15
+    )
+    if status in {403, 404}:
+        return None
+    if status is not None and 200 <= status < 300 and body:
+        return json.loads(body.decode("utf-8"))
+    raise URLError(f"api_get curl fallback failed for {endpoint} (HTTP {status})")
+
+
 def api_get(path: str, token: str | None) -> dict | list | None:
     headers = {"Accept": "application/vnd.github+json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    request = Request(f"https://api.github.com/{path.lstrip('/')}", headers=headers)
+    endpoint = f"https://api.github.com/{path.lstrip('/')}"
+    request = Request(endpoint, headers=headers)
     for attempt in range(3):
         try:
             with urlopen(request, timeout=12) as response:
@@ -94,9 +145,14 @@ def api_get(path: str, token: str | None) -> dict | list | None:
                 return None
             if attempt == 2:
                 raise
-        except URLError:
+        except URLError as error:
+            if isinstance(getattr(error, "reason", None), ssl.SSLError):
+                # Python's TLS fingerprint is being cut; retrying urllib is futile.
+                return _api_get_curl(endpoint, token)
             if attempt == 2:
-                raise
+                return _api_get_curl(endpoint, token)
+        except OSError:
+            return _api_get_curl(endpoint, token)
         time.sleep(1 + attempt)
     return None
 
@@ -301,8 +357,14 @@ def raw_file_bytes(source: GitHubSource, token: str | None, ref: str, path: str)
     headers = {}
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    with urlopen(Request(raw_url, headers=headers), timeout=12) as response:
-        return response.read()
+    try:
+        with urlopen(Request(raw_url, headers=headers), timeout=12) as response:
+            return response.read()
+    except (HTTPError, URLError, OSError):
+        status, body = _curl_fetch(raw_url, token, timeout=20)
+        if status is not None and 200 <= status < 300 and body is not None:
+            return body
+        raise
 
 
 def relative_target(source: GitHubSource, entry: dict, base_path: str) -> Path:
