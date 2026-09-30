@@ -1,13 +1,13 @@
 # Boutique Skills Audit
 
-- Time: 2026-09-12 09:55:07
+- Time: 2026-09-30 21:27:10
 - Status: **WARN**
-- Catalog skills: 437
-- Audited skills: 431
+- Catalog skills: 458
+- Audited skills: 452
 - Legacy catalog skills: 42
-- Installed/Resolved: 431
+- Installed/Resolved: 452
 - Missing: 0
-- Missing env vars: 102
+- Missing env vars: 149
 - Duplicate capabilities: 0
 - Risk hits: 15
 - Missing native origins: 0
@@ -20,19 +20,17 @@
 - claude-mem-plugin: `ANTHROPIC_API_KEY`
 - claude-mem-plugin: `GEMINI_API_KEY`
 - claude-mem-plugin: `OPENROUTER_API_KEY`
-- llmquant-risk: `LLMQUANT_API_KEY`
+- github: `GH_TOKEN`
+- github: `GITHUB_TOKEN`
 - llmquant-portfolio: `LLMQUANT_API_KEY`
+- llmquant-risk: `LLMQUANT_API_KEY`
 - llmquant-commodities: `LLMQUANT_API_KEY`
 - llmquant-credit: `LLMQUANT_API_KEY`
-- llmquant-macro: `LLMQUANT_API_KEY`
-- llmquant-portfolio-lab: `LLMQUANT_API_KEY`
 - llmquant-data: `LLMQUANT_API_KEY`
-- llmquant-equities: `LLMQUANT_API_KEY`
-- llmquant-equity-derivatives: `LLMQUANT_API_KEY`
 - llmquant-investor-lenses: `LLMQUANT_API_KEY`
+- llmquant-macro: `LLMQUANT_API_KEY`
 - llmquant-options: `LLMQUANT_API_KEY`
-- llmquant-rates-fx: `LLMQUANT_API_KEY`
-- llmquant-strategies: `LLMQUANT_API_KEY`
+- llmquant-portfolio-lab: `LLMQUANT_API_KEY`
 - agentmail-mcp: `AGENTMAIL_API_KEY`
 - alphagbm-alert: `ALPHAGBM_API_KEY`
 - alphagbm-bps-backtest: `ALPHAGBM_API_KEY`
@@ -64,61 +62,110 @@
 - alphagbm-vol-smile: `ALPHAGBM_API_KEY`
 - alphagbm-vol-surface: `ALPHAGBM_API_KEY`
 - alphagbm-watchlist: `ALPHAGBM_API_KEY`
+- llmquant-equities: `LLMQUANT_API_KEY`
+- llmquant-equity-derivatives: `LLMQUANT_API_KEY`
+- llmquant-rates-fx: `LLMQUANT_API_KEY`
+- llmquant-strategies: `LLMQUANT_API_KEY`
+- minimax-web-search: `MINIMAX_API_KEY`
+- funda-data: `FUNDA_API_KEY`
 - llmquant-crypto: `LLMQUANT_API_KEY`
 - llmquant-etfs: `LLMQUANT_API_KEY`
 - llmquant-events: `LLMQUANT_API_KEY`
 - llmquant-market-intelligence: `LLMQUANT_API_KEY`
 - llmquant-prediction-markets: `LLMQUANT_API_KEY`
-- funda-data: `FUNDA_API_KEY`
+- akshare-stock: `TUSHARE_TOKEN`
 - baoyu-image-gen: `ARK_API_KEY`
 - baoyu-image-gen: `AZURE_OPENAI_API_KEY`
 - baoyu-image-gen: `BIGMODEL_API_KEY`
 - baoyu-image-gen: `DASHSCOPE_API_KEY`
 - baoyu-image-gen: `GOOGLE_API_KEY`
+- baoyu-image-gen: `MINIMAX_API_KEY`
+- baoyu-image-gen: `OPENAI_API_KEY`
 - baoyu-image-gen: `OPENROUTER_API_KEY`
 - baoyu-image-gen: `REPLICATE_API_TOKEN`
 - baoyu-image-gen: `ZAI_API_KEY`
-- openclaw-stock-data-skill: `STOCK_API_KEY`
+- dual-axis-skill-reviewer: `OPENAI_API_KEY`
+- ima: `IMA_API_KEY`
+- ima: `IMA_CLIENT_ID`
+- tushare-openclaw-skill: `TUSHARE_TOKEN`
 - agentmail-toolkit: `AGENTMAIL_API_KEY`
+- agentmail-toolkit: `OPENAI_API_KEY`
+- gpt-image: `OPENAI_API_KEY`
+- openclaw-stock-data-skill: `STOCK_API_KEY`
+- tavily-search: `OPENAI_API_KEY`
+- tavily-search: `TAVILY_API_KEY`
+- agent-architecture-audit: `OPENAI_API_KEY`
+- alphaxiv: `OPENAI_API_KEY`
+- bb-local-toolkit: `OPENAI_API_KEY`
+- book-to-skill: `GH_TOKEN`
+- book-to-skill: `GITHUB_TOKEN`
+- bug-bounty: `OPENAI_API_KEY`
 - lark-calendar: `FEISHU_APP_SECRET`
 - paperless-docs: `PAPERLESS_TOKEN`
 - paperless-ngx-tools: `PAPERLESS_TOKEN`
+- alphaear-search: `TUSHARE_TOKEN`
 - baoyu-post-to-wechat: `ACCESS_TOKEN`
 - baoyu-post-to-wechat: `WECHAT_AI_TOOLS_APP_SECRET`
 - baoyu-post-to-wechat: `WECHAT_APP_SECRET`
 - baoyu-post-to-wechat: `WECHAT_BAOYU_APP_SECRET`
+- data-quality-checker: `TUSHARE_TOKEN`
+- alphaear-sentiment: `OPENAI_API_KEY`
+- alphaear-stock: `TUSHARE_TOKEN`
+- economic-calendar-fetcher: `FMP_API_KEY`
 - institutional-flow-tracker: `FMP_API_KEY`
 - macro-regime-detector: `FMP_API_KEY`
-- economic-calendar-fetcher: `FMP_API_KEY`
-- finance-sentiment: `ADANOS_API_KEY`
+- position-sizer: `TUSHARE_TOKEN`
+- pybroker-backtest-skill: `TUSHARE_TOKEN`
+- stock-analysis: `TUSHARE_TOKEN`
 - value-dividend-screener: `FINVIZ_API_KEY`
 - value-dividend-screener: `FMP_API_KEY`
 - agentmail-cli: `AGENTMAIL_API_KEY`
-- dividend-growth-pullback-screener: `FINVIZ_API_KEY`
-- dividend-growth-pullback-screener: `FMP_API_KEY`
-- exposure-coach: `FMP_API_KEY`
+- finance-sentiment: `ADANOS_API_KEY`
+- finance-skill-creator: `TUSHARE_TOKEN`
 - gemini-image-service: `GEMINI_API_KEY`
-- kanchi-dividend-sop: `FMP_API_KEY`
-- market-top-detector: `FMP_API_KEY`
-- media-downloader: `PEXELS_API_KEY`
+- inference-skills: `OPENAI_API_KEY`
+- minimax-image-understanding: `MINIMAX_API_KEY`
 - options-strategy-advisor: `FMP_API_KEY`
+- sepa-strategy: `TUSHARE_TOKEN`
+- stock-daily-analysis-skill: `OPENAI_API_KEY`
+- stock-monitor-skill: `TUSHARE_TOKEN`
 - theme-detector: `FINVIZ_API_KEY`
 - theme-detector: `FMP_API_KEY`
+- vision-analysis: `MINIMAX_API_KEY`
+- alphaear-reporter: `TUSHARE_TOKEN`
+- breakout-trade-planner: `TUSHARE_TOKEN`
 - canslim-screener: `FMP_API_KEY`
+- cli-batches: `OPENAI_API_KEY`
+- dividend-growth-pullback-screener: `FINVIZ_API_KEY`
+- dividend-growth-pullback-screener: `FMP_API_KEY`
 - downtrend-duration-analyzer: `FMP_API_KEY`
 - earnings-calendar: `FMP_API_KEY`
+- earnings-recap: `TUSHARE_TOKEN`
 - earnings-trade-analyzer: `FMP_API_KEY`
+- edge-candidate-agent: `TUSHARE_TOKEN`
+- edge-hint-extractor: `OPENAI_API_KEY`
+- exposure-coach: `FMP_API_KEY`
 - finviz-screener: `FINVIZ_API_KEY`
 - ftd-detector: `FMP_API_KEY`
 - ibd-distribution-day-monitor: `FMP_API_KEY`
+- kanchi-dividend-review-monitor: `TUSHARE_TOKEN`
+- kanchi-dividend-sop: `FMP_API_KEY`
+- market-top-detector: `FMP_API_KEY`
+- options-payoff: `TUSHARE_TOKEN`
+- oracle: `OPENAI_API_KEY`
 - pair-trade-screener: `FMP_API_KEY`
 - parabolic-short-trade-planner: `ALPACA_API_KEY`
 - parabolic-short-trade-planner: `FMP_API_KEY`
 - pead-screener: `FMP_API_KEY`
+- saas-valuation-compression: `TUSHARE_TOKEN`
 - signal-postmortem: `FMP_API_KEY`
+- stock-correlation: `TUSHARE_TOKEN`
 - vcp-screener: `FMP_API_KEY`
+- media-downloader: `PEXELS_API_KEY`
 - agentmail: `AGENTMAIL_API_KEY`
+- minimax-multimodal-toolkit: `MINIMAX_API_KEY`
 - notebooklm-skill: `GEMINI_API_KEY`
+- gif-sticker-maker: `MINIMAX_API_KEY`
 
 ## Duplicate Capabilities
 - None

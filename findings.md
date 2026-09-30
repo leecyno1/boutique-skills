@@ -1,5 +1,22 @@
 # Findings
 
+## 2026-09-30（补漏周度治理 + curl token 泄露修复）
+
+已解决：
+
+- 2026-09-12 记录的残留项：curl 回退把 GitHub token 放在子进程命令行（`ps aux` 可见）。已改为 `curl --config -` 从 stdin 传 header，token 不再进入 argv；`_curl_config_escape` 负责 config 值转义。新增 `tests/test_curl_token_hygiene.py`（token 不入 argv、转义、无 header 时不加 `--config`），已接入 `scripts/weekly_cycle.sh` 第 8 步。验证：authenticated `rate_limit` 返回 limit=5000、raw 文件下载 200、404 仍返回 None、上游改名仓库 301 仍跟随。
+- 补漏周度治理（09-19、09-26 因 Quest 暂停未触发）：发现阶段评估 41 个候选，自动入库 5 个仓库 21 个 Skill（claude-seo 5 个 SEO、auto-claude-code-research-in-sleep 6 个科研、oh-story-claudecode 4 个写作、claude-bughunter 5 个漏洞赏金、memu 1 个记忆）；prune 检查 415 个上游，0 项移除。目录 458 个技能（high 458 / medium 85 / low 67），标准包 30，金融组合 34，needs_origin_review = 0。审计 `missing_skills=0`、`duplicate_capabilities=0`、`missing_native_origins=0`、`standard_bundle_issues=0`，`risky_hits=15` 与上轮持平且无一命中新入库技能，`missing_env` 由 116 升至 149（新技能带 env 依赖，预期）。三个测试文件全部通过。
+- 入库质检：21 个新目录 SKILL.md 与 SOURCE.txt 齐备，无 `__pycache__`/媒体/大文件（合计 1.6 MB），15 个附带脚本 `py_compile` 与 `node --check` 全通过，注册表分层单调性成立，21 条 origin 已登记。
+- `memu` 许可证核验：GitHub licensee 报 NOASSERTION，实际 `LICENSE.txt` 是逐字 Apache-2.0 正文（仅因缩进与附加版权段识别失败），已在 `skills/default/memu/SOURCE.txt` 记录核验结论与日期。
+
+未决：
+
+- 周度治理 Quest（id `70f2e60c-b189-445f-ab92-6e4e642f9975`，`0 9 * * 6` Asia/Shanghai）当前 `enabled=false`、`pauseReason=manual`，因此 2026-09-19 与 2026-09-26 两次未触发，本轮为手动补漏。是否重新启用待用户裁决，不代为开启。
+- **归档式卸载对 Qoder 客户端重装不具持久性**：`~/.qoder/skills-archive` 已不存在，`~/.qoder/skills` 中 260/311 个目录 mtime 为 2026-09-16，说明当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原且归档副本丢失 —— `reports/usage/cleanup-receipts.jsonl` 中对应 `to` 路径已失效，无法 `mv` 回滚，只能重新从上游获取。Codex 侧未受影响（`~/.codex/skills-archive` 22 项完好，2026-09-12 归档的 `grill-with-docs`、`mcp-server-patterns`、`recursive-decision-ledger` 仍未复活）。后果已经显现：本轮 7 项卸载建议里 `doc` 与 `wechat-topic-outline-planner` 是 08-22 已卸载过的技能，属被还原后重新命中。处理原则：卸载建议应当轮确认执行，不跨周悬挂。
+- `/Volumes/PSSD/Projects/boutique-skills` 是同一 GitHub 仓库（origin 同为 `leecyno1/boutique-skills`）的陈旧本地检出，停在 `e16c7a0`（2026-08-16），未 fetch 过本轮提交。其工作区含 4 个受保护 tushare-eval 文件的未提交改动，生成时间 `2026-06-18T15:20:38`，比本仓库已提交版本的 `2026-06-14T07:38:30` 新，从未入库。本轮不触碰该目录；保留/同步/归档待用户裁决。
+- `reports/upstream-check-latest.md` 停在 2026-08-16（45 天），月度上游更新检查未按期跑。
+- 本轮 7 项卸载建议待用户确认（`reports/usage/pending-cleanup.json`，status=pending，绝不自动执行）。
+
 ## 2026-09-12（周度治理·网络故障与修复批次）
 
 已解决：

@@ -83,7 +83,7 @@
       "slot": "A股数据底座",
       "capability": "a-share-data",
       "skill": "a-stock-data",
-      "score": 90,
+      "score": 88,
       "access": "direct",
       "api_keys": []
     },
@@ -91,7 +91,7 @@
       "slot": "美股/港股全栈数据",
       "capability": "global-market-data",
       "skill": "global-stock-data",
-      "score": 90,
+      "score": 88,
       "access": "direct",
       "api_keys": []
     },
@@ -109,7 +109,7 @@
       "slot": "宏观研究",
       "capability": "macro",
       "skill": "market-environment-analysis",
-      "score": 83,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -117,7 +117,7 @@
       "slot": "宏观/政策跟踪",
       "capability": "policy",
       "skill": "policy-monitor",
-      "score": 83,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -133,7 +133,7 @@
       "slot": "事件与新闻",
       "capability": "event-news",
       "skill": "alphaear-news",
-      "score": 82,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -157,7 +157,7 @@
       "slot": "财报前预案/复盘",
       "capability": "earnings-cycle",
       "skill": "earnings-preview",
-      "score": 80,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -232,7 +232,7 @@
       "slot": "市场宽度/趋势",
       "capability": "technical-trend",
       "skill": "market-breadth-analyzer",
-      "score": 82,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -276,7 +276,7 @@
       "slot": "组合管理",
       "capability": "portfolio",
       "skill": "llmquant-portfolio",
-      "score": 86,
+      "score": 85,
       "access": "api-key+mcp-required",
       "api_keys": [
         "LLMQUANT_API_KEY"
@@ -286,7 +286,7 @@
       "slot": "组合风险",
       "capability": "risk",
       "skill": "llmquant-risk",
-      "score": 87,
+      "score": 85,
       "access": "api-key+mcp-required",
       "api_keys": [
         "LLMQUANT_API_KEY"
@@ -296,7 +296,7 @@
       "slot": "自选股监控",
       "capability": "monitoring",
       "skill": "alphaear-signal-tracker",
-      "score": 80,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -322,7 +322,7 @@
       "slot": "回测审查",
       "capability": "backtest-review",
       "skill": "backtest-expert",
-      "score": 96,
+      "score": 98,
       "access": "direct",
       "api_keys": []
     },
@@ -346,7 +346,7 @@
       "slot": "ETF 研究",
       "capability": "etf",
       "skill": "etf-premium",
-      "score": 83,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -354,7 +354,7 @@
       "slot": "投研报告生成",
       "capability": "report",
       "skill": "alphaear-reporter",
-      "score": 72,
+      "score": 71,
       "access": "api-key",
       "api_keys": [
         "TUSHARE_TOKEN"
@@ -364,7 +364,7 @@
       "slot": "金融知识库",
       "capability": "knowledge-base",
       "skill": "openclaw-stock-kb",
-      "score": 94,
+      "score": 93,
       "access": "direct",
       "api_keys": []
     },
@@ -372,7 +372,7 @@
       "slot": "数据质量",
       "capability": "data-quality",
       "skill": "data-quality-checker",
-      "score": 77,
+      "score": 75,
       "access": "api-key",
       "api_keys": [
         "TUSHARE_TOKEN"
@@ -421,5 +421,5 @@
     "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
     "Slot count 34, skill count 34 (max 40)."
   ],
-  "generated_at": "2026-09-12"
+  "generated_at": "2026-09-30"
 }

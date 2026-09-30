@@ -1,0 +1,5 @@
+Source: https://github.com/AgriciDaniel/claude-seo
+Base source commit: main @ 2026-09-30
+License: MIT
+Stars at import: 18000
+Imported by: scripts/weekly_curation.py on 2026-09-30 (score 80).

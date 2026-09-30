@@ -1,0 +1,5 @@
+Source: https://github.com/elementalsouls/Claude-BugHunter
+Base source commit: main @ 2026-09-30
+License: MIT
+Stars at import: 4731
+Imported by: scripts/weekly_curation.py on 2026-09-30 (score 80).

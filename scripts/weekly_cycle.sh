@@ -42,6 +42,7 @@ echo "=== [8/10] Audit and tests ==="
 python3 scripts/audit_skills.py
 python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
+python3 tests/test_curl_token_hygiene.py
 
 echo "=== [9/10] Generate skill adjustment recommendations ==="
 python3 scripts/usage_recommendations.py

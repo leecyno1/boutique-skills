@@ -1,6 +1,6 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-09-11
+更新时间：2026-09-30
 
 ## 仓库信息
 
@@ -9,50 +9,48 @@
 - GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
 - 注意：本地目录名仍是 boutique-openclaw-skills，仓库内出现该字符串的路径（会话转录目录、RepoWiki 目录、审计报告里的绝对路径）是目录名不是仓库名，不要改。
-- 当前技能数：424（catalog/skills.enriched.json，生成于 2026-08-22）；skills/default/ 目录 560 个（含未注册候选与套件成员）
-- 横向分层：high 424 / medium 85 / low 67（累积分层，非互斥）
-- 来源核验：418 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
+- 当前技能数：458（catalog/skills.enriched.json，生成于 2026-09-30）；skills/default/ 目录 594 个（含未注册候选与套件成员）
+- 横向分层：high 458 / medium 85 / low 67（累积分层，非互斥）；纵向 L1 21 / L2 160 / L3 277
+- 星级分布：5★ 110 / 4★ 230 / 3★ 112 / 1★ 6
+- 来源核验：452 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
 - 标准包：30 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）
 - 金融投资标准组合：34 个 Skill（能力位去重，上限 40；同位优先无 key 候选，仅 13 位保留专业数据源 key）
 - 组合 API Key 政策：大模型 key 与 GitHub 工具 token 豁免；第三方注册 key 在标准组合硬过滤、在金融组合同位软惩罚（详见 docs/WEEKLY_CURATION.md）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-09-11 更新）
+## 当前待办（2026-09-30 更新）
 
-工作区干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希，每次周度提交都会失效）。2026-09-11 的两轮提交分别修复了远端 README 裂图与仓库改名引用。
+工作区在本轮补漏周度治理后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希，每次周度提交都会失效）。2026-09-11 批次（README 裂图、仓库改名引用、白名单补齐）明细见 `findings.md`；持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`。
 
-已解决：
+未决（按处理紧迫度）：
 
-- 远端 README 三张裂图修复：`assets/hero-v2.png`、`assets/weekly-pipeline.png`、`assets/bundles-duo.png` 已入库，被 `hero-v2` 取代的 `assets/hero.png` 已删除。根因是 `026c424`（2026-08-19）提交时白名单不含 `assets/`。
-- `scripts/publish_weekly.sh` 白名单补上 `assets/` 与 `.gitignore`，周度流程不会再漏提交图片。
-- `.gitignore` 排除 `reports/usage/.scan-{state,uses}.json` 遥测缓存（约 7.4 MB）与 `.qoder/`（本机生成的 RepoWiki，另有一份在 `~/.qoder/knowledges/`）。
-- 记忆文件校正：技能数、findings 分批、task_plan 悬空阶段结项。
-- GitHub 仓库改名为 `leecyno1/boutique-skills`（推送时远端返回 moved 提示；旧 URL 仍重定向，`git ls-remote` 新旧地址同指同一提交）。已修正三处遗留引用：`scripts/generate_finance_suite.py` 的硬编码 source/native_origin（生成器源头）、`catalog/suites/finance-investment-standard.json`、`README.md` 的 Finance Investment Standard Suite 行——三者一致，下次重新生成目录不会回退。`origin` 远端地址已指向新名。Gitee 仓库未改名，`publish_weekly.sh` 的 `GITEE_URL` 保持原值。
-- `scripts/publish_weekly.sh` 白名单补上 `findings.md` 与 `task_plan.md`，这两个记忆文件从此会随周度流程自动入库。
+1. **周度治理 Quest 处于手动暂停**：id `70f2e60c-b189-445f-ab92-6e4e642f9975`（`0 9 * * 6` Asia/Shanghai）当前 `enabled=false`、`pauseReason=manual`，因此 2026-09-19、2026-09-26 未触发，2026-09-30 为手动补漏。是否重新启用属用户裁决，不代为开启；下次自然触发点为每周六 09:00。
+2. **Qoder 侧归档目录已被清空**：`~/.qoder/skills-archive` 不存在，而 `~/.qoder/skills` 有 260/311 个目录 mtime 为 2026-09-16 —— 当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原，归档副本同时丢失（`reports/usage/cleanup-receipts.jsonl` 里的 `to` 路径已失效，无法 `mv` 回滚）。Codex 侧未受影响：`~/.codex/skills-archive` 22 项完好，2026-09-12 归档的三项仍未复活。含义：归档式卸载对 Qoder 客户端重装不具持久性，卸载建议应当轮确认执行，不要跨周悬挂。
+3. **陈旧重复检出**：`/Volumes/PSSD/Projects/boutique-skills` 与本仓库同指 `leecyno1/boutique-skills`，停在 `e16c7a0`（2026-08-16）且从未 fetch；其工作区含 4 个受保护 tushare-eval 文件的未提交改动（生成时间 2026-06-18，比本仓库已提交的 2026-06-14 新，从未入库）。本轮未触碰该目录，保留/同步/归档待用户裁决。
+4. **月度上游检查逾期**：`reports/upstream-check-latest.md` 停在 2026-08-16（45 天），`make upstream-check` 未跑。
+5. **7 项本地卸载建议待确认**（`reports/usage/pending-cleanup.json`，绝不自动执行）：qoder 侧 `wechat-topic-outline-planner`、`doc`、`openclaw-stock`、`openclaw-stock-analyzer`、`stock_datasource`；codex 侧 `lin-lefeng-perspective`、`sun-lumin-perspective`。确认后 `python3 scripts/uninstall_skills.py --confirm`。
 
-未决：
+## 最近完成（2026-09-30 补漏周度治理）
 
-1. 周度治理缺口：Quest 未在 2026-08-29、2026-09-05 触发（调度器/客户端未在线），`reports/weekly-curation/` 与 `reports/usage/` 最新日期停在 2026-08-22。下次预期触发 **2026-09-12（周六）09:00 Asia/Shanghai**；积压的图片、配置与记忆变更已提前清空，届时只需跑常规周度流程。若客户端不在线会再跳过一周。
+发现阶段评估 41 个候选仓库，自动入库 5 个仓库共 21 个 Skill；出库检查 415 个上游，0 项移除。
 
-`reports/usage/pending-cleanup.json` 的 `items` 为空，没有待用户确认的卸载项。
+| 上游仓库 | 星数 | 评分 | 入库 Skill |
+|---|---:|---:|---|
+| agricidaniel/claude-seo | 18000 | 80 | seo-agentic、seo-audit、seo-backlinks、seo-cluster、seo-competitor-pages |
+| wanshuiyin/auto-claude-code-research-in-sleep | 16852 | 80 | ablation-planner、alphaxiv、analyze-results、arxiv、auto-paper-improvement-loop、browser-cdp |
+| zenstory-ai/oh-story-claudecode | 7186 | 80 | story-cover、story-deslop、story-import、story-long-analyze |
+| elementalsouls/claude-bughunter | 4731 | 80 | apk-redteam-pipeline、bb-local-toolkit、bb-methodology、bug-bounty、bugcrowd-reporting |
+| nevamind-ai/memu | 14495 | 75 | memu（NOASSERTION 已核验为逐字 Apache-2.0，见其 SOURCE.txt） |
 
-## 最近完成
+本轮另修复 `scripts/weekly_curation.py` 的 curl 回退把 token 暴露在 `ps aux` 的问题（改为 `curl --config -` 走 stdin），新增 `tests/test_curl_token_hygiene.py` 并接入 `weekly_cycle.sh` 第 8 步。
+
+上一轮（2026-08-16）入库：
 
 | Skill | 评分 | 定位 |
 |---|---:|---|
 | dasheng-vox-skills | 90/100，5 星 | VOX 视频统一编排、Manifest、Provider 路由、Shotcraft、Gemini、Remotion、QC |
 | dasheng-video-omni-browser | 82/100，4 星 | 使用已登录 Chrome Gemini Omni 逐镜生成约 10 秒视频 |
-
-已完成：
-
-- 更新 catalog/default-skills.json、catalog/native-origin-overrides.json。
-- 加入高档套件 catalog/suites/dasheng-media-workflow.json。
-- 生成 catalog/skills.enriched.json、tiers/high.json 和相关文档索引。
-- 添加 reports/source-discovery/dasheng-vox-skills-review-2026-08-16.md。
-- 修复 Shotcraft 安装路径发现逻辑。
-- 为 Gemini 视频下载增加 Google API 域名校验。
-- 未重复收录已有的 video-shotcraft、frontend-design、dasheng-video-director。
 
 ## 关键目录
 

@@ -93,3 +93,15 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 39. Fix remote README broken images | complete | Commit `2cdfd9f` added 3 assets, dropped hero.png, pushed origin + gitee |
 | 40. Update stale GitHub repo URL references | complete | Generator, suite JSON and README row all point to leecyno1/boutique-skills; origin URL repointed |
 | 41. Add memory files to publish whitelist | complete | findings.md and task_plan.md added to publish_weekly.sh whitelist |
+
+## Catch-up Curation (2026-09-30)
+
+| Phase | Status | Output |
+|---|---|---|
+| 42. Recover session context and diagnose gap | complete | Quest found disabled (pauseReason=manual); 09-19 and 09-26 skipped; remotes in sync at b53674e |
+| 43. Fix curl token exposure residual | complete | weekly_curation.py sends headers via `curl --config -` stdin; tests/test_curl_token_hygiene.py added to weekly_cycle.sh step 8 |
+| 44. Run discovery and prune | complete | 41 candidates, 5 repos / 21 skills imported, 415 upstreams checked, 0 removals |
+| 45. Rebuild catalogs, telemetry, audit, tests | complete | 458 skills, standard bundle 30, finance suite 34, audit gates all zero, 3 test files pass |
+| 46. Generate recommendations | complete | 573 installed: remove 7 / consider 465 / keep 62 / discover 39; pending-cleanup awaiting user confirmation |
+| 47. Publish and verify dual remotes | pending | publish_weekly.sh + SHA equality across HEAD/origin/gitee |
+| 48. Record archive-durability finding | complete | ~/.qoder/skills-archive wiped by 2026-09-16 mass restore; 31 archived skills revived, receipts unrollbackable |

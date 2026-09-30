@@ -93,6 +93,10 @@ def gh_token() -> str | None:
     return result.stdout.strip() or None
 
 
+def _curl_config_escape(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+
+
 def _curl_fetch(
     url: str, token: str | None, accept: str | None = None, timeout: int = 20
 ) -> tuple[int | None, bytes | None]:
@@ -100,16 +104,24 @@ def _curl_fetch(
 
     Some networks cut Python's OpenSSL TLS fingerprint mid-handshake while
     letting curl (LibreSSL) through, so this serves as the transport fallback.
+    Headers go in via `--config -` on stdin so the token stays out of `ps`.
     """
     command = ["curl", "-sSL", "--max-time", str(timeout), "-w", "\n%{http_code}"]
+    config = b""
+    lines = []
     if accept:
-        command += ["-H", f"Accept: {accept}"]
+        lines.append(f'header = "Accept: {_curl_config_escape(accept)}"')
     if token:
-        command += ["-H", f"Authorization: Bearer {token}"]
+        lines.append(
+            f'header = "Authorization: Bearer {_curl_config_escape(token)}"'
+        )
+    if lines:
+        command += ["--config", "-"]
+        config = ("\n".join(lines) + "\n").encode("utf-8")
     command.append(url)
     try:
         result = subprocess.run(
-            command, capture_output=True, check=False, timeout=timeout + 5
+            command, input=config, capture_output=True, check=False, timeout=timeout + 5
         )
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return None, None

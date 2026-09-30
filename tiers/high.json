@@ -6277,6 +6277,216 @@
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
+    },
+    {
+      "id": "seo-agentic",
+      "name": "seo-agentic",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
+      "manual": "skills/default/seo-agentic/SKILL.md",
+      "source": "https://github.com/AgriciDaniel/claude-seo",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "seo-audit",
+      "name": "seo-audit",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
+      "manual": "skills/default/seo-audit/SKILL.md",
+      "source": "https://github.com/AgriciDaniel/claude-seo",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "seo-backlinks",
+      "name": "seo-backlinks",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
+      "manual": "skills/default/seo-backlinks/SKILL.md",
+      "source": "https://github.com/AgriciDaniel/claude-seo",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "seo-cluster",
+      "name": "seo-cluster",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
+      "manual": "skills/default/seo-cluster/SKILL.md",
+      "source": "https://github.com/AgriciDaniel/claude-seo",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "seo-competitor-pages",
+      "name": "seo-competitor-pages",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
+      "manual": "skills/default/seo-competitor-pages/SKILL.md",
+      "source": "https://github.com/AgriciDaniel/claude-seo",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ablation-planner",
+      "name": "ablation-planner",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "manual": "skills/default/ablation-planner/SKILL.md",
+      "source": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "alphaxiv",
+      "name": "alphaxiv",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "manual": "skills/default/alphaxiv/SKILL.md",
+      "source": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "analyze-results",
+      "name": "analyze-results",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "manual": "skills/default/analyze-results/SKILL.md",
+      "source": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "arxiv",
+      "name": "arxiv",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "manual": "skills/default/arxiv/SKILL.md",
+      "source": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "auto-paper-improvement-loop",
+      "name": "auto-paper-improvement-loop",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "manual": "skills/default/auto-paper-improvement-loop/SKILL.md",
+      "source": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "browser-cdp",
+      "name": "browser-cdp",
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+      "manual": "skills/default/browser-cdp/SKILL.md",
+      "source": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "story-cover",
+      "name": "story-cover",
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+      "manual": "skills/default/story-cover/SKILL.md",
+      "source": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "story-deslop",
+      "name": "story-deslop",
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+      "manual": "skills/default/story-deslop/SKILL.md",
+      "source": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "story-import",
+      "name": "story-import",
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+      "manual": "skills/default/story-import/SKILL.md",
+      "source": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "story-long-analyze",
+      "name": "story-long-analyze",
+      "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+      "manual": "skills/default/story-long-analyze/SKILL.md",
+      "source": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "apk-redteam-pipeline",
+      "name": "apk-redteam-pipeline",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "manual": "skills/default/apk-redteam-pipeline/SKILL.md",
+      "source": "https://github.com/elementalsouls/Claude-BugHunter",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "bb-local-toolkit",
+      "name": "bb-local-toolkit",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "manual": "skills/default/bb-local-toolkit/SKILL.md",
+      "source": "https://github.com/elementalsouls/Claude-BugHunter",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "bb-methodology",
+      "name": "bb-methodology",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "manual": "skills/default/bb-methodology/SKILL.md",
+      "source": "https://github.com/elementalsouls/Claude-BugHunter",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "bug-bounty",
+      "name": "bug-bounty",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "manual": "skills/default/bug-bounty/SKILL.md",
+      "source": "https://github.com/elementalsouls/Claude-BugHunter",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "bugcrowd-reporting",
+      "name": "bugcrowd-reporting",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "manual": "skills/default/bugcrowd-reporting/SKILL.md",
+      "source": "https://github.com/elementalsouls/Claude-BugHunter",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "memu",
+      "name": "memu",
+      "description": "Personal memory across agents",
+      "manual": "skills/default/memu/SKILL.md",
+      "source": "https://github.com/NevaMind-AI/memU",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
     }
   ]
 }
