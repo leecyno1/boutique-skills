@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Weekly skills curation cycle.
 #
-# Pipeline: discover+import -> prune -> sync upstream content -> telemetry ->
-# rebuild catalogs -> refresh finance suite -> audit/syntax/tests ->
-# recommendations -> publish to GitHub and Gitee.
+# Pipeline: discover+import -> sync upstream content -> prune (incl. deleted
+# upstream paths) -> telemetry -> rebuild catalogs -> refresh finance suite ->
+# audit/syntax/risk/tests -> recommendations -> publish to GitHub and Gitee.
 #
 # Thresholds (see scripts/weekly_curation.py):
 #   import: candidate score >= 75, has SKILL.md, >= 20 stars, active, no overlap
-#   prune:  upstream gone / internal score < 60 / dominated duplicate
-#           (same conflict group, gap >= 15, weaker side <= 70)
+#   prune:  upstream gone / upstream path deleted / internal score < 60 /
+#           dominated duplicate (same conflict group, gap >= 15, weaker side <= 70)
 # Bundles: standard bundle <= 40 base skills; finance suite <= 40 skills.
 set -euo pipefail
 
@@ -21,13 +21,15 @@ STAMP="$(date +%F)"
 echo "=== [1/11] Discover and import new GitHub skills ==="
 python3 scripts/weekly_curation.py discover --import-approved
 
-echo "=== [2/11] Prune dead/low-score/dominated skills ==="
-python3 scripts/weekly_curation.py prune --apply
-
-echo "=== [3/11] Sync curated skills from their upstreams ==="
+echo "=== [2/11] Sync curated skills from their upstreams ==="
 # --apply also writes reports/upstream-check-latest.{md,json}; running the
 # read-only pass first would just double the runtime for the same report.
+# Skills whose upstream path moved are relocated before pruning, so only true
+# orphans reach step 3.
 python3 scripts/check_upstream_updates.py --apply
+
+echo "=== [3/11] Prune dead/path-deleted/low-score/dominated skills ==="
+python3 scripts/weekly_curation.py prune --apply --upstream-report reports/upstream-check-latest.json
 
 echo "=== [4/11] Collect local skill usage telemetry ==="
 python3 scripts/telemetry_collect.py --days 30
@@ -51,6 +53,7 @@ python3 scripts/check_new_risks.py
 python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
 python3 tests/test_curl_token_hygiene.py
+python3 tests/test_upstream_relocation.py
 
 echo "=== [10/11] Generate skill adjustment recommendations ==="
 python3 scripts/usage_recommendations.py

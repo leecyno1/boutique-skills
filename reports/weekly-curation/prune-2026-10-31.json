@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-10-31T10:12:03",
+  "checked_upstreams": 436,
+  "path_missing_checked": 22,
+  "suggestions": [
+    {
+      "skill": "dasheng-stage-brief-ai",
+      "reason": "upstream_path_missing",
+      "detail": "leecyno1/dasheng-media-workflow-skills no longer has skills/dasheng-stage-brief-ai"
+    },
+    {
+      "skill": "dasheng-stage-draft",
+      "reason": "upstream_path_missing",
+      "detail": "leecyno1/dasheng-media-workflow-skills no longer has skills/dasheng-stage-draft"
+    },
+    {
+      "skill": "alphagbm-alert",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-alert"
+    },
+    {
+      "skill": "alphagbm-buffett-analysis",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-buffett-analysis"
+    },
+    {
+      "skill": "alphagbm-company-profile",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-company-profile"
+    },
+    {
+      "skill": "alphagbm-compare",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-compare"
+    },
+    {
+      "skill": "alphagbm-duan-analysis",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-duan-analysis"
+    },
+    {
+      "skill": "alphagbm-fear-score",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-fear-score"
+    },
+    {
+      "skill": "alphagbm-health-check",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-health-check"
+    },
+    {
+      "skill": "alphagbm-investment-thesis",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-investment-thesis"
+    },
+    {
+      "skill": "alphagbm-macro-view",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-macro-view"
+    },
+    {
+      "skill": "alphagbm-marks-cycle",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-marks-cycle"
+    },
+    {
+      "skill": "alphagbm-take-profit",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-take-profit"
+    },
+    {
+      "skill": "alphagbm-tepper-signal",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-tepper-signal"
+    },
+    {
+      "skill": "alphagbm-theme-research",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-theme-research"
+    },
+    {
+      "skill": "alphagbm-vix-status",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-vix-status"
+    },
+    {
+      "skill": "alphagbm-watchlist",
+      "reason": "upstream_path_missing",
+      "detail": "AlphaGBM/skills no longer has skills/alphagbm-watchlist"
+    },
+    {
+      "skill": "dasheng-video-omni-browser",
+      "reason": "upstream_path_missing",
+      "detail": "leecyno1/newma-media-studio no longer has skills/dasheng-video-omni-browser"
+    },
+    {
+      "skill": "funda-data",
+      "reason": "upstream_path_missing",
+      "detail": "himself65/finance-skills no longer has plugins/data-providers/skills/funda-data"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "reason": "upstream_path_missing",
+      "detail": "anthropics/financial-services no longer has plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-financial-plan",
+      "reason": "upstream_path_missing",
+      "detail": "anthropics/financial-services no longer has plugins/vertical-plugins/wealth-management/skills/financial-plan"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
+      "reason": "upstream_path_missing",
+      "detail": "anthropics/financial-services no longer has plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting"
+    }
+  ],
+  "applied": [
+    "dasheng-stage-brief-ai",
+    "dasheng-stage-draft",
+    "alphagbm-alert",
+    "alphagbm-buffett-analysis",
+    "alphagbm-company-profile",
+    "alphagbm-compare",
+    "alphagbm-duan-analysis",
+    "alphagbm-fear-score",
+    "alphagbm-health-check",
+    "alphagbm-investment-thesis",
+    "alphagbm-macro-view",
+    "alphagbm-marks-cycle",
+    "alphagbm-take-profit",
+    "alphagbm-tepper-signal",
+    "alphagbm-theme-research",
+    "alphagbm-vix-status",
+    "alphagbm-watchlist",
+    "dasheng-video-omni-browser",
+    "funda-data",
+    "anthropic-fs-wealth-management-portfolio-rebalance",
+    "anthropic-fs-wealth-management-financial-plan",
+    "anthropic-fs-wealth-management-tax-loss-harvesting"
+  ]
+}

@@ -4,7 +4,7 @@
 
 已解决：
 
-- **治理停摆一个月**：Quest 自 2026-09-30 起 `enabled=false`，10 月无任何提交。旧任务的执行域是 `chatOnly`，即使启用也拿不到仓库目录。已新建 workspace 域任务 `d86c21e2-6c53-4e50-bed2-611ea4d6e417`（cwd 绑定仓库、周六 09:00 Asia/Shanghai、Full Access、独立会话），旧 chatOnly 任务已删除。
+- **治理停摆一个月**：Quest 自 2026-09-30 起 `enabled=false`，10 月无任何提交。旧任务的执行域是 `chatOnly`，即使启用也拿不到仓库目录。已新建 directory 域任务 `436c5b6e-10c6-487b-b73a-1504e4cc89c0`（cwd 绑定仓库、周六 09:00 Asia/Shanghai、Full Access、独立会话），旧 chatOnly 任务与上一版 workspace 域任务均已删除。
 - **周度流程从 10 步扩到 11 步**：新增第 3 步上游同步（`check_upstream_updates.py --apply`，该命令同时产出 `reports/upstream-check-latest.*`，不必再单独跑只读遍），第 9 步扩为审计 + 语法门禁 + 风险门禁 + 单元测试。
 - **新增 `scripts/check_skill_syntax.py`**：全量内存编译 `skills/default` 下的 Python（1379 个）与 `node --check` 校验 JS（355 个），不落 `__pycache__`，实测 0 错误。上游自动同步会直接写入第三方代码，没有这道门禁时语法错误会静默入库。
 - **新增 `scripts/check_new_risks.py` 与 `catalog/risky-baseline.json`**：把审计的 `(skill, file, pattern)` 风险命中固化为基线，出现基线外的新组合即阻断发布，避免上游更新静默带入 `curl | sh`、`eval(` 之类内容。首跑即生效。
@@ -15,8 +15,25 @@
 
 未决：
 
-- `source_path_missing` 52 个（`AlphaGBM/skills` 30 个路径重组、`anthropics/financial-services` wealth 垂直插件被删 5 个）仍需修 origin 或出库；`prune` 依旧只做 repo 级存活检查，检测不到路径级删除。
+- `source_path_missing` 52 个当日已修复（30 迁移 + 22 出库），详见下一节。
 - `~/.qoder/skills` 没有 `agent-reach` 副本（`~/.claude/skills`、`~/.agents/skills` 有，CLI 在 `~/.local/bin`）。它已在仓库与标准包 `social-research` 槽位，周更会自动同步其上游。
+
+## 2026-10-31（续：上游路径级治理）
+
+已解决：
+
+- **origin 自动迁移**：`check_upstream_updates.py` 遇到 `source_path_missing` 时按证据强度找新位置——SKILL.md 内容哈希（git blob）最优先，其次唯一同名目录，最后在版本/稳定分支里找原路径；同名目录有歧义、或只存在于未合并功能分支时不猜。命中后写回 `catalog/native-origin-overrides.json` 与 `SOURCE.txt`，并从新路径同步。52 个失效路径中 30 个迁移成功：
+  - 15 个 `alphagbm-*` → `skills/{category}/<name>`（main）；
+  - 12 个 taste 系技能 → `Leonxlnx/taste-skill` 的 `taste-skill-v1.9` / `taste-skill-v2` 分支（v1.9 与本地 SKILL.md 逐字节一致；v2 的部分子技能内容已改写，故按内容哈希分别选取，避免误升到 v2）；
+  - 3 个 `anthropic-fs-wealth-management-*` → `plugins/agent-plugins/meeting-prep-agent/skills/`（main）。
+- **路径级出库**：`weekly_curation.py prune --upstream-report reports/upstream-check-latest.json` 把仍是 `source_path_missing` 的行转为 `upstream_path_missing` 出库建议；报告 URL 与当前 override 不一致时跳过，避免旧报告误删刚迁移的技能。周度顺序改为先同步后出库。
+- **22 个孤儿确认删除**：AlphaGBM 15（alert、buffett-analysis、company-profile、compare、duan-analysis、fear-score、health-check、investment-thesis、macro-view、marks-cycle、take-profit、tepper-signal、theme-research、vix-status、watchlist），anthropics 3（portfolio-rebalance、financial-plan、tax-loss-harvesting），dasheng 2（stage-brief-ai、stage-draft），`dasheng-video-omni-browser`（仅剩 docs/archive 快照），`funda-data`（上游已移除该插件）。
+- **测试**：新增 `tests/test_upstream_relocation.py`，覆盖内容哈希优先、唯一同名才用、歧义不猜、版本分支原路径四种判定，已接入周度第 9 步。
+
+待观察：
+
+- 迁移到版本分支的 12 个 taste 技能不会跟随 main 的 v2 演进；这是有意选择（保持与已审内容一致），后续若要升 v2 需逐个复核并按新内容重新评分。
+- `AlphaGBM/skills` 迁移后的 SKILL.md 与本地快照存在差异（上游已更新），本轮按上游覆盖，属正常同步；新增的 scripts/ 一并入库。
 
 ## 2026-09-30（补漏周度治理 + curl 传输加固：token 泄露与上游检查卡死）
 

@@ -205,11 +205,12 @@
     {
       "slot": "主题研究",
       "capability": "theme-research",
-      "skill": "alphagbm-theme-research",
-      "score": 82,
+      "skill": "theme-detector",
+      "score": 72,
       "access": "api-key",
       "api_keys": [
-        "ALPHAGBM_API_KEY"
+        "FINVIZ_API_KEY",
+        "FMP_API_KEY"
       ]
     },
     {
@@ -394,7 +395,7 @@
     "vcp-screener",
     "value-dividend-screener",
     "finviz-screener",
-    "alphagbm-theme-research",
+    "theme-detector",
     "bayesian-intrinsic-growth-valuation",
     "buy-side-equity-research-memo",
     "market-breadth-analyzer",

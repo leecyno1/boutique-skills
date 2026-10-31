@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-10-31T09:25:41",
+  "generated_at": "2026-10-31T09:45:48",
   "checked": 436,
   "summary": {
-    "current": 171,
+    "current": 186,
     "metadata_only_root_no_skill_md": 59,
     "metadata_only_root_too_large": 1,
-    "source_path_missing": 52,
-    "updated": 118,
+    "source_path_missing": 22,
+    "updated": 133,
     "wrapper_origin": 35
   },
+  "relocated": 30,
   "results": [
     {
       "skill_id": "brainstorming",
@@ -418,24 +419,29 @@
     },
     {
       "skill_id": "minimalist-ui",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v1.9",
       "path": "skills/minimalist-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill",
+      "relocated_from_path": "skills/minimalist-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill",
+      "relocated_ref": "taste-skill-v1.9"
     },
     {
       "skill_id": "animation-vocabulary",
@@ -527,24 +533,29 @@
     },
     {
       "skill_id": "brandkit",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v1.9",
       "path": "skills/brandkit",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
+      "relocated_from_path": "skills/brandkit",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit",
+      "relocated_ref": "taste-skill-v1.9"
     },
     {
       "skill_id": "claude-mem-plugin",
@@ -761,24 +772,29 @@
     },
     {
       "skill_id": "high-end-visual-design",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/soft-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill",
+      "relocated_from_path": "skills/soft-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "humanizer-zh",
@@ -824,24 +840,29 @@
     },
     {
       "skill_id": "image-to-code",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/image-to-code-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill",
+      "relocated_from_path": "skills/image-to-code-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "improve-animations",
@@ -1556,24 +1577,29 @@
     },
     {
       "skill_id": "design-taste-frontend-v1",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v1.9",
       "path": "skills/taste-skill-v1",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1",
+      "relocated_from_path": "skills/taste-skill-v1",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1",
+      "relocated_ref": "taste-skill-v1.9"
     },
     {
       "skill_id": "discord-reader",
@@ -1732,45 +1758,55 @@
     },
     {
       "skill_id": "full-output-enforcement",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/output-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/output-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/output-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/output-skill",
+      "relocated_from_path": "skills/output-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/output-skill",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "gpt-taste",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v1.9",
       "path": "skills/gpt-tasteskill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill",
+      "relocated_from_path": "skills/gpt-tasteskill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill",
+      "relocated_ref": "taste-skill-v1.9"
     },
     {
       "skill_id": "gstack",
@@ -1858,45 +1894,55 @@
     },
     {
       "skill_id": "imagegen-frontend-mobile",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/imagegen-frontend-mobile",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile",
+      "relocated_from_path": "skills/imagegen-frontend-mobile",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "imagegen-frontend-web",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-web",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/imagegen-frontend-web",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web",
+      "relocated_from_path": "skills/imagegen-frontend-web",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-web",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "impeccable",
@@ -1972,24 +2018,29 @@
     },
     {
       "skill_id": "industrial-brutalist-ui",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/brutalist-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/brutalist-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill",
+      "relocated_from_path": "skills/brutalist-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/brutalist-skill",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "linkedin-reader",
@@ -2129,24 +2180,29 @@
     },
     {
       "skill_id": "redesign-existing-projects",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v1.9",
       "path": "skills/redesign-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill",
+      "relocated_from_path": "skills/redesign-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill",
+      "relocated_ref": "taste-skill-v1.9"
     },
     {
       "skill_id": "scenario-analyzer",
@@ -2192,24 +2248,29 @@
     },
     {
       "skill_id": "stitch-design-taste",
-      "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/stitch-skill",
       "owner": "Leonxlnx",
       "repo": "taste-skill",
-      "ref": "main",
+      "ref": "taste-skill-v2",
       "path": "skills/stitch-skill",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
-        "stars": 106351,
-        "forks": 7195,
+        "stars": 106362,
+        "forks": 7196,
         "pushed_at": "2026-10-31T00:26:56Z",
-        "updated_at": "2026-10-31T01:02:09Z",
+        "updated_at": "2026-10-31T01:43:17Z",
         "default_branch": "main",
         "license": "MIT"
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 2,
+      "relocated_from": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill",
+      "relocated_from_path": "skills/stitch-skill",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/stitch-skill",
+      "relocated_ref": "taste-skill-v2"
     },
     {
       "skill_id": "strategy-pivot-designer",
@@ -4416,13 +4477,13 @@
     },
     {
       "skill_id": "alphagbm-bps-backtest",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-bps-backtest",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-bps-backtest",
+      "path": "skills/options/alphagbm-bps-backtest",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4431,9 +4492,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-bps-backtest/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-bps-backtest/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
+      "relocated_from_path": "skills/alphagbm-bps-backtest",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-bps-backtest",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-buffett-analysis",
@@ -4458,13 +4528,13 @@
     },
     {
       "skill_id": "alphagbm-chokepoint",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/commodities/alphagbm-chokepoint",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-chokepoint",
+      "path": "skills/commodities/alphagbm-chokepoint",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4473,9 +4543,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-chokepoint/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-chokepoint/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint",
+      "relocated_from_path": "skills/alphagbm-chokepoint",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/commodities/alphagbm-chokepoint",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-company-profile",
@@ -4542,13 +4621,13 @@
     },
     {
       "skill_id": "alphagbm-earnings-crush",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-earnings-crush",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-earnings-crush",
+      "path": "skills/options/alphagbm-earnings-crush",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4557,9 +4636,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-earnings-crush/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-earnings-crush/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
+      "relocated_from_path": "skills/alphagbm-earnings-crush",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-earnings-crush",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-fear-score",
@@ -4584,13 +4672,13 @@
     },
     {
       "skill_id": "alphagbm-greeks",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-greeks",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-greeks",
+      "path": "skills/options/alphagbm-greeks",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4599,9 +4687,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-greeks/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-greeks/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks",
+      "relocated_from_path": "skills/alphagbm-greeks",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-greeks",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-health-check",
@@ -4626,13 +4723,13 @@
     },
     {
       "skill_id": "alphagbm-hedge-advisor",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-hedge-advisor",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-hedge-advisor",
+      "path": "skills/options/alphagbm-hedge-advisor",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4641,9 +4738,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-hedge-advisor/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-hedge-advisor/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
+      "relocated_from_path": "skills/alphagbm-hedge-advisor",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-hedge-advisor",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-investment-thesis",
@@ -4668,13 +4774,13 @@
     },
     {
       "skill_id": "alphagbm-iv-rank",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-iv-rank",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-iv-rank",
+      "path": "skills/options/alphagbm-iv-rank",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4683,9 +4789,21 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-iv-rank/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-iv-rank/agents/openai.yaml",
+        "skills/default/alphagbm-iv-rank/references/access.md",
+        "skills/default/alphagbm-iv-rank/scripts/review_engine.py",
+        "skills/default/alphagbm-iv-rank/scripts/run.py"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank",
+      "relocated_from_path": "skills/alphagbm-iv-rank",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-iv-rank",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-macro-view",
@@ -4710,13 +4828,13 @@
     },
     {
       "skill_id": "alphagbm-market-sentiment",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-market-sentiment",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-market-sentiment",
+      "path": "skills/stocks/alphagbm-market-sentiment",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4725,9 +4843,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-market-sentiment/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-market-sentiment/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
+      "relocated_from_path": "skills/alphagbm-market-sentiment",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-market-sentiment",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-marks-cycle",
@@ -4752,13 +4879,13 @@
     },
     {
       "skill_id": "alphagbm-options-score",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-score",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-options-score",
+      "path": "skills/options/alphagbm-options-score",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4767,19 +4894,31 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-options-score/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-options-score/agents/openai.yaml",
+        "skills/default/alphagbm-options-score/references/access.md",
+        "skills/default/alphagbm-options-score/scripts/review_engine.py",
+        "skills/default/alphagbm-options-score/scripts/run.py"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score",
+      "relocated_from_path": "skills/alphagbm-options-score",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-score",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-options-strategy",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-strategy",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-options-strategy",
+      "path": "skills/options/alphagbm-options-strategy",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4788,19 +4927,28 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-options-strategy/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-options-strategy/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy",
+      "relocated_from_path": "skills/alphagbm-options-strategy",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-strategy",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-pnl-simulator",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-pnl-simulator",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-pnl-simulator",
+      "path": "skills/options/alphagbm-pnl-simulator",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4809,19 +4957,28 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-pnl-simulator/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-pnl-simulator/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator",
+      "relocated_from_path": "skills/alphagbm-pnl-simulator",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-pnl-simulator",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-polymarket",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/digital-assets/alphagbm-polymarket",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-polymarket",
+      "path": "skills/digital-assets/alphagbm-polymarket",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4830,19 +4987,28 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-polymarket/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-polymarket/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket",
+      "relocated_from_path": "skills/alphagbm-polymarket",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/digital-assets/alphagbm-polymarket",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-stock-analysis",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-stock-analysis",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-stock-analysis",
+      "path": "skills/stocks/alphagbm-stock-analysis",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4851,9 +5017,21 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-stock-analysis/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-stock-analysis/agents/openai.yaml",
+        "skills/default/alphagbm-stock-analysis/references/access.md",
+        "skills/default/alphagbm-stock-analysis/scripts/review_engine.py",
+        "skills/default/alphagbm-stock-analysis/scripts/run.py"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis",
+      "relocated_from_path": "skills/alphagbm-stock-analysis",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-stock-analysis",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-take-profit",
@@ -4920,13 +5098,13 @@
     },
     {
       "skill_id": "alphagbm-unusual-activity",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-unusual-activity",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-unusual-activity",
+      "path": "skills/options/alphagbm-unusual-activity",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4935,9 +5113,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-unusual-activity/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-unusual-activity/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
+      "relocated_from_path": "skills/alphagbm-unusual-activity",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-unusual-activity",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-vix-status",
@@ -4962,13 +5149,13 @@
     },
     {
       "skill_id": "alphagbm-vol-smile",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-smile",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-vol-smile",
+      "path": "skills/options/alphagbm-vol-smile",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4977,19 +5164,28 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-vol-smile/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-vol-smile/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile",
+      "relocated_from_path": "skills/alphagbm-vol-smile",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-smile",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-vol-surface",
-      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+      "url": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-surface",
       "owner": "AlphaGBM",
       "repo": "skills",
       "ref": "main",
-      "path": "skills/alphagbm-vol-surface",
+      "path": "skills/options/alphagbm-vol-surface",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "updated",
       "upstream": {
         "stars": 2807,
         "forks": 319,
@@ -4998,9 +5194,18 @@
         "default_branch": "main",
         "license": "MIT"
       },
-      "changed": [],
-      "added": [],
-      "same": 0
+      "changed": [
+        "skills/default/alphagbm-vol-surface/SKILL.md"
+      ],
+      "added": [
+        "skills/default/alphagbm-vol-surface/references/legacy.md"
+      ],
+      "same": 0,
+      "relocated_from": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
+      "relocated_from_path": "skills/alphagbm-vol-surface",
+      "relocated_method": "name",
+      "relocated_to": "https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-surface",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "alphagbm-watchlist",
@@ -5390,10 +5595,10 @@
       "is_file": false,
       "status": "source_path_missing",
       "upstream": {
-        "stars": 3479,
+        "stars": 3481,
         "forks": 392,
         "pushed_at": "2026-10-25T07:35:11Z",
-        "updated_at": "2026-10-30T17:37:45Z",
+        "updated_at": "2026-10-31T01:38:59Z",
         "default_branch": "main",
         "license": "MIT"
       },
@@ -8652,13 +8857,13 @@
     },
     {
       "skill_id": "anthropic-fs-wealth-management-client-report",
-      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-report",
+      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-report",
       "owner": "anthropics",
       "repo": "financial-services",
       "ref": "main",
-      "path": "plugins/vertical-plugins/wealth-management/skills/client-report",
+      "path": "plugins/agent-plugins/meeting-prep-agent/skills/client-report",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 40938,
         "forks": 5700,
@@ -8669,17 +8874,22 @@
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-report",
+      "relocated_from_path": "plugins/vertical-plugins/wealth-management/skills/client-report",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-report",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "anthropic-fs-wealth-management-client-review",
-      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-review",
+      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-review",
       "owner": "anthropics",
       "repo": "financial-services",
       "ref": "main",
-      "path": "plugins/vertical-plugins/wealth-management/skills/client-review",
+      "path": "plugins/agent-plugins/meeting-prep-agent/skills/client-review",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 40938,
         "forks": 5700,
@@ -8690,7 +8900,12 @@
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-review",
+      "relocated_from_path": "plugins/vertical-plugins/wealth-management/skills/client-review",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-review",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "anthropic-fs-wealth-management-financial-plan",
@@ -8715,13 +8930,13 @@
     },
     {
       "skill_id": "anthropic-fs-wealth-management-investment-proposal",
-      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal",
+      "url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal",
       "owner": "anthropics",
       "repo": "financial-services",
       "ref": "main",
-      "path": "plugins/vertical-plugins/wealth-management/skills/investment-proposal",
+      "path": "plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal",
       "is_file": false,
-      "status": "source_path_missing",
+      "status": "current",
       "upstream": {
         "stars": 40938,
         "forks": 5700,
@@ -8732,7 +8947,12 @@
       },
       "changed": [],
       "added": [],
-      "same": 0
+      "same": 1,
+      "relocated_from": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal",
+      "relocated_from_path": "plugins/vertical-plugins/wealth-management/skills/investment-proposal",
+      "relocated_method": "content",
+      "relocated_to": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal",
+      "relocated_ref": "main"
     },
     {
       "skill_id": "anthropic-fs-wealth-management-tax-loss-harvesting",

@@ -568,9 +568,16 @@ def write_review_note(candidate: Candidate, installed: list[str]) -> None:
 # ---------------------------------------------------------------- pruning
 
 
-def prune_checks(token: str | None, apply: bool) -> dict:
+def prune_checks(token: str | None, apply: bool, upstream_report: Path | None = None) -> dict:
     skills = load_enriched_index()
     suggestions = []
+    seen: set[str] = set()
+
+    def suggest(skill_id: str, reason: str, detail: str) -> None:
+        if skill_id in seen:
+            return
+        seen.add(skill_id)
+        suggestions.append({"skill": skill_id, "reason": reason, "detail": detail})
 
     # 1. Dead upstreams (GitHub 404/Gone).
     checked = 0
@@ -585,11 +592,7 @@ def prune_checks(token: str | None, apply: bool) -> dict:
         repo_data = api_get(f"/repos/{owner}/{repo}", token)
         checked += 1
         if repo_data is None:
-            suggestions.append({
-                "skill": skill_id,
-                "reason": "upstream_gone",
-                "detail": f"{owner}/{repo} is gone or inaccessible",
-            })
+            suggest(skill_id, "upstream_gone", f"{owner}/{repo} is gone or inaccessible")
         time.sleep(0.3)
 
     # 2. Low internal score.
@@ -598,11 +601,7 @@ def prune_checks(token: str | None, apply: bool) -> dict:
             continue
         score = item.get("rating", {}).get("score", 0)
         if score < REMOVE_SCORE:
-            suggestions.append({
-                "skill": skill_id,
-                "reason": "low_score",
-                "detail": f"internal score {score} < {REMOVE_SCORE}",
-            })
+            suggest(skill_id, "low_score", f"internal score {score} < {REMOVE_SCORE}")
 
     # 3. Dominated duplicates inside the same conflict group.
     groups: dict[str, list[tuple[str, int]]] = {}
@@ -618,18 +617,52 @@ def prune_checks(token: str | None, apply: bool) -> dict:
         best_score = max(score for _, score in members)
         for skill_id, score in members:
             if best_score - score >= DOMINATED_GAP and score <= DOMINATED_MAX_SCORE:
-                suggestions.append({
-                    "skill": skill_id,
-                    "reason": "dominated_duplicate",
-                    "detail": f"conflict group '{group}' has a member scoring {best_score}",
-                })
+                suggest(
+                    skill_id,
+                    "dominated_duplicate",
+                    f"conflict group '{group}' has a member scoring {best_score}",
+                )
+
+    # 4. Upstream directories that no longer exist (repo alive, path deleted
+    # or moved). check_upstream_updates.py relocates what it can; whatever is
+    # still `source_path_missing` after that is a true orphan.
+    path_missing = 0
+    if upstream_report and upstream_report.exists():
+        report = json.loads(upstream_report.read_text(encoding="utf-8"))
+        overrides = load_json(ORIGIN_OVERRIDES, {})
+        for item in report.get("results", []):
+            if item.get("status") != "source_path_missing":
+                continue
+            skill_id = item.get("skill_id")
+            if not skill_id or skill_id not in skills:
+                continue
+            if skills[skill_id].get("preset_excluded"):
+                continue
+            path_missing += 1
+            reported_url = item.get("url") or ""
+            current_url = overrides.get(skill_id) or (
+                (skills[skill_id].get("origin") or {}).get("origin_url") or ""
+            )
+            if reported_url and current_url and current_url.rstrip("/") != reported_url.rstrip("/"):
+                # The origin already moved after this report was written.
+                continue
+            suggest(
+                skill_id,
+                "upstream_path_missing",
+                f"{item.get('owner')}/{item.get('repo')} no longer has {item.get('path')}",
+            )
 
     applied = []
     if apply:
         for suggestion in suggestions:
             if remove_skill(suggestion["skill"]):
                 applied.append(suggestion["skill"])
-    return {"checked_upstreams": checked, "suggestions": suggestions, "applied": applied}
+    return {
+        "checked_upstreams": checked,
+        "path_missing_checked": path_missing,
+        "suggestions": suggestions,
+        "applied": applied,
+    }
 
 
 def remove_skill(skill_id: str) -> bool:
@@ -645,6 +678,10 @@ def remove_skill(skill_id: str) -> bool:
     if not removed:
         return False
     DEFAULT_CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    overrides = load_json(ORIGIN_OVERRIDES, {})
+    if skill_id in overrides:
+        overrides.pop(skill_id)
+        ORIGIN_OVERRIDES.write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     destination = SKILLS_DIR / skill_id
     if destination.exists():
         subprocess.run(["rm", "-rf", str(destination)], check=False)
@@ -698,6 +735,7 @@ def write_prune_report(result: dict) -> Path:
         f"# Weekly Skills Prune {stamp}",
         "",
         f"- Upstreams checked: {result['checked_upstreams']}",
+        f"- Path-deleted skills checked: {result.get('path_missing_checked', 0)}",
         f"- Removal suggestions: {len(result['suggestions'])}",
         f"- Applied removals: {len(result['applied'])}",
         "",
@@ -777,10 +815,14 @@ def cmd_discover(args: argparse.Namespace) -> int:
 
 def cmd_prune(args: argparse.Namespace) -> int:
     token = gh_token()
-    result = prune_checks(token, apply=args.apply)
+    report_path = Path(args.upstream_report) if getattr(args, "upstream_report", None) else None
+    if report_path and not report_path.is_absolute():
+        report_path = ROOT / report_path
+    result = prune_checks(token, apply=args.apply, upstream_report=report_path)
     report = write_prune_report(result)
     print(json.dumps({
         "checked_upstreams": result["checked_upstreams"],
+        "path_missing_checked": result["path_missing_checked"],
         "suggestions": len(result["suggestions"]),
         "applied": result["applied"],
         "report": str(report.relative_to(ROOT)),
@@ -790,7 +832,7 @@ def cmd_prune(args: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     discover_args = argparse.Namespace(import_approved=True)
-    prune_args = argparse.Namespace(apply=args.apply_prune)
+    prune_args = argparse.Namespace(apply=args.apply_prune, upstream_report=args.upstream_report)
     cmd_discover(discover_args)
     cmd_prune(prune_args)
     return 0
@@ -806,10 +848,15 @@ def main() -> int:
 
     p_prune = sub.add_parser("prune", help="check existing skills for removal")
     p_prune.add_argument("--apply", action="store_true", help="perform the removals instead of only suggesting")
+    p_prune.add_argument(
+        "--upstream-report",
+        help="latest check_upstream_updates JSON; source_path_missing rows become removal suggestions",
+    )
     p_prune.set_defaults(func=cmd_prune)
 
     p_run = sub.add_parser("run", help="full weekly pass: discover+import, then prune")
     p_run.add_argument("--apply-prune", action="store_true", help="apply prune removals")
+    p_run.add_argument("--upstream-report", help="latest check_upstream_updates JSON for path-level pruning")
     p_run.set_defaults(func=cmd_run)
 
     args = parser.parse_args()

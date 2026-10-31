@@ -1,12 +1,13 @@
 # Upstream Skill Update Check
 
-- Generated at: `2026-10-31T09:25:41`
+- Generated at: `2026-10-31T09:45:48`
 - Checked GitHub-backed local skills: `436`
-- current: `171`
+- Relocated origins: `30`
+- current: `186`
 - metadata_only_root_no_skill_md: `59`
 - metadata_only_root_too_large: `1`
-- source_path_missing: `52`
-- updated: `118`
+- source_path_missing: `22`
+- updated: `133`
 - wrapper_origin: `35`
 
 | Skill | Status | Changed | Added | Upstream |
@@ -81,6 +82,9 @@
 | `anthropic-fs-spglobal-earnings-preview-beta` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/earnings-preview-beta) |
 | `anthropic-fs-spglobal-funding-digest` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/funding-digest) |
 | `anthropic-fs-spglobal-tear-sheet` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/tear-sheet) |
+| `anthropic-fs-wealth-management-client-report` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-report) |
+| `anthropic-fs-wealth-management-client-review` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-review) |
+| `anthropic-fs-wealth-management-investment-proposal` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal) |
 | `baoyu-article-illustrator` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `baoyu-comic` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
 | `baoyu-compress-image` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
@@ -97,19 +101,23 @@
 | `baoyu-youtube-transcript` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `bayesian-intrinsic-growth-valuation` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
 | `behavior-validator` | `current` | 0 | 0 | [openclaw/agent-skills](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
+| `brandkit` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit) |
 | `btc-bottom-model` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model) |
 | `buddy-sings` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
 | `buy-side-equity-research-memo` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/buy-side-equity-research-memo) |
 | `channels-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/channels-account-launch-expert) |
 | `codex-responses-tooling` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling) |
 | `data-analyst` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/data-analyst) |
+| `design-taste-frontend-v1` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1) |
 | `douyin-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/douyin-account-launch-expert) |
 | `feishu-doc-creator` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/feishu-doc-creator) |
 | `find-skills` | `current` | 0 | 0 | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills) |
 | `flutter-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
+| `full-output-enforcement` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/output-skill) |
 | `fullstack-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `gf-dma-health-index` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/gf-dma-health-index) |
 | `gif-sticker-maker` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
+| `gpt-taste` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill) |
 | `gsap-core` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core) |
 | `gsap-frameworks` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks) |
 | `gsap-performance` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-performance) |
@@ -118,9 +126,14 @@
 | `gsap-scrolltrigger` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger) |
 | `gsap-timeline` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
 | `gsap-utils` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
+| `high-end-visual-design` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill) |
 | `humanizer-zh` | `current` | 0 | 0 | [idao-cube/humanizer-zh](https://github.com/idao-cube/humanizer-zh) |
 | `ian-xiaohei-illustrations` | `current` | 0 | 0 | [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
 | `ima` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
+| `image-to-code` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill) |
+| `imagegen-frontend-mobile` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile) |
+| `imagegen-frontend-web` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-web) |
+| `industrial-brutalist-ui` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/brutalist-skill) |
 | `ios-application-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
 | `jiebang` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/jiebang) |
 | `llmquant-commodities` | `current` | 0 | 0 | [LLMQuant/skills](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-commodities) |
@@ -144,6 +157,7 @@
 | `macro-liquidity` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `market-news-analyst` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst) |
 | `media-downloader` | `current` | 0 | 0 | [yizhiyanhua-ai/media-downloader](https://github.com/yizhiyanhua-ai/media-downloader.git) |
+| `minimalist-ui` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill) |
 | `minimax-docx` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
 | `minimax-image-understanding` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-image-understanding) |
 | `minimax-multimodal-toolkit` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-multimodal-toolkit) |
@@ -156,12 +170,14 @@
 | `pptx-generator` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) |
 | `pybroker-backtest-skill` | `current` | 0 | 0 | [gaaiyun/pybroker-backtest-skill](https://github.com/gaaiyun/pybroker-backtest-skill) |
 | `react-native-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
+| `redesign-existing-projects` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill) |
 | `scroll-world` | `current` | 0 | 0 | [oso95/scroll-world](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
 | `serenity-alpha` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/serenity-alpha) |
 | `shader-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
 | `skill-creator` | `current` | 0 | 0 | [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/skill-creator) |
 | `skill-vetter` | `current` | 0 | 0 | [app-incubator-xyz/skill-vetter](https://github.com/app-incubator-xyz/skill-vetter) |
 | `social-content` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/social-content) |
+| `stitch-design-taste` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/stitch-skill) |
 | `stock-analysis` | `current` | 0 | 0 | [moinsen-dev/stock-analysis](https://github.com/moinsen-dev/stock-analysis) |
 | `stock-daily-analysis-skill` | `current` | 0 | 0 | [chjm-ai/stock-daily-analysis-skill](https://github.com/chjm-ai/stock-daily-analysis-skill) |
 | `stock-monitor-skill` | `current` | 0 | 0 | [chjm-ai/stock-monitor-skill](https://github.com/chjm-ai/stock-monitor-skill) |
@@ -243,59 +259,44 @@
 | `story-long-analyze` | `metadata_only_root_no_skill_md` | 0 | 0 | [zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `gstack` | `metadata_only_root_too_large` | 0 | 0 | [garrytan/gstack](https://github.com/garrytan/gstack) |
 | `alphagbm-alert` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert) |
-| `alphagbm-bps-backtest` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest) |
 | `alphagbm-buffett-analysis` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis) |
-| `alphagbm-chokepoint` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint) |
 | `alphagbm-company-profile` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile) |
 | `alphagbm-compare` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare) |
 | `alphagbm-duan-analysis` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis) |
-| `alphagbm-earnings-crush` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush) |
 | `alphagbm-fear-score` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score) |
-| `alphagbm-greeks` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks) |
 | `alphagbm-health-check` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check) |
-| `alphagbm-hedge-advisor` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor) |
 | `alphagbm-investment-thesis` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis) |
-| `alphagbm-iv-rank` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank) |
 | `alphagbm-macro-view` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view) |
-| `alphagbm-market-sentiment` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment) |
 | `alphagbm-marks-cycle` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle) |
-| `alphagbm-options-score` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score) |
-| `alphagbm-options-strategy` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy) |
-| `alphagbm-pnl-simulator` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator) |
-| `alphagbm-polymarket` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket) |
-| `alphagbm-stock-analysis` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis) |
 | `alphagbm-take-profit` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit) |
 | `alphagbm-tepper-signal` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal) |
 | `alphagbm-theme-research` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research) |
-| `alphagbm-unusual-activity` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity) |
 | `alphagbm-vix-status` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status) |
-| `alphagbm-vol-smile` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile) |
-| `alphagbm-vol-surface` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface) |
 | `alphagbm-watchlist` | `source_path_missing` | 0 | 0 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist) |
-| `anthropic-fs-wealth-management-client-report` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-report) |
-| `anthropic-fs-wealth-management-client-review` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-review) |
 | `anthropic-fs-wealth-management-financial-plan` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/financial-plan) |
-| `anthropic-fs-wealth-management-investment-proposal` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal) |
 | `anthropic-fs-wealth-management-portfolio-rebalance` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance) |
 | `anthropic-fs-wealth-management-tax-loss-harvesting` | `source_path_missing` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting) |
-| `brandkit` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit) |
 | `dasheng-stage-brief-ai` | `source_path_missing` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai) |
 | `dasheng-stage-draft` | `source_path_missing` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-draft) |
 | `dasheng-video-omni-browser` | `source_path_missing` | 0 | 0 | [leecyno1/newma-media-studio](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser) |
-| `design-taste-frontend-v1` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1) |
-| `full-output-enforcement` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/output-skill) |
 | `funda-data` | `source_path_missing` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/funda-data) |
-| `gpt-taste` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill) |
-| `high-end-visual-design` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill) |
-| `image-to-code` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill) |
-| `imagegen-frontend-mobile` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile) |
-| `imagegen-frontend-web` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
-| `industrial-brutalist-ui` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill) |
-| `minimalist-ui` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill) |
-| `redesign-existing-projects` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill) |
-| `stitch-design-taste` | `source_path_missing` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill) |
 | `a-stock-data` | `updated` | 4 | 0 | [simonlin1212/a-stock-data](https://github.com/simonlin1212/a-stock-data) |
 | `agent-reach` | `updated` | 2 | 3 | [Panniantong/agent-reach](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
+| `alphagbm-bps-backtest` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-bps-backtest) |
+| `alphagbm-chokepoint` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/commodities/alphagbm-chokepoint) |
+| `alphagbm-earnings-crush` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-earnings-crush) |
+| `alphagbm-greeks` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-greeks) |
+| `alphagbm-hedge-advisor` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-hedge-advisor) |
+| `alphagbm-iv-rank` | `updated` | 1 | 4 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-iv-rank) |
+| `alphagbm-market-sentiment` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-market-sentiment) |
+| `alphagbm-options-score` | `updated` | 1 | 4 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-score) |
+| `alphagbm-options-strategy` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-strategy) |
+| `alphagbm-pnl-simulator` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-pnl-simulator) |
+| `alphagbm-polymarket` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/digital-assets/alphagbm-polymarket) |
+| `alphagbm-stock-analysis` | `updated` | 1 | 4 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-stock-analysis) |
+| `alphagbm-unusual-activity` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-unusual-activity) |
+| `alphagbm-vol-smile` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-smile) |
+| `alphagbm-vol-surface` | `updated` | 1 | 1 | [AlphaGBM/skills](https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-surface) |
 | `animation-vocabulary` | `updated` | 1 | 0 | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary) |
 | `apple-design` | `updated` | 1 | 0 | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) |
 | `backtest-expert` | `updated` | 3 | 1 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert) |
@@ -447,3 +448,38 @@
 | `tavily-search` | `wrapper_origin` | 0 | 0 | [tavily-ai/tavily-python](https://github.com/tavily-ai/tavily-python) |
 | `todo` | `wrapper_origin` | 0 | 0 | [sachaos/todoist](https://github.com/sachaos/todoist) |
 | `video-autopilot-kit` | `wrapper_origin` | 0 | 0 | [Hao0321/video-autopilot-kit](https://github.com/Hao0321/video-autopilot-kit) |
+
+## Relocated origins
+
+| Skill | From | To | Evidence |
+|---|---|---|---|
+| `alphagbm-bps-backtest` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-bps-backtest | `name` |
+| `alphagbm-chokepoint` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-chokepoint | https://github.com/AlphaGBM/skills/tree/main/skills/commodities/alphagbm-chokepoint | `name` |
+| `alphagbm-earnings-crush` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-earnings-crush | `name` |
+| `alphagbm-greeks` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-greeks | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-greeks | `name` |
+| `alphagbm-hedge-advisor` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-hedge-advisor | `name` |
+| `alphagbm-iv-rank` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-iv-rank | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-iv-rank | `name` |
+| `alphagbm-market-sentiment` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment | https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-market-sentiment | `name` |
+| `alphagbm-options-score` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-score | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-score | `name` |
+| `alphagbm-options-strategy` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-options-strategy | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-options-strategy | `name` |
+| `alphagbm-pnl-simulator` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-pnl-simulator | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-pnl-simulator | `name` |
+| `alphagbm-polymarket` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-polymarket | https://github.com/AlphaGBM/skills/tree/main/skills/digital-assets/alphagbm-polymarket | `name` |
+| `alphagbm-stock-analysis` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-stock-analysis | https://github.com/AlphaGBM/skills/tree/main/skills/stocks/alphagbm-stock-analysis | `name` |
+| `alphagbm-unusual-activity` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-unusual-activity | `name` |
+| `alphagbm-vol-smile` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-smile | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-smile | `name` |
+| `alphagbm-vol-surface` | https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface | https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-surface | `name` |
+| `anthropic-fs-wealth-management-client-report` | https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-report | https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-report | `content` |
+| `anthropic-fs-wealth-management-client-review` | https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/client-review | https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-review | `content` |
+| `anthropic-fs-wealth-management-investment-proposal` | https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal | https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal | `content` |
+| `brandkit` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit | `content` |
+| `design-taste-frontend-v1` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill-v1 | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1 | `content` |
+| `full-output-enforcement` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/output-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/output-skill | `content` |
+| `gpt-taste` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill | `content` |
+| `high-end-visual-design` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill | `content` |
+| `image-to-code` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill | `content` |
+| `imagegen-frontend-mobile` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile | `content` |
+| `imagegen-frontend-web` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-web | `content` |
+| `industrial-brutalist-ui` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/brutalist-skill | `content` |
+| `minimalist-ui` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill | `content` |
+| `redesign-existing-projects` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill | `content` |
+| `stitch-design-taste` | https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill | https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/stitch-skill | `content` |

@@ -2283,46 +2283,12 @@
           ]
         },
         {
-          "id": "alphagbm-alert",
-          "name": "alphagbm-alert",
-          "description": "Price, IV, activity, earnings, and VRP alert research workflows backed by the AlphaGBM API.",
-          "manual": "skills/default/alphagbm-alert/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-alert/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-alert",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
           "id": "alphagbm-bps-backtest",
           "name": "alphagbm-bps-backtest",
           "description": "Walk-forward Bull Put Spread backtests with signal and no-signal controls.",
           "manual": "skills/default/alphagbm-bps-backtest/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-bps-backtest/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-bps-backtest",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-buffett-analysis",
-          "name": "alphagbm-buffett-analysis",
-          "description": "Buffett-style business, moat, management, and valuation scorecard.",
-          "manual": "skills/default/alphagbm-buffett-analysis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-buffett-analysis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-buffett-analysis",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -2351,80 +2317,12 @@
           ]
         },
         {
-          "id": "alphagbm-company-profile",
-          "name": "alphagbm-company-profile",
-          "description": "Persistent company research profiles with valuation bands, red flags, and event context.",
-          "manual": "skills/default/alphagbm-company-profile/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-company-profile/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-company-profile",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-compare",
-          "name": "alphagbm-compare",
-          "description": "Side-by-side stock and option comparisons across scores, technicals, and valuation.",
-          "manual": "skills/default/alphagbm-compare/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-compare/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-compare",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-duan-analysis",
-          "name": "alphagbm-duan-analysis",
-          "description": "Duan Yongping-inspired sell-put and covered-call research framework.",
-          "manual": "skills/default/alphagbm-duan-analysis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-duan-analysis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-duan-analysis",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
           "id": "alphagbm-earnings-crush",
           "name": "alphagbm-earnings-crush",
           "description": "Earnings implied-move, historical IV-crush, and hypothetical strategy analysis.",
           "manual": "skills/default/alphagbm-earnings-crush/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-earnings-crush/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-earnings-crush",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-fear-score",
-          "name": "alphagbm-fear-score",
-          "description": "Composite ticker-level fear score from volatility, momentum, and options signals.",
-          "manual": "skills/default/alphagbm-fear-score/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-fear-score/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-fear-score",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -2453,46 +2351,12 @@
           ]
         },
         {
-          "id": "alphagbm-health-check",
-          "name": "alphagbm-health-check",
-          "description": "Research knowledge-base health checks for stale profiles, thesis drift, and gaps.",
-          "manual": "skills/default/alphagbm-health-check/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-health-check/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-health-check",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
           "id": "alphagbm-hedge-advisor",
           "name": "alphagbm-hedge-advisor",
           "description": "Scenario-driven downside hedge research for existing stock positions.",
           "manual": "skills/default/alphagbm-hedge-advisor/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-hedge-advisor/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-hedge-advisor",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-investment-thesis",
-          "name": "alphagbm-investment-thesis",
-          "description": "Create and monitor structured investment theses and exit conditions.",
-          "manual": "skills/default/alphagbm-investment-thesis/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-investment-thesis/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-investment-thesis",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -2521,46 +2385,12 @@
           ]
         },
         {
-          "id": "alphagbm-macro-view",
-          "name": "alphagbm-macro-view",
-          "description": "Portfolio-linked tracking for VIX, yields, dollar, commodities, and macro indicators.",
-          "manual": "skills/default/alphagbm-macro-view/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-macro-view/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-macro-view",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
           "id": "alphagbm-market-sentiment",
           "name": "alphagbm-market-sentiment",
           "description": "Market regime dashboard using VIX, put/call, breadth, and sector rotation.",
           "manual": "skills/default/alphagbm-market-sentiment/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-market-sentiment/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-market-sentiment",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-marks-cycle",
-          "name": "alphagbm-marks-cycle",
-          "description": "Howard Marks-style market-cycle position score and offense/defense framing.",
-          "manual": "skills/default/alphagbm-marks-cycle/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-marks-cycle/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-marks-cycle",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -2657,80 +2487,12 @@
           ]
         },
         {
-          "id": "alphagbm-take-profit",
-          "name": "alphagbm-take-profit",
-          "description": "Historical holdability and tiered profit-taking strategy comparison.",
-          "manual": "skills/default/alphagbm-take-profit/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-take-profit/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-take-profit",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-tepper-signal",
-          "name": "alphagbm-tepper-signal",
-          "description": "David Tepper-inspired panic-condition signal using VIX, fear, and quality filters.",
-          "manual": "skills/default/alphagbm-tepper-signal/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-tepper-signal/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-tepper-signal",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-theme-research",
-          "name": "alphagbm-theme-research",
-          "description": "Create and monitor ticker baskets organized around investment themes.",
-          "manual": "skills/default/alphagbm-theme-research/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-theme-research/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-theme-research",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
           "id": "alphagbm-unusual-activity",
           "name": "alphagbm-unusual-activity",
           "description": "Unusual options activity research using volume/OI, blocks, strikes, and premium flow.",
           "manual": "skills/default/alphagbm-unusual-activity/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-unusual-activity/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-unusual-activity",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-vix-status",
-          "name": "alphagbm-vix-status",
-          "description": "VIX regime classification with historical percentile and strategy context.",
-          "manual": "skills/default/alphagbm-vix-status/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vix-status/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vix-status",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -2765,23 +2527,6 @@
           "manual": "skills/default/alphagbm-vol-surface/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-vol-surface/SKILL.md",
           "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface",
-          "requires_api_keys": true,
-          "api_keys": [
-            "ALPHAGBM_API_KEY"
-          ],
-          "groups": [
-            "finance",
-            "alphagbm",
-            "optional"
-          ]
-        },
-        {
-          "id": "alphagbm-watchlist",
-          "name": "alphagbm-watchlist",
-          "description": "Watchlist monitoring for price, IV, activity, earnings, and score changes.",
-          "manual": "skills/default/alphagbm-watchlist/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/alphagbm-watchlist/SKILL.md",
-          "source": "https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-watchlist",
           "requires_api_keys": true,
           "api_keys": [
             "ALPHAGBM_API_KEY"
@@ -3887,63 +3632,12 @@
           ]
         },
         {
-          "id": "anthropic-fs-wealth-management-financial-plan",
-          "name": "anthropic-fs-wealth-management-financial-plan",
-          "description": "Build or update a comprehensive financial plan covering retirement projections, education funding, estate planning, and cash flow analysis. Use for new client onboarding, annual plan reviews, or scenario modeling. Triggers on \"financial plan\", \"retirement plan\", \"can I retire\", \"education funding\", \"estate plan\", \"cash flow analysis\", or \"plan update\".",
-          "manual": "skills/default/anthropic-fs-wealth-management-financial-plan/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-wealth-management-financial-plan/SKILL.md",
-          "source": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/financial-plan",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "anthropic-financial-services",
-            "wealth-management",
-            "mcp-required",
-            "enterprise-data"
-          ]
-        },
-        {
           "id": "anthropic-fs-wealth-management-investment-proposal",
           "name": "anthropic-fs-wealth-management-investment-proposal",
           "description": "Create professional investment proposals for prospective clients. Covers the firm's approach, proposed allocation, expected outcomes, and fee structure. Use when pitching new clients or presenting a new investment strategy. Triggers on \"investment proposal\", \"prospect presentation\", \"pitch new client\", \"proposal for [client]\", or \"new client presentation\".",
           "manual": "skills/default/anthropic-fs-wealth-management-investment-proposal/SKILL.md",
           "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-wealth-management-investment-proposal/SKILL.md",
           "source": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/investment-proposal",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "anthropic-financial-services",
-            "wealth-management",
-            "mcp-required",
-            "enterprise-data"
-          ]
-        },
-        {
-          "id": "anthropic-fs-wealth-management-portfolio-rebalance",
-          "name": "anthropic-fs-wealth-management-portfolio-rebalance",
-          "description": "Analyze portfolio allocation drift and generate rebalancing trade recommendations across accounts. Considers tax implications, transaction costs, and wash sale rules. Triggers on \"rebalance\", \"portfolio drift\", \"allocation check\", \"rebalancing trades\", or \"my portfolio is out of balance\".",
-          "manual": "skills/default/anthropic-fs-wealth-management-portfolio-rebalance/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-wealth-management-portfolio-rebalance/SKILL.md",
-          "source": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "finance",
-            "anthropic-financial-services",
-            "wealth-management",
-            "mcp-required",
-            "enterprise-data"
-          ]
-        },
-        {
-          "id": "anthropic-fs-wealth-management-tax-loss-harvesting",
-          "name": "anthropic-fs-wealth-management-tax-loss-harvesting",
-          "description": "Identify tax-loss harvesting opportunities across taxable accounts. Finds positions with unrealized losses, suggests replacement securities, and tracks wash sale windows. Triggers on \"tax-loss harvesting\", \"TLH\", \"harvest losses\", \"tax losses\", \"unrealized losses\", or \"year-end tax planning\".",
-          "manual": "skills/default/anthropic-fs-wealth-management-tax-loss-harvesting/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-wealth-management-tax-loss-harvesting/SKILL.md",
-          "source": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting",
           "requires_api_keys": false,
           "api_keys": [],
           "groups": [
@@ -4573,34 +4267,6 @@
           ]
         },
         {
-          "id": "dasheng-stage-brief-ai",
-          "name": "dasheng-stage-brief-ai",
-          "description": "AI-driven topic generation for Dasheng workflow. Analyzes intake data to generate insightful, valuable, and actionable topic proposals with natural language titles and clear arguments.",
-          "manual": "skills/default/dasheng-stage-brief-ai/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-brief-ai/SKILL.md",
-          "source": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-brief-ai",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "self_media"
-          ]
-        },
-        {
-          "id": "dasheng-stage-draft",
-          "name": "dasheng-stage-draft",
-          "description": "Stage 3 Draft - 初稿生成（标准基线稿）",
-          "manual": "skills/default/dasheng-stage-draft/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-draft/SKILL.md",
-          "source": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-stage-draft",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "self_media"
-          ]
-        },
-        {
           "id": "dasheng-stage-publish",
           "name": "dasheng-stage-publish",
           "description": "Use when entering the slim Dasheng publish execution stage to validate transwrite outputs, create publish packs, push drafts/manual packages, and recover published links.",
@@ -4682,22 +4348,6 @@
           "groups": [
             "dasheng_media_workflow",
             "self_media"
-          ]
-        },
-        {
-          "id": "dasheng-video-omni-browser",
-          "name": "dasheng-video-omni-browser",
-          "description": "Use an existing signed-in Chrome Gemini Omni session to generate one approximately 10-second VOX clip per approved reference image, with a bundled manifest builder and explicit safety boundaries.",
-          "manual": "skills/default/dasheng-video-omni-browser/SKILL.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-omni-browser/SKILL.md",
-          "source": "https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-video-omni-browser",
-          "requires_api_keys": false,
-          "api_keys": [],
-          "groups": [
-            "dasheng_media_workflow",
-            "media-generation",
-            "browser-automation",
-            "optional"
           ]
         },
         {
@@ -5312,21 +4962,6 @@
           "groups": [
             "minimax_official",
             "default_sentinel"
-          ]
-        },
-        {
-          "id": "funda-data",
-          "name": "funda-data",
-          "description": "Fetch financial data from the Funda AI API (https://api.",
-          "manual": "skills/default/funda-data/README.md",
-          "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/funda-data/README.md",
-          "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/funda-data",
-          "requires_api_keys": true,
-          "api_keys": [
-            "FUNDA_API_KEY"
-          ],
-          "groups": [
-            "trading_finance"
           ]
         },
         {

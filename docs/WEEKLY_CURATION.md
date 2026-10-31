@@ -8,7 +8,9 @@
 ./scripts/weekly_cycle.sh
 ```
 
-完整流程（11 步）：发现入库 → 出库 → 上游同步 → 遥测 → 重建目录 → 刷新金融组合 → 重生成 README → 刷新遥测报告 → 审计 + 语法门禁 + 风险门禁 + 测试 → 调整建议 → 双远端发布。
+完整流程（11 步）：发现入库 → 上游同步（含 origin 路径迁移）→ 出库 → 遥测 → 重建目录 → 刷新金融组合 → 重生成 README → 刷新遥测报告 → 审计 + 语法门禁 + 风险门禁 + 测试 → 调整建议 → 双远端发布。
+
+先同步后出库：同步阶段会把上游搬家后的技能目录自动迁移到新路径（`source_path_missing`），出库阶段只处理迁移失败、确认已删除的孤儿技能。
 
 ## 分步命令
 
@@ -19,14 +21,15 @@ python3 scripts/weekly_curation.py discover
 # 2. 搜索 + 评估 + 自动入库高分候选（>=75 分）
 python3 scripts/weekly_curation.py discover --import-approved
 
-# 3. 出库检查（只产建议报告）
-python3 scripts/weekly_curation.py prune
-
-# 4. 执行出库
-python3 scripts/weekly_curation.py prune --apply
-
-# 5. 从上游同步已收录技能（--apply 同时产出 reports/upstream-check-latest.*）
+# 3. 从上游同步已收录技能（--apply 同时产出 reports/upstream-check-latest.*）
+#    路径失效时按内容哈希/目录名自动迁移 origin；迁移结果写回 overrides 与 SOURCE.txt
 python3 scripts/check_upstream_updates.py --apply
+
+# 4. 出库检查（只产建议报告；带上游报告时包含路径级删除）
+python3 scripts/weekly_curation.py prune --upstream-report reports/upstream-check-latest.json
+
+# 5. 执行出库
+python3 scripts/weekly_curation.py prune --apply --upstream-report reports/upstream-check-latest.json
 
 # 6. 重建目录与标准组合
 python3 scripts/generate_enriched_catalog.py
@@ -41,6 +44,7 @@ python3 scripts/check_new_risks.py        # 对比 catalog/risky-baseline.json
 python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
 python3 tests/test_curl_token_hygiene.py
+python3 tests/test_upstream_relocation.py
 
 # 9. 发布到 GitHub 和 Gitee（HTTPS 失败自动回退 SSH）
 ./scripts/publish_weekly.sh "Weekly skills curation $(date +%F)"
@@ -70,6 +74,7 @@ python3 tests/test_curl_token_hygiene.py
 1. **upstream_gone**：原生来源 GitHub 仓库 404/不可访问。
 2. **low_score**：内部评分 < 60。
 3. **dominated_duplicate**：同一冲突组内存在高出 >= 15 分的同类技能，且自身 <= 70 分。
+4. **upstream_path_missing**：仓库存活但 origin 路径已不存在，且同步阶段无法迁移。同步阶段先用 SKILL.md 内容哈希、其次同名目录、再稳定的版本分支（如 `taste-skill-v1.9`）定位新路径；只有仍找不到去向的才出库。报告里的旧 URL 与当前 override 不一致时跳过，防止拿旧报告误删已迁移技能。
 
 ## 组合控制（用户要求：各 <= 40）
 
@@ -104,6 +109,7 @@ python3 tests/test_curl_token_hygiene.py
 
 - 发现周报：`reports/weekly-curation/discovery-YYYY-MM-DD.{md,json}`
 - 出库周报：`reports/weekly-curation/prune-YYYY-MM-DD.{md,json}`
+- 上游同步：`reports/upstream-check-latest.{md,json}`（含 `## Relocated origins` 迁移清单）
 - 入库评审：`reports/source-discovery/<skill>-review-YYYY-MM-DD.md`
 
 ## 使用频率遥测（2026-08-21 新增）
@@ -131,7 +137,7 @@ python3 scripts/telemetry_collect.py --days 30 --rescan-all  # 强制全量
 
 ## 清理建议与确认卸载（2026-08-21 新增）
 
-周度流水线第 9 步运行 `scripts/usage_recommendations.py`，综合已安装技能（Codex/Qoder/agents/lingma 四运行时）、最新使用遥测与仓库注册表，把每个已装技能分为四级：
+周度流水线第 10 步运行 `scripts/usage_recommendations.py`，综合已安装技能（Codex/Qoder/agents/lingma 四运行时）、最新使用遥测与仓库注册表，把每个已装技能分为四级：
 
 | 分级 | 判定 | 动作 |
 |---|---|---|

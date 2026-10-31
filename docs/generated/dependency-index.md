@@ -2,11 +2,11 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 105 |
-| `api-key+mcp-required` | 22 |
-| `browser-required` | 30 |
-| `direct` | 227 |
-| `mcp-required` | 74 |
+| `api-key` | 90 |
+| `api-key+mcp-required` | 21 |
+| `browser-required` | 29 |
+| `direct` | 225 |
+| `mcp-required` | 71 |
 
 ## api-key
 
@@ -14,36 +14,21 @@
 |---|---|---|---|
 | `claude-mem-plugin` | `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `OPENROUTER_API_KEY` | 无 | `high` |
 | `github` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
-| `alphagbm-alert` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-bps-backtest` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-buffett-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-chokepoint` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-company-profile` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-compare` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-duan-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-earnings-crush` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-fear-score` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-greeks` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-health-check` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-hedge-advisor` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-investment-thesis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-iv-rank` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-macro-view` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-market-sentiment` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-marks-cycle` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-options-score` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-options-strategy` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-pnl-simulator` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-polymarket` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-stock-analysis` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-take-profit` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-tepper-signal` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-theme-research` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-unusual-activity` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-vix-status` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-vol-smile` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `alphagbm-vol-surface` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
-| `alphagbm-watchlist` | `ALPHAGBM_API_KEY` | `curl` | `medium` |
 | `akshare-stock` | `TUSHARE_TOKEN` | `python` | `medium` |
 | `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `dual-axis-skill-reviewer` | `OPENAI_API_KEY` | 无 | `medium` |
@@ -137,7 +122,6 @@
 | `llmquant-rates-fx` | `LLMQUANT_API_KEY` | `mcp`, `node` | `medium` |
 | `llmquant-strategies` | `LLMQUANT_API_KEY` | `mcp`, `node` | `medium` |
 | `minimax-web-search` | `MINIMAX_API_KEY` | `browser`, `mcp` | `medium` |
-| `funda-data` | `FUNDA_API_KEY` | `mcp`, `python` | `medium` |
 | `llmquant-crypto` | `LLMQUANT_API_KEY` | `mcp`, `node` | `medium` |
 | `llmquant-etfs` | `LLMQUANT_API_KEY` | `mcp`, `node` | `medium` |
 | `llmquant-events` | `LLMQUANT_API_KEY` | `mcp`, `node` | `medium` |
@@ -158,7 +142,6 @@
 | `agent-reach` | 无 | `browser`, `ffmpeg`, `gh` | `medium` |
 | `tech-earnings-deepdive` | 无 | `browser` | `medium` |
 | `baoyu-url-to-markdown` | 无 | `browser` | `medium` |
-| `dasheng-video-omni-browser` | 无 | `browser`, `python` | `medium` |
 | `macro-liquidity` | 无 | `browser` | `medium` |
 | `apk-redteam-pipeline` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
@@ -302,8 +285,6 @@
 | `dasheng-media-sop` | 无 | 无 | `low` |
 | `dasheng-paradigm-profiler` | 无 | 无 | `low` |
 | `dasheng-publish-operations-bridge` | 无 | 无 | `low` |
-| `dasheng-stage-brief-ai` | 无 | 无 | `low` |
-| `dasheng-stage-draft` | 无 | 无 | `low` |
 | `dasheng-stage-publish` | 无 | 无 | `low` |
 | `dasheng-stage-rewrite-v3` | 无 | 无 | `low` |
 | `dasheng-video-director` | 无 | 无 | `low` |
@@ -437,7 +418,6 @@
 | `anthropic-fs-financial-analysis-competitive-analysis` | 无 | `mcp` | `medium` |
 | `anthropic-fs-lseg-bond-futures-basis` | 无 | `mcp` | `medium` |
 | `anthropic-fs-lseg-equity-research` | 无 | `mcp`, `python` | `medium` |
-| `anthropic-fs-wealth-management-portfolio-rebalance` | 无 | `mcp` | `medium` |
 | `anthropic-fs-equity-research-model-update` | 无 | `mcp`, `python` | `medium` |
 | `anthropic-fs-equity-research-morning-note` | 无 | `mcp`, `python` | `medium` |
 | `anthropic-fs-financial-analysis-audit-xls` | 无 | `mcp` | `medium` |
@@ -487,6 +467,4 @@
 | `anthropic-fs-spglobal-tear-sheet` | 无 | `mcp`, `python` | `medium` |
 | `anthropic-fs-wealth-management-client-report` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-client-review` | 无 | `mcp`, `python` | `medium` |
-| `anthropic-fs-wealth-management-financial-plan` | 无 | `mcp` | `medium` |
 | `anthropic-fs-wealth-management-investment-proposal` | 无 | `mcp` | `medium` |
-| `anthropic-fs-wealth-management-tax-loss-harvesting` | 无 | `mcp` | `medium` |

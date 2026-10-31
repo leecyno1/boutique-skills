@@ -1,4 +1,0 @@
-interface:
-  display_name: "大圣总控"
-  short_description: "调度 6 阶段自媒体工作流并校验交付。"
-  default_prompt: "Use $dasheng-media-sop to route this task into the correct workflow stage and enforce stage contracts."

@@ -1,13 +1,13 @@
 # Boutique Skills Audit
 
-- Time: 2026-10-31 09:26:01
+- Time: 2026-10-31 10:13:34
 - Status: **WARN**
-- Catalog skills: 458
-- Audited skills: 452
+- Catalog skills: 436
+- Audited skills: 430
 - Legacy catalog skills: 42
-- Installed/Resolved: 452
+- Installed/Resolved: 430
 - Missing: 0
-- Missing env vars: 151
+- Missing env vars: 135
 - Duplicate capabilities: 0
 - Risk hits: 16
 - Missing native origins: 0
@@ -32,42 +32,26 @@
 - llmquant-options: `LLMQUANT_API_KEY`
 - llmquant-portfolio-lab: `LLMQUANT_API_KEY`
 - agentmail-mcp: `AGENTMAIL_API_KEY`
-- alphagbm-alert: `ALPHAGBM_API_KEY`
 - alphagbm-bps-backtest: `ALPHAGBM_API_KEY`
-- alphagbm-buffett-analysis: `ALPHAGBM_API_KEY`
 - alphagbm-chokepoint: `ALPHAGBM_API_KEY`
-- alphagbm-company-profile: `ALPHAGBM_API_KEY`
-- alphagbm-compare: `ALPHAGBM_API_KEY`
-- alphagbm-duan-analysis: `ALPHAGBM_API_KEY`
 - alphagbm-earnings-crush: `ALPHAGBM_API_KEY`
-- alphagbm-fear-score: `ALPHAGBM_API_KEY`
 - alphagbm-greeks: `ALPHAGBM_API_KEY`
-- alphagbm-health-check: `ALPHAGBM_API_KEY`
 - alphagbm-hedge-advisor: `ALPHAGBM_API_KEY`
-- alphagbm-investment-thesis: `ALPHAGBM_API_KEY`
 - alphagbm-iv-rank: `ALPHAGBM_API_KEY`
-- alphagbm-macro-view: `ALPHAGBM_API_KEY`
 - alphagbm-market-sentiment: `ALPHAGBM_API_KEY`
-- alphagbm-marks-cycle: `ALPHAGBM_API_KEY`
 - alphagbm-options-score: `ALPHAGBM_API_KEY`
 - alphagbm-options-strategy: `ALPHAGBM_API_KEY`
 - alphagbm-pnl-simulator: `ALPHAGBM_API_KEY`
 - alphagbm-polymarket: `ALPHAGBM_API_KEY`
 - alphagbm-stock-analysis: `ALPHAGBM_API_KEY`
-- alphagbm-take-profit: `ALPHAGBM_API_KEY`
-- alphagbm-tepper-signal: `ALPHAGBM_API_KEY`
-- alphagbm-theme-research: `ALPHAGBM_API_KEY`
 - alphagbm-unusual-activity: `ALPHAGBM_API_KEY`
-- alphagbm-vix-status: `ALPHAGBM_API_KEY`
 - alphagbm-vol-smile: `ALPHAGBM_API_KEY`
 - alphagbm-vol-surface: `ALPHAGBM_API_KEY`
-- alphagbm-watchlist: `ALPHAGBM_API_KEY`
 - llmquant-equities: `LLMQUANT_API_KEY`
 - llmquant-equity-derivatives: `LLMQUANT_API_KEY`
 - llmquant-rates-fx: `LLMQUANT_API_KEY`
 - llmquant-strategies: `LLMQUANT_API_KEY`
 - minimax-web-search: `MINIMAX_API_KEY`
-- funda-data: `FUNDA_API_KEY`
 - llmquant-crypto: `LLMQUANT_API_KEY`
 - llmquant-etfs: `LLMQUANT_API_KEY`
 - llmquant-events: `LLMQUANT_API_KEY`
@@ -179,19 +163,19 @@
 - None
 
 ## Risk Findings
-- skill-vetter: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/skill-vetter/scripts/install.sh`
-- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill/install-hermes.sh`
-- uzi-skill: `curl\s+[^\n|]+\|\s*(sh|bash)` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill/install-hermes.sh`
-- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill/run.py`
-- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/uzi-skill/skills/deep-analysis/run.py`
-- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/env_check.sh`
-- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/setup.sh`
-- minimax-xlsx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py`
-- huashu-design: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/huashu-design/scripts/verify-video.sh`
-- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
-- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
-- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`
-- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/training.py`
-- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-reporter/scripts/utils/predictor/evaluation.py`
-- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-reporter/scripts/utils/predictor/training.py`
-- vcp-screener: `rm\s+-rf\s+/` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/vcp-screener/scripts/tests/test_historical_vcp.py`
+- skill-vetter: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/skill-vetter/scripts/install.sh`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh`
+- uzi-skill: `curl\s+[^\n|]+\|\s*(sh|bash)` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/install-hermes.sh`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/run.py`
+- uzi-skill: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill/skills/deep-analysis/run.py`
+- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-docx/scripts/env_check.sh`
+- minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-docx/scripts/setup.sh`
+- minimax-xlsx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py`
+- huashu-design: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/huashu-design/scripts/verify-video.sh`
+- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
+- alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
+- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`
+- alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/training.py`
+- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter/scripts/utils/predictor/evaluation.py`
+- alphaear-reporter: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter/scripts/utils/predictor/training.py`
+- vcp-screener: `rm\s+-rf\s+/` in `/Volumes/PSSD/Projects/boutique-skills/skills/default/vcp-screener/scripts/tests/test_historical_vcp.py`

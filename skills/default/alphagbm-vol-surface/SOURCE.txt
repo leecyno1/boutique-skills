@@ -1,5 +1,5 @@
 Upstream: https://github.com/AlphaGBM/skills
-Upstream skill: https://github.com/AlphaGBM/skills/tree/main/skills/alphagbm-vol-surface
+Upstream skill: https://github.com/AlphaGBM/skills/tree/main/skills/options/alphagbm-vol-surface
 Snapshot: 6ecea742ed80b50c2b8789e1f4b709d8db8fef19
 Imported: 2026-08-06
 License: MIT

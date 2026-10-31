@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ENRICHED_CATALOG = ROOT / "catalog" / "skills.enriched.json"
 SKILLS_DIR = ROOT / "skills" / "default"
 WRAPPER_ORIGINS = ROOT / "catalog" / "wrapper-origins.json"
+ORIGIN_OVERRIDES = ROOT / "catalog" / "native-origin-overrides.json"
 
 
 def load_wrapper_allowlist() -> set[str]:
@@ -50,6 +51,13 @@ ROOT_SYNC_FILE_NAMES = {
 ROOT_SYNC_DIR_NAMES = {"scripts", "references", "examples", "zh"}
 TREE_CACHE: dict[tuple[str, str, str], list[dict]] = {}
 REPO_META_CACHE: dict[tuple[str, str], dict] = {}
+BRANCH_CACHE: dict[tuple[str, str], list[str]] = {}
+# Repos that keep older skill layouts on a versioned branch (e.g.
+# Leonxlnx/taste-skill v1.9 vs v2). Only these refs are searched when a
+# configured path disappears from the default branch.
+VERSION_BRANCH_RE = re.compile(r"(^|[-_/])v\d", re.IGNORECASE)
+STABLE_BRANCH_RE = re.compile(r"(^|[-_])(stable|legacy|archive|release)([-_]|$)", re.IGNORECASE)
+MAX_RELOCATION_REFS = 6
 
 
 @dataclass
@@ -253,6 +261,129 @@ def repo_tree(source: GitHubSource, token: str | None, ref: str) -> list[dict]:
     return files
 
 
+def list_branches(source: GitHubSource, token: str | None) -> list[str]:
+    key = (source.owner, source.repo)
+    if key in BRANCH_CACHE:
+        return BRANCH_CACHE[key]
+    data = api_get(f"/repos/{source.owner}/{source.repo}/branches?per_page=100", token)
+    names = []
+    if isinstance(data, list):
+        names = [item.get("name") for item in data if isinstance(item, dict) and item.get("name")]
+    BRANCH_CACHE[key] = names
+    return names
+
+
+def version_key(name: str) -> tuple[int, ...]:
+    match = re.search(r"v(\d+(?:\.\d+)*)", name)
+    if not match:
+        return (0,)
+    return tuple(int(part) for part in match.group(1).split("."))
+
+
+def candidate_refs(source: GitHubSource, current_ref: str, token: str | None) -> list[str]:
+    """Current ref first, then versioned/stable branches, newest version first."""
+    refs = [current_ref]
+    branches = sorted(list_branches(source, token), key=version_key, reverse=True)
+    for name in branches:
+        if name == current_ref or "/" in name:
+            continue
+        if VERSION_BRANCH_RE.search(name) or STABLE_BRANCH_RE.search(name):
+            refs.append(name)
+        if len(refs) >= MAX_RELOCATION_REFS:
+            break
+    return refs
+
+
+def source_url(owner: str, repo: str, ref: str, path: str) -> str:
+    return f"https://github.com/{owner}/{repo}/tree/{ref}/{path}"
+
+
+def find_relocation(source: GitHubSource, token: str | None, current_ref: str) -> tuple[str, str, str] | None:
+    """Locate a moved upstream skill directory.
+
+    Evidence is ranked: identical SKILL.md content (git blob sha), then the
+    same directory path on a versioned branch, then a uniquely named
+    directory. Ambiguous name matches are ignored rather than guessed.
+    """
+    if not source.path or source.is_file:
+        return None
+    old_base = Path(source.path.rstrip("/")).name
+    local_md = SKILLS_DIR / source.skill_id / "SKILL.md"
+    local_sha = git_blob_sha_file(local_md) if local_md.exists() else None
+    content_hits: list[tuple[str, str]] = []
+    path_hits: list[tuple[str, str]] = []
+    name_hits: list[tuple[str, str]] = []
+    id_hits: list[tuple[str, str]] = []
+    for ref in candidate_refs(source, current_ref, token):
+        files = repo_tree(source, token, ref)
+        if not files:
+            continue
+        dirs: dict[str, dict] = {}
+        for item in files:
+            path = item.get("path", "")
+            if Path(path).name != "SKILL.md":
+                continue
+            parent = str(Path(path).parent)
+            if parent in {"", "."}:
+                continue
+            dirs[parent] = item
+        if source.path in dirs:
+            path_hits.append((ref, source.path))
+        if local_sha:
+            for dir_path, item in dirs.items():
+                if item.get("sha") == local_sha:
+                    content_hits.append((ref, dir_path))
+        same_name = [dir_path for dir_path in dirs if Path(dir_path).name == old_base]
+        if len(same_name) == 1:
+            name_hits.append((ref, same_name[0]))
+        same_id = [dir_path for dir_path in dirs if Path(dir_path).name == source.skill_id]
+        if len(same_id) == 1:
+            id_hits.append((ref, same_id[0]))
+    for bucket, method in (
+        (content_hits, "content"),
+        (path_hits, "path"),
+        (name_hits, "name"),
+        (id_hits, "skill_id"),
+    ):
+        if not bucket:
+            continue
+        bucket.sort(
+            key=lambda pair: (
+                pair[0] != current_ref,
+                Path(pair[1]).name != old_base,
+                tuple(-value for value in version_key(pair[0])),
+                pair[1],
+            )
+        )
+        ref, path = bucket[0]
+        return ref, path, method
+    return None
+
+
+def persist_relocation(source: GitHubSource) -> None:
+    """Write the relocated origin into the override map and SOURCE.txt."""
+    overrides: dict[str, str] = {}
+    if ORIGIN_OVERRIDES.exists():
+        overrides = json.loads(ORIGIN_OVERRIDES.read_text(encoding="utf-8"))
+    if overrides.get(source.skill_id) != source.url:
+        overrides[source.skill_id] = source.url
+        ORIGIN_OVERRIDES.write_text(
+            json.dumps(overrides, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+    source_txt = SKILLS_DIR / source.skill_id / "SOURCE.txt"
+    if not source_txt.exists():
+        return
+    text = source_txt.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    updated = False
+    for index, line in enumerate(lines):
+        if line.startswith("Upstream skill:"):
+            lines[index] = f"Upstream skill: {source.url}"
+            updated = True
+    if updated:
+        source_txt.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def tree_files_for_source(source: GitHubSource, token: str | None, ref: str) -> tuple[str, list[dict]]:
     if source.path:
         files = repo_tree(source, token, ref)
@@ -381,6 +512,34 @@ def check_source(source: GitHubSource, token: str | None, apply: bool) -> dict:
     metadata = repo_metadata(source, token)
     base_path = source.path
     status, files = tree_files_for_source(source, token, ref)
+    relocated: dict | None = None
+    if status == "source_path_missing" and source.path:
+        hit = find_relocation(source, token, ref)
+        if hit:
+            new_ref, new_path, method = hit
+            relocated = {
+                "relocated_from": source.url,
+                "relocated_from_path": source.path,
+                "relocated_method": method,
+            }
+            source = GitHubSource(
+                source.skill_id,
+                source_url(source.owner, source.repo, new_ref, new_path),
+                source.owner,
+                source.repo,
+                new_ref,
+                new_path,
+                False,
+            )
+            ref = new_ref
+            base_path = new_path
+            relocated["relocated_to"] = source.url
+            relocated["relocated_ref"] = new_ref
+            status, files = tree_files_for_source(source, token, ref)
+            if status != "ok":
+                relocated = None
+            elif apply:
+                persist_relocation(source)
     if status != "ok":
         if (
             status == "metadata_only_root_no_skill_md"
@@ -388,7 +547,10 @@ def check_source(source: GitHubSource, token: str | None, apply: bool) -> dict:
             and (SKILLS_DIR / source.skill_id / "SKILL.md").exists()
         ):
             status = "wrapper_origin"
-        return {**asdict(source), "status": status, "ref": ref, "upstream": metadata, "changed": [], "added": [], "same": 0}
+        result = {**asdict(source), "status": status, "ref": ref, "upstream": metadata, "changed": [], "added": [], "same": 0}
+        if relocated:
+            result.update(relocated)
+        return result
     changed = []
     added = []
     same = 0
@@ -411,25 +573,34 @@ def check_source(source: GitHubSource, token: str | None, apply: bool) -> dict:
             data = raw_file_bytes(source, token, ref, entry["path"])
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
-    return {
+    if not apply and relocated:
+        final_status = "would_relocate"
+    else:
+        final_status = "updated" if apply and (changed or added) else "would_update" if (changed or added) else "current"
+    result = {
         **asdict(source),
-        "status": "updated" if apply and (changed or added) else "would_update" if (changed or added) else "current",
+        "status": final_status,
         "ref": ref,
         "upstream": metadata,
         "changed": changed,
         "added": added,
         "same": same,
     }
+    if relocated:
+        result.update(relocated)
+    return result
 
 
 def write_reports(results: list[dict], output: Path) -> None:
     summary: dict[str, int] = {}
     for item in results:
         summary[item["status"]] = summary.get(item["status"], 0) + 1
+    relocations = [item for item in results if item.get("relocated_to")]
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "checked": len(results),
         "summary": dict(sorted(summary.items())),
+        "relocated": len(relocations),
         "results": results,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -440,6 +611,7 @@ def write_reports(results: list[dict], output: Path) -> None:
         "",
         f"- Generated at: `{payload['generated_at']}`",
         f"- Checked GitHub-backed local skills: `{len(results)}`",
+        f"- Relocated origins: `{len(relocations)}`",
     ]
     for status, count in sorted(summary.items()):
         lines.append(f"- {status}: `{count}`")
@@ -449,6 +621,13 @@ def write_reports(results: list[dict], output: Path) -> None:
             f"| `{item['skill_id']}` | `{item['status']}` | {len(item.get('changed', []))} | "
             f"{len(item.get('added', []))} | [{item['owner']}/{item['repo']}]({item['url']}) |"
         )
+    if relocations:
+        lines.extend(["", "## Relocated origins", "", "| Skill | From | To | Evidence |", "|---|---|---|---|"])
+        for item in sorted(relocations, key=lambda r: r["skill_id"]):
+            lines.append(
+                f"| `{item['skill_id']}` | {item['relocated_from']} | {item['relocated_to']} | "
+                f"`{item['relocated_method']}` |"
+            )
     markdown.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -473,7 +652,12 @@ def main() -> int:
     summary = {}
     for item in results:
         summary[item["status"]] = summary.get(item["status"], 0) + 1
-    print(json.dumps({"checked": len(results), "summary": dict(sorted(summary.items())), "output": str(output)}, ensure_ascii=False))
+    print(json.dumps({
+        "checked": len(results),
+        "summary": dict(sorted(summary.items())),
+        "relocated": sum(1 for item in results if item.get("relocated_to")),
+        "output": str(output),
+    }, ensure_ascii=False))
     return 0
 
 
