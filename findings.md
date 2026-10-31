@@ -28,7 +28,8 @@
   - 3 个 `anthropic-fs-wealth-management-*` → `plugins/agent-plugins/meeting-prep-agent/skills/`（main）。
 - **路径级出库**：`weekly_curation.py prune --upstream-report reports/upstream-check-latest.json` 把仍是 `source_path_missing` 的行转为 `upstream_path_missing` 出库建议；报告 URL 与当前 override 不一致时跳过，避免旧报告误删刚迁移的技能。周度顺序改为先同步后出库。
 - **22 个孤儿确认删除**：AlphaGBM 15（alert、buffett-analysis、company-profile、compare、duan-analysis、fear-score、health-check、investment-thesis、macro-view、marks-cycle、take-profit、tepper-signal、theme-research、vix-status、watchlist），anthropics 3（portfolio-rebalance、financial-plan、tax-loss-harvesting），dasheng 2（stage-brief-ai、stage-draft），`dasheng-video-omni-browser`（仅剩 docs/archive 快照），`funda-data`（上游已移除该插件）。
-- **测试**：新增 `tests/test_upstream_relocation.py`，覆盖内容哈希优先、唯一同名才用、歧义不猜、版本分支原路径四种判定，已接入周度第 9 步。
+- **测试**：新增 `tests/test_upstream_relocation.py`，覆盖内容哈希优先、唯一同名才用、歧义不猜、版本分支原路径四种判定，已接入周度第 9 步；四个测试文件全通过。
+- **验证与发布**：重建后 436 技能、标准包 30、金融组合 34；审计 `missing_skills`/`duplicate_capabilities`/`missing_native_origins`/`standard_bundle_issues` 全 0，`missing_env` 135，`risky_hits` 16 与基线一致；语法门禁 1384 Python + 354 JS，0 错误。已推送 `462c20e`，GitHub 与 Gitee SHA 一致。
 
 待观察：
 

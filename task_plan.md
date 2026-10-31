@@ -126,4 +126,4 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 57. Relocate origins whose upstream path moved | complete | 30 skills remapped (15 AlphaGBM, 12 taste-skill branch pins, 3 anthropics); overrides + SOURCE.txt updated |
 | 58. Prune skills deleted upstream | complete | 22 orphans removed (15 AlphaGBM, 3 anthropics, 2 dasheng stage, omni-browser, funda-data); catalog 458 -> 436 |
 | 59. Reorder weekly cycle and refresh docs | complete | sync before prune, prune --upstream-report, relocation test wired in; docs, handoff and Quest prompt updated |
-| 60. Publish and verify dual remotes | pending | audit/syntax/risk all green; publish_weekly.sh + SHA equality |
+| 60. Publish and verify dual remotes | complete | 462c20e on HEAD, origin and gitee; audit/syntax/risk green before publish |
