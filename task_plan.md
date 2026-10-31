@@ -127,3 +127,12 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 58. Prune skills deleted upstream | complete | 22 orphans removed (15 AlphaGBM, 3 anthropics, 2 dasheng stage, omni-browser, funda-data); catalog 458 -> 436 |
 | 59. Reorder weekly cycle and refresh docs | complete | sync before prune, prune --upstream-report, relocation test wired in; docs, handoff and Quest prompt updated |
 | 60. Publish and verify dual remotes | complete | 462c20e on HEAD, origin and gitee; audit/syntax/risk green before publish |
+
+## Maintenance Pass (2026-10-31)
+
+| Phase | Status | Output |
+|---|---|---|
+| 61. Extract dependency manifests from the stale desktop clone | complete | wechat-multi-publisher package.json/lock merged; node_modules/ ignored |
+| 62. Archive the stale desktop clone | complete | /Volumes/PSSD/Projects/boutique-skills.stale-desktop-2026-10-31 (521MB, no tracked changes left behind) |
+| 63. Install agent-reach into Qoder | complete | ~/.qoder/skills/agent-reach -> repo skills/default/agent-reach; CLI verified |
+| 64. Verify single-branch state | complete | only main on local, origin and gitee |

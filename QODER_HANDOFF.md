@@ -37,7 +37,8 @@
 - 周度流程扩为 11 步：第 2 步上游同步、第 3 步出库（消费同步报告）、第 9 步审计 + 两道发布门禁（`scripts/check_skill_syntax.py`、`scripts/check_new_risks.py` + `catalog/risky-baseline.json`）。
 - 首次同步：436 个来源 → 118 个技能更新（468 改 + 227 新增文件），`current` 171、`source_path_missing` 52、`metadata_only_root_no_skill_md` 59、`wrapper_origin` 35。门禁拦下 `huashu-design` 的 `eval` 用法，复核后带理由放行。
 - 路径级治理首次运行：30 个 origin 自动迁移（AlphaGBM 15、taste-skill 12、anthropics 3），22 个确认删除的孤儿出库；剩余 `source_path_missing` 清零。新增 `tests/test_upstream_relocation.py`。
-- 本地目录改名为 `boutique-skills`，同名陈旧检出归档为 `boutique-skills.stale-2026-08-16`。
+- 本地目录改名为 `boutique-skills`，同名陈旧检出归档为 `boutique-skills.stale-2026-08-16`。桌面旧克隆 `~/Desktop/Projects/boutique-skills` 的依赖清单（wechat-multi-publisher）已并入主仓库后，整体归档为 `/Volumes/PSSD/Projects/boutique-skills.stale-desktop-2026-10-31`。
+- `~/.qoder/skills/agent-reach` 软链到本仓库 `skills/default/agent-reach`，Qoder 侧可直接调用并随周更同步。
 
 
 ## 最近完成（2026-09-30 补漏周度治理）

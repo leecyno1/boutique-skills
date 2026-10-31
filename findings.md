@@ -36,6 +36,12 @@
 - 迁移到版本分支的 12 个 taste 技能不会跟随 main 的 v2 演进；这是有意选择（保持与已审内容一致），后续若要升 v2 需逐个复核并按新内容重新评分。
 - `AlphaGBM/skills` 迁移后的 SKILL.md 与本地快照存在差异（上游已更新），本轮按上游覆盖，属正常同步；新增的 scripts/ 一并入库。
 
+同日清理：
+
+- 旧克隆 `~/Desktop/Projects/boutique-skills`（`613ce5d`，2026-08-09）唯一的本地增量是 `wechat-multi-publisher` 的 `package.json` / `package-lock.json`（另有两个 `node_modules/`，共 220MB）。依赖清单对复现有帮助，已并入主仓库；`node_modules/` 加入 `.gitignore`。其余无跟踪改动，克隆整体归档到 `/Volumes/PSSD/Projects/boutique-skills.stale-desktop-2026-10-31`。
+- `~/.qoder/skills/agent-reach` 建立指向仓库 `skills/default/agent-reach` 的软链，Qoder 侧可直接发现并随周更更新；CLI 在 `~/.local/bin/agent-reach`。
+- 仓库只有 `main` 一个分支（本地、origin、gitee 均无其他分支）。
+
 ## 2026-09-30（补漏周度治理 + curl 传输加固：token 泄露与上游检查卡死）
 
 已解决：
