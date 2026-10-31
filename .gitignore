@@ -6,6 +6,7 @@ dist/*.tar.gz
 
 __pycache__/
 *.pyc
+node_modules/
 
 # Local agent skill installs
 .agents/
