@@ -105,3 +105,16 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 46. Generate recommendations | complete | 573 installed: remove 7 / consider 465 / keep 62 / discover 39; pending-cleanup awaiting user confirmation |
 | 47. Publish and verify dual remotes | pending | publish_weekly.sh + SHA equality across HEAD/origin/gitee |
 | 48. Record archive-durability finding | complete | ~/.qoder/skills-archive wiped by 2026-09-16 mass restore; 31 archived skills revived, receipts unrollbackable |
+
+## Weekly Governance Repair (2026-10-31)
+
+| Phase | Status | Output |
+|---|---|---|
+| 49. Diagnose month-long gap | complete | Quest was enabled=false since 2026-09-30 and its scope was chatOnly (no repo cwd); no commits in October |
+| 50. Rebuild the Quest with a real execution scope | complete | New task 436c5b6e-10c6-487b-b73a-1504e4cc89c0, directory scope, Sat 09:00 Asia/Shanghai, Full Access; old chatOnly task deleted |
+| 51. Add upstream sync to the weekly cycle | complete | weekly_cycle.sh grew to 11 steps; step 3 runs check_upstream_updates.py --apply (report comes from the same run) |
+| 52. Add publish gates for unattended updates | complete | check_skill_syntax.py (1379 py + 355 js, 0 errors) and check_new_risks.py + catalog/risky-baseline.json |
+| 53. Apply first automatic upstream sync | complete | 436 sources, 118 skills updated, 468 modified + 227 added files; audit and tests green |
+| 54. Review the one new risk hit | complete | huashu-design verify-video.sh evals ffprobe's avg_frame_rate; accepted with reason, not patched locally |
+| 55. Rename the local directory | complete | boutique-openclaw-skills -> boutique-skills; stale same-name checkout archived as boutique-skills.stale-2026-08-16 |
+| 56. Publish and verify dual remotes | complete | 41fa7a1 on HEAD, origin and gitee |

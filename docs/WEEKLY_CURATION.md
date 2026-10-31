@@ -1,6 +1,6 @@
 # Weekly Skills Curation
 
-每周自动化治理流程：搜索 GitHub 优质 skills、评估打分、高分入库、低分/失效/被支配技能出库、刷新标准组合与金融组合，并同步 GitHub 与 Gitee。
+每周自动化治理流程：搜索 GitHub 优质 skills、评估打分、高分入库、低分/失效/被支配技能出库、从各上游同步已收录技能的内容、刷新标准组合与金融组合，并同步 GitHub 与 Gitee。
 
 ## 一键执行
 
@@ -8,7 +8,7 @@
 ./scripts/weekly_cycle.sh
 ```
 
-完整流程（发现入库 → 出库 → 重建目录 → 刷新金融组合 → 审计 → 测试 → 双远端发布）。
+完整流程（11 步）：发现入库 → 出库 → 上游同步 → 遥测 → 重建目录 → 刷新金融组合 → 重生成 README → 刷新遥测报告 → 审计 + 语法门禁 + 风险门禁 + 测试 → 调整建议 → 双远端发布。
 
 ## 分步命令
 
@@ -25,20 +25,32 @@ python3 scripts/weekly_curation.py prune
 # 4. 执行出库
 python3 scripts/weekly_curation.py prune --apply
 
-# 5. 重建目录与标准组合
+# 5. 从上游同步已收录技能（--apply 同时产出 reports/upstream-check-latest.*）
+python3 scripts/check_upstream_updates.py --apply
+
+# 6. 重建目录与标准组合
 python3 scripts/generate_enriched_catalog.py
 
-# 6. 重建金融组合（能力位去重，<= 40）
+# 7. 重建金融组合（能力位去重，<= 40）
 python3 scripts/generate_finance_suite.py
 
-# 7. 审计 + 测试
+# 8. 审计 + 语法门禁 + 风险门禁 + 测试
 python3 scripts/audit_skills.py
+python3 scripts/check_skill_syntax.py     # 全量编译 skills/default 下的 Python/JS
+python3 scripts/check_new_risks.py        # 对比 catalog/risky-baseline.json
 python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
+python3 tests/test_curl_token_hygiene.py
 
-# 8. 发布到 GitHub 和 Gitee
+# 9. 发布到 GitHub 和 Gitee（HTTPS 失败自动回退 SSH）
 ./scripts/publish_weekly.sh "Weekly skills curation $(date +%F)"
 ```
+
+## 发布门禁
+
+- `check_skill_syntax.py`：上游同步会把第三方代码直接写进 `skills/default`，语法错误若无人拦截会静默入库并随包发布。
+- `check_new_risks.py`：把审计的 `(skill, file, pattern)` 风险命中与 `catalog/risky-baseline.json` 比对，出现基线外组合即阻断。放行一条必须在基线里写 `reason`，并在 `findings.md` 记录判定依据。
+- 两道门禁与审计任一非零退出，`weekly_cycle.sh` 因 `set -e` 中止，不会发布。
 
 ## 发现与评分模型（候选仓库，0-100）
 
