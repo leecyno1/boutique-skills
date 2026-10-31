@@ -603,6 +603,7 @@ def _build_base_draft(
             "risk_per_trade": 0.005,
             "max_positions": 5,
             "max_sector_exposure": 0.3,
+            "sector_group_by": "sector",
         },
         "validation_plan": {
             "period": "2016-01-01 to latest",
@@ -972,6 +973,9 @@ def main() -> int:
     source_draft["_source_path"] = str(strategy_path)
 
     triggers_fired = diagnosis.get("triggers_fired", [])
+    if diagnosis.get("recommendation") == "review_required":
+        print("[INFO] Evaluation needs review before pivot proposals can be generated")
+        return 0
     if not triggers_fired:
         print("[INFO] No triggers fired -- no pivots to generate")
         return 0

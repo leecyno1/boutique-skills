@@ -40,7 +40,11 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
    - 技术指标：MACD、KDJ、RSI、BOLL、MA，不提供 MAVOL
    - 典型函数：`get_index_history`、`get_index_realtime_history`、`get_index_indicator`、`get_index_macd`、`get_index_kdj`、`get_index_rsi`、`get_index_boll`、`get_index_ma`、`get_ths_daily`、`get_ths_sector_categories`、`get_ths_constituent_stocks`、`get_dc_blocks`、`get_dc_block_stocks`、`get_dc_daily`
 
-6. **龙虎榜数据**  
+6. **期货数据**
+   - 合约基础信息、主连映射、历史分钟K线和最近 7 个自然日的实时 1 分钟分时
+   - 典型函数：`get_future_basic`、`get_future_mapping`、`get_future_minute`、`get_future_realtime_history`
+
+7. **龙虎榜数据**
    - 龙虎榜机构明细与每日明细数据  
    - 典型函数：`get_dragon_tiger`, `get_top_list`
 
@@ -206,6 +210,25 @@ data = get_realtime_history(
     trade_time="2026-03-15 09:31:00"
 )
 ```
+
+### 获取期货实时分时数据（支持最近7个自然日）
+
+```python
+from stock_api import get_future_realtime_history
+
+data = get_future_realtime_history(
+    contract_code=["CU2605.SHF"],
+    contract_type="contract",
+    date="2026-09-15",
+    page=0,
+    page_size=2000,
+)
+
+for record in data["list"]:
+    print(record["contract_code"], record["trade_time"], record["close"], record["oi"])
+```
+
+未传 `date` 时默认查询上海时区当天。夜盘跨零点时需要按两个自然日分别调用；该接口复用期货分钟K线权限。
 
 ### 获取财务数据（股票日度因子）
 

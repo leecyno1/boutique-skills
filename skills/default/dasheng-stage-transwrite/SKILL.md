@@ -1,9 +1,9 @@
 ---
 name: dasheng-stage-transwrite
-description: Use when converting confirmed Dasheng drafts into channel-ready WeChat article, ordinary faceless explainer, VOX investigative explainer, talking-head video, and opt-in podcast production packages.
+description: Use when converting confirmed Newma drafts into channel-ready WeChat article, faceless explainer, VOX investigative explainer, real talking-head, AI digital-human, commercial promo, deferred cinematic short-drama, and opt-in podcast production packages.
 ---
 
-# Dasheng Stage: Transwrite｜转写生产
+# Newma Stage: Transwrite｜转写生产
 
 ## 定位
 
@@ -60,7 +60,7 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - 少用“一方面...另一方面...”
 - 避免把事实稿洗成模板腔
 
-### 2. 视频｜三条独立 Lane
+### 2. 视频｜六条独立 Lane
 
 目标：
 
@@ -71,20 +71,25 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 
 正式路由：
 
-- `explainer_html_video`：无真人财经，默认横版 `16:9`；`1:1`、`9:16` 保留为发布适配规格。
+- `talking_head_video`：只处理真人出镜。先剪口误、重说、口水词和静音，再做基础滤镜、美颜、降噪、压缩、响度放大、字幕、花字、B-roll、HTML 动画和 Remotion 合成。
 - `vox_explainer_video`：问题驱动的调查解释视频，默认横版 `16:9`；以中心问题、证据地图、历史、机制、真人/现场证据、反证和有限结论组织全片，不能退化成文章章节朗读。
-- `talking_head_video`：有头口播统一 Lane。真人模式以批准后的真人原片/人声为时间锚点；数字人模式先由 `dasheng-digital-human-talking-head` 用授权肖像和 MiniMax 音频生成本地人物源，并以 MiniMax 原音频为时间锚点。
-- Remotion 是三条 Lane 的主时间轴；HTML Video、GSAP、HyperFrames、Lottie 是场景动画层；FFmpeg 负责终检和封装。
+- `explainer_html_video`：无真人财经，默认横版 `16:9`；`1:1`、`9:16` 保留为发布适配规格。
+- `digital_human_video`：处理授权肖像驱动的单人数字人口播或双人访谈。双人必须分别生成两个人物源，再按说话轮次由 Remotion 合成。
+- `cinematic_short_drama_video`：电影短剧规划 Lane。只注册编剧、角色圣经、导演分镜和官方模型 API 技术栈，默认 `execution_enabled=false`。
+- `commercial_promo_video`：第六条视频 Lane，处理 15/30/60 秒品牌片、产品宣传片、新品预告和效果广告。必须提供品牌、产品、受众、唯一目标、产品承诺、Proof、品牌记忆和主 CTA。
+- Remotion 是六条 Lane 的主时间轴；HTML Video、GSAP、HyperFrames、Lottie 是场景动画层；FFmpeg 负责终检和封装。
 - `video-use`、`freecut`、Seedance 等继续保留在注册表，只在导演明确命中或主路由失败时启用。
 
 典型模式：
 
 - 真人口播：`human video/audio -> transcription -> claim/evidence -> HTML scene layer -> Remotion compose -> FFmpeg QC`
-- 数字人口播：`authorized portrait + MiniMax audio -> local JoyVASA/LivePortrait presenter source -> claim/evidence -> HTML scene layer -> Remotion compose -> FFmpeg QC`
+- 数字人口播：`authorized portrait + MiniMax audio -> imagegen reference -> Luma lip/eye motion -> silent presenter source -> Remotion compose -> FFmpeg QC`
+- 双人数字人访谈：`two authorized portraits + two speaker audio tracks -> two independent presenter sources -> dialogue turn plan -> two-shot/close-up/split-screen Remotion compose -> QC`
 - 无真人财经：`Draft HTML -> voiceover -> claim/evidence -> real footage + HTML scenes -> Remotion compose -> FFmpeg QC`
 - VOX 调查解释：`Draft HTML -> central question/evidence map -> archival/news/interview research -> counterargument -> HTML/Remotion editorial compose -> FFmpeg QC`
+- 广告宣传片：`brand/product brief -> commercial script -> product/proof storyboard -> HTML/HyperFrames scenes -> Remotion compose -> brand/claims/QC`
 - 视频生成必须先走导演审核门禁：`script/storyboard -> storyboard_template_review.html -> storyboard_review_decision.json -> storyboard_review_gate.json -> TTS/material/render`。审核表必须一行一个分镜，并包含模板截图或缺失占位、模板 ID、口播、核心意思、证据资产、动效/运镜、风险点、审核控件。
-- `scripts/build_stage4_transwrite.py` 会按实际模式分别写入 `explainer_html_video/`、`vox_explainer_video/` 或 `talking_head_video/`。旧决策若把无真人任务写成 `talking_head_video`，会兼容迁移到 `explainer_html_video`，但新任务必须显式选择正确 Lane。
+- `scripts/build_stage4_transwrite.py` 会按实际模式写入对应 Lane。旧决策若把无真人任务写成 `talking_head_video`，兼容迁移到 `explainer_html_video`；旧真人 Lane 若声明 `presenter_source.kind=digital_human`，兼容迁移到 `digital_human_video`。新任务必须显式选择正确 Lane。
 - storyboard 通过后还必须依次通过 `claim_evidence_gate`、`renderer_asset_gate`、`renderer_contract_gate` 和完整 `video_render_qc`。
 - `storyboard_review_gate.json` 必须由 `scripts/validate_storyboard_review_gate.py` 生成，且 `status=approved`、`render_allowed=true` 才能继续。
 - 若已有 TemplateShowcase 视频，先用 `scripts/extract_template_preview_frames.py` 抽取模板截图，再生成 `storyboard_template_review.html`；没有截图的模板必须显示“缺失占位”，不得用无关画面冒充。
@@ -98,6 +103,7 @@ Draft 负责事实、数据、图表、配图和自包含 HTML。Transwrite 只�
 - `dasheng-digital-human-talking-head`
 - `dasheng-video-explainer-html`
 - `dasheng-video-vox`
+- `dasheng-commercial-promo-video`
 - `dasheng-lemon-illustrations`（消费 Draft illustration intent，将比喻/举例改造成全屏或透明叠加漫画分镜）
 - `motion-frames`
 - `remotion-best-practices`（正式主时间轴）
@@ -144,8 +150,8 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
 
 ```bash
 .venv/bin/python scripts/build_stage4_transwrite.py \
-  --draft-manifest ~/Desktop/自媒体创作/05_初稿生成/<run_id>/draft_manifest.json \
-  --transwrite-decision ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_decision.json
+  --draft-manifest ~/Desktop/自媒体创作/<run_id>/03_初稿/draft_manifest.json \
+  --transwrite-decision ~/Desktop/自媒体创作/<run_id>/04_转写/transwrite_decision.json
 ```
 
 统一入口：
@@ -197,7 +203,7 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
 }
 ```
 
-普通文章型无头视频使用 `explainer_html_video`；调查型 VOX 使用 `vox_explainer_video`；真人和数字人有头任务统一使用 `talking_head_video`。真人任务提供 `base_video`、SRT/字幕或人声音频；数字人任务提供授权肖像、MiniMax 音频、字幕或时间戳，并先生成 `presenter_source_manifest.json`。
+普通文章型无头视频使用 `explainer_html_video`；调查型 VOX 使用 `vox_explainer_video`；真人出镜使用 `talking_head_video`；单人或双人数字人使用 `digital_human_video`；广告宣传片使用 `commercial_promo_video`；电影短剧使用 `cinematic_short_drama_video`，但默认只生成规划包。广告任务必须提供品牌系统、官方产品资产、可核验 Proof、Offer/免责声明和唯一 CTA。
 
 ## 标准输出
 
@@ -217,8 +223,6 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
   - `vox_explainer_video/delivery/final_delivery_manifest.template.json`
   - `talking_head_video/talking_head_video_manifest.json`
   - `talking_head_video/presenter_source_manifest.json`
-  - `talking_head_video/digital_human_job.json`（数字人模式）
-  - `talking_head_video/digital_human_qc.json`（数字人模式）
   - `talking_head_video/video_storyboard.json`
   - `talking_head_video/storyboard_template_review.html`
   - `talking_head_video/storyboard_review_decision.json`
@@ -229,6 +233,21 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
   - `talking_head_video/html_video_project_vars.json`
   - `talking_head_video/html_video_project_plan.json`
   - `talking_head_video/html_video_commands.sh`
+  - `digital_human_video/digital_human_video_manifest.json`
+  - `digital_human_video/presenter_source_manifest.json`
+  - `digital_human_video/digital_human_script.md`
+  - `digital_human_video/video_storyboard.json`
+  - `digital_human_video/video_production_contract.json`
+  - `cinematic_short_drama_video/cinematic_short_drama_video_manifest.json`
+  - `cinematic_short_drama_video/cinematic_screenplay.md`
+  - `cinematic_short_drama_video/video_storyboard.json`
+  - `commercial_promo_video/commercial_promo_video_manifest.json`
+  - `commercial_promo_video/commercial_script.md`
+  - `commercial_promo_video/director_scene_plan/commercial_brief.normalized.json`
+  - `commercial_promo_video/director_scene_plan/script.json`
+  - `commercial_promo_video/director_scene_plan/scene_plan.json`
+  - `commercial_promo_video/director_scene_plan/brand_brief_gate.json`
+  - `commercial_promo_video/video_production_contract.json`
   - `podcast/podcast_manifest.json`
   - `podcast/podcast_script.md`
   - `podcast/provider_request.json`
@@ -252,11 +271,11 @@ mmx speech synthesize --text-file <podcast_script.txt> --out <podcast.wav> --mod
 
 1. 不在本阶段补事实、补数据或重做图表；这些都必须回到 Draft。
 2. Python 脚本只生成包、提示词、请求体和 manifest；真正的 DNA/humanize、生图、渲染、播客 API 调用由 Agent/技能执行。
-3. 真人、普通无头和 VOX 调查解释使用独立 Lane；旧配置只做兼容迁移。
+3. 真人、普通无头、VOX、数字人和广告宣传片使用独立 Lane；旧配置只做兼容迁移。
 4. 外部 API 或素材缺失时必须显式写入状态，不得把计划当成完成品。
 5. `transwrite_manifest.json` 是进入 Publish 的唯一正式输入。
 6. Agent/技能完成生产后，必须更新对应 lane manifest 的 `final_artifacts`、`qc.status` 和 lane `status`，否则 Publish 只能等待。
-7. 文章、HTML、封面、图片、音频、视频、字幕、审核页等运行产物不得写入任何 `skills/` 目录或项目根目录；默认写入 `~/Desktop/自媒体创作/06_转写生产/<run_id>/...`，实验缓存写入桌面创作目录下的 `_tmp/`。
+7. 文章、HTML、封面、图片、音频、视频、字幕、审核页等运行产物不得写入任何 `skills/` 目录或项目根目录；默认写入 `~/Desktop/自媒体创作/<run_id>/04_转写/...`，实验缓存写入桌面创作目录下的 `_tmp/`。
 8. 如需复用样板视频风格，先在独立 `video-style-training` 环节生成 `style_profile.json`；Transwrite 只消费该档案，不接收大批训练视频。
 
 ## 外部项目桥接

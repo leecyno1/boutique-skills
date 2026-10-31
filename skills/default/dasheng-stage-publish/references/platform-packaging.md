@@ -51,8 +51,8 @@
 
 - `publisher-a` / `publisher-b` 是跨平台逻辑账号；真实平台昵称不写入 Git。
 - 每个平台用稳定的 `slot-1` / `slot-2` 与命名浏览器 Profile 隔离登录态。
-- 浏览器 Profile 位于 `~/Library/Application Support/DashengPublishProfiles/`。
-- CLI 会话位于 `~/Library/Application Support/DashengPublishSessions/social-auto-upload/cookies/`。
+- 浏览器 Profile 位于 `~/Library/Application Support/NewmaPublishProfiles/`。
+- CLI 会话位于 `~/Library/Application Support/NewmaPublishSessions/social-auto-upload/cookies/`。
 - 不读取、不复制、不导出 Cookie 内容。首次登录或失效后只打开对应命名 Profile/CLI headed 登录一次。
 - 有头浏览器使用附属屏幕优先的固定小窗策略，禁止全屏和最大化；附属屏缺失时降级到主屏边缘小窗。
 

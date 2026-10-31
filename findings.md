@@ -1,5 +1,23 @@
 # Findings
 
+## 2026-10-31（周度治理修复：上游同步、发布门禁与目录改名）
+
+已解决：
+
+- **治理停摆一个月**：Quest 自 2026-09-30 起 `enabled=false`，10 月无任何提交。旧任务的执行域是 `chatOnly`，即使启用也拿不到仓库目录。已新建 workspace 域任务 `d86c21e2-6c53-4e50-bed2-611ea4d6e417`（cwd 绑定仓库、周六 09:00 Asia/Shanghai、Full Access、独立会话），旧 chatOnly 任务已删除。
+- **周度流程从 10 步扩到 11 步**：新增第 3 步上游同步（`check_upstream_updates.py --apply`，该命令同时产出 `reports/upstream-check-latest.*`，不必再单独跑只读遍），第 9 步扩为审计 + 语法门禁 + 风险门禁 + 单元测试。
+- **新增 `scripts/check_skill_syntax.py`**：全量内存编译 `skills/default` 下的 Python（1379 个）与 `node --check` 校验 JS（355 个），不落 `__pycache__`，实测 0 错误。上游自动同步会直接写入第三方代码，没有这道门禁时语法错误会静默入库。
+- **新增 `scripts/check_new_risks.py` 与 `catalog/risky-baseline.json`**：把审计的 `(skill, file, pattern)` 风险命中固化为基线，出现基线外的新组合即阻断发布，避免上游更新静默带入 `curl | sh`、`eval(` 之类内容。首跑即生效。
+- **首次自动上游同步**：436 个来源 → 118 个技能更新（468 个修改 + 227 个新增文件，全部位于 `skills/default`；无删除、无二进制、无缓存）。`current` 171、`source_path_missing` 52、`metadata_only_root_no_skill_md` 59、`metadata_only_root_too_large` 1、`wrapper_origin` 35。
+- **门禁实际拦下一条**：`huashu-design/scripts/verify-video.sh:48` 把 ffprobe 的 `avg_frame_rate`（`num/den`）经字符串插值送进 Python `eval`。取值受限于 ffprobe 的数值比，判为低风险；已连同理由写入基线。不本地改的原因：周度上游同步会把补丁覆盖回去，反而让流水线每周阻断——要改应向上游提。
+- 重建结果：458 技能（high 458 / medium 85 / low 67）、标准包 30、金融组合 34、`needs_origin_review=0`；审计 `missing_skills`/`duplicate_capabilities`/`missing_native_origins`/`standard_bundle_issues` 全 0，`missing_env` 149→151，`risky_hits` 15→16（即上述那条）。三个测试文件全通过。
+- **本地目录改名**：`/Volumes/PSSD/Projects/boutique-openclaw-skills` → `/Volumes/PSSD/Projects/boutique-skills`，与 GitHub 仓库名一致。原同名陈旧检出（`e16c7a0`，2026-08-16，含 4 个受保护 tushare-eval 文件的未提交改动）已归档为 `boutique-skills.stale-2026-08-16`，未删除。
+
+未决：
+
+- `source_path_missing` 52 个（`AlphaGBM/skills` 30 个路径重组、`anthropics/financial-services` wealth 垂直插件被删 5 个）仍需修 origin 或出库；`prune` 依旧只做 repo 级存活检查，检测不到路径级删除。
+- `~/.qoder/skills` 没有 `agent-reach` 副本（`~/.claude/skills`、`~/.agents/skills` 有，CLI 在 `~/.local/bin`）。它已在仓库与标准包 `social-research` 槽位，周更会自动同步其上游。
+
 ## 2026-09-30（补漏周度治理 + curl 传输加固：token 泄露与上游检查卡死）
 
 已解决：

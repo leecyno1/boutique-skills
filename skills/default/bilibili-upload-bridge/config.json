@@ -2,7 +2,7 @@
   "name": "bilibili-upload-bridge",
   "version": "0.1.0",
   "type": "publish_bridge",
-  "description": "Bridge Dasheng Bilibili channel packs to external Bilibili upload tools.",
+  "description": "Bridge Newma Bilibili channel packs to external Bilibili upload tools.",
   "external_dependencies": [
     {
       "name": "biliup-rs",

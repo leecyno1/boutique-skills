@@ -13,6 +13,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from provenance_contract import validate_market_inputs
+
 # Component weights for composite score
 WEIGHTS = {
     "regime": 0.25,
@@ -478,8 +481,16 @@ def generate_rationale(
     bias: str,
     scores: dict[str, Optional[int]],
     missing: list[str],
+    exposure_ceiling: Optional[int] = None,
 ) -> str:
-    """Generate human-readable rationale."""
+    """Generate human-readable rationale.
+
+    exposure_ceiling is the value reported to the user; when omitted it is
+    derived from composite so the rationale never quotes the raw score.
+    """
+    if exposure_ceiling is None:
+        exposure_ceiling = determine_exposure_ceiling(composite)
+
     parts = []
 
     # Participation assessment
@@ -506,7 +517,7 @@ def generate_rationale(
 
     # Missing inputs
     if missing:
-        critical_missing = set(missing) & CRITICAL_INPUTS
+        critical_missing = sorted(set(missing) & CRITICAL_INPUTS)
         if critical_missing:
             parts.append(
                 f"Missing critical inputs ({', '.join(critical_missing)}) reduce confidence."
@@ -518,7 +529,7 @@ def generate_rationale(
     elif recommendation == "REDUCE_ONLY":
         parts.append("New entries not recommended; consider trimming on strength.")
     else:
-        parts.append(f"New positions allowed within the {int(composite)}% ceiling.")
+        parts.append(f"New positions allowed within the {exposure_ceiling}% ceiling.")
 
     return " ".join(parts)
 
@@ -611,7 +622,13 @@ def main():
     )
     parser.add_argument("--json-only", action="store_true", help="Output JSON only, skip markdown")
 
+    parser.add_argument("--require-provenance", action="store_true")
+    parser.add_argument("--run-id")
+    parser.add_argument("--as-of", help="Timezone-aware evaluation timestamp")
+    parser.add_argument("--max-age-days", type=int, default=3)
     args = parser.parse_args()
+    if args.require_provenance and (not args.run_id or not args.as_of):
+        parser.error("strict mode requires --run-id and --as-of")
 
     # Load all inputs
     breadth_data = load_json_file(args.breadth)
@@ -622,6 +639,19 @@ def main():
     theme_data = load_json_file(args.theme)
     sector_data = load_json_file(args.sector)
     institutional_data = load_json_file(args.institutional)
+
+    lineage = None
+    if args.require_provenance:
+        try:
+            lineage = validate_market_inputs(
+                breadth_data,
+                uptrend_data,
+                run_id=args.run_id,
+                evaluation=args.as_of,
+                max_age_days=args.max_age_days,
+            )
+        except ValueError as exc:
+            parser.error(str(exc))
 
     # Extract scores
     scores: dict[str, Optional[int]] = {
@@ -648,7 +678,9 @@ def main():
     participation = determine_participation(scores["uptrend"], scores["breadth"], sector_data)
     confidence = determine_confidence(provided, missing)
 
-    rationale = generate_rationale(composite, recommendation, participation, bias, scores, missing)
+    rationale = generate_rationale(
+        composite, recommendation, participation, bias, scores, missing, exposure_ceiling
+    )
 
     # Build result
     now = datetime.now(timezone.utc)
@@ -666,6 +698,9 @@ def main():
         "inputs_missing": missing,
         "rationale": rationale,
     }
+
+    if lineage is not None:
+        result["input_lineage"] = lineage
 
     # Ensure output directory exists
     args.output_dir.mkdir(parents=True, exist_ok=True)

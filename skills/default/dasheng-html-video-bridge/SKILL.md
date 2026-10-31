@@ -1,15 +1,15 @@
 ---
 name: dasheng-html-video-bridge
-description: Use when Dasheng transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.
+description: Use when Newma transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.
 ---
 
-# Dasheng HTML Video Bridge
+# Newma HTML Video Bridge
 
 正式无真人财经视频默认横版 16:9，并遵循 `docs/technical/no-human-square-video-production-standard.md`；1:1 与 9:16 是独立适配规格。
 
 ## Role
 
-Use the external `html-video` repository as the scene renderer for Dasheng video transwrite. Remotion owns the master timeline; this skill does not research facts or rewrite the article thesis.
+Use the external `html-video` repository as the scene renderer for Newma video transwrite. Remotion owns the master timeline; this skill does not research facts or rewrite the article thesis.
 
 `html-video` is an external dependency, not vendored into this repo and not version-locked. Default path: `${HTML_VIDEO_ROOT:-vendor/reserved/render/html-video}`; override with `HTML_VIDEO_ROOT`.
 
@@ -20,7 +20,7 @@ Check or install before first use:
 .venv/bin/python scripts/ensure_video_external_deps.py --dep html-video --mode install --install-node-deps
 ```
 
-For Dasheng no-human explainer scenes, external `html-video` must also provide `gsap` and `lottie-web`; `ensure_video_external_deps.py --install-node-deps` checks and installs them in the external repo.
+For Newma no-human explainer scenes, external `html-video` must also provide `gsap` and `lottie-web`; `ensure_video_external_deps.py --install-node-deps` checks and installs them in the external repo.
 
 Optional Lottie authoring uses external `diffusionstudio/lottie` (`text-to-lottie`) as a verified Skia Skottie player and scene workspace. It is an external dependency, not vendored or version-locked:
 

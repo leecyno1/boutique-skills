@@ -1,14 +1,14 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-09-30
+更新时间：2026-10-31
 
 ## 仓库信息
 
-- 路径：/Volumes/PSSD/Projects/boutique-openclaw-skills
+- 路径：/Volumes/PSSD/Projects/boutique-skills（2026-10-31 由 boutique-openclaw-skills 改名，与仓库名一致）
 - 默认分支：main
 - GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
-- 注意：本地目录名仍是 boutique-openclaw-skills，仓库内出现该字符串的路径（会话转录目录、RepoWiki 目录、审计报告里的绝对路径）是目录名不是仓库名，不要改。
+- 注意：字符串 `boutique-openclaw-skills` 现在只应出现在 Gitee 仓库地址与历史记录里（旧会话转录目录、RepoWiki 目录、早期报告中的绝对路径）。仓库名、本地目录名、GitHub 地址都已统一为 `boutique-skills`。
 - 当前技能数：458（catalog/skills.enriched.json，生成于 2026-09-30）；skills/default/ 目录 594 个（含未注册候选与套件成员）
 - 横向分层：high 458 / medium 85 / low 67（累积分层，非互斥）；纵向 L1 21 / L2 160 / L3 277
 - 星级分布：5★ 110 / 4★ 230 / 3★ 112 / 1★ 6
@@ -19,21 +19,25 @@
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-09-30 更新）
+## 当前待办（2026-10-31 更新）
 
-工作区在本轮补漏周度治理后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希，每次周度提交都会失效）。2026-09-11 批次（README 裂图、仓库改名引用、白名单补齐）明细见 `findings.md`；持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`。
+工作区在本轮上游同步后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希）。持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`；发布脚本内置 HTTPS→SSH 回退；周度流程共 11 步，第 3 步为上游同步，第 9 步为审计 + 语法门禁 + 风险门禁 + 单元测试。
 
 未决（按处理紧迫度）：
 
-1. **周度治理 Quest 处于手动暂停**：id `70f2e60c-b189-445f-ab92-6e4e642f9975`（`0 9 * * 6` Asia/Shanghai）当前 `enabled=false`、`pauseReason=manual`，因此 2026-09-19、2026-09-26 未触发，2026-09-30 为手动补漏。是否重新启用属用户裁决，不代为开启；下次自然触发点为每周六 09:00。
-2. **Qoder 侧归档目录已被清空**：`~/.qoder/skills-archive` 不存在，而 `~/.qoder/skills` 有 260/311 个目录 mtime 为 2026-09-16 —— 当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原，归档副本同时丢失（`reports/usage/cleanup-receipts.jsonl` 里的 `to` 路径已失效，无法 `mv` 回滚）。Codex 侧未受影响：`~/.codex/skills-archive` 22 项完好，2026-09-12 归档的三项仍未复活。含义：归档式卸载对 Qoder 客户端重装不具持久性，卸载建议应当轮确认执行，不要跨周悬挂。
-3. **陈旧重复检出**：`/Volumes/PSSD/Projects/boutique-skills` 与本仓库同指 `leecyno1/boutique-skills`，停在 `e16c7a0`（2026-08-16）且从未 fetch；其工作区含 4 个受保护 tushare-eval 文件的未提交改动（生成时间 2026-06-18，比本仓库已提交的 2026-06-14 新，从未入库）。本轮未触碰该目录，保留/同步/归档待用户裁决。
-4. **上游漂移已量化，修复未做**：2026-09-30 补跑 `make upstream-check`（436 个来源）→ `current` 187、`would_update` 114（275 改 / 291 新增文件）、`source_path_missing` 40、`metadata_only_root_no_skill_md` 58、`wrapper_origin` 35、`error` 1（`apk-redteam-pipeline`，curl 传输 HTTP 0，瞬时，重跑即消）。两处结构性变化已逐一核实，不是检测误报：
-   - `AlphaGBM/skills` 把 `skills/<name>` 重组为 `skills/<category>/<name>`（commodities / core / digital-assets / options / stocks），本仓库 30 个 `alphagbm-*` 的 origin 路径全部失效；上游现存 27 个 SKILL.md，`alphagbm-alert` 等已删除。
-   - `anthropics/financial-services` 删掉整个 `plugins/vertical-plugins/wealth-management`。6 个 `anthropic-fs-wealth-management-*` 中只有 `client-review` 有去处（`plugins/agent-plugins/meeting-prep-agent/skills/client-review`），其余 5 个（portfolio-rebalance、client-report、financial-plan、investment-proposal、tax-loss-harvesting）上游已无对应。
-   - **治理盲区**：`weekly_curation.py prune` 只做 repo 级存活检查（`/repos/{owner}/{repo}` 返回 200 即视为存活），检测不到路径级删除，所以上述 5 个孤儿技能不会被自动出库。只有月度 `check_upstream_updates.py` 能发现，而目前没有任何流程消费它的结论。修 origin 路径与决定是否出库，都属下一轮工作。
-5. **7 项本地卸载建议待确认**（`reports/usage/pending-cleanup.json`，绝不自动执行）：qoder 侧 `wechat-topic-outline-planner`、`doc`、`openclaw-stock`、`openclaw-stock-analyzer`、`stock_datasource`；codex 侧 `lin-lefeng-perspective`、`sun-lumin-perspective`。确认后 `python3 scripts/uninstall_skills.py --confirm`。
-6. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
+1. **治理链路已恢复，首次自动运行待验收**：Quest `d86c21e2-6c53-4e50-bed2-611ea4d6e417`，workspace 域绑定本仓库目录，周六 09:00 Asia/Shanghai，Full Access，独立会话，下次触发 2026-11-07 09:00。旧的 chatOnly 任务（`70f2e60c`，即使启用也拿不到仓库目录）已删除。首跑重点核对三件事：上游同步约 20–25 分钟是否跑完、发布是否走了 SSH 回退、`catalog/risky-baseline.json` 是否按预期拦下新风险。
+2. **Qoder 侧归档目录已被清空**：`~/.qoder/skills-archive` 不存在，而 `~/.qoder/skills` 有 260/311 个目录 mtime 为 2026-09-16 —— 当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原，归档副本同时丢失（`reports/usage/cleanup-receipts.jsonl` 里的 `to` 路径已失效，无法 `mv` 回滚）。Codex 侧未受影响。含义：归档式卸载对 Qoder 客户端重装不具持久性，卸载建议应当轮确认执行，不要跨周悬挂。
+3. **52 个 origin 路径失效待修**：`source_path_missing` 从 40 升到 52，主要是 `AlphaGBM/skills` 把 `skills/<name>` 重组为 `skills/<category>/<name>`（本仓库 30 个 `alphagbm-*` 全失效，上游现存 27 个 SKILL.md，`alphagbm-alert` 等已删），以及 `anthropics/financial-services` 删掉整个 `plugins/vertical-plugins/wealth-management`（6 个 `anthropic-fs-wealth-management-*` 中只有 `client-review` 有去处，其余 5 个上游已无对应）。**治理盲区仍在**：`weekly_curation.py prune` 只做 repo 级存活检查，检测不到路径级删除，这 52 个不会被自动出库。修法建议：让 prune 复用月度检查的 `source_path_missing` 结果。
+4. **7 项本地卸载建议待确认**（`reports/usage/pending-cleanup.json`，绝不自动执行）：qoder 侧 `wechat-topic-outline-planner`、`doc`、`openclaw-stock`、`openclaw-stock-analyzer`、`stock_datasource`；codex 侧 `lin-lefeng-perspective`、`sun-lumin-perspective`。确认后 `python3 scripts/uninstall_skills.py --confirm`。
+5. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
+6. **`~/.qoder/skills` 缺 agent-reach 副本**：`~/.claude/skills` 与 `~/.agents/skills` 有，CLI 在 `~/.local/bin/agent-reach`。仓库与标准包 `social-research` 槽位均已收录，周更会自动同步上游。
+
+## 最近完成（2026-10-31 修复周度治理 + 首次自动上游同步）
+
+- 周度流程新增第 3 步上游同步与两道发布门禁（`scripts/check_skill_syntax.py`、`scripts/check_new_risks.py` + `catalog/risky-baseline.json`）。
+- 首次同步：436 个来源 → 118 个技能更新（468 改 + 227 新增文件），`current` 171、`source_path_missing` 52、`metadata_only_root_no_skill_md` 59、`wrapper_origin` 35。门禁拦下 `huashu-design` 的 `eval` 用法，复核后带理由放行。
+- 本地目录改名为 `boutique-skills`，同名陈旧检出归档为 `boutique-skills.stale-2026-08-16`。
+
 
 ## 最近完成（2026-09-30 补漏周度治理）
 

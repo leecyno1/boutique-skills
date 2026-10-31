@@ -1,6 +1,6 @@
 ---
 name: dasheng-hotspot-radar
-description: Use when an agent needs a standalone no-login hotspot/news radar for Dasheng workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.
+description: Use when an agent needs a standalone no-login hotspot/news radar for Newma workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.
 ---
 
 # dasheng-hotspot-radar

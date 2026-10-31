@@ -131,6 +131,7 @@
 | `agent-reach` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
 | `llmquant-portfolio` | 金融 / 监控预警 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-portfolio) |
 | `llmquant-risk` | 金融 / 监控预警 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-risk) |
+| `frontend-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
 | `baoyu-url-to-markdown` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `content-strategy` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy) |
 | `llmquant-commodities` | 金融 / 交易 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-commodities) |
@@ -164,7 +165,6 @@
 | `llmquant-market-intelligence` | 金融 / 监控预警 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-market-intelligence) |
 | `llmquant-prediction-markets` | 金融 / 交易 | 4★ | `api-key+mcp-required` | [origin](https://github.com/LLMQuant/skills/tree/master/skills/llmquant-prediction-markets) |
 | `news-radar` | 搜索 / 研究 / 情报 | 4★ | `mcp-required` | [origin](https://github.com/sansan0/TrendRadar) |
-| `notebooklm-py` | 搜索 / 研究 / 情报 | 4★ | `browser-required` | [origin](https://github.com/teng-lin/notebooklm-py) |
 | `openclaw-cron-setup` | 多 Agent / 自动调度 | 4★ | `browser-required` | [origin](https://clawhub.ai/skills/openclaw-cron-setup) |
 | `seo-agentic` | 编程 / 工程工具 | 4★ | `mcp-required` | [origin](https://github.com/AgriciDaniel/claude-seo) |
 | `akshare-stock` | 金融 / 数据源 | 4★ | `api-key` | [origin](https://clawhub.ai/skills/new-akshare-stock) |
@@ -182,10 +182,10 @@
 | `book-to-skill` | 编程 / 工程工具 | 4★ | `api-key` | [origin](https://github.com/virgiliojr94/book-to-skill) |
 | `bug-bounty` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/elementalsouls/Claude-BugHunter) |
 | `lark-calendar` | 文档 / 办公 | 4★ | `api-key` | [origin](https://github.com/larksuite/oapi-sdk-nodejs) |
+| `notebooklm-py` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/teng-lin/notebooklm-py) |
 | `paperless-docs` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/paperless-ngx/paperless-ngx) |
 | `paperless-ngx-tools` | 搜索 / 研究 / 情报 | 4★ | `api-key` | [origin](https://github.com/paperless-ngx/paperless-ngx) |
 | `westockdata` | 金融 / 数据源 | 4★ | `direct` | [origin](https://www.npmjs.com/package/westock-data-clawhub/v/1.0.4) |
-| `frontend-dev` | 编程 / 工程工具 | 3★ | `browser-required` | [origin](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
 | `vision-analysis` | 媒体生成 / 处理 | 3★ | `api-key+mcp-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `fullstack-dev` | 编程 / 工程工具 | 3★ | `browser-required` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `media-downloader` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/yizhiyanhua-ai/media-downloader.git) |
@@ -256,7 +256,7 @@
 | `cli-chat` | 商业运营 | 4★ | `direct` | [origin](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-compression` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/diegosouzapw/OmniRoute) |
 | `code-review` | 安全 / 审计 | 4★ | `direct` | [origin](https://github.com/shareAI-lab/learn-claude-code) |
-| `colleague-skill` | 商业运营 | 4★ | `direct` | [origin](https://github.com/titanwings/colleague-skill) |
+| `colleague-skill` | 多 Agent / 自动调度 | 4★ | `direct` | [origin](https://github.com/titanwings/colleague-skill) |
 | `distilly` | 多 Agent / 自动调度 | 4★ | `direct` | [origin](https://github.com/titanwings/distilly) |
 | `gws-admin-reports` | 安全 / 审计 | 4★ | `direct` | [origin](https://github.com/googleworkspace/cli) |
 | `gws-chat-send` | 商业运营 | 4★ | `direct` | [origin](https://github.com/googleworkspace/cli) |
@@ -266,7 +266,6 @@
 | `ponytail-debt` | 商业运营 | 4★ | `direct` | [origin](https://github.com/DietrichGebert/ponytail) |
 | `ponytail-gain` | 媒体生成 / 处理 | 4★ | `direct` | [origin](https://github.com/DietrichGebert/ponytail) |
 | `ponytail-review` | 商业运营 | 4★ | `direct` | [origin](https://github.com/DietrichGebert/ponytail) |
-| `prompt-master` | 记忆 / 上下文基础设施 | 4★ | `direct` | [origin](https://github.com/nidhinjs/prompt-master) |
 | `seo-audit` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/AgriciDaniel/claude-seo) |
 | `seo-backlinks` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/AgriciDaniel/claude-seo) |
 | `seo-competitor-pages` | 营销 / 增长 | 4★ | `direct` | [origin](https://github.com/AgriciDaniel/claude-seo) |
@@ -473,6 +472,7 @@
 | `pair-trade-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/pair-trade-screener) |
 | `parabolic-short-trade-planner` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/parabolic-short-trade-planner) |
 | `pead-screener` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/pead-screener) |
+| `prompt-master` | 媒体生成 / 处理 | 3★ | `api-key` | [origin](https://github.com/nidhinjs/prompt-master) |
 | `saas-valuation-compression` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills) |
 | `signal-postmortem` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/signal-postmortem) |
 | `stock-correlation` | 金融 / 交易 | 3★ | `api-key` | [origin](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-correlation) |

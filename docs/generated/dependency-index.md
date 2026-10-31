@@ -2,9 +2,9 @@
 
 | 使用条件 | 数量 |
 |---|---:|
-| `api-key` | 103 |
+| `api-key` | 105 |
 | `api-key+mcp-required` | 22 |
-| `browser-required` | 32 |
+| `browser-required` | 30 |
 | `direct` | 227 |
 | `mcp-required` | 74 |
 
@@ -59,6 +59,7 @@
 | `book-to-skill` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
 | `bug-bounty` | `OPENAI_API_KEY` | `python` | `medium` |
 | `lark-calendar` | `FEISHU_APP_SECRET` | 无 | `medium` |
+| `notebooklm-py` | `GEMINI_API_KEY` | 无 | `medium` |
 | `paperless-docs` | `PAPERLESS_TOKEN` | 无 | `medium` |
 | `paperless-ngx-tools` | `PAPERLESS_TOKEN` | 无 | `medium` |
 | `baoyu-post-to-wechat` | `ACCESS_TOKEN`, `WECHAT_AI_TOOLS_APP_SECRET`, `WECHAT_APP_SECRET`, `WECHAT_BAOYU_APP_SECRET` | `browser` | `medium` |
@@ -106,6 +107,7 @@
 | `pair-trade-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `parabolic-short-trade-planner` | `ALPACA_API_KEY`, `FMP_API_KEY` | 无 | `medium` |
 | `pead-screener` | `FMP_API_KEY` | `python` | `medium` |
+| `prompt-master` | `OPENAI_API_KEY` | `ffmpeg` | `medium` |
 | `saas-valuation-compression` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `signal-postmortem` | `FMP_API_KEY` | 无 | `medium` |
 | `stock-correlation` | `TUSHARE_TOKEN` | `python` | `medium` |
@@ -161,7 +163,6 @@
 | `apk-redteam-pipeline` | 无 | `browser` | `medium` |
 | `guizang-ppt-skill` | 无 | `browser` | `medium` |
 | `huashu-design` | 无 | `browser`, `ffmpeg` | `medium` |
-| `notebooklm-py` | 无 | `browser` | `medium` |
 | `openclaw-cron-setup` | 无 | `browser` | `medium` |
 | `baoyu-markdown-to-html` | 无 | `browser` | `medium` |
 | `btc-bottom-model` | 无 | `browser` | `medium` |
@@ -175,7 +176,6 @@
 | `baoyu-compress-image` | 无 | `browser` | `medium` |
 | `browser-cdp` | 无 | `browser` | `medium` |
 | `defuddle` | 无 | `browser` | `medium` |
-| `frontend-dev` | 无 | `browser`, `ffmpeg`, `node` | `medium` |
 | `us-value-investing` | 无 | `browser` | `medium` |
 | `fullstack-dev` | 无 | `browser`, `node`, `python` | `medium` |
 | `web-search` | 无 | `browser`, `ffmpeg` | `medium` |
@@ -225,7 +225,7 @@
 | `scroll-world` | 无 | `ffmpeg`, `higgsfield`, `python` | `low` |
 | `seedance2-skill` | 无 | 无 | `low` |
 | `skill-integration-tester` | 无 | `python` | `low` |
-| `twitter-reader` | 无 | 无 | `low` |
+| `twitter-reader` | 无 | `python` | `low` |
 | `writing-plans` | 无 | 无 | `low` |
 | `data-analyst` | 无 | `python` | `low` |
 | `dbskill` | 无 | 无 | `low` |
@@ -273,7 +273,7 @@
 | `memu` | 无 | 无 | `low` |
 | `multi-search-engine` | 无 | 无 | `low` |
 | `obsidian-cli` | 无 | 无 | `low` |
-| `opencli-reader` | 无 | `python` | `low` |
+| `opencli-reader` | 无 | `ffmpeg`, `python` | `low` |
 | `ponytail-audit` | 无 | 无 | `low` |
 | `ponytail-help` | 无 | 无 | `low` |
 | `redesign-existing-projects` | 无 | 无 | `low` |
@@ -349,7 +349,6 @@
 | `ponytail-debt` | 无 | 无 | `low` |
 | `ponytail-gain` | 无 | 无 | `low` |
 | `ponytail-review` | 无 | 无 | `low` |
-| `prompt-master` | 无 | 无 | `low` |
 | `seo-audit` | 无 | 无 | `low` |
 | `seo-backlinks` | 无 | 无 | `low` |
 | `seo-competitor-pages` | 无 | 无 | `low` |
@@ -359,6 +358,7 @@
 | `story-deslop` | 无 | 无 | `low` |
 | `story-import` | 无 | 无 | `low` |
 | `story-long-analyze` | 无 | 无 | `low` |
+| `frontend-dev` | 无 | `node` | `low` |
 | `content-strategy` | 无 | 无 | `low` |
 | `minimax-docx` | 无 | 无 | `low` |
 | `minimax-xlsx` | 无 | `node`, `python` | `low` |

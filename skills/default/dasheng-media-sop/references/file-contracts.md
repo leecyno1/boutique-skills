@@ -61,6 +61,9 @@
 - `explainer_html_video_manifest.json`
 - `vox_explainer_video_manifest.json`
 - `talking_head_video_manifest.json`
+- `digital_human_video_manifest.json`
+- `commercial_promo_video_manifest.json`
+- `cinematic_short_drama_video_manifest.json`（规划包）
 - `podcast_manifest.json`
 - 可选：引用 `~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json`
 

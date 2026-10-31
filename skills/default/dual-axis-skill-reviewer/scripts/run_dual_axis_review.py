@@ -13,6 +13,7 @@ Cross-project usage:
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
 import random
@@ -289,7 +290,7 @@ def run_tests(project_root: Path, skill_dir: Path) -> tuple[str, str | None, str
     if not test_dirs:
         return "not_found", None, ""
 
-    test_targets = [str(path) for path in test_dirs]
+    test_targets = [path.as_posix() for path in test_dirs]
     uv_command = [
         "uv",
         "run",
@@ -303,20 +304,14 @@ def run_tests(project_root: Path, skill_dir: Path) -> tuple[str, str | None, str
     py_command = [sys.executable, "-m", "pytest", *test_targets, "-q"]
     py_command_text = " ".join(py_command)
 
-    try:
-        env = dict(os.environ)
-        env["UV_CACHE_DIR"] = str(project_root / ".uv-cache")
-        proc = subprocess.run(
-            uv_command,
-            cwd=project_root,
-            capture_output=True,
-            text=True,
-            timeout=180,
-            check=False,
-            env=env,
-        )
-        command_text = uv_command_text
-    except FileNotFoundError:
+    # Prefer the already-synchronized interpreter's pytest. Running `uv run` here
+    # would resolve/mutate dependencies on a cold environment and leak setup output
+    # ("Installed N packages ...") into test_output, making test evidence
+    # non-deterministic across warm/cold runs. Fall back to `uv run` only when the
+    # current interpreter has no pytest (e.g. a bare ~/.claude launcher).
+    env = dict(os.environ)
+    env["UV_CACHE_DIR"] = str(project_root / ".uv-cache")
+    if importlib.util.find_spec("pytest") is not None:
         try:
             proc = subprocess.run(
                 py_command,
@@ -327,12 +322,24 @@ def run_tests(project_root: Path, skill_dir: Path) -> tuple[str, str | None, str
                 check=False,
             )
             command_text = py_command_text
+        except subprocess.TimeoutExpired:
+            return "timeout", py_command_text, "pytest timeout (>180s)"
+    else:
+        try:
+            proc = subprocess.run(
+                uv_command,
+                cwd=project_root,
+                capture_output=True,
+                text=True,
+                timeout=180,
+                check=False,
+                env=env,
+            )
+            command_text = uv_command_text
         except FileNotFoundError:
             return "tool_missing", None, "Neither `uv` nor `python -m pytest` is available."
         except subprocess.TimeoutExpired:
-            return "timeout", py_command_text, "pytest timeout (>180s)"
-    except subprocess.TimeoutExpired:
-        return "timeout", uv_command_text, "pytest timeout (>180s)"
+            return "timeout", uv_command_text, "pytest timeout (>180s)"
 
     output = f"{proc.stdout}\n{proc.stderr}".strip()
     if proc.returncode == 0:
@@ -395,14 +402,14 @@ def collect_skill_inventory(project_root: Path, skill_dir: Path) -> dict:
     """List key files so the LLM can review concrete artifacts."""
 
     def rel(items: list[Path]) -> list[str]:
-        return [str(item.relative_to(project_root)) for item in sorted(items)]
+        return [item.relative_to(project_root).as_posix() for item in sorted(items)]
 
     test_files = []
     for tests_dir in discover_test_dirs(skill_dir):
         test_files.extend(list(tests_dir.glob("test_*.py")))
 
     return {
-        "skill_md": str((skill_dir / "SKILL.md").relative_to(project_root)),
+        "skill_md": (skill_dir / "SKILL.md").relative_to(project_root).as_posix(),
         "scripts": rel(list((skill_dir / "scripts").glob("*.py"))),
         "tests": rel(test_files),
         "references": rel(list((skill_dir / "references").glob("*.md"))),
@@ -536,7 +543,7 @@ def score_skill(
     """Run deterministic checks and scoring for one skill."""
     skill_dir = skill_file.parent
     skill_name = skill_dir.name
-    rel_skill_file = str(skill_file.relative_to(project_root))
+    rel_skill_file = skill_file.relative_to(project_root).as_posix()
     lines = skill_file.read_text(encoding="utf-8").splitlines(keepends=True)
     text = "".join(lines)
     frontmatter = parse_frontmatter(lines)
@@ -767,7 +774,7 @@ def score_skill(
                         child_lines = child.read_text(encoding="utf-8").splitlines()
                     except OSError:
                         continue
-                    rel_child = str(child.relative_to(project_root))
+                    rel_child = child.relative_to(project_root).as_posix()
                     all_skill_files.append((rel_child, child_lines))
     for file_rel, file_lines in all_skill_files:
         for line_num, line_text in enumerate(file_lines, start=1):

@@ -1,6 +1,6 @@
 # Dynamic Calling Patterns
 
-Skills MUST detect what's available at runtime and adapt. Never hardcode a single tool or method. This reference catalogs every dynamic pattern used in production skills.
+Skills that touch external tools should detect what's available at runtime and adapt, rather than hardcoding a single tool or method — environments differ, and a hardcoded tool fails for every user who lacks it. This reference catalogs every dynamic pattern used in production skills.
 
 **Core principle:** The skill should work in as many environments as possible. A user with `gh` CLI gets the rich path. A user with only `git` gets the minimal path. A user with nothing gets clear install instructions. The skill never fails silently because a hardcoded tool is missing.
 
@@ -110,14 +110,14 @@ For Python skills that need specific libraries.
 ### Structure
 
 ```
-!`python3 -c "import lib; print('lib ' + lib.__version__)" 2>/dev/null || echo "LIB_NOT_INSTALLED"`
+!`python3 -c "exec('try:\n import lib\n print(\'lib \' + lib.__version__)\nexcept Exception:\n print(\'LIB_NOT_INSTALLED\')')"`
 ```
 
 ### Real Example: stock-correlation (multi-package + algorithm fallback)
 
 ```markdown
 ` ` `
-!`python3 -c "import yfinance, pandas, numpy; print(f'yfinance={yfinance.__version__} pandas={pandas.__version__} numpy={numpy.__version__}')" 2>/dev/null || echo "DEPS_MISSING"`
+!`python3 -c "exec('try:\n import yfinance, pandas, numpy\n print(f\'yfinance={yfinance.__version__} pandas={pandas.__version__} numpy={numpy.__version__}\')\nexcept Exception:\n print(\'DEPS_MISSING\')')"`
 ` ` `
 
 If `DEPS_MISSING`, install:
@@ -146,17 +146,17 @@ For skills that wrap external APIs.
 !`echo $API_KEY | head -c 8 && echo "...KEY_SET" || echo "KEY_NOT_SET"`
 ```
 
-### Real Example: funda-data
+### Real Example: fintel-data
 
 ```markdown
 ` ` `
-!`echo $FUNDA_API_KEY | head -c 8 && echo "...KEY_SET" || echo "KEY_NOT_SET"`
+!`echo $FINTEL_API_KEY | head -c 8 && echo "...KEY_SET" || echo "KEY_NOT_SET"`
 ` ` `
 
 If `KEY_NOT_SET`:
-- Ask the user for their Funda API key
-- Guide them to https://funda.ai/dashboard to get one
-- Once provided, export it: `export FUNDA_API_KEY=<key>`
+- Ask the user for their Fintel API key
+- Guide them to https://fintel.io/api to get one
+- Once provided, export it: `export FINTEL_API_KEY=<key>`
 ```
 
 ### Real Example: finance-sentiment (multi-line Python check)
@@ -185,7 +185,7 @@ For skills that need current market data, not stale defaults.
 ### Structure
 
 ```
-!`python3 -c "import yfinance as yf; print(f'PRICE={yf.Ticker(\"^GSPC\").fast_info[\"lastPrice\"]:.0f}')" 2>/dev/null || echo "PRICE_UNAVAILABLE"`
+!`python3 -c "exec('try:\n import yfinance as yf\n p=yf.Ticker(\'^GSPC\').fast_info[\'lastPrice\']\n print(f\'PRICE={p:.0f}\')\nexcept Exception:\n print(\'PRICE_UNAVAILABLE\')')"`
 ```
 
 ### Real Example: options-payoff (current SPX price)
@@ -193,7 +193,7 @@ For skills that need current market data, not stale defaults.
 ```markdown
 **Current SPX reference price:**
 ` ` `
-!`python3 -c "import yfinance as yf; print(f'SPX ≈ {yf.Ticker(\"^GSPC\").fast_info[\"lastPrice\"]:.0f}')" 2>/dev/null || echo "SPX price unavailable — check market data"`
+!`python3 -c "exec('try:\n import yfinance as yf\n p=yf.Ticker(\'^GSPC\').fast_info[\'lastPrice\']\n print(f\'SPX ≈ {p:.0f}\')\nexcept Exception:\n print(\'SPX price unavailable — check market data\')')"`
 ` ` `
 ```
 
@@ -415,7 +415,7 @@ from ddgs import DDGS  # might fail!
 | CLI tool exists | `command -v tool 2>/dev/null` |
 | CLI tool version | `tool --version 2>/dev/null` |
 | Tool is authenticated | `tool auth status 2>/dev/null` |
-| Python module available | `python3 -c "import mod; print(mod.__version__)"` |
+| Python module available | `python3 -c "exec('try:\n import mod\n print(mod.__version__)\nexcept Exception:\n print(\'MOD_NOT_INSTALLED\')')"` |
 | Env var is set | `echo $VAR \| head -c 8 && echo "...SET"` |
 | File exists | `test -f ~/.config/tool/creds && echo "OK"` |
 | API is reachable | `curl -sf endpoint \| head -c 100` |

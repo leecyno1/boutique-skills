@@ -1,9 +1,9 @@
 ---
 name: dasheng-stage-publish
-description: Use when entering the slim Dasheng publish execution stage to validate transwrite outputs, create publish packs, push drafts/manual packages, and recover published links.
+description: Use when entering the slim Newma publish execution stage to validate transwrite outputs, create publish packs, push drafts/manual packages, and recover published links.
 ---
 
-# Dasheng Stage: Publish｜发布执行
+# Newma Stage: Publish｜发布执行
 
 ## 定位
 
@@ -32,8 +32,8 @@ Publish 可调用账号运营策略 Skill 审查发布包装、冷启动实验�
 
 ```bash
 python3 scripts/expand_publish_matrix.py \
-  --matrix ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_matrix.json \
-  --output ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_decision.json \
+  --matrix ~/Desktop/自媒体创作/<run_id>/05_发布/publish_matrix.json \
+  --output ~/Desktop/自媒体创作/<run_id>/05_发布/publish_decision.json \
   --fail-on-error
 ```
 
@@ -69,8 +69,8 @@ Publish 不只看 lane `status`，还必须检查关键最终产物是否存在�
 
 ```bash
 python3 scripts/build_stage5_publish.py \
-  --transwrite-manifest ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_manifest.json \
-  --publish-decision ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_decision.json
+  --transwrite-manifest ~/Desktop/自媒体创作/<run_id>/04_转写/transwrite_manifest.json \
+  --publish-decision ~/Desktop/自媒体创作/<run_id>/05_发布/publish_decision.json
 ```
 
 统一入口：
@@ -83,8 +83,8 @@ python3 scripts/run_mainline_stage.py publish --run-id <run_id>
 
 ```bash
 python3 scripts/run_mainline_stage.py publish \
-  --transwrite-manifest ~/Desktop/自媒体创作/06_转写生产/<run_id>/transwrite_manifest.json \
-  --publish-decision ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_decision.json \
+  --transwrite-manifest ~/Desktop/自媒体创作/<run_id>/04_转写/transwrite_manifest.json \
+  --publish-decision ~/Desktop/自媒体创作/<run_id>/05_发布/publish_decision.json \
   --dry-run
 ```
 
@@ -103,21 +103,21 @@ python3 scripts/run_mainline_stage.py doctor --publish --channel wechat_article 
 
 ```bash
 python3 scripts/build_publish_campaign.py \
-  --spec ~/Desktop/自媒体创作/07_发布执行/<run_id>/campaign_spec.json \
-  --output-dir ~/Desktop/自媒体创作/07_发布执行/<run_id>
+  --spec ~/Desktop/自媒体创作/<run_id>/05_发布/campaign_spec.json \
+  --output-dir ~/Desktop/自媒体创作/<run_id>/05_发布
 
 python3 scripts/publish_accounts.py \
   --check-auth \
   --channel xiaohongshu_video,douyin_video,bilibili_video,wechat_channels_video \
-  --output ~/Desktop/自媒体创作/07_发布执行/<run_id>/account_auth_report.json
+  --output ~/Desktop/自媒体创作/<run_id>/05_发布/account_auth_report.json
 
 # 再次构建会合并账号检查结果；只有 account_auth_status=valid 才能进入最终确认。
 python3 scripts/build_publish_campaign.py \
-  --spec ~/Desktop/自媒体创作/07_发布执行/<run_id>/campaign_spec.json \
-  --output-dir ~/Desktop/自媒体创作/07_发布执行/<run_id>
+  --spec ~/Desktop/自媒体创作/<run_id>/05_发布/campaign_spec.json \
+  --output-dir ~/Desktop/自媒体创作/<run_id>/05_发布
 
 python3 scripts/execute_publish_campaign.py \
-  --campaign ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_campaign.json
+  --campaign ~/Desktop/自媒体创作/<run_id>/05_发布/publish_campaign.json
 ```
 
 最后一条命令默认仍是 Dry Run。只有当前会话明确确认后才可追加 `--confirm-execute`；账号主执行器登录态未全部验证时，Campaign 必须整体阻断。
@@ -126,10 +126,10 @@ python3 scripts/execute_publish_campaign.py \
 
 ```bash
 python3 scripts/publish_guard.py \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json
+  --publish-manifest ~/Desktop/自媒体创作/<run_id>/05_发布/publish_manifest.json
 
 python3 scripts/run_mainline_stage.py doctor \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json
+  --publish-manifest ~/Desktop/自媒体创作/<run_id>/05_发布/publish_manifest.json
 ```
 
 `publish_guard.py` 只检查某个发布批次的回填结果是否自洽，不检查依赖安装，也不会打开浏览器、读取 cookies 或发布内容。它必须同时读取 `publish_manifest.json` 与 `publish_verification_report.json`；缺少验真报告时不得通过。矩阵任务按 `task_id` 独立验收，旧发布包才回退到 `(topic_id, channel)`。每条回填结果都必须能追到磁盘上的 `publish_result.json`，且文件中的核心发布字段必须与 manifest/verification 记录一致。
@@ -138,7 +138,7 @@ python3 scripts/run_mainline_stage.py doctor \
 
 ```bash
 python3 scripts/publish_guard.py \
-  --publish-manifest ~/Desktop/自媒体创作/07_发布执行/<run_id>/publish_manifest.json \
+  --publish-manifest ~/Desktop/自媒体创作/<run_id>/05_发布/publish_manifest.json \
   --fail-on-error
 ```
 
@@ -146,7 +146,7 @@ python3 scripts/publish_guard.py \
 
 ```bash
 python3 scripts/record_publish_result.py \
-  --channel-pack ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/<task_id>/channel_pack.json \
+  --channel-pack ~/Desktop/自媒体创作/<run_id>/05_发布/channel_packs/<topic_id>/<channel>/<task_id>/channel_pack.json \
   --success true \
   --status draft \
   --draft-id <draft_id> \
@@ -191,7 +191,7 @@ python3 scripts/record_publish_result.py \
 
 ```bash
 python3 scripts/build_publish_payload.py \
-  --channel-pack ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/channel_pack.json
+  --channel-pack ~/Desktop/自媒体创作/<run_id>/05_发布/channel_packs/<topic_id>/<channel>/channel_pack.json
 ```
 
 `publish_payload.json` 是平台执行器的统一输入，执行器完成后必须再调用 `record_publish_result.py` 回填结果。
@@ -210,7 +210,7 @@ python3 scripts/validate_publish_form.py \
 
 ```bash
 python3 scripts/execute_publish_request.py \
-  --execution-request ~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/<topic_id>/<channel>/execution_request.json
+  --execution-request ~/Desktop/自媒体创作/<run_id>/05_发布/channel_packs/<topic_id>/<channel>/execution_request.json
 ```
 
 默认只做 dry-run。只有当前会话明确确认后，才允许追加 `--confirm-execute` 调用受支持的本地路线；浏览器、人工包和未配置受控适配器的外部 CLI 仍只输出下一步命令。
@@ -251,7 +251,7 @@ python3 scripts/execute_publish_request.py \
 - 播客：人工上传或音频平台 API
 - 验真：`publish-guard`
 - 账号运营审查：`dasheng-publish-operations-bridge` → external `agent-skills-launch-pack`
-- 可视化账号中心：`qianfan-sync`，数据目录必须位于 `DashengPublishSessions`
+- 可视化账号中心：`qianfan-sync`，数据目录必须位于 `NewmaPublishSessions`
 - 浏览器会话后备：`postbot` 公开稳定分支构建产物
 - 活动发现/UI 适配：`opencli`；抖音活动优先实时查询
 
@@ -287,14 +287,14 @@ python3 scripts/open_publish_browser.py wechat_channels_video_2
 - 非敏感账号槽统一登记在 `configs/publish/account_registry.json`。
 - 跨平台逻辑账号（例如 `publisher-a` / `publisher-b`）只负责路由，真实昵称保留在平台登录态中；每个平台分别绑定稳定的 `slot-1` / `slot-2`。
 - 每个槽位可配置 `account_metadata`、`publish_presets` 和 `network_policy`；矩阵展开后必须固化为任务快照。
-- 浏览器登录态保存在 `~/Library/Application Support/DashengPublishProfiles/`。
-- CLI 登录态保存在 `~/Library/Application Support/DashengPublishSessions/social-auto-upload/cookies/`。
+- 浏览器登录态保存在 `~/Library/Application Support/NewmaPublishProfiles/`。
+- CLI 登录态保存在 `~/Library/Application Support/NewmaPublishSessions/social-auto-upload/cookies/`。
 - 公众号 API 凭据从环境变量或 `~/.baoyu-skills/.env` 读取，凭据值不得进入账号注册表、manifest 或日志。
 - 初始化安全目录：`python3 scripts/publish_accounts.py --init`。
 - 轻量状态检查：`python3 scripts/publish_accounts.py`。
 - 深度登录检查：`python3 scripts/publish_accounts.py --check-auth`，只调用上游登录校验，不打开浏览器、不发布、不输出 Cookie 内容。
 - 可视化账号中心预检：`python3 scripts/start_publish_console.py`。
-- 启动本地千帆云递账号/素材/队列控制台：`python3 scripts/start_publish_console.py --confirm-start`，访问 `http://127.0.0.1:5173`。运行数据只写入 `DashengPublishSessions/qianfan-sync`。
+- 启动本地千帆云递账号/素材/队列控制台：`python3 scripts/start_publish_console.py --confirm-start`，访问 `http://127.0.0.1:5173`。运行数据只写入 `NewmaPublishSessions/qianfan-sync`。
 
 ## 强约束
 
@@ -304,7 +304,7 @@ python3 scripts/open_publish_browser.py wechat_channels_video_2
 4. 任何浏览器/平台发布动作都必须先取得当前任务或 Campaign 的明确授权；用户已明确要求发布后，授权范围内的最终点击、普通弹窗和可明确匹配的一次性验证码不再逐项暂停确认。
 5. 未经过链接回收和 `Publish Guard` 验真，不得回报“已发布”。
 6. 旧 `scripts/publish_video_supplement.py` 仅作为兼容工具或视频补充参考，不再是正式 publish 主入口。
-7. 发布包、截图、平台回执、临时 HTML、上传素材副本不得写入 `skills/` 目录或项目根目录；默认写入 `~/Desktop/自媒体创作/07_发布执行/<run_id>/...`。
+7. 发布包、截图、平台回执、临时 HTML、上传素材副本不得写入 `skills/` 目录或项目根目录；默认写入 `~/Desktop/自媒体创作/<run_id>/05_发布/...`。
 8. 小红书、抖音、公众号等需要登录的平台必须通过 `scripts/open_publish_browser.py` 打开持久化 Profile 完成登录和上传准备。
 9. 小红书主路径优先 API-first Skill/CLI/MCP，浏览器自动化只做 fallback；不要把它降级成纯手动搬运。
 10. `agent-skills-launch-pack` 只是起号/运营策略上游，不得把它误报为登录、上传、定时或发布工具。

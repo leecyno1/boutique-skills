@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-31",
+  "note": "Known risky-pattern hits accepted at the time this baseline was cut. The weekly cycle fails when audit_skills.py reports a (skill, file, pattern) triple absent here, so upstream updates cannot add risky content silently. Adding an entry is a review decision: record the reason in findings.md.",
+  "entries": [
+    {
+      "skill": "alphaear-predictor",
+      "file": "skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "alphaear-predictor",
+      "file": "skills/default/alphaear-predictor/scripts/utils/predictor/training.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "alphaear-reporter",
+      "file": "skills/default/alphaear-reporter/scripts/utils/predictor/evaluation.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "alphaear-reporter",
+      "file": "skills/default/alphaear-reporter/scripts/utils/predictor/training.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "alphaear-signal-tracker",
+      "file": "skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "alphaear-signal-tracker",
+      "file": "skills/default/alphaear-signal-tracker/scripts/utils/predictor/training.py",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
+    },
+    {
+      "skill": "huashu-design",
+      "file": "skills/default/huashu-design/scripts/verify-video.sh",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\(",
+      "reason": "Upstream line 48 evaluates ffprobe's avg_frame_rate ('num/den') through Python eval. The value is constrained to a numeric ratio straight from ffprobe, so practical risk is low. Not patched locally on purpose: the weekly upstream sync would revert the patch and the gate would block the cycle every week. Review again if upstream widens this usage.",
+      "accepted_at": "2026-10-31"
+    },
+    {
+      "skill": "minimax-docx",
+      "file": "skills/default/minimax-docx/scripts/env_check.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "minimax-docx",
+      "file": "skills/default/minimax-docx/scripts/setup.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "minimax-xlsx",
+      "file": "skills/default/minimax-xlsx/scripts/libreoffice_recalc.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "skill-vetter",
+      "file": "skills/default/skill-vetter/scripts/install.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "skills/default/uzi-skill/install-hermes.sh",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "skills/default/uzi-skill/install-hermes.sh",
+      "pattern": "curl\\s+[^\\n|]+\\|\\s*(sh|bash)"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "skills/default/uzi-skill/run.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "uzi-skill",
+      "file": "skills/default/uzi-skill/skills/deep-analysis/run.py",
+      "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "vcp-screener",
+      "file": "skills/default/vcp-screener/scripts/tests/test_historical_vcp.py",
+      "pattern": "rm\\s+-rf\\s+/"
+    }
+  ]
+}

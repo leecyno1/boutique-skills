@@ -1,33 +1,30 @@
 ---
 name: dasheng-video-talking-head
-description: Use when producing or improving Dasheng真人出镜口播视频 from raw speaker footage, subtitles, rough cuts, B-roll, data charts, or HTML sticker overlays.
+description: Use when producing or improving Newma真人出镜口播视频 from raw speaker footage, subtitles, rough cuts, B-roll, data charts, or HTML sticker overlays.
 ---
 
-# Dasheng Video Talking Head
+# Newma Video Talking Head
 
 ## Role
 
-Build the有头口播 production line. The presenter is the trust anchor; evidence screens, charts, documents, B-roll, subtitles, camera motion, and music carry the pace.
+Build the真人出镜口播 production line. The real presenter is the trust anchor; evidence screens, charts, documents, B-roll, subtitles, camera motion, and music carry the pace.
 
-Accept two governed presenter sources:
+This Skill owns `talking_head_video`, which accepts one governed presenter source:
 
 - `human_video`: imported real-person footage and its approved human audio.
-- `digital_human`: an authorized portrait animated locally from MiniMax narration by `dasheng-digital-human-talking-head`.
 
-If the user supplies only a portrait, asks for a 数字人/类真人/照片说话, or forbids video-generation APIs, invoke `dasheng-digital-human-talking-head` first. Its output becomes the `source-video` for this director pipeline; do not build a second editing stack.
+If the user supplies only a portrait or asks for 数字人、类真人、照片说话、单人或双人 AI 访谈, route the task to `digital_human_video` and `dasheng-digital-human-talking-head`. That Lane may reuse this Skill's Remotion compositor, but it is not a真人任务。
 
 ## Presenter Source Contract
 
 Before director planning, require `presenter_source_manifest.json` or derive the equivalent fields:
 
-- `kind`: `human_video` or `digital_human`.
-- `engine`: `camera` for real footage or the declared local avatar engine.
-- `video`: approved roughcut or QC-passed digital-human source.
+- `kind`: `human_video`.
+- `engine`: `camera`.
+- `video`: approved real-person roughcut.
 - `master_audio`: the only audible voice track.
 - `consent.status`: confirmed for a real likeness.
-- `ai_disclosure_required`: true for digital humans.
-
-For `digital_human`, the MiniMax narration is the master timeline. The generated presenter MP4 is a muteable visual source and must never introduce a second audible copy of the narration.
+- `ai_disclosure_required`: false for ordinary真人素材。
 
 ## Required First Artifact
 
@@ -97,7 +94,7 @@ Director timelines must include composition fields, not only template names:
 
 ## Production Rules
 
-- For `human_video`, approved human audio/video is the master timeline. For `digital_human`, the original MiniMax narration audio is the master timeline and the avatar video follows it.
+- Approved human audio/video is the master timeline.
 - Mount the audible human voice exactly once at the Remotion composition root. Scene changes may remount muted visual copies of the speaker, but must never trim, fade, hide, restart, or sequence the master voice track.
 - Keep BGM on a separate continuous root track. Scene transitions may change BGM ducking and visual composition only; they must not create gaps in the voice track.
 - Non-overlapping scene sequences must never fade both the outgoing and incoming scene to the canvas background. Use a hard cut or keep the incoming scene visually opaque; use a real dissolve only when the two visual layers overlap.
@@ -127,9 +124,7 @@ Director timelines must include composition fields, not only template names:
 - Evidence/document/chart scenes must occupy the main visual field. Do not place the animated material as a small upper-left card with large empty center space. For dense material, use centered/full-screen evidence and keep the speaker as a lower-right PIP only when it does not cover key data.
 - Do not add global decorative scan lines, yellow sweep lines, moving highlight bars, or repeated scan-light transitions. If a user rejects this visual language, remove it from both component code and baked asset cards. Prefer hard cuts, subtle fades, card scale/opacity settles, PIP morphs, and semantic push-ins.
 - Dense evidence sections may hide the speaker completely for a short interval; return to the speaker after the evidence run.
-- A digital human is a presenter layer, never factual evidence. Hide or reduce it during dense evidence runs exactly as with a real presenter.
-- Digital-human source generation must pass consent, short-sample review, identity/lip/background QC, and AI-disclosure checks before director rendering.
-- Do not promise hand gestures or new body geometry from the default single-image Mac route. Use real driving footage or an explicitly approved semi-body engine when the brief requires those movements.
+- When this compositor is reused by `digital_human_video`, the digital person remains a presenter layer rather than factual evidence and must follow that Lane's consent, short-sample, identity, lip-sync and disclosure gates.
 - For transparent stickers and reusable motion accents, optional `text-to-lottie` assets may be generated through `dasheng-html-video-bridge`: lower thirds, term cards, warning icons, document scan cues, data-flow arrows, ticker accents, and chapter/outro marks. These must be verified as Lottie JSON and composited as live motion, not exported as static PNGs.
 - Learned video style controls form only. It must not introduce new facts, charts, market claims, or copied sample-video scripts.
 - Keep developer labels out of final video.
@@ -183,4 +178,3 @@ Hard failure:
 - `render_qc_report.json`
 - `qa_contact_sheet.jpg`
 - `presenter_source_manifest.json`
-- `digital_human_qc.json` when `presenter_source.kind=digital_human`

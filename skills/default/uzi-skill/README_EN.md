@@ -10,9 +10,9 @@
 [![Dimensions](https://img.shields.io/badge/Dimensions-22-brightgreen)]()
 [![Investors](https://img.shields.io/badge/Investors-66-orange)]()
 [![Methods](https://img.shields.io/badge/Institutional%20Methods-22-red)]()
-[![Tests](https://img.shields.io/badge/Tests-685%20passed-brightgreen)]()
+[![Tests](https://img.shields.io/badge/Tests-948%20passed%20%2F%201%20skipped-brightgreen)](https://github.com/wbh604/UZI-Skill/actions/runs/39051456863)
 
-**A-share / HK / US deep-analysis engine — with first-class Chinese-market coverage Western terminals don't touch. 66 investors × 9 schools × 22 dimensions × 22 institutional methods, all free data sources, zero API keys. v3.9.2: flow & data-contract hotfix (issue #82/#83) · 685 pytest pass.**
+**A-share / HK / US deep-analysis engine — with first-class Chinese-market coverage Western terminals don't touch. 66 investors × 9 schools × 22 dimensions × 22 institutional methods, all free data sources, zero API keys. Main updated 2026-10-18: missing-evidence gates and fund-holdings freshness. Manifest version: v3.9.4. Offline tests: 948 passed, 1 skipped.**
 
 [Install](#install) · [Usage](#usage) · [Why Western Investors Should Care](#-why-western-investors-should-care) · [Jury Panel](#-66-investor-jury) · [Methods](#-22-institutional-methods) · [Screenshots](#-what-the-report-looks-like) · [FAQ](#-faq)
 
@@ -21,6 +21,17 @@
 </div>
 
 ---
+
+## Changelog
+
+These maintenance updates are on `main`; they do not represent a new version tag. The manifest remains at `v3.9.4`.
+
+| Version / Track | Date | Changes |
+| --- | --- | --- |
+| **main maintenance** | **2026-10-18** | Preserve real zero/loss values while unknown evidence and placeholder rules abstain. Use actual returned holdings quarters, normalize fund identities and percentage weights, reject stale/invalid samples, and display report-period coverage. Added 56 regressions; **948 passed, 1 skipped**. [Commit b49bccd](https://github.com/wbh604/UZI-Skill/commit/b49bccdd84c385a491a2001d2297ad256b10b0d7), [details](docs/maintenance-2026-10-17.md). |
+| **main maintenance** | **2026-10-16** | Integrate PRs #114–#117 and #119–#122: scan budgets, profile-aware caches, issuer checks, LHB evidence, model gates, abstention and consensus recalculation; fix valuation percentiles and the macOS hook. **892 passed, 1 skipped**. [Commit 2c5505d](https://github.com/wbh604/UZI-Skill/commit/2c5505d9d30363379ce708f85cac93f86b2788cf), [details](docs/maintenance-2026-10-16.md). |
+
+Offline regression results do not verify live data availability or investment performance. See [full release notes](RELEASE-NOTES.md) for earlier versions.
 
 ## 🌏 Why Western Investors Should Care
 
@@ -459,15 +470,15 @@ Every time a new BUG is fixed, a matching `check_*` rule is added to self_review
 
 Live count: ![GitHub Repo stars](https://img.shields.io/github/stars/wbh604/UZI-Skill?style=social)
 
-<a href="https://star-history.com/#wbh604/uzi-skill&Date">
+<a href="https://star-history.dera.page/#wbh604/uzi-skill&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date" />
  </picture>
 </a>
 
-> Note: star-history.com caches server-side for 24h, so the chart may lag during fast-growth days. For the true current count, see the shields.io badge above — or click the chart to open the live star-history.com page (that triggers a backend refresh).
+> Note: star-history.dera.page caches server-side for 24h, so the chart may lag during fast-growth days. For the true current count, see the shields.io badge above, or click the chart to open the live star-history.dera.page page (that triggers a backend refresh).
 
 ---
 

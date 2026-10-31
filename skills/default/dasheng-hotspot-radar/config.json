@@ -1,7 +1,7 @@
 {
   "name": "dasheng-hotspot-radar",
   "version": "1.0.0",
-  "description": "Standalone public hotspot/news radar for Dasheng intake and other agents.",
+  "description": "Standalone public hotspot/news radar for Newma intake and other agents.",
   "stage": "hotspot_radar",
   "stage_number": 1,
   "runner": "python",

@@ -1,6 +1,6 @@
 ---
 name: social-auto-upload-bridge
-description: Use when Dasheng Publish needs a bridge to the external social-auto-upload project for video upload packages across Bilibili, Xiaohongshu, Douyin, Kuaishou, WeChat Channels, Baijiahao, TikTok, or YouTube.
+description: Use when Newma Publish needs a bridge to the external social-auto-upload project for video upload packages across Bilibili, Xiaohongshu, Douyin, Kuaishou, WeChat Channels, Baijiahao, TikTok, or YouTube.
 ---
 
 # Social Auto Upload Bridge
@@ -52,7 +52,7 @@ ${SOCIAL_AUTO_UPLOAD_ROOT:-${DASHENG_PROJECT_ROOT:-.}/vendor/publish/social-auto
      --confirm-execute
    ```
 7. The executor must run `sau <platform> check --account <account>` before upload. Invalid login blocks execution and returns the headed login command.
-8. Write results back under `~/Desktop/自媒体创作/07_发布执行/<run_id>/channel_packs/...` and keep verification as `needs_manual_verification` until a platform URL or draft ID is recovered.
+8. Write results back under `~/Desktop/自媒体创作/<run_id>/05_发布/channel_packs/...` and keep verification as `needs_manual_verification` until a platform URL or draft ID is recovered.
 
 For two-version, multi-account distribution, build a Campaign first. The campaign owns platform-specific titles, descriptions, tags, covers, activity state and logical-account routing; this bridge only executes each frozen task package:
 
@@ -65,7 +65,7 @@ python3 scripts/execute_publish_campaign.py --campaign <run_dir>/publish_campaig
 
 ## Platform Mapping
 
-| Dasheng channel | `sau` platform | Notes |
+| Newma channel | `sau` platform | Notes |
 | --- | --- | --- |
 | `xiaohongshu_video` | `xiaohongshu` | Video, cover, tags and schedule |
 | `douyin_video` | `douyin` | Video, cover, tags and schedule |
@@ -78,7 +78,7 @@ Douyin activities are discovered live through OpenCLI when available. Pass `plat
 
 - `platform_notes.account_name` has highest priority.
 - `platform_notes.account_slot: 1` maps to `slot-1`; slot 2 maps to `slot-2`.
-- Login state belongs under `~/Library/Application Support/DashengPublishSessions/social-auto-upload/cookies/`. The ignored upstream `cookies/` path is only a symlink to this secure state directory.
+- Login state belongs under `~/Library/Application Support/NewmaPublishSessions/social-auto-upload/cookies/`. The ignored upstream `cookies/` path is only a symlink to this secure state directory.
 - Login must be performed interactively with the relevant `sau <platform> login --account <slot> --headed` command.
 - Account aliases, slots and auth methods are registered in `configs/publish/account_registry.json`; the registry contains no secrets or cookies.
 - Initialize or audit account storage with `python3 scripts/publish_accounts.py --init` and validate sessions with `python3 scripts/publish_accounts.py --check-auth`.

@@ -68,7 +68,7 @@
 - 图形验证码、滑块、设备/账号风险审核、验证码来源或所属账号不明等无法可靠自动完成的挑战，必须停止当次交互并报告，禁止循环点击或反复试错。
 - 弹窗或验证流程如果要求更换发布账号、平台、内容、可见性或付费项目，属于超出原授权范围，不得自动接受。
 
-需要人工查看账号、素材、封面和发布队列时，运行 `scripts/start_publish_console.py --confirm-start` 启动千帆云递本地控制台。它使用外置 `DashengPublishSessions/qianfan-sync` 数据目录，不得把账号状态写回仓库。
+需要人工查看账号、素材、封面和发布队列时，运行 `scripts/start_publish_console.py --confirm-start` 启动千帆云递本地控制台。它使用外置 `NewmaPublishSessions/qianfan-sync` 数据目录，不得把账号状态写回仓库。
 
 活动必须在发布当天实时发现：抖音优先使用 OpenCLI，其他平台通过对应持久化 Profile 复核。禁止虚构活动名或为了流量加入不相关活动。
 

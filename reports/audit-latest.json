@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-30 21:27:10",
+  "timestamp": "2026-10-31 09:26:01",
   "status": "WARN",
   "summary": {
     "catalog_skills": 458,
@@ -7,9 +7,9 @@
     "legacy_catalog_skills": 42,
     "resolved_skills": 452,
     "missing_skills": 0,
-    "missing_env": 149,
+    "missing_env": 151,
     "duplicate_capabilities": 0,
-    "risky_hits": 15,
+    "risky_hits": 16,
     "missing_native_origins": 0,
     "standard_bundle_issues": 0
   },
@@ -355,6 +355,10 @@
       "env": "FEISHU_APP_SECRET"
     },
     {
+      "skill": "notebooklm-py",
+      "env": "GEMINI_API_KEY"
+    },
+    {
       "skill": "paperless-docs",
       "env": "PAPERLESS_TOKEN"
     },
@@ -579,6 +583,10 @@
       "env": "FMP_API_KEY"
     },
     {
+      "skill": "prompt-master",
+      "env": "OPENAI_API_KEY"
+    },
+    {
       "skill": "saas-valuation-compression",
       "env": "TUSHARE_TOKEN"
     },
@@ -655,6 +663,11 @@
       "skill": "minimax-xlsx",
       "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py",
       "pattern": "\\bsudo\\b"
+    },
+    {
+      "skill": "huashu-design",
+      "file": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/huashu-design/scripts/verify-video.sh",
+      "pattern": "(?<![A-Za-z0-9_])eval\\s*\\("
     },
     {
       "skill": "alphaear-predictor",
@@ -1410,10 +1423,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/ponytail-review"
     },
     {
-      "skill": "prompt-master",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/prompt-master"
-    },
-    {
       "skill": "seo-audit",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/seo-audit"
     },
@@ -1452,6 +1461,10 @@
     {
       "skill": "tech-earnings-deepdive",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/tech-earnings-deepdive"
+    },
+    {
+      "skill": "frontend-dev",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/frontend-dev"
     },
     {
       "skill": "baoyu-url-to-markdown",
@@ -1734,10 +1747,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/news-radar"
     },
     {
-      "skill": "notebooklm-py",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/notebooklm-py"
-    },
-    {
       "skill": "openclaw-cron-setup",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/openclaw-cron-setup"
     },
@@ -1932,6 +1941,10 @@
     {
       "skill": "lark-calendar",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/lark-calendar"
+    },
+    {
+      "skill": "notebooklm-py",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/notebooklm-py"
     },
     {
       "skill": "paperless-docs",
@@ -2290,10 +2303,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/economic-calendar-fetcher"
     },
     {
-      "skill": "frontend-dev",
-      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/frontend-dev"
-    },
-    {
       "skill": "institutional-flow-tracker",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/institutional-flow-tracker"
     },
@@ -2464,6 +2473,10 @@
     {
       "skill": "pead-screener",
       "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/pead-screener"
+    },
+    {
+      "skill": "prompt-master",
+      "path": "/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/prompt-master"
     },
     {
       "skill": "saas-valuation-compression",

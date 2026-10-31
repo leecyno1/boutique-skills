@@ -24,7 +24,7 @@ UZI-Skill/                                  # ← 你 cwd 应该是这里
         ├── assemble_report.py              # HTML shell 组装 (v3.2 瘦身后 587 行)
         ├── fetch_*.py (22 个)              # 数据采集 · 也是独立 CLI (python fetch_basic.py <ticker>)
         ├── compute_*.py                    # 机构建模 (DCF / BCG / Porter)
-        ├── tests/                          # 332 pytest
+        ├── tests/                          # 745 passed + 1 skipped
         ├── .cache/<ticker>/                # 跑过的股票缓存
         ├── reports/<ticker>_<date>/        # 生成的 HTML 报告
         └── lib/
@@ -225,6 +225,7 @@ Playwright 也抓不到的维度 · 再用 WebSearch / mx_api / 常识补（并�
 ```json
 {
   "agent_reviewed": true,
+  "analysis_input_hash": "从 _agent_review_context.json 原样复制",
   "dim_commentary": { "0_basic": "你的定性评语", ... },
   "panel_insights": "整体评委观察",
   "great_divide_override": {

@@ -1,8 +1,8 @@
 <div align="center">
 
-# dot-skill Roadmap
+# Distilly Roadmap
 
-### From colleague.skill to dot-skill — Distill anyone into an AI Skill
+### From Colleague Skill (`colleague.skill`) to Distilly — Distill people into reusable Person Profiles for AI agents and compatible bots
 
 <br>
 
@@ -13,15 +13,13 @@ In two weeks, 13,000+ people gave us the answer.
 But the community showed us this goes far beyond colleagues —
 you distilled professors, exes, yourselves, even fictional characters.
 
-**So we decided to evolve colleague.skill into dot-skill.**
+**So we decided to evolve Colleague Skill (`colleague.skill`) into Distilly.**
 
-Anyone can become a `.skill`.
+Anyone can become a reusable Person Profile, packaged as an Agent Skill, for AI agents and compatible bots.
 
 <br>
 
-*Last updated: 2026-04-13*
-
-[**中文**](docs/lang/ROADMAP_ZH.md) · [**Español**](docs/lang/ROADMAP_ES.md) · [**Deutsch**](docs/lang/ROADMAP_DE.md) · [**日本語**](docs/lang/ROADMAP_JA.md) · [**Русский**](docs/lang/ROADMAP_RU.md) · [**Português**](docs/lang/ROADMAP_PT.md) · [**한국어**](docs/lang/ROADMAP_KO.md)
+*Last updated: 2026-08-23*
 
 </div>
 
@@ -31,8 +29,8 @@ Anyone can become a `.skill`.
 
 | Capability | Status |
 |------------|:------:|
-| `/create-colleague` full creation workflow | Done |
-| Feishu auto-collection (messages + docs + spreadsheets) | Done |
+| `/distilly` creation workflow with family selection | Done |
+| Lark-compatible auto-collection (messages + docs + spreadsheets) | Done |
 | DingTalk auto-collection | Done |
 | Slack auto-collection | Done |
 | WeChat chat history (SQLite export) | Done |
@@ -44,7 +42,7 @@ Anyone can become a `.skill`.
 
 ---
 
-## What's Next
+## Current and Next
 
 ### Phase 1 — Community Building
 
@@ -62,17 +60,17 @@ Anyone can become a `.skill`.
 
 ---
 
-### Phase 2 — dot-skill: Beyond Colleagues
+### Phase 2 — Distilly: Beyond Colleagues (core shipped)
 
-> colleague.skill was the beginning. dot-skill is the future.
+> Colleague Skill (`colleague.skill`) was the beginning. Distilly is the future.
 
-**Key changes:**
+**Shipped:**
 
-- **`/create-skill` universal entry** — no longer limited to "create a colleague", distill anyone
-  - `/create-colleague` for coworkers, mentors, interns
-  - `/create-ex` for exes, old friends, lost connections
-  - `/create-icon` for celebrities, historical figures
-  - or... distill yourself
+- **`/distilly` universal entry** — choose `colleague`, `relationship`, or `celebrity`, then distill anyone
+- **Portable generated Skills** — canonical `{character}-{slug}` names for supported agent hosts
+
+**Next additions:**
+
 - **Gallery category upgrade** — Colleague / Celebrity / Relationship / Character / Self / Meta-Skill, browse by type
 - **More data sources**
   - WeCom (WeChat Work) support
@@ -124,9 +122,9 @@ Anyone can become a `.skill`.
 | How | Where |
 |-----|-------|
 | Submit your .skill | [Gallery PR](https://titanwings.github.io/colleague-skill-site/) |
-| Discuss & propose | [GitHub Discussions](https://github.com/titanwings/colleague-skill/discussions) (coming soon) |
+| Discuss & propose | [GitHub Discussions](https://github.com/titanwings/distilly/discussions) (coming soon) |
 | Chat in real time | [Discord](https://discord.gg/NVX66RxWZv) |
-| Report bugs | [Issue](https://github.com/titanwings/colleague-skill/issues/new) |
+| Report bugs | [Issue](https://github.com/titanwings/distilly/issues/new) |
 | Contribute code | Look for `good-first-issue` labels, or just open a PR |
 
 **We especially need:**

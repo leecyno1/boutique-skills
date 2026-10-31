@@ -1,13 +1,18 @@
 ---
 name: book-to-skill
-description: "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, or Claude Code, apply an author's frameworks while working, or build a reusable knowledge base from a file."
+description: "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an author's frameworks while working, or build a reusable knowledge base from a file."
 ---
 
 <!--
 Cross-agent notes (informational; ignored by host agents):
   - Compatible skill roots: GitHub Copilot CLI (~/.copilot/skills, ~/.agents/skills,
     .github/skills, .claude/skills, .agents/skills), Amp (.agents/skills,
-    ~/.config/agents/skills, ~/.config/amp/skills), Claude Code (~/.claude/skills).
+    ~/.config/agents/skills, ~/.config/amp/skills), Claude Code (~/.claude/skills),
+    Hermes Agent ($HERMES_HOME/skills, .hermes/skills, .agents/skills),
+    OpenClaw (${OPENCLAW_STATE_DIR:-~/.openclaw}/skills, .agents/skills, skills/;
+    ~/.agents/skills only with the default state).
+    OpenCode (~/.config/opencode/skills, ~/.claude/skills, .opencode/skills,
+    ~/.agents/skills, .agents/skills).
   - `allowed-tools` is intentionally omitted to stay agent-neutral: Copilot CLI uses
     `shell`/MCP-server names, Claude uses `Bash`/`Read`/`Write`/`Glob`/`Grep`, Amp
     adds `shell_command`. The skill needs shell (to run extract.py) and file
@@ -21,8 +26,7 @@ Transform written knowledge into actionable agent skills by extracting structure
 
 ## Philosophy
 
-Books contain crystallized expertise: frameworks, principles, and techniques that took years to develop. This skill extracts that knowledge into a format GitHub Copilot CLI, Amp, Claude Code, or another compatible agent can leverage repeatedly.
-
+Books contain crystallized expertise: frameworks, principles, and techniques that took years to develop. This skill extracts that knowledge into a format GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, OpenClaw, or another compatible agent can leverage repeatedly.
 **Extract structure, not summaries.** A skill isn't a book report. It's a toolkit of:
 - Named frameworks (mental models with clear application)
 - Actionable principles (rules that guide decisions)
@@ -67,15 +71,21 @@ Four paths available. Route based on what the user asks:
 This converter can run from multiple skill systems. When looking for this converter's helper script or writing the generated book skill, prefer these locations in order:
 
 1. GitHub Copilot CLI personal skills: `~/.copilot/skills/`
-2. Cross-agent personal skills (Copilot, Amp, Codex): `~/.agents/skills/`
+2. Cross-agent personal skills (Copilot, Amp, Codex; OpenClaw with its default state): `~/.agents/skills/`
 3. Claude Code personal skills: `~/.claude/skills/`
 4. Project-local Copilot skills: `.github/skills/`
 5. Project-local Claude skills: `.claude/skills/`
-6. Project-local Amp / Copilot skills: `.agents/skills/`
+6. Project-local Amp / Copilot / OpenClaw skills: `.agents/skills/`
 7. Amp global skills: `~/.config/agents/skills/`
 8. Amp legacy global skills: `~/.config/amp/skills/`
+9. Hermes Agent personal skills: `$HERMES_HOME/skills/` (defaults to `~/.hermes/skills/`)
+10. Hermes Agent project skills: `.hermes/skills/` or `.agents/skills/`
+11. OpenClaw personal skills: `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills/` (active state; `~/.agents/skills/` is shared only with the default state)
+12. OpenClaw project skills: `.agents/skills/` or `skills/`
+11. OpenCode personal skills: `~/.config/opencode/skills/` or `~/.agents/skills/`
+12. OpenCode project skills: `.opencode/skills/` or `.agents/skills/`
 
-For **generated** book skills, pick a destination that the user's host agent can actually discover (see Step 5). When more than one valid root exists, ask the user once and remember the answer for the session — do not silently default.
+For **generated** book skills, prefer the user-level cross-agent root `~/.agents/skills/` — one physical copy serves the cross-agent hosts and OpenClaw when it uses its default state. Copilot CLI and Amp discover it natively; Claude Code needs a symlink from `~/.claude/skills/<skill_name>` (created in Step 10, see Step 5 for the rules). Pick a host-private or project-local root only when the user explicitly asks for one. `BOOK_TO_SKILL_SCOPE=project` or `personal` can make that choice explicit for automation; do not ask a mandatory scope question merely because both scopes are available.
 
 ---
 
@@ -85,10 +95,12 @@ If no arguments are provided, stop and respond:
 > "book-to-skill requires a supported document path, folder, or glob pattern. Usage: `book-to-skill <path-to-document-folder-or-glob>... [skill-name-slug]`"
 
 Throughout the workflow:
+- **Resolve the destination root first.** Before any existing-skill lookup, determine where this run would write: the personal or project-local root for the user's host, per the Step 5 table and selection rules — a project-local request uses its project-local root, never the personal root. Below, "the resolved root" means that destination.
 - Identify the input paths and the optional skill slug.
 - If the last argument is not a file, folder, or glob that exists or matches any files, and it looks like a skill slug (e.g. lowercase hyphens, alphanumeric), treat it as `SKILL_NAME`.
 - Treat all other arguments as the list of `INPUT_PATHS`.
-- If any input path is an existing skill directory (contains `SKILL.md` and a `chapters/` sub-folder), or if `SKILL_NAME` matches an existing skill slug in `SKILLS_HOME`, flag this run as an **Update/Fold-in** operation (Mode 4).
+- If any input path is an existing skill directory (contains `SKILL.md` and a `chapters/` sub-folder), or if `SKILL_NAME` matches an existing skill slug in the resolved root, flag this run as an **Update/Fold-in** operation (Mode 4).
+- **Re-run guard.** Before starting extraction for a Full Conversion, derive the prospective skill slug under Step 5's naming options — the author-concept form, the by-title form, and any `SKILL_NAME` given — and check the resolved root for an existing match. On a match, STOP and ask the user: "`<skill-name>` already exists. Choose: (1) Update/Fold-in (Mode 4), (2) verify the existing skill is complete and stop, or (3) force full regeneration." Do not re-extract until the user chooses. On context recovery after an interrupted run (network cut-off, replayed or continued conversation), reuse the extraction work directory that run reported (`Workdir ->` in its output, or the path you set in `BOOK_SKILL_WORKDIR`) **only if it is still intact and still matches the current inputs and options** — the directory exists, its `metadata.json` is readable, the `sources` it lists match the files being converted now one-to-one on filename **and content fingerprint** (the extractor records a per-source `sha256` in `metadata.json`; recompute the fingerprint from each file as it exists now and require an exact match — `reuse_is_safe()` in `book_to_skill/utils.py` is the executable form of this check), and its recorded `extraction_mode` is the mode this run is using (Step 2's "confirm the extraction is the document you asked for" rule). If it is missing (temp cleanup), its `metadata.json` is gone, the sources no longer match (a different filename, or a changed content fingerprint), the recorded metadata has no `sha256` for a source (recorded before fingerprints existed, so freshness cannot be established), or the mode differs, say so and start a fresh extraction instead of resuming. When in doubt, ask the user before discarding or resuming.
 
 ---
 
@@ -130,15 +142,86 @@ Run the extraction script, passing the input paths:
 
 ```bash
 SCRIPT_PATH=""
-for candidate in \
-  "$HOME/.copilot/skills/book-to-skill/scripts/extract.py" \
-  "$HOME/.agents/skills/book-to-skill/scripts/extract.py" \
-  "$HOME/.claude/skills/book-to-skill/scripts/extract.py" \
-  ".github/skills/book-to-skill/scripts/extract.py" \
-  ".claude/skills/book-to-skill/scripts/extract.py" \
-  ".agents/skills/book-to-skill/scripts/extract.py" \
-  "$HOME/.config/agents/skills/book-to-skill/scripts/extract.py" \
+HERMES_HOME_RESOLVED="${HERMES_HOME:-$HOME/.hermes}"
+OPENCLAW_STATE_DIR_RESOLVED="${OPENCLAW_STATE_DIR:-$HOME/.openclaw}"
+PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+HERMES_PROJECT_TRUSTED=false
+if [ -n "$PROJECT_ROOT" ] && [ "${HERMES_AGENT:-}" = true ] && \
+  command -v hermes >/dev/null 2>&1 && \
+  command -v python3 >/dev/null 2>&1 && \
+  hermes config get skills.trusted_project_dirs --json 2>/dev/null | PROJECT_ROOT="$PROJECT_ROOT" python3 -c 'import json, os, pathlib, sys; root=pathlib.Path(os.environ["PROJECT_ROOT"]).resolve(); sys.exit(not any(pathlib.Path(p).expanduser().resolve() == root for p in json.load(sys.stdin)))' 2>/dev/null
+then
+  HERMES_PROJECT_TRUSTED=true
+fi
+
+CANDIDATES=(
+  "$HOME/.copilot/skills/book-to-skill/scripts/extract.py"
+  "$HOME/.agents/skills/book-to-skill/scripts/extract.py"
+  "$HOME/.claude/skills/book-to-skill/scripts/extract.py"
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills/book-to-skill/scripts/extract.py"
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/book-to-skill/scripts/extract.py
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/book-to-skill/scripts/extract.py
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/*/book-to-skill/scripts/extract.py
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/*/*/book-to-skill/scripts/extract.py
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/*/*/*/book-to-skill/scripts/extract.py
+  "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/*/*/*/*/book-to-skill/scripts/extract.py
+  "$HOME/.config/opencode/skills/book-to-skill/scripts/extract.py"
+  "$HERMES_HOME_RESOLVED/skills/book-to-skill/scripts/extract.py"
+  "$HERMES_HOME_RESOLVED"/skills/*/book-to-skill/scripts/extract.py
+)
+if [ "${HERMES_AGENT:-}" != true ]; then
+  # Project-local roots are resolved against the git worktree, not the current
+  # directory: an agent can be invoked from anywhere inside the project (e.g.
+  # `src/nested`) and these roots still have to be found — that is how OpenCode
+  # and the other hosts discover project skills. The CWD-relative forms are kept
+  # so the probe also works outside a git repository.
+  if [ -n "$PROJECT_ROOT" ]; then
+    CANDIDATES+=(
+      "$PROJECT_ROOT/.github/skills/book-to-skill/scripts/extract.py"
+      "$PROJECT_ROOT/.claude/skills/book-to-skill/scripts/extract.py"
+      "$PROJECT_ROOT/.agents/skills/book-to-skill/scripts/extract.py"
+      "$PROJECT_ROOT/.opencode/skills/book-to-skill/scripts/extract.py"
+    )
+  fi
+  CANDIDATES+=(
+    ".github/skills/book-to-skill/scripts/extract.py"
+    ".claude/skills/book-to-skill/scripts/extract.py"
+    ".agents/skills/book-to-skill/scripts/extract.py"
+    "skills/book-to-skill/scripts/extract.py"
+    "skills"/*/book-to-skill/scripts/extract.py
+    "skills"/*/*/book-to-skill/scripts/extract.py
+    "skills"/*/*/*/book-to-skill/scripts/extract.py
+    "skills"/*/*/*/*/book-to-skill/scripts/extract.py
+    "skills"/*/*/*/*/*/book-to-skill/scripts/extract.py
+    "skills"/*/*/*/*/*/*/book-to-skill/scripts/extract.py
+    ".opencode/skills/book-to-skill/scripts/extract.py"
+  )
+  if [ -n "$PROJECT_ROOT" ]; then
+    CANDIDATES+=(
+      "$PROJECT_ROOT/skills/book-to-skill/scripts/extract.py"
+      "$PROJECT_ROOT/skills"/*/book-to-skill/scripts/extract.py
+      "$PROJECT_ROOT/skills"/*/*/book-to-skill/scripts/extract.py
+      "$PROJECT_ROOT/skills"/*/*/*/book-to-skill/scripts/extract.py
+      "$PROJECT_ROOT/skills"/*/*/*/*/book-to-skill/scripts/extract.py
+      "$PROJECT_ROOT/skills"/*/*/*/*/*/book-to-skill/scripts/extract.py
+      "$PROJECT_ROOT/skills"/*/*/*/*/*/*/book-to-skill/scripts/extract.py
+    )
+  fi
+fi
+CANDIDATES+=(
+  "$HOME/.config/agents/skills/book-to-skill/scripts/extract.py"
   "$HOME/.config/amp/skills/book-to-skill/scripts/extract.py"
+)
+if [ "$HERMES_PROJECT_TRUSTED" = true ]; then
+  CANDIDATES=(
+    "$PROJECT_ROOT/.hermes/skills/book-to-skill/scripts/extract.py"
+    "$PROJECT_ROOT/.hermes/skills"/*/book-to-skill/scripts/extract.py
+    "$PROJECT_ROOT/.agents/skills/book-to-skill/scripts/extract.py"
+    "$PROJECT_ROOT/.agents/skills"/*/book-to-skill/scripts/extract.py
+    "${CANDIDATES[@]}"
+  )
+fi
+for candidate in "${CANDIDATES[@]}"
 do
   if [ -f "$candidate" ]; then
     SCRIPT_PATH="$candidate"
@@ -163,17 +246,21 @@ Before extraction, the script checks optional Python packages needed for the det
 
 **Tip — preflight the environment:** run `"$PYTHON_BIN" "$SCRIPT_PATH" --check` to print a per-format report of which extractors are installed and the exact command to install whatever is missing, without processing any file. Useful when a user reports a setup or quality problem.
 
-This creates:
-- `<tempdir>/book_skill_work/full_text.txt` — combined extracted text of all sources with clear visually demarcated boundaries.
-- `<tempdir>/book_skill_work/metadata.json` — overall combined size, words, pages, token counts, dropped EPUB image counts, and a detailed list of individual processed `sources`.
+This creates a **per-run** work directory — `<tempdir>/book_skill_work-<pid>/` by default, or exactly the path you set in `BOOK_SKILL_WORKDIR` — containing:
+- `full_text.txt` — combined extracted text of all sources with clear visually demarcated boundaries.
+- `metadata.json` — overall combined size, words, pages, token counts, dropped EPUB image counts, the resolved `workdir`, and a detailed list of individual processed `sources`.
 
-Read `<tempdir>/book_skill_work/metadata.json` to inspect the results.
+The run prints all three paths on completion (`Workdir ->`, `Text ->`, `Meta ->`). **Take the paths from that output (or from `metadata.json`'s own `workdir` field) rather than assuming a fixed location** — the directory name differs per run so that concurrent extractions on one machine cannot overwrite each other's results.
+
+Read that run's `metadata.json` to inspect the results.
+
+**Always confirm the extraction is the document you asked for** before generating anything: check `filename` / `source_file` in `metadata.json`, or the `SOURCE:` header on the first line of `full_text.txt`. If you are waiting on a background run, wait on *its* specific workdir — polling a shared path can surface a different run's output.
 
 ---
 
 ## Step 2.5 — Pre-flight cost estimate
 
-Read `<tempdir>/book_skill_work/metadata.json` and present the user with an estimate **before doing any generation**:
+Read this run's `metadata.json` (the `Meta ->` path from the extraction output) and present the user with an estimate **before doing any generation**:
 
 ```
 📖 Sources detected: <total_sources> source(s)
@@ -301,23 +388,38 @@ Otherwise, propose two options and let the user choose:
 
 Default to author-concept format if the book has a strong methodological identity.
 
-Choose the destination skill root (`SKILLS_HOME`). Probe the user's filesystem for existing skill homes and pick by **the host the user is running in**:
+Choose the destination skill root (`SKILLS_HOME`). First resolve **scope** from an explicit user request or `BOOK_TO_SKILL_SCOPE`, then probe **host**. A request for project-local/project output selects the project-local row; a request for personal/global output selects the personal row. If neither scope is requested, preserve the established personal default (`~/.agents/skills` for non-Hermes hosts). Do not ask a mandatory scope question solely because project-local roots exist. The selected root may still require host approval before writing.
 
-| Host agent | Personal skill root (probe in order) | Project-local root |
+| Host agent | Personal skill root | Project-local root |
 |---|---|---|
-| **GitHub Copilot CLI** | `~/.copilot/skills` → `~/.agents/skills` | `.github/skills` → `.claude/skills` → `.agents/skills` |
-| **Amp** | `~/.agents/skills` → `~/.config/agents/skills` → `~/.config/amp/skills` | `.agents/skills` |
-| **Claude Code** | `~/.claude/skills` | `.claude/skills` |
+| **GitHub Copilot CLI** | `~/.agents/skills` (discovered natively) | `.github/skills` → `.claude/skills` → `.agents/skills` |
+| **Amp** | `~/.agents/skills` (discovered natively) | `.agents/skills` |
 | **OpenAI Codex** | `~/.agents/skills` (discovered natively; follows symlinks) | `.agents/skills` |
+| **Hermes Agent** | `$HERMES_HOME/skills/<category>` (defaults to `~/.hermes/skills/<category>`) | `.hermes/skills/<category>` → `.agents/skills` |
+| **Claude Code** | `~/.agents/skills` + symlink from `~/.claude/skills/<skill_name>` | `.claude/skills` |
+| **OpenClaw** | `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills` (active state; `~/.agents/skills` only with default state) | `.agents/skills` → `skills/` |
+
+Hermes Agent is the one host that keeps its own personal root: it partitions personal skills by category and does not scan the cross-agent root. Use the active profile's `HERMES_HOME` and choose a category that matches the generated skill's subject. Do not construct profile paths manually. If the user selects a project-local Hermes root, run `hermes skills trust <project-root>` after generation and verify discovery with `hermes skills list`; project skills remain unavailable until the project is trusted.
+
+For OpenClaw, use the active state directory's `skills/` root: `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills/`. The shared `~/.agents/skills` compatibility root is discoverable only when `OPENCLAW_STATE_DIR` is unset or the default `~/.openclaw`; with a non-default state, do not claim that OpenClaw will see a shared-root install. Verify discovery with `openclaw skills list` after generation.
+| **OpenCode** | `~/.agents/skills` (discovered natively; `~/.config/opencode/skills` and `~/.claude/skills` are read too) | `.opencode/skills` → `.agents/skills` → `.claude/skills` |
+
+Hermes Agent is the one host that keeps its own personal root: it partitions personal skills by category and does not scan the cross-agent root. Use the active profile's `HERMES_HOME` and choose a category that matches the generated skill's subject. Do not construct profile paths manually. If the user selects a project-local Hermes root, run `hermes skills trust <project-root>` after generation and verify discovery with `hermes skills list`; project skills remain unavailable until the project is trusted.
+
+OpenCode scans the cross-agent `~/.agents/skills` root natively, so the generated-skill default above already serves it — no symlink and no trust step. It also reads its own managed `~/.config/opencode/skills` root and the Claude compatibility root `~/.claude/skills`; use the OpenCode-managed root only when the user asks for it. Project skills are discovered by walking up from the working directory to the git worktree, so start a new session after generation if the skill does not appear. (`~/.cache/opencode/skills` is the remote-skill download cache from `skills.urls`, not an authoring root — never write a generated skill there.)
 
 Selection rules:
-1. If **exactly one** of the host's candidate roots exists on disk, use it without asking.
-2. If **none** exist (fresh machine), ask the user which root to create — present the host-appropriate options and remember the choice for the session. Do not silently pick.
-3. If the user explicitly asked for project-local output, prefer the project-local row.
-4. If you cannot identify the host, ask: "Which agent are you running this in — GitHub Copilot CLI, Amp, Codex, or Claude Code?"
+1. Personal install: set `SKILLS_HOME` to `~/.agents/skills` (create the directory if missing). One exception, so the default does not invent a convention in someone else's house: if `~/.agents/skills` does not exist **and** the host's private root already contains skills, use the private root instead and say why in the report.
+2. **Claude Code does not scan `~/.agents/skills`** — after generation completes, Step 10 links the skill in with `ln -sfn "$HOME/.agents/skills/<skill_name>" "$HOME/.claude/skills/<skill_name>"`.
+3. **Hermes Agent personal installs use the Hermes row above**, not the cross-agent root, and take no symlink.
+4. If the user explicitly asks for a host-private root (`~/.copilot/skills`, `~/.claude/skills`, `~/.config/agents/skills`, `~/.config/amp/skills`), honor it and skip the symlink.
+5. If the user explicitly asked for project-local output, use the project-local row for their host.
+6. If the choice requires knowing the host (project-local output, the Hermes personal root, the OpenClaw state root, or the Claude Code symlink) and you cannot identify it, ask: "Which agent are you running in — OpenCode, OpenClaw, Hermes Agent, GitHub Copilot CLI, Amp, Codex, or Claude Code?"
+7. For OpenClaw personal output, use `${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/skills`. The shared `~/.agents/skills` root is a valid OpenClaw destination only when `OPENCLAW_STATE_DIR` is unset or equals the default `$HOME/.openclaw`; otherwise use the active state root or a project/extra directory.
+8. If the user explicitly asks for an OpenClaw-managed personal root, use the active state root and verify discovery with `openclaw skills list`.
 
-Set `SKILLS_HOME` to the selected root and check if `$SKILLS_HOME/<skill_name>/` already exists.
-If it does, prompt the user to choose:
+Set `SKILLS_HOME` to the selected root and check if `$SKILLS_HOME/<skill_name>/` already exists. On Claude Code, also check whether `~/.claude/skills/<skill_name>` exists as a **real directory** (not a symlink) — a previous install may live there; if so, offer to migrate it (move the directory into `~/.agents/skills/` and replace the original path with the symlink) before continuing.
+If the skill already exists, prompt the user to choose:
 1. **Update / Fold-in** (Mode 4) — integrate new files/content into the existing skill components.
 2. **Overwrite** — delete and regenerate the skill from scratch.
 3. **Rename** — append `-2` or use a different custom slug.
@@ -536,23 +638,72 @@ If the scanner exits non-zero, stop and ask a human to review its file/line find
 
 ## Step 10 — Cleanup and report
 
+If the host is Claude Code and `SKILLS_HOME` is `~/.agents/skills` (the default personal install), expose the skill to Claude Code with a symlink — Claude Code only scans `~/.claude/skills`:
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+LINK="$HOME/.claude/skills/<skill_name>"
+TARGET="$HOME/.agents/skills/<skill_name>"
+if [ -d "$LINK" ] && [ ! -L "$LINK" ]; then
+  CLAUDE_STATUS="skipped-realdir"                 # Step 5 migration declined; leave the old dir
+else
+  ln -sfn "$TARGET" "$LINK" 2>/dev/null || true
+  # Read the link back — do NOT trust that `ln` did what was asked. On Windows/MSYS
+  # `ln -s` may COPY instead of link (or need Developer Mode / an elevated shell), and
+  # PowerShell/cmd have no `ln` at all. The report must reflect what is on disk, not the
+  # fact that the command ran.
+  if [ -L "$LINK" ] && [ "$(readlink "$LINK")" = "$TARGET" ]; then
+    CLAUDE_STATUS="linked"
+  elif [ -e "$LINK" ]; then
+    CLAUDE_STATUS="copy"                           # a real file/dir landed instead of a link
+  else
+    CLAUDE_STATUS="absent"                         # ln unavailable or refused
+  fi
+fi
+```
+
+The real-directory guard is required: `ln -sfn` into an existing real directory would nest the link *inside* it (`~/.claude/skills/<skill_name>/<skill_name>`), leaving Claude Code loading the stale copy. If the user declined the Step 5 migration, skip the symlink and say so in the report — Claude Code keeps using the old directory until it is migrated.
+
+**Read the link back before you report anything about it.** The symlink is a claim, not a fact: fill the "Discoverable by" line from `CLAUDE_STATUS` (what is actually on disk), never from "the command was issued". **Do not hard-fail when the link is missing or is a copy** — the skill exists at the hub and every other host still finds it; the honest report is "written to `~/.agents/skills/<skill_name>`; Claude Code will not see it until the link is created", not an abort. (Windows lead, unverified: a directory junction — `mklink /J` in an elevated `cmd`, or `New-Item -ItemType Junction` in PowerShell — needs neither Developer Mode nor a symlink privilege; if you attempt it, it does not change the read-back-then-report rule.)
+
+Skip this when the user chose a host-private or project-local root (Step 5, rules 3-4).
+
+Then clean up the extraction workdir:
+
 ```bash
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 if ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
   PYTHON_BIN="python"
 fi
 
-"$PYTHON_BIN" - <<'PY'
-import os
+Remove **the work directory this run actually used** — the `Workdir ->` path from the
+extraction output, which is also stored as `workdir` in `metadata.json`. Never delete a
+directory you did not create: another extraction may be running beside yours.
+
+```bash
+# WORKDIR is the path this run reported; quote it in case of spaces.
+rm -rf "$WORKDIR"
+```
+
+Equivalently, if you still have the metadata file:
+
+```bash
+"$PYTHON_BIN" - "$WORKDIR_METADATA_JSON" <<'PY'
+import json
 import shutil
-import tempfile
+import sys
 from pathlib import Path
-shutil.rmtree(
-    os.environ.get("BOOK_SKILL_WORKDIR", Path(tempfile.gettempdir()) / "book_skill_work"),
-    ignore_errors=True,
-)
+
+meta_path = Path(sys.argv[1])
+workdir = json.loads(meta_path.read_text(encoding="utf-8")).get("workdir")
+if workdir:
+    shutil.rmtree(workdir, ignore_errors=True)
 PY
 ```
+
+Older copies of this file removed a single fixed `book_skill_work` directory. That path is
+no longer used, so such a cleanup is now a harmless no-op rather than something that could
+delete a concurrent run's output.
 
 Then report to the user:
 
@@ -578,15 +729,40 @@ Usage:
   Ask <skill_name> about <topic>        → find and explain a topic
   Ask <skill_name> for ch<N>            → dive into a specific chapter
 
+Discoverable by: <only what is true for the chosen destination — see below>
+
+Somewhere else?  mv ~/.agents/skills/<skill_name> <dest_root>/<skill_name> \
+                   && ln -sfn <dest_root>/<skill_name> ~/.claude/skills/<skill_name>
+
+Prompted for permission on every file? That is your host gating writes outside the
+working directory. Say "save it in this project" and re-run to write inside it.
+
 Reload (if your agent doesn't auto-detect new skills):
   GitHub Copilot CLI:  /skills reload
   Claude Code:         restart the session
   Amp:                 restart the session
+  Hermes Agent:         start a new session
+  OpenClaw:             openclaw skills list (new session if watcher disabled)
+  OpenCode:             start a new session
 
 Share this skill (optional):
   GitHub repo, installable on any host (Step 11):  say "publish"
   Copilot ecosystem:  gh skill publish $SKILLS_HOME/<skill_name>
 ```
+
+Fill the "Discoverable by" line from `CLAUDE_STATUS` (the read-back result), never from the fact that `ln` ran — for `~/.agents/skills` installs:
+- `linked` → "Copilot CLI, Amp, Codex (natively); Claude Code via symlink ~/.claude/skills/<skill_name>"
+- `skipped-realdir` → "Copilot CLI, Amp, Codex (natively); **NOT** Claude Code — migrate the real directory at ~/.claude/skills/<skill_name> first"
+- `copy` or `absent` → "Copilot CLI, Amp, Codex (natively); **NOT** Claude Code — the host could not create the symlink (a plain copy drifts on the next Update/Fold-in). Enable Developer Mode / create the link manually, or run the skill from ~/.agents/skills"
+- Hermes Agent personal root → "Hermes Agent (from `$HERMES_HOME/skills/<category>`)"; no symlink claim, and no cross-agent claim, because the other hosts do not scan the Hermes root
+- other host-private or project-local root → name only the host(s) that scan that root; no symlink claim
+
+The "Somewhere else?" relocation line must be correct for the path actually taken, so it never breaks the symlink the run just created. **`mv` always targets the final skill directory, `<dest_root>/<skill_name>`, never `<dest_root>` itself.** `mv ~/.agents/skills/mybook ~/.copilot/skills && ln -sfn ~/.copilot/skills ~/.claude/skills/mybook` reads as valid and is not: the skill lands at `~/.copilot/skills/mybook` while the link points one level up at the root, so Claude Code resolves to a directory with no `SKILL.md`, which is the exact breakage this line exists to avoid. Substitute the destination the user actually named, so the printed command carries real paths and there is nothing left to interpret:
+- `~/.agents/skills` + symlink → `mv ~/.agents/skills/<skill_name> <dest_root>/<skill_name> && ln -sfn <dest_root>/<skill_name> ~/.claude/skills/<skill_name>`
+- host-private root, Hermes Agent included → `mv <src_root>/<skill_name> <dest_root>/<skill_name>`
+- project-local root → `mv <project_root>/<skill_name> <dest_root>/<skill_name>`
+
+The "Prompted for permission on every file?" line is the answer to a host that gates writes outside the working directory (any personal-scope root is out-of-cwd): the destination was announced above, and the one-line fix — re-run asking for the project-local root — sits next to it. Keep it only for personal-scope installs; drop it when the user already chose project-local.
 
 ---
 
@@ -653,7 +829,7 @@ Read and parse the existing skill's files:
 - Read `$SKILLS_HOME/<skill_name>/glossary.md`, `$SKILLS_HOME/<skill_name>/patterns.md`, and `$SKILLS_HOME/<skill_name>/cheatsheet.md` to see what terms and frameworks are already indexed.
 
 ### 2. Match Content & Identify Revisions vs. Additions
-Analyze the new extracted text in `<tempdir>/book_skill_work/full_text.txt` to identify if the new content represents:
+Analyze the new extracted text in this run's `full_text.txt` (the `Text ->` path from the extraction output) to identify if the new content represents:
 - **Updates/Revisions to existing chapters**: If a section of the new content directly updates or expands an existing chapter's topic, read the existing chapter file, merge the new details into it, and rewrite the file.
 - **New additions**: If the content introduces new chapters, papers, or separate sections, create **new chapter summary files** under `chapters/`. Start numbering these files after the highest existing chapter number (e.g. if the existing chapters stop at `ch12`, create `ch13-*.md`, `ch14-*.md`, etc.).
 

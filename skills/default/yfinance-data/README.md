@@ -13,7 +13,7 @@ Retrieves a wide range of financial data from Yahoo Finance, including:
 - **Options data** — full options chains with greeks
 - **Analysis** — earnings history, analyst price targets, recommendations, upgrades/downgrades
 - **Ownership** — institutional holders, insider transactions
-- **Screener** — filter stocks using `yf.Screener` and `yf.EquityQuery`
+- **Screener** — filter stocks using `yf.screen()` and `yf.EquityQuery`
 
 > **Note**: yfinance is not affiliated with Yahoo, Inc. Data is for research and educational purposes.
 

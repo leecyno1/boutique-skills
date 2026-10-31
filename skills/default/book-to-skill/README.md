@@ -6,12 +6,12 @@
 
 <p align="center">
   <a href="README.md"><strong>English</strong></a> ·
-  <a href="README.ru.md">Русский</a>
+  <a href="README.ru.md">Русский</a> ·
+  <a href="README.zh-CN.md">简体中文</a>
 </p>
 
 <p align="center">
-  <strong>Turn any technical book, document folder, or collection of sources into a unified agent skill — ready to study, reference, and use while you work in GitHub Copilot CLI, Amp, or Claude Code.</strong>
-</p>
+<strong>Turn any technical book, document folder, or collection of sources into a unified agent skill — ready to study, reference, and use while you work in GitHub Copilot CLI, Amp, Claude Code, Codex, Hermes Agent, OpenCode, or OpenClaw.</strong></p>
 
 <p align="center">
   <a href="https://github.com/virgiliojr94/book-to-skill/releases"><img src="https://img.shields.io/github/v/release/virgiliojr94/book-to-skill?style=for-the-badge&color=blueviolet" alt="Latest release"></a>
@@ -24,7 +24,10 @@
 <p align="center">
   <a href="https://trendshift.io/repositories/27038?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-27038" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/27038" alt="virgiliojr94%2Fbook-to-skill | Trendshift" width="250" height="55"/></a>
   <a href="https://trendshift.io/repositories/27038?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-27038" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/27038/daily?language=Python" alt="virgiliojr94%2Fbook-to-skill | Trendshift (daily, Python)" width="250" height="55"/></a>
+   <a href="https://www.star-history.com/virgiliojr94/book-to-skill"><img src="https://api.star-history.com/badge?repo=virgiliojr94/book-to-skill&type=rank" alt="Star History Rank" /></a>
 </p>
+
+
 
 <p align="center">
   <a href="#-why">Why</a> ·
@@ -66,13 +69,12 @@ The usual workarounds don't help:
 
 Once installed, you just type `/your-book-slug replication` and the agent reads the right chapter and answers from the actual content. No hallucination. No digging through PDFs. The book becomes part of your workflow.
 
-Works with any host that supports the open [Agent Skills](https://github.com/agentskills/agentskills) standard — GitHub Copilot CLI, Amp, and Claude Code all read the same `SKILL.md` format.
-
+Works with any host that supports the open [Agent Skills](https://github.com/agentskills/agentskills) standard — GitHub Copilot CLI, Amp, Claude Code, Codex, Hermes Agent, OpenCode, and OpenClaw all read the same `SKILL.md` format.
 ---
 
 ## 📦 What it generates
 
-Running `/book-to-skill your-book.pdf` (or a folder, glob, or list of files) creates a full skill in your agent's skills directory (`~/.copilot/skills/<slug>/` for Copilot CLI, `~/.agents/skills/<slug>/` for Amp or cross-agent, `~/.claude/skills/<slug>/` for Claude Code):
+Running `/book-to-skill your-book.pdf` (or a folder, glob, or list of files) creates a full skill in the user-level cross-agent skills directory `~/.agents/skills/<slug>/` — one copy that Copilot CLI, Amp, Codex, OpenCode, and OpenClaw discover natively (OpenCode also reads its own managed root `~/.config/opencode/skills/<slug>/`; OpenClaw also discovers it when using its default state directory, with a non-default `OPENCLAW_STATE_DIR` use the active state's `skills/` root instead). When run under Claude Code, the converter also attempts a verified symlink at `~/.claude/skills/<slug>/` — Claude Code sees the skill when the link read-back confirms it; otherwise the run report says so. Hermes Agent partitions its personal skills by category and does not scan the cross-agent root, so a Hermes install lands in `/skills/<category>/<slug>/` instead. OpenClaw-managed, OpenCode-managed, and project-local destinations remain available when explicitly requested:
 
 | File | Purpose | Size |
 |------|---------|------|
@@ -135,6 +137,9 @@ npx skills add virgiliojr94/book-to-skill
 # Or manually — clone into your skills folder (registers /book-to-skill):
 git clone https://github.com/virgiliojr94/book-to-skill.git ~/.claude/skills/book-to-skill
 # (Copilot CLI: ~/.copilot/skills/ · Amp/cross-agent: ~/.agents/skills/)
+# (Hermes Agent: ${HERMES_HOME:-$HOME/.hermes}/skills/<category>/)
+# (OpenClaw: ${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/skills/; ~/.agents/skills/ only with default state)
+# (OpenCode: ~/.agents/skills/ — it also reads ~/.config/opencode/skills/)
 ```
 
 📥 **All hosts, optional extractors, and the standalone CLI → [docs/install.md](docs/install.md)**
@@ -213,7 +218,7 @@ book-to-skill/
 │       └── parsers/      # Format-specific parsers (pdf, epub, docx, html, rtf, calibre, text)
 ├── tools/
 │   ├── discovery_tax.py  # measures token cost vs context-dump / discovery loop
-│   └── validate_skill.py # checks a generated SKILL.md against host rules (--lens claude|copilot|amp)
+│   └── validate_skill.py # checks a generated SKILL.md against host rules (--lens claude|copilot|amp|hermes|openclaw|opencode)
 ├── tests/                # pytest suite (extraction, detection, discovery tax)
 ├── docs/
 │   ├── performance.md    # measured benchmarks, discovery tax, cost
@@ -257,12 +262,4 @@ Every sponsor is listed in [BACKERS.md](BACKERS.md). Thank you for keeping open,
 
 MIT — applies to the converter (code + skill definition) in this repository, **not** to any book or document you process with it.
 
-## Star History
 
-<a href="https://www.star-history.com/?repos=virgiliojr94%2Fbook-to-skill&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=virgiliojr94/book-to-skill&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=virgiliojr94/book-to-skill&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=virgiliojr94/book-to-skill&type=date&legend=top-left" />
- </picture>
-</a>

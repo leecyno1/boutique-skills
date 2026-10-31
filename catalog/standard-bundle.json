@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-31",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -75,7 +75,7 @@
       "access_mode": "direct",
       "conflict_group": "brainstorming",
       "origin_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
-      "note": "Use before creative feature, component, behavior, or product design work."
+      "note": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation)."
     },
     {
       "capability": "skill-discovery",
@@ -251,7 +251,7 @@
       "access_mode": "direct",
       "conflict_group": "generative-ui",
       "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/ui-tools/skills/generative-ui",
-      "note": "Design system and guidelines for Claude's built-in generative UI — the show_widget tool that renders interactive HTML/SVG widgets inline in claude.ai conversations. This skill provides the complete Anthropic \"Imagine\" design system so Claude produces high-quality widgets without needing to call read_me first. Use this skill whenever the user asks to visualize data, create an interactive chart, build a dashboard, render a diagram, draw a flowchart, show a mockup, create an interactive explainer, or produce any visual content beyond plain text or markdown. Triggers include: \"show me\", \"visualize\", \"draw\", \"chart\", \"dashboard\", \"diagram\", \"flowchart\", \"widget\", \"interactive\", \"mockup\", \"illustrate\", \"explain how X works\" (with visual), or any request for visual/interactive output. Also triggers when the user wants to display financial data visually, create comparison grids, or build tools with sliders, toggles, or live-updating displays."
+      "note": "Design system and templates for interactive HTML/SVG visuals in Claude and Codex, using an available inline renderer or a standalone HTML file. Use this skill whenever the user wants visual or interactive output rather than plain text or markdown: charts and dashboards, diagrams, flowcharts and architecture drawings, mockups, comparison grids, illustrations, interactive explainers (\"explain how X works\" with a visual), or tools with sliders, toggles, and live-updating displays — including financial data shown visually and requests phrased as \"show me\", \"visualize\", \"draw\", or \"chart this\"."
     },
     {
       "capability": "fullstack",
@@ -317,7 +317,7 @@
       "access_mode": "browser-required",
       "conflict_group": "agent-reach",
       "origin_url": "https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill",
-      "note": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。"
+      "note": "只读读取各平台内容：搜索、读帖、看评论、取字幕、查行情和职位。 Use when 用户提到或贴出链接：小红书/xiaohongshu、B站/bilibili、Twitter/X、Reddit、 YouTube（字幕、转录）、GitHub、V2EX、雪球/股票行情、LinkedIn/Boss直聘 职位、 Instagram、Facebook、小宇宙播客；或说\"帮我搜/看看/读一下这个链接\"而自带网页搜索/读取不可用、失败或拿不到正文； 或要安装、加上/去掉某个平台、登录/退出、看状态、更新、卸载 Agent Reach。 不做：发帖、评论、点赞、私信等任何写操作；不替用户登录、不索要密码。 公开内容优先用 Agent 自带工具，Reach 补缺口。"
     },
     {
       "capability": "html-publishing",
@@ -339,7 +339,7 @@
       "access_mode": "direct",
       "conflict_group": "finance-global-data",
       "origin_url": "https://github.com/simonlin1212/global-stock-data",
-      "note": "美股港股全栈数据工具包（官方源优先）— 十三层架构·30+端点·11数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、SEC文件检索、资金流与机构持仓分析等场景。"
+      "note": "美股港股全栈数据工具包（官方源优先）— 十六层架构·50+端点·17数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气等场景。"
     },
     {
       "capability": "content-strategy",

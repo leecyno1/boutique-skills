@@ -18,7 +18,7 @@ Publish 不改写核心正文、图表、主视频或播客。它读取 `transwr
 | 微博 | `weibo-manager` | `baoyu-post-to-weibo` | 强审批/半自动 | 短帖强审批，长文半自动 |
 | X | `baoyu-post-to-x` | `xurl`、`x-cli`、`Postiz` | 半自动/API fallback | 直接集成 |
 | 知乎 | `zhihu-post` | 浏览器自动化 | 半自动 | 按需启用 |
-| 快手/百家号/TikTok | 暂无 Dasheng 主执行器 | `social-auto-upload` | 待验证 | 后续按需扩展 |
+| 快手/百家号/TikTok | 暂无 Newma 主执行器 | `social-auto-upload` | 待验证 | 后续按需扩展 |
 
 ## 本地已具备 Skills
 

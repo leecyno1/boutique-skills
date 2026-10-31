@@ -6,7 +6,7 @@ stage: rewrite
 runner: node
 ---
 
-# Dasheng Stage Rewrite v3 - 渠道改写
+# Newma Stage Rewrite v3 - 渠道改写
 
 ## 功能概述
 
@@ -68,7 +68,7 @@ console.log(result);
 // {
 //   success: true,
 //   run_id: '2026-04-14_120000',
-//   output_dir: '~/Desktop/自媒体创作/06_改写/2026-04-14_120000',
+//   output_dir: '~/Desktop/自媒体创作/00_改写/2026-04-14_120000',
 //   manifest_file: '.../rewrite_manifest.json',
 //   completed_versions: 12,  // 3个主题 × 4个版本
 //   failed_topics: 0,

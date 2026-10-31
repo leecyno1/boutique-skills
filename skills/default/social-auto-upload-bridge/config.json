@@ -2,7 +2,7 @@
   "name": "social-auto-upload-bridge",
   "version": "0.2.0",
   "type": "publish_bridge",
-  "description": "Bridge Dasheng publish channel packs to the external social-auto-upload project.",
+  "description": "Bridge Newma publish channel packs to the external social-auto-upload project.",
   "external_dependency": {
     "name": "social-auto-upload",
     "repo": "https://github.com/dreammis/social-auto-upload.git",

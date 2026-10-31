@@ -163,7 +163,7 @@ stocks = data['stocks']
 - Basic info: `symbol`, `company_name`, `sector`, `market_cap`, `price`
 - Valuation: `dividend_yield`, `pe_ratio`, `pb_ratio`
 - Growth metrics: `dividend_cagr_3y`, `revenue_cagr_3y`, `eps_cagr_3y`
-- Sustainability: `payout_ratio`, `fcf_payout_ratio`, `dividend_sustainable`
+- Sustainability: `payout_ratio`, `fcf_payout_ratio`, `fcf_amount`, `fcf_status`, `fcf_coverage_status`, `sustainability_basis`, `dividend_sustainable`, `sustainability_bonus`, `sustainability_note`
 - Financial health: `debt_to_equity`, `current_ratio`, `financially_healthy`
 - Quality: `roe`, `profit_margin`, `quality_score`
 - Overall ranking: `composite_score`
@@ -220,7 +220,11 @@ Create structured markdown report for user with following sections:
 **Dividend Sustainability:**
 - Payout Ratio: [XX]%
 - FCF Payout Ratio: [XX]%
-- Status: [✓ Sustainable / ⚠ Monitor / ❌ Risk]
+- FCF Observed: [amount or unavailable] ([POSITIVE / ZERO / NEGATIVE / MISSING_DATA])
+- FCF Coverage: [COVERED / AT_LIMIT / INSUFFICIENT_FCF / ZERO_FCF / NEGATIVE_FCF / MISSING_DATA / NO_DIVIDEND]
+- Decision Basis: [EARNINGS_AND_FCF / FFO]
+- Status: [✓ Sustainable / ⚠ Not confirmed]; Bonus: [0 / 10] points
+- Explanation: [sustainability_note]
 
 **Financial Health:**
 - Debt-to-Equity: [X.XX]
@@ -260,6 +264,8 @@ Create structured markdown report for user with following sections:
 - Sector biases in results
 - Economic sensitivity warnings
 ```
+
+In the human report, keep observed FCF and dividend coverage separate. Negative FCF means an observed shortfall; zero FCF means no cash coverage; `MISSING_DATA` means the source fields were unavailable. None proves a future dividend cut. `AT_LIMIT` means FCF equals dividends with no buffer and earns no bonus. For confirmed REITs, use FFO as the decision basis and show FCF status as context even when it is negative; do not apply FFO treatment to a company solely because its sector is Real Estate. Copy `sustainability_note` into the explanation rather than replacing an unknown status with a sustainability claim.
 
 ### Step 5: Provide Context and Methodology
 
@@ -560,3 +566,14 @@ python3 scripts/screen_dividend_stocks.py --use-finviz --finviz-api-key your_key
 
 - **v1.1** (November 2025): Added FINVIZ Elite integration for two-stage screening
 - **v1.0** (November 2025): Initial release with comprehensive multi-phase screening
+
+
+## Shared FMP client
+
+FMP data access uses the bundled generated `scripts/fmp_client.py`. Existing CLI
+key/environment precedence, financial calculations and successful output shapes
+are preserved. The migrated paths use stable endpoints only; a denied or failed
+stable request does not fall back to retired v3 URLs. The shared client masks raw
+and URL-encoded key echoes, retries malformed JSON once, and retries a 429 once
+with a 60-second wait before stopping on a repeated rate limit. FINVIZ, where
+used, remains a separate client.

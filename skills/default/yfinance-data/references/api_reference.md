@@ -283,22 +283,26 @@ tickers.tickers["MSFT"].history(period="1mo")
 Build custom stock screens.
 
 ```python
-from yfinance import Screener, EquityQuery
+import yfinance as yf
+from yfinance import EquityQuery
 
 # Create a query
 query = EquityQuery('and', [
-    EquityQuery('gt', ['marketcap', 1_000_000_000]),      # market cap > $1B
-    EquityQuery('lt', ['peratio', 20]),                     # P/E < 20
-    EquityQuery('eq', ['sector', 'Technology'])             # tech sector
+    EquityQuery('gt', ['intradaymarketcap', 1_000_000_000]),   # market cap > $1B
+    EquityQuery('lt', ['peratio.lasttwelvemonths', 20]),       # trailing P/E < 20
+    EquityQuery('eq', ['sector', 'Technology']),               # tech sector
+    EquityQuery('eq', ['region', 'us']),
 ])
 
-# Run the screen
-screener = Screener()
-screener.set_body(query)
-result = screener.response
+# Run the screen — returns a dict; matches are in result["quotes"]
+result = yf.screen(query, size=25, sortField='intradaymarketcap', sortAsc=False)
+symbols = [q['symbol'] for q in result.get('quotes', [])]
 
-# Available operators: eq, gt, lt, gte, lte, btwn, is_in
-# Available fields: marketcap, peratio, sector, industry, dividendyield, etc.
+# Operators: eq, gt, lt, gte, lte, btwn, is_in
+# EquityQuery validates field names and raises ValueError on unknown ones
+# (e.g. 'marketcap' and 'peratio' are invalid; use 'intradaymarketcap' and
+# 'peratio.lasttwelvemonths'). yf.screen also accepts predefined screen names
+# such as 'day_gainers'.
 ```
 
 ---

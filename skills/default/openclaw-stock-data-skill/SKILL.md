@@ -1,7 +1,6 @@
 ---
 name: openclaw-stock-skill
 description: 使用 data.diemeng.chat 提供的接口查询股票日线、分钟线、财务指标等数据，支持 A 股等市场。
-user-invocable: true
 metadata: {
   "openclaw": {
     "emoji": "📈",
@@ -78,6 +77,7 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
   - `get_stock_snapshot_daily`（不传日期或传今日）：获取最新实时快照（价格、成交量、五档盘口等）。
   - `get_stock_snapshot_push_history`：获取实时推送的历史记录。
   - `get_call_auction`：获取集合竞价数据。
+  - `get_future_realtime_history`：获取期货实时 1 分钟分时，默认上海时区当天，支持最近 7 个自然日。
 - **历史接口**：
   - `get_daily_data`：获取历史日 K 线。
   - `get_kline_data`：获取历史周期K线（周K、月K）。
@@ -150,6 +150,7 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
 - **get\_bond\_list**：查询可转债列表信息。
 - **get\_index\_realtime\_history**：查询指数当天实时 1 分钟级别分时数据。
 - **get\_index\_weight**：查询指数月度成分和权重数据（可选按成分股过滤）。
+- **get\_future\_realtime\_history**：查询期货实时 1 分钟分时，可按合约、合约类型、自然日或精确分钟筛选。
 
 代理在规划调用时，应根据用户自然语言意图，选择以上能力并组合使用。
 
@@ -582,6 +583,7 @@ npx skills add https://github.com/1018466411/openclaw-stock-data-skill
 
 *   **获取合约基础信息 (`get_future_basic`)**：获取期货合约的基础信息数据，包括乘数、交割方式、上市日期等。
 *   **获取主连合约映射 (`get_future_mapping`)**：获取期货主连或连续合约与实际月合约的映射关系。
+*   **获取实时分时 (`get_future_realtime_history`)**：调用 `POST /api/future/realtime/history` 获取实时 1 分钟分时。支持 `contract_code`（字符串或数组）、`contract_type`（`main`/`contract`）、`trade_time`、`date`、`page` 和 `page_size`；默认 `page=0`、`page_size=2000`，单页最大 10000。未传日期时查询上海时区当天，仅支持最近 7 个自然日；夜盘跨零点时按两个自然日分别查询。返回 `data.date`、`data.total` 和 `data.list`，列表字段包括 `contract_code`、`contract_type`、`trade_time`、OHLC、`vol`、`amount`、`oi`。该工具复用期货分钟K线权限。
 *   **获取分钟K线数据 (`get_future_minute`)**：获取期货合约的历史分钟K线数据。
 
 ### 8. 集合竞价数据：`POST /api/stock/call_auction`

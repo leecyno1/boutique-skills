@@ -144,10 +144,8 @@ Adding another host means implementing one `TranscriptSource` (where its session
 
 ## Developer integration
 
-Applications that already own their conversation history can use `memu memorize`
-to prepare self-evolve jobs from 1–10 completed sessions for one external agent and
-commit the resulting memory, skill, and resource changes. See [Developer integration](docs/developer.md) for the
-canonical input contract and the complete prepare → agent → commit workflow.
+Use `memu memorize` to turn application-owned conversations into memory and skills.
+See the [developer guide](docs/developer.md) for the input format and integration workflow.
 
 ## CLI
 
@@ -159,6 +157,8 @@ Once installed, your agent retrieves relevant memory automatically before answer
 memu-codex retrieve "What should I remember about this project?"
 # or: memu-claude-code / memu-cursor / memu-openclaw / memu-hermes / memu-workbuddy / memu-cola / memu-pi / memu-agent
 ```
+
+Host retrieval returns compact JSON with at most five self-contained `hits` plus independent `resources`. Each hit combines matched `text` with its source's `description`, `track`, and local mirror `path` (or inline `content` when no mirror is available). Its `score` describes the matched segment; `created_at` and `updated_at` describe the source file when available. Hits retain segment order, including excerpts whose source is missing; sources without matched excerpts remain source-only hits. Resources contain `path`, `caption`, and available scores/timestamps. Database IDs and scope metadata are omitted from the agent-facing output.
 
 Install or invoke the CLI directly:
 

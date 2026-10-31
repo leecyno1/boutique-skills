@@ -9,15 +9,15 @@ description: Orchestrate complete VOX-style editorial video production from cont
 
 开始前按任务读取：
 
-- 所有新视频先读取 [references/director-workflow.md](references/director-workflow.md)，执行内容提炼、剧本重写和审核分镜。
+- 所有新视频先读取 `../dasheng-video-vox/references/director-workflow.md`，执行内容提炼、剧本重写和审核分镜。
 - 选择 API、浏览器或备用路由时，读取 [references/provider-routing.md](references/provider-routing.md)。
 - 设计参考图、验收单镜或检查成片时，读取 [references/quality-gates.md](references/quality-gates.md)。
 - 需要为生产镜匹配镜头卡、真实网页运镜、数据动效或节奏/SFX 时，读取 [references/shotcraft-integration.md](references/shotcraft-integration.md)。
-- 需要详细 VOX 视觉语法时，读取 [references/visual-grammar.md](references/visual-grammar.md)。
+- 需要详细 VOX 视觉语法时，读取 `../dasheng-video-vox/references/visual-grammar.md`。
 
 ## 工作流
 
-1. 按内置导演规范并结合 `dasheng-video-director`，从文章提炼中心问题、3–5 层递进观点、关键证据、反方边界和未来判断，生成 `video_content_brief.md`。
+1. 用 `dasheng-video-vox` 从文章提炼中心问题、3–5 层递进观点、关键证据、反方边界和未来判断，生成 `video_content_brief.md`。
 2. 将文章重写为独立口播稿 `narration_script.rewritten.md`。固定设计前 8 秒钩子、首条有效信息后的单句博主介绍、每 45–60 秒有效互动、阶段性反转和悬念兑现。
 3. 先按 10–25 秒 `story_segment` 生成 `storyboard_review.md`，让用户审核内容、口吻、论证和留存。默认只做核心对应，不把文章章节或自然段直接拆成生产镜。
 4. 用户批准后，才把叙事段拆成平均 8–12 秒的 `director_shot`，并规划 2.5–5 秒 `micro_beat`；随后建立视觉圣经和 `scene_plan.json`。
@@ -34,7 +34,7 @@ description: Orchestrate complete VOX-style editorial video production from cont
 
 ## 核心命令
 
-源媒体工程提供 `scripts/dasheng_video_director.py` 时，可先生成重写口播与 10–25 秒审核分镜：
+先生成重写口播与 10–25 秒审核分镜：
 
 ```bash
 python scripts/dasheng_video_director.py \
@@ -56,11 +56,11 @@ python scripts/dasheng_video_director.py \
 检索并绑定 Shotcraft 镜头卡：
 
 ```bash
-python <dasheng-vox-skills>/scripts/shotcraft_adapter.py search \
+python skills/dasheng-vox-skills/scripts/shotcraft_adapter.py search \
   --query "增长 图表" \
   --category data
 
-python <dasheng-vox-skills>/scripts/shotcraft_adapter.py bind \
+python skills/dasheng-vox-skills/scripts/shotcraft_adapter.py bind \
   --input <project>/director/scene_plan.json \
   --output <project>/director/scene_plan.production.json
 ```
@@ -68,7 +68,7 @@ python <dasheng-vox-skills>/scripts/shotcraft_adapter.py bind \
 创建统一 Manifest：
 
 ```bash
-python <dasheng-vox-skills>/scripts/vox_manifest.py build \
+python skills/dasheng-vox-skills/scripts/vox_manifest.py build \
   --shots <project>/director/scene_plan.production.json \
   --output-dir <project>/vox_run
 ```
@@ -76,7 +76,7 @@ python <dasheng-vox-skills>/scripts/vox_manifest.py build \
 使用官方 Gemini/Veo API 生成单镜：
 
 ```bash
-python <dasheng-vox-skills>/scripts/gemini_video_api.py \
+python skills/dasheng-vox-skills/scripts/gemini_video_api.py \
   --prompt-file <shot.video.txt> \
   --reference <shot.png> \
   --first-frame <optional-empty-background.png> \
@@ -94,7 +94,7 @@ Omni 可请求 3–10 秒；官方 Veo 当前原生生成 4–8 秒。VOX 时间
 生成单镜首、中、尾帧质检包：
 
 ```bash
-python <dasheng-vox-skills>/scripts/shot_qc.py \
+python skills/dasheng-vox-skills/scripts/shot_qc.py \
   --video <shot.mp4> \
   --output-dir <shot-qc-dir>
 ```
@@ -118,10 +118,9 @@ python <dasheng-vox-skills>/scripts/shot_qc.py \
 
 ## 内部组件
 
-- 内置 `director-workflow.md` 与 `visual-grammar.md`：内容提炼、剧本重写、留存设计、审核分镜、生产镜拆分和视觉语法。
-- `dasheng-video-director`：可选的源工程导演 CLI 与通用场景规划能力。
+- `dasheng-video-vox`：内容提炼、剧本重写、留存设计、审核分镜、生产镜拆分和视觉语法。
 - `video-shotcraft`：审核后的镜头卡、真实页面采集、PageCam 2.5D 运镜、数据/文字动效、节拍和 SFX 方法；只通过本 Skill 的适配器调用。
 - `dasheng-video-omni-browser`：Chrome 已登录 Gemini Omni 执行器。
-- `dasheng-video-omni-browser/scripts/video_vox_omni_pack.py`：浏览器镜头包兼容器。
-- 源媒体工程的 `scripts/video_vox_mmx_generate.py`：用户明确允许 MiniMax 时的可选备用生成器。
+- `scripts/video_vox_omni_pack.py`：旧镜头包兼容器。
+- `scripts/video_vox_mmx_generate.py`：显式备用生成器。
 - Remotion 与现有视频 QC 脚本：二剪、字幕、声音和交付。

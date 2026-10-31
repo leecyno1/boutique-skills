@@ -2,28 +2,27 @@
 
 Real excerpts from the best skills in this repo, with annotations explaining why specific patterns work.
 
-## Example 1: Exhaustive Description (sepa-strategy)
+## Example 1: Intent-Category Description (sepa-strategy)
 
 ```yaml
 description: >
-  Analyze stocks using Mark Minervini's SEPA (Specific Entry Point Analysis) methodology.
-  Use this skill whenever the user mentions SEPA, Minervini, superperformance, trend template,
-  VCP (Volatility Contraction Pattern), Stage 2 uptrend, stage analysis, pivot point breakout,
-  or asks about growth stock screening criteria. Also triggers when the user wants to evaluate
-  whether a stock meets swing trading entry criteria, check moving average alignment (bullish
-  stacking: price above 50MA above 150MA above 200MA), assess breakout quality with volume confirmation,
-  calculate position sizing based on risk percentage, or identify consolidation patterns like
-  cup-with-handle, flat base, bull flag, or high tight flag. Use this skill even when the user
-  simply asks "should I buy this stock" or "is this a good setup" in the context of growth/momentum
-  trading, or when they share a stock chart and want pattern analysis.
+  Analyze stocks with Mark Minervini's SEPA (Specific Entry Point Analysis) methodology:
+  stage analysis, the 8-condition trend template, fundamentals, VCP and other base
+  patterns, pivot-point entries, market environment, and risk-based position sizing.
+  Use this skill whenever the user mentions SEPA, Minervini, superperformance, the
+  trend template, VCP (volatility contraction pattern), Stage 2, pivot or breakout
+  entries, moving-average stacking (price above the 50/150/200-day MAs), breakout
+  volume, position sizing from risk percentage, growth-stock screening criteria, or
+  bases such as cup-with-handle, flat base, bull flag, or high tight flag. Also use it
+  when the user asks "should I buy this stock" or "is this a good setup" about a
+  growth or momentum name, or shares a chart for pattern analysis.
 ```
 
 **Why this works:**
-- Starts with the formal methodology name (expert trigger)
-- Lists 8+ domain-specific terms (VCP, Stage 2, pivot point, bullish stacking)
-- Describes behavioral triggers ("evaluate whether a stock meets...")
-- Includes sideways entries ("should I buy this stock", "is this a good setup")
-- Covers input modalities ("share a stock chart")
+- Opens with what the skill does, in the methodology's own terms
+- Names the distinctive vocabulary a user would actually use (VCP, trend template, Stage 2, pivot) rather than ten phrasings of the same request
+- Adds sideways entries ("should I buy this stock") scoped to the context where they belong, so they don't fire on every stock question
+- Covers input modalities ("shares a chart")
 
 ---
 
@@ -39,16 +38,16 @@ description: >
 | Quantity | Position size | 1 |
 | Multiplier | 100 for equity options, 100 for SPX | 100 |
 | Expiry | Date in title | 30 DTE |
-| Spot price | Current underlying price (NOT strike) | middle strike |
+| Spot price | Current underlying price shown in the screenshot or text | live quote (see below); middle strike only if no quote is available |
 | IV | Shown in greeks panel, or estimate from vega | 20% |
 | Risk-free rate | — | 4.3% |
 ```
 
 **Why this works:**
 - Three columns: Field, Where to find it (extraction guidance), Default
-- Covers EVERY parameter — the skill never stalls
+- Covers every parameter — the skill never stalls
 - Defaults are reasonable (SPX is the most common underlying, 30 DTE is standard)
-- Includes a critical warning: "spot price is NOT the strike"
+- The one tricky field, spot, gets a resolution order (screenshot → live quote → middle strike, flagged) instead of a bare prohibition
 
 ---
 
@@ -69,8 +68,8 @@ If the stock is NOT in Stage 2, stop here and tell the user. No further analysis
 
 **Why this works:**
 - Clear classification table (4 options, each with characteristics and action)
-- **Hard gate**: "stop here" — prevents wasted analysis on Stage 1/3/4 stocks
-- The gate is explicit and non-negotiable, not a suggestion
+- **Hard gate**: "stop here" — the methodology itself says no other stage is buyable, so further analysis would be wasted
+- The gate is explicit, not a suggestion
 - Saves tokens and produces more accurate results
 
 ---
@@ -119,7 +118,7 @@ git config --global credential.helper 2>/dev/null || echo "no git credential hel
 - Detects 4 dimensions in one block: git, gh, gh auth, credential helper
 - Decision tree has 3 clear paths — skill works for everyone
 - Each path leads to a self-contained method section
-- Never assumes — always checks first
+- Checks first instead of assuming
 
 ---
 
@@ -159,7 +158,7 @@ Decision tree:
 **Current environment status:**
 
 ` ` `
-!`python3 -c "import yfinance, pandas, numpy; print(f'yfinance={yfinance.__version__} pandas={pandas.__version__} numpy={numpy.__version__}')" 2>/dev/null || echo "DEPS_MISSING"`
+!`python3 -c "exec('try:\n import yfinance, pandas, numpy\n print(f\'yfinance={yfinance.__version__} pandas={pandas.__version__} numpy={numpy.__version__}\')\nexcept Exception:\n print(\'DEPS_MISSING\')')"`
 ` ` `
 
 If `DEPS_MISSING`, install required packages before running any code:
@@ -177,11 +176,11 @@ If all dependencies are already installed, skip the install step and proceed dir
 - Reports actual versions (useful for debugging)
 - Graceful fallback (`|| echo "DEPS_MISSING"`)
 - Conditional action: only install if needed, skip otherwise
-- Includes the exact install command — no guessing
+- Includes the exact install command — a fragile operation gets an exact script
 
 ---
 
-## Example 7: Structured Output Template (sepa-strategy, Step 9)
+## Example 7: Scorecard Output (sepa-strategy, Step 9)
 
 ```markdown
 ## Step 9: Respond to the User
@@ -193,19 +192,21 @@ Present a structured analysis report with these sections:
 3. **Fundamental Grade**: A/B/C/D with EPS growth, acceleration, revenue, margins
 4. **Pattern Identified**: Which pattern, key measurements
 5. **Entry Assessment**: Pivot price, buy zone, breakout volume requirement
-6. **Position Sizing**: Exact shares, stop price, targets, reward/risk ratio
-7. **Market Environment**: Current assessment and sizing impact
+6. **Market Environment**: Current assessment and the risk per trade it implies
+7. **Position Sizing**: Exact shares, stop price, targets, reward/risk ratio
 8. **Overall Verdict**: Strong Buy Setup / Watch List / Pass
 
 Always end with the disclaimer that this is educational analysis, not investment advice.
 ```
 
 **Why this works:**
-- 8 numbered sections — output is always structured identically
-- Each section specifies exactly what data to include
-- Verdict system with 3 clear options (not a spectrum, a decision)
-- Mirrors the step structure (steps 2-8 → output sections 1-8)
-- Ends with required disclaimer
+- A fixed structure fits here: the output is a methodology scorecard the user reads as a checklist, so consistency across runs is the point
+- Each section names the data it carries
+- Verdict system with 3 clear options (a decision, not a spectrum)
+- Mirrors the step order, including environment before sizing
+- Ends with the required disclaimer
+
+For open-ended analysis, prefer an output contract instead (Example 10).
 
 ---
 
@@ -251,6 +252,41 @@ Always end with the disclaimer that this is educational analysis, not investment
 
 ---
 
+## Example 10: Output Contract (earnings-preview, Steps 3-4)
+
+```markdown
+## Step 3: Build the Earnings Preview
+
+The briefing should let the user see the setup at a glance. Cover these five areas;
+if the data for one is missing, say so in a line rather than dropping it.
+
+1. **Date and context** — company, ticker, sector and industry; the report date and
+   whether it lands before the open or after the close; current price with 1-week
+   and 1-month performance; market cap.
+2. **Consensus estimates** — a table of this quarter's EPS and revenue consensus with
+   low, high, analyst count, year-ago value, and expected growth. A high/low spread
+   wider than about 20% of consensus signals unusual uncertainty; say so when you see it.
+3. **Beat/miss track record** — ...
+4. **Analyst sentiment** — ...
+5. **What to watch** — the few things the market will focus on in this print, chosen
+   for this company and sector ... This is the judgment part of the briefing.
+
+## Step 4: Respond to the User
+
+Open with the headline — the report date and a one-line read of the setup — then the
+five areas above, using tables where they help. Close with a short read of the overall
+setup, framed as what the street expects rather than a recommendation.
+```
+
+**Why this works:**
+- Says what must be covered, not which headings to fill; missing data gets a line instead of a silent gap
+- Carries the domain heuristic with its threshold (spread wider than ~20% of consensus)
+- Marks the one judgment section and leaves the choice of what matters to the model
+- Leads with the headline and describes length qualitatively ("a short read")
+- Contains no invented figures for a real company for the model to copy
+
+---
+
 ## Anti-Example: Vague Output (avoid this)
 
 ```markdown
@@ -261,7 +297,28 @@ Include relevant metrics and insights.
 ```
 
 **Why this fails:**
-- "Clear and readable" means different things every time
-- "Relevant metrics" — which ones? All of them? Top 3?
-- No numbered sections → inconsistent output across runs
+- Doesn't say what to lead with or which metrics matter for this skill
+- No required caveats, so data limitations go unmentioned
 - No verdict → user must interpret everything themselves
+
+---
+
+## Anti-Example: The Scripted, Shouting Step (avoid this)
+
+```markdown
+## Step 4: Respond to the User
+
+IMPORTANT: You MUST show all 5 sections. Think step by step and double-check every number.
+
+1. Lead with: "AAPL reports earnings on [date]. Here's what to expect."
+2. Show all 5 sections with headers and tables
+3. End with a 2-3 sentence summary
+
+Example: "AAPL has beaten EPS estimates in 4 of the last 4 quarters by an average of 2.6%."
+```
+
+**Why this fails on current models:**
+- Capitalized MUST/IMPORTANT and "double-check" lead to over-checking and rigid, padded output
+- "Think step by step" is redundant with built-in thinking
+- The sentence count caps the synthesis regardless of how much the data says
+- The worked example carries invented figures for a real company, which the model copies in shape and can mistake for fact

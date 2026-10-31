@@ -1,13 +1,13 @@
 ---
 name: dasheng-html-anything-bridge
-description: Use when Dasheng draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.
+description: Use when Newma draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.
 ---
 
-# Dasheng HTML Anything Bridge
+# Newma HTML Anything Bridge
 
 ## Role
 
-Use the external `html-anything` repository as the design/template reference library for Dasheng HTML outputs. This is a local-first visual language source, not the fact engine.
+Use the external `html-anything` repository as the design/template reference library for Newma HTML outputs. This is a local-first visual language source, not the fact engine.
 
 `html-anything` is an external dependency, not vendored into this repo and not version-locked. Default path: `${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything}`; override with `HTML_ANYTHING_ROOT`.
 
@@ -35,7 +35,7 @@ ${HTML_ANYTHING_ROOT:-${HTML_ANYTHING_ROOT:-vendor/reserved/render/html-anything
 
 ## Draft Usage
 
-Draft may borrow layout discipline from HTML Anything, but final article HTML must still obey Dasheng Draft rules:
+Draft may borrow layout discipline from HTML Anything, but final article HTML must still obey Newma Draft rules:
 
 - Single self-contained HTML file
 - Inline CSS and JS
@@ -105,9 +105,9 @@ Open only the templates needed for the current surface. Avoid loading all 75 ski
 ## Hard Rules
 
 1. HTML Anything contributes presentation, layout, and export ergonomics.
-2. Dasheng Draft remains the source of facts, chart data, and article body.
+2. Newma Draft remains the source of facts, chart data, and article body.
 3. Do not copy the whole external repo into this project.
-4. If using a template with CDN assumptions, adapt it to Dasheng's self-contained HTML rules.
+4. If using a template with CDN assumptions, adapt it to Newma's self-contained HTML rules.
 5. Record chosen template names in the current stage manifest.
 6. Do not vendor or pin `html-anything`; install or update the external repo when the skill needs it.
 7. Prefer HyperFrames-style scene composition. Use GSAP for timing/reveal control; use Lottie only as auxiliary motion, never as the fact layer.

@@ -1,16 +1,14 @@
 ---
 name: generative-ui
 description: >
-  Design system and guidelines for Claude's built-in generative UI — the show_widget tool that renders
-  interactive HTML/SVG widgets inline in claude.ai conversations. This skill provides the complete
-  Anthropic "Imagine" design system so Claude produces high-quality widgets without needing to call
-  read_me first. Use this skill whenever the user asks to visualize data, create an interactive chart,
-  build a dashboard, render a diagram, draw a flowchart, show a mockup, create an interactive explainer,
-  or produce any visual content beyond plain text or markdown. Triggers include: "show me", "visualize",
-  "draw", "chart", "dashboard", "diagram", "flowchart", "widget", "interactive", "mockup", "illustrate",
-  "explain how X works" (with visual), or any request for visual/interactive output. Also triggers
-  when the user wants to display financial data visually, create comparison grids, or build tools
-  with sliders, toggles, or live-updating displays.
+  Design system and templates for interactive HTML/SVG visuals in Claude and Codex,
+  using an available inline renderer or a standalone HTML file.
+  Use this skill whenever the user wants visual or interactive output rather than
+  plain text or markdown: charts and dashboards, diagrams, flowcharts and
+  architecture drawings, mockups, comparison grids, illustrations, interactive
+  explainers ("explain how X works" with a visual), or tools with sliders, toggles,
+  and live-updating displays — including financial data shown visually and requests
+  phrased as "show me", "visualize", "draw", or "chart this".
 ---
 
 # Generative UI Skill
@@ -18,6 +16,8 @@ description: >
 This skill contains the complete design system for Claude's built-in `show_widget` tool — the generative UI feature that renders interactive HTML/SVG widgets inline in claude.ai conversations. The guidelines below are the actual Anthropic "Imagine — Visual Creation Suite" design rules, extracted so you can produce high-quality widgets directly without needing the `read_me` setup call.
 
 **How it works**: On claude.ai, Claude has access to the `show_widget` tool which renders raw HTML/SVG fragments inline in the conversation. This skill provides the design system, templates, and patterns to use it well.
+
+**Codex and other hosts**: First check the available tools. Use the host's documented visualization interface when provided; otherwise save a complete HTML document in the workspace and return a clickable file link. For standalone output, the fragment-only rule below does not apply: include a document wrapper and viewport metadata, define the CSS variables and SVG classes used by the templates (including dark-mode colors), and load chart dependencies explicitly. The host-specific CDN allowlist and injected styles below describe Claude's renderer; they are not Codex capabilities. Remove chat follow-up buttons and `sendPrompt` handlers when that bridge is unavailable; keep local sliders and calculations functional. Verify the saved output in a browser when available.
 
 ---
 
@@ -53,7 +53,8 @@ Output streams token-by-token. Styles must exist before the elements they target
 - **Seamless**: Users shouldn't notice where the host UI ends and your widget begins
 - **Flat**: No gradients, mesh backgrounds, noise textures, or decorative effects. Clean flat surfaces
 - **Compact**: Show the essential inline. Explain the rest in text
-- **Text goes in your response, visuals go in the tool** — all explanatory text, descriptions, and summaries must be written as normal response text OUTSIDE the tool call. The tool output should contain ONLY the visual element
+- **No stock "AI design" defaults**: skip cream or off-white panels, italic accent words in headings, numbered "01 / 02 / 03" section labels, monospace labels outside code, and pill-shaped buttons — they read as generic and clash with the host UI
+- **Text goes in your response, visuals go in the tool** — write explanatory text, descriptions, and summaries as normal response text outside the tool call; the widget holds only the visual element
 
 ### Core Rules
 
@@ -104,9 +105,9 @@ A global function that sends a message to chat as if the user typed it. Use it w
 
 ---
 
-## Step 3: Render with `show_widget`
+## Step 3: Render with the Available Host
 
-The `show_widget` tool is built into claude.ai — no activation needed. Pass your widget code directly:
+When the host exposes `show_widget`, pass your widget code directly as below. In Codex without that tool, follow the standalone HTML path above; do not invent a `show_widget` call.
 
 ```json
 {

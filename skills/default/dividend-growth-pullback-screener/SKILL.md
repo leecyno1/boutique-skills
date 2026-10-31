@@ -115,7 +115,10 @@ For each qualified stock, the report includes:
 **Dividend Growth Profile:**
 - Current yield and annual dividend
 - 3-year dividend CAGR and consistency
-- Payout ratio and sustainability assessment
+- Payout ratio and sustainability assessment with `fcf_status`, `fcf_coverage_status`, `sustainability_basis`, and a per-stock `sustainability_note`
+- Non-REIT sustainability requires earnings payout below 80% and reported `freeCashFlow` strictly above dividends paid (FCF payout below 100%). Negative, zero, insufficient, and missing/invalid FCF never confirm sustainability. Missing FCF stays missing; it is not inferred from earnings or metrics.
+- REITs require an explicit `isReit: true` or REIT industry identification; the Real Estate sector alone is insufficient. Identified REITs use payout below 80% of simplified FFO (net income + depreciation/amortization), with both inputs required. FCF status is informational for REITs; this proxy excludes property-sale adjustments.
+- Metrics payout fallback is display-only. Decisions use unrounded ratios; displayed ratios may round to the threshold. Coverage shortfalls do not predict a certain future dividend cut.
 
 **Technical Timing:**
 - Current RSI value (≤40 = oversold)
@@ -159,7 +162,7 @@ The script saves two files to its configured output location. In current package
 **Dividend Growth Analysis:**
 - 3-Year Dividend CAGR ≥ 12% (doubles dividend in 6 years)
 - Dividend Consistency: No cuts in past 4 years
-- Payout Ratio < 100% (sustainability check)
+- Sustainability: earnings payout <80% and FCF payout <100% for non-REITs; simplified FFO payout <80% for identified REITs
 
 **Financial Health:**
 - Positive revenue growth over 3 years
@@ -343,3 +346,14 @@ python3 skills/dividend-growth-pullback-screener/scripts/screen_dividend_growth_
 ---
 
 **Disclaimer:** This screening tool is for informational purposes only. Past dividend growth does not guarantee future performance. Conduct thorough due diligence before making investment decisions. RSI oversold conditions do not guarantee price reversals - stocks can remain oversold for extended periods.
+
+
+## Shared FMP client
+
+FMP data access uses the bundled generated `scripts/fmp_client.py`. Existing CLI
+key/environment precedence, financial calculations and successful output shapes
+are preserved. The migrated paths use stable endpoints only; a denied or failed
+stable request does not fall back to retired v3 URLs. The shared client masks raw
+and URL-encoded key echoes, retries malformed JSON once, and retries a 429 once
+with a 60-second wait before stopping on a repeated rate limit. FINVIZ, where
+used, remains a separate client.

@@ -23,6 +23,9 @@ Use the narrowest matching workflow:
   read `skills/lhb-analyzer/SKILL.md`.
 - Trap detection, pump-and-dump checks, "teacher/group/friend recommended this stock", or safety review:
   read `skills/trap-detector/SKILL.md`.
+- Daily market-event briefs, scheduled macro releases, central-bank speeches, or event-aware alerts:
+  read [Official macro calendar verification](references/macro-calendar.md),
+  alongside the relevant stock workflow when stock analysis is also requested.
 - Command-specific requests:
   read the matching file under `commands/`.
 

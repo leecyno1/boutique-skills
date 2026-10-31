@@ -10,7 +10,6 @@ import os
 import subprocess
 import time
 import urllib.request
-from urllib.parse import urlparse
 from pathlib import Path
 from typing import Any
 
@@ -90,10 +89,6 @@ def interaction_input(references: list[Path], prompt: str) -> list[dict[str, str
 
 
 def download_interaction_video(uri: str, output: Path, api_key: str) -> None:
-    parsed = urlparse(uri)
-    hostname = parsed.hostname or ""
-    if parsed.scheme != "https" or not (hostname == "googleapis.com" or hostname.endswith(".googleapis.com")):
-        raise ValueError("Gemini video download URI must use an official Google API host")
     separator = "&" if "?" in uri else "?"
     request = urllib.request.Request(f"{uri}{separator}alt=media")
     request.add_header("x-goog-api-key", api_key)

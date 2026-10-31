@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-31",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -24,10 +24,10 @@
       "L3 Specialist": 277
     },
     "by_category": {
-      "agent-orchestration": 7,
+      "agent-orchestration": 8,
       "browser-automation": 4,
       "coding-devtools": 16,
-      "commerce-ops": 14,
+      "commerce-ops": 13,
       "communication": 1,
       "core-agent": 20,
       "data-analysis": 12,
@@ -41,8 +41,8 @@
       "html-publishing": 3,
       "legal-compliance": 4,
       "marketing-growth": 21,
-      "media-generation": 40,
-      "memory-context": 2,
+      "media-generation": 41,
+      "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 4,
       "search-research": 27,
@@ -50,9 +50,9 @@
       "writing-content": 18
     },
     "by_access_mode": {
-      "api-key": 103,
+      "api-key": 105,
       "api-key+mcp-required": 22,
-      "browser-required": 32,
+      "browser-required": 30,
       "direct": 227,
       "mcp-required": 74
     },
@@ -67,7 +67,7 @@
     {
       "id": "brainstorming",
       "name": "brainstorming",
-      "description": "Use before creative feature, component, behavior, or product design work.",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).",
       "manual": "skills/default/brainstorming/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/brainstorming/GUIDE.md",
       "install_tiers": [
@@ -793,7 +793,7 @@
     {
       "id": "dasheng-hotspot-radar",
       "name": "dasheng-hotspot-radar",
-      "description": "Use when an agent needs a standalone no-login hotspot/news radar for Dasheng workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.",
+      "description": "Use when an agent needs a standalone no-login hotspot/news radar for Newma workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.",
       "manual": "skills/default/dasheng-hotspot-radar/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-hotspot-radar/SKILL.md",
       "install_tiers": [
@@ -841,7 +841,7 @@
     {
       "id": "design-taste-frontend",
       "name": "design-taste-frontend",
-      "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check.",
+      "description": ">-",
       "manual": "skills/default/design-taste-frontend/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/design-taste-frontend/SKILL.md",
       "install_tiers": [
@@ -1348,7 +1348,7 @@
     {
       "id": "generative-ui",
       "name": "generative-ui",
-      "description": "Design system and guidelines for Claude's built-in generative UI — the show_widget tool that renders interactive HTML/SVG widgets inline in claude.ai conversations. This skill provides the complete Anthropic \"Imagine\" design system so Claude produces high-quality widgets without needing to call read_me first. Use this skill whenever the user asks to visualize data, create an interactive chart, build a dashboard, render a diagram, draw a flowchart, show a mockup, create an interactive explainer, or produce any visual content beyond plain text or markdown. Triggers include: \"show me\", \"visualize\", \"draw\", \"chart\", \"dashboard\", \"diagram\", \"flowchart\", \"widget\", \"interactive\", \"mockup\", \"illustrate\", \"explain how X works\" (with visual), or any request for visual/interactive output. Also triggers when the user wants to display financial data visually, create comparison grids, or build tools with sliders, toggles, or live-updating displays.",
+      "description": "Design system and templates for interactive HTML/SVG visuals in Claude and Codex, using an available inline renderer or a standalone HTML file. Use this skill whenever the user wants visual or interactive output rather than plain text or markdown: charts and dashboards, diagrams, flowcharts and architecture drawings, mockups, comparison grids, illustrations, interactive explainers (\"explain how X works\" with a visual), or tools with sliders, toggles, and live-updating displays — including financial data shown visually and requests phrased as \"show me\", \"visualize\", \"draw\", or \"chart this\".",
       "manual": "skills/default/generative-ui/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/generative-ui/README.md",
       "install_tiers": [
@@ -2046,7 +2046,7 @@
     {
       "id": "twitter-reader",
       "name": "twitter-reader",
-      "description": "Read Twitter/X for financial research using opencli (read-only). Use this skill whenever the user wants to read their Twitter feed, search for financial tweets, view bookmarks, look up user profiles, or gather market sentiment from Twitter/X. Triggers include: \"check my feed\", \"search Twitter for\", \"show my bookmarks\", \"who follows\", \"look up @user\", \"what's trending about\", \"market sentiment on Twitter\", \"what are people saying about AAPL\", \"recent tweets from @elonmusk\", \"show me @user's posts\", \"fintwit\", any mention of Twitter/X in context of reading financial news or market research. This skill is READ-ONLY — it does NOT support posting, liking, retweeting, or any write operations.",
+      "description": "Read Twitter/X for financial research through opencli: the user's home timeline, tweet search, trending topics, bookmarks, a user's recent tweets, threads, articles, profiles, followers and following, and notifications. Use this skill whenever the user wants to know what people are saying on Twitter/X or fintwit about a stock, topic, or market event, check their feed or bookmarks, see what's trending, or look up an @account and its posts. Read-only: it cannot post, like, retweet, reply, or follow.",
       "manual": "skills/default/twitter-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/twitter-reader/README.md",
       "install_tiers": [
@@ -2073,7 +2073,9 @@
       "dependencies": {
         "requires_api_keys": false,
         "api_keys": [],
-        "required_tools": [],
+        "required_tools": [
+          "python"
+        ],
         "access_mode": "direct",
         "runtime": "online"
       },
@@ -3399,7 +3401,7 @@
     {
       "id": "discord-reader",
       "name": "discord-reader",
-      "description": "Read Discord for financial research using opencli (read-only). Use this skill whenever the user wants to read Discord channels, search for messages in trading servers, view guild/channel info, monitor crypto or market discussion groups, or gather financial sentiment from Discord. Triggers include: \"check my Discord\", \"search Discord for\", \"read Discord messages\", \"what's happening in the trading Discord\", \"show Discord channels\", \"list my servers\", \"Discord sentiment on BTC\", \"what are people saying in Discord about AAPL\", \"monitor crypto Discord\", any mention of Discord in context of reading financial news, market research, or trading community discussions. This skill is READ-ONLY — it does NOT support sending messages, reacting, or any write operations.",
+      "description": "Read Discord for financial research through opencli connected to the Discord desktop app: servers, channels, members, recent messages in the active channel, and message search. Use this skill whenever the user wants to check their Discord, list servers or channels, read or search messages in trading, crypto, or market communities, or gauge what a Discord community is saying about a ticker or coin. Read-only: it cannot send, react to, edit, or delete messages.",
       "manual": "skills/default/discord-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/discord-reader/README.md",
       "install_tiers": [
@@ -4003,7 +4005,7 @@
     {
       "id": "impeccable",
       "name": "impeccable",
-      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve a frontend interface: websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens. Handles UX review, hierarchy, layout, typography, color, motion, UX copy, accessibility, responsive behavior, edge cases, and capturing or documenting design systems (DESIGN.md, tokens). Also for making bland UI bolder, loud UI quieter, or ambitious visual effects. Not for backend-only or non-UI tasks.",
       "manual": "skills/default/impeccable/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
       "install_tiers": [
@@ -4092,7 +4094,7 @@
     {
       "id": "linkedin-reader",
       "name": "linkedin-reader",
-      "description": "Read LinkedIn for financial research using opencli (read-only). Use this skill whenever the user wants to read their LinkedIn feed, search for jobs in the finance/trading industry, view professional posts about markets or earnings, or gather professional sentiment from LinkedIn. Triggers include: \"check my LinkedIn feed\", \"search LinkedIn for\", \"LinkedIn posts about\", \"what's on LinkedIn about AAPL\", \"finance jobs on LinkedIn\", \"LinkedIn market sentiment\", \"who's posting about earnings on LinkedIn\", \"LinkedIn feed\", \"professional network buzz\", \"what are analysts saying on LinkedIn\", any mention of LinkedIn in context of reading financial news, market research, job searches, or professional commentary. This skill is READ-ONLY — it does NOT support posting, liking, commenting, connecting, or any write operations.",
+      "description": "Read LinkedIn for financial research through opencli: the user's feed, and job search with location, seniority, job type, remote, company, and date filters. Use this skill whenever the user wants to check their LinkedIn feed, see what professionals or analysts are posting about a company, market, or earnings, gauge professional sentiment, or search finance and trading jobs on LinkedIn. Read-only: it cannot post, like, comment, connect, message, or apply.",
       "manual": "skills/default/linkedin-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/linkedin-reader/README.md",
       "install_tiers": [
@@ -4265,7 +4267,7 @@
     {
       "id": "opencli-reader",
       "name": "opencli-reader",
-      "description": "Generic read-only fallback for any source opencli covers but this repo has no dedicated reader for — Yahoo Finance, Bloomberg, Reuters, Barchart, Eastmoney, Xueqiu, Sinafinance, Reddit, HackerNews, Substack, Medium, Weibo, Bilibili, Xiaohongshu, Zhihu, arXiv, Google Scholar, Apple Podcasts, Xiaoyuzhou, Spotify, YouTube, Weixin, Amazon, and more. Triggers: \"use opencli to read\", \"grab the frontpage from hackernews\", \"read reddit r/wallstreetbets\", \"fetch Eastmoney hot stocks\", \"pull Xueqiu feed\", \"get Bloomberg markets headlines\", \"search arXiv for\", any request to read from a site where a specialized skill does not exist but opencli does. FALLBACK — prefer twitter-reader, linkedin-reader, discord-reader, telegram-reader, or yc-reader when the source matches. READ-ONLY — never invoke write operations.",
+      "description": "Generic read-only fallback for sources opencli supports but no dedicated skill covers: finance sites (Yahoo Finance, Bloomberg, Reuters, Barchart, Eastmoney, Xueqiu, Sinafinance), communities (Reddit, HackerNews, Weibo, Zhihu, Xiaohongshu, Bilibili), newsletters and blogs (Substack, Medium), research (arXiv, Google Scholar), podcasts and video (Apple Podcasts, Xiaoyuzhou, Spotify, YouTube), Weixin, Amazon, and more. Use it when the user asks to read or fetch from such a site — for example r/wallstreetbets, the HackerNews front page, Eastmoney hot stocks, the Xueqiu feed, Bloomberg markets headlines, or an arXiv search — or says \"use opencli to read\". Prefer twitter-reader, linkedin-reader, discord-reader, telegram-reader, or yc-reader when the source matches. Read-only: never runs write commands.",
       "manual": "skills/default/opencli-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/opencli-reader/README.md",
       "install_tiers": [
@@ -4293,6 +4295,7 @@
         "requires_api_keys": false,
         "api_keys": [],
         "required_tools": [
+          "ffmpeg",
           "python"
         ],
         "access_mode": "direct",
@@ -4698,7 +4701,7 @@
     {
       "id": "telegram-reader",
       "name": "telegram-reader",
-      "description": "Read Telegram channels and groups for financial news and market research using tdl (read-only). Use this skill whenever the user wants to read Telegram channels, export messages from financial Telegram groups, list their Telegram chats, search for news in Telegram channels, or gather market intelligence from Telegram. Triggers include: \"check my Telegram\", \"read Telegram channel\", \"Telegram news\", \"what's new in my Telegram channels\", \"export messages from\", \"list my Telegram chats\", \"financial news on Telegram\", \"crypto Telegram\", \"market news Telegram\", any mention of Telegram in context of reading financial news, crypto signals, or market research. This skill is READ-ONLY — it does NOT support sending messages, joining channels, or any write operations.",
+      "description": "Read Telegram channels and groups for financial news and market research with the tdl CLI: list chats and channels, find a channel by name, and export recent messages or a date or ID range. Use this skill whenever the user wants to check their Telegram, see what's new in their channels, read or export messages from a news, crypto, or trading channel or group, or gather market news and signals posted on Telegram. Read-only: it cannot send messages or join or leave channels.",
       "manual": "skills/default/telegram-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/telegram-reader/README.md",
       "install_tiers": [
@@ -4741,7 +4744,7 @@
     {
       "id": "yc-reader",
       "name": "yc-reader",
-      "description": "Look up Y Combinator companies, batches, and startup ecosystem data using the yc-oss API (read-only). Use this skill whenever the user wants to research YC-backed startups, find companies in a specific batch or industry, check which YC companies are hiring, explore top YC companies, or analyze startup trends by sector or tag. Triggers include: \"YC companies in fintech\", \"who's in the latest YC batch\", \"YC startups hiring\", \"top Y Combinator companies\", \"find YC companies tagged AI\", \"W25 batch\", \"S24 companies\", \"YC stats\", \"Y Combinator portfolio\", \"startup research\", \"which YC companies do X\", \"venture research on YC\", any mention of Y Combinator, YC batch, or YC-backed companies in the context of startup research, venture analysis, or market intelligence. This is a read-only data source — the API is a static JSON dataset updated daily.",
+      "description": "Look up Y Combinator companies and batches from the public yc-oss API, a static JSON dataset refreshed daily: company profiles, batch rosters (e.g. W25, S24), companies by industry or tag, top companies, who is hiring, founder-diversity lists, and overall YC stats. Use this skill whenever the user asks about YC-backed startups, a YC batch, YC companies in a sector or tag or that are hiring, the Y Combinator portfolio, or startup and venture research that draws on YC data. Read-only.",
       "manual": "skills/default/yc-reader/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/yc-reader/README.md",
       "install_tiers": [
@@ -5066,7 +5069,7 @@
     {
       "id": "dasheng-stage-transwrite",
       "name": "dasheng-stage-transwrite",
-      "description": "Use when converting confirmed Dasheng drafts into channel-ready WeChat article, ordinary faceless explainer, VOX investigative explainer, talking-head video, and opt-in podcast production packages.",
+      "description": "Use when converting confirmed Newma drafts into channel-ready WeChat article, faceless explainer, VOX investigative explainer, real talking-head, AI digital-human, commercial promo, deferred cinematic short-drama, and opt-in podcast production packages.",
       "manual": "skills/default/dasheng-stage-transwrite/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-transwrite/SKILL.md",
       "install_tiers": [
@@ -5158,7 +5161,7 @@
     {
       "id": "a-stock-data",
       "name": "a-stock-data",
-      "description": "当任务需要写代码实际获取A股数据时使用——拉取行情/K线(mootdx+腾讯+百度)、研报(东财+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业)、资金面(融资融券/大宗/股东户数/分红/资金流)、新闻、财务三表/F10、公告(巨潮)、打板(涨停池/连板/炸板率/重点监控池/日内异动)、ETF期权(T型报价/希腊字母/IV)、舆情互动(互动易/热榜/人气榜)等真实数据。十层数据源·47端点(含3官方备胎)·内嵌全部可运行代码，自包含零依赖外部文件；优先用通达信(mootdx)/腾讯(不封IP)，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。",
+      "description": "当任务需要写代码实际获取A股及相关市场数据时使用——行情/K线/逐笔(腾讯日周月前后复权+分钟线+当日逐笔、通达信官网全市场盘后包、百度)、研报(东财+新浪+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业/板块资金流)、资金面(融资融券/大宗/股东户数/分红/资金流/ETF份额)、新闻(财联社/东财/华尔街见闻/新闻联播)、财务三表/F10/估值历史/ST名单、公告(巨潮)、打板(涨停池/连板/炸板率/监控池/异动)、ETF期权、舆情互动(互动易/上证e互动/热榜)、筹码分布、复权因子、申万行业变迁、宏观与利率(社融/PMI/中债收益率曲线/回购定盘利率/LPR/全球宏观日历)、指数成分/权重/估值/交易日历、期货与大宗商品(五家期货交易所日行情/商品与股指期权/持仓排名/期货日K含大商所/实时期货/A50/上海金)、事件驱动(业绩预告/机构调研/增减持/回购/股权质押/新股申购)、可转债等真实数据。十五层·87端点(含5备胎)·34个来源·内嵌全部可运行代码，自包含零外部文件；优先用腾讯/交易所官方等不封IP源，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。",
       "manual": "skills/default/a-stock-data/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/a-stock-data/GUIDE.md",
       "install_tiers": [
@@ -5209,7 +5212,7 @@
     {
       "id": "global-stock-data",
       "name": "global-stock-data",
-      "description": "美股港股全栈数据工具包（官方源优先）— 十三层架构·30+端点·11数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、SEC文件检索、资金流与机构持仓分析等场景。",
+      "description": "美股港股全栈数据工具包（官方源优先）— 十六层架构·50+端点·17数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气等场景。",
       "manual": "skills/default/global-stock-data/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/global-stock-data/SKILL.md",
       "install_tiers": [
@@ -5232,7 +5235,7 @@
         "finance-data",
         "global-market",
         "l2",
-        "offline",
+        "online",
         "standard"
       ],
       "dependencies": {
@@ -5242,7 +5245,7 @@
           "python"
         ],
         "access_mode": "direct",
-        "runtime": "offline"
+        "runtime": "online"
       },
       "risk_level": "medium",
       "conflict_group": "finance-global-data",
@@ -5304,7 +5307,7 @@
     {
       "id": "yfinance-data",
       "name": "yfinance-data",
-      "description": "Fetch financial and market data using the yfinance Python library. Use this skill whenever the user asks for stock prices, historical data, financial statements, options chains, dividends, earnings, analyst recommendations, or any market data. Triggers include: any mention of stock price, ticker symbol (AAPL, MSFT, TSLA, etc.), \"get me the financials\", \"show earnings\", \"what's the price of\", \"download stock data\", \"options chain\", \"dividend history\", \"balance sheet\", \"income statement\", \"cash flow\", \"analyst targets\", \"institutional holders\", \"compare stocks\", \"screen for stocks\", or any request involving Yahoo Finance data. Always use this skill even if the user only provides a ticker — infer intent from context.",
+      "description": "Fetch financial and market data with the yfinance Python library (Yahoo Finance). Use this skill whenever the user wants stock data: current quotes and price history, financial statements (income statement, balance sheet, cash flow), options chains, dividends and splits, earnings and analyst estimates, price targets and ratings, institutional and insider holdings, news, multi-ticker comparisons, stock screens, or sector and industry data. Use it even when the user gives only a ticker symbol (AAPL, MSFT, TSLA) and the intent has to be inferred. For earnings previews or recaps, estimate revisions, valuation, correlation, liquidity, or ETF premium analysis, prefer the dedicated skill.",
       "manual": "skills/default/yfinance-data/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/yfinance-data/README.md",
       "install_tiers": [
@@ -5326,7 +5329,7 @@
         "direct",
         "finance-data",
         "l2",
-        "offline",
+        "online",
         "trading_finance",
         "tushare-supplement"
       ],
@@ -5337,7 +5340,7 @@
           "python"
         ],
         "access_mode": "direct",
-        "runtime": "offline"
+        "runtime": "online"
       },
       "risk_level": "medium",
       "conflict_group": "finance-global-data",
@@ -5523,7 +5526,7 @@
     {
       "id": "bilibili-upload-bridge",
       "name": "bilibili-upload-bridge",
-      "description": "Use when Dasheng Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.",
+      "description": "Use when Newma Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.",
       "manual": "skills/default/bilibili-upload-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/bilibili-upload-bridge/SKILL.md",
       "install_tiers": [
@@ -5572,7 +5575,7 @@
     {
       "id": "dasheng-html-anything-bridge",
       "name": "dasheng-html-anything-bridge",
-      "description": "Use when Dasheng draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.",
+      "description": "Use when Newma draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.",
       "manual": "skills/default/dasheng-html-anything-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-anything-bridge/SKILL.md",
       "install_tiers": [
@@ -5618,7 +5621,7 @@
     {
       "id": "dasheng-html-video-bridge",
       "name": "dasheng-html-video-bridge",
-      "description": "Use when Dasheng transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.",
+      "description": "Use when Newma transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.",
       "manual": "skills/default/dasheng-html-video-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-video-bridge/SKILL.md",
       "install_tiers": [
@@ -5667,7 +5670,7 @@
     {
       "id": "dasheng-media-sop",
       "name": "dasheng-media-sop",
-      "description": "Use when running, resuming, auditing, or updating the Dasheng self-media workflow in this repo. This is the only formal orchestration entry and it governs the simplified canonical chain.",
+      "description": "Use when running, resuming, auditing, or updating the Newma self-media workflow in this repo. This is the only formal orchestration entry and it governs the simplified canonical chain.",
       "manual": "skills/default/dasheng-media-sop/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-media-sop/SKILL.md",
       "install_tiers": [
@@ -5759,7 +5762,7 @@
     {
       "id": "dasheng-publish-operations-bridge",
       "name": "dasheng-publish-operations-bridge",
-      "description": "Use when a Dasheng Publish channel pack needs account-launch, cold-start, matrix-role, cadence, hook, keyword, series, CTA, or post-publish metric advice before platform execution. Normalizes the external agent-skills-launch-pack into a small machine-readable Publish advisory without uploading or publishing.",
+      "description": "Use when a Newma Publish channel pack needs account-launch, cold-start, matrix-role, cadence, hook, keyword, series, CTA, or post-publish metric advice before platform execution. Normalizes the external agent-skills-launch-pack into a small machine-readable Publish advisory without uploading or publishing.",
       "manual": "skills/default/dasheng-publish-operations-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-publish-operations-bridge/SKILL.md",
       "install_tiers": [
@@ -5897,7 +5900,7 @@
     {
       "id": "dasheng-stage-publish",
       "name": "dasheng-stage-publish",
-      "description": "Use when entering the slim Dasheng publish execution stage to validate transwrite outputs, create publish packs, push drafts/manual packages, and recover published links.",
+      "description": "Use when entering the slim Newma publish execution stage to validate transwrite outputs, create publish packs, push drafts/manual packages, and recover published links.",
       "manual": "skills/default/dasheng-stage-publish/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-stage-publish/SKILL.md",
       "install_tiers": [
@@ -6035,7 +6038,7 @@
     {
       "id": "dasheng-video-explainer-html",
       "name": "dasheng-video-explainer-html",
-      "description": "Use when turning a Dasheng HTML article into a no-human finance explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.",
+      "description": "Use when turning a Newma HTML article into a no-human finance explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.",
       "manual": "skills/default/dasheng-video-explainer-html/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-explainer-html/SKILL.md",
       "install_tiers": [
@@ -6134,7 +6137,7 @@
     {
       "id": "dasheng-video-style-trainer",
       "name": "dasheng-video-style-trainer",
-      "description": "Use when learning reusable video style DNA from many sample videos, training a blogger/channel editing style, or applying a learned style profile to Dasheng talking-head and no-human explainer video workflows.",
+      "description": "Use when learning reusable video style DNA from many sample videos, training a blogger/channel editing style, or applying a learned style profile to Newma talking-head and no-human explainer video workflows.",
       "manual": "skills/default/dasheng-video-style-trainer/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-style-trainer/SKILL.md",
       "install_tiers": [
@@ -6180,7 +6183,7 @@
     {
       "id": "dasheng-video-talking-head",
       "name": "dasheng-video-talking-head",
-      "description": "Use when producing or improving Dasheng真人出镜口播视频 from raw speaker footage, subtitles, rough cuts, B-roll, data charts, or HTML sticker overlays.",
+      "description": "Use when producing or improving Newma真人出镜口播视频 from raw speaker footage, subtitles, rough cuts, B-roll, data charts, or HTML sticker overlays.",
       "manual": "skills/default/dasheng-video-talking-head/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-talking-head/SKILL.md",
       "install_tiers": [
@@ -6370,7 +6373,7 @@
     {
       "id": "social-auto-upload-bridge",
       "name": "social-auto-upload-bridge",
-      "description": "Use when Dasheng Publish needs a bridge to the external social-auto-upload project for video upload packages across Bilibili, Xiaohongshu, Douyin, Kuaishou, WeChat Channels, Baijiahao, TikTok, or YouTube.",
+      "description": "Use when Newma Publish needs a bridge to the external social-auto-upload project for video upload packages across Bilibili, Xiaohongshu, Douyin, Kuaishou, WeChat Channels, Baijiahao, TikTok, or YouTube.",
       "manual": "skills/default/social-auto-upload-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/social-auto-upload-bridge/SKILL.md",
       "install_tiers": [
@@ -7137,7 +7140,7 @@
     {
       "id": "agent-reach",
       "name": "agent-reach",
-      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。",
+      "description": "只读读取各平台内容：搜索、读帖、看评论、取字幕、查行情和职位。 Use when 用户提到或贴出链接：小红书/xiaohongshu、B站/bilibili、Twitter/X、Reddit、 YouTube（字幕、转录）、GitHub、V2EX、雪球/股票行情、LinkedIn/Boss直聘 职位、 Instagram、Facebook、小宇宙播客；或说\"帮我搜/看看/读一下这个链接\"而自带网页搜索/读取不可用、失败或拿不到正文； 或要安装、加上/去掉某个平台、登录/退出、看状态、更新、卸载 Agent Reach。 不做：发帖、评论、点赞、私信等任何写操作；不替用户登录、不索要密码。 公开内容优先用 Agent 自带工具，Reach 补缺口。",
       "manual": "skills/default/agent-reach/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agent-reach/SKILL.md",
       "install_tiers": [
@@ -7157,7 +7160,7 @@
       "tags": [
         "browser-required",
         "l2",
-        "online",
+        "offline",
         "research",
         "search-research",
         "social",
@@ -7172,7 +7175,7 @@
           "gh"
         ],
         "access_mode": "browser-required",
-        "runtime": "online"
+        "runtime": "offline"
       },
       "risk_level": "medium",
       "conflict_group": "agent-reach",
@@ -7613,7 +7616,7 @@
     {
       "id": "colleague-skill",
       "name": "colleague-skill",
-      "description": "Unified meta-skill engine for distilling colleague, relationship, or celebrity characters into reusable Skills. | 统一的 meta-skill 引擎，把 colleague、relationship、celebrity 三类对象蒸馏成可复用 Skill。",
+      "description": "Set up the owner profile so a personal agent knows who it works for (first-run setup, \\\"get to know me\\\"), or distill colleague, relationship, or celebrity source material into reusable Person Profiles for agents.",
       "manual": "skills/default/colleague-skill/SKILL.md",
       "manual_url": null,
       "install_tiers": [
@@ -7628,10 +7631,10 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
       "tags": [
-        "commerce-ops",
+        "agent-orchestration",
         "direct",
         "l3",
         "offline"
@@ -7655,7 +7658,7 @@
     {
       "id": "distilly",
       "name": "distilly",
-      "description": "Distilly — Distill how they think into reusable Skills for any Agent or Bot. Formerly Colleague Skill（原同事 Skill）.",
+      "description": "Set up the owner profile so a personal agent knows who it works for (first-run setup, \\\"get to know me\\\"), or distill colleague, relationship, or celebrity source material into reusable Person Profiles for agents.",
       "manual": "skills/default/distilly/SKILL.md",
       "manual_url": null,
       "install_tiers": [
@@ -8135,48 +8138,6 @@
       }
     },
     {
-      "id": "prompt-master",
-      "name": "prompt-master",
-      "description": "A Claude skill that writes the accurate prompts for any AI tool. Zero tokens or credits wasted. Full context and memory retention",
-      "manual": "skills/default/prompt-master/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/nidhinjs/prompt-master",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-12",
-        "mirror_source_url": "https://github.com/nidhinjs/prompt-master",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "memory-context",
-      "category_label": "记忆 / 上下文基础设施",
-      "tags": [
-        "direct",
-        "l3",
-        "memory-context",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "prompt-master",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "seo-audit",
       "name": "seo-audit",
       "description": "Run a full-site SEO audit and return a scored, prioritized report. Use only for site-wide checks; use seo-page for one URL or seo-technical for a technical-only review.",
@@ -8348,7 +8309,7 @@
     {
       "id": "startup-analysis",
       "name": "startup-analysis",
-      "description": "Analyze a startup from three perspectives: VC investor, job applicant, and CEO/founder. Use this skill whenever the user wants to evaluate a startup, assess whether to invest in or join a startup, do due diligence, evaluate a job offer from a startup, understand a startup's competitive position, or assess company health and trajectory. Triggers: \"analyze this startup\", \"should I join [company]\", \"is [company] a good investment\", \"evaluate [company]\", \"due diligence on [company]\", \"what do you think of [startup]\", \"should I take this startup job offer\", \"how healthy is [company]\", \"startup assessment\", \"company analysis\", \"is [company] worth joining\", \"what's the outlook for [company]\", \"research [company] for me\", any mention of evaluating or assessing a startup or tech company from investment, career, or strategic perspectives — provide all three perspectives by default.",
+      "description": "Analyze a startup from three perspectives — VC investor, job applicant, and CEO/founder — covering market, traction, unit economics, team, defensibility, runway, equity value, culture, and competitive position, with a verdict for each. Use this skill whenever the user wants to evaluate a startup or private tech company: due diligence, whether to invest in it or join it, weighing a startup job offer, company health, outlook, or competitive position, or open-ended asks such as \"what do you think of [company]\" or \"research [company] for me\".",
       "manual": "skills/default/startup-analysis/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/startup-analysis/README.md",
       "install_tiers": [
@@ -8601,6 +8562,54 @@
       "preset_excluded": false,
       "rating": {
         "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "frontend-dev",
+      "name": "frontend-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "manual": "skills/default/frontend-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-10-31",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "default_sentinel",
+        "direct",
+        "l2",
+        "minimax_official",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "frontend-dev",
+      "preset_excluded": false,
+      "rating": {
+        "score": 84,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -12127,50 +12136,6 @@
       }
     },
     {
-      "id": "notebooklm-py",
-      "name": "notebooklm-py",
-      "description": "Complete API for Google NotebookLM - full programmatic access including features not in the web UI. Create notebooks, add sources, generate all artifact types, download in multiple formats. Activates on explicit /notebooklm or intent like \"create a podcast about X",
-      "manual": "skills/default/notebooklm-py/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/teng-lin/notebooklm-py",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-19",
-        "mirror_source_url": "https://github.com/teng-lin/notebooklm-py",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "search-research",
-      "category_label": "搜索 / 研究 / 情报",
-      "tags": [
-        "browser-required",
-        "l2",
-        "online",
-        "search-research"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser"
-        ],
-        "access_mode": "browser-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "notebooklm-py",
-      "preset_excluded": false,
-      "rating": {
-        "score": 81,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "openclaw-cron-setup",
       "name": "cron-setup",
       "description": "OpenClaw Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。支持主会话系统事件和独立会话执行，可配置投递到聊天频道或 Webhook。",
@@ -12591,7 +12556,7 @@
     {
       "id": "baoyu-image-gen",
       "name": "baoyu-image-gen",
-      "description": "AI image generation with OpenAI GPT Image 2, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
+      "description": "AI image generation with OpenAI GPT Image 2.5, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
       "manual": "skills/default/baoyu-image-gen/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-image-gen/GUIDE.md",
       "install_tiers": [
@@ -13710,7 +13675,7 @@
     {
       "id": "stock-liquidity",
       "name": "stock-liquidity",
-      "description": "Analyze stock liquidity using bid-ask spreads, volume profiles, order book depth, market impact estimates, and turnover ratios via Yahoo Finance data. Use this skill whenever the user asks about liquidity, trading costs, bid-ask spread, market depth, volume analysis, slippage, market impact, turnover ratio, or how easy/hard it is to trade a stock without moving the price. Triggers: \"how liquid is AAPL\", \"bid-ask spread\", \"volume analysis\", \"order book depth\", \"market impact of a large order\", \"turnover ratio\", \"slippage estimate\", \"can I trade 100k shares without moving the price\", \"liquidity comparison\", \"spread analysis\", \"ADTV\", \"Amihud illiquidity\", \"dollar volume\", \"execution cost estimate\", \"liquidity score\", penny stocks, small caps, or thinly traded securities.",
+      "description": "Analyze how liquid a stock is using Yahoo Finance data (yfinance): bid-ask spreads, volume and dollar volume (ADTV), top-of-book and options depth, square-root market impact and slippage estimates, turnover ratio, and Amihud illiquidity, rolled into a liquidity grade. Use this skill whenever the user asks about liquidity or trading costs — how easily a position can be entered or exited, what a large order would do to the price, spread or execution-cost estimates, order book depth, volume patterns, or liquidity comparisons — especially for small caps, penny stocks, and thinly traded names.",
       "manual": "skills/default/stock-liquidity/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/stock-liquidity/README.md",
       "install_tiers": [
@@ -14272,7 +14237,7 @@
     {
       "id": "book-to-skill",
       "name": "book-to-skill",
-      "description": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, or Claude Code, apply an author's frameworks while working, or build a reusable knowledge base from a file.",
+      "description": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an author's frameworks while working, or build a reusable knowledge base from a file.",
       "manual": "skills/default/book-to-skill/SKILL.md",
       "manual_url": null,
       "install_tiers": [
@@ -14451,6 +14416,50 @@
       },
       "risk_level": "medium",
       "conflict_group": "lark-calendar",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "notebooklm-py",
+      "name": "notebooklm-py",
+      "description": "Install, authenticate, troubleshoot, and operate Gemini Notebook through the notebooklm-py CLI or typed async Python API. Use for notebook and source management, grounded chat and research, and artifact generation or download when the user mentions Gemini Notebook, notebooklm-py, the notebooklm CLI, or its Python API. Do not use for the generic Gemini API or unrelated content creation.",
+      "manual": "skills/default/notebooklm-py/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/teng-lin/notebooklm-py",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/teng-lin/notebooklm-py",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "api-key",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "GEMINI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "notebooklm-py",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -14841,7 +14850,7 @@
     {
       "id": "dasheng-xhs-publish-bridge",
       "name": "dasheng-xhs-publish-bridge",
-      "description": "Use when Dasheng Publish needs to route Xiaohongshu publishing or content access through API-first CLI, MCP, or browser fallback bridges.",
+      "description": "Use when Newma Publish needs to route Xiaohongshu publishing or content access through API-first CLI, MCP, or browser fallback bridges.",
       "manual": "skills/default/dasheng-xhs-publish-bridge/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-xhs-publish-bridge/SKILL.md",
       "install_tiers": [
@@ -15036,7 +15045,7 @@
     {
       "id": "video-shotcraft",
       "name": "video-shotcraft",
-      "description": "Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says \"use video-shotcraft to make a video/promo\", names the Ink Press template or asks to reproduce its effect, or wants a single shot card's motion. 用镜头配方卡 + 已验收模板 + 代码/音频资产制作电影感产品视频（Remotion + 真实页面截图 + 2.5D 运镜 + 节奏卡点 + 声音设计）。当用户要求\"用 video-shotcraft 做视频/宣传片\"、把前端项目/网页做成产品视频、点名 Ink Press 模板或要求复刻模板片效果，或要用镜头卡做单个动效镜头时使用。",
+      "description": "Create cinematic product videos from frontend projects or webpages with Remotion, real page captures, shot cards, the Ink Press template, beat sync and sound design. Use for full product promos, reproducing Ink Press, single shot-card effects, or finding, adding, replacing and aligning sound effects in an existing product video or shot, including candidate-only SFX searches. 用真实页面、镜头卡与 Ink Press 模板制作产品宣传片；用户要求用 video-shotcraft 做视频、复刻模板、制作单镜头，或给已完成的产品片/镜头找音效候选、加音效、换音效、对齐声音时使用。",
       "manual": "skills/default/video-shotcraft/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/video-shotcraft/SKILL.md",
       "install_tiers": [
@@ -18921,56 +18930,6 @@
       }
     },
     {
-      "id": "frontend-dev",
-      "name": "frontend-design",
-      "description": "Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. Builds complete, visually striking web pages with real media, advanced motion, and compelling copy. Use when: building landing pages, marketing sites, product pages, dashboards, generating media assets (image/video/audio/music), writing conversion copy, creating generative art, or implementing cinematic scroll animations.",
-      "manual": "skills/default/frontend-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-16",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "browser-required",
-        "coding-devtools",
-        "default_sentinel",
-        "l2",
-        "minimax_official",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser",
-          "ffmpeg",
-          "node"
-        ],
-        "access_mode": "browser-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "frontend-dev",
-      "preset_excluded": false,
-      "rating": {
-        "score": 73,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "institutional-flow-tracker",
       "name": "institutional-flow-tracker",
       "description": "Use this skill to track institutional investor ownership changes and portfolio flows using 13F filings data. Analyzes hedge funds, mutual funds, and other institutional holders to identify stocks with significant smart money accumulation or distribution. Helps discover stocks before major moves by following where sophisticated investors are deploying capital.",
@@ -19310,7 +19269,7 @@
     {
       "id": "finance-sentiment",
       "name": "finance-sentiment",
-      "description": "Fetch structured stock sentiment across Reddit, X.com, news, and Polymarket using the Adanos Finance API. Use this skill whenever the user asks how much people are talking about a stock, how hot a ticker is on social platforms, how many Polymarket bets exist for a company, whether sources are aligned, or to compare stock sentiment across multiple tickers. Triggers include: \"social sentiment on TSLA\", \"how hot is NVDA on X.com\", \"how many Reddit mentions does AAPL have\", \"compare sentiment on AMD vs NVDA\", \"how many Polymarket bets on Microsoft\", \"is Reddit aligned with X on META\", \"stock buzz\", \"bullish percentage\", and any mention of cross-source stock sentiment research. This skill is READ-ONLY and does not place trades or modify anything.",
+      "description": "Fetch normalized stock sentiment across Reddit, X.com, financial news, and Polymarket from the Adanos Finance API: buzz score, bullish percentage, mention or trade counts, and trend. Use this skill whenever the user asks how much a stock is being discussed or how hot it is on social platforms, how many Reddit mentions or Polymarket bets a company has, whether Reddit, X, and news agree, or wants to compare stock buzz and sentiment across tickers. Read-only: it never places trades or modifies anything.",
       "manual": "skills/default/finance-sentiment/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/finance-sentiment/README.md",
       "install_tiers": [
@@ -19357,7 +19316,7 @@
     {
       "id": "finance-skill-creator",
       "name": "finance-skill-creator",
-      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or iterate on skill quality. Triggers: \"create a skill\", \"make a new skill\", \"build a skill for\", \"write a skill that\", \"skill for doing X\", \"I want a skill to\", \"new skill\", \"design a skill\", \"scaffold a skill\", \"improve this skill\", \"optimize this skill\", \"this skill isn't working well\", \"evaluate this skill\", \"score this skill\", \"how good is this skill\", \"run evals on\", \"benchmark this skill\", \"test this skill's quality\", \"skill quality\", \"skill performance\". Also triggers when a user describes a repeatable workflow they want to automate, says \"I keep doing X manually\", \"can you remember how to do X\", or \"turn this into a skill\".",
+      "description": "Create, improve, and evaluate agent skills (SKILL.md plus reference files). Use this skill whenever the user wants to build, scaffold, or design a new skill, improve or fix an existing skill that isn't working well, score or benchmark a skill's quality or run evals on it, or turn a repeated manual workflow into a skill (\"I keep doing X manually\", \"can you remember how to do X\", \"turn this into a skill\").",
       "manual": "skills/default/finance-skill-creator/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/finance-skill-creator/README.md",
       "install_tiers": [
@@ -20735,7 +20694,7 @@
     {
       "id": "market-top-detector",
       "name": "market-top-detector",
-      "description": "Detects market top probability using O'Neil Distribution Days, Minervini Leading Stock Deterioration, and Monty Defensive Sector Rotation. Generates a 0-100 composite score with risk zone classification. Use when user asks about market top risk, distribution days, defensive rotation, leadership breakdown, or whether to reduce equity exposure. Focuses on 2-8 week tactical timing signals for 10-20% corrections.",
+      "description": "Assesses heuristic market top risk using O'Neil Distribution Days, Minervini Leading Stock Deterioration, and Monty Defensive Sector Rotation. Generates a 0-100 composite score with risk zone classification. Use when user asks about market top risk, distribution days, defensive rotation, leadership breakdown, or whether to reduce equity exposure. Focuses on 2-8 week tactical timing signals for 10-20% corrections.",
       "manual": "skills/default/market-top-detector/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/market-top-detector/SKILL.md",
       "install_tiers": [
@@ -21014,6 +20973,52 @@
       }
     },
     {
+      "id": "prompt-master",
+      "name": "prompt-master",
+      "description": "Generates optimized prompts for AI tools. Activates only when the user explicitly asks to write, fix, improve, or adapt a prompt for a specific AI tool (LLM, Cursor, Midjourney, image AI, video AI, coding agents, etc.). Does not activate for general conversation, coding tasks, document writing, or other non-prompt-engineering work.",
+      "manual": "skills/default/prompt-master/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nidhinjs/prompt-master",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-12",
+        "mirror_source_url": "https://github.com/nidhinjs/prompt-master",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "api-key",
+        "l3",
+        "media-generation",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "prompt-master",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "saas-valuation-compression",
       "name": "saas-valuation-compression",
       "description": "Analyze SaaS company valuation compression between funding rounds. Use this skill whenever the user asks about: how much a SaaS company's valuation multiple changed between rounds, why the ARR multiple compressed or expanded, comparing a company's compression to macro benchmarks, or explaining what drove valuation changes for any VC-backed software company. Trigger on phrases like \"valuation compression\", \"ARR multiple\", \"round-to-round valuation\", \"multiple change\", or when the user asks to compare a company's funding rounds. Always use this skill for any multi-round SaaS valuation analysis — do not try to answer from memory alone.",
@@ -21108,7 +21113,7 @@
     {
       "id": "stock-correlation",
       "name": "stock-correlation",
-      "description": "Analyze stock correlations to find related companies and trading pairs. Use when the user asks about correlated stocks, related companies, sector peers, trading pairs, or how two or more stocks move together. Triggers: \"what correlates with NVDA\", \"find stocks related to AMD\", \"correlation between AAPL and MSFT\", \"what moves with\", \"sector peers\", \"pair trading\", \"correlated stocks\", \"when NVDA drops what else drops\", \"stocks that move together\", \"beta to\", \"relative performance\", \"supply chain partners\", \"correlation matrix\", \"co-movement\", \"related tickers\", \"sympathy plays\", \"semiconductor peers\", \"hedging pair\", \"realized correlation\", \"rolling correlation\", or any request about stocks that move in tandem or inversely. Also triggers for well-known pairs like AMD/NVDA, GOOGL/AVGO, LITE/COHR. If only one ticker is provided, infer the user wants correlated peers.",
+      "description": "Analyze how stocks move together using Yahoo Finance price history (yfinance): find correlated peers for a ticker, measure correlation, beta, and spread between specific tickers, cluster a group into a correlation matrix, and track rolling or regime-dependent correlation. Use this skill whenever the user asks what moves with a stock, what else drops when it drops, related tickers or sympathy plays, sector or supply-chain peers, pair trading or hedging pairs, beta or relative performance, correlation matrices, co-movement, or rolling/realized correlation — including well-known pairs like AMD/NVDA, GOOGL/AVGO, or LITE/COHR. With a single ticker, assume the user wants its correlated peers.",
       "manual": "skills/default/stock-correlation/README.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/stock-correlation/README.md",
       "install_tiers": [

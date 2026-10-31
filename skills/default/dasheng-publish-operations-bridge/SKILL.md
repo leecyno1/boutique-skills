@@ -1,9 +1,9 @@
 ---
 name: dasheng-publish-operations-bridge
-description: Use when a Dasheng Publish channel pack needs account-launch, cold-start, matrix-role, cadence, hook, keyword, series, CTA, or post-publish metric advice before platform execution. Normalizes the external agent-skills-launch-pack into a small machine-readable Publish advisory without uploading or publishing.
+description: Use when a Newma Publish channel pack needs account-launch, cold-start, matrix-role, cadence, hook, keyword, series, CTA, or post-publish metric advice before platform execution. Normalizes the external agent-skills-launch-pack into a small machine-readable Publish advisory without uploading or publishing.
 ---
 
-# Dasheng Publish Operations Bridge
+# Newma Publish Operations Bridge
 
 ## Role
 
@@ -144,7 +144,7 @@ does not satisfy a required operations review.
 - For finance and investment content, add a platform-expression risk check and
   preserve the article/video disclaimer.
 - Keep all runtime request/advice files under
-  `~/Desktop/自媒体创作/07_发布执行/<run_id>/...`; never write them into
+  `~/Desktop/自媒体创作/<run_id>/05_发布/...`; never write them into
   `skills/` or the project root.
 
 ## Upstream Check

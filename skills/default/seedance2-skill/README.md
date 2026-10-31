@@ -1,3 +1,5 @@
+![Seedance 2.0 Prompt Writing Skills](assets/seedance2-thumbnail.png)
+
 # Seedance 2.0 Prompt Writing Skills
 
 [中文](README-zh.md)

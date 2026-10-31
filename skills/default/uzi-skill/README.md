@@ -19,7 +19,7 @@
 [![Methods](https://img.shields.io/badge/Institutional%20Methods-22-red)]()
 [![Self-Review](https://img.shields.io/badge/Self--Review-13%20checks-blueviolet)](skills/deep-analysis/scripts/lib/self_review.py)
 
-A 股 / 港股 / 美股 · 个股深度分析引擎 · **66 位评审团 × 9 大流派 × 22 维数据 × 22 种机构方法** · 最新 **v3.9.4**：前端显示修复 + 美化（kimi-k3）· 完整演进见 [更新日志](#-更新日志)
+A 股 / 港股 / 美股 · 个股深度分析引擎 · **66 位评审团 × 9 大流派 × 22 维数据 × 22 种机构方法** · **main 更新至 2026-10-18**：缺失值证据门控 + 基金持仓时效修复 · manifest 版本 **v3.9.4** · 完整演进见 [更新日志](#-更新日志)
 
 [安装](#安装) · [用法](#用法) · [三档深度](#-三档思考深度v2103-新增) · [Hermes 🆕](INSTALL-HERMES.md) · [评审团](#-66-位评审团) · [Serenity 🆕](#-i-组--serenity--ai-卡位瓶颈猎手) · [机构方法](#-22-种机构级方法) · [自查 gate](#-机械级自查-gatev29-起) · [报告截图](#-报告长什么样) · [FAQ](#-faq) · [入群交流测试](#-测试交流群) · [Contributors](CONTRIBUTORS.md)
 
@@ -28,6 +28,19 @@ A 股 / 港股 / 美股 · 个股深度分析引擎 · **66 位评审团 × 9 �
 </div>
 
 ---
+
+## main 维护更新（2026-10-18）
+
+已整合社区 PR #114–#117、#119–#122，并修复估值分位解析和 macOS 会话 Hook。
+重点包括：按深度控制采集与基金扫描预算、公告公司归属核验、龙虎榜数据缺口分类、评委弃权与复核后重算、多市场评委页面导出。
+
+- 未实现或未经验证的量化模型不输出有效投票；全员弃权时共识显示为不可用，不等于看空。
+- 缺失财务、技术和风险特征不再当成真实的 `0/False`；真实零值和亏损仍参与计算，无证据的占位规则不计票。
+- 基金分散持仓扫描按接口实际返回的最新报告期筛选，不再固定查询 2025 年或混用多个季度。报告展示样本期和数据覆盖；过期、字段异常或抓取失败不伪装成有效信号。
+- 新采集缓存记录分析档位；旧缓存若没有档位记录，复用时请明确传入原来的 `--depth`，系统不会根据缺失维度猜测降档。
+- 本轮验证为离线测试与合成页面检查，未运行真实个股报告，不代表投资效果或数据源可用性保证。
+
+详见 [缺失值与持仓时效修复](docs/maintenance-2026-10-17.md)、[社区修复与后续改进](docs/maintenance-2026-10-16.md)、[评委证据与网页导出](docs/panel-evidence-status.md)、[模型验证边界](docs/panel-model-validation.md)。
 
 ## 🚀 30 秒上手
 
@@ -52,13 +65,15 @@ A 股 / 港股 / 美股 · 个股深度分析引擎 · **66 位评审团 × 9 �
 /stock-deep-analyzer:dcf 600519                ← DCF 估值专项
 ```
 
-> 💡 **当前最新稳定版 v3.9.4** · 完整演进见 [更新日志](#-更新日志)：
+> 💡 **main 最新维护：2026-10-18 · manifest 版本 v3.9.4** · 最近维护更新尚未单独升级版本号，完整演进见 [更新日志](#-更新日志)：
+> - **证据与数据完整性**：缺失值不伪装成 `0/False`、无证据规则弃权；基金持仓按实际返回报告期比较，报告显示时效与覆盖。离线回归 **948 passed、1 skipped**，不代表收益或胜率验证。
 > - **66 位评审团 · 9 大流派**（v3.7 新增 a16z Andreessen / Naval / 黄仁勋 / 马斯克 / 高瓴张磊 / Burry / Chanos 等 13 位 + 独立 I 组 Serenity AI 卡位猎手）· 242 条量化规则
 > - **Serenity 严谨化**（v3.8）：8 罚分因子 + 3 级证据阶梯（"有定点量产"≈90 分 vs "仅题材"≈60 分）+ 供应链 8 层分层
 > - **Tier-1 五方法**（v3.8）：`/ai-readiness` `/earnings-preview` `/model-update` `/returns` `/rebalance`
 > - **多股对比 & 组合**（v3.6）：`--versus` 2-4 只横向对决 · `--portfolio` CSV 组合健康度 · 暗色模式 + sticky TOC（v3.9.1 起可一键折叠）+ 术语悬浮
+> - **A+港股每日观察榜**：过滤 ST/无有效报价/成交额不足 2 亿标的 · 24 位游资规则初筛 + Serenity 证据检查 · 最多 10 只、不凑数 · JSON 快照 + HTML + 观察账本
 > - **流派视角锁定**（v3.5）：`--school A-I` 只看一派的判断 · 报告带 SCHOOL LOCK banner
-> - **架构**：v3.0 pipeline 默认主干 · 685 tests 全过 · v2.x API 100% 向后兼容（`UZI_LEGACY=1` 回老路径）
+> - **架构**：v3.0 pipeline 默认主干 · 离线 pytest 回归覆盖 · v2.x API 100% 向后兼容（`UZI_LEGACY=1` 回老路径）
 >
 > **Hermes 用户**：`hermes skills install` 被上游 Skills Guard 误判 · 用一键脚本装：`curl -fsSL https://raw.githubusercontent.com/wbh604/UZI-Skill/main/install-hermes.sh | bash` · 详见 [INSTALL-HERMES.md](INSTALL-HERMES.md).
 
@@ -235,7 +250,35 @@ python run.py --versus 茅台 五粮液 002594.SZ         # 2-4 只票横向对�
 python run.py --portfolio holdings.csv             # CSV 组合 · 加权评分 + 健康度
 python run.py 600519.SH --output-dir /tmp/out      # SaaS 集成 · index.html + meta.json
 python run.py 600519.SH --remote                   # 公网链接 · 缺 cloudflared 时默认不改系统
+python run.py 601238.SH --from-modeling            # 采集后建模崩溃 · 从 raw_data.json 秒级续跑
+python screen.py --mode noon --markets A,H --top 10 --no-browser
+python run.py --screen daily --mode close --snapshot-only --no-browser
 ```
+
+### A+港股每日观察榜
+
+`screen.py` 是全市场扫描，不等同于单只股票的 `/stock-deep-analyzer:screen <ticker>`。默认抓取 A 股和港股实时横截面，过滤 ST、退市整理、无有效报价和实际成交额低于 2 亿本币的标的，再生成规则初筛观察结果。默认增强行业、结构化消息、盘口及分钟线；当前仍不是 Agent role-play，也不保证实际成交，不会单凭高分给出执行信号。
+
+```bash
+python screen.py --mode noon --markets A,H --schools F,I --top 10 --no-browser
+python screen.py --mode close --markets A,H --schools F,I --top 10 --no-browser
+python screen.py --mode noon --snapshot-only --no-browser  # 网络受限时只用行情横截面
+```
+
+- `--top 10` 是上限，不是配额；低于 70 分的研究候选不会为凑数入榜。
+- `--mode noon/close` 不会把实时行情变成历史快照。报告记录实际观测时间；下午运行会显示下午时点，不会回写成上午。历史 Python 调用必须显式提供冻结快照，并禁止混入实时消息。
+- 行情接口未提供行业时，行业排名保持缺失，不把“未分类”当作第一主线；A/H 分别计算行业排名，板块宽度基于成交额过滤前的样本。
+- 缺少行业、可核验消息或分时成交证据时一律降为观察。行业来自东财 F10 批量映射（A 股 `EM2016`、港股 `BELONG_INDUSTRY`）；盘口采用腾讯 qt 主源、东财备用；分钟线采用东财主源、腾讯备用。不会按统一 9.7% 涨幅断言不可成交。
+- 时间和单位分开处理：使用接口内的报价时间；A 股腾讯成交额由万元转为元，港股保留港元；腾讯分钟累计成交额转为单分钟增量。币种或股票代码不匹配、分钟线与报价不一致时不放行。
+- 条件门禁：发布时重新检查报价不超过 120 秒、行业快照不超过 300 秒、行业覆盖率至少 95%、交易日历确认开市、有双边盘口及最近连续三分钟的有效成交；公司相关消息须有出处链接及最近 72 小时的有效发布时间。还会检查买卖价差、VWAP 与价格关系，并在刷新行情后重新执行用户设置的成交额门槛。上述数值是保守的数据/交易条件阈值，不是经回测验证的盈利策略参数。
+- HTML 展开区显示行业、盘口、分钟线的来源与报价时间，以及消息原文链接和数据源异常；只有全部条件满足才显示“数据条件通过，待成交确认”，不等于已核验成交或已完成定性研判。
+- 公共港股行情可能延迟或缺少买卖盘数量；不能仅凭 HTTP 成功解除限制。需要更稳定的实时盘口时须配置合规实时数据源，当前未自动购买行情或连接交易账户。
+- 港股没有 A 股涨停板、T+1 和龙虎榜人物生态，F 组统一 `skip`；Serenity 可正常评估。
+- 不使用晚于快照时点、时间无法核验的消息，以及当日龙虎榜。席位只作历史资金风格线索，不代替订单、量产等业务证据，也不宣称某自然人实际参与。
+- 输出位于 `skills/deep-analysis/scripts/reports/screens/<date>/<report-id>/`，包含 `picks.json`、`report.meta.json`、`index.html`。
+- 账本追加到 `skills/deep-analysis/scripts/.cache/_daily_screen/signals.jsonl`。规则分未经概率校准，不是胜率；账本当前只记录候选，尚未完成收益追踪和样本外验证。
+
+deep 档另有强制 role-play 门禁：`run.py --depth deep` 只执行 Stage 1。Agent 必须读取当前股票缓存中的 `_agent_review_context.json`，把 `analysis_input_hash` 写入 `agent_analysis.json` 后才能调用 Stage 2；旧快照的角色判断不会被复用。
 
 ---
 
@@ -645,8 +688,10 @@ cp .env.example .env
 python run.py 贵州茅台
 ```
 
-**双端都不通**：agent 应保留 `_data_gaps.json` / `_resolve_error.json`，
-等网络恢复后直接跑 `stage2()` 可以复用已采集数据，不用从头来过。
+**双端都不通**：agent 应保留 `_data_gaps.json` / `_resolve_error.json`。如果数据已采集、
+但机构建模或评分阶段中断，使用 `python run.py <ticker> --from-modeling` 从
+`raw_data.json` 继续；如果 `dimensions.json` 和 `panel.json` 也已生成，可直接调用
+`stage2()`，都不需要从头抓取。
 
 详见 [AGENTS.md · 网络受限环境](AGENTS.md) 的场景 A/B/C 速查。
 
@@ -676,7 +721,7 @@ UZI-Skill/
 │   │       ├── assemble_report.py      # HTML shell (v3.2 瘦身 587 行)
 │   │       ├── fetch_*.py              # 22 fetcher · 也是独立 CLI
 │   │       ├── compute_deep_methods.py # 机构建模
-│   │       ├── tests/                  # 642 pytest
+│   │       ├── tests/                  # pytest regression suite
 │   │       └── lib/
 │   │           ├── pipeline/           # 🆕 v3.0 管道式架构（默认路径）
 │   │           │   ├── run.py          # run_pipeline 编排入口
@@ -820,8 +865,12 @@ python run.py <ticker> --no-resume
 
 ## 📋 更新日志
 
+以下 `main 维护` 条目已推送到主分支，但未单独升级 manifest 版本或发布新版本标签；当前 manifest 仍为 `v3.9.4`。
+
 | 版本 | 日期 | 主要变化 |
 |---|---|---|
+| **main 维护** | **2026-10-18** | **缺失值证据门控 + 基金持仓时效修复**：保留真实零值和亏损，未知字段、失败数据及恒真占位规则不计票；风格识别复用统一特征。持仓按实际返回季度筛选、排序和去重，缓存区分报告期，过期或异常样本降级，HTML 展示样本期与覆盖。补修行业占位符、负营收 CAGR、基金代码空格、百分号权重及市场后缀。新增 56 项回归，全量 **948 passed、1 skipped**；[提交 b49bccd](https://github.com/wbh604/UZI-Skill/commit/b49bccdd84c385a491a2001d2297ad256b10b0d7) · [修复说明](docs/maintenance-2026-10-17.md) |
+| **main 维护** | **2026-10-16** | **社区修复整合**：整合 PR #114–#117、#119–#122，修复估值分位解析、macOS Hook、扫描预算、档位缓存、公告归属、龙虎榜证据和评委弃权/重算；补充多市场评委页面核验。全量 **892 passed、1 skipped**；[提交 2c5505d](https://github.com/wbh604/UZI-Skill/commit/2c5505d9d30363379ce708f85cac93f86b2788cf) · [维护记录](docs/maintenance-2026-10-16.md) |
 | **v3.9.4** | 2026-08-08 | **前端显示修复 + 美化（kimi-k3）** · ① None 泄漏清零：政策面（方向/补贴/监管/反垄断）与资金面"主力资金 20日"在数据源返回 null 时曾直接显示 `None`，现统一兜底为 "—"/"数据暂缺"。② 移动端图表裁切：sparkline SVG 固定 220px 宽度撑破容器（LBO 的 EBITDA 路径/债务偿还、维度卡迷你图），改为 `width:100%` 自适应 + 移动端单列堆叠；敏感性表/机构建模表移动端横向可滚动。③ 治理面措辞："关联交易/违规"此前仅因搜过查询词就显示"未发现"（`qualitative_search` 存的是搜索词非结果），改为中性"暂无公开违规记录"。④ 抄作业卡片"时间框架/仓位风格/翻盘条件"标签与正文粘连，改为标签不换行+留白+正文右对齐。⑤ 美化：维度卡顶部常驻分级色条（高绿/中金/低红）+ hover 高亮、全局平滑锚点滚动、文本选择色、`:focus-visible` 聚焦环、细滚动条、section/卡片进入视口轻浮现（尊重 `prefers-reduced-motion`）、TOC 锚点 `scroll-margin` 防遮挡。⑥ 版本对齐：3 个子 skill（investor-panel/lhb-analyzer/trap-detector）原停在 3.9.2 与主 manifest 不一致，全部统一 bump 到 3.9.4。全量 685 passed |
 | **Unreleased** | 2026-08-05 | **全球同行业绩对比 + 数据完整性 hotfix** · 自动按全球细分行业发现候选并补全 Top 8 年度财务，覆盖日/韩/台/新/印/加/澳/英/欧洲等 Yahoo 交易所后缀；原币与 USD 标准化值分离，跨币种原始市值不混算，同行失败隔离、后备候选递补并缓存 24h。报告新增目标高亮、同行中位数、全球分位、规模/毛利率散点和明细表，结果接入 Comps 与维度评分。同步包含 issue #87/#90 的行情 scale、自身同行剔除和美股 TTM 修复。22 个全球同行专项测试 · 全量 685 passed |
 | **v3.9.3** | 2026-08-07 | **茅台深度实测驱动的数据/渲染修复** · ① 现金流误判：`fcf_positive` 从 OCF/净利比改为真实 FCF，茅台(FCF 658亿)不再显示"现金流为负"；`_ic_risks` 的"行业周期下行"不再无条件追加，仅行业判定衰退时才算。② 同行修复：push2 被反爬时 4_peers 曾只剩自己一行("暂无可比股")——新增 INDUSTRY_PEERS 硬编码同行兜底(白酒→五粮液/泸州老窖/洋河/山西汾酒)，用 `stock_financial_analysis_indicator_em`(不走 push2)拉 ROE。③ 渲染修复：评委 pass/fail dict 不再泄漏成 Python 字面量(报告曾出现 162 处 `{'msg':...}`)；4_peers 对比条 `abs(None)` 崩溃；一致目标价不再显示"(None)"。④ deep 档强制 agent 介入 role-play：`--depth deep` 不再 CLI 一把梭，须 stage1 → 读 persona → 写 agent_analysis.json(`per_investor_override` 已能真正合并)。⑤ Codex 评审反馈(P1/P2)：`fcf_positive` 优先用真实经营现金流(净利×0.8 仅作缺失回退)；同行兜底补别名匹配(集成电路→半导体 / 工业金属→有色金属)且被分析股不在同行列表时补 self 行；HK rank-only 的 `peer="—"` 不再被渲染成 0 对比条。45+ 回归测试 |
@@ -910,15 +959,15 @@ python run.py <ticker> --no-resume
 
 实时 stars：![GitHub Repo stars](https://img.shields.io/github/stars/wbh604/UZI-Skill?style=social)
 
-<a href="https://star-history.com/#wbh604/uzi-skill&Date">
+<a href="https://star-history.dera.page/#wbh604/uzi-skill&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=wbh604/uzi-skill&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=wbh604/uzi-skill&type=Date" />
  </picture>
 </a>
 
-> 注：star-history.com 服务端有 24h 缓存，增长很猛的前几天图可能滞后（想看当前真实数字看上面的 shields.io badge，或点图进 star-history 官网会触发刷新）。
+> 注：star-history.dera.page 服务端有 24h 缓存，增长很猛的前几天图可能滞后（想看当前真实数字看上面的 shields.io badge，或点图进 star-history.dera.page 官网会触发刷新）。
 
 ---
 

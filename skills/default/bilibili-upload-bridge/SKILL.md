@@ -1,13 +1,13 @@
 ---
 name: bilibili-upload-bridge
-description: Use when Dasheng Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.
+description: Use when Newma Publish needs to prepare, upload, or package Bilibili video submissions from completed transwrite video channel packs.
 ---
 
 # Bilibili Upload Bridge
 
 ## Role
 
-Bridge Dasheng Publish channel packs to B站 upload tools. Prefer `biliup-rs`; use the project-local, ignored `social-auto-upload` upstream as fallback. Both remain independently updateable and are not version-locked by the main repository.
+Bridge Newma Publish channel packs to B站 upload tools. Prefer `biliup-rs`; use the project-local, ignored `social-auto-upload` upstream as fallback. Both remain independently updateable and are not version-locked by the main repository.
 
 Default roots:
 

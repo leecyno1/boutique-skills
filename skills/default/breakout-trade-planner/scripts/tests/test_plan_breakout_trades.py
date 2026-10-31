@@ -4,14 +4,15 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
-import tempfile
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import pytest
 from plan_breakout_trades import (
     generate_plans,
     load_input,
     process_candidate,
+    resolve_as_of,
     validate_result,
 )
 
@@ -92,30 +93,26 @@ def _make_input_data(results: list[dict]) -> dict:
 
 
 class TestLoadInput:
-    def test_missing_schema_version_raises(self):
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            json.dump({"results": []}, f)
-            f.flush()
-            with pytest.raises(ValueError, match="schema_version"):
-                load_input(f.name)
-            os.unlink(f.name)
+    # tmp_path instead of NamedTemporaryFile: Windows cannot delete a file
+    # while the writer still holds it open.
+    def test_missing_schema_version_raises(self, tmp_path):
+        path = tmp_path / "input.json"
+        path.write_text(json.dumps({"results": []}), encoding="utf-8")
+        with pytest.raises(ValueError, match="schema_version"):
+            load_input(str(path))
 
-    def test_wrong_schema_version_raises(self):
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            json.dump({"schema_version": "99.0", "results": []}, f)
-            f.flush()
-            with pytest.raises(ValueError, match="Unsupported"):
-                load_input(f.name)
-            os.unlink(f.name)
+    def test_wrong_schema_version_raises(self, tmp_path):
+        path = tmp_path / "input.json"
+        path.write_text(json.dumps({"schema_version": "99.0", "results": []}), encoding="utf-8")
+        with pytest.raises(ValueError, match="Unsupported"):
+            load_input(str(path))
 
-    def test_valid_input_loads(self):
+    def test_valid_input_loads(self, tmp_path):
         data = _make_input_data([_make_vcp_result()])
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            json.dump(data, f)
-            f.flush()
-            loaded = load_input(f.name)
-            assert len(loaded["results"]) == 1
-            os.unlink(f.name)
+        path = tmp_path / "input.json"
+        path.write_text(json.dumps(data), encoding="utf-8")
+        loaded = load_input(str(path))
+        assert len(loaded["results"]) == 1
 
 
 class TestValidateResult:
@@ -149,6 +146,31 @@ class TestMinerviniGate:
         assert classified["classification"] == "actionable"
         assert classified["data"]["plan_type"] == "pending_breakout"
         assert classified["data"]["decision_code"] == "ACTIONABLE_PREBREAKOUT"
+
+    def test_plan_session_skips_holiday_and_rolls_after_early_close(self):
+        result = _make_vcp_result(score=85.0)
+        args = _make_args()
+        exposure = {"sector_exposure": {}, "open_risk_pct": 0}
+
+        holiday = process_candidate(
+            result,
+            args,
+            0.0,
+            {},
+            exposure,
+            datetime(2026, 7, 3, 10, tzinfo=ZoneInfo("America/New_York")),
+        )
+        assert holiday["data"]["plan_valid_for_session"] == "2026-07-06"
+
+        after_early_close = process_candidate(
+            result,
+            args,
+            0.0,
+            {},
+            exposure,
+            datetime(2026, 11, 27, 13, tzinfo=ZoneInfo("America/New_York")),
+        )
+        assert after_early_close["data"]["plan_valid_for_session"] == "2026-11-30"
 
     def test_prebreakout_risk_worst_over_8_rejected(self):
         # pivot=100, last_low=88 -> stop=87.12, worst=102 -> risk=14.58%
@@ -284,10 +306,16 @@ class TestPortfolioConstraints:
 class TestGeneratePlans:
     def test_empty_results(self):
         data = _make_input_data([])
-        args = _make_args()
+        args = _make_args(decision_as_of=resolve_as_of("2026-07-06"))
         plans = generate_plans(data, args)
         assert plans["schema_version"] == "1.0"
         assert plans["summary"]["actionable_count"] == 0
+        assert plans["generated_at"] == "2026-07-06T00:00:00-04:00"
+
+    @pytest.mark.parametrize("value", ["not-a-date", "2026-07-06T10:00:00"])
+    def test_invalid_or_naive_as_of_rejected(self, value):
+        with pytest.raises(ValueError, match="--as-of"):
+            resolve_as_of(value)
 
     def test_score_order_processing(self):
         r1 = _make_vcp_result(symbol="HIGH", score=90.0)

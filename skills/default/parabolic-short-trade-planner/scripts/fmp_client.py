@@ -16,16 +16,31 @@ Features:
 """
 
 import os
+import re
 import sys
 import time
-from datetime import date, timedelta
+from datetime import datetime, timedelta
 from typing import Optional
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 try:
     import requests
 except ImportError:
     print("ERROR: requests library not found. Install with: pip install requests", file=sys.stderr)
     sys.exit(1)
+
+# Mirror of scripts/provider_contracts.py::redact_url (clients are standalone).
+# Requires a `?`/`&` prefix, so this masks apikey=/api_key= in URL query
+# strings, not a rendered params dict (unreachable today: only
+# RequestException text -- which can embed the full request URL -- is
+# ever printed here, never a bare params repr()).
+_APIKEY_RE = re.compile(r"([?&](?:apikey|api_key)=)[^&\s]+", re.IGNORECASE)
+
+
+def _redact_key(text: str) -> str:
+    """Mask apikey=/api_key= query values so stderr never carries the key."""
+    return _APIKEY_RE.sub(r"\1REDACTED", str(text))
+
 
 try:
     from _fmp_compat import v3_to_stable
@@ -34,6 +49,26 @@ except ModuleNotFoundError:  # loaded by file path (e.g. repo-level contract tes
     from _fmp_compat import v3_to_stable
 
 # --- FMP endpoint fallback: stable (new users) -> v3 (legacy users) ---
+
+
+def _et_today(now=None):
+    """America/New_York calendar date for provider query windows (issue #427).
+
+    An explicit aware ``now`` wins (deterministic runs/tests); otherwise the
+    current instant is converted to America/New_York. ``now`` must be
+    timezone-aware when supplied. Fail-closed: missing TZ data raises
+    RuntimeError naming the tzdata requirement instead of silently falling
+    back to the runner's local clock.
+    """
+    try:
+        tz = ZoneInfo("America/New_York")
+    except ZoneInfoNotFoundError as exc:
+        raise RuntimeError("America/New_York timezone data is missing; pip install tzdata") from exc
+    if now is not None:
+        if now.tzinfo is None:
+            raise ValueError("now must be timezone-aware")
+        return now.astimezone(tz).date()
+    return datetime.now(tz).date()
 
 
 def _stable_quote_url(base, symbols_str, params):
@@ -55,7 +90,7 @@ def _stable_hist_url(base, symbols_str, params):
     # (trading-day/calendar-day ratio ~252/365 ~0.69, so *2 leaves headroom).
     days = params.pop("timeseries", None)
     if days is not None:
-        today = date.today()
+        today = _et_today()
         params["from"] = (today - timedelta(days=int(days) * 2)).isoformat()
         params["to"] = today.isoformat()
     return base, params
@@ -133,7 +168,7 @@ class FMPClient:
     _ENDPOINT_FAILURE_THRESHOLD = 3  # disable endpoint after N consecutive failures
 
     def __init__(self, api_key: Optional[str] = None):
-        self.api_key = api_key or os.getenv("FMP_API_KEY")
+        self.api_key = (api_key or os.getenv("FMP_API_KEY") or "").strip()
         if not self.api_key:
             raise ValueError(
                 "FMP API key required. Set FMP_API_KEY environment variable "
@@ -155,8 +190,35 @@ class FMPClient:
         # an endpoint was called with quiet=True.
         self._last_error: Optional[str] = None
 
+    def _redact_secret(self, text) -> str:
+        """Mask raw and URL-encoded key echoes before diagnostics are truncated."""
+        from urllib.parse import quote, quote_plus
+
+        text = _redact_key(text)
+        if not self.api_key:
+            return text
+        patterns = {re.escape(self.api_key)}
+        for encoded in (quote(self.api_key, safe=""), quote_plus(self.api_key, safe="")):
+            # Percent triplets are case-insensitive; the key's letters are not.
+            parts = re.split(r"(%[0-9A-Fa-f]{2})", encoded)
+            patterns.add(
+                "".join(
+                    "(?i:" + re.escape(part) + ")"
+                    if re.fullmatch(r"%[0-9A-Fa-f]{2}", part)
+                    else re.escape(part)
+                    for part in parts
+                )
+            )
+        # One pass prevents a short key from matching the replacement marker.
+        return re.sub("|".join(sorted(patterns, key=len, reverse=True)), "***REDACTED***", text)
+
     def _rate_limited_get(
-        self, url: str, params: Optional[dict] = None, quiet: bool = False
+        self,
+        url: str,
+        params: Optional[dict] = None,
+        quiet: bool = False,
+        *,
+        _json_retry: bool = True,
     ) -> Optional[dict]:
         self._last_error = None
         if self.rate_limit_reached:
@@ -177,20 +239,37 @@ class FMPClient:
 
             if response.status_code == 200:
                 self.retry_count = 0
-                return response.json()
+                try:
+                    data = response.json()
+                except ValueError as e:
+                    # Malformed 200 body: retry once per call chain, then fail
+                    # soft with a redacted reason instead of raising. The retry
+                    # adds no backoff beyond the normal rate-limit delay and
+                    # costs one extra API call (counts against any budget).
+                    msg = self._redact_secret(f"invalid JSON response: {e}")
+                    if _json_retry:
+                        if not quiet:
+                            print(f"WARNING: {msg}; retrying once", file=sys.stderr)
+                        return self._rate_limited_get(url, params, quiet=quiet, _json_retry=False)
+                    self._last_error = msg
+                    if not quiet:
+                        print(f"ERROR: {msg}", file=sys.stderr)
+                    return None
+                return data
             elif response.status_code == 429:
                 self.retry_count += 1
                 if self.retry_count <= self.max_retries:
                     print("WARNING: Rate limit exceeded. Waiting 60 seconds...", file=sys.stderr)
                     time.sleep(60)
-                    return self._rate_limited_get(url, params, quiet=quiet)
+                    return self._rate_limited_get(url, params, quiet=quiet, _json_retry=_json_retry)
                 else:
                     self._last_error = "HTTP 429 (daily rate limit)"
                     print("ERROR: Daily API rate limit reached.", file=sys.stderr)
                     self.rate_limit_reached = True
                     return None
             else:
-                msg = f"HTTP {response.status_code} - {response.text[:200]}"
+                body = self._redact_secret(response.text)[:200]
+                msg = self._redact_secret(f"HTTP {response.status_code} - {body}")
                 self._last_error = msg
                 if not quiet:
                     print(
@@ -199,8 +278,9 @@ class FMPClient:
                     )
                 return None
         except requests.exceptions.RequestException as e:
-            self._last_error = f"request exception: {e}"
-            print(f"ERROR: Request exception: {e}", file=sys.stderr)
+            redacted = self._redact_secret(str(e))
+            self._last_error = f"request exception: {redacted}"
+            print(f"ERROR: Request exception: {redacted}", file=sys.stderr)
             return None
 
     def _request_with_fallback(self, endpoint_key, symbols_str, extra_params=None):
@@ -354,7 +434,10 @@ class FMPClient:
                 if row.get("Symbol")
             ]
         except (requests.exceptions.RequestException, csv.Error, KeyError) as e:
-            print(f"ERROR: constituents CSV fallback failed: {e}", file=sys.stderr)
+            print(
+                self._redact_secret(f"ERROR: constituents CSV fallback failed: {e}"),
+                file=sys.stderr,
+            )
             return None
         return data or None
 

@@ -22,23 +22,28 @@ name: my-skill-name
 ```yaml
 description: >
   [What it does] Analyze stocks using the SEPA methodology.
-  [Expert triggers] SEPA, Minervini, VCP, trend template, Stage 2, pivot point.
-  [Beginner triggers] "should I buy this stock", "is this a good setup".
+  [Intent categories + vocabulary] SEPA, Minervini, VCP, trend template, Stage 2, pivot point.
+  [Scoped sideways entries] "should I buy this stock" about a growth or momentum name.
   [Context triggers] When user shares a chart, mentions swing trading criteria.
+  [Boundaries] For X, use sibling-skill instead.
 ```
 
 **Writing a high-quality description:**
 
 1. Start with a concrete action verb: "Analyze", "Generate", "Fetch", "Evaluate" (not "Use" or "Handle")
-2. Name specific tools/APIs: "via yfinance", "using the Funda AI API"
-3. List 5+ explicit trigger phrases in quotes
-4. Include 2+ sideways entry points (unexpected phrasings)
-5. End with context triggers ("also when the user...")
+2. Name specific tools/APIs: "via yfinance", "using the Fintel API"
+3. Name every category of request the skill serves, with the distinctive terms users will use — both expert vocabulary and plain-language requests
+4. Scope sideways entry points to their context ("should I buy this stock" about a growth name), so they don't fire everywhere
+5. Point to sibling skills for neighboring requests, and state read-only limits where relevant
+
+The description rides along in every request, so it is the one place where calibrated urgency ("use this skill whenever...") belongs. Keep behavioral instructions — how to do the work — in the body.
 
 **Common mistakes:**
 - Too short: "Analyze stocks" — won't trigger on specific requests
 - Too generic: "Financial analysis tool" — triggers on everything, useful for nothing
 - Missing beginner terms: Only expert jargon excludes most users
+- Synonym lists: ten quoted phrasings of the same request cost tokens in every session and generalize worse than naming the category once
+- Behavior in the description: "default to running all three methods" belongs in the body
 
 ## Optional Fields
 
@@ -71,9 +76,9 @@ Declare API keys or tokens the skill needs. These are secrets stored in `~/.herm
 
 ```yaml
 required_environment_variables:
-  - name: FUNDA_API_KEY
-    prompt: "Funda AI API key"
-    help: "Get one at https://funda.ai/dashboard"
+  - name: FINTEL_API_KEY
+    prompt: "Fintel API key"
+    help: "Get one at https://fintel.io/api"
     required_for: "API access"
 ```
 

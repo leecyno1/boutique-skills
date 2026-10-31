@@ -1,15 +1,15 @@
 # Boutique Skills Audit
 
-- Time: 2026-09-30 21:27:10
+- Time: 2026-10-31 09:26:01
 - Status: **WARN**
 - Catalog skills: 458
 - Audited skills: 452
 - Legacy catalog skills: 42
 - Installed/Resolved: 452
 - Missing: 0
-- Missing env vars: 149
+- Missing env vars: 151
 - Duplicate capabilities: 0
-- Risk hits: 15
+- Risk hits: 16
 - Missing native origins: 0
 - Standard bundle issues: 0
 
@@ -101,6 +101,7 @@
 - book-to-skill: `GITHUB_TOKEN`
 - bug-bounty: `OPENAI_API_KEY`
 - lark-calendar: `FEISHU_APP_SECRET`
+- notebooklm-py: `GEMINI_API_KEY`
 - paperless-docs: `PAPERLESS_TOKEN`
 - paperless-ngx-tools: `PAPERLESS_TOKEN`
 - alphaear-search: `TUSHARE_TOKEN`
@@ -157,6 +158,7 @@
 - parabolic-short-trade-planner: `ALPACA_API_KEY`
 - parabolic-short-trade-planner: `FMP_API_KEY`
 - pead-screener: `FMP_API_KEY`
+- prompt-master: `OPENAI_API_KEY`
 - saas-valuation-compression: `TUSHARE_TOKEN`
 - signal-postmortem: `FMP_API_KEY`
 - stock-correlation: `TUSHARE_TOKEN`
@@ -185,6 +187,7 @@
 - minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/env_check.sh`
 - minimax-docx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-docx/scripts/setup.sh`
 - minimax-xlsx: `\bsudo\b` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/minimax-xlsx/scripts/libreoffice_recalc.py`
+- huashu-design: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/huashu-design/scripts/verify-video.sh`
 - alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/evaluation.py`
 - alphaear-predictor: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-predictor/scripts/utils/predictor/training.py`
 - alphaear-signal-tracker: `(?<![A-Za-z0-9_])eval\s*\(` in `/Volumes/PSSD/Projects/boutique-openclaw-skills/skills/default/alphaear-signal-tracker/scripts/utils/predictor/evaluation.py`

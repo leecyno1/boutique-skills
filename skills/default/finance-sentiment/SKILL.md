@@ -1,20 +1,18 @@
 ---
 name: finance-sentiment
 description: >
-  Fetch structured stock sentiment across Reddit, X.com, news, and Polymarket
-  using the Adanos Finance API. Use this skill whenever the user asks how much
-  people are talking about a stock, how hot a ticker is on social platforms,
-  how many Polymarket bets exist for a company, whether sources are aligned, or
-  to compare stock sentiment across multiple tickers. Triggers include:
-  "social sentiment on TSLA", "how hot is NVDA on X.com", "how many Reddit
-  mentions does AAPL have", "compare sentiment on AMD vs NVDA", "how many
-  Polymarket bets on Microsoft", "is Reddit aligned with X on META", "stock
-  buzz", "bullish percentage", and any mention of cross-source stock sentiment
-  research. This skill is READ-ONLY and does not place trades or modify
-  anything.
+  Fetch normalized stock sentiment across Reddit, X.com, financial news, and
+  Polymarket from the Adanos Finance API: buzz score, bullish percentage, mention or
+  trade counts, and trend. Use this skill whenever the user asks how much a stock is
+  being discussed or how hot it is on social platforms, how many Reddit mentions or
+  Polymarket bets a company has, whether Reddit, X, and news agree, or wants to
+  compare stock buzz and sentiment across tickers. Read-only: it never places trades
+  or modifies anything.
 ---
 
 # Finance Sentiment Skill
+
+If your host has not already executed the shell probes below (for example, in Codex), run the commands inside the `!` wrappers with its shell tool before choosing a setup path. Use the actual output; if shell access is unavailable, report that limitation.
 
 Fetches structured stock sentiment from the Adanos Finance API.
 

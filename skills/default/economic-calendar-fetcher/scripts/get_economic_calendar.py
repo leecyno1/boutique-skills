@@ -6,13 +6,66 @@ Retrieves economic events and data releases for specified date range
 
 import argparse
 import json
+import math
 import os
+import re
 import sys
-import urllib.error
-import urllib.parse
-import urllib.request
 from datetime import datetime, timedelta
 from typing import Optional
+
+from fmp_client import FMPClient
+
+# Mirror the versioned economic-calendar contract without a repo-only import:
+# this script also runs inside the standalone .skill archive. Repository tests
+# bind these names/types/nullability to the recorded provider contract.
+REQUIRED_TEXT_FIELDS = ("date", "country", "event", "currency", "impact")
+NULLABLE_NUMBER_FIELDS = ("previous", "estimate", "actual", "change", "changePercentage")
+
+
+class EconomicCalendarSchemaError(ValueError):
+    """A response cannot be safely presented as economic event data."""
+
+
+def validate_economic_events(events: list[dict]) -> None:
+    """Validate all rows before formatting or opening any output file.
+
+    Null readings are normal for scheduled/unreported events. Rejecting a
+    malformed row rather than dropping it prevents schema drift from quietly
+    reducing the event set. Errors contain only trusted field names/row indexes,
+    never provider values or payloads.
+    """
+    if not isinstance(events, list):
+        raise EconomicCalendarSchemaError("Economic calendar response must be a JSON array")
+    for index, row in enumerate(events):
+        if not isinstance(row, dict):
+            raise EconomicCalendarSchemaError(f"Economic calendar row {index} must be an object")
+        for field in REQUIRED_TEXT_FIELDS:
+            value = row.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise EconomicCalendarSchemaError(
+                    f"Economic calendar row {index}: missing or invalid {field}"
+                )
+        timestamp = row["date"]
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", timestamp):
+            raise EconomicCalendarSchemaError(f"Economic calendar row {index}: invalid date")
+        try:
+            datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            raise EconomicCalendarSchemaError(
+                f"Economic calendar row {index}: invalid date"
+            ) from None
+        for field in NULLABLE_NUMBER_FIELDS:
+            if field not in row:
+                raise EconomicCalendarSchemaError(f"Economic calendar row {index}: missing {field}")
+            value = row[field]
+            if value is not None and (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or (isinstance(value, float) and not math.isfinite(value))
+            ):
+                raise EconomicCalendarSchemaError(
+                    f"Economic calendar row {index}: invalid numeric {field}"
+                )
 
 
 def get_api_key() -> Optional[str]:
@@ -32,6 +85,14 @@ def fetch_economic_calendar(from_date: str, to_date: str, api_key: str) -> list[
     """
     Fetch economic calendar data from FMP API.
 
+    HTTP/auth/retry live in the vendored ``fmp_client.py`` (generated,
+    Issue #495). The client's ``get_economic_calendar`` extension keeps the
+    raise semantics the old urllib implementation pinned: 402 → the exact
+    upgrade-required ``ValueError``; other HTTP failures → ``API returned
+    status code {code}``; transport failures → ``Network error: ...``;
+    non-list 200 payload → ``Unexpected API response format``. Header auth
+    (deliberate change from query-param): the key never appears in a URL.
+
     Args:
         from_date: Start date in YYYY-MM-DD format
         to_date: End date in YYYY-MM-DD format
@@ -41,44 +102,24 @@ def fetch_economic_calendar(from_date: str, to_date: str, api_key: str) -> list[
         List of economic event dictionaries
 
     Raises:
-        urllib.error.HTTPError: If API request fails
-        ValueError: If response is invalid, or if the endpoint is restricted (402)
+        ValueError: If response is invalid, transport fails, or the endpoint
+            is restricted (402)
     """
-    base_url = "https://financialmodelingprep.com/stable/economic-calendar"
-
-    # Build query parameters (stable API uses apikey as query param)
-    params = {"from": from_date, "to": to_date, "apikey": api_key}
-
-    # Construct URL with parameters
-    url = f"{base_url}?{urllib.parse.urlencode(params)}"
-
+    client = FMPClient(api_key=api_key)
     try:
-        # Make API request
-        request = urllib.request.Request(url)
-        with urllib.request.urlopen(request) as response:
-            if response.status != 200:
-                raise ValueError(f"API returned status code {response.status}")
-
-            data = json.loads(response.read().decode("utf-8"))
-
-            if not isinstance(data, list):
-                raise ValueError(f"Unexpected API response format: {type(data)}")
-
-            return data
-
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8") if e.fp else "No error details"
-        if e.code == 402:
-            raise ValueError(
-                "FMP API returned 402 Payment Required: the Economic Calendar endpoint "
-                "is not included in your current FMP subscription tier. Upgrade your plan "
-                f"at https://financialmodelingprep.com/ to access this endpoint. Details: {error_body}"
-            )
-        raise urllib.error.HTTPError(
-            e.url, e.code, f"FMP API error: {e.reason}. Details: {error_body}", e.hdrs, e.fp
-        )
-    except urllib.error.URLError as e:
-        raise ValueError(f"Network error: {e.reason}")
+        events = client.get_economic_calendar(from_date, to_date)
+    except ValueError as exc:
+        # The generated client reports non-null, non-list HTTP-200 JSON shapes
+        # explicitly. Null and malformed JSON use its generic acquisition-failure
+        # API and remain calendar_fetch_failed; do not pretend we can distinguish
+        # their underlying HTTP/body state here.
+        if str(exc).startswith("Unexpected API response format:"):
+            raise EconomicCalendarSchemaError(
+                "Unexpected API response format: economic calendar must be a JSON array"
+            ) from None
+        raise
+    validate_economic_events(events)
+    return events
 
 
 def validate_date_range(from_date: str, to_date: str) -> None:
@@ -239,7 +280,23 @@ Examples:
             f"Fetching economic calendar from {args.from_date} to {args.to_date}...",
             file=sys.stderr,
         )
-        events = fetch_economic_calendar(args.from_date, args.to_date, api_key)
+        try:
+            events = fetch_economic_calendar(args.from_date, args.to_date, api_key)
+        except EconomicCalendarSchemaError:
+            print("ZERO_RESULT_REASON=economic_calendar_schema_drift", file=sys.stderr)
+            raise
+        except Exception:
+            print("ZERO_RESULT_REASON=calendar_fetch_failed", file=sys.stderr)
+            raise
+        if not events:
+            print(
+                "ZERO_RESULT_REASON=empty_calendar_unverified",  # pragma: allowlist secret
+                file=sys.stderr,
+            )
+            raise ValueError(
+                "FMP returned no economic events; completeness is unverified. "
+                "Check the provider and date window before reporting a quiet calendar."
+            )
 
         print(f"Retrieved {len(events)} events", file=sys.stderr)
 

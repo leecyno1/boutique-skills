@@ -22,9 +22,10 @@ import argparse
 import csv
 import io
 import json
+import math
 import os
+import re
 import sys
-import time
 from datetime import datetime, timedelta
 from typing import Optional
 
@@ -105,140 +106,11 @@ class FINVIZClient:
             return set()
 
 
-# --- FMP endpoint fallback: stable (new users) -> v3 (legacy users) ---
-_FMP_HIST_ENDPOINTS = [
-    ("https://financialmodelingprep.com/stable/historical-price-eod/full", True),
-    ("https://financialmodelingprep.com/api/v3/historical-price-full", False),
-]
+from fmp_client import FMPClient as SharedFMPClient
 
 
-class FMPClient:
-    """Client for Financial Modeling Prep API"""
-
-    BASE_URL = "https://financialmodelingprep.com/api/v3"
-    STABLE_URL = "https://financialmodelingprep.com/stable"
-
-    _ENDPOINT_FAILURE_THRESHOLD = 3
-    # v3 path-style endpoints whose trailing symbol moves to a ?symbol= query
-    # on /stable (e.g. v3 income-statement/AAPL -> stable income-statement?symbol=AAPL)
-    _SYMBOL_QUERY_ENDPOINTS = (
-        "income-statement",
-        "balance-sheet-statement",
-        "cash-flow-statement",
-        "key-metrics",
-        "ratios",
-        "profile",
-        "quote",
-    )
-
-    def __init__(self, api_key: str):
-        self.api_key = api_key
-        self.session = requests.Session()
-        self.session.headers.update({"apikey": self.api_key})
-        self.rate_limit_reached = False
-        self.retry_count = 0
-        self._endpoint_failures: dict[str, int] = {}
-        self._disabled_endpoints: set[str] = set()
-
-    def _request(self, url: str, params: dict, quiet: bool = False) -> Optional[dict]:
-        """Single rate-limited GET. Returns parsed JSON, or None on failure.
-
-        Non-final endpoints pass quiet=True to suppress the expected 403 a new
-        key gets on the v3 fallback.
-        """
-        if self.rate_limit_reached:
-            return None
-        try:
-            response = self.session.get(url, params=params or {}, timeout=30)
-            time.sleep(0.3)  # Rate limiting: ~3 requests/second
-            if response.status_code == 200:
-                self.retry_count = 0
-                return response.json()
-            elif response.status_code == 429:
-                self.retry_count += 1
-                if self.retry_count <= 1:  # Only retry once
-                    print("WARNING: Rate limit exceeded. Waiting 60 seconds...", file=sys.stderr)
-                    time.sleep(60)
-                    return self._request(url, params, quiet=quiet)
-                print("ERROR: Daily API rate limit reached. Stopping analysis.", file=sys.stderr)
-                self.rate_limit_reached = True
-                return None
-            else:
-                if not quiet:
-                    print(
-                        f"ERROR: API request failed: {response.status_code} - {response.text}",
-                        file=sys.stderr,
-                    )
-                return None
-        except requests.exceptions.RequestException as e:
-            if not quiet:
-                print(f"ERROR: Request exception: {e}", file=sys.stderr)
-            return None
-
-    def _stable_spec(self, endpoint: str, params: dict) -> Optional[tuple]:
-        """Map a v3 path-style endpoint to its (stable_url, stable_params).
-
-        Returns None when there is no known /stable equivalent.
-        """
-        p = dict(params or {})
-        if endpoint == "stock-screener":
-            return f"{self.STABLE_URL}/company-screener", p
-        if endpoint.startswith("historical-price-full/stock_dividend/"):
-            p["symbol"] = endpoint.rsplit("/", 1)[-1]
-            return f"{self.STABLE_URL}/dividends", p
-        head, _, sym = endpoint.partition("/")
-        if sym and head in self._SYMBOL_QUERY_ENDPOINTS:
-            p["symbol"] = sym
-            return f"{self.STABLE_URL}/{head}", p
-        return None
-
-    @staticmethod
-    def _normalize(endpoint: str, data):
-        """Reshape /stable responses to match the v3 shapes callers expect."""
-        if data is None:
-            return None
-        # Dividends: /stable returns a flat list; v3 returned {"historical": [...]}.
-        if endpoint.startswith("historical-price-full/stock_dividend/"):
-            return {"historical": data} if isinstance(data, list) else data
-        # key-metrics: /stable renamed roe -> returnOnEquity (same ratio scale).
-        if endpoint.startswith("key-metrics/") and isinstance(data, list):
-            for rec in data:
-                if isinstance(rec, dict) and "roe" not in rec and "returnOnEquity" in rec:
-                    rec["roe"] = rec["returnOnEquity"]
-        # cash-flow: /stable renamed dividendsPaid -> netDividendsPaid (same
-        # negative-outflow value; callers take abs()).
-        if endpoint.startswith("cash-flow-statement/") and isinstance(data, list):
-            for rec in data:
-                if (
-                    isinstance(rec, dict)
-                    and "dividendsPaid" not in rec
-                    and "netDividendsPaid" in rec
-                ):
-                    rec["dividendsPaid"] = rec["netDividendsPaid"]
-        return data
-
-    def _get(self, endpoint: str, params: Optional[dict] = None) -> Optional[dict]:
-        """GET an FMP endpoint, preferring /stable with a v3 path-style fallback.
-
-        Callers still pass the legacy v3 path-style `endpoint` strings (e.g.
-        "income-statement/AAPL"); this routes them to the /stable query-style
-        equivalents and normalizes the response back to the v3 shape. Keys
-        issued after 2025-08-31 only work on /stable; legacy keys fall back to v3.
-        """
-        if self.rate_limit_reached:
-            return None
-        params = params or {}
-        attempts = []
-        spec = self._stable_spec(endpoint, params)
-        if spec:
-            attempts.append(spec)  # /stable first
-        attempts.append((f"{self.BASE_URL}/{endpoint}", dict(params)))  # v3 fallback
-        for i, (url, req_params) in enumerate(attempts):
-            quiet = i < len(attempts) - 1
-            data = self._request(url, req_params, quiet=quiet)
-            if data is not None:
-                return self._normalize(endpoint, data)
-        return None
+class FMPClient(SharedFMPClient):
+    """Domain adapters backed by the generated shared FMP transport."""
 
     def screen_stocks(
         self,
@@ -350,61 +222,9 @@ class FMPClient:
             return result[0]
         return None
 
-    def get_historical_prices(self, symbol: str, days: int = 30) -> list[dict]:
-        """Get historical daily prices, most-recent-first (/stable, v3 fallback).
-
-        /stable/historical-price-eod/full returns a flat list of OHLCV bars and
-        is bounded with from/to; the v3 fallback returns {"historical": [...]}.
-        """
-        for base_url, is_stable in _FMP_HIST_ENDPOINTS:
-            if base_url in self._disabled_endpoints:
-                continue
-            if is_stable:
-                url = base_url
-                today = datetime.now().date()
-                params = {
-                    "symbol": symbol,
-                    # ~days trading days needs ~2x calendar days; +10 for slack.
-                    "from": (today - timedelta(days=days * 2 + 10)).isoformat(),
-                    "to": today.isoformat(),
-                }
-            else:
-                url = f"{base_url}/{symbol}"
-                params = {"serietype": "line"}
-            try:
-                response = self.session.get(url, params=params, timeout=30)
-                time.sleep(0.3)
-                if response.status_code != 200:
-                    self._record_endpoint_failure(base_url)
-                    continue
-                data = response.json()
-                # /stable: flat list of bars (most-recent-first).
-                if isinstance(data, list):
-                    if data:
-                        self._endpoint_failures[base_url] = 0
-                        return data[:days]
-                    self._record_endpoint_failure(base_url)
-                    continue
-                # v3: {"symbol": ..., "historical": [...]}.
-                if isinstance(data, dict) and "historical" in data:
-                    self._endpoint_failures[base_url] = 0
-                    return data["historical"][:days]
-                if isinstance(data, dict) and "historicalStockList" in data:
-                    for entry in data["historicalStockList"]:
-                        if entry.get("symbol", "").replace("-", ".") == symbol.replace("-", "."):
-                            self._endpoint_failures[base_url] = 0
-                            return entry.get("historical", [])[:days]
-                self._record_endpoint_failure(base_url)
-            except Exception:
-                self._record_endpoint_failure(base_url)
-        return []
-
-    def _record_endpoint_failure(self, base_url: str) -> None:
-        """Track consecutive failures and disable endpoint after threshold."""
-        failures = self._endpoint_failures.get(base_url, 0) + 1
-        self._endpoint_failures[base_url] = failures
-        if failures >= self._ENDPOINT_FAILURE_THRESHOLD:
-            self._disabled_endpoints.add(base_url)
+    def get_historical_prices(self, symbol: str, days: int = 30) -> Optional[list[dict]]:
+        data = self.get_dividend_prices(symbol, days)
+        return data if data is not None else []
 
 
 class RSICalculator:
@@ -455,25 +275,35 @@ class StockAnalyzer:
     """Analyzes stock data and calculates scores"""
 
     @staticmethod
+    def _finite_amount(value: object) -> Optional[float]:
+        """Return a financial amount only when it is numeric and finite."""
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            return None
+        try:
+            amount = float(value)
+        except OverflowError:
+            return None
+        return amount if math.isfinite(amount) else None
+
+    @staticmethod
     def is_reit(stock_data: dict) -> bool:
         """
-        Determine if a stock is a REIT based on sector/industry.
+        Determine if a stock is a REIT from an explicit flag or industry.
 
         Args:
-            stock_data: Dict containing sector and/or industry fields
+            stock_data: Dict containing isReit and/or industry fields
 
         Returns:
             True if the stock is likely a REIT
         """
-        sector = stock_data.get("sector", "") or ""
         industry = stock_data.get("industry", "") or ""
 
-        sector_lower = sector.lower()
         industry_lower = industry.lower()
-
-        if "real estate" in sector_lower:
+        if stock_data.get("isReit") is True:
             return True
-        if "reit" in industry_lower:
+        if re.search(
+            r"\breits?\b|\breal estate investment trusts?\b", industry_lower
+        ) and not re.search(r"\bnon[- ]reits?\b", industry_lower):
             return True
 
         return False
@@ -495,13 +325,12 @@ class StockAnalyzer:
             return None
 
         latest_cf = cash_flows[0]
-        net_income = latest_cf.get("netIncome", 0)
-        depreciation = latest_cf.get("depreciationAndAmortization", 0)
-
-        if net_income == 0 and depreciation == 0:
+        net_income = StockAnalyzer._finite_amount(latest_cf.get("netIncome"))
+        depreciation = StockAnalyzer._finite_amount(latest_cf.get("depreciationAndAmortization"))
+        if net_income is None or depreciation is None:
             return None
-
-        return net_income + depreciation
+        ffo = net_income + depreciation
+        return ffo if math.isfinite(ffo) else None
 
     @staticmethod
     def calculate_ffo_payout_ratio(cash_flows: list[dict]) -> Optional[float]:
@@ -524,12 +353,11 @@ class StockAnalyzer:
             return None
 
         latest_cf = cash_flows[0]
-        dividends_paid = abs(latest_cf.get("dividendsPaid", 0))
-
-        if dividends_paid <= 0:
+        raw_dividends = StockAnalyzer._finite_amount(latest_cf.get("dividendsPaid"))
+        if raw_dividends is None or raw_dividends == 0:
             return None
-
-        return round((dividends_paid / ffo) * 100, 1)
+        payout = (abs(raw_dividends) / ffo) * 100
+        return payout if math.isfinite(payout) else None
 
     @staticmethod
     def calculate_cagr(start_value: float, end_value: float, years: int) -> Optional[float]:
@@ -664,42 +492,134 @@ class StockAnalyzer:
         Returns:
             Dict with payout_ratio, fcf_payout_ratio, and sustainable flag
         """
-        result = {"payout_ratio": None, "fcf_payout_ratio": None, "sustainable": False}
+        result = {
+            "payout_ratio": None,
+            "fcf_payout_ratio": None,
+            "fcf_amount": None,
+            "fcf_status": "MISSING_DATA",
+            "fcf_coverage_status": "MISSING_DATA",
+            # FFO means a usable FFO payout assessment, including dividend data.
+            "sustainability_basis": "FFO_UNAVAILABLE" if is_reit else "EARNINGS_AND_FCF",
+            "sustainable": False,
+            "sustainability_note": "Required cash-flow data is unavailable; sustainability cannot be confirmed.",
+        }
 
         if not cash_flows:
             return result
 
         latest_cf = cash_flows[0]
-        dividends_paid = abs(latest_cf.get("dividendsPaid", 0))
+        raw_dividends = StockAnalyzer._finite_amount(latest_cf.get("dividendsPaid"))
+        dividends_paid = abs(raw_dividends) if raw_dividends is not None else None
+
+        operating_cf = StockAnalyzer._finite_amount(latest_cf.get("operatingCashFlow"))
+        capex = StockAnalyzer._finite_amount(latest_cf.get("capitalExpenditure"))
+        if operating_cf is not None and capex is not None:
+            fcf = operating_cf - abs(capex)
+            if math.isfinite(fcf):
+                result["fcf_amount"] = fcf
+                result["fcf_status"] = "POSITIVE" if fcf > 0 else "NEGATIVE" if fcf < 0 else "ZERO"
+            else:
+                result["fcf_status"] = "NON_FINITE"
+                result["fcf_coverage_status"] = "NON_FINITE"
+
+        if dividends_paid is None:
+            result["sustainability_note"] = (
+                "Dividend payment data is unavailable; sustainability cannot be confirmed."
+            )
+            return result
+        if dividends_paid == 0:
+            result["fcf_coverage_status"] = "NO_DIVIDEND"
+            result["sustainability_note"] = (
+                "No dividend payment was reported; no sustainability bonus is awarded."
+            )
+            return result
+
+        fcf = result["fcf_amount"]
+        if fcf is not None:
+            if fcf < 0:
+                result["fcf_coverage_status"] = "NEGATIVE_FCF"
+            elif fcf == 0:
+                result["fcf_coverage_status"] = "ZERO_FCF"
+            elif fcf < dividends_paid:
+                result["fcf_coverage_status"] = "INSUFFICIENT_FCF"
+            elif fcf == dividends_paid:
+                result["fcf_coverage_status"] = "AT_LIMIT"
+            else:
+                result["fcf_coverage_status"] = "COVERED"
+            if fcf > 0:
+                fcf_payout = (dividends_paid / fcf) * 100
+                if math.isfinite(fcf_payout):
+                    result["fcf_payout_ratio"] = fcf_payout
 
         # For REITs, use FFO-based payout ratio
         if is_reit:
             ffo_payout = StockAnalyzer.calculate_ffo_payout_ratio(cash_flows)
             if ffo_payout is not None:
+                result["sustainability_basis"] = "FFO"
                 result["payout_ratio"] = ffo_payout
+                result["sustainable"] = ffo_payout < 80
+                result["sustainability_note"] = (
+                    "Dividend payout is below 80% of FFO; FCF status is informational for this REIT."
+                    if result["sustainable"]
+                    else "FFO payout does not meet the under-80% threshold; this does not establish a future dividend cut."
+                )
+            else:
+                result["sustainability_note"] = (
+                    "FFO coverage cannot be assessed from available data; FCF status is informational for this REIT."
+                )
         else:
             # For non-REITs, use traditional net income-based payout ratio
             if income_statements:
                 latest_income = income_statements[0]
-                net_income = latest_income.get("netIncome", 0)
+                net_income = StockAnalyzer._finite_amount(latest_income.get("netIncome"))
+                if net_income is not None and net_income > 0:
+                    payout = (dividends_paid / net_income) * 100
+                    if math.isfinite(payout):
+                        result["payout_ratio"] = payout
 
-                if net_income > 0 and dividends_paid > 0:
-                    result["payout_ratio"] = (dividends_paid / net_income) * 100
-
-        # FCF payout ratio (same for both REIT and non-REIT)
-        operating_cf = latest_cf.get("operatingCashFlow", 0)
-        capex = abs(latest_cf.get("capitalExpenditure", 0))
-        fcf = operating_cf - capex
-
-        if fcf > 0 and dividends_paid > 0:
-            result["fcf_payout_ratio"] = (dividends_paid / fcf) * 100
-
-        # Sustainable if payout ratio < 80% and FCF covers dividends
-        if result["payout_ratio"] and result["fcf_payout_ratio"]:
-            result["sustainable"] = result["payout_ratio"] < 80 and result["fcf_payout_ratio"] < 100
-        elif result["payout_ratio"]:
-            # If FCF payout is not available, just check payout ratio
-            result["sustainable"] = result["payout_ratio"] < 80
+            result["sustainable"] = (
+                result["payout_ratio"] is not None
+                and result["payout_ratio"] < 80
+                and result["fcf_coverage_status"] == "COVERED"
+                and result["fcf_payout_ratio"] is not None
+                and result["fcf_payout_ratio"] < 100
+            )
+            if result["fcf_coverage_status"] == "NEGATIVE_FCF":
+                result["sustainability_note"] = (
+                    "Observed negative free cash flow does not cover dividends; a future cut is not certain."
+                )
+            elif result["fcf_coverage_status"] == "ZERO_FCF":
+                result["sustainability_note"] = (
+                    "Observed zero free cash flow does not cover dividends; a future cut is not certain."
+                )
+            elif result["fcf_coverage_status"] == "INSUFFICIENT_FCF":
+                result["sustainability_note"] = (
+                    "Observed free cash flow is below dividends; a future cut is not certain."
+                )
+            elif result["fcf_coverage_status"] == "AT_LIMIT":
+                result["sustainability_note"] = (
+                    "Free cash flow exactly equals dividends, leaving no coverage buffer."
+                )
+            elif result["fcf_coverage_status"] == "NON_FINITE":
+                result["sustainability_note"] = (
+                    "Derived free cash flow is non-finite; dividend coverage cannot be assessed."
+                )
+            elif result["fcf_coverage_status"] == "MISSING_DATA":
+                result["sustainability_note"] = (
+                    "Free cash flow cannot be calculated from available data."
+                )
+            elif result["payout_ratio"] is None:
+                result["sustainability_note"] = (
+                    "Earnings payout cannot be assessed from available data."
+                )
+            elif result["payout_ratio"] >= 80:
+                result["sustainability_note"] = (
+                    "Earnings payout does not meet the under-80% threshold."
+                )
+            else:
+                result["sustainability_note"] = (
+                    "Earnings payout is below 80% and free cash flow covers dividends with a buffer."
+                )
 
         return result
 
@@ -1202,7 +1122,8 @@ def screen_value_dividend_stocks(
         composite_score += stability_score * 0.2  # Max 20 points from stability (100 * 0.2)
         composite_score += min((revenue_cagr or 0) / 10 * 10, 10)  # Max 10 points for revenue
         composite_score += min((eps_cagr or 0) / 15 * 10, 10)  # Max 10 points for EPS
-        composite_score += 10 if sustainability["sustainable"] else 0
+        sustainability_bonus = 10 if sustainability["sustainable"] else 0
+        composite_score += sustainability_bonus
         composite_score += 10 if financial_health["healthy"] else 0
         composite_score += quality["quality_score"] * 0.25  # Max 25 points from quality
 
@@ -1233,9 +1154,15 @@ def screen_value_dividend_stocks(
             if sustainability["payout_ratio"]
             else None,
             "fcf_payout_ratio": round(sustainability["fcf_payout_ratio"], 1)
-            if sustainability["fcf_payout_ratio"]
+            if sustainability["fcf_payout_ratio"] is not None
             else None,
+            "fcf_amount": sustainability["fcf_amount"],
+            "fcf_status": sustainability["fcf_status"],
+            "fcf_coverage_status": sustainability["fcf_coverage_status"],
+            "sustainability_basis": sustainability["sustainability_basis"],
+            "sustainability_note": sustainability["sustainability_note"],
             "dividend_sustainable": sustainability["sustainable"],
+            "sustainability_bonus": sustainability_bonus,
             "debt_to_equity": round(financial_health["debt_to_equity"], 2)
             if financial_health["debt_to_equity"]
             else None,
@@ -1419,7 +1346,7 @@ Environment Variables:
                 "dividend_stability": "max 20 points (stable, growing)",
                 "revenue_growth": "max 10 points (10%+ CAGR)",
                 "eps_growth": "max 10 points (15%+ CAGR)",
-                "dividend_sustainable": "10 points",
+                "dividend_sustainable": "10 points only when sector-appropriate coverage is confirmed",
                 "financial_health": "10 points",
                 "quality_score": "max 25 points",
             },

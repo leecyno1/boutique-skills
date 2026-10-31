@@ -6,7 +6,7 @@
 - 常见输入：博主/栏目样板视频目录、`style_id`、博主名、平台名。
 - 交付：`training_manifest.json`、`per_video/*/analysis.json`、`style_profile.json`、`style_profile.md`。
 - 默认输出：`~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/`。
-- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video`、`explainer_html_video` 和 `vox_explainer_video` 只引用 `style_profile.json`。
+- 备注：这是独立可选资产，不改变主链顺序；后续 `talking_head_video`、`explainer_html_video`、`vox_explainer_video`、`digital_human_video`、`commercial_promo_video` 和电影短剧规划只引用 `style_profile.json`。
 - 禁止：把样板视频、压缩上传副本、训练报告或渲染预览写入项目根目录或 `skills/`。
 
 ## 0.7 Video Self Learning（可选、定时）
@@ -39,7 +39,7 @@
 
 - 目标：形成标准初稿，默认是 `4000-8000` 字长文底稿，并供编辑直接改造成终稿。
 - 常见输入：确认题目、核心判断、骨架、来源包。
-- 默认输出：`${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/05_初稿生成/<run_id>/`。
+- 默认输出：`${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/<run_id>/03_初稿/`。
 - 交付：`03_标准初稿_<topic>.md`、`03_初稿_报告.md`、`draft_manifest.json`
 - 结构规则：优先 `开篇 + 三段论 + 结尾` 或 `开篇 + 4 章 + 结尾`，一级标题不得超过 `4` 个。
 - 内容规则：只写标准事实稿，不注入账号 DNA 和平台腔；主动补数据、表格和权威来源。

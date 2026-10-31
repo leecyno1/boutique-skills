@@ -1,6 +1,6 @@
 ---
 name: dasheng-media-sop
-description: Use when running, resuming, auditing, or updating the Dasheng self-media workflow in this repo. This is the only formal orchestration entry and it governs the simplified canonical chain.
+description: Use when running, resuming, auditing, or updating the Newma self-media workflow in this repo. This is the only formal orchestration entry and it governs the simplified canonical chain.
 ---
 
 # dasheng-media-sop
@@ -42,7 +42,8 @@ description: Use when running, resuming, auditing, or updating the Dasheng self-
 - 所有文章和视频共用一份 `illustration_intents`：Draft 识别原文比喻、举例、类比、拟人和抽象机制，公众号消费为段后漫画，视频导演消费为柠檬人动态分镜。不得由各渠道重新发明互相冲突的比喻。
 - 漫画路由默认使用 `dasheng-lemon-illustrations`；它只承担概念解释和认知锚点，真实图表、网页、表格、文档、地图和人物仍走证据/实拍通路。
 - 多版本改写并入 `transwrite` 的渠道表达，不再单独设置阶段。
-- `transwrite` 负责 `WeChat Article -> Talking-head Video -> Podcast` 三路生产包。
+- `transwrite` 负责公众号、无头口播、VOX、真人出镜、AI 数字人、广告宣传片和播客生产包；电影短剧只生成默认禁用的规划包。
+- 六条视频流水线共用 `configs/video/director_registry.json` 的标准顺序：素材接收 → 编剧/口播重写 → 导演分镜 → 素材生成 → 剪辑合成 → 渲染 → QC/交付。
 - `publish` 负责 `Publish Gate -> Package -> Draft Push/Manual Pack -> Link Recovery -> Publish Guard` 执行闭环。
 - 所有发布动作都必须绑定正式平台执行 skill，不允许把"生成了文案/视频"误报为"已发布"。
 - 所有运行产物、临时文章、HTML、图片、音频、视频、审核页、训练缓存都必须写入 `~/Desktop/自媒体创作/`（或 `DASHENG_OUTPUT_ROOT` 指定目录）下的阶段目录；不得写入项目根目录、`skills/`、`openclaw-skill-exports/` 或任意 skill 根目录。
@@ -97,12 +98,14 @@ description: Use when running, resuming, auditing, or updating the Dasheng self-
 ~/Desktop/自媒体创作/
 ├── 00_范式学习/
 │   └── 视频训练/
-├── 01_内容采集/
-├── 02_内容聚合及选题分析/
-├── 05_初稿生成/
-├── 06_转写生产/
-├── 07_发布执行/
-├── 08_分析复盘/
+├── <run_id>/              # 每个任务一个文件夹，任务内按环节组织
+│   ├── 01_采集/
+│   ├── 02_选题/
+│   ├── 03_初稿/
+│   ├── 04_转写/
+│   ├── 05_发布/
+│   ├── 06_复盘/
+│   └── nodes/             # 节点执行工作区（<stage>/<node>/）
 └── _tmp/
 ```
 

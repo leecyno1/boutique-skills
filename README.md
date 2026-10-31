@@ -249,6 +249,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 |---|---|---|---:|---|---|
 | `agent-introspection-debugging` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `capability-evolver` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://mcp.directory/skills/details/1368/capability-evolver) |
+| `colleague-skill` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/titanwings/colleague-skill) |
 | `distilly` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/titanwings/distilly) |
 | `eigenflux` | `L3 Specialist` | `agent-orchestration` | 4★ | `mcp-required` | [Source](https://github.com/phronesis-io/codex-eigenflux) |
 | `jiebang` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/jiebang) |
@@ -268,7 +269,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `book-to-skill` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/virgiliojr94/book-to-skill) |
 | `flutter-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/flutter-dev) |
-| `frontend-dev` | `L2 Professional` | `coding-devtools` | 3★ | `browser-required` | [Source](https://github.com/anthropics/skills/tree/main/skills/canvas-design) |
+| `frontend-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
 | `fullstack-dev` | `L2 Professional` | `coding-devtools` | 3★ | `browser-required` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/fullstack-dev) |
 | `ios-application-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/ios-application-dev) |
 | `react-native-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
@@ -278,7 +279,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `auto-paper-improvement-loop` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `cli-batches` | `L3 Specialist` | `commerce-ops` | 3★ | `api-key` | [Source](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-chat` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/diegosouzapw/OmniRoute) |
-| `colleague-skill` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/titanwings/colleague-skill) |
 | `gws-chat-send` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/googleworkspace/cli) |
 | `inference-skills` | `L3 Specialist` | `commerce-ops` | 3★ | `api-key` | [Source](https://github.com/inference-sh/skills) |
 | `ponytail-debt` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
@@ -641,6 +641,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `minimax-music-playlist` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-music-playlist) |
 | `paper-framework-figure-studio-pro` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/c-narcissus/paper-framework-figure-studio-pro) |
 | `ponytail-gain` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
+| `prompt-master` | `L3 Specialist` | `media-generation` | 3★ | `api-key` | [Source](https://github.com/nidhinjs/prompt-master) |
 | `reflection` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://playbooks.com/skills/openclaw/skills/reflection) |
 | `scientific-illustrator` | `L3 Specialist` | `media-generation` | 5★ | `mcp-required` | [Source](https://github.com/icebird1998/scientific-illustrator) |
 | `seedance2-skill` | `L2 Professional` | `media-generation` | 5★ | `direct` | [Source](https://github.com/dexhunter/seedance2-skill) |
@@ -650,7 +651,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `video-shotcraft` | `L3 Specialist` | `media-generation` | 4★ | `browser-required` | [Source](https://github.com/Vincentwei1021/video-shotcraft) |
 | `vision-analysis` | `L2 Professional` | `media-generation` | 3★ | `api-key+mcp-required` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `claude-mem-plugin` | `L3 Specialist` | `memory-context` | 5★ | `api-key` | [Source](https://github.com/thedotmack/claude-mem) |
-| `prompt-master` | `L3 Specialist` | `memory-context` | 4★ | `direct` | [Source](https://github.com/nidhinjs/prompt-master) |
 | `policy-monitor` | `L3 Specialist` | `policy-monitoring` | 4★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
 | `agent-eval` | `L3 Specialist` | `productivity-pkm` | 4★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `cli-a2a` | `L3 Specialist` | `productivity-pkm` | 4★ | `direct` | [Source](https://github.com/diegosouzapw/OmniRoute) |
@@ -674,7 +674,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `minimax-web-search` | `L2 Professional` | `search-research` | 4★ | `api-key+mcp-required` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-web-search) |
 | `multi-search-engine` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://clawhub.ai/gpyAngyoujun/multi-search-engine) |
 | `news-radar` | `L2 Professional` | `search-research` | 4★ | `mcp-required` | [Source](https://github.com/sansan0/TrendRadar) |
-| `notebooklm-py` | `L2 Professional` | `search-research` | 4★ | `browser-required` | [Source](https://github.com/teng-lin/notebooklm-py) |
+| `notebooklm-py` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/teng-lin/notebooklm-py) |
 | `obsidian-cli` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/kepano/obsidian-skills) |
 | `opencli-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/opencli-reader) |
 | `paperless-docs` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/paperless-ngx/paperless-ngx) |

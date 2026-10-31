@@ -1,9 +1,9 @@
 ---
 name: dasheng-video-explainer-html
-description: Use when turning a Dasheng HTML article into a no-human finance explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.
+description: Use when turning a Newma HTML article into a no-human finance explainer video with voiceover, storyboard scenes, HTML animation, real charts, music, and final MP4.
 ---
 
-# Dasheng Video Explainer HTML
+# Newma Video Explainer HTML
 
 正式无真人财经视频默认横版 16:9，并遵循 `docs/technical/no-human-square-video-production-standard.md`；1:1 与 9:16 是适配规格。
 

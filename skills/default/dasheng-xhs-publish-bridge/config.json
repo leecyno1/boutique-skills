@@ -2,7 +2,7 @@
   "name": "dasheng-xhs-publish-bridge",
   "version": "0.1.0",
   "type": "publish_bridge",
-  "description": "Bridge Dasheng Xiaohongshu channel packs to API-first CLI, MCP, or browser fallback upstreams.",
+  "description": "Bridge Newma Xiaohongshu channel packs to API-first CLI, MCP, or browser fallback upstreams.",
   "external_dependencies": [
     {
       "name": "all-in-one",

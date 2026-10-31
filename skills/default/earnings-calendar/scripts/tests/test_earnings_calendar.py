@@ -6,8 +6,13 @@ Covers:
 - Report generation (generate_report.py pure functions)
 """
 
+from unittest.mock import patch
+
+import fetch_earnings_fmp as _fetcher_mod
 import pytest
 from fetch_earnings_fmp import FMPEarningsCalendar, validate_date
+
+_FMPClient = _fetcher_mod.FMPClient  # script's own vendored client class
 from generate_report import (
     calculate_summary_stats,
     format_revenue,
@@ -16,6 +21,32 @@ from generate_report import (
     group_by_date,
     load_earnings_data,
 )
+
+
+def test_generated_client_starts_with_zero_api_usage():
+    """A fresh calendar run must not claim provider calls or cached data."""
+    client = _FMPClient(api_key="test-key")
+    assert client.get_api_stats() == {
+        "cache_entries": 0,
+        "api_calls_made": 0,
+        "rate_limit_reached": False,
+    }
+
+
+def test_generated_client_caches_report_time_calendar(monkeypatch):
+    client = _FMPClient(api_key="test-key")
+    calls = []
+
+    def fake_get(url, params):
+        calls.append((url, params))
+        return [{"symbol": "AAPL", "time": "amc"}]
+
+    monkeypatch.setattr(client, "_rate_limited_get", fake_get)
+    first = client.get_earnings_calendar("2026-10-12", "2026-10-13")
+    assert client.get_earnings_calendar("2026-10-12", "2026-10-13") is first
+    assert len(calls) == 1
+    assert calls[0][1]["includeReportTimes"] == "true"
+
 
 # ── Fixtures ──────────────────────────────────────────────────────────
 
@@ -92,6 +123,23 @@ class TestNormalizeTiming:
     def test_unknown_returns_tas(self, client):
         assert client.normalize_timing("unknown") == "TAS"
         assert client.normalize_timing("") == "TAS"
+
+
+# ── fetch_earnings_calendar (Issue #352: includeReportTimes) ───────────
+
+
+class TestFetchEarningsCalendarRequestsReportTimes:
+    @patch.object(_FMPClient, "get_earnings_calendar", autospec=True)
+    def test_requests_include_report_times_true(self, mock_get, client):
+        mock_get.return_value = []
+
+        client.fetch_earnings_calendar("2026-09-04", "2026-09-04")
+
+        _, args, kwargs = mock_get.mock_calls[0]
+        assert kwargs.get("includeReportTimes") is None
+        assert args[1:] == ("2026-09-04", "2026-09-04")
+        # includeReportTimes=true lives inside the generated client (the
+        # script no longer builds the query string itself, Issue #495).
 
 
 # ── format_market_cap ─────────────────────────────────────────────────

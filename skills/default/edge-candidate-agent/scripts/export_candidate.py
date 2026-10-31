@@ -34,6 +34,8 @@ DEFAULT_RISK = {
     "risk_per_trade": 0.01,
     "max_positions": 5,
     "max_sector_exposure": 0.30,
+    # trade-strategy-pipeline rejects a sector cap below 1.0 without a grouping key.
+    "sector_group_by": "sector",
 }
 
 DEFAULT_COST_MODEL = {
@@ -190,6 +192,17 @@ def build_strategy_spec(ticket: dict[str, Any], candidate_id: str) -> dict[str, 
         spec["gap_up_detection"] = deep_merge(
             DEFAULT_GAP_DETECTION,
             detection.get("gap_up_detection", ticket.get("gap_up_detection", {})),
+        )
+    if entry_family == "panic_reversal":
+        # Downstream uses this block's stop/target as the truth source and
+        # requires them to equal signals.exit, so derive them from the exit rules.
+        exit_rules = spec["signals"]["exit"]
+        spec["panic_reversal"] = deep_merge(
+            detection.get("panic_reversal", ticket.get("panic_reversal", {})),
+            {
+                "stop_loss_pct": exit_rules["stop_loss_pct"],
+                "take_profit_rr": exit_rules["take_profit_rr"],
+            },
         )
 
     strategy_overrides = ticket.get("strategy_overrides", {})

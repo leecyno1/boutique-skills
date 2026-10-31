@@ -10,6 +10,8 @@ baostock>=0.9.1    # K 线 fallback (官方接口，无需 key) · v3.4.0 锁版
 # 数据处理
 pandas>=2.0.0
 requests>=2.31.0
+beautifulsoup4>=4.12.0  # issuer-verified HKEX announcement row parsing
+exchange-calendars>=3.0.2,<5.0  # A/H/US 交易日与节假日校验
 
 # Web 搜索 (lib/web_search 默认使用，定性维度兜底必装；v2.6.1 论坛 bug 修复)
 ddgs>=9.0.0

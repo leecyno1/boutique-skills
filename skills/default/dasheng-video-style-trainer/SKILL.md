@@ -1,9 +1,9 @@
 ---
 name: dasheng-video-style-trainer
-description: Use when learning reusable video style DNA from many sample videos, training a blogger/channel editing style, or applying a learned style profile to Dasheng talking-head and no-human explainer video workflows.
+description: Use when learning reusable video style DNA from many sample videos, training a blogger/channel editing style, or applying a learned style profile to Newma talking-head and no-human explainer video workflows.
 ---
 
-# Dasheng Video Style Trainer
+# Newma Video Style Trainer
 
 ## Role
 
@@ -123,9 +123,9 @@ Use a learned `style_profile.json` to drive HTML Anything and html-video timelin
 ```bash
 python3 scripts/apply_blogger_style_to_timeline.py \
   --style-profile ~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json \
-  --storyboard ~/Desktop/自媒体创作/06_转写生产/<run_id>/<topic>/video_storyboard.json \
-  --article-html ~/Desktop/自媒体创作/05_初稿生成/<run_id>/<topic>/03_HTML草稿_<topic>.html \
-  --output-timeline ~/Desktop/自媒体创作/06_转写生产/<run_id>/<topic>/html_anything_video_timeline.style.json
+  --storyboard ~/Desktop/自媒体创作/<run_id>/04_转写/<topic>/video_storyboard.json \
+  --article-html ~/Desktop/自媒体创作/<run_id>/03_初稿/<topic>/03_HTML草稿_<topic>.html \
+  --output-timeline ~/Desktop/自媒体创作/<run_id>/04_转写/<topic>/html_anything_video_timeline.style.json
 ```
 
 End-to-end preview:
@@ -133,9 +133,9 @@ End-to-end preview:
 ```bash
 python3 scripts/run_blogger_style_video_pipeline.py \
   --style-profile ~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json \
-  --storyboard ~/Desktop/自媒体创作/06_转写生产/<run_id>/<topic>/video_storyboard.json \
-  --article-html ~/Desktop/自媒体创作/05_初稿生成/<run_id>/<topic>/03_HTML草稿_<topic>.html \
-  --output-dir ~/Desktop/自媒体创作/06_转写生产/<run_id>/<topic>/blogger_style_video
+  --storyboard ~/Desktop/自媒体创作/<run_id>/04_转写/<topic>/video_storyboard.json \
+  --article-html ~/Desktop/自媒体创作/<run_id>/03_初稿/<topic>/03_HTML草稿_<topic>.html \
+  --output-dir ~/Desktop/自媒体创作/<run_id>/04_转写/<topic>/blogger_style_video
 ```
 
 ## Consumption Rules

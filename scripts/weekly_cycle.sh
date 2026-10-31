@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Weekly skills curation cycle.
 #
-# Pipeline: discover+import -> prune -> rebuild catalogs -> refresh finance
-# suite -> audit -> tests -> publish to GitHub and Gitee.
+# Pipeline: discover+import -> prune -> sync upstream content -> telemetry ->
+# rebuild catalogs -> refresh finance suite -> audit/syntax/tests ->
+# recommendations -> publish to GitHub and Gitee.
 #
 # Thresholds (see scripts/weekly_curation.py):
 #   import: candidate score >= 75, has SKILL.md, >= 20 stars, active, no overlap
@@ -17,37 +18,44 @@ cd "$REPO_ROOT"
 
 STAMP="$(date +%F)"
 
-echo "=== [1/10] Discover and import new GitHub skills ==="
+echo "=== [1/11] Discover and import new GitHub skills ==="
 python3 scripts/weekly_curation.py discover --import-approved
 
-echo "=== [2/10] Prune dead/low-score/dominated skills ==="
+echo "=== [2/11] Prune dead/low-score/dominated skills ==="
 python3 scripts/weekly_curation.py prune --apply
 
-echo "=== [3/10] Collect local skill usage telemetry ==="
+echo "=== [3/11] Sync curated skills from their upstreams ==="
+# --apply also writes reports/upstream-check-latest.{md,json}; running the
+# read-only pass first would just double the runtime for the same report.
+python3 scripts/check_upstream_updates.py --apply
+
+echo "=== [4/11] Collect local skill usage telemetry ==="
 python3 scripts/telemetry_collect.py --days 30
 
-echo "=== [4/10] Rebuild enriched catalog and standard bundle ==="
+echo "=== [5/11] Rebuild enriched catalog and standard bundle ==="
 python3 scripts/generate_enriched_catalog.py
 
-echo "=== [5/10] Refresh finance investment suite (<= 40 skills) ==="
+echo "=== [6/11] Refresh finance investment suite (<= 40 skills) ==="
 python3 scripts/generate_finance_suite.py
 
-echo "=== [6/10] Regenerate README with new suite sizes ==="
+echo "=== [7/11] Regenerate README with new suite sizes ==="
 python3 scripts/generate_enriched_catalog.py
 
-echo "=== [7/10] Refresh usage report with new bundles ==="
+echo "=== [8/11] Refresh usage report with new bundles ==="
 python3 scripts/telemetry_collect.py --days 30
 
-echo "=== [8/10] Audit and tests ==="
+echo "=== [9/11] Audit, syntax gate, risk gate and tests ==="
 python3 scripts/audit_skills.py
+python3 scripts/check_skill_syntax.py
+python3 scripts/check_new_risks.py
 python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
 python3 tests/test_curl_token_hygiene.py
 
-echo "=== [9/10] Generate skill adjustment recommendations ==="
+echo "=== [10/11] Generate skill adjustment recommendations ==="
 python3 scripts/usage_recommendations.py
 
-echo "=== [10/10] Publish to GitHub and Gitee ==="
-./scripts/publish_weekly.sh "Weekly skills curation ${STAMP}: discover, score, prune, refresh bundles"
+echo "=== [11/11] Publish to GitHub and Gitee ==="
+./scripts/publish_weekly.sh "Weekly skills curation ${STAMP}: discover, score, prune, sync upstream, refresh bundles"
 
 echo "[DONE] weekly cycle complete for ${STAMP}"

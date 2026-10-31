@@ -78,6 +78,31 @@ def test_export_gap_candidate_with_override_id(tmp_path: Path) -> None:
     assert "gap_up_detection" in loaded_spec
 
 
+def test_export_panic_reversal_candidate_emits_dispatch_block(tmp_path: Path) -> None:
+    ticket_path = tmp_path / "ticket.yaml"
+    write_ticket(
+        ticket_path,
+        {
+            "id": "edge_panic_reversal_v1",
+            "hypothesis_type": "panic_reversal",
+            "entry_family": "panic_reversal",
+            "exit": {"stop_loss_pct": 0.049, "take_profit_rr": 2.3},
+        },
+    )
+
+    spec, _, candidate_dir = export_candidate(
+        ticket_path=ticket_path,
+        strategies_dir=tmp_path / "strategies",
+    )
+
+    loaded_spec = read_yaml(candidate_dir / "strategy.yaml")
+    assert loaded_spec["signals"]["entry"]["type"] == "panic_reversal"
+    block = loaded_spec["panic_reversal"]
+    assert block["stop_loss_pct"] == 0.049
+    assert block["take_profit_rr"] == 2.3
+    assert validate_interface_contract(loaded_spec, candidate_id=spec["id"], stage="phase1") == []
+
+
 def test_export_rejects_unsupported_entry_family(tmp_path: Path) -> None:
     ticket_path = tmp_path / "ticket.yaml"
     write_ticket(
@@ -150,6 +175,35 @@ def test_export_force_overwrites_existing_artifacts(tmp_path: Path) -> None:
     export_candidate(ticket_path=ticket_path, strategies_dir=strategies_dir, force=True)
     loaded_spec = read_yaml(strategies_dir / "edge_vcp_force_v1" / "strategy.yaml")
     assert loaded_spec["description"] == "updated description"
+
+
+def test_export_draft_risk_gets_sector_group_by(tmp_path: Path) -> None:
+    ticket_path = tmp_path / "ticket.yaml"
+    write_ticket(
+        ticket_path,
+        {
+            "id": "edge_vcp_sector_cap_v1",
+            "hypothesis_type": "breakout",
+            "entry_family": "pivot_breakout",
+            # Risk block as emitted by older edge-strategy-designer drafts.
+            "risk": {
+                "position_sizing": "fixed_risk",
+                "risk_per_trade": 0.01,
+                "max_positions": 5,
+                "max_sector_exposure": 0.3,
+            },
+        },
+    )
+
+    spec, _, candidate_dir = export_candidate(
+        ticket_path=ticket_path,
+        strategies_dir=tmp_path / "strategies",
+    )
+
+    assert spec["risk"]["max_sector_exposure"] == 0.3
+    assert spec["risk"]["sector_group_by"] == "sector"
+    loaded_spec = read_yaml(candidate_dir / "strategy.yaml")
+    assert loaded_spec["risk"]["sector_group_by"] == "sector"
 
 
 def test_deep_merge_handles_nested_and_scalar_overrides() -> None:

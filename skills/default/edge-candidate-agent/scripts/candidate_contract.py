@@ -17,6 +17,17 @@ SUPPORTED_ENTRY_FAMILIES = {
     "news_reaction",
 }
 
+# trade-strategy-pipeline dispatches signal detection on these top-level blocks,
+# not on signals.entry.type. A family without a block detects no signals there.
+DISPATCH_BLOCK_BY_ENTRY_FAMILY: dict[str, str | None] = {
+    "pivot_breakout": "vcp_detection",
+    "gap_up_continuation": "gap_up_detection",
+    "panic_reversal": "panic_reversal",
+    "news_reaction": None,
+}
+
+SUPPORTED_SECTOR_GROUP_BY = {"sector", "industry"}
+
 REQUIRED_TOP_LEVEL_KEYS = {
     "id",
     "name",
@@ -142,6 +153,20 @@ def validate_interface_contract(
     if not _is_number(max_sector_exposure) or not (0 < float(max_sector_exposure) <= 1.0):
         errors.append("risk.max_sector_exposure must satisfy 0 < value <= 1.0")
 
+    # Mirrors trade-strategy-pipeline RiskConfig: a constraining sector cap
+    # needs a grouping key, otherwise downstream rejects the spec.
+    sector_group_by = risk.get("sector_group_by")
+    if sector_group_by is not None and sector_group_by not in SUPPORTED_SECTOR_GROUP_BY:
+        errors.append(
+            f"risk.sector_group_by must be one of {sorted(SUPPORTED_SECTOR_GROUP_BY)} or null"
+        )
+    elif (
+        sector_group_by is None
+        and _is_number(max_sector_exposure)
+        and float(max_sector_exposure) < 1.0
+    ):
+        errors.append("risk.sector_group_by is required when risk.max_sector_exposure < 1.0")
+
     validation = spec.get("validation")
     if not isinstance(validation, dict):
         errors.append("validation must be a mapping")
@@ -153,18 +178,27 @@ def validate_interface_contract(
         if validation.get("oos_ratio") is not None:
             errors.append("validation.oos_ratio must be omitted or null in Phase I")
 
-    vcp_detection = spec.get("vcp_detection")
-    if vcp_detection is not None and not isinstance(vcp_detection, dict):
-        errors.append("vcp_detection must be a mapping when provided")
+    for block_name in ("vcp_detection", "gap_up_detection", "panic_reversal"):
+        block = spec.get(block_name)
+        if block is not None and not isinstance(block, dict):
+            errors.append(f"{block_name} must be a mapping when provided")
 
-    gap_detection = spec.get("gap_up_detection")
-    if gap_detection is not None and not isinstance(gap_detection, dict):
-        errors.append("gap_up_detection must be a mapping when provided")
+    if entry_type in DISPATCH_BLOCK_BY_ENTRY_FAMILY:
+        required_block = DISPATCH_BLOCK_BY_ENTRY_FAMILY[entry_type]
+        if required_block is None:
+            errors.append(
+                f"{entry_type} has no downstream detector in trade-strategy-pipeline; "
+                "exporting it would run with zero trades"
+            )
+        elif not isinstance(spec.get(required_block), dict):
+            errors.append(f"{entry_type} requires {required_block} block")
 
-    if entry_type == "pivot_breakout" and not isinstance(vcp_detection, dict):
-        errors.append("pivot_breakout requires vcp_detection block")
-    if entry_type == "gap_up_continuation" and not isinstance(gap_detection, dict):
-        errors.append("gap_up_continuation requires gap_up_detection block")
+    panic_block = spec.get("panic_reversal")
+    if isinstance(panic_block, dict):
+        # Downstream rejects a panic_reversal block that diverges from signals.exit.
+        for key in ("stop_loss_pct", "take_profit_rr"):
+            if key in panic_block and panic_block[key] != exit_rules.get(key):
+                errors.append(f"panic_reversal.{key} must match signals.exit.{key}")
 
     return errors
 

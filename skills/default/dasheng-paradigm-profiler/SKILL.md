@@ -3,7 +3,7 @@ name: dasheng-paradigm-profiler
 description: Use when users provide standard articles, content templates, successful samples, or channel templates and want Codex to learn article paradigms/frameworks for different scenarios, channels, and styles.
 ---
 
-# Dasheng Paradigm Profiler
+# Newma Paradigm Profiler
 
 ## 目标
 

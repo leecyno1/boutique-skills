@@ -3,7 +3,7 @@ name: dasheng-video-roughcut
 description: "Use when rough-cutting Chinese talking-head video with the reproducible Agent/FFmpeg path or the existing Jianying production path."
 ---
 
-# Dasheng Video Roughcut｜口播视频粗剪
+# Newma Video Roughcut｜口播视频粗剪
 
 ## 定位
 
@@ -60,7 +60,7 @@ description: "Use when rough-cutting Chinese talking-head video with the reprodu
 ```bash
 .venv_media/bin/python scripts/video_roughcut_funasr.py \
   --input-video "/path/to/source.mp4" \
-  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut" \
+  --output-dir "~/Desktop/自媒体创作/<run_id>/04_转写/talking_head_video/roughcut" \
   --mode balanced
 ```
 
@@ -72,7 +72,7 @@ description: "Use when rough-cutting Chinese talking-head video with the reprodu
 python3 scripts/video_roughcut_agent_align.py \
   --source-video "/path/to/source.mp4" \
   --segments-json "roughcut/work/segments.json" \
-  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut_agent_refine"
+  --output-dir "~/Desktop/自媒体创作/<run_id>/04_转写/talking_head_video/roughcut_agent_refine"
 ```
 
 Agent 输出 `agent_plan.json` 后渲染：
@@ -82,7 +82,7 @@ python3 scripts/video_roughcut_agent_align.py \
   --source-video "/path/to/source.mp4" \
   --segments-json "roughcut/work/segments.json" \
   --agent-plan "roughcut_agent_refine/agent_plan.json" \
-  --output-dir "~/Desktop/自媒体创作/06_转写生产/<run_id>/talking_head_video/roughcut_agent_refine"
+  --output-dir "~/Desktop/自媒体创作/<run_id>/04_转写/talking_head_video/roughcut_agent_refine"
 ```
 
 首次使用媒体环境：

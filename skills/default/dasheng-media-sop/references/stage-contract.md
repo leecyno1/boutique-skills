@@ -1,4 +1,4 @@
-# Dasheng Canonical Stage Contract
+# Newma Canonical Stage Contract
 
 ## Stage Order
 
@@ -32,7 +32,7 @@ Optional asset generators may emit `paradigm_manifest.json` or `training_manifes
 ## Draft Contract
 
 - Formal upstream input: `selected_topics.json` + `topic_cards.json`，且 Brief Gate 已批准。
-- Formal output root: `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/05_初稿生成/<run_id>/`。
+- Formal output root: `${DASHENG_OUTPUT_ROOT:-~/Desktop/自媒体创作}/<run_id>/03_初稿/`。
 - Draft 只生成研究、可复核数据、图表、正文配图、Reasoning Sheet、标准初稿、自包含离线 HTML、事实核查和质量门禁。
 - Draft 不生成公众号渠道终稿或封面，不执行 Transwrite，不登录账号、不上传草稿、不调用平台发布工具。
 - Per-topic `draft_result.json` must include `stage=draft`, `next_stage=transwrite`, and `next_stage_authorized=false`.
@@ -48,6 +48,9 @@ Optional asset generators may emit `paradigm_manifest.json` or `training_manifes
   - `explainer_html_video`
   - `vox_explainer_video`
   - `talking_head_video`
+  - `digital_human_video`
+  - `commercial_promo_video`
+  - `cinematic_short_drama_video`（默认 deferred）
   - `podcast`
 - Outputs:
   - `04_转写计划.md`

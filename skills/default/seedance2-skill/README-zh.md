@@ -1,3 +1,5 @@
+![Seedance 2.0 视频提示词撰写技能](assets/seedance2-thumbnail.png)
+
 # Seedance 2.0 视频提示词撰写技能
 
 [English](README.md)

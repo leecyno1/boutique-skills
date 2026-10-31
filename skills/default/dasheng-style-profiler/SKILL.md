@@ -3,7 +3,7 @@ name: dasheng-style-profiler
 description: 面向自媒体作者的文风 DNA 提取与分析技能。从历史文章中建立可复用的风格画像，输出 14 维分析、段落配方、叙述方法体系、内容推进方式等，供改写阶段调用。
 ---
 
-# Dasheng Style Profiler
+# Newma Style Profiler
 
 ## 目标
 

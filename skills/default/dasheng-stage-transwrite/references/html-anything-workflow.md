@@ -13,7 +13,7 @@ Good references:
 
 ## Constraint
 
-HTML Anything templates can contain CDN assumptions. Dasheng final article HTML cannot. When adapting templates into Draft HTML:
+HTML Anything templates can contain CDN assumptions. Newma final article HTML cannot. When adapting templates into Draft HTML:
 
 - Inline CSS/JS.
 - Inline Chart.js UMD v4.4.4 if charts are used.

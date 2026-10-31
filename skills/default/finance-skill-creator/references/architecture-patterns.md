@@ -6,15 +6,14 @@ Choosing the right structural pattern is the most impactful decision in skill de
 
 **When to use:** The skill has a single workflow with no branching. User provides input, skill processes it sequentially, skill returns output.
 
-**Structure:** 5-7 numbered steps, executed in order.
+**Structure:** A few numbered steps, executed in order.
 
 **Example:** `earnings-preview`
 ```
 Step 1: Check yfinance
-Step 2: Fetch earnings data
-Step 3: Analyze estimates vs history
-Step 4: Assess analyst sentiment
-Step 5: Respond with briefing
+Step 2: Fetch earnings, estimate, and sentiment data
+Step 3: Build the preview (five content areas, one of them judgment)
+Step 4: Respond with the briefing
 ```
 
 **Strengths:** Simple to follow, easy to debug, low token cost.
@@ -23,7 +22,7 @@ Step 5: Respond with briefing
 **Design rules:**
 - Each step should produce a concrete intermediate result
 - Include an early exit if prerequisites fail (Step 1)
-- Keep the total under 7 steps; if you need more, consider Router or Methodology
+- Keep the total under about 7 steps; if you need more, consider Router or Methodology
 
 ---
 
@@ -48,7 +47,7 @@ Step 3: Respond to user
 **Weaknesses:** More complex to write, routing table must be exhaustive.
 
 **Design rules:**
-- The routing table MUST have a default for ambiguous requests
+- Give the routing table a default for ambiguous requests
 - Each sub-skill should be self-contained (A1, A2, A3 sub-steps)
 - Shared defaults go in Step 1, sub-skill-specific defaults go in each sub-skill
 - Limit to 4-6 sub-skills; more means the skill should be split into separate skills
@@ -57,20 +56,20 @@ Step 3: Respond to user
 
 ## Methodology Pattern
 
-**When to use:** The skill implements a known framework or methodology with sequential validation gates. Each step builds on the previous one, and failure at any gate stops the analysis.
+**When to use:** The skill implements a known framework or methodology with sequential validation gates. Each step builds on the previous one, and failure at a real gate stops the analysis.
 
-**Structure:** 7-9 numbered steps, each with explicit pass/fail criteria.
+**Structure:** Ordered checks, each with the methodology's own pass/fail criteria or grade.
 
 **Example:** `sepa-strategy`
 ```
-Step 1: Gather stock data
+Step 1: Gather stock data (computed in code)
 Step 2: Stage analysis (STOP if not Stage 2)
 Step 3: Trend template — 8 conditions (STOP if any fail)
 Step 4: Fundamental check (grade A/B/C/D)
 Step 5: Pattern recognition (VCP, cup-handle, etc.)
 Step 6: Entry point analysis
-Step 7: Position sizing & stop loss
-Step 8: Market environment check
+Step 7: Market environment check (sets risk per trade)
+Step 8: Position sizing & stop loss
 Step 9: Respond with structured report
 ```
 
@@ -78,12 +77,12 @@ Step 9: Respond with structured report
 **Weaknesses:** Highest token cost, requires deep domain knowledge to write.
 
 **Design rules:**
-- Every step MUST have a clear pass/fail gate or a grading system
-- Failed gates must stop analysis with a clear message ("Not Stage 2 — no further analysis needed")
+- Put a gate or grade wherever the methodology really has one, and order steps by their dependencies (the environment sets risk per trade, so it comes before sizing)
+- A failed gate stops the analysis with a clear message ("Not Stage 2 — no further analysis needed")
 - Use tables for checklists and criteria (the 8-condition trend template is the gold standard)
-- Defer ALL detailed criteria to reference files; SKILL.md shows the checklist, reference shows the rubric
-- Always end with a verdict system (Strong Buy / Watch / Pass)
-- The final step output template should mirror the step structure (9 steps → 8 output sections)
+- Defer detailed criteria to reference files; SKILL.md shows the checklist, the reference shows the rubric
+- End with a verdict system (Strong Buy Setup / Watch List / Pass)
+- A scorecard-style methodology can mirror its step structure in the output; that fixed format earns its place because the user reads it as a checklist
 
 ---
 
@@ -106,11 +105,11 @@ Step 5: Respond with brief explanation
 **Weaknesses:** Requires detailed code templates, hard to test without rendering.
 
 **Design rules:**
-- Step 1 MUST have a defaults table covering every parameter (the skill should NEVER stall asking for info)
+- Step 1 needs a defaults table covering every parameter, so the skill never stalls asking for info
 - The extraction step needs "Where to find it" guidance for each field
 - Include a code template skeleton in SKILL.md (not full implementation — that goes in references)
-- The render step must specify: controls, stats cards, chart axes, colors, tooltips
-- The final step should be SHORT — "the chart speaks for itself"
+- The render step specifies controls, stats cards, chart axes, colors, and tooltips — a widget is format-sensitive, so exact specs belong here
+- Keep the final step short — the chart speaks for itself
 
 ---
 
@@ -118,25 +117,26 @@ Step 5: Respond with brief explanation
 
 **When to use:** The skill wraps an external API with many endpoints. The user's request maps to one or more API calls.
 
-**Structure:** 3-5 steps + heavy reference files (one per endpoint category).
+**Structure:** Auth and lookup steps + an endpoint map + heavy reference files.
 
-**Example:** `funda-data`
+**Example:** `fintel-data`
 ```
-Step 1: Check API key
-Step 2: Identify what user needs (mega routing table)
-Step 3: Make the API call
-Step 4: Handle common patterns
-Step 5: Respond to user
+Step 1: Resolve the API key (env var, local .env, repo-root .env)
+Step 2: Resolve the security (ticker, CUSIP, ISIN, FIGI)
+Step 3: Match the request to an endpoint (routing table)
+Step 4: Call the API and handle errors
+Step 5: MCP alternative
+Step 6: Respond to user
 ```
 
 **Strengths:** Comprehensive API coverage, reference files serve as living documentation.
-**Weaknesses:** Step 2 routing table can become unwieldy, reference files need maintenance.
+**Weaknesses:** The routing table can become unwieldy, reference files need maintenance.
 
 **Design rules:**
 - The routing table in SKILL.md should be a high-level category map, not every endpoint
 - Each reference file covers one endpoint category (market-data, fundamentals, options, etc.)
 - Reference files should include: endpoint URL, parameters, example curl/code, response format
-- Always include a "common patterns" step for things like pagination, rate limits, error codes
+- Cover the common mechanics (pagination, rate limits, error codes, metered usage) in one place
 - API keys should use `required_environment_variables` in frontmatter, not inline instructions
 
 ---
@@ -155,16 +155,28 @@ Step 5: Respond to user
 ## Anti-Patterns to Avoid
 
 ### The Wall of Text
-A single massive step with 50+ lines of instructions. **Fix:** Split into multiple steps with clear boundaries.
+A single massive step with 50+ lines of undifferentiated instructions. **Fix:** Split into steps with clear boundaries, and move reference material to `references/`.
+
+### The Script for Judgment
+Analysis or writing choreographed as "Step 3a: compute X. Step 3b: compare Y. Step 3c: write two sentences about Z." Current models plan this kind of work better than a hand-written script, and the script boxes them in. **Fix:** State the goal, the criteria, and the domain heuristics; keep numbered steps for work whose order really matters.
+
+### The Shouting Skill
+Capitalized MUST / NEVER / CRITICAL on several lines, repeated warnings, "double-check your answer". Current models over-apply this register and turn cautious. **Fix:** State each real constraint once, plainly, with its reason; delete instructions the model follows by default.
+
+### The Gold Output
+A single worked example — often with invented figures for a real company — that the model copies in length, structure, and phrasing. **Fix:** Describe what the output must contain; label any example as illustrative and keep it free of fabricated real-world numbers.
+
+### The Synonym-List Description
+A description that grows one quoted phrasing per missed trigger. **Fix:** Name the categories of intent and the distinctive vocabulary; point to sibling skills for neighboring requests.
 
 ### The Premature Reference
 Linking to a reference file for 3 lines of content. **Fix:** Keep short content inline; references are for 50+ lines of depth.
 
 ### The Missing Exit Gate
-Steps that always proceed regardless of result. **Fix:** Add "If X fails, stop here" at every decision point.
+A methodology that keeps analyzing after a disqualifying check fails. **Fix:** Add "If X fails, stop here and tell the user" at each point where failure really ends the analysis.
 
 ### The Vague Output
-"Summarize the results for the user." **Fix:** Number every output section, specify what data goes in each.
+"Summarize the results for the user." **Fix:** State an output contract — what to lead with, what must be covered, which caveats apply, and the verdict scale if the skill is evaluative.
 
 ### The Hardcoded Universe
-Static ticker lists or data that will go stale. **Fix:** Build universes dynamically at runtime using screening APIs.
+Static ticker lists or data that will go stale. **Fix:** Build universes dynamically at runtime using screening APIs, and date-stamp any snapshot data kept in references.

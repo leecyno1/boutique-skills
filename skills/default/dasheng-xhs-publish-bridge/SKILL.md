@@ -1,19 +1,19 @@
 ---
 name: dasheng-xhs-publish-bridge
-description: Use when Dasheng Publish needs to route Xiaohongshu publishing or content access through API-first CLI, MCP, or browser fallback bridges.
+description: Use when Newma Publish needs to route Xiaohongshu publishing or content access through API-first CLI, MCP, or browser fallback bridges.
 ---
 
-# Dasheng XHS Publish Bridge
+# Newma XHS Publish Bridge
 
 ## Overview
 
-This is the thin Xiaohongshu publish bridge for Dasheng. Keep it API-first. Use the smallest viable external surface for the current channel pack and fall back only when the primary path fails.
+This is the thin Xiaohongshu publish bridge for Newma. Keep it API-first. Use the smallest viable external surface for the current channel pack and fall back only when the primary path fails.
 
 ## When to Use
 
 - The channel pack targets Xiaohongshu publish, draft, or post-publish verification.
 - You need to choose between CLI, API wrapper, MCP, or browser fallback.
-- You need a stable handoff from Dasheng publish packs to an external XHS tool.
+- You need a stable handoff from Newma publish packs to an external XHS tool.
 
 ## Priority Order
 
@@ -43,7 +43,7 @@ This is the thin Xiaohongshu publish bridge for Dasheng. Keep it API-first. Use 
 
 ## Rules
 
-- Do not vendor upstream repositories into Dasheng.
+- Do not vendor upstream repositories into Newma.
 - Do not store cookies, media, or publish outputs inside `skills/`.
 - Use persistent browser profiles for any browser fallback.
 - Always return a verification artifact or a clear fallback reason.

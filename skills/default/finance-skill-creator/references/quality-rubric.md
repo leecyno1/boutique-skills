@@ -1,20 +1,20 @@
 # Skill Quality Rubric
 
-Score each dimension on a 1-10 scale. A production-quality skill should score 70+ overall. The best skills in this repo score 80-90.
+Score each dimension on a 1-10 scale. A production-quality skill should score 70+ overall; the best skills in this repo score in the 80s and 90s.
 
 ## Dimension 1: Trigger Quality (Description Field)
 
-How well does the description field capture the full range of user requests that should activate this skill?
+Does the description route the right requests to this skill — and only those?
 
 | Score | Criteria |
 |---|---|
-| 1-3 | Generic description ("analyze stocks"), few trigger phrases, no sideways entries |
-| 4-5 | Decent coverage of main use case, 3-5 trigger phrases, expert-only terminology |
-| 6-7 | Good coverage, 6-10 trigger phrases, mix of expert and beginner phrasing |
-| 8-9 | Excellent, 10+ triggers, sideways entries, example entities, covers edge cases |
-| 10 | Exhaustive — hard to imagine a valid request that wouldn't trigger this skill |
+| 1-3 | Generic ("analyze stocks"); misses whole categories of requests, or so broad it fires on everything |
+| 4-5 | Covers the main use case only; expert jargon only, or a long list of near-synonym phrasings standing in for categories |
+| 6-7 | Names what the skill does and most intent categories, with the tools and data types it uses |
+| 8-9 | Every intent category, the distinctive vocabulary users will use, scoped sideways entries, and pointers to sibling skills; well under 1024 characters |
+| 10 | A trigger check routes varied real requests correctly, including near-misses that belong to a sibling skill |
 
-**Benchmark:** sepa-strategy scores 9/10 (15+ triggers including "should I buy this stock")
+**Example:** sepa-strategy names the methodology and its distinctive terms (VCP, trend template, Stage 2, pivot entries), then adds a scoped sideways entry — "should I buy this stock" about a growth or momentum name.
 
 ## Dimension 2: Defaults Coverage
 
@@ -28,21 +28,21 @@ Does every parameter have an explicit default so the skill never stalls waiting 
 | 8-9 | Comprehensive defaults table with rationale column, covers all parameters |
 | 10 | Every conceivable parameter has a default, skill always produces output |
 
-**Benchmark:** options-payoff scores 9/10 (11 parameters with defaults, rationale for each)
+**Example:** options-payoff has a field / where-to-find-it / default row for every input, including how to resolve spot when a screenshot omits it.
 
-## Dimension 3: Step Architecture
+## Dimension 3: Instruction Design
 
-Are steps numbered, well-bounded, and sequenced logically with clear exit gates?
+Are instructions matched to the work — exact where operations are fragile, goal-oriented where the work is judgment?
 
 | Score | Criteria |
 |---|---|
-| 1-3 | No numbered steps, wall-of-text instructions, no exit gates |
-| 4-5 | Some structure but inconsistent, steps blend together, missing gates |
-| 6-7 | Numbered steps (## Step N), each has a clear purpose, some exit gates |
-| 8-9 | 5-9 well-defined steps, each with pass/fail criteria, clear exit gates |
-| 10 | Perfect step architecture — every step has a deliverable, gate, and transition |
+| 1-3 | Wall of undifferentiated text, or a rigid script for everything including the analysis |
+| 4-5 | Structure exists but order-independent judgment work is choreographed step by step, or fragile operations are left vague |
+| 6-7 | Numbered steps where order matters; exact commands for setup and calls; judgment mostly stated as criteria |
+| 8-9 | Specificity matched to fragility throughout; judgment stated as goals, criteria, and domain heuristics with reasons; gates only where a failed check really ends the analysis |
+| 10 | A capable model could run it cold and produce expert-quality work without guessing at the mechanics or being boxed in on the judgment |
 
-**Benchmark:** sepa-strategy scores 9/10 (9 steps, each with explicit pass/fail, "stop here" gates)
+**Example:** sepa-strategy gates on stage and the trend template, where failure really ends the analysis; earnings-preview states what the briefing must cover and leaves the "what to watch" judgment to the model.
 
 ## Dimension 4: Reference File Strategy
 
@@ -53,40 +53,40 @@ Is complexity properly deferred to reference files? Is SKILL.md lean?
 | 1-3 | Everything inline, SKILL.md is 500+ lines, no reference files |
 | 4-5 | Some references exist but SKILL.md still bloated, or references are trivial |
 | 6-7 | Good split — SKILL.md under 300 lines, 1-3 reference files for deep content |
-| 8-9 | Clean architecture — SKILL.md under 250 lines, 3-7 reference files covering all depth |
-| 10 | Perfect split — SKILL.md is pure workflow, all detail in well-organized references |
+| 8-9 | Clean architecture — SKILL.md under 250 lines, reference files covering all depth, dated datasets kept out of SKILL.md |
+| 10 | Perfect split — SKILL.md is pure workflow and judgment, all detail in well-organized references |
 
-**Benchmark:** sepa-strategy scores 9/10 (250 lines, 7 reference files totaling ~29KB)
+**Example:** sepa-strategy keeps the checklist in SKILL.md and the full rubric for each stage of the methodology in seven reference files.
 
 ## Dimension 5: Dynamic Calling & Runtime Adaptation
 
-Does the skill detect available tools at runtime and adapt its behavior with multiple method paths?
+Does the skill detect available tools at runtime and adapt its behavior?
 
 | Score | Criteria |
 |---|---|
 | 1-3 | No detection, hardcodes a single tool/library, fails if not installed |
 | 4-5 | Has a dependency check but no decision tree or fallback path |
 | 6-7 | Detection flow with fallback messages; single method path after detection |
-| 8-9 | Full detection flow → decision tree → 2+ method paths; auth detection; graceful fallbacks |
+| 8-9 | Full detection flow → decision tree → a second method path where a real alternative exists; auth detection; graceful fallbacks |
 | 10 | Multi-dimensional detection (tools + auth + runtime + live data), decision tree with 3+ paths, inline fallbacks at every usage point, frontmatter conditional activation |
 
-**Benchmark:** github-auth scores 10/10 (detects gh vs git, auth state, credential helper; 3 distinct method paths). options-payoff scores 8/10 (dep check + live SPX price injection with fallback). duckduckgo-search scores 9/10 (CLI vs Python vs built-in, runtime awareness, `fallback_for_toolsets`).
+**Examples:** github-auth detects gh vs git, auth state, and credential helper with three method paths. fintel-data resolves its API key from the environment, a local `.env`, or the repo-root `.env`. options-payoff injects a live SPX price with a fallback.
 
 **Note:** Skills that are pure analysis (no external deps) can score 7+ by having a well-structured "Gather Data" step with data source alternatives (e.g., yfinance vs manual input).
 
-## Dimension 6: Output Template
+## Dimension 6: Output Contract
 
-Does the final step specify the exact output structure?
+Does the final step say what a good answer contains?
 
 | Score | Criteria |
 |---|---|
-| 1-3 | "Summarize the results" — no structure specified |
-| 4-5 | Lists what to include but no numbering or format |
-| 6-7 | Numbered output sections, some format guidance |
-| 8-9 | Fully specified template: numbered sections, what data in each, verdict system |
-| 10 | Template so precise that two runs of the skill produce identically structured output |
+| 1-3 | "Summarize the results" — nothing specified |
+| 4-5 | Lists topics, but not what to lead with, which caveats apply, or what verdict to give |
+| 6-7 | Clear contract: what to lead with, the required content, the caveats |
+| 8-9 | Contract plus a precisely defined verdict or grade scale; fixed templates only where format matters; length described qualitatively; examples labeled illustrative |
+| 10 | Output is complete and useful across varied inputs — including thin data — without a rigid template, while format-sensitive parts (scorecards, widgets) are pinned exactly |
 
-**Benchmark:** sepa-strategy scores 9/10 (8 numbered sections + verdict + disclaimer)
+**Example:** sepa-strategy defines a three-way verdict (Strong Buy Setup / Watch List / Pass) and pins its trend-template scorecard; startup-analysis defines a verdict scale per lens and asks each section to scale to the evidence.
 
 ## Dimension 7: Error Handling & Missing Data
 
@@ -100,7 +100,7 @@ How does the skill handle missing data, failed API calls, or partial input?
 | 8-9 | Comprehensive: missing data noted and flagged, fallback approaches, user prompts |
 | 10 | Graceful degradation at every step — always produces useful output even with partial data |
 
-**Benchmark:** sepa-strategy scores 8/10 ("proceed with what you have, flag RS as significant gap")
+**Example:** sepa-strategy says to proceed with what's available and flag a missing RS rating as a significant gap.
 
 ## Dimension 8: Code / Formula Quality
 
@@ -109,28 +109,28 @@ Are code templates and formulas correct, complete, and copy-paste ready?
 | Score | Criteria |
 |---|---|
 | 1-3 | No code provided, or pseudocode that won't run |
-| 4-5 | Code snippets exist but incomplete — missing imports, variable names differ |
+| 4-5 | Code snippets exist but incomplete — missing imports, undefined variables, or calls to APIs that no longer exist |
 | 6-7 | Working code that needs minor adaptation |
-| 8-9 | Copy-paste ready code with proper imports, error handling, and comments |
-| 10 | Production-quality code templates in reference files + skeleton in SKILL.md |
+| 8-9 | Copy-paste ready code with proper imports and error handling, checked against the current library version |
+| 10 | Production-quality code templates in reference files + skeleton in SKILL.md, verified end to end |
 
-**Benchmark:** stock-correlation scores 8/10 (full Python functions with imports, dropna, edge cases)
+**Example:** stock-correlation ships complete Python functions with imports, NaN handling, and edge cases.
 
 **Note:** Not all skills need code. For pure analysis skills, score based on formula clarity and table quality.
 
-## Dimension 9: SKILL.md Conciseness
+## Dimension 9: Conciseness & Register
 
-Is the main SKILL.md file appropriately sized?
+Is SKILL.md appropriately sized, and does every line earn its place?
 
 | Score | Criteria |
 |---|---|
-| 1-3 | Over 500 lines — too much inline, needs reference extraction |
-| 4-5 | 300-500 lines — functional but could be leaner |
-| 6-7 | 200-300 lines — good, most deep content in references |
-| 8-9 | 150-250 lines — clean, focused on workflow |
-| 10 | Under 200 lines with comprehensive reference files — maximum token efficiency |
+| 1-3 | Over 500 lines, or dense with capitalized warnings, repeated rules, and instructions the model follows by default |
+| 4-5 | 300-500 lines, or several MUST/NEVER/CRITICAL lines without reasons, generic virtues ("be thorough", "double-check"), maintainer notes, or history |
+| 6-7 | 200-300 lines; mostly plain register with a few restated defaults or duplicated rules |
+| 8-9 | 150-250 lines; each constraint stated once, plainly, with its reason; no boilerplate |
+| 10 | Under 200 lines with comprehensive reference files; nothing a capable model would already do unprompted |
 
-**Benchmark:** options-payoff scores 8/10 (196 lines, 2 reference files handle the depth)
+**Example:** options-payoff stays under 200 lines and leaves the depth to two reference files.
 
 ## Dimension 10: Domain Accuracy
 
@@ -139,12 +139,12 @@ Is the skill's domain knowledge correct and trustworthy?
 | Score | Criteria |
 |---|---|
 | 1-3 | Factual errors, wrong formulas, misleading guidance |
-| 4-5 | Mostly correct but some imprecise statements or outdated info |
+| 4-5 | Mostly correct but some imprecise statements, outdated info, or undated figures that have gone stale |
 | 6-7 | Accurate for main use cases, some edge cases not covered |
-| 8-9 | Highly accurate, edge cases documented, disclaimers appropriate |
+| 8-9 | Highly accurate, edge cases documented, dated data labeled, disclaimers appropriate |
 | 10 | Expert-level accuracy — could be used as a reference by domain practitioners |
 
-**Benchmark:** options-payoff scores 9/10 (Black-Scholes correct, edge cases documented, disclaimer present)
+**Example:** options-payoff has correct Black-Scholes formulas, documented edge cases, and a disclaimer.
 
 ---
 
@@ -157,13 +157,13 @@ Copy this template when scoring a skill:
 |---|---|---|---|
 | 1 | Trigger quality | /10 | |
 | 2 | Defaults coverage | /10 | |
-| 3 | Step architecture | /10 | |
+| 3 | Instruction design | /10 | |
 | 4 | Reference file strategy | /10 | |
 | 5 | Dynamic content | /10 | |
-| 6 | Output template | /10 | |
+| 6 | Output contract | /10 | |
 | 7 | Error handling | /10 | |
 | 8 | Code/formula quality | /10 | |
-| 9 | SKILL.md conciseness | /10 | |
+| 9 | Conciseness & register | /10 | |
 | 10 | Domain accuracy | /10 | |
 | **Total** | | **/100** | |
 ```

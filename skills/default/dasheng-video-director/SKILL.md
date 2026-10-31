@@ -3,7 +3,7 @@ name: dasheng-video-director
 description: Use after roughcut/intake and before asset generation when converting article scripts, ASR, captions, or draft HTML into detailed video shot plans, scene plans, template choices, composition states, transitions, audio policies, and review gates.
 ---
 
-# Dasheng Video Director
+# Newma Video Director
 
 ## Role
 
@@ -15,10 +15,20 @@ This skill sits between roughcut/script intake and material generation:
 brief/script -> director scene_plan -> claim/evidence ledger -> storyboard review -> asset build/render
 ```
 
-Use this skill for both:
+Use this skill for six registered lanes. Read `configs/video/director_registry.json` first and use the matching director profile:
 
 - 真人出镜口播：speaker is the trust anchor; evidence, PIP, B-roll, charts, documents, and transitions carry pace.
+- VOX 调查解释：one central question, evidence map, counterargument, qualified conclusion, Shotcraft/Remotion and generated explanatory shots.
 - 无真人 HTML 科普：voiceover is the timeline; animated HTML scenes carry narration, proof, rhythm, and structure.
+- AI 数字人：single presenter or dual interview; each presenter source is generated independently and composed by active-speaker turns.
+- 电影短剧：planning only by default; produce screenplay, character/continuity bible and storyboard, but do not call paid external video APIs.
+- 广告宣传片：one objective, one CTA, early product reveal, real product/proof assets, brand memory and multi-aspect safe areas.
+
+All six lanes follow:
+
+```text
+素材接收 -> 编剧/口播重写 -> 导演分镜 -> 素材生成 -> 剪辑合成 -> 渲染 -> QC/交付
+```
 
 ## Required Reading
 
@@ -29,12 +39,17 @@ Before producing a director plan, read:
 - `configs/video/video_editing_driver_rules.json`
 - `configs/video/director_feedback_memory.json`
 - `configs/video/tool_registry.json`
+- `configs/video/director_registry.json`
 - `configs/external/reserved_projects.json`
 - `configs/video/reference_video_dna_registry.json`
 - `~/Desktop/自媒体创作/00_范式学习/视频训练/每日博主自学习/knowledge/index.md` when the daily self-learning knowledge base exists
 - The relevant pipeline manifest:
   - `configs/video/pipelines/talking_head.yaml`
+  - `configs/video/pipelines/vox_explainer.yaml`
   - `configs/video/pipelines/explainer_html.yaml`
+  - `configs/video/pipelines/digital_human.yaml`
+  - `configs/video/pipelines/cinematic_short_drama.yaml`
+  - `configs/video/pipelines/commercial_promo.yaml`
 
 ## Inputs
 
@@ -48,6 +63,7 @@ Accept any combination of:
 - `agent_proofread.srt`
 - `captions_full.json`
 - `article.html`
+- `commercial_brief.json` for `commercial_promo_video`
 - `explainer_storyboard.json`
 - draft article charts, images, tables, and data references
 - optional style profile under `~/Desktop/自媒体创作/00_范式学习/视频训练/<style_id>/style_profile.json`
@@ -114,6 +130,19 @@ python3 scripts/dasheng_video_director.py \
 ```
 
 If captions were generated from the final roughcut itself, omit `--roughcut-edl`. Never compress a pre-cut timeline with a global scale factor.
+
+For a digital-human presenter or dual interview, use the same director entry with `--lane digital_human_video`; the input captions must already identify speaker turns, and the presenter package must use `presenter_source.mode=single_presenter|dual_interview`.
+
+For a commercial promo:
+
+```bash
+python3 scripts/dasheng_video_director.py \
+  --lane commercial_promo_video \
+  --commercial-brief <commercial_brief.json> \
+  --output-dir ~/Desktop/自媒体创作/<run_id>/commercial_promo_director
+```
+
+The cinematic lane remains planning-only. Build its screenplay/storyboard package through `dasheng-stage-transwrite` / `scripts/build_stage4_transwrite.py`; do not use the renderer or external provider route while `execution_enabled=false`.
 
 If the current production has a `project_run_manifest.json`, register every output with:
 
@@ -341,6 +370,10 @@ Validate the pipeline:
 ```bash
 python3 scripts/video_pipeline_governance.py validate-pipeline talking_head
 python3 scripts/video_pipeline_governance.py validate-pipeline explainer_html
+python3 scripts/video_pipeline_governance.py validate-pipeline vox_explainer
+python3 scripts/video_pipeline_governance.py validate-pipeline digital_human
+python3 scripts/video_pipeline_governance.py validate-pipeline commercial_promo
+python3 scripts/video_pipeline_governance.py validate-pipeline cinematic_short_drama
 ```
 
 Create a checkpoint:

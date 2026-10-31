@@ -10,20 +10,8 @@ from pathlib import Path
 from typing import Any
 
 
-def find_default_shotcraft_root() -> Path:
-    script = Path(__file__).resolve()
-    for parent in script.parents:
-        for candidate in (
-            parent / "video-shotcraft",
-            parent / "skills" / "default" / "video-shotcraft",
-            parent / "vendor" / "reserved" / "video" / "video-shotcraft",
-        ):
-            if (candidate / "gallery" / "api" / "library.json").is_file():
-                return candidate
-    return script.parents[2] / "video-shotcraft"
-
-
-DEFAULT_SHOTCRAFT_ROOT = find_default_shotcraft_root()
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_SHOTCRAFT_ROOT = PROJECT_ROOT / "vendor" / "reserved" / "video" / "video-shotcraft"
 
 
 def read_json(path: Path) -> dict[str, Any]:
