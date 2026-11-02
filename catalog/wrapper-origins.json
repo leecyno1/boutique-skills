@@ -1,7 +1,6 @@
 {
   "_comment": "Skills whose upstream URL is a whole repository or docs page, not a SKILL.md path. The audit script should treat these as 'current' when local SKILL.md exists. See docs/UPDATE_AND_AUDIT.md.",
   "wrappers": [
-    "planning-with-files",
     "todo",
     "html-anything",
     "claude-mem-plugin",
@@ -9,7 +8,6 @@
     "dbskill",
     "khazix-skills",
     "openclaw-stock-kb",
-    "scenario-analyzer",
     "chrome-devtools-mcp",
     "video-autopilot-kit",
     "github",
@@ -26,15 +24,9 @@
     "paperless-ngx-tools",
     "tavily-search",
     "marketingskills",
-    "company-valuation",
-    "earnings-preview",
-    "earnings-recap",
-    "estimate-analysis",
     "inference-skills",
     "options-payoff",
     "oracle",
-    "saas-valuation-compression",
-    "sepa-strategy",
     "agentmail"
   ]
 }

@@ -16,14 +16,11 @@
     "ALPHAGBM_API_KEY",
     "FINVIZ_API_KEY",
     "FMP_API_KEY",
-    "LLMQUANT_API_KEY",
     "TUSHARE_TOKEN"
   ],
   "requires_tools": [
     "browser",
     "curl",
-    "mcp",
-    "node",
     "python"
   ],
   "scorecard": "reports/finance-skill-eval/finance-investment-skills-scorecard-2026-06-14.md",
@@ -83,7 +80,7 @@
       "slot": "A股数据底座",
       "capability": "a-share-data",
       "skill": "a-stock-data",
-      "score": 88,
+      "score": 92,
       "access": "direct",
       "api_keys": []
     },
@@ -91,25 +88,15 @@
       "slot": "美股/港股全栈数据",
       "capability": "global-market-data",
       "skill": "global-stock-data",
-      "score": 88,
+      "score": 92,
       "access": "direct",
       "api_keys": []
-    },
-    {
-      "slot": "SEC/13F/机构数据",
-      "capability": "institutional-data",
-      "skill": "llmquant-data",
-      "score": 83,
-      "access": "api-key+mcp-required",
-      "api_keys": [
-        "LLMQUANT_API_KEY"
-      ]
     },
     {
       "slot": "宏观研究",
       "capability": "macro",
       "skill": "market-environment-analysis",
-      "score": 81,
+      "score": 82,
       "access": "direct",
       "api_keys": []
     },
@@ -117,7 +104,7 @@
       "slot": "宏观/政策跟踪",
       "capability": "policy",
       "skill": "policy-monitor",
-      "score": 81,
+      "score": 83,
       "access": "direct",
       "api_keys": []
     },
@@ -127,14 +114,6 @@
       "skill": "macro-liquidity",
       "score": 82,
       "access": "browser-required",
-      "api_keys": []
-    },
-    {
-      "slot": "事件与新闻",
-      "capability": "event-news",
-      "skill": "alphaear-news",
-      "score": 81,
-      "access": "direct",
       "api_keys": []
     },
     {
@@ -151,14 +130,6 @@
       "skill": "tech-earnings-deepdive",
       "score": 85,
       "access": "browser-required",
-      "api_keys": []
-    },
-    {
-      "slot": "财报前预案/复盘",
-      "capability": "earnings-cycle",
-      "skill": "earnings-preview",
-      "score": 79,
-      "access": "direct",
       "api_keys": []
     },
     {
@@ -185,7 +156,7 @@
       "slot": "股息/价值筛选",
       "capability": "screener-value",
       "skill": "value-dividend-screener",
-      "score": 73,
+      "score": 71,
       "access": "api-key",
       "api_keys": [
         "FINVIZ_API_KEY",
@@ -206,7 +177,7 @@
       "slot": "主题研究",
       "capability": "theme-research",
       "skill": "theme-detector",
-      "score": 72,
+      "score": 71,
       "access": "api-key",
       "api_keys": [
         "FINVIZ_API_KEY",
@@ -217,7 +188,7 @@
       "slot": "估值建模",
       "capability": "valuation",
       "skill": "bayesian-intrinsic-growth-valuation",
-      "score": 80,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -225,7 +196,7 @@
       "slot": "买方研究备忘录",
       "capability": "equity-research-memo",
       "skill": "buy-side-equity-research-memo",
-      "score": 81,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -257,7 +228,7 @@
       "slot": "仓位管理",
       "capability": "position-sizing",
       "skill": "position-sizer",
-      "score": 73,
+      "score": 71,
       "access": "api-key",
       "api_keys": [
         "TUSHARE_TOKEN"
@@ -266,31 +237,11 @@
     {
       "slot": "期权策略",
       "capability": "options",
-      "skill": "llmquant-options",
-      "score": 83,
-      "access": "api-key+mcp-required",
+      "skill": "alphagbm-options-strategy",
+      "score": 82,
+      "access": "api-key",
       "api_keys": [
-        "LLMQUANT_API_KEY"
-      ]
-    },
-    {
-      "slot": "组合管理",
-      "capability": "portfolio",
-      "skill": "llmquant-portfolio",
-      "score": 85,
-      "access": "api-key+mcp-required",
-      "api_keys": [
-        "LLMQUANT_API_KEY"
-      ]
-    },
-    {
-      "slot": "组合风险",
-      "capability": "risk",
-      "skill": "llmquant-risk",
-      "score": 85,
-      "access": "api-key+mcp-required",
-      "api_keys": [
-        "LLMQUANT_API_KEY"
+        "ALPHAGBM_API_KEY"
       ]
     },
     {
@@ -305,7 +256,7 @@
       "slot": "持仓 Thesis 记忆",
       "capability": "thesis-memory",
       "skill": "trader-memory-core",
-      "score": 81,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -320,18 +271,10 @@
       ]
     },
     {
-      "slot": "回测审查",
-      "capability": "backtest-review",
-      "skill": "backtest-expert",
-      "score": 98,
-      "access": "direct",
-      "api_keys": []
-    },
-    {
       "slot": "交易后验复盘",
       "capability": "postmortem",
       "skill": "alphaear-predictor",
-      "score": 80,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -347,7 +290,7 @@
       "slot": "ETF 研究",
       "capability": "etf",
       "skill": "etf-premium",
-      "score": 81,
+      "score": 80,
       "access": "direct",
       "api_keys": []
     },
@@ -365,7 +308,7 @@
       "slot": "金融知识库",
       "capability": "knowledge-base",
       "skill": "openclaw-stock-kb",
-      "score": 93,
+      "score": 92,
       "access": "direct",
       "api_keys": []
     },
@@ -373,7 +316,7 @@
       "slot": "数据质量",
       "capability": "data-quality",
       "skill": "data-quality-checker",
-      "score": 75,
+      "score": 77,
       "access": "api-key",
       "api_keys": [
         "TUSHARE_TOKEN"
@@ -383,14 +326,11 @@
   "skills": [
     "a-stock-data",
     "global-stock-data",
-    "llmquant-data",
     "market-environment-analysis",
     "policy-monitor",
     "macro-liquidity",
-    "alphaear-news",
     "uzi-skill",
     "tech-earnings-deepdive",
-    "earnings-preview",
     "canslim-screener",
     "vcp-screener",
     "value-dividend-screener",
@@ -402,13 +342,10 @@
     "us-market-sentiment",
     "trade-hypothesis-ideator",
     "position-sizer",
-    "llmquant-options",
-    "llmquant-portfolio",
-    "llmquant-risk",
+    "alphagbm-options-strategy",
     "alphaear-signal-tracker",
     "trader-memory-core",
     "alphagbm-bps-backtest",
-    "backtest-expert",
     "alphaear-predictor",
     "serenity-alpha",
     "etf-premium",
@@ -420,7 +357,7 @@
     "Generated by scripts/generate_finance_suite.py; regenerate after catalog updates.",
     "Capability-slot dedupe keeps only the highest-scored skill per slot.",
     "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
-    "Slot count 34, skill count 34 (max 40)."
+    "Slot count 28, skill count 28 (max 40)."
   ],
-  "generated_at": "2026-10-31"
+  "generated_at": "2026-11-02"
 }

@@ -109,17 +109,6 @@
       ]
     },
     {
-      "id": "akshare-stock",
-      "name": "akshare-stock",
-      "description": "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。",
-      "manual": "skills/default/akshare-stock/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/akshare-stock/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/akshare-stock",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
       "id": "android-native-dev",
       "name": "android-native-dev",
       "description": "Android native application development and UI design guide.",
@@ -132,17 +121,6 @@
         "minimax_official",
         "default_sentinel"
       ]
-    },
-    {
-      "id": "brainstorming",
-      "name": "brainstorming",
-      "description": "Use before creative feature, component, behavior, or product design work.",
-      "manual": "skills/default/brainstorming/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/brainstorming/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/brainstorming",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
     },
     {
       "id": "buddy-sings",
@@ -355,17 +333,6 @@
       ]
     },
     {
-      "id": "mcp-builder",
-      "name": "mcp-builder",
-      "description": "Use when building MCP servers or tools for external APIs and services.",
-      "manual": "skills/default/mcp-builder/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/mcp-builder/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/mcp-builder",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
       "id": "media-downloader",
       "name": "media-downloader",
       "description": "|-",
@@ -471,48 +438,12 @@
       ]
     },
     {
-      "id": "minimax-xlsx",
-      "name": "minimax-xlsx",
-      "description": "Open, create, read, analyze, edit, or validate Excel/spreadsheet files (.",
-      "manual": "skills/default/minimax-xlsx/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/minimax-xlsx/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/minimax-xlsx",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "minimax_official",
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "model-usage",
       "name": "model-usage",
       "description": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown.",
       "manual": "skills/default/model-usage/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/model-usage/GUIDE.md",
       "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/model-usage",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
-      "id": "multi-search-engine",
-      "name": "multi-search-engine",
-      "description": "Multi search engine integration with 16 engines (7 CN + 9 Global).",
-      "manual": "skills/default/multi-search-engine/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/multi-search-engine/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/multi-search-engine",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
-      "id": "nano-pdf",
-      "name": "nano-pdf",
-      "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
-      "manual": "skills/default/nano-pdf/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/nano-pdf/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/nano-pdf",
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
@@ -570,31 +501,6 @@
       "manual": "skills/default/pptx/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/pptx/GUIDE.md",
       "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/pptx",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
-      "id": "pptx-generator",
-      "name": "pptx-generator",
-      "description": "Generate, edit, and read PowerPoint presentations.",
-      "manual": "skills/default/pptx-generator/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/pptx-generator/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/pptx-generator",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "minimax_official",
-        "default_sentinel"
-      ]
-    },
-    {
-      "id": "proactive-agent",
-      "name": "proactive-agent",
-      "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve.",
-      "manual": "skills/default/proactive-agent/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/proactive-agent/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/proactive-agent",
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
@@ -661,17 +567,6 @@
       "groups": []
     },
     {
-      "id": "skill-creator",
-      "name": "skill-creator",
-      "description": "Guide for creating effective skills.",
-      "manual": "skills/default/skill-creator/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/skill-creator/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/skill-creator",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
       "id": "skill-security-auditor",
       "name": "skill-security-auditor",
       "description": "Command-line security analyzer for ClawHub skills.",
@@ -721,19 +616,6 @@
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
-    },
-    {
-      "id": "subagent-driven-development",
-      "name": "subagent-driven-development",
-      "description": "Use when executing implementation plans with independent subagent tasks.",
-      "manual": "skills/default/subagent-driven-development/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/subagent-driven-development/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/subagent-driven-development",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
     },
     {
       "id": "task",
@@ -786,32 +668,6 @@
       "groups": []
     },
     {
-      "id": "using-superpowers",
-      "name": "using-superpowers",
-      "description": "Use when starting any conversation to check and apply relevant skills.",
-      "manual": "skills/default/using-superpowers/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/using-superpowers/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/using-superpowers",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
-      "id": "verification-before-completion",
-      "name": "verification-before-completion",
-      "description": "Use before claiming work is complete, fixed, or passing.",
-      "manual": "skills/default/verification-before-completion/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/verification-before-completion/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/verification-before-completion",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "vision-analysis",
       "name": "vision-analysis",
       "description": "Analyze, describe, and extract information from images using the MiniMax vision MCP tool.",
@@ -828,19 +684,6 @@
       ]
     },
     {
-      "id": "weather",
-      "name": "weather",
-      "description": "Get current weather and forecasts (no API key required).",
-      "manual": "skills/default/weather/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/weather/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/weather",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "web-search",
       "name": "web-search",
       "description": "This skill should be used when users need to search the web for information, find current content, look up news articles, search for images, or find videos.",
@@ -850,19 +693,6 @@
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
-    },
-    {
-      "id": "writing-skills",
-      "name": "writing-skills",
-      "description": "Use when creating, editing, or verifying Codex skills.",
-      "manual": "skills/default/writing-skills/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/writing-skills/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/writing-skills",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
     },
     {
       "id": "xlsx",

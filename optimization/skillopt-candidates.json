@@ -17,13 +17,6 @@
       "acceptance_gate": "Improves benchmark finance judgments while preserving source/API caveats."
     },
     {
-      "priority": 3,
-      "skill_id": "skill-creator",
-      "template": "coding-rubric",
-      "failure_mode": "skill authoring precision, trigger clarity, and review discipline",
-      "acceptance_gate": "Improves skill quality rubric results without bloating the trigger description."
-    },
-    {
       "priority": 4,
       "skill_id": "baoyu-format-markdown",
       "template": "content-rubric",

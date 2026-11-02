@@ -51,11 +51,6 @@
       "pattern": "\\bsudo\\b"
     },
     {
-      "skill": "minimax-xlsx",
-      "file": "skills/default/minimax-xlsx/scripts/libreoffice_recalc.py",
-      "pattern": "\\bsudo\\b"
-    },
-    {
       "skill": "skill-vetter",
       "file": "skills/default/skill-vetter/scripts/install.sh",
       "pattern": "\\bsudo\\b"

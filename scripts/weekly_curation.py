@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ENRICHED_CATALOG = ROOT / "catalog" / "skills.enriched.json"
 DEFAULT_CATALOG = ROOT / "catalog" / "default-skills.json"
 ORIGIN_OVERRIDES = ROOT / "catalog" / "native-origin-overrides.json"
+RETIRED_SKILLS = ROOT / "catalog" / "retired-skills.json"
 SKILLS_DIR = ROOT / "skills" / "default"
 REPORT_DIR = ROOT / "reports" / "weekly-curation"
 DISCOVERY_DIR = ROOT / "reports" / "source-discovery"
@@ -226,6 +227,14 @@ def load_json(path: Path, default):
 def load_enriched_index() -> dict[str, dict]:
     data = load_json(ENRICHED_CATALOG, {})
     return {item["id"]: item for item in data.get("skills", [])}
+
+
+def load_retired() -> tuple[set[str], set[str]]:
+    """(skill ids, owner/repo) retired by human review; never auto re-imported."""
+    data = load_json(RETIRED_SKILLS, {})
+    ids = set((data.get("skills") or {}).keys())
+    repos = {r.lower() for r in data.get("blocked_repos", [])}
+    return ids, repos
 
 
 def known_github_repos(skills: dict[str, dict]) -> set[str]:
@@ -437,6 +446,7 @@ def register_candidate(candidate: Candidate, token: str | None, apply: bool) -> 
     Returns the list of installed skill ids.
     """
     installed: list[str] = []
+    retired_ids, _ = load_retired()
     targets: list[tuple[str, str]] = []  # (skill_id, remote path or "")
     if candidate.has_root_skill:
         repo_name = re.sub(r"[^a-z0-9-]+", "-", candidate.repo.lower()).strip("-")
@@ -449,6 +459,9 @@ def register_candidate(candidate: Candidate, token: str | None, apply: bool) -> 
     for skill_id, remote_path in targets:
         destination = SKILLS_DIR / skill_id
         if destination.exists():
+            continue
+        if skill_id in retired_ids:
+            print(f"[SKIP] {skill_id} is retired (catalog/retired-skills.json)", file=sys.stderr, flush=True)
             continue
         files = collect_skill_files(candidate, remote_path, token)
         if not files:
@@ -756,6 +769,8 @@ def cmd_discover(args: argparse.Namespace) -> int:
     token = gh_token()
     skills = load_enriched_index()
     known = known_github_repos(skills)
+    _, retired_repos = load_retired()
+    known |= retired_repos
     raw_repos = search_github(token)
     candidates: list[Candidate] = []
     for index, repo in enumerate(raw_repos, start=1):

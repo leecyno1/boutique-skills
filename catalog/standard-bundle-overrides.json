@@ -4,11 +4,8 @@
     "social-research": "agent-reach"
   },
   "excluded_skills": {
-    "akshare-stock": "Finance skills are temporarily excluded from the default standard bundle; install the finance profile or finance suites explicitly when needed.",
     "claude-mem-plugin": "Persistent memory is powerful but too stateful for the default no-duplicate standard bundle.",
     "openclaw-stock-data-skill": "Finance skills are temporarily excluded from the default standard bundle; install the finance profile or finance suites explicitly when needed.",
-    "tushare-openclaw-skill": "Finance skills are temporarily excluded from the default standard bundle; install the finance profile or finance suites explicitly when needed.",
-    "yfinance-data": "Finance skills are temporarily excluded from the default standard bundle; install the finance profile or finance suites explicitly when needed.",
     "a-stock-data": "Finance skills are temporarily excluded from the default standard bundle; install the finance profile or finance suites explicitly when needed."
   },
   "notes": {

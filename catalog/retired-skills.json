@@ -1,0 +1,818 @@
+{
+  "schema_version": "2026.11.02",
+  "note": "过时分析后出库的 skill。weekly_curation discover 跳过 blocked_repos；register_candidate 跳过 skills 中的 id，避免周度自动再导入。恢复：删掉对应条目再手动导入。",
+  "analysis": "reports/usage/obsolescence-analysis-2026-11-02.md",
+  "skills": {
+    "akshare-stock": {
+      "group": "L1-wrapper",
+      "reason": "公开库的薄封装，模型已知道用法；路由由 finance-data-router 承担",
+      "origin_url": "https://clawhub.ai/skills/new-akshare-stock",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-deepear-lite": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-deepear-lite",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-logic-visualizer": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-logic-visualizer",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-news": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-news",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-search": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-search",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-sentiment": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-sentiment",
+      "retired_at": "2026-11-02"
+    },
+    "alphaear-stock": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-stock",
+      "retired_at": "2026-11-02"
+    },
+    "animation-vocabulary": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-earnings-analysis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/earnings-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-earnings-preview": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/earnings-preview",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-idea-generation": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/idea-generation",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-initiating-coverage": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/initiating-coverage",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-model-update": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/model-update",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-morning-note": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/morning-note",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-equity-research-thesis-tracker": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/thesis-tracker",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-3-statement-model": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/3-statement-model",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-audit-xls": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/audit-xls",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-clean-data-xls": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/clean-data-xls",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-competitive-analysis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/competitive-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-comps-analysis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/comps-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-deck-refresh": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/deck-refresh",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-lbo-model": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/lbo-model",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-ppt-template-creator": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ppt-template-creator",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-pptx-author": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/pptx-author",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-skill-creator": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/skill-creator",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-financial-analysis-xlsx-author": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/xlsx-author",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-accrual-schedule": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/accrual-schedule",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-break-trace": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/break-trace",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-gl-recon": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/gl-recon",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-nav-tieout": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/nav-tieout",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-roll-forward": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/roll-forward",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-fund-admin-variance-commentary": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/fund-admin/skills/variance-commentary",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-buyer-list": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/buyer-list",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-cim-builder": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/cim-builder",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-datapack-builder": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/datapack-builder",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-deal-tracker": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/deal-tracker",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-merger-model": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/merger-model",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-pitch-deck": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/pitch-deck",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-process-letter": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/process-letter",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-strip-profile": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/strip-profile",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-investment-banking-teaser": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/investment-banking/skills/teaser",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-bond-futures-basis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-futures-basis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-bond-relative-value": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/bond-relative-value",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-equity-research": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/equity-research",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-fixed-income-portfolio": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/fixed-income-portfolio",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-fx-carry-trade": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/fx-carry-trade",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-macro-rates-monitor": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/macro-rates-monitor",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-option-vol-analysis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/option-vol-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-lseg-swap-curve-strategy": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/lseg/skills/swap-curve-strategy",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-operations-kyc-doc-parse": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/operations/skills/kyc-doc-parse",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-operations-kyc-rules": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/operations/skills/kyc-rules",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-ai-readiness": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/ai-readiness",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-dd-checklist": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/dd-checklist",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-dd-meeting-prep": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/dd-meeting-prep",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-deal-screening": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/deal-screening",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-deal-sourcing": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/deal-sourcing",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-ic-memo": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/ic-memo",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-portfolio-monitoring": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/portfolio-monitoring",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-returns-analysis": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/returns-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-unit-economics": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/unit-economics",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-private-equity-value-creation-plan": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/private-equity/skills/value-creation-plan",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-spglobal-earnings-preview-beta": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/earnings-preview-beta",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-spglobal-funding-digest": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/funding-digest",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-spglobal-tear-sheet": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/partner-built/spglobal/skills/tear-sheet",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-wealth-management-client-report": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-report",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-wealth-management-client-review": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/client-review",
+      "retired_at": "2026-11-02"
+    },
+    "anthropic-fs-wealth-management-investment-proposal": {
+      "group": "L1-anthropic-fs",
+      "reason": "金融工作流 prompt，无脚本无端点，模型可直接完成；部分依赖本机没有的 MCP",
+      "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/agent-plugins/meeting-prep-agent/skills/investment-proposal",
+      "retired_at": "2026-11-02"
+    },
+    "apple-design": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/apple-design",
+      "retired_at": "2026-11-02"
+    },
+    "backtest-expert": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert",
+      "retired_at": "2026-11-02"
+    },
+    "baoyu-infographic": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic",
+      "retired_at": "2026-11-02"
+    },
+    "baoyu-slide-deck": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck",
+      "retired_at": "2026-11-02"
+    },
+    "brainstorming": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+      "retired_at": "2026-11-02"
+    },
+    "codex-responses-tooling": {
+      "group": "L1-codex-ecc",
+      "reason": "通用编码规范/测试流程 prompt，新模型已内化；归档观察",
+      "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/codex-responses-tooling",
+      "retired_at": "2026-11-02"
+    },
+    "company-valuation": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/himself65/finance-skills",
+      "retired_at": "2026-11-02"
+    },
+    "dual-axis-skill-reviewer": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dual-axis-skill-reviewer",
+      "retired_at": "2026-11-02"
+    },
+    "earnings-preview": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills",
+      "retired_at": "2026-11-02"
+    },
+    "earnings-recap": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills",
+      "retired_at": "2026-11-02"
+    },
+    "emil-design-eng": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng",
+      "retired_at": "2026-11-02"
+    },
+    "estimate-analysis": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/himself65/finance-skills",
+      "retired_at": "2026-11-02"
+    },
+    "finance-skill-creator": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/skill-creator/skills/skill-creator",
+      "retired_at": "2026-11-02"
+    },
+    "find-animation-opportunities": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/find-animation-opportunities",
+      "retired_at": "2026-11-02"
+    },
+    "improve-animations": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/improve-animations",
+      "retired_at": "2026-11-02"
+    },
+    "jiebang": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/jiebang",
+      "retired_at": "2026-11-02"
+    },
+    "kanchi-dividend-review-monitor": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-review-monitor",
+      "retired_at": "2026-11-02"
+    },
+    "kanchi-dividend-sop": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-sop",
+      "retired_at": "2026-11-02"
+    },
+    "kanchi-dividend-us-tax-accounting": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-us-tax-accounting",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-commodities": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-commodities",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-credit": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-credit",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-crypto": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-crypto",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-data": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-data",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-equities": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-equities",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-equity-derivatives": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-equity-derivatives",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-etfs": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-etfs",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-events": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-events",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-investor-lenses": {
+      "group": "L1-persona",
+      "reason": "人物视角 prompt，新模型对其思想的掌握已超过 skill 内容",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-investor-lenses",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-macro": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-macro",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-market-intelligence": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-market-intelligence",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-options": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-options",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-portfolio": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-portfolio",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-portfolio-lab": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-portfolio-lab",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-prediction-markets": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-prediction-markets",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-rates-fx": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-rates-fx",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-risk": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-risk",
+      "retired_at": "2026-11-02"
+    },
+    "llmquant-strategies": {
+      "group": "L1-llmquant",
+      "reason": "LLMQuant 平台路由壳，code=0，平台不在本机",
+      "origin_url": "https://github.com/LLMQuant/skills/tree/master/skills/llmquant-strategies",
+      "retired_at": "2026-11-02"
+    },
+    "market-news-analyst": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst",
+      "retired_at": "2026-11-02"
+    },
+    "mcp-builder": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "retired_at": "2026-11-02"
+    },
+    "minimax-xlsx": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-xlsx",
+      "retired_at": "2026-11-02"
+    },
+    "multi-search-engine": {
+      "group": "L1-wrapper",
+      "reason": "公开库的薄封装，模型已知道用法；路由由 finance-data-router 承担",
+      "origin_url": "https://clawhub.ai/gpyAngyoujun/multi-search-engine",
+      "retired_at": "2026-11-02"
+    },
+    "nano-pdf": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/steipete/clawdis/tree/main/skills/nano-pdf",
+      "retired_at": "2026-11-02"
+    },
+    "planning-with-files": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/OthmanAdi/planning-with-files",
+      "retired_at": "2026-11-02"
+    },
+    "pptx-generator": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator",
+      "retired_at": "2026-11-02"
+    },
+    "proactive-agent": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://clawhub.ai/halthelobster/proactive-agent",
+      "retired_at": "2026-11-02"
+    },
+    "saas-valuation-compression": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/himself65/finance-skills",
+      "retired_at": "2026-11-02"
+    },
+    "scenario-analyzer": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills",
+      "retired_at": "2026-11-02"
+    },
+    "sepa-strategy": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/himself65/finance-skills",
+      "retired_at": "2026-11-02"
+    },
+    "skill-creator": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "retired_at": "2026-11-02"
+    },
+    "skill-designer": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-designer",
+      "retired_at": "2026-11-02"
+    },
+    "skill-idea-miner": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-idea-miner",
+      "retired_at": "2026-11-02"
+    },
+    "skill-integration-tester": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/skill-integration-tester",
+      "retired_at": "2026-11-02"
+    },
+    "stanley-druckenmiller-investment": {
+      "group": "L1-persona",
+      "reason": "人物视角 prompt，新模型对其思想的掌握已超过 skill 内容",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/stanley-druckenmiller-investment",
+      "retired_at": "2026-11-02"
+    },
+    "startup-analysis": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/startup-tools/skills/startup-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "subagent-driven-development": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+      "retired_at": "2026-11-02"
+    },
+    "technical-analyst": {
+      "group": "L1-knowledge",
+      "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/technical-analyst",
+      "retired_at": "2026-11-02"
+    },
+    "tushare-openclaw-skill": {
+      "group": "L1-wrapper",
+      "reason": "公开库的薄封装，模型已知道用法；路由由 finance-data-router 承担",
+      "origin_url": "https://github.com/DayDreammy/tushare-openclaw-skill",
+      "retired_at": "2026-11-02"
+    },
+    "us-stock-analysis": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/us-stock-analysis",
+      "retired_at": "2026-11-02"
+    },
+    "using-superpowers": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/using-superpowers",
+      "retired_at": "2026-11-02"
+    },
+    "verification-before-completion": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/verification-before-completion",
+      "retired_at": "2026-11-02"
+    },
+    "weather": {
+      "group": "L1-wrapper",
+      "reason": "公开库的薄封装，模型已知道用法；路由由 finance-data-router 承担",
+      "origin_url": "https://open-meteo.com/",
+      "retired_at": "2026-11-02"
+    },
+    "writing-plans": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://skills.sh/obra/superpowers/writing-plans",
+      "retired_at": "2026-11-02"
+    },
+    "writing-skills": {
+      "group": "L1-process",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "origin_url": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+      "retired_at": "2026-11-02"
+    },
+    "yc-reader": {
+      "group": "L2-merge",
+      "reason": "同能力多份，保留带脚本的一份，其余合并",
+      "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/yc-reader",
+      "retired_at": "2026-11-02"
+    },
+    "yfinance-data": {
+      "group": "L1-wrapper",
+      "reason": "公开库的薄封装，模型已知道用法；路由由 finance-data-router 承担",
+      "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/yfinance-data",
+      "retired_at": "2026-11-02"
+    }
+  },
+  "blocked_repos": [
+    "anthropics/skills",
+    "daydreammy/tushare-openclaw-skill",
+    "llmquant/skills",
+    "obra/superpowers",
+    "othmanadi/planning-with-files",
+    "steipete/clawdis"
+  ],
+  "shared_repos_not_blocked": [
+    "anthropics/financial-services",
+    "emilkowalski/skills",
+    "himself65/finance-skills",
+    "jimliu/baoyu-skills",
+    "leecyno1/boutique-skills",
+    "leecyno1/dasheng-media-workflow-skills",
+    "minimax-ai/skills",
+    "rkiding/awesome-finance-skills",
+    "tradermonty/claude-trading-skills"
+  ]
+}

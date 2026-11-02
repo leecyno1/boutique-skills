@@ -45,6 +45,7 @@ python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
 python3 tests/test_curl_token_hygiene.py
 python3 tests/test_upstream_relocation.py
+python3 tests/test_retired_guard.py
 
 # 9. 发布到 GitHub 和 Gitee（HTTPS 失败自动回退 SSH）
 ./scripts/publish_weekly.sh "Weekly skills curation $(date +%F)"
@@ -75,6 +76,10 @@ python3 tests/test_upstream_relocation.py
 2. **low_score**：内部评分 < 60。
 3. **dominated_duplicate**：同一冲突组内存在高出 >= 15 分的同类技能，且自身 <= 70 分。
 4. **upstream_path_missing**：仓库存活但 origin 路径已不存在，且同步阶段无法迁移。同步阶段先用 SKILL.md 内容哈希、其次同名目录、再稳定的版本分支（如 `taste-skill-v1.9`）定位新路径；只有仍找不到去向的才出库。报告里的旧 URL 与当前 override 不一致时跳过，防止拿旧报告误删已迁移技能。
+
+## 出库规则（人工：过时退役）
+
+被新模型 / harness 原生能力覆盖、或同能力多份合并后淘汰的技能，由人工审查后写入 `catalog/retired-skills.json`（含分组、理由、原 origin）。发现阶段跳过 `blocked_repos`，导入阶段跳过 `skills` 里的 id，保证周度自动化不会把退役技能再装回来。恢复某个技能：删掉对应条目后手动导入。分析依据见 `reports/usage/obsolescence-analysis-2026-11-02.md`。
 
 ## 组合控制（用户要求：各 <= 40）
 

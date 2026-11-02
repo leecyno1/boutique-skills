@@ -54,6 +54,7 @@ python3 tests/test_governance_files.py
 python3 tests/test_tier_catalog.py
 python3 tests/test_curl_token_hygiene.py
 python3 tests/test_upstream_relocation.py
+python3 tests/test_retired_guard.py
 
 echo "=== [10/11] Generate skill adjustment recommendations ==="
 python3 scripts/usage_recommendations.py

@@ -1,5 +1,20 @@
 # Findings
 
+## 2026-11-02（过时退役：新模型 / harness 覆盖的技能）
+
+已解决：
+
+- **判定标准**：只看 skill 里有没有模型不知道、harness 也没提供的东西（私有 CLI、真实端点与限流、凭证约定、用户自有流程、可跑脚本）。没有的归为第一层（流程/元技能 47、人设 4、纯知识 23、薄封装 6、anthropic-fs 纯 prompt 60、llmquant 路由壳 18），同能力多份的归为第二层（PPT/Excel/PDF/网页读取/生图/公众号/视频/个股/财报/alphaear 各留带脚本的一份）。分析全文 `reports/usage/obsolescence-analysis-2026-11-02.md`。
+- **本机**：193 个技能、300 份副本归档（`uninstall_skills.py --include-active --confirm`，新增 `--include-active` 以绕过“近期有调用”安全网，因为这是人工决策）。Qoder 292→132，Codex 241→100。回执在 `reports/usage/cleanup-receipts.jsonl`。
+- **仓库**：132 个在库技能出库（`remove_skill` 同步清 default-skills.json 与 native-origin-overrides.json），目录 436→304，标准包 30→21，金融组合 34→28，L1 21→12。顺带清掉 wrapper-origins 8 条、risky-baseline 1 条（minimax-xlsx）、standard-bundle-overrides 3 条过时排除、skillopt 候选里的 skill-creator。
+- **防回流**：新增 `catalog/retired-skills.json`（132 id、6 个整库屏蔽：obra/superpowers 等；9 个与存活技能共用的仓库不屏蔽，靠 id 级跳过）。`weekly_curation.py` 的 discover 把屏蔽库并入 known、`register_candidate` 跳过退役 id；`tests/test_retired_guard.py` 覆盖并断言退役 id 不在目录与磁盘上。
+- **语法门禁环境坑**：本会话 `python3` 解析到 anaconda 3.11，`uzi-skill` 里 PEP 701 f-string 被误报为语法错误（3.12+ 正常）。`check_skill_syntax.py` 现在在 <3.12 时自动 re-exec 到 python3.14/3.13/3.12 或 `/opt/homebrew/bin/python3`，避免周六 Quest 因解释器版本误阻断发布。
+
+待观察：
+
+- codex ecc 一族（tdd-workflow 991 次、e2e-testing 972、security-review 667、frontend-patterns 534、search-first 485）内容通用但被频繁加载，本次按用户决定一并归档。一周内若 Codex 行为明显退化，从 `~/.codex/skills-archive/` 搬回即可。
+- 第三层保留的量化脚本（7 个 screener、13 个 market-regime 探测器、11 个 edge-pipeline）几乎零调用，但有脚本和 key 约定，不属于“被模型覆盖”，未动。
+
 ## 2026-11-02（本机 skills 清理）
 
 已解决：

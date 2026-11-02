@@ -11,7 +11,7 @@ Use SkillOpt when the target skill has measurable outputs and repeatable example
 | Search / research QA | question, context, expected answer | `url-to-markdown`, `yc-reader`, `news-radar` |
 | Data / finance analysis | scenario, data context, expected judgment | `a-stock-data`, `funda-data`, `yfinance-data` |
 | Document / spreadsheet workflows | file/task description, expected output or rubric | `minimax-docx`, `minimax-xlsx`, `nano-pdf` |
-| Coding helpers | issue, repo context, expected patch rubric | `frontend-dev`, `skill-creator`, `writing-skills` |
+| Coding helpers | issue, repo context, expected patch rubric | `frontend-dev` |
 | Content workflows | brief, constraints, reference answer/rubric | `baoyu-format-markdown`, `baoyu-xhs-images` |
 
 ## Poor Fit
@@ -53,7 +53,6 @@ The tracked candidate queue lives in `optimization/skillopt-candidates.json`.
 |---|---|---|---|
 | 1 | `url-to-markdown` | `qa` | Clear QA/extraction outcomes and many edge cases. |
 | 2 | `a-stock-data` | `finance-analysis` | High-value standard bundle skill with measurable finance queries. |
-| 3 | `skill-creator` | `coding-rubric` | Meta-skill quality has compounding effect across the repository. |
 | 4 | `baoyu-format-markdown` | `content-rubric` | Content formatting can be tested with rubric-based examples. |
 | 5 | `frontend-dev` | `coding-rubric` | Can use visual/spec compliance rubrics, but needs careful datasets. |
 

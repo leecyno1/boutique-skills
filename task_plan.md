@@ -144,3 +144,6 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 65. Refresh telemetry and rebuild cleanup candidates | complete | 576 installed; 29 engine candidates + 9 manual long-stale/repo-deleted = 38 |
 | 66. Archive unused skills and junk | complete | Qoder 312→292, Codex 263→241; 3 broken links, 2 empty dirs, 1 old backup cleaned |
 | 67. Record cleanup and publish | complete | findings.md, QODER_HANDOFF.md and reports/usage refreshed; archived copies remain restorable |
+| 68. Obsolescence analysis under modern models/harnesses | complete | 353 unique installed skills scored on cli/endpoint/key/code/calls; 3 tiers written to reports/usage/obsolescence-analysis-2026-11-02.md |
+| 69. Archive obsolete local copies | complete | 193 skills / 300 copies archived; Qoder 292→132, Codex 241→100; --include-active added to uninstall_skills.py |
+| 70. Retire obsolete skills from the repo with re-import guard | complete | 132 removed (436→304); catalog/retired-skills.json + discover/import guard + tests/test_retired_guard.py; syntax gate re-execs to python>=3.12 |

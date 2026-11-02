@@ -8,10 +8,29 @@ memory (no bytecode artifacts) and runs `node --check` on JavaScript when node
 is available, failing the cycle on the first broken file.
 """
 import json
+import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+MIN_PARSER = (3, 12)  # upstream code uses PEP 701 f-strings; older parsers false-positive
+
+
+def reexec_with_newer_python() -> None:
+    """Re-run under a >= 3.12 interpreter when the current one is older."""
+    if sys.version_info >= MIN_PARSER or os.environ.get("SKILL_SYNTAX_NO_REEXEC"):
+        return
+    candidates = ["python3.14", "python3.13", "python3.12", "/opt/homebrew/bin/python3"]
+    for name in candidates:
+        exe = shutil.which(name) if not name.startswith("/") else (name if Path(name).exists() else None)
+        if not exe:
+            continue
+        probe = subprocess.run([exe, "-c", "import sys; print(sys.version_info >= (3, 12))"], capture_output=True, text=True)
+        if probe.stdout.strip() == "True":
+            os.environ["SKILL_SYNTAX_NO_REEXEC"] = "1"
+            os.execv(exe, [exe, *sys.argv])
+    print(f"[WARN] python {sys.version.split()[0]} < 3.12 and no newer interpreter found; PEP 701 f-strings may be reported as errors", file=sys.stderr)
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills" / "default"
@@ -83,4 +102,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    reexec_with_newer_python()
     raise SystemExit(main())

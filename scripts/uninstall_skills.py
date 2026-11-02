@@ -59,6 +59,11 @@ def active_skills() -> set[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--confirm", action="store_true", help="execute the pending uninstall (default: dry-run preview)")
+    parser.add_argument(
+        "--include-active",
+        action="store_true",
+        help="also archive skills with recent usage (explicit user decision, e.g. obsolescence cleanup)",
+    )
     args = parser.parse_args()
 
     pending = load_pending()
@@ -69,7 +74,7 @@ def main() -> int:
         print(json.dumps({"error": f"pending cleanup status is {pending.get('status')!r}, not 'pending'"}, ensure_ascii=False))
         return 1
 
-    active = active_skills()
+    active = set() if args.include_active else active_skills()
     results = []
     for item in pending.get("items", []):
         skill = item["skill"]

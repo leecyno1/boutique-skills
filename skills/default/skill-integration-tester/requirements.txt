@@ -1,1 +1,0 @@
-# stdlib-only: packaged scripts use the Python standard library only.
