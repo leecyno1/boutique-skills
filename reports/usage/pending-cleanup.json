@@ -1,50 +1,505 @@
 {
-  "generated_at": "2026-09-30T21:27:32",
-  "status": "pending",
-  "source_report": "recommendations-2026-09-30.json",
+  "generated_at": "2026-11-02T12:36:24",
+  "status": "executed",
+  "source_report": "recommendations-2026-11-02.json",
   "note": "uninstall is archive-based and runs only via scripts/uninstall_skills.py --confirm",
   "items": [
     {
-      "skill": "wechat-topic-outline-planner",
+      "skill": "using-git-worktrees",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/wechat-topic-outline-planner",
-      "reason": "未收录且已 154 天未使用（历史 12 次）"
+      "path": "/Users/lichengyin/.qoder/skills/using-git-worktrees",
+      "reason": "未收录且已 112 天未使用（历史 3 次）"
     },
     {
-      "skill": "openclaw-stock",
+      "skill": "finishing-a-development-branch",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/openclaw-stock",
-      "reason": "未收录且已 179 天未使用（历史 6 次）"
+      "path": "/Users/lichengyin/.qoder/skills/finishing-a-development-branch",
+      "reason": "未收录且已 112 天未使用（历史 2 次）"
     },
     {
-      "skill": "openclaw-stock-analyzer",
+      "skill": "requesting-code-review",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/openclaw-stock-analyzer",
-      "reason": "未收录且已 179 天未使用（历史 6 次）"
+      "path": "/Users/lichengyin/.qoder/skills/requesting-code-review",
+      "reason": "未收录且已 113 天未使用（历史 2 次）"
     },
     {
-      "skill": "stock_datasource",
+      "skill": "equity-deep-research",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/stock_datasource",
-      "reason": "未收录且已 179 天未使用（历史 6 次）"
+      "path": "/Users/lichengyin/.qoder/skills/equity-deep-research",
+      "reason": "未收录且已 101 天未使用（历史 1 次）"
+    },
+    {
+      "skill": "agent-sort",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/agent-sort",
+      "reason": "未收录于仓库且从未记录到调用，已安装 110 天"
+    },
+    {
+      "skill": "algorithmic-art",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/algorithmic-art",
+      "reason": "未收录于仓库且从未记录到调用，已安装 101 天"
+    },
+    {
+      "skill": "algorithmic-art",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/algorithmic-art",
+      "reason": "未收录于仓库且从未记录到调用，已安装 152 天"
+    },
+    {
+      "skill": "animated-financial-display",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/animated-financial-display",
+      "reason": "未收录于仓库且从未记录到调用，已安装 101 天"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-financial-plan",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-financial-plan",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-portfolio-rebalance",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-tax-loss-harvesting",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
+    },
+    {
+      "skill": "baoyu-imagine",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/baoyu-imagine",
+      "reason": "未收录于仓库且从未记录到调用，已安装 186 天"
+    },
+    {
+      "skill": "claude-shorts",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/claude-shorts",
+      "reason": "未收录于仓库且从未记录到调用，已安装 101 天"
+    },
+    {
+      "skill": "council",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/council",
+      "reason": "未收录于仓库且从未记录到调用，已安装 152 天"
+    },
+    {
+      "skill": "install-skill-dependency",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/install-skill-dependency",
+      "reason": "未收录于仓库且从未记录到调用，已安装 155 天"
+    },
+    {
+      "skill": "iterative-retrieval",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/iterative-retrieval",
+      "reason": "未收录于仓库且从未记录到调用，已安装 152 天"
+    },
+    {
+      "skill": "langsmith-fetch",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/langsmith-fetch",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
     },
     {
       "skill": "lin-lefeng-perspective",
       "runtime": "codex",
       "path": "/Users/lichengyin/.codex/skills/lin-lefeng-perspective",
-      "reason": "未收录且已 106 天未使用（历史 3 次）"
+      "reason": "未收录于仓库且从未记录到调用，已安装 139 天"
     },
     {
-      "skill": "doc",
+      "skill": "nuwa-skill",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/nuwa-skill",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
+    },
+    {
+      "skill": "plankton-code-quality",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/plankton-code-quality",
+      "reason": "未收录于仓库且从未记录到调用，已安装 152 天"
+    },
+    {
+      "skill": "statistical-analysis",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/doc",
-      "reason": "未收录且已 154 天未使用（历史 2 次）"
+      "path": "/Users/lichengyin/.qoder/skills/statistical-analysis",
+      "reason": "未收录于仓库且从未记录到调用，已安装 81 天"
+    },
+    {
+      "skill": "statistical-power",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/statistical-power",
+      "reason": "未收录于仓库且从未记录到调用，已安装 81 天"
     },
     {
       "skill": "sun-lumin-perspective",
       "runtime": "codex",
       "path": "/Users/lichengyin/.codex/skills/sun-lumin-perspective",
-      "reason": "未收录且已 106 天未使用（历史 2 次）"
+      "reason": "未收录于仓库且从未记录到调用，已安装 139 天"
+    },
+    {
+      "skill": "tushare-api",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/tushare-api",
+      "reason": "未收录于仓库且从未记录到调用，已安装 89 天"
+    },
+    {
+      "skill": "video-wrapper",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/video-wrapper",
+      "reason": "未收录于仓库且从未记录到调用，已安装 101 天"
+    },
+    {
+      "skill": "wechat-public-cli",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/wechat-public-cli",
+      "reason": "未收录于仓库且从未记录到调用，已安装 127 天"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/wechat-title-generator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 186 天"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/wechat-title-generator",
+      "reason": "未收录于仓库且从未记录到调用，已安装 155 天"
+    },
+    {
+      "skill": "workspace-surface-audit",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/workspace-surface-audit",
+      "reason": "未收录于仓库且从未记录到调用，已安装 110 天"
+    },
+    {
+      "skill": "openclaw-stock",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/openclaw-stock",
+      "reason": "长期零调用（上次统计 179 天未用），已被仓库内股票数据技能取代"
+    },
+    {
+      "skill": "openclaw-stock-analyzer",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/openclaw-stock-analyzer",
+      "reason": "长期零调用（上次统计 179 天未用），已被仓库内股票数据技能取代"
+    },
+    {
+      "skill": "stock_datasource",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/stock_datasource",
+      "reason": "长期零调用（上次统计 179 天未用），已被仓库内股票数据技能取代"
+    },
+    {
+      "skill": "doc",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/doc",
+      "reason": "长期零调用（上次统计 154 天未用），未收录"
+    },
+    {
+      "skill": "wechat-topic-outline-planner",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/wechat-topic-outline-planner",
+      "reason": "长期零调用（上次统计 154 天未用），未收录"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-financial-plan",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-financial-plan",
+      "reason": "仓库已出库的上游删除技能，本地零调用"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-portfolio-rebalance",
+      "reason": "仓库已出库的上游删除技能，本地零调用"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-tax-loss-harvesting",
+      "reason": "仓库已出库的上游删除技能，本地零调用"
+    },
+    {
+      "skill": "funda-data",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/funda-data",
+      "reason": "仓库已出库的上游删除技能，本地零调用"
+    }
+  ],
+  "executed_at": "2026-11-02T04:37:53+00:00",
+  "results": [
+    {
+      "skill": "using-git-worktrees",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/using-git-worktrees",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/using-git-worktrees"
+    },
+    {
+      "skill": "finishing-a-development-branch",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/finishing-a-development-branch",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/finishing-a-development-branch"
+    },
+    {
+      "skill": "requesting-code-review",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/requesting-code-review",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/requesting-code-review"
+    },
+    {
+      "skill": "equity-deep-research",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/equity-deep-research",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/equity-deep-research"
+    },
+    {
+      "skill": "agent-sort",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/agent-sort",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/agent-sort"
+    },
+    {
+      "skill": "algorithmic-art",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/algorithmic-art",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/algorithmic-art"
+    },
+    {
+      "skill": "algorithmic-art",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/algorithmic-art",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/algorithmic-art"
+    },
+    {
+      "skill": "animated-financial-display",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/animated-financial-display",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/animated-financial-display"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-financial-plan",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-financial-plan",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/anthropic-fs-wealth-management-financial-plan"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-portfolio-rebalance",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/anthropic-fs-wealth-management-portfolio-rebalance"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/anthropic-fs-wealth-management-tax-loss-harvesting",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/anthropic-fs-wealth-management-tax-loss-harvesting"
+    },
+    {
+      "skill": "baoyu-imagine",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/baoyu-imagine",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/baoyu-imagine"
+    },
+    {
+      "skill": "claude-shorts",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/claude-shorts",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/claude-shorts"
+    },
+    {
+      "skill": "council",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/council",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/council"
+    },
+    {
+      "skill": "install-skill-dependency",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/install-skill-dependency",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/install-skill-dependency"
+    },
+    {
+      "skill": "iterative-retrieval",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/iterative-retrieval",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/iterative-retrieval"
+    },
+    {
+      "skill": "langsmith-fetch",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/langsmith-fetch",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/langsmith-fetch"
+    },
+    {
+      "skill": "lin-lefeng-perspective",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/lin-lefeng-perspective",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/lin-lefeng-perspective"
+    },
+    {
+      "skill": "nuwa-skill",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/nuwa-skill",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/nuwa-skill"
+    },
+    {
+      "skill": "plankton-code-quality",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/plankton-code-quality",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/plankton-code-quality"
+    },
+    {
+      "skill": "statistical-analysis",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/statistical-analysis",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/statistical-analysis"
+    },
+    {
+      "skill": "statistical-power",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/statistical-power",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/statistical-power"
+    },
+    {
+      "skill": "sun-lumin-perspective",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/sun-lumin-perspective",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/sun-lumin-perspective"
+    },
+    {
+      "skill": "tushare-api",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/tushare-api",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/tushare-api"
+    },
+    {
+      "skill": "video-wrapper",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/video-wrapper",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/video-wrapper"
+    },
+    {
+      "skill": "wechat-public-cli",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/wechat-public-cli",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/wechat-public-cli"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/wechat-title-generator",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/wechat-title-generator"
+    },
+    {
+      "skill": "wechat-title-generator",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/wechat-title-generator",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/wechat-title-generator"
+    },
+    {
+      "skill": "workspace-surface-audit",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/workspace-surface-audit",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/workspace-surface-audit"
+    },
+    {
+      "skill": "openclaw-stock",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/openclaw-stock",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/openclaw-stock"
+    },
+    {
+      "skill": "openclaw-stock-analyzer",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/openclaw-stock-analyzer",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/openclaw-stock-analyzer"
+    },
+    {
+      "skill": "stock_datasource",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/stock_datasource",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/stock_datasource"
+    },
+    {
+      "skill": "doc",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/doc",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/doc"
+    },
+    {
+      "skill": "wechat-topic-outline-planner",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/wechat-topic-outline-planner",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/wechat-topic-outline-planner"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-financial-plan",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-financial-plan",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/anthropic-fs-wealth-management-financial-plan"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-portfolio-rebalance",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-portfolio-rebalance",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/anthropic-fs-wealth-management-portfolio-rebalance"
+    },
+    {
+      "skill": "anthropic-fs-wealth-management-tax-loss-harvesting",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/anthropic-fs-wealth-management-tax-loss-harvesting",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/anthropic-fs-wealth-management-tax-loss-harvesting"
+    },
+    {
+      "skill": "funda-data",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/funda-data",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/funda-data"
     }
   ]
 }

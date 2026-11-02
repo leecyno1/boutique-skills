@@ -136,3 +136,11 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 62. Archive the stale desktop clone | complete | /Volumes/PSSD/Projects/boutique-skills.stale-desktop-2026-10-31 (521MB, no tracked changes left behind) |
 | 63. Install agent-reach into Qoder | complete | ~/.qoder/skills/agent-reach -> repo skills/default/agent-reach; CLI verified |
 | 64. Verify single-branch state | complete | only main on local, origin and gitee |
+
+## Local Skills Cleanup (2026-11-02)
+
+| Phase | Status | Output |
+|---|---|---|
+| 65. Refresh telemetry and rebuild cleanup candidates | complete | 576 installed; 29 engine candidates + 9 manual long-stale/repo-deleted = 38 |
+| 66. Archive unused skills and junk | complete | Qoder 312→292, Codex 263→241; 3 broken links, 2 empty dirs, 1 old backup cleaned |
+| 67. Record cleanup and publish | complete | findings.md, QODER_HANDOFF.md and reports/usage refreshed; archived copies remain restorable |

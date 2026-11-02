@@ -1,0 +1,4418 @@
+{
+  "generated_at": "2026-11-02T12:36:24",
+  "window_days": 30,
+  "session_files_scanned": 601,
+  "session_files_skipped_unchanged": 280,
+  "skill_calls_total": 9793,
+  "skill_calls_recent": 6093,
+  "distinct_skills_used": 309,
+  "by_source": {
+    "qoder": 659,
+    "codex": 9134
+  },
+  "privacy": "local aggregation only: skill names, timestamps, session ids, working directories; no message content stored",
+  "skills": {
+    "tdd-workflow": {
+      "calls": 991,
+      "sessions": 8,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T15:19:26.434000+00:00",
+      "first_used": "2026-07-12T02:15:33.982000+00:00",
+      "days_since_last_use": 0.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 936
+    },
+    "e2e-testing": {
+      "calls": 972,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T02:40:00.619000+00:00",
+      "first_used": "2026-07-21T10:29:13.738000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 482
+    },
+    "security-review": {
+      "calls": 667,
+      "sessions": 8,
+      "projects": 6,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T02:56:38.630000+00:00",
+      "first_used": "2026-07-11T13:06:43.612000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 547
+    },
+    "frontend-patterns": {
+      "calls": 534,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T04:34:01+00:00",
+      "first_used": "2026-07-11T14:29:24.872000+00:00",
+      "days_since_last_use": 0.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 493
+    },
+    "using-coze-cli": {
+      "calls": 504,
+      "sessions": 9,
+      "projects": 8,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-29T07:42:07.046000+00:00",
+      "first_used": "2026-08-15T23:45:58.448025+00:00",
+      "days_since_last_use": 3.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 499
+    },
+    "search-first": {
+      "calls": 485,
+      "sessions": 8,
+      "projects": 6,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:56:47.126000+00:00",
+      "first_used": "2026-06-06T22:27:45.358000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 304
+    },
+    "frontend-design": {
+      "calls": 372,
+      "sessions": 12,
+      "projects": 9,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-11-01T07:32:19.217000+00:00",
+      "first_used": "2026-08-05T09:20:54.098000+00:00",
+      "days_since_last_use": 0.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 211
+    },
+    "production-audit": {
+      "calls": 322,
+      "sessions": 6,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T02:56:59.585000+00:00",
+      "first_used": "2026-07-13T11:10:26.321000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 71
+    },
+    "api-design": {
+      "calls": 235,
+      "sessions": 6,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T02:11:28.219000+00:00",
+      "first_used": "2026-08-14T09:02:35.540000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 179
+    },
+    "error-handling": {
+      "calls": 232,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-31T19:00:19.468000+00:00",
+      "first_used": "2026-08-09T23:52:50.463000+00:00",
+      "days_since_last_use": 1.4,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 204
+    },
+    "backend-patterns": {
+      "calls": 229,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T04:33:50.150000+00:00",
+      "first_used": "2026-07-12T00:28:19.384000+00:00",
+      "days_since_last_use": 0.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 187
+    },
+    "finance-data-router": {
+      "calls": 209,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T03:58:06.475000+00:00",
+      "first_used": "2026-08-13T04:57:55.532000+00:00",
+      "days_since_last_use": 1.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 161
+    },
+    "control-chrome": {
+      "calls": 199,
+      "sessions": 8,
+      "projects": 7,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-03T08:45:07.135000+00:00",
+      "first_used": "2026-06-07T05:12:29.852000+00:00",
+      "days_since_last_use": 59.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "a-stock-data": {
+      "calls": 179,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-30T09:27:05.017000+00:00",
+      "first_used": "2026-07-13T09:49:38.922000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 60
+    },
+    "improve-codebase-architecture": {
+      "calls": 172,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T13:07:48.131000+00:00",
+      "first_used": "2026-07-11T09:56:53.059000+00:00",
+      "days_since_last_use": 0.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 64
+    },
+    "ai-regression-testing": {
+      "calls": 160,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T18:35:36.502000+00:00",
+      "first_used": "2026-07-21T10:29:13.738000+00:00",
+      "days_since_last_use": 0.4,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 99
+    },
+    "playwright": {
+      "calls": 147,
+      "sessions": 7,
+      "projects": 6,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T23:03:21.592000+00:00",
+      "first_used": "2026-07-13T11:15:11.612000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 57
+    },
+    "superpowers:verification-before-completion": {
+      "calls": 119,
+      "sessions": 8,
+      "projects": 8,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-27T09:59:22.686000+00:00",
+      "first_used": "2026-09-19T03:43:20.542000+00:00",
+      "days_since_last_use": 5.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 65
+    },
+    "superpowers:test-driven-development": {
+      "calls": 116,
+      "sessions": 6,
+      "projects": 6,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-01T09:29:06.992000+00:00",
+      "first_used": "2026-09-19T03:42:04.173000+00:00",
+      "days_since_last_use": 0.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 72
+    },
+    "iosdev-cn": {
+      "calls": 108,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-25T07:22:18.226000+00:00",
+      "first_used": "2026-08-10T05:00:34.604000+00:00",
+      "days_since_last_use": 7.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 43
+    },
+    "superpowers:using-superpowers": {
+      "calls": 91,
+      "sessions": 7,
+      "projects": 7,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-31T12:21:54.026000+00:00",
+      "first_used": "2026-09-19T03:30:39.437000+00:00",
+      "days_since_last_use": 1.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 34
+    },
+    "control-in-app-browser": {
+      "calls": 88,
+      "sessions": 10,
+      "projects": 8,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-15T09:54:16.509000+00:00",
+      "first_used": "2026-06-01T23:09:59.391000+00:00",
+      "days_since_last_use": 17.8,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "dasheng-daily-draft": {
+      "calls": 84,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:50:22.979000+00:00",
+      "first_used": "2026-08-13T04:57:55.524000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 74
+    },
+    "webapp-testing": {
+      "calls": 79,
+      "sessions": 13,
+      "projects": 11,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-11-01T08:29:35.139000+00:00",
+      "first_used": "2026-06-01T23:08:48.520000+00:00",
+      "days_since_last_use": 0.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 61
+    },
+    "dasheng-vox-skills": {
+      "calls": 76,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T14:55:32.648000+00:00",
+      "first_used": "2026-08-13T04:57:55.508000+00:00",
+      "days_since_last_use": 5.6,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 12
+    },
+    "agent-reach": {
+      "calls": 74,
+      "sessions": 19,
+      "projects": 7,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-11-01T15:01:57.882000+00:00",
+      "first_used": "2026-08-03T12:29:21.900221+00:00",
+      "days_since_last_use": 0.6,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 55
+    },
+    "computer-use": {
+      "calls": 72,
+      "sessions": 5,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-27T22:49:44.479000+00:00",
+      "first_used": "2026-07-11T13:30:05.663000+00:00",
+      "days_since_last_use": 66.2,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-stage-transwrite": {
+      "calls": 64,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T12:05:28.778000+00:00",
+      "first_used": "2026-08-13T04:57:55.528000+00:00",
+      "days_since_last_use": 5.7,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 47
+    },
+    "backtest-expert": {
+      "calls": 54,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T22:20:33.456000+00:00",
+      "first_used": "2026-09-26T08:27:43.248000+00:00",
+      "days_since_last_use": 3.3,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 51
+    },
+    "openai-docs": {
+      "calls": 52,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T03:57:16.676000+00:00",
+      "first_used": "2026-08-05T07:55:11.099000+00:00",
+      "days_since_last_use": 0.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 32
+    },
+    "superpowers:systematic-debugging": {
+      "calls": 51,
+      "sessions": 8,
+      "projects": 8,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-29T12:10:03.777000+00:00",
+      "first_used": "2026-09-19T03:31:17.667000+00:00",
+      "days_since_last_use": 3.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 19
+    },
+    "documentation-lookup": {
+      "calls": 51,
+      "sessions": 7,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T11:02:50.586000+00:00",
+      "first_used": "2026-07-26T13:48:13.270000+00:00",
+      "days_since_last_use": 0.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 42
+    },
+    "agent-introspection-debugging": {
+      "calls": 50,
+      "sessions": 7,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-31T04:53:53.879000+00:00",
+      "first_used": "2026-08-10T00:50:59.812000+00:00",
+      "days_since_last_use": 2.0,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 27
+    },
+    "frontend-testing-debugging": {
+      "calls": 46,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T13:58:04.595000+00:00",
+      "first_used": "2026-07-12T03:37:13.624000+00:00",
+      "days_since_last_use": 8.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 35
+    },
+    "emil-design-eng": {
+      "calls": 46,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T03:25:32.559000+00:00",
+      "first_used": "2026-10-26T00:56:51.244000+00:00",
+      "days_since_last_use": 0.0,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 46
+    },
+    "codex-image-bridge": {
+      "calls": 45,
+      "sessions": 6,
+      "projects": 5,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T14:31:08.502000+00:00",
+      "first_used": "2026-08-22T00:53:34.847000+00:00",
+      "days_since_last_use": 0.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 17
+    },
+    "apple-design": {
+      "calls": 40,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-11-01T09:44:02.687000+00:00",
+      "first_used": "2026-07-24T03:24:37.999838+00:00",
+      "days_since_last_use": 0.8,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 10
+    },
+    "imagegen": {
+      "calls": 39,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T15:23:34.867000+00:00",
+      "first_used": "2026-07-24T23:24:20.729000+00:00",
+      "days_since_last_use": 14.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "global-stock-data": {
+      "calls": 37,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T22:26:23.982000+00:00",
+      "first_used": "2026-08-15T00:09:06.661000+00:00",
+      "days_since_last_use": 2.3,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 23
+    },
+    "dasheng-video-vox": {
+      "calls": 37,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T07:34:54.229000+00:00",
+      "first_used": "2026-08-13T04:57:55.491000+00:00",
+      "days_since_last_use": 79.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-daily-intake": {
+      "calls": 37,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T06:29:03.566000+00:00",
+      "first_used": "2026-08-13T04:57:55.521000+00:00",
+      "days_since_last_use": 11.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 34
+    },
+    "remotion-best-practices": {
+      "calls": 35,
+      "sessions": 3,
+      "projects": 1,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-29T03:58:11.332000+00:00",
+      "first_used": "2026-08-13T04:57:55.667000+00:00",
+      "days_since_last_use": 4.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 14
+    },
+    "skill-creator": {
+      "calls": 34,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T05:45:09.775000+00:00",
+      "first_used": "2026-08-13T04:57:55.491000+00:00",
+      "days_since_last_use": 9.0,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 14
+    },
+    "remotion-video-skill": {
+      "calls": 34,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T14:01:10.016000+00:00",
+      "first_used": "2026-08-13T04:57:55.667000+00:00",
+      "days_since_last_use": 5.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 7
+    },
+    "dasheng-video-director": {
+      "calls": 34,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-25T03:23:48.146000+00:00",
+      "first_used": "2026-08-14T02:03:00.531000+00:00",
+      "days_since_last_use": 8.1,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 4
+    },
+    "skill-scout": {
+      "calls": 33,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T08:04:50.032000+00:00",
+      "first_used": "2026-08-17T00:21:35.060000+00:00",
+      "days_since_last_use": 3.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 24
+    },
+    "coding-standards": {
+      "calls": 31,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T19:46:33.366000+00:00",
+      "first_used": "2026-09-11T10:41:27.352000+00:00",
+      "days_since_last_use": 6.4,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 20
+    },
+    "baoyu-markdown-to-html": {
+      "calls": 31,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:41:19.132000+00:00",
+      "first_used": "2026-08-24T05:09:55.403000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "data-quality-checker": {
+      "calls": 30,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T03:36:43.808000+00:00",
+      "first_used": "2026-08-15T00:01:41.556000+00:00",
+      "days_since_last_use": 1.0,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 25
+    },
+    "dasheng-video-omni-browser": {
+      "calls": 30,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-01T12:18:39.184000+00:00",
+      "first_used": "2026-08-13T04:57:55.491000+00:00",
+      "days_since_last_use": 31.7,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "verification-before-completion": {
+      "calls": 28,
+      "sessions": 9,
+      "projects": 9,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-30T14:26:58.902000+00:00",
+      "first_used": "2026-06-01T23:08:48.536000+00:00",
+      "days_since_last_use": 2.6,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 10
+    },
+    "scroll-world": {
+      "calls": 28,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-25T06:39:55.608000+00:00",
+      "first_used": "2026-07-24T23:01:32.827000+00:00",
+      "days_since_last_use": 99.9,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "pdf": {
+      "calls": 27,
+      "sessions": 6,
+      "projects": 6,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-11-02T00:02:20.801000+00:00",
+      "first_used": "2026-08-13T04:57:55.588000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 12
+    },
+    "superpowers:requesting-code-review": {
+      "calls": 25,
+      "sessions": 5,
+      "projects": 5,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-27T09:43:24.173000+00:00",
+      "first_used": "2026-09-19T05:14:39.687000+00:00",
+      "days_since_last_use": 5.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 14
+    },
+    "react-best-practices": {
+      "calls": 25,
+      "sessions": 5,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T13:58:52.013000+00:00",
+      "first_used": "2026-07-11T08:26:37.256000+00:00",
+      "days_since_last_use": 8.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 20
+    },
+    "dasheng-video-roughcut": {
+      "calls": 25,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:41:15.963000+00:00",
+      "first_used": "2026-08-14T07:34:35.409000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 18
+    },
+    "systematic-debugging": {
+      "calls": 24,
+      "sessions": 7,
+      "projects": 7,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-25T15:13:26.467000+00:00",
+      "first_used": "2026-07-11T08:21:08.928000+00:00",
+      "days_since_last_use": 7.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "superpowers:receiving-code-review": {
+      "calls": 24,
+      "sessions": 6,
+      "projects": 6,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-01T03:32:47.380000+00:00",
+      "first_used": "2026-09-19T11:14:36.837000+00:00",
+      "days_since_last_use": 1.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 15
+    },
+    "frontend-app-builder": {
+      "calls": 24,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T15:23:24.297000+00:00",
+      "first_used": "2026-07-13T09:51:15.672000+00:00",
+      "days_since_last_use": 14.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "codebase-onboarding": {
+      "calls": 23,
+      "sessions": 6,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:41:56.613000+00:00",
+      "first_used": "2026-06-01T13:44:07.781000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 8
+    },
+    "dasheng-video-talking-head": {
+      "calls": 23,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T11:22:02.110000+00:00",
+      "first_used": "2026-08-13T04:57:55.649000+00:00",
+      "days_since_last_use": 5.7,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 1
+    },
+    "newma-draft": {
+      "calls": 23,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T07:58:37.961000+00:00",
+      "first_used": "2026-10-23T23:42:54.116000+00:00",
+      "days_since_last_use": 8.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 23
+    },
+    "superpowers:brainstorming": {
+      "calls": 22,
+      "sessions": 6,
+      "projects": 6,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-01T03:51:17.474000+00:00",
+      "first_used": "2026-09-19T03:29:07.018000+00:00",
+      "days_since_last_use": 1.0,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 15
+    },
+    "cut-talking-head": {
+      "calls": 22,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:41:56.613000+00:00",
+      "first_used": "2026-08-13T04:57:55.649000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 16
+    },
+    "dasheng-daily-phase2": {
+      "calls": 22,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T00:33:09.723000+00:00",
+      "first_used": "2026-08-24T00:31:45.300000+00:00",
+      "days_since_last_use": 12.2,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 19
+    },
+    "media-downloader": {
+      "calls": 20,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-30T07:38:11.586000+00:00",
+      "first_used": "2026-08-13T05:56:36.203000+00:00",
+      "days_since_last_use": 2.9,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 8
+    },
+    "test-driven-development": {
+      "calls": 20,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-27T02:28:00.380000+00:00",
+      "first_used": "2026-07-11T08:26:37.256000+00:00",
+      "days_since_last_use": 6.1,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 3
+    },
+    "hyperframes": {
+      "calls": 20,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T12:55:03.703000+00:00",
+      "first_used": "2026-06-05T14:05:45.065000+00:00",
+      "days_since_last_use": 2.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 14
+    },
+    "verification-loop": {
+      "calls": 18,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T15:39:24.576000+00:00",
+      "first_used": "2026-08-05T07:18:14.960000+00:00",
+      "days_since_last_use": 0.5,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 13
+    },
+    "anthropic-fs-equity-research-sector-overview": {
+      "calls": 18,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T22:33:09.600000+00:00",
+      "first_used": "2026-10-18T01:12:23.864000+00:00",
+      "days_since_last_use": 5.3,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 18
+    },
+    "baoyu-article-illustrator": {
+      "calls": 18,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T14:58:42.580000+00:00",
+      "first_used": "2026-08-13T04:57:55.579000+00:00",
+      "days_since_last_use": 69.6,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-media-sop": {
+      "calls": 18,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-25T11:25:12.967000+00:00",
+      "first_used": "2026-08-14T07:34:35.409000+00:00",
+      "days_since_last_use": 68.7,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "anatomy": {
+      "calls": 17,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-22T06:56:10.284000+00:00",
+      "first_used": "2026-10-16T16:08:10.679000+00:00",
+      "days_since_last_use": 10.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 17
+    },
+    "dasheng-video-explainer-html": {
+      "calls": 17,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-25T11:25:31.742000+00:00",
+      "first_used": "2026-08-13T04:57:55.651000+00:00",
+      "days_since_last_use": 68.7,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-digital-human-talking-head": {
+      "calls": 17,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-20T17:28:26.976000+00:00",
+      "first_used": "2026-08-13T05:17:38.108000+00:00",
+      "days_since_last_use": 12.5,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 6
+    },
+    "deep-research": {
+      "calls": 15,
+      "sessions": 4,
+      "projects": 3,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-30T13:03:48.373000+00:00",
+      "first_used": "2026-09-25T12:48:22.579000+00:00",
+      "days_since_last_use": 2.6,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 8
+    },
+    "minimalist-ui": {
+      "calls": 15,
+      "sessions": 4,
+      "projects": 3,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-25T00:28:28.331000+00:00",
+      "first_used": "2026-08-10T06:40:44.971000+00:00",
+      "days_since_last_use": 8.2,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "policy-monitor": {
+      "calls": 15,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-14T00:21:46.381000+00:00",
+      "first_used": "2026-08-15T14:49:15.298000+00:00",
+      "days_since_last_use": 19.2,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 4
+    },
+    "dasheng-style-profiler": {
+      "calls": 15,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T05:48:03.237000+00:00",
+      "first_used": "2026-08-13T04:57:55.577000+00:00",
+      "days_since_last_use": 9.0,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 12
+    },
+    "superpowers:writing-plans": {
+      "calls": 14,
+      "sessions": 5,
+      "projects": 5,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-01T08:00:36.686000+00:00",
+      "first_used": "2026-09-19T05:09:25.471000+00:00",
+      "days_since_last_use": 0.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 11
+    },
+    "codex-responses-tooling": {
+      "calls": 14,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T10:05:51.486000+00:00",
+      "first_used": "2026-08-09T01:42:53.705000+00:00",
+      "days_since_last_use": 0.8,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 2
+    },
+    "tushare-openclaw-skill": {
+      "calls": 13,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T22:34:13.917000+00:00",
+      "first_used": "2026-10-28T06:59:04.312000+00:00",
+      "days_since_last_use": 2.3,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 13
+    },
+    "baoyu-format-markdown": {
+      "calls": 12,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T11:11:35.135000+00:00",
+      "first_used": "2026-08-13T04:57:55.585000+00:00",
+      "days_since_last_use": 9.7,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "dasheng-account-illustrations": {
+      "calls": 12,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T05:30:05.303000+00:00",
+      "first_used": "2026-08-24T03:47:37.964000+00:00",
+      "days_since_last_use": 10.0,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 2
+    },
+    "baoyu-post-to-wechat": {
+      "calls": 12,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-19T01:58:39.204000+00:00",
+      "first_used": "2026-08-24T22:05:49.910000+00:00",
+      "days_since_last_use": 44.1,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "improve-animations": {
+      "calls": 12,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:37:20.789000+00:00",
+      "first_used": "2026-10-21T13:07:20.372000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 12
+    },
+    "superpowers:dispatching-parallel-agents": {
+      "calls": 11,
+      "sessions": 7,
+      "projects": 7,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-25T15:16:57.926000+00:00",
+      "first_used": "2026-09-19T05:09:35.860000+00:00",
+      "days_since_last_use": 7.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "design-taste-frontend": {
+      "calls": 11,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-14T12:53:02.666000+00:00",
+      "first_used": "2026-09-09T01:14:48.887000+00:00",
+      "days_since_last_use": 18.7,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "remotion-video-toolkit": {
+      "calls": 10,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T12:24:14.877000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 5.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 2
+    },
+    "dasheng-paradigm-profiler": {
+      "calls": 10,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T05:48:03.237000+00:00",
+      "first_used": "2026-10-18T05:57:56.946000+00:00",
+      "days_since_last_use": 9.0,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 10
+    },
+    "talking-head-guide": {
+      "calls": 10,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T00:51:52.636000+00:00",
+      "first_used": "2026-10-26T00:40:41.605000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 10
+    },
+    "lemon": {
+      "calls": 9,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-24T06:19:33.186000+00:00",
+      "first_used": "2026-06-28T04:17:24.709000+00:00",
+      "days_since_last_use": 8.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "skill-installer": {
+      "calls": 9,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T08:04:50.032000+00:00",
+      "first_used": "2026-07-24T23:01:06.083000+00:00",
+      "days_since_last_use": 3.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 3
+    },
+    "animation-vocabulary": {
+      "calls": 9,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T14:01:10.016000+00:00",
+      "first_used": "2026-08-14T02:16:04.977000+00:00",
+      "days_since_last_use": 5.6,
+      "in_registry": true,
+      "usage_bonus": 6,
+      "recent_calls": 3
+    },
+    "market-intel-lite": {
+      "calls": 9,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T15:26:51.504000+00:00",
+      "first_used": "2026-08-14T14:51:58.540000+00:00",
+      "days_since_last_use": 79.5,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "finish-talking-head": {
+      "calls": 9,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T02:55:02.529000+00:00",
+      "first_used": "2026-08-13T04:57:55.649000+00:00",
+      "days_since_last_use": 7.1,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "dasheng-html-video-bridge": {
+      "calls": 9,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-15T04:15:22.759000+00:00",
+      "first_used": "2026-08-14T07:34:35.409000+00:00",
+      "days_since_last_use": 79.0,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "institutional-flow-tracker": {
+      "calls": 8,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-14T06:15:35.150000+00:00",
+      "first_used": "2026-08-15T15:39:10.597000+00:00",
+      "days_since_last_use": 18.9,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "anthropic-fs-financial-analysis-dcf-model": {
+      "calls": 8,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-20T09:51:29.801000+00:00",
+      "first_used": "2026-09-20T07:48:24.850000+00:00",
+      "days_since_last_use": 42.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-commercial-promo-video": {
+      "calls": 8,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-15T04:15:22.759000+00:00",
+      "first_used": "2026-08-14T08:59:53.324000+00:00",
+      "days_since_last_use": 79.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "baoyu-cover-image": {
+      "calls": 8,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-26T09:06:57.388000+00:00",
+      "first_used": "2026-08-26T02:02:37.239000+00:00",
+      "days_since_last_use": 67.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "superpowers:using-git-worktrees": {
+      "calls": 7,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-27T09:30:39.996000+00:00",
+      "first_used": "2026-10-01T12:33:11.048000+00:00",
+      "days_since_last_use": 5.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 5
+    },
+    "ecc-codex-ops": {
+      "calls": 7,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-01T10:05:51.486000+00:00",
+      "first_used": "2026-07-26T08:36:46.191000+00:00",
+      "days_since_last_use": 0.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 2
+    },
+    "video-rough-cut": {
+      "calls": 7,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T11:43:48.370000+00:00",
+      "first_used": "2026-10-25T03:41:27.452000+00:00",
+      "days_since_last_use": 2.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 7
+    },
+    "wechat-article-extractor-skill": {
+      "calls": 6,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-29T08:54:53.380000+00:00",
+      "first_used": "2026-07-12T03:15:57.112000+00:00",
+      "days_since_last_use": 3.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 2
+    },
+    "superpowers:finishing-a-development-branch": {
+      "calls": 6,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-27T10:01:48.412000+00:00",
+      "first_used": "2026-09-19T05:15:15.941000+00:00",
+      "days_since_last_use": 5.8,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 5
+    },
+    "superpowers:executing-plans": {
+      "calls": 6,
+      "sessions": 4,
+      "projects": 4,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-01T08:12:19.581000+00:00",
+      "first_used": "2026-09-19T05:09:55.239000+00:00",
+      "days_since_last_use": 0.9,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 5
+    },
+    "skill-stocktake": {
+      "calls": 6,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-10T02:45:25.696000+00:00",
+      "first_used": "2026-07-13T09:33:54.712000+00:00",
+      "days_since_last_use": 53.1,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-video-style-trainer": {
+      "calls": 6,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T14:05:13.981000+00:00",
+      "first_used": "2026-08-14T07:36:56.722000+00:00",
+      "days_since_last_use": 79.6,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-video-editing-bridge": {
+      "calls": 6,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T00:29:59.673000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 7.2,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "brandkit": {
+      "calls": 6,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T08:41:30.045000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "remotion-render": {
+      "calls": 6,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T11:12:50.710000+00:00",
+      "first_used": "2026-10-01T12:46:06.453000+00:00",
+      "days_since_last_use": 5.7,
+      "in_registry": false,
+      "usage_bonus": 6,
+      "recent_calls": 4
+    },
+    "directing-stickman-videos": {
+      "calls": 6,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T14:38:31.206000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 6
+    },
+    "wechat-draft-writer": {
+      "calls": 6,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:30:31.894000+00:00",
+      "first_used": "2026-10-19T01:25:40.170000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 6
+    },
+    "opencli-reader": {
+      "calls": 6,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:29:02.129000+00:00",
+      "first_used": "2026-10-23T10:24:09.504000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 6
+    },
+    "executing-plans": {
+      "calls": 5,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-26T08:17:41.667000+00:00",
+      "first_used": "2026-07-11T10:47:00.269000+00:00",
+      "days_since_last_use": 6.8,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 1
+    },
+    "superpowers:subagent-driven-development": {
+      "calls": 5,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-31T14:05:08.323000+00:00",
+      "first_used": "2026-10-25T07:16:20.568000+00:00",
+      "days_since_last_use": 1.6,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 5
+    },
+    "video-hyperframes": {
+      "calls": 5,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:25:50.168000+00:00",
+      "first_used": "2026-06-02T08:48:46.749000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 1
+    },
+    "data-visualization": {
+      "calls": 5,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T10:02:03.696000+00:00",
+      "first_used": "2026-10-18T05:57:48.499000+00:00",
+      "days_since_last_use": 14.8,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "presentations": {
+      "calls": 5,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-28T06:59:04.312000+00:00",
+      "first_used": "2026-10-15T09:51:37.116000+00:00",
+      "days_since_last_use": 4.9,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 5
+    },
+    "anthropic-fs-equity-research-catalyst-calendar": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-19T18:27:32.241000+00:00",
+      "first_used": "2026-08-14T07:15:25.501000+00:00",
+      "days_since_last_use": 13.4,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "macro-regime-detector": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-06T14:35:46.702000+00:00",
+      "first_used": "2026-08-17T00:23:16.969000+00:00",
+      "days_since_last_use": 26.6,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 2
+    },
+    "dasheng-caption-motion": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T07:34:35.409000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "investigation-video": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:52:21.943000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "wake": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:52:21.943000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "whiteboard-video": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:52:21.943000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "humanizer-zh": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:30:57.351000+00:00",
+      "first_used": "2026-10-23T10:24:27.258000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "deep-analysis": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:29:02.129000+00:00",
+      "first_used": "2026-10-23T10:25:21.164000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "video-use": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T01:03:48.679000+00:00",
+      "first_used": "2026-10-26T00:40:41.605000+00:00",
+      "days_since_last_use": 7.1,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 5
+    },
+    "reusable-footage-material": {
+      "calls": 5,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T12:25:39.335000+00:00",
+      "first_used": "2026-08-14T13:56:06.189000+00:00",
+      "days_since_last_use": 5.7,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 2
+    },
+    "voice": {
+      "calls": 5,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T14:55:32.649000+00:00",
+      "first_used": "2026-10-27T14:01:10.016000+00:00",
+      "days_since_last_use": 5.6,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 5
+    },
+    "brainstorming": {
+      "calls": 4,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-09-09T01:17:51.686059+00:00",
+      "first_used": "2026-07-11T03:33:37.407000+00:00",
+      "days_since_last_use": 54.1,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "pptx": {
+      "calls": 4,
+      "sessions": 3,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-28T06:54:24.741000+00:00",
+      "first_used": "2026-07-24T13:47:50.814317+00:00",
+      "days_since_last_use": 4.9,
+      "in_registry": true,
+      "usage_bonus": 5,
+      "recent_calls": 1
+    },
+    "using-superpowers": {
+      "calls": 4,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-10-25T15:09:42.404000+00:00",
+      "first_used": "2026-06-01T13:44:07.766000+00:00",
+      "days_since_last_use": 7.6,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "writing-plans": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-13T09:58:29.272000+00:00",
+      "first_used": "2026-07-11T10:47:36.392000+00:00",
+      "days_since_last_use": 111.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "contents": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T06:55:14.013000+00:00",
+      "first_used": "2026-08-22T00:55:07.293000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 3
+    },
+    "d3-data-visualization": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T10:02:03.696000+00:00",
+      "first_used": "2026-10-18T06:00:00.579000+00:00",
+      "days_since_last_use": 14.8,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "review-animations": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T11:49:18.259000+00:00",
+      "first_used": "2026-08-13T04:57:55.664000+00:00",
+      "days_since_last_use": 11.7,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 1
+    },
+    "alphaear-news": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-17T13:04:52.104000+00:00",
+      "first_used": "2026-08-12T23:30:08.099000+00:00",
+      "days_since_last_use": 15.6,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "market-environment-analysis": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-05T11:34:07.131000+00:00",
+      "first_used": "2026-08-17T00:23:16.969000+00:00",
+      "days_since_last_use": 27.7,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 1
+    },
+    "dcf-model": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-22T01:55:17.616000+00:00",
+      "first_used": "2026-09-20T09:51:29.801000+00:00",
+      "days_since_last_use": 41.1,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "anthropic-fs-equity-research-thesis-tracker": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-19T14:22:31.101000+00:00",
+      "first_used": "2026-10-18T15:22:14.042000+00:00",
+      "days_since_last_use": 13.6,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "anthropic-fs-financial-analysis-comps-analysis": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-20T00:17:48.185000+00:00",
+      "first_used": "2026-10-20T00:17:01.388000+00:00",
+      "days_since_last_use": 13.2,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "freecut": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T14:04:58.993000+00:00",
+      "first_used": "2026-08-14T07:46:22.297000+00:00",
+      "days_since_last_use": 79.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-html-anything-bridge": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T04:00:58.717000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 4.0,
+      "in_registry": true,
+      "usage_bonus": 5,
+      "recent_calls": 1
+    },
+    "hand-drawn-video-prompts": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:52:21.943000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "hyperframes-cli": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T08:09:26.617000+00:00",
+      "first_used": "2026-10-17T04:37:32.742000+00:00",
+      "days_since_last_use": 2.9,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 4
+    },
+    "uzi-skill": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:29:53.972000+00:00",
+      "first_used": "2026-10-19T01:29:27.019000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 4
+    },
+    "video-frames": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T10:00:38.801000+00:00",
+      "first_used": "2026-10-29T04:42:14.103000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 4
+    },
+    "capcut_codex_plugin": {
+      "calls": 4,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T17:49:55.376000+00:00",
+      "first_used": "2026-10-29T11:25:51.692000+00:00",
+      "days_since_last_use": 3.4,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 4
+    },
+    "proof": {
+      "calls": 4,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T08:08:58.683000+00:00",
+      "first_used": "2026-10-27T07:06:47.908000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 5,
+      "recent_calls": 4
+    },
+    "read-memories": {
+      "calls": 3,
+      "sessions": 3,
+      "projects": 3,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-08T12:41:58.630550+00:00",
+      "first_used": "2026-09-08T12:41:36.157611+00:00",
+      "days_since_last_use": 54.7,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "citation-verification": {
+      "calls": 3,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-26T01:18:23.538000+00:00",
+      "first_used": "2026-08-16T02:49:59.167000+00:00",
+      "days_since_last_use": 37.1,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "sites:sites-hosting": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-11-02T00:40:51.036000+00:00",
+      "first_used": "2026-10-04T14:43:32.788000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "remotion": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-06-06T22:27:45.358000+00:00",
+      "first_used": "2026-06-06T22:24:11.293000+00:00",
+      "days_since_last_use": 148.3,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "using-git-worktrees": {
+      "calls": 3,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-13T10:21:00.661000+00:00",
+      "first_used": "2026-07-11T10:47:36.392000+00:00",
+      "days_since_last_use": 111.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "subagent-driven-development": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-12T00:28:19.384000+00:00",
+      "first_used": "2026-07-11T10:47:36.392000+00:00",
+      "days_since_last_use": 113.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "gsap": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T12:15:50.970000+00:00",
+      "first_used": "2026-10-21T12:15:17.403000+00:00",
+      "days_since_last_use": 11.7,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 3
+    },
+    "record-and-replay": {
+      "calls": 3,
+      "sessions": 3,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:18:36.562000+00:00",
+      "first_used": "2026-10-21T13:43:04.686000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "mcp-builder": {
+      "calls": 3,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T01:58:18.895000+00:00",
+      "first_used": "2026-08-09T11:52:53.589000+00:00",
+      "days_since_last_use": 6.1,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 2
+    },
+    "code-tour": {
+      "calls": 3,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T01:41:56.613000+00:00",
+      "first_used": "2026-08-11T14:13:46.554000+00:00",
+      "days_since_last_use": 0.1,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 1
+    },
+    "llmquant-macro": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-05T11:36:40.384000+00:00",
+      "first_used": "2026-08-18T06:46:52.356000+00:00",
+      "days_since_last_use": 27.7,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 1
+    },
+    "portfolio-manager": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-30T08:34:10.061000+00:00",
+      "first_used": "2026-08-18T07:23:53.581000+00:00",
+      "days_since_last_use": 32.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "dasheng-stage-draft": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.552000+00:00",
+      "first_used": "2026-08-13T04:57:55.524000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "video-shotcraft": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T13:45:29.216000+00:00",
+      "first_used": "2026-08-14T07:36:02.767000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 1
+    },
+    "seedance2-skill": {
+      "calls": 3,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-01T12:18:18.464000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 31.7,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "llmquant-commodities": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T09:55:21.152000+00:00",
+      "first_used": "2026-08-24T09:51:39.068000+00:00",
+      "days_since_last_use": 69.8,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "guizang-social-card-skill": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-26T05:27:19.739000+00:00",
+      "first_used": "2026-08-26T05:27:03.527000+00:00",
+      "days_since_last_use": 68.0,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "video-common": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:46:05.948000+00:00",
+      "first_used": "2026-10-16T12:44:56.817000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 3
+    },
+    "sweety-handdraw-video": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:52:21.943000+00:00",
+      "first_used": "2026-10-16T12:45:24.498000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 3
+    },
+    "khazix-skills": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:24:27.258000+00:00",
+      "first_used": "2026-10-19T01:29:27.019000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": true,
+      "usage_bonus": 3,
+      "recent_calls": 3
+    },
+    "khazix-writer": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T10:28:42.845000+00:00",
+      "first_used": "2026-10-23T10:28:27.396000+00:00",
+      "days_since_last_use": 9.8,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 3
+    },
+    "video-pipeline": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:14:47.575000+00:00",
+      "first_used": "2026-10-27T06:59:33.107000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "alphaear-logic-visualizer": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T14:55:32.648000+00:00",
+      "first_used": "2026-10-27T13:59:40.728000+00:00",
+      "days_since_last_use": 5.6,
+      "in_registry": true,
+      "usage_bonus": 4,
+      "recent_calls": 3
+    },
+    "find-animation-opportunities": {
+      "calls": 3,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T02:32:07.405000+00:00",
+      "first_used": "2026-08-14T02:16:04.977000+00:00",
+      "days_since_last_use": 80.1,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 0
+    },
+    "mmx-cli": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-08-25T00:46:20.336000+00:00",
+      "first_used": "2026-08-15T23:45:50.532621+00:00",
+      "days_since_last_use": 69.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "academic-research-suite": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-16T02:49:59.167000+00:00",
+      "first_used": "2026-08-15T14:47:01.066288+00:00",
+      "days_since_last_use": 78.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "pre-submission-reviewer": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-26T01:17:17.957000+00:00",
+      "first_used": "2026-08-18T15:26:50.410279+00:00",
+      "days_since_last_use": 37.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "md2wechat": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex",
+        "qoder"
+      ],
+      "last_used": "2026-08-20T23:54:43.000757+00:00",
+      "first_used": "2026-08-13T04:57:55.579000+00:00",
+      "days_since_last_use": 73.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "html-article-generator": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-30T13:00:28.493000+00:00",
+      "first_used": "2026-09-25T12:48:22.579000+00:00",
+      "days_since_last_use": 2.6,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 1
+    },
+    "zsxq": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-02T02:19:33.886000+00:00",
+      "first_used": "2026-09-19T01:46:23.983000+00:00",
+      "days_since_last_use": 31.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "lark-wiki": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-02T02:23:40.630000+00:00",
+      "first_used": "2026-10-01T05:33:17.015000+00:00",
+      "days_since_last_use": 31.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "create-plan": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-25T04:14:40.755000+00:00",
+      "first_used": "2026-10-25T02:30:42.736000+00:00",
+      "days_since_last_use": 8.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "frame-build-minimal": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-06-05T05:15:14.458000+00:00",
+      "first_used": "2026-06-05T05:11:36.610000+00:00",
+      "days_since_last_use": 150.0,
+      "in_registry": false,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "finishing-a-development-branch": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-13T11:57:42.430000+00:00",
+      "first_used": "2026-07-12T02:29:36.900000+00:00",
+      "days_since_last_use": 111.7,
+      "in_registry": false,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "triage": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-27T08:30:17.755000+00:00",
+      "first_used": "2026-08-05T13:54:00.134000+00:00",
+      "days_since_last_use": 66.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "SKILL": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-22T01:18:32.872000+00:00",
+      "first_used": "2026-08-22T00:44:18.639000+00:00",
+      "days_since_last_use": 72.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "requesting-code-review": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-07-12T00:58:54.879000+00:00",
+      "first_used": "2026-07-11T14:02:13.034000+00:00",
+      "days_since_last_use": 113.2,
+      "in_registry": false,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "documents": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T09:59:36.980000+00:00",
+      "first_used": "2026-10-21T09:59:17.860000+00:00",
+      "days_since_last_use": 11.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "main": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-21T13:46:34.596000+00:00",
+      "first_used": "2026-10-16T12:52:21.943000+00:00",
+      "days_since_last_use": 11.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "coze-agent-collaboration": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-27T13:18:31.689000+00:00",
+      "first_used": "2026-08-26T12:43:00.109000+00:00",
+      "days_since_last_use": 66.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "ios-debugger-agent": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T01:13:28.349000+00:00",
+      "first_used": "2026-10-18T00:46:26.547000+00:00",
+      "days_since_last_use": 15.1,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "alphaear-sentiment": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-12T23:36:09.706000+00:00",
+      "first_used": "2026-08-12T23:30:08.099000+00:00",
+      "days_since_last_use": 81.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "market-breadth-analyzer": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T01:31:14.952000+00:00",
+      "first_used": "2026-08-17T00:23:16.969000+00:00",
+      "days_since_last_use": 17.1,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "llmquant-risk": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-14T02:05:45.140000+00:00",
+      "first_used": "2026-09-12T00:11:30.364000+00:00",
+      "days_since_last_use": 49.1,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "economic-calendar-fetcher": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-05T11:34:21.029000+00:00",
+      "first_used": "2026-10-05T11:34:07.131000+00:00",
+      "days_since_last_use": 27.7,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "scenario-analyzer": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-05T11:34:21.029000+00:00",
+      "first_used": "2026-10-05T11:34:07.131000+00:00",
+      "days_since_last_use": 27.7,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "thesis-tracker": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-19T14:46:58.959000+00:00",
+      "first_used": "2026-10-19T05:09:21.234000+00:00",
+      "days_since_last_use": 13.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "dasheng-stage-brief-ai": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.522000+00:00",
+      "first_used": "2026-08-13T04:57:55.522000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "alphaear-search": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T00:25:05.812000+00:00",
+      "first_used": "2026-08-13T04:57:55.532000+00:00",
+      "days_since_last_use": 70.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-finance-data": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.573000+00:00",
+      "first_used": "2026-08-13T04:57:55.552000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "wechat-style-profiler": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.579000+00:00",
+      "first_used": "2026-08-13T04:57:55.577000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-video-self-learning": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T07:36:56.722000+00:00",
+      "first_used": "2026-08-14T07:34:35.409000+00:00",
+      "days_since_last_use": 79.9,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-ffmpeg-toolkit": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-video-broll-generator": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T08:03:13.547000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-hotspot-radar": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-17T08:31:13.106000+00:00",
+      "first_used": "2026-08-23T08:43:51.756000+00:00",
+      "days_since_last_use": 45.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "ian-xiaohei-illustrations": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T09:05:18.484000+00:00",
+      "first_used": "2026-08-24T08:17:46.240000+00:00",
+      "days_since_last_use": 69.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "310330cadcf41f5d2b15ee1c908d629e26d0a324": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T13:56:28.967000+00:00",
+      "first_used": "2026-10-16T13:46:59.805000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "skill-comment-insights": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T14:22:55.243000+00:00",
+      "first_used": "2026-10-16T14:19:47.450000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "skill-quality-gate": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T14:22:55.243000+00:00",
+      "first_used": "2026-10-16T14:19:47.450000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "696a7243c0e6ffb6827676e539c2ca5ebae2bf6b": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T14:38:31.206000+00:00",
+      "first_used": "2026-10-16T14:35:53.399000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "remotion-markup": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T16:13:24.281000+00:00",
+      "first_used": "2026-10-16T16:13:06.106000+00:00",
+      "days_since_last_use": 16.5,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "01-wechat-draft-writer": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:36:53.070000+00:00",
+      "first_used": "2026-10-23T23:35:50.330000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "02-khazix-writer": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:36:27.753000+00:00",
+      "first_used": "2026-10-23T23:35:50.330000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "05-opencli-reader": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:38:34.952000+00:00",
+      "first_used": "2026-10-23T23:36:53.070000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "04-uzi": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:38:34.952000+00:00",
+      "first_used": "2026-10-23T23:37:05.747000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 2
+    },
+    "autoclip": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:14:47.575000+00:00",
+      "first_used": "2026-10-27T06:55:57.743000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "skill": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T12:39:27.236000+00:00",
+      "first_used": "2026-08-24T12:39:09.973000+00:00",
+      "days_since_last_use": 69.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "story-to-handdrawn-video": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T12:39:27.236000+00:00",
+      "first_used": "2026-08-24T12:39:09.973000+00:00",
+      "days_since_last_use": 69.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-omni-video-bridge": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-01T13:13:41.148000+00:00",
+      "first_used": "2026-10-01T12:19:18.379000+00:00",
+      "days_since_last_use": 31.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "mcp-auth": {
+      "calls": 2,
+      "sessions": 2,
+      "projects": 2,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T17:49:19.252000+00:00",
+      "first_used": "2026-10-29T14:50:39.228000+00:00",
+      "days_since_last_use": 3.4,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "transcription": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-11-02T00:34:22.133000+00:00",
+      "first_used": "2026-11-02T00:34:08.784000+00:00",
+      "days_since_last_use": 0.2,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "shared": {
+      "calls": 2,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:38:43.538000+00:00",
+      "first_used": "2026-10-27T07:32:23.928000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 3,
+      "recent_calls": 2
+    },
+    "create-plugin": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T14:21:29.922308+00:00",
+      "first_used": "2026-08-15T14:21:29.922308+00:00",
+      "days_since_last_use": 78.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "idea-evaluator": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-15T14:22:36.493144+00:00",
+      "first_used": "2026-08-15T14:22:36.493144+00:00",
+      "days_since_last_use": 78.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "schedule": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-19T02:06:58.418996+00:00",
+      "first_used": "2026-08-19T02:06:58.418996+00:00",
+      "days_since_last_use": 75.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "drafter-diagram": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-21T21:48:37.461764+00:00",
+      "first_used": "2026-08-21T21:48:37.461764+00:00",
+      "days_since_last_use": 72.3,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "docx": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-07-28T22:41:23.840389+00:00",
+      "first_used": "2026-07-28T22:41:23.840389+00:00",
+      "days_since_last_use": 96.2,
+      "in_registry": true,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "security-scan": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-11T15:43:54.928000+00:00",
+      "first_used": "2026-09-11T15:43:54.928000+00:00",
+      "days_since_last_use": 51.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "equity-deep-research": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-07-24T12:55:49.761000+00:00",
+      "first_used": "2026-07-24T12:55:49.761000+00:00",
+      "days_since_last_use": 100.7,
+      "in_registry": false,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "experimental-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-16T02:49:59.167000+00:00",
+      "first_used": "2026-08-16T02:49:59.167000+00:00",
+      "days_since_last_use": 78.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "jiebang": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-08-18T11:47:32.406000+00:00",
+      "first_used": "2026-08-18T11:47:32.406000+00:00",
+      "days_since_last_use": 75.7,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "baoyu-url-to-markdown": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-09T13:10:23.033000+00:00",
+      "first_used": "2026-10-09T13:10:23.033000+00:00",
+      "days_since_last_use": 23.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "dispatching-parallel-agents": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-09T13:00:47.092000+00:00",
+      "first_used": "2026-10-09T13:00:47.092000+00:00",
+      "days_since_last_use": 23.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "baoyu-xhs-images": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-19T15:04:22.158000+00:00",
+      "first_used": "2026-10-19T15:04:22.158000+00:00",
+      "days_since_last_use": 13.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "lark-doc": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-02T02:29:22.315000+00:00",
+      "first_used": "2026-10-02T02:29:22.315000+00:00",
+      "days_since_last_use": 31.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "multi-search-engine": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-10-02T14:55:29.334000+00:00",
+      "first_used": "2026-10-02T14:55:29.334000+00:00",
+      "days_since_last_use": 30.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "scientific-figure-making": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-30T15:56:55.143000+00:00",
+      "first_used": "2026-09-30T15:56:55.143000+00:00",
+      "days_since_last_use": 32.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "content-research-writer": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "qoder"
+      ],
+      "last_used": "2026-09-26T01:47:23.282000+00:00",
+      "first_used": "2026-09-26T01:47:23.282000+00:00",
+      "days_since_last_use": 37.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "diagnose": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-06-02T01:22:51.336000+00:00",
+      "first_used": "2026-06-02T01:22:51.336000+00:00",
+      "days_since_last_use": 153.1,
+      "in_registry": false,
+      "usage_bonus": 0,
+      "recent_calls": 0
+    },
+    "gpt-image": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-22T00:08:32.265000+00:00",
+      "first_used": "2026-08-22T00:08:32.265000+00:00",
+      "days_since_last_use": 72.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "gpt-image-2-style-library": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-22T00:08:32.265000+00:00",
+      "first_used": "2026-08-22T00:08:32.265000+00:00",
+      "days_since_last_use": 72.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "ylsagi-image-generation": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-22T00:55:07.293000+00:00",
+      "first_used": "2026-08-22T00:55:07.293000+00:00",
+      "days_since_last_use": 72.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "landing-page-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T08:06:22.911000+00:00",
+      "first_used": "2026-10-29T08:06:22.911000+00:00",
+      "days_since_last_use": 3.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "redesign-existing-projects": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T08:06:46.219000+00:00",
+      "first_used": "2026-10-29T08:06:46.219000+00:00",
+      "days_since_last_use": 3.9,
+      "in_registry": true,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "dir": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-09T02:35:37.459000+00:00",
+      "first_used": "2026-08-09T02:35:37.459000+00:00",
+      "days_since_last_use": 85.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "1": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-19T03:03:15.994000+00:00",
+      "first_used": "2026-08-19T03:03:15.994000+00:00",
+      "days_since_last_use": 75.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "to-prd": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-23T12:54:28.499000+00:00",
+      "first_used": "2026-08-23T12:54:28.499000+00:00",
+      "days_since_last_use": 70.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "eval-harness": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-26T09:54:51.258000+00:00",
+      "first_used": "2026-08-26T09:54:51.258000+00:00",
+      "days_since_last_use": 67.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "chrome-control": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T10:10:57.606000+00:00",
+      "first_used": "2026-08-13T10:10:57.606000+00:00",
+      "days_since_last_use": 80.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "finance-sentiment": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-16T14:17:47.325000+00:00",
+      "first_used": "2026-08-16T14:17:47.325000+00:00",
+      "days_since_last_use": 77.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "etf-premium": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-17T00:23:16.969000+00:00",
+      "first_used": "2026-08-17T00:23:16.969000+00:00",
+      "days_since_last_use": 77.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "sector-rotation": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-17T01:45:36.347000+00:00",
+      "first_used": "2026-08-17T01:45:36.347000+00:00",
+      "days_since_last_use": 77.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "llmquant-credit": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-18T12:39:50.360000+00:00",
+      "first_used": "2026-08-18T12:39:50.360000+00:00",
+      "days_since_last_use": 75.7,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "llmquant-portfolio-lab": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-18T13:16:28.041000+00:00",
+      "first_used": "2026-08-18T13:16:28.041000+00:00",
+      "days_since_last_use": 75.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "llmquant-portfolio": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-12T00:11:30.364000+00:00",
+      "first_used": "2026-09-12T00:11:30.364000+00:00",
+      "days_since_last_use": 51.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "anthropic-fs-lseg-bond-futures-basis": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-12T08:03:48.947000+00:00",
+      "first_used": "2026-09-12T08:03:48.947000+00:00",
+      "days_since_last_use": 50.9,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "anthropic-fs-lseg-macro-rates-monitor": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-15T01:47:50.164000+00:00",
+      "first_used": "2026-10-15T01:47:50.164000+00:00",
+      "days_since_last_use": 18.1,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "macro-rates-monitor": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-15T03:58:32.375000+00:00",
+      "first_used": "2026-10-15T03:58:32.375000+00:00",
+      "days_since_last_use": 18.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "anthropic-fs-equity-research-earnings-analysis": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-18T23:43:38.179000+00:00",
+      "first_used": "2026-10-18T23:43:38.179000+00:00",
+      "days_since_last_use": 14.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "context-budget": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-19T17:51:48.882000+00:00",
+      "first_used": "2026-10-19T17:51:48.882000+00:00",
+      "days_since_last_use": 13.4,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "comps-analysis": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-20T00:18:18.957000+00:00",
+      "first_used": "2026-10-20T00:18:18.957000+00:00",
+      "days_since_last_use": 13.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "anthropic-fs-equity-research-idea-generation": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-20T00:39:50.668000+00:00",
+      "first_used": "2026-10-20T00:39:50.668000+00:00",
+      "days_since_last_use": 13.2,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "idea-generation": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-20T00:40:45.091000+00:00",
+      "first_used": "2026-10-20T00:40:45.091000+00:00",
+      "days_since_last_use": 13.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "dasheng-daily-transwrite": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.528000+00:00",
+      "first_used": "2026-08-13T04:57:55.528000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "remotion-video": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-13T04:57:55.667000+00:00",
+      "first_used": "2026-08-13T04:57:55.667000+00:00",
+      "days_since_last_use": 81.0,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-lemon-illustrations": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T08:19:58.553000+00:00",
+      "first_used": "2026-08-14T08:19:58.553000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "brand-guidelines": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T09:03:03.082000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "canvas-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T09:03:03.082000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "high-end-visual-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T09:03:03.082000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "web-animation-design": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-14T09:03:03.082000+00:00",
+      "first_used": "2026-08-14T09:03:03.082000+00:00",
+      "days_since_last_use": 79.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "d": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-22T01:17:09.006000+00:00",
+      "first_used": "2026-08-22T01:17:09.006000+00:00",
+      "days_since_last_use": 72.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "openchatcut": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-23T03:21:01.608000+00:00",
+      "first_used": "2026-08-23T03:21:01.608000+00:00",
+      "days_since_last_use": 71.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-stage-rewrite-v3": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T09:05:18.484000+00:00",
+      "first_used": "2026-08-24T09:05:18.484000+00:00",
+      "days_since_last_use": 69.8,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "sound-effects": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-25T20:41:28.913000+00:00",
+      "first_used": "2026-08-25T20:41:28.913000+00:00",
+      "days_since_last_use": 68.3,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-stage-publish": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-26T13:15:43.072000+00:00",
+      "first_used": "2026-08-26T13:15:43.072000+00:00",
+      "days_since_last_use": 67.6,
+      "in_registry": true,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "dasheng-daily-shared": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-09-17T08:42:59.809000+00:00",
+      "first_used": "2026-09-17T08:42:59.809000+00:00",
+      "days_since_last_use": 45.8,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "vox-director": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T12:47:21.834000+00:00",
+      "first_used": "2026-10-16T12:47:21.834000+00:00",
+      "days_since_last_use": 16.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "e9488296a44211c42701ff71705b7901470ec78f": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T13:10:06.369000+00:00",
+      "first_used": "2026-10-16T13:10:06.369000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "openfilm": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T13:22:35.177000+00:00",
+      "first_used": "2026-10-16T13:22:35.177000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "a7c29edfb2404612dde6a5a1c8aa94232e85625b": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T14:11:29.950000+00:00",
+      "first_used": "2026-10-16T14:11:29.950000+00:00",
+      "days_since_last_use": 16.6,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "skill-publish-analytics": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T16:04:33.029000+00:00",
+      "first_used": "2026-10-16T16:04:33.029000+00:00",
+      "days_since_last_use": 16.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "huashu-art-motion": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T16:07:06.525000+00:00",
+      "first_used": "2026-10-16T16:07:06.525000+00:00",
+      "days_since_last_use": 16.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "remotion-create": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T16:13:06.106000+00:00",
+      "first_used": "2026-10-16T16:13:06.106000+00:00",
+      "days_since_last_use": 16.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "remotion-interactivity": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-16T16:13:24.281000+00:00",
+      "first_used": "2026-10-16T16:13:24.281000+00:00",
+      "days_since_last_use": 16.5,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "draft": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-19T01:08:05.494000+00:00",
+      "first_used": "2026-10-19T01:08:05.494000+00:00",
+      "days_since_last_use": 14.1,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "03-humanizer-zh": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:37:05.747000+00:00",
+      "first_used": "2026-10-23T23:37:05.747000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "06-baoyu-format": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-23T23:37:17.131000+00:00",
+      "first_used": "2026-10-23T23:37:17.131000+00:00",
+      "days_since_last_use": 9.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "chengfeng-videocut-cut": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T00:42:53.635000+00:00",
+      "first_used": "2026-10-26T00:42:53.635000+00:00",
+      "days_since_last_use": 7.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "auto-editor": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T00:47:16.445000+00:00",
+      "first_used": "2026-10-26T00:47:16.445000+00:00",
+      "days_since_last_use": 7.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "auto-editor-export": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-26T00:47:26.942000+00:00",
+      "first_used": "2026-10-26T00:47:26.942000+00:00",
+      "days_since_last_use": 7.2,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 1
+    },
+    "speech_rough_cut_skill": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T06:53:07.398000+00:00",
+      "first_used": "2026-10-27T06:53:07.398000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "sprite-animation": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T04:01:40.390000+00:00",
+      "first_used": "2026-10-29T04:01:40.390000+00:00",
+      "days_since_last_use": 4.0,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "frame-glitch-title": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:25:50.168000+00:00",
+      "first_used": "2026-10-30T09:25:50.168000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "frame-liquid-bg-hero": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:25:50.168000+00:00",
+      "first_used": "2026-10-30T09:25:50.168000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "frame-flowchart-sticky": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:27:01.151000+00:00",
+      "first_used": "2026-10-30T09:27:01.151000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "mockup-device-3d": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-30T09:27:01.151000+00:00",
+      "first_used": "2026-10-30T09:27:01.151000+00:00",
+      "days_since_last_use": 2.8,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "book-video-factory": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T12:40:03.964000+00:00",
+      "first_used": "2026-08-24T12:40:03.964000+00:00",
+      "days_since_last_use": 69.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "classical-poem-silk-video": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-08-24T12:40:03.964000+00:00",
+      "first_used": "2026-08-24T12:40:03.964000+00:00",
+      "days_since_last_use": 69.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "skills-video-omni-browser": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-01T12:26:34.895000+00:00",
+      "first_used": "2026-10-01T12:26:34.895000+00:00",
+      "days_since_last_use": 31.7,
+      "in_registry": false,
+      "usage_bonus": 1,
+      "recent_calls": 0
+    },
+    "kanban-native-proof": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:10:45.185000+00:00",
+      "first_used": "2026-10-27T07:10:45.185000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "skill-1": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:10:45.185000+00:00",
+      "first_used": "2026-10-27T07:10:45.185000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "skill-79": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:10:45.185000+00:00",
+      "first_used": "2026-10-27T07:10:45.185000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "command-proof": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:46:13.515000+00:00",
+      "first_used": "2026-10-27T07:46:13.515000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "directory-name": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:32:23.928000+00:00",
+      "first_used": "2026-10-27T07:32:23.928000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "non-invocable": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:32:23.928000+00:00",
+      "first_used": "2026-10-27T07:32:23.928000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "test-skill": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:34:54.739000+00:00",
+      "first_used": "2026-10-27T07:34:54.739000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "desk-proof": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-27T07:32:41.437000+00:00",
+      "first_used": "2026-10-27T07:32:41.437000+00:00",
+      "days_since_last_use": 5.9,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    },
+    "generate-media": {
+      "calls": 1,
+      "sessions": 1,
+      "projects": 1,
+      "sources": [
+        "codex"
+      ],
+      "last_used": "2026-10-29T17:49:03.772000+00:00",
+      "first_used": "2026-10-29T17:49:03.772000+00:00",
+      "days_since_last_use": 3.4,
+      "in_registry": false,
+      "usage_bonus": 2,
+      "recent_calls": 1
+    }
+  },
+  "bundle_coverage": {
+    "standard_bundle": {
+      "size": 30,
+      "used": 9,
+      "unused": [
+        "agent-browser",
+        "content-strategy",
+        "data-analyst",
+        "find-skills",
+        "fullstack-dev",
+        "generative-ui",
+        "github",
+        "html-anything",
+        "minimax-docx",
+        "minimax-xlsx",
+        "model-usage",
+        "nano-pdf",
+        "news-radar",
+        "planning-with-files",
+        "pptx-generator",
+        "proactive-agent",
+        "skill-security-auditor",
+        "task",
+        "url-to-markdown",
+        "weather",
+        "writing-skills"
+      ]
+    },
+    "finance_suite": {
+      "size": 34,
+      "used": 12,
+      "unused": [
+        "alphaear-predictor",
+        "alphaear-reporter",
+        "alphaear-signal-tracker",
+        "alphagbm-bps-backtest",
+        "bayesian-intrinsic-growth-valuation",
+        "buy-side-equity-research-memo",
+        "canslim-screener",
+        "earnings-preview",
+        "finviz-screener",
+        "llmquant-data",
+        "llmquant-options",
+        "macro-liquidity",
+        "openclaw-stock-kb",
+        "position-sizer",
+        "serenity-alpha",
+        "tech-earnings-deepdive",
+        "theme-detector",
+        "trade-hypothesis-ideator",
+        "trader-memory-core",
+        "us-market-sentiment",
+        "value-dividend-screener",
+        "vcp-screener"
+      ]
+    }
+  }
+}

@@ -1,5 +1,18 @@
 # Findings
 
+## 2026-11-02（本机 skills 清理）
+
+已解决：
+
+- 刷新遥测后全机 576 个已安装技能，推荐引擎给出 29 个零调用/未收录的卸载候选；另补 9 个长期零调用或仓库已出库的旧副本（openclaw-stock 系 3 个、doc、wechat-topic-outline-planner、anthropic-fs-wealth-management 3 个、funda-data），共 38 个执行归档式卸载。
+- 归档分布：Qoder 19 个、Codex 19 个；`~/.qoder/skills` 312 → 292，`~/.codex/skills` 263 → 241，`~/.lingma/skills` 3 → 2。归档目录：`~/.qoder/skills-archive/`（2.7MB）、`~/.codex/skills-archive/`（89MB），回执在 `reports/usage/cleanup-receipts.jsonl`。恢复方式：`mv <archive>/<skill> <原路径>`。
+- 顺手清掉 3 个断链（`using-coze-cli` ×2、`dasheng-video-omni-browser` ×1）、2 个空目录（`codex-primary-runtime`、`lichengyin-dev-habits`），旧备份 `ima-skill.bak.20260926` 移入 Codex 归档。
+- `pending-cleanup.json` 状态已写为 executed；下次周更会重新生成。
+
+待观察：
+
+- 仍有 187 个“零调用 + 仓库内旧版本”安装副本（Qoder 154 / Codex 126，含重叠），以及 74 个“在用但内容旧”的副本。它们不是确定的垃圾，未动；若要瘦身，优先按运行时归档零调用副本；若要保留能力，应从仓库同步更新而不是删除。
+
 ## 2026-10-31（周度治理修复：上游同步、发布门禁与目录改名）
 
 已解决：
