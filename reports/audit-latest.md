@@ -1,13 +1,13 @@
 # Boutique Skills Audit
 
-- Time: 2026-11-02 13:05:49
+- Time: 2026-11-07 09:59:48
 - Status: **WARN**
-- Catalog skills: 304
-- Audited skills: 298
+- Catalog skills: 319
+- Audited skills: 313
 - Legacy catalog skills: 42
-- Installed/Resolved: 298
+- Installed/Resolved: 313
 - Missing: 0
-- Missing env vars: 105
+- Missing env vars: 109
 - Duplicate capabilities: 0
 - Risk hits: 15
 - Missing native origins: 0
@@ -58,6 +58,8 @@
 - book-to-skill: `GH_TOKEN`
 - book-to-skill: `GITHUB_TOKEN`
 - bug-bounty: `OPENAI_API_KEY`
+- claude-certification: `GH_TOKEN`
+- claude-certification: `GITHUB_TOKEN`
 - ima: `IMA_API_KEY`
 - ima: `IMA_CLIENT_ID`
 - lark-calendar: `FEISHU_APP_SECRET`
@@ -68,19 +70,21 @@
 - tavily-search: `OPENAI_API_KEY`
 - tavily-search: `TAVILY_API_KEY`
 - data-quality-checker: `TUSHARE_TOKEN`
+- economic-calendar-fetcher: `FMP_API_KEY`
 - institutional-flow-tracker: `FMP_API_KEY`
-- macro-regime-detector: `FMP_API_KEY`
-- media-downloader: `PEXELS_API_KEY`
+- finance-sentiment: `ADANOS_API_KEY`
 - baoyu-post-to-wechat: `ACCESS_TOKEN`
 - baoyu-post-to-wechat: `WECHAT_AI_TOOLS_APP_SECRET`
 - baoyu-post-to-wechat: `WECHAT_APP_SECRET`
 - baoyu-post-to-wechat: `WECHAT_BAOYU_APP_SECRET`
-- economic-calendar-fetcher: `FMP_API_KEY`
-- finance-sentiment: `ADANOS_API_KEY`
+- macro-regime-detector: `FMP_API_KEY`
+- media-downloader: `PEXELS_API_KEY`
 - agentmail-cli: `AGENTMAIL_API_KEY`
 - alphaear-reporter: `TUSHARE_TOKEN`
 - breakout-trade-planner: `TUSHARE_TOKEN`
 - canslim-screener: `FMP_API_KEY`
+- caveman-discover: `OPENAI_API_KEY`
+- caveman-evidence-review: `OPENAI_API_KEY`
 - cli-batches: `OPENAI_API_KEY`
 - dividend-growth-pullback-screener: `FINVIZ_API_KEY`
 - dividend-growth-pullback-screener: `FMP_API_KEY`

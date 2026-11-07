@@ -1,0 +1,5 @@
+Source: https://github.com/openclaw/openclaw
+Base source commit: main @ 2026-11-07
+License: MIT
+Stars at import: 394071
+Imported by: scripts/weekly_curation.py on 2026-11-07 (score 80).

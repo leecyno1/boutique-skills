@@ -4078,6 +4078,156 @@
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []
+    },
+    {
+      "id": "bear-notes",
+      "name": "bear-notes",
+      "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
+      "manual": "skills/default/bear-notes/SKILL.md",
+      "source": "https://github.com/openclaw/openclaw",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "cavecrew",
+      "name": "cavecrew",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "manual": "skills/default/cavecrew/SKILL.md",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "caveman-commit",
+      "name": "caveman-commit",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "manual": "skills/default/caveman-commit/SKILL.md",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "caveman-compress",
+      "name": "caveman-compress",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "manual": "skills/default/caveman-compress/SKILL.md",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "caveman-discover",
+      "name": "caveman-discover",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "manual": "skills/default/caveman-discover/SKILL.md",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "caveman-evidence-review",
+      "name": "caveman-evidence-review",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "manual": "skills/default/caveman-evidence-review/SKILL.md",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "8-bit-orbit-video-template",
+      "name": "8-bit-orbit-video-template",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+      "manual": "skills/default/8-bit-orbit-video-template/SKILL.md",
+      "source": "https://github.com/nexu-io/open-design",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ad-creative",
+      "name": "ad-creative",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+      "manual": "skills/default/ad-creative/SKILL.md",
+      "source": "https://github.com/nexu-io/open-design",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "after-hours-editorial-template",
+      "name": "after-hours-editorial-template",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+      "manual": "skills/default/after-hours-editorial-template/SKILL.md",
+      "source": "https://github.com/nexu-io/open-design",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "ai-music-album",
+      "name": "ai-music-album",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+      "manual": "skills/default/ai-music-album/SKILL.md",
+      "source": "https://github.com/nexu-io/open-design",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "blueprint-figure",
+      "name": "blueprint-figure",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "manual": "skills/default/blueprint-figure/SKILL.md",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "build-project",
+      "name": "build-project",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "manual": "skills/default/build-project/SKILL.md",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "check-understanding",
+      "name": "check-understanding",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "manual": "skills/default/check-understanding/SKILL.md",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "claude-certification",
+      "name": "claude-certification",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "manual": "skills/default/claude-certification/SKILL.md",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "course-guide",
+      "name": "course-guide",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "manual": "skills/default/course-guide/SKILL.md",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
     }
   ]
 }

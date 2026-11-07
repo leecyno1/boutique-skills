@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-07",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -243,7 +243,7 @@
       "access_mode": "direct",
       "conflict_group": "finance-global-data",
       "origin_url": "https://github.com/simonlin1212/global-stock-data",
-      "note": "美股港股全栈数据工具包（官方源优先）— 十六层架构·50+端点·17数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气等场景。"
+      "note": "美股港股全栈数据工具包（官方源优先）— 十七层架构·50+端点·18数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存；V2.3 新增美国宏观层(美国劳工统计局BLS公共API免注册:CPI/核心CPI/非农/失业率/时薪/PPI/JOLTS职位空缺/进口价格/ECI/生产率,附官方发布日程与修订规则,劳工部每周初请/续请失业金)。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气、美国CPI/非农/失业金等宏观数据与发布日程等场景。"
     },
     {
       "capability": "content-strategy",

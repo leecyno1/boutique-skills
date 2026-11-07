@@ -96,7 +96,7 @@
       "slot": "宏观研究",
       "capability": "macro",
       "skill": "market-environment-analysis",
-      "score": 82,
+      "score": 81,
       "access": "direct",
       "api_keys": []
     },
@@ -104,7 +104,7 @@
       "slot": "宏观/政策跟踪",
       "capability": "policy",
       "skill": "policy-monitor",
-      "score": 83,
+      "score": 85,
       "access": "direct",
       "api_keys": []
     },
@@ -359,5 +359,5 @@
     "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
     "Slot count 28, skill count 28 (max 40)."
   ],
-  "generated_at": "2026-11-02"
+  "generated_at": "2026-11-07"
 }

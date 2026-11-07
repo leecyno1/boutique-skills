@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-07",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -13,25 +13,26 @@
     ]
   },
   "summary": {
-    "skills": 304,
-    "native_origin_verified_or_referenced": 298,
+    "skills": 319,
+    "native_origin_verified_or_referenced": 313,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 12,
-      "L2 Professional": 121,
-      "L3 Specialist": 171
+      "L2 Professional": 130,
+      "L3 Specialist": 177
     },
     "by_category": {
       "agent-orchestration": 7,
       "browser-automation": 4,
-      "coding-devtools": 15,
-      "commerce-ops": 11,
+      "coding-devtools": 17,
+      "commerce-ops": 13,
       "communication": 1,
       "core-agent": 11,
       "data-analysis": 8,
-      "design-ui": 42,
+      "design-ui": 46,
+      "devops-cloud": 2,
       "docs-office": 10,
       "finance-data": 4,
       "finance-knowledge": 1,
@@ -41,26 +42,26 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 21,
-      "media-generation": 38,
+      "media-generation": 40,
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 3,
-      "search-research": 25,
+      "search-research": 28,
       "security-audit": 4,
       "writing-content": 14
     },
     "by_access_mode": {
-      "api-key": 79,
+      "api-key": 82,
       "api-key+mcp-required": 3,
-      "browser-required": 27,
-      "direct": 184,
-      "mcp-required": 11
+      "browser-required": 28,
+      "direct": 194,
+      "mcp-required": 12
     },
     "by_stars": {
       "1★": 6,
-      "3★": 55,
-      "4★": 152,
-      "5★": 91
+      "3★": 57,
+      "4★": 157,
+      "5★": 99
     }
   },
   "skills": [
@@ -340,6 +341,102 @@
       }
     },
     {
+      "id": "review-animations",
+      "name": "review-animations",
+      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+      "manual": "skills/default/review-animations/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/review-animations/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/review-animations",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/emilkowalski/skills/tree/main/skills/review-animations",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "animation",
+        "design",
+        "design-animation-suite",
+        "design-ui",
+        "direct",
+        "emil-kowalski",
+        "frontend-craft",
+        "l2",
+        "offline",
+        "standard"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "review-animations",
+      "preset_excluded": false,
+      "rating": {
+        "score": 98,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "dasheng-hotspot-radar",
+      "name": "dasheng-hotspot-radar",
+      "description": "Use when an agent needs a standalone no-login hotspot/news radar for Newma workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.",
+      "manual": "skills/default/dasheng-hotspot-radar/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-hotspot-radar/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "l2",
+        "online",
+        "search-research",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-hotspot-radar",
+      "preset_excluded": false,
+      "rating": {
+        "score": 96,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "design-taste-frontend",
       "name": "design-taste-frontend",
       "description": ">-",
@@ -568,6 +665,49 @@
       }
     },
     {
+      "id": "redesign-existing-projects",
+      "name": "redesign-existing-projects",
+      "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
+      "manual": "skills/default/redesign-existing-projects/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/redesign-existing-projects/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-10-31",
+        "mirror_source_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "online",
+        "taste-skill"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "redesign-existing-projects",
+      "preset_excluded": false,
+      "rating": {
+        "score": 96,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "khazix-skills",
       "name": "khazix-skills",
       "description": "Use when users need long-form Chinese articles, industry reports, deep-dive analysis, writing templates, structure checks, or high-density content drafts based on the KKKKhazix skill suite.",
@@ -606,54 +746,6 @@
       },
       "risk_level": "low",
       "conflict_group": "khazix-skills",
-      "preset_excluded": false,
-      "rating": {
-        "score": 95,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "review-animations",
-      "name": "review-animations",
-      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
-      "manual": "skills/default/review-animations/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/review-animations/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/review-animations",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/emilkowalski/skills/tree/main/skills/review-animations",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "animation",
-        "design",
-        "design-animation-suite",
-        "design-ui",
-        "direct",
-        "emil-kowalski",
-        "frontend-craft",
-        "l2",
-        "offline",
-        "standard"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "review-animations",
       "preset_excluded": false,
       "rating": {
         "score": 95,
@@ -845,49 +937,6 @@
       }
     },
     {
-      "id": "redesign-existing-projects",
-      "name": "redesign-existing-projects",
-      "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
-      "manual": "skills/default/redesign-existing-projects/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/redesign-existing-projects/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-10-31",
-        "mirror_source_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "online",
-        "taste-skill"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "online"
-      },
-      "risk_level": "low",
-      "conflict_group": "redesign-existing-projects",
-      "preset_excluded": false,
-      "rating": {
-        "score": 94,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
       "id": "seedance2-skill",
       "name": "seedance2-skill",
       "description": "Write effective prompts for Jimeng Seedance 2.0 multimodal AI video generation. Use when users want to create video prompts using text, images, videos, and audio inputs with the @ reference system. Covers camera movements, effects replication, video extension, editing, music beat-matching, e-commerce ads, short dramas, and educational content.",
@@ -928,54 +977,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 94,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "dasheng-hotspot-radar",
-      "name": "dasheng-hotspot-radar",
-      "description": "Use when an agent needs a standalone no-login hotspot/news radar for Newma workflows, especially public macro/policy/geopolitics/market trend capture without running the full intake stage.",
-      "manual": "skills/default/dasheng-hotspot-radar/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-hotspot-radar/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "search-research",
-      "category_label": "搜索 / 研究 / 情报",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l2",
-        "online",
-        "search-research",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "direct",
-        "runtime": "online"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-hotspot-radar",
-      "preset_excluded": false,
-      "rating": {
-        "score": 93,
         "stars": 5,
         "rating_label": "★★★★★"
       }
@@ -1169,6 +1170,50 @@
       }
     },
     {
+      "id": "8-bit-orbit-video-template",
+      "name": "8-bit-orbit-video-template",
+      "description": "Hyperframes-based video template for retro pixel deck motion design. Use when users want a high-fidelity, multi-scene HTML-to-video composition with advanced transitions, interactive preview controls, and ready-to-render default style.",
+      "manual": "skills/default/8-bit-orbit-video-template/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nexu-io/open-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/nexu-io/open-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "8-bit-orbit-video-template",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "a-stock-data",
       "name": "a-stock-data",
       "description": "当任务需要写代码实际获取A股及相关市场数据时使用——行情/K线/逐笔(腾讯日周月前后复权+分钟线+当日逐笔、通达信官网全市场盘后包、百度)、研报(东财+新浪+同花顺+iwencai)、信号(热点/北向/龙虎榜/解禁/行业/板块资金流)、资金面(融资融券/大宗/股东户数/分红/资金流/ETF份额)、新闻(财联社/东财/华尔街见闻/新闻联播)、财务三表/F10/估值历史/ST名单、公告(巨潮)、打板(涨停池/连板/炸板率/监控池/异动)、ETF期权、舆情互动(互动易/上证e互动/热榜)、筹码分布、复权因子、申万行业变迁、宏观与利率(社融/PMI/中债收益率曲线/回购定盘利率/LPR/全球宏观日历)、指数成分/权重/估值/交易日历、期货与大宗商品(五家期货交易所日行情/商品与股指期权/持仓排名/期货日K含大商所/实时期货/A50/上海金)、事件驱动(业绩预告/机构调研/增减持/回购/股权质押/新股申购)、可转债等真实数据。十五层·87端点(含5备胎)·34个来源·内嵌全部可运行代码，自包含零外部文件；优先用腾讯/交易所官方等不封IP源，东财接口已内置限流防封，主源被封可查「备用源速查」降级。仅在需要调用数据接口取数时使用：A股概念解释、投资观点讨论、策略问答等无需取数的话题不要加载本skill。",
@@ -1212,6 +1257,48 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-data",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "ad-creative",
+      "name": "ad-creative",
+      "description": "Generate and iterate ad creative including headlines, descriptions, and primary text. Useful for paid social and search ad iteration.",
+      "manual": "skills/default/ad-creative/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nexu-io/open-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/nexu-io/open-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "direct",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "ad-creative",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -1340,6 +1427,50 @@
       },
       "risk_level": "low",
       "conflict_group": "agent-harness-construction",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "ai-music-album",
+      "name": "ai-music-album",
+      "description": "Full-lifecycle AI music album production — concept, lyric drafting, track sequencing, and export. Useful for indie album experiments and brand soundtracks.",
+      "manual": "skills/default/ai-music-album/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nexu-io/open-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/nexu-io/open-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ai-music-album",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -1697,6 +1828,48 @@
       }
     },
     {
+      "id": "bear-notes",
+      "name": "bear-notes",
+      "description": "Create, search, and manage Bear notes via grizzly CLI.",
+      "manual": "skills/default/bear-notes/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/openclaw/openclaw",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/openclaw/openclaw",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "direct",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "bear-notes",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "behavior-validator",
       "name": "behavior-validator",
       "description": "Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts.",
@@ -1777,6 +1950,134 @@
       },
       "risk_level": "low",
       "conflict_group": "bugcrowd-reporting",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "build-project",
+      "name": "build-project",
+      "description": "Hands-on project tutor for the AI Engineering from Scratch Projects section. Guides a learner through one stage of a real project per session: read the stage lesson, predict, write the code, run the stage grader, reflect, and record progress in PROJECTS-LEARNING.md. Gives hints, never full solutions. Trigger phrases: \"build a project\", \"next project stage\", \"continue my project\", \"start the research report agent\".",
+      "manual": "skills/default/build-project/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "direct",
+        "l2",
+        "online",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "node"
+        ],
+        "access_mode": "direct",
+        "runtime": "online"
+      },
+      "risk_level": "low",
+      "conflict_group": "build-project",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "cavecrew",
+      "name": "cavecrew",
+      "description": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer.",
+      "manual": "skills/default/cavecrew/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "cavecrew",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "check-understanding",
+      "name": "check-understanding",
+      "description": "Phase quiz for AI Engineering from Scratch. Trigger with \"quiz me\", \"test phase\", \"check my understanding\", \"do I know phase 3\", or `/check-understanding <phase>`.",
+      "manual": "skills/default/check-understanding/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "check-understanding",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -2365,7 +2666,7 @@
     {
       "id": "global-stock-data",
       "name": "global-stock-data",
-      "description": "美股港股全栈数据工具包（官方源优先）— 十六层架构·50+端点·17数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气等场景。",
+      "description": "美股港股全栈数据工具包（官方源优先）— 十七层架构·50+端点·18数据源·全部零鉴权。在原有行情/K线/技术指标(MA/MACD/RSI/KDJ/布林带)/基本面/资金面/期权/SEC Filing/工具八层之上，新增：CBOE官方期权链(完整希腊字母+IV+0DTE流+异动识别)、FINRA全市场每日空头成交量、SEC EDGAR申报事件流(Form4内部人/8-K/13F机构持仓)、EDGAR全市场横截面筛选、美债收益率曲线/CFTC COT/财报日历；V2.1 新增全球利率汇率层(BIS 38家央行政策利率、欧洲央行汇率/利率/欧元区收益率曲线、纽约联储SOFR/EFFR、美联储H.10汇率/H.6货币存量、美国财政部国债拍卖/联邦债务)，Yahoo K线修复全历史日线与时区并支持日本/台湾/韩国/印度/欧洲等市场代码；V2.2 新增CBOE波动率指数历史与VIX期限结构、FINRA做空余额(每月两期)、SEC Form 4内部人逐笔交易与13F机构持仓解析、台股官方OpenAPI(证交所+柜买中心,可商用)、美国能源信息署EIA原油/天然气价格与库存；V2.3 新增美国宏观层(美国劳工统计局BLS公共API免注册:CPI/核心CPI/非农/失业率/时薪/PPI/JOLTS职位空缺/进口价格/ECI/生产率,附官方发布日程与修订规则,劳工部每周初请/续请失业金)。每个数据源标注合规级别与条款原文。内嵌全部调用代码，自包含零依赖外部文件。适用于美股港股个股分析、全市场筛选、财报解读、期权与0DTE策略、做空数据追踪、内部人交易与13F持仓、SEC文件检索、资金流与机构持仓分析、全球利率汇率与央行政策跟踪、VIX波动率、台股、原油天然气、美国CPI/非农/失业金等宏观数据与发布日程等场景。",
       "manual": "skills/default/global-stock-data/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/global-stock-data/SKILL.md",
       "install_tiers": [
@@ -3144,7 +3445,7 @@
     {
       "id": "impeccable",
       "name": "impeccable",
-      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, simplify, harden, animate, or otherwise improve a frontend interface: websites, landing pages, dashboards, product UI, components, forms, settings, onboarding, empty states, and native iOS or Android screens. Handles UX review, hierarchy, layout, typography, color, motion, UX copy, accessibility, responsive behavior, edge cases, and capturing or documenting design systems (DESIGN.md, tokens). Also for making bland UI bolder, loud UI quieter, or ambitious visual effects. Not for backend-only or non-UI tasks.",
+      "description": "Use to design, redesign, critique, audit, polish or animate a frontend: websites, landing pages, dashboards, app UI, components, native iOS/Android screens, or a design system (DESIGN.md).",
       "manual": "skills/default/impeccable/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
       "install_tiers": [
@@ -3933,6 +4234,55 @@
       }
     },
     {
+      "id": "dasheng-html-video-bridge",
+      "name": "dasheng-html-video-bridge",
+      "description": "Use when Newma transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.",
+      "manual": "skills/default/dasheng-html-video-bridge/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-video-bridge/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "ffmpeg",
+          "node"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-html-video-bridge",
+      "preset_excluded": false,
+      "rating": {
+        "score": 91,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "dasheng-stage-transwrite",
       "name": "dasheng-stage-transwrite",
       "description": "Use when converting confirmed Newma drafts into channel-ready WeChat article, faceless explainer, VOX investigative explainer, real talking-head, AI digital-human, commercial promo, deferred cinematic short-drama, and opt-in podcast production packages.",
@@ -3971,6 +4321,52 @@
       },
       "risk_level": "low",
       "conflict_group": "dasheng-stage-transwrite",
+      "preset_excluded": false,
+      "rating": {
+        "score": 91,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "dasheng-video-director",
+      "name": "dasheng-video-director",
+      "description": "Use after roughcut/intake and before asset generation when converting article scripts, ASR, captions, or draft HTML into detailed video shot plans, scene plans, template choices, composition states, transitions, audio policies, and review gates.",
+      "manual": "skills/default/dasheng-video-director/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-director/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-video-director",
       "preset_excluded": false,
       "rating": {
         "score": 91,
@@ -4073,52 +4469,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 91,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "dasheng-html-anything-bridge",
-      "name": "dasheng-html-anything-bridge",
-      "description": "Use when Newma draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.",
-      "manual": "skills/default/dasheng-html-anything-bridge/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-anything-bridge/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "html-publishing",
-      "category_label": "HTML 发布 / 视觉出版",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "html-publishing",
-        "l3",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-html-anything-bridge",
-      "preset_excluded": false,
-      "rating": {
-        "score": 90,
         "stars": 5,
         "rating_label": "★★★★★"
       }
@@ -4405,52 +4755,6 @@
       }
     },
     {
-      "id": "dasheng-video-director",
-      "name": "dasheng-video-director",
-      "description": "Use after roughcut/intake and before asset generation when converting article scripts, ASR, captions, or draft HTML into detailed video shot plans, scene plans, template choices, composition states, transitions, audio policies, and review gates.",
-      "manual": "skills/default/dasheng-video-director/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-video-director/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-video-director",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l3",
-        "media-generation",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-video-director",
-      "preset_excluded": false,
-      "rating": {
-        "score": 89,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "url-to-markdown",
       "name": "url-to-markdown",
       "description": "Fetch any URL and convert to markdown using baoyu-fetch CLI (Chrome CDP with site-specific adapters). Built-in adapters for X/Twitter, YouTube transcripts, Hacker News threads, and generic pages via Defuddle. Handles login/CAPTCHA via interaction wait modes. Use when user wants to save a webpage as markdown.",
@@ -4492,6 +4796,52 @@
       "preset_excluded": false,
       "rating": {
         "score": 89,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "dasheng-html-anything-bridge",
+      "name": "dasheng-html-anything-bridge",
+      "description": "Use when Newma draft or transwrite needs HTML Anything templates, editable article HTML, social cards, posters, or visual HTML references.",
+      "manual": "skills/default/dasheng-html-anything-bridge/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-anything-bridge/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-anything-bridge",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "html-publishing",
+      "category_label": "HTML 发布 / 视觉出版",
+      "tags": [
+        "dasheng-media-workflow",
+        "dasheng_media_workflow",
+        "direct",
+        "html-publishing",
+        "l3",
+        "offline",
+        "self-media-ops",
+        "self_media"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "dasheng-html-anything-bridge",
+      "preset_excluded": false,
+      "rating": {
+        "score": 88,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -4629,55 +4979,6 @@
       },
       "risk_level": "low",
       "conflict_group": "baoyu-cover-image",
-      "preset_excluded": false,
-      "rating": {
-        "score": 87,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "dasheng-html-video-bridge",
-      "name": "dasheng-html-video-bridge",
-      "description": "Use when Newma transwrite needs no-human or human-material talking-head videos rendered through the local html-video project.",
-      "manual": "skills/default/dasheng-html-video-bridge/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/dasheng-html-video-bridge/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-html-video-bridge",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "dasheng-media-workflow",
-        "dasheng_media_workflow",
-        "direct",
-        "l3",
-        "media-generation",
-        "offline",
-        "self-media-ops",
-        "self_media"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "ffmpeg",
-          "node"
-        ],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "dasheng-html-video-bridge",
       "preset_excluded": false,
       "rating": {
         "score": 87,
@@ -5191,6 +5492,48 @@
       }
     },
     {
+      "id": "after-hours-editorial-template",
+      "name": "after-hours-editorial-template",
+      "description": "Luxury dark-editorial HyperFrames template for three-page cinematic storyboards, inspired by haute couture title cards and magazine chapter spreads. Use when the user asks for premium fashion-style motion pages, moody serif-led storytelling, or a high-end dark presentation aesthetic with rich transitions.",
+      "manual": "skills/default/after-hours-editorial-template/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nexu-io/open-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/nexu-io/open-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "after-hours-editorial-template",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "agent-eval",
       "name": "agent-eval",
       "description": "Head-to-head comparison of coding agents (Claude Code, Aider, Codex, etc.) on custom tasks with pass rate, cost, time, and consistency metrics. Use when choosing between coding agents, or when a change to an agent setup needs measured pass rate, cost, and time rather than an impression.",
@@ -5495,6 +5838,48 @@
       }
     },
     {
+      "id": "blueprint-figure",
+      "name": "blueprint-figure",
+      "description": "Draws static SVG figures for lessons, READMEs and manuals in the AI Engineering from Scratch look: paper panel, blueprint accent, nine figure kinds, fixed hue meanings, eight arrow styles, and checks for legibility and markup. Trigger phrases: \"draw a figure\", \"blueprint figure\", \"sequence figure\", \"state machine figure\", \"figure for this lesson\", \"add a diagram to the manual\".",
+      "manual": "skills/default/blueprint-figure/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "blueprint-figure",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "capability-evolver",
       "name": "capability-evolver",
       "description": "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution.",
@@ -5531,6 +5916,90 @@
       },
       "risk_level": "low",
       "conflict_group": "capability-evolver",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "caveman-commit",
+      "name": "caveman-commit",
+      "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
+      "manual": "skills/default/caveman-commit/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "caveman-commit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "caveman-compress",
+      "name": "caveman-compress",
+      "description": "Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input tokens, keeping a readable backup. Sends the file's text to the configured model provider. Trigger: /caveman-compress.",
+      "manual": "skills/default/caveman-compress/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "caveman-compress",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -6129,6 +6598,52 @@
       },
       "risk_level": "low",
       "conflict_group": "obsidian-bases",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "policy-monitor",
+      "name": "policy-monitor",
+      "description": "监控央行、证监会、发改委、财政部、统计局等官方政策渠道，并对宏观、货币、资本市场、产业、财政和监管政策进行分类摘要、影响解读和风险提示。适用于政策追踪、每日/每周政策简报、金融市场政策影响分析。",
+      "manual": "skills/default/policy-monitor/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "policy-monitoring",
+      "category_label": "政策 / 宏观监控",
+      "tags": [
+        "direct",
+        "finance",
+        "l3",
+        "monitor",
+        "offline",
+        "original",
+        "policy",
+        "policy-monitoring"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "policy-monitor",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -7061,52 +7576,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "policy-monitor",
-      "name": "policy-monitor",
-      "description": "监控央行、证监会、发改委、财政部、统计局等官方政策渠道，并对宏观、货币、资本市场、产业、财政和监管政策进行分类摘要、影响解读和风险提示。适用于政策追踪、每日/每周政策简报、金融市场政策影响分析。",
-      "manual": "skills/default/policy-monitor/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "policy-monitoring",
-      "category_label": "政策 / 宏观监控",
-      "tags": [
-        "direct",
-        "finance",
-        "l3",
-        "monitor",
-        "offline",
-        "original",
-        "policy",
-        "policy-monitoring"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "medium",
-      "conflict_group": "policy-monitor",
-      "preset_excluded": false,
-      "rating": {
-        "score": 83,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -8074,54 +8543,6 @@
       }
     },
     {
-      "id": "frontend-dev",
-      "name": "frontend-design",
-      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
-      "manual": "skills/default/frontend-dev/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-10-31",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "coding-devtools",
-        "default_sentinel",
-        "direct",
-        "l2",
-        "minimax_official",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "node"
-        ],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "frontend-dev",
-      "preset_excluded": false,
-      "rating": {
-        "score": 82,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "ios-application-dev",
       "name": "iosdev-cn",
       "description": "iOS application development guide covering UIKit, SnapKit, and SwiftUI. Includes touch targets, safe areas, navigation patterns, Dynamic Type, Dark Mode, accessibility, collection views, common UI components, and SwiftUI design guidelines. For detailed references on specific topics, see the reference files. Use when: developing iOS apps, implementing UI, reviewing iOS code, working with UIKit/SnapKit/SwiftUI layouts, building iPhone interfaces, Swift mobile development, Apple HIG compliance, iOS accessibility implementation.",
@@ -8209,51 +8630,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:macro-liquidity",
-      "preset_excluded": false,
-      "rating": {
-        "score": 82,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "market-environment-analysis",
-      "name": "market-environment-analysis",
-      "description": "Comprehensive market environment analysis and reporting tool. Analyzes global markets including US, European, Asian markets, forex, commodities, and economic indicators. Provides risk-on/risk-off assessment, sector analysis, and technical indicator interpretation. Triggers on keywords like market analysis, market environment, global markets, trading environment, market conditions, investment climate, market sentiment, forex analysis, stock market analysis, 相場環境, 市場分析, マーケット状況, 投資環境.",
-      "manual": "skills/default/market-environment-analysis/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/market-environment-analysis/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/market-environment-analysis",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "direct",
-        "finance-trading",
-        "l3",
-        "offline",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "python"
-        ],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:market-environment-analysis",
       "preset_excluded": false,
       "rating": {
         "score": 82,
@@ -8496,6 +8872,51 @@
       }
     },
     {
+      "id": "course-guide",
+      "name": "course-guide",
+      "description": "Topic router for the AI Engineering from Scratch curriculum. Give it a topic, a question, or a bug you are fighting, and it points at the exact lessons that teach it, plus the right next command. Trigger phrases: \"where do I learn\", \"which lesson covers\", \"course guide\", \"I'm stuck on\", \"what should I do next\", \"teach me MCP\", \"teach me Agent Skills\", \"where do I prepare for a Claude certification\"",
+      "manual": "skills/default/course-guide/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "l2",
+        "mcp-required",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "mcp",
+          "node"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "course-guide",
+      "preset_excluded": false,
+      "rating": {
+        "score": 81,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "guizang-ppt-skill",
       "name": "guizang-ppt-skill",
       "description": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① \"电子杂志 × 电子墨水\"（衬线 + 流体背景 + 暖色） ② \"瑞士国际主义\"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到\"杂志风 PPT\"、\"瑞士风 PPT\"、\"Swiss Style\"、\"horizontal swipe deck\"时使用。",
@@ -8627,6 +9048,51 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:market-breadth-analyzer",
+      "preset_excluded": false,
+      "rating": {
+        "score": 81,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "market-environment-analysis",
+      "name": "market-environment-analysis",
+      "description": "Comprehensive market environment analysis and reporting tool. Analyzes global markets including US, European, Asian markets, forex, commodities, and economic indicators. Provides risk-on/risk-off assessment, sector analysis, and technical indicator interpretation. Triggers on keywords like market analysis, market environment, global markets, trading environment, market conditions, investment climate, market sentiment, forex analysis, stock market analysis, 相場環境, 市場分析, マーケット状況, 投資環境.",
+      "manual": "skills/default/market-environment-analysis/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/market-environment-analysis/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/market-environment-analysis",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "direct",
+        "finance-trading",
+        "l3",
+        "offline",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:market-environment-analysis",
       "preset_excluded": false,
       "rating": {
         "score": 81,
@@ -8819,58 +9285,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 81,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "anthropic-fs-equity-research-sector-overview",
-      "name": "anthropic-fs-equity-research-sector-overview",
-      "description": "Create comprehensive industry and sector landscape reports covering market dynamics, competitive positioning, key players, and thematic trends. Use for client requests, sector initiations, thematic research pieces, or internal knowledge building. Triggers on \"sector overview\", \"industry report\", \"market landscape\", \"sector analysis\", \"industry deep dive\", or \"thematic research\".",
-      "manual": "skills/default/anthropic-fs-equity-research-sector-overview/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-equity-research-sector-overview/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-services",
-      "category_label": "金融 / 机构服务",
-      "tags": [
-        "anthropic-financial-services",
-        "china-market-data",
-        "enterprise-data",
-        "equity-research",
-        "finance",
-        "finance-services",
-        "finance-suite",
-        "institutional-finance",
-        "l3",
-        "mcp-required",
-        "online",
-        "tushare-supplement"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "mcp"
-        ],
-        "access_mode": "mcp-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "anthropic-fs-equity-research-sector-overview",
-      "preset_excluded": false,
-      "rating": {
-        "score": 80,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -10034,6 +10448,58 @@
       }
     },
     {
+      "id": "anthropic-fs-equity-research-sector-overview",
+      "name": "anthropic-fs-equity-research-sector-overview",
+      "description": "Create comprehensive industry and sector landscape reports covering market dynamics, competitive positioning, key players, and thematic trends. Use for client requests, sector initiations, thematic research pieces, or internal knowledge building. Triggers on \"sector overview\", \"industry report\", \"market landscape\", \"sector analysis\", \"industry deep dive\", or \"thematic research\".",
+      "manual": "skills/default/anthropic-fs-equity-research-sector-overview/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-equity-research-sector-overview/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-services",
+      "category_label": "金融 / 机构服务",
+      "tags": [
+        "anthropic-financial-services",
+        "china-market-data",
+        "enterprise-data",
+        "equity-research",
+        "finance",
+        "finance-services",
+        "finance-suite",
+        "institutional-finance",
+        "l3",
+        "mcp-required",
+        "online",
+        "tushare-supplement"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "mcp"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "anthropic-fs-equity-research-sector-overview",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "baoyu-image-gen",
       "name": "baoyu-image-gen",
       "description": "AI image generation with OpenAI GPT Image 2.5, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
@@ -10313,6 +10779,54 @@
       },
       "risk_level": "medium",
       "conflict_group": "bug-bounty",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "claude-certification",
+      "name": "claude-certification",
+      "description": "AI-native tutor and onboarding workflow for the four independent Claude certification tracks in AI Engineering from Scratch. Use when a learner wants to choose a Claude certification, prepare for CCAO-F, CCDV-F, CCAR-F, or CCAR-P, resume a certification path, learn the next lesson interactively, run and verify practical labs, build scored artifacts, take a diagnostic or mock exam, or remediate weak exam domains from GitHub with Claude Code, Codex, ChatGPT, Cursor, or another agent.",
+      "manual": "skills/default/claude-certification/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "api-key",
+        "coding-devtools",
+        "l2",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "GH_TOKEN",
+          "GITHUB_TOKEN"
+        ],
+        "required_tools": [
+          "gh",
+          "node"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "claude-certification",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -10648,6 +11162,57 @@
       "preset_excluded": false,
       "rating": {
         "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "anthropic-fs-financial-analysis-ib-check-deck",
+      "name": "anthropic-fs-financial-analysis-ib-check-deck",
+      "description": "Investment banking presentation quality checker. Reviews a pitch deck or client-ready presentation for (1) number consistency across slides, (2) data-narrative alignment, (3) language polish against IB standards, (4) visual and formatting QC. Use whenever the user asks to review, check, QC, proof, or do a final pass on a deck, pitch, or client materials — including requests like \"check my numbers\", \"reconcile figures across slides\", \"is this client-ready\", or \"what am I missing before I send this out\".",
+      "manual": "skills/default/anthropic-fs-financial-analysis-ib-check-deck/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-financial-analysis-ib-check-deck/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ib-check-deck",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ib-check-deck",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-services",
+      "category_label": "金融 / 机构服务",
+      "tags": [
+        "anthropic-financial-services",
+        "enterprise-data",
+        "finance",
+        "finance-services",
+        "finance-suite",
+        "financial-analysis",
+        "institutional-finance",
+        "l3",
+        "mcp-required",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "mcp",
+          "python"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "anthropic-fs-financial-analysis-ib-check-deck",
+      "preset_excluded": false,
+      "rating": {
+        "score": 77,
         "stars": 4,
         "rating_label": "★★★★☆"
       }
@@ -10993,6 +11558,54 @@
       }
     },
     {
+      "id": "economic-calendar-fetcher",
+      "name": "economic-calendar-fetcher",
+      "description": "Fetch upcoming economic events and data releases using FMP API. Retrieve scheduled central bank decisions, employment reports, inflation data, GDP releases, and other market-moving economic indicators for specified date ranges (default: next 7 days). The script outputs raw JSON or text; the assistant filters, assesses impact, and generates the Markdown report.",
+      "manual": "skills/default/economic-calendar-fetcher/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/economic-calendar-fetcher/SKILL.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/economic-calendar-fetcher",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
+      "tags": [
+        "api-key",
+        "finance-trading",
+        "l3",
+        "online",
+        "trading_finance"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "FMP_API_KEY"
+        ],
+        "required_tools": [
+          "node",
+          "python"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "finance-specialist:economic-calendar-fetcher",
+      "preset_excluded": false,
+      "rating": {
+        "score": 75,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "institutional-flow-tracker",
       "name": "institutional-flow-tracker",
       "description": "Use this skill to track institutional investor ownership changes and portfolio flows using 13F filings data. Analyzes hedge funds, mutual funds, and other institutional holders to identify stocks with significant smart money accumulation or distribution. Helps discover stocks before major moves by following where sophisticated investors are deploying capital.",
@@ -11032,51 +11645,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:institutional-flow-tracker",
-      "preset_excluded": false,
-      "rating": {
-        "score": 75,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "macro-regime-detector",
-      "name": "macro-regime-detector",
-      "description": "Detect structural macro regime transitions (1-2 year horizon) using cross-asset ratio analysis. Analyze RSP/SPY concentration, yield curve, credit conditions, size factor, equity-bond relationship, and sector rotation to identify regime shifts between Concentration, Broadening, Contraction, Inflationary, and Transitional states. Run when user asks about macro regime, market regime change, structural rotation, or long-term market positioning.",
-      "manual": "skills/default/macro-regime-detector/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-regime-detector/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/macro-regime-detector",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/macro-regime-detector",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
-      "tags": [
-        "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "FMP_API_KEY"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "finance-specialist:macro-regime-detector",
       "preset_excluded": false,
       "rating": {
         "score": 75,
@@ -11264,57 +11832,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "abusing-dpapi-for-credential-access",
-      "preset_excluded": false,
-      "rating": {
-        "score": 74,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "anthropic-fs-financial-analysis-ib-check-deck",
-      "name": "anthropic-fs-financial-analysis-ib-check-deck",
-      "description": "Investment banking presentation quality checker. Reviews a pitch deck or client-ready presentation for (1) number consistency across slides, (2) data-narrative alignment, (3) language polish against IB standards, (4) visual and formatting QC. Use whenever the user asks to review, check, QC, proof, or do a final pass on a deck, pitch, or client materials — including requests like \"check my numbers\", \"reconcile figures across slides\", \"is this client-ready\", or \"what am I missing before I send this out\".",
-      "manual": "skills/default/anthropic-fs-financial-analysis-ib-check-deck/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/anthropic-fs-financial-analysis-ib-check-deck/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ib-check-deck",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ib-check-deck",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-services",
-      "category_label": "金融 / 机构服务",
-      "tags": [
-        "anthropic-financial-services",
-        "enterprise-data",
-        "finance",
-        "finance-services",
-        "finance-suite",
-        "financial-analysis",
-        "institutional-finance",
-        "l3",
-        "mcp-required",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "mcp",
-          "python"
-        ],
-        "access_mode": "mcp-required",
-        "runtime": "offline"
-      },
-      "risk_level": "medium",
-      "conflict_group": "anthropic-fs-financial-analysis-ib-check-deck",
       "preset_excluded": false,
       "rating": {
         "score": 74,
@@ -11598,47 +12115,45 @@
       }
     },
     {
-      "id": "media-downloader",
-      "name": "media-downloader",
-      "description": "智能媒体下载器。根据用户描述自动搜索和下载图片、视频片段，支持视频自动剪辑。 Smart media downloader. Automatically search and download images/video clips based on user description, with auto-trimming support. 触发方式 Triggers: \"下载图片\", \"找视频\", \"download media\", \"download images\", \"find video\", \"/media\"",
-      "manual": "skills/default/media-downloader/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/media-downloader/GUIDE.md",
+      "id": "finance-sentiment",
+      "name": "finance-sentiment",
+      "description": "Fetch normalized stock sentiment across Reddit, X.com, financial news, and Polymarket from the Adanos Finance API: buzz score, bullish percentage, mention or trade counts, and trend. Use this skill whenever the user asks how much a stock is being discussed or how hot it is on social platforms, how many Reddit mentions or Polymarket bets a company has, whether Reddit, X, and news agree, or wants to compare stock buzz and sentiment across tickers. Read-only: it never places trades or modifies anything.",
+      "manual": "skills/default/finance-sentiment/README.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/finance-sentiment/README.md",
       "install_tiers": [
-        "low",
-        "medium",
         "high"
       ],
       "origin": {
-        "origin_url": "https://github.com/yizhiyanhua-ai/media-downloader.git",
+        "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment",
         "origin_type": "github",
-        "origin_confidence": "local_reference",
+        "origin_confidence": "verified_override",
         "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/media-downloader",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/finance-sentiment",
         "needs_origin_review": false
       },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "finance-trading",
+      "category_label": "金融 / 交易",
       "tags": [
         "api-key",
-        "default_sentinel",
-        "l2",
-        "media-generation",
-        "online"
+        "finance-trading",
+        "l3",
+        "online",
+        "trading_finance"
       ],
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "PEXELS_API_KEY"
+          "ADANOS_API_KEY"
         ],
         "required_tools": [
-          "ffmpeg"
+          "python"
         ],
         "access_mode": "api-key",
         "runtime": "online"
       },
       "risk_level": "medium",
-      "conflict_group": "media-downloader",
+      "conflict_group": "finance-specialist:finance-sentiment",
       "preset_excluded": false,
       "rating": {
         "score": 74,
@@ -11697,20 +12212,20 @@
       }
     },
     {
-      "id": "economic-calendar-fetcher",
-      "name": "economic-calendar-fetcher",
-      "description": "Fetch upcoming economic events and data releases using FMP API. Retrieve scheduled central bank decisions, employment reports, inflation data, GDP releases, and other market-moving economic indicators for specified date ranges (default: next 7 days). The script outputs raw JSON or text; the assistant filters, assesses impact, and generates the Markdown report.",
-      "manual": "skills/default/economic-calendar-fetcher/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/economic-calendar-fetcher/SKILL.md",
+      "id": "macro-regime-detector",
+      "name": "macro-regime-detector",
+      "description": "Detect structural macro regime transitions (1-2 year horizon) using cross-asset ratio analysis. Analyze RSP/SPY concentration, yield curve, credit conditions, size factor, equity-bond relationship, and sector rotation to identify regime shifts between Concentration, Broadening, Contraction, Inflationary, and Transitional states. Run when user asks about macro regime, market regime change, structural rotation, or long-term market positioning.",
+      "manual": "skills/default/macro-regime-detector/SKILL.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/macro-regime-detector/SKILL.md",
       "install_tiers": [
         "high"
       ],
       "origin": {
-        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher",
+        "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/macro-regime-detector",
         "origin_type": "github",
         "origin_confidence": "verified_override",
         "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/economic-calendar-fetcher",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/macro-regime-detector",
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
@@ -11728,15 +12243,12 @@
         "api_keys": [
           "FMP_API_KEY"
         ],
-        "required_tools": [
-          "node",
-          "python"
-        ],
+        "required_tools": [],
         "access_mode": "api-key",
         "runtime": "online"
       },
       "risk_level": "medium",
-      "conflict_group": "finance-specialist:economic-calendar-fetcher",
+      "conflict_group": "finance-specialist:macro-regime-detector",
       "preset_excluded": false,
       "rating": {
         "score": 73,
@@ -11745,45 +12257,47 @@
       }
     },
     {
-      "id": "finance-sentiment",
-      "name": "finance-sentiment",
-      "description": "Fetch normalized stock sentiment across Reddit, X.com, financial news, and Polymarket from the Adanos Finance API: buzz score, bullish percentage, mention or trade counts, and trend. Use this skill whenever the user asks how much a stock is being discussed or how hot it is on social platforms, how many Reddit mentions or Polymarket bets a company has, whether Reddit, X, and news agree, or wants to compare stock buzz and sentiment across tickers. Read-only: it never places trades or modifies anything.",
-      "manual": "skills/default/finance-sentiment/README.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/finance-sentiment/README.md",
+      "id": "media-downloader",
+      "name": "media-downloader",
+      "description": "智能媒体下载器。根据用户描述自动搜索和下载图片、视频片段，支持视频自动剪辑。 Smart media downloader. Automatically search and download images/video clips based on user description, with auto-trimming support. 触发方式 Triggers: \"下载图片\", \"找视频\", \"download media\", \"download images\", \"find video\", \"/media\"",
+      "manual": "skills/default/media-downloader/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/media-downloader/GUIDE.md",
       "install_tiers": [
+        "low",
+        "medium",
         "high"
       ],
       "origin": {
-        "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment",
+        "origin_url": "https://github.com/yizhiyanhua-ai/media-downloader.git",
         "origin_type": "github",
-        "origin_confidence": "verified_override",
+        "origin_confidence": "local_reference",
         "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/finance-sentiment",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/media-downloader",
         "needs_origin_review": false
       },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "finance-trading",
-      "category_label": "金融 / 交易",
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
       "tags": [
         "api-key",
-        "finance-trading",
-        "l3",
-        "online",
-        "trading_finance"
+        "default_sentinel",
+        "l2",
+        "media-generation",
+        "online"
       ],
       "dependencies": {
         "requires_api_keys": true,
         "api_keys": [
-          "ADANOS_API_KEY"
+          "PEXELS_API_KEY"
         ],
         "required_tools": [
-          "python"
+          "ffmpeg"
         ],
         "access_mode": "api-key",
         "runtime": "online"
       },
       "risk_level": "medium",
-      "conflict_group": "finance-specialist:finance-sentiment",
+      "conflict_group": "media-downloader",
       "preset_excluded": false,
       "rating": {
         "score": 72,
@@ -12023,6 +12537,94 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:canslim-screener",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "caveman-discover",
+      "name": "caveman-discover",
+      "description": "Find and label every LLM workflow in the repository so Caveman Cloud groups spend by workflow instead of one bucket. Use for \"discover workflows\" or breaking LLM spend down by workflow.",
+      "manual": "skills/default/caveman-discover/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "devops-cloud",
+      "category_label": "DevOps / 云 / 数据库",
+      "tags": [
+        "api-key",
+        "devops-cloud",
+        "l3",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "caveman-discover",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "caveman-evidence-review",
+      "name": "caveman-evidence-review",
+      "description": "Read-only review of Caveman Cloud evidence: cost, Cave Score, workflows, traces, latency, errors, routing, savings. Use when asked what Caveman found or where LLM spend goes.",
+      "manual": "skills/default/caveman-evidence-review/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "devops-cloud",
+      "category_label": "DevOps / 云 / 数据库",
+      "tags": [
+        "api-key",
+        "devops-cloud",
+        "l3",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "caveman-evidence-review",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -12444,6 +13046,56 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:finviz-screener",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "frontend-dev",
+      "name": "frontend-design",
+      "description": "Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. Builds complete, visually striking web pages with real media, advanced motion, and compelling copy. Use when: building landing pages, marketing sites, product pages, dashboards, generating media assets (image/video/audio/music), writing conversion copy, creating generative art, or implementing cinematic scroll animations.",
+      "manual": "skills/default/frontend-dev/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/frontend-dev/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/frontend-dev",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "browser-required",
+        "coding-devtools",
+        "default_sentinel",
+        "l2",
+        "minimax_official",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "ffmpeg",
+          "node"
+        ],
+        "access_mode": "browser-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "frontend-dev",
       "preset_excluded": false,
       "rating": {
         "score": 71,

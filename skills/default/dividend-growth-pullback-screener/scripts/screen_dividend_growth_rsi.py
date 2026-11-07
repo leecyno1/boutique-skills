@@ -29,7 +29,7 @@ import math
 import os
 import re
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from typing import Optional
 
 import requests
@@ -189,6 +189,15 @@ class FMPClient(SharedFMPClient):
         return quote_data
 
 
+def _finite_number(value) -> bool:
+    if type(value) not in (int, float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
 class RSICalculator:
     """Calculate Relative Strength Index (RSI) from price data."""
 
@@ -204,6 +213,10 @@ class RSICalculator:
         Returns:
             RSI value (0-100) or None if insufficient data
         """
+        if type(period) is not int or period <= 0:
+            return None
+        if any(not _finite_number(price) for price in prices):
+            return None
         if len(prices) < period + 1:
             return None
 
@@ -239,6 +252,8 @@ class StockAnalyzer:
     @staticmethod
     def calculate_cagr(start_value: float, end_value: float, years: int) -> Optional[float]:
         """Calculate Compound Annual Growth Rate."""
+        if any(not _finite_number(value) for value in (start_value, end_value, years)):
+            return None
         if start_value <= 0 or end_value <= 0 or years <= 0:
             return None
         return round(((end_value / start_value) ** (1 / years) - 1) * 100, 2)
@@ -958,7 +973,7 @@ def generate_markdown_report(results: list[dict], criteria: dict, output_path: s
 
     report = f"""# Dividend Growth Pullback Screening Report
 
-**Generated:** {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")} UTC
+**Generated:** {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")} UTC
 **Data Source:** Financial Modeling Prep API
 
 ## Executive Summary
@@ -1170,7 +1185,7 @@ High dividend growth stocks (12%+ CAGR) compound wealth through rising dividends
 
 **Disclaimer:** This report is for informational purposes only. Past dividend growth does not guarantee future performance. RSI oversold conditions do not guarantee price reversals. Conduct thorough due diligence and consult a financial advisor before making investment decisions.
 
-**Report Generated:** {datetime.utcnow().isoformat()}Z
+**Report Generated:** {datetime.now(timezone.utc).replace(tzinfo=None).isoformat()}Z
 """
 
     # Write report
@@ -1303,7 +1318,7 @@ Environment Variables:
     # JSON output
     json_output = {
         "metadata": {
-            "generated_at": datetime.utcnow().isoformat() + "Z",
+            "generated_at": datetime.now(timezone.utc).replace(tzinfo=None).isoformat() + "Z",
             "criteria": criteria,
             "total_results": len(results),
         },

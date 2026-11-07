@@ -1,5 +1,14 @@
 # Findings
 
+## 2026-11-07（周度治理：大响应截断导致发现阶段中断）
+
+已解决：
+
+- **症状**：`weekly_cycle.sh` 第 1 步在导入 `openclaw/openclaw` 时崩溃，`api_get` 的 `response.read()` 抛 `http.client.IncompleteRead: IncompleteRead(7838061 bytes read, 9372983 more expected)`。该仓库 recursive tree 响应约 17MB，urllib 读到约 7.8MB 后被截断。
+- **根因**：`api_get` 只对 `HTTPError`/`URLError`/`OSError` 做回退，`IncompleteRead` 属于 `http.client.HTTPException`，不在这三类里，因此 curl 回退从未触发，异常直接冒泡终止流水线。`check_upstream_updates.py` 的 `api_get`、以及两个脚本的 `raw_file_bytes` 有同样缺口。
+- **修复**：两个脚本均 `import http.client`，`api_get` 与 `raw_file_bytes` 的传输异常捕获扩展为 `(OSError, http.client.HTTPException)`，截断读同样走 curl 回退。实测修复后同一 tree 请求经回退 8.8 秒取回 67401 条、`truncated=false`。
+- **重跑**：修复后从头重跑完整 11 步（见本轮后续记录）。
+
 ## 2026-11-02（过时退役：新模型 / harness 覆盖的技能）
 
 已解决：

@@ -285,5 +285,20 @@
   "bb-methodology": "https://github.com/elementalsouls/Claude-BugHunter",
   "bug-bounty": "https://github.com/elementalsouls/Claude-BugHunter",
   "bugcrowd-reporting": "https://github.com/elementalsouls/Claude-BugHunter",
-  "memu": "https://github.com/NevaMind-AI/memU"
+  "memu": "https://github.com/NevaMind-AI/memU",
+  "bear-notes": "https://github.com/openclaw/openclaw",
+  "cavecrew": "https://github.com/JuliusBrussee/caveman",
+  "caveman-commit": "https://github.com/JuliusBrussee/caveman",
+  "caveman-compress": "https://github.com/JuliusBrussee/caveman",
+  "caveman-discover": "https://github.com/JuliusBrussee/caveman",
+  "caveman-evidence-review": "https://github.com/JuliusBrussee/caveman",
+  "8-bit-orbit-video-template": "https://github.com/nexu-io/open-design",
+  "ad-creative": "https://github.com/nexu-io/open-design",
+  "after-hours-editorial-template": "https://github.com/nexu-io/open-design",
+  "ai-music-album": "https://github.com/nexu-io/open-design",
+  "blueprint-figure": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "build-project": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "check-understanding": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "claude-certification": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "course-guide": "https://github.com/rohitg00/ai-engineering-from-scratch"
 }

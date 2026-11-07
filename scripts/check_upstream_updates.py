@@ -2,6 +2,7 @@
 import argparse
 import base64
 import hashlib
+import http.client
 import json
 import os
 import re
@@ -159,7 +160,7 @@ def api_get(path: str, token: str | None) -> dict | list | None:
                 return _api_get_curl(endpoint, token)
             if attempt == 2:
                 return _api_get_curl(endpoint, token)
-        except OSError:
+        except (OSError, http.client.HTTPException):
             return _api_get_curl(endpoint, token)
         time.sleep(1 + attempt)
     return None
@@ -491,7 +492,7 @@ def raw_file_bytes(source: GitHubSource, token: str | None, ref: str, path: str)
     try:
         with urlopen(Request(raw_url, headers=headers), timeout=12) as response:
             return response.read()
-    except (HTTPError, URLError, OSError):
+    except (HTTPError, URLError, OSError, http.client.HTTPException):
         status, body = _curl_fetch(raw_url, token, timeout=20)
         if status is not None and 200 <= status < 300 and body is not None:
             return body

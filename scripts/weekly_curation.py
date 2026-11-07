@@ -18,6 +18,7 @@ Scoring thresholds follow QODER_HANDOFF.md: >=75 import, <60 remove.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import math
 import os
@@ -166,8 +167,9 @@ def api_get(path: str, token: str | None) -> dict | list | None:
                 return _api_get_curl(endpoint, token)
             if attempt == 2:
                 return _api_get_curl(endpoint, token)
-        except OSError:
-            # RemoteDisconnected and friends: fall back to curl immediately.
+        except (OSError, http.client.HTTPException):
+            # RemoteDisconnected and truncated reads (IncompleteRead) and
+            # friends: fall back to curl immediately.
             return _api_get_curl(endpoint, token)
         time.sleep(1 + attempt)
     return None
@@ -187,7 +189,7 @@ def raw_file_bytes(owner: str, repo: str, ref: str, path: str, token: str | None
             if status is not None and 200 <= status < 300 and body is not None:
                 return body
         return None
-    except OSError:
+    except (OSError, http.client.HTTPException):
         status, body = _curl_fetch(url, token, timeout=20)
         if status is not None and 200 <= status < 300 and body is not None:
             return body

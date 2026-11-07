@@ -1,0 +1,5 @@
+Source: https://github.com/JuliusBrussee/caveman
+Base source commit: main @ 2026-11-07
+License: Apache-2.0
+Stars at import: 118018
+Imported by: scripts/weekly_curation.py on 2026-11-07 (score 80).
