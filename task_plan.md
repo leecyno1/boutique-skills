@@ -147,3 +147,13 @@ Upgrade the repository from copied installer-source metadata to a maintainable e
 | 68. Obsolescence analysis under modern models/harnesses | complete | 353 unique installed skills scored on cli/endpoint/key/code/calls; 3 tiers written to reports/usage/obsolescence-analysis-2026-11-02.md |
 | 69. Archive obsolete local copies | complete | 193 skills / 300 copies archived; Qoder 292→132, Codex 241→100; --include-active added to uninstall_skills.py |
 | 70. Retire obsolete skills from the repo with re-import guard | complete | 132 removed (436→304); catalog/retired-skills.json + discover/import guard + tests/test_retired_guard.py; syntax gate re-execs to python>=3.12 |
+
+## Design School Consolidation (2026-11-11)
+
+| Phase | Status | Output |
+|---|---|---|
+| 71. Assess the elayadesign skill from the Xiaohongshu post | complete | ai-design-skills 15242★ MIT; score 70 (review) and skill_subdirs=2<3 so auto-import unreachable; rules conflict with taste-skill; figma-designer needs Figma MCP (0 tools locally) → do not import |
+| 72. Keep only the taste school on this machine | complete | landing-page-design ×2 archived via --include-active; local redesign-existing-projects swapped from elaya (6558d92fdeb2) to repo taste (0713bbfa0337), elaya copy backed up to skills-archive/redesign-existing-projects-elaya-20261111/ |
+| 73. Register the exclusion and fix the over-broad block | complete | design-school group (2 ids) + 2 elaya repos blocked + design_school_decision record; new test caught anthropics/skills blocking live frontend-dev → moved to shared_repos_not_blocked (134 ids / 7 blocked / 10 shared) |
+| 74. Publish leftover sync output, then the decision | complete | 713e65d commits 1572 files the canceled 11-07 run never published (38MB taste v2 assets, memu, baoyu); bb2b9de carries the decision + doc count fixes; gates green (audit 0/0/0/0, syntax 1266py+502js 0 errors, risk 15=15 new 0, 5 test files OK); HEAD=origin=gitee |
+| 75. Decide the remaining non-taste design schools | pending user | review-animations 98 / pick-ui-library 92 / impeccable 92 / scroll-world 93 / animation 92 / generative-ui 92 (bundle frontend slot) / huashu-design 81 / gsap ×8; plus unregistered frontend-design & web-animation-design. Not retired unilaterally |
