@@ -1,5 +1,28 @@
 # Findings
 
+## 2026-11-11（设计去重：taste 设为标准默认，其余按“优于或互补”筛）
+
+已解决：
+
+- **规则**：用户裁定 taste-skill 为标准默认设计库；未定位来源的要重定位；其他设计技能优于 taste 或与 taste 互补则留，否则按重复出库。
+- **重定位**：`frontend-design` 定位成功 = `anthropics/skills@00756142`（2025-12-04，上游只有 SKILL.md + LICENSE.txt；SKILL.md 逐字比对 94.67% 相同，本地 4133B / 上游 4440B）。`web-animation-design` 定位失败：无 SOURCE.txt、未注册 origin，GitHub 代码搜索只命中聚合与镜像（LeoYeAI/agent-master-skills、gabrielmoreira/agent-skills-mirror、clonetimer/Clonetimer-Skills、caffeinepub/it-ugi 及若干 vendored 副本），无 license 无署名；内容是 Emil Kowalski animations.dev 课程指南，与在库且来源已核验的 `review-animations`（98，含 STANDARDS.md）同源重复。
+- **出库 4 个**：`animation`（bytesagain，677 行 shell 包 CSS keyframes，模型原生已覆盖）、`impeccable`（pbakaus，另一套 24 命令设计流派，taste 96 > 92 且自带 lint.mjs 禁令扫描 + inspect.mjs 真实浏览器验收）、`frontend-design`、`web-animation-design`。前两个走 `remove_skill`（同步清 default-skills.json 与 native-origin-overrides.json），后两个未注册走 `git rm`。仓库 319 → 317。
+- **本机归档 4 份**：`frontend-design`、`web-animation-design` 各 Qoder + Codex 一份。dry-run 全部 `refused_active`（近期有调用），按人工裁定用 `--include-active --confirm`，回执 `archived: 4`。`animation`、`impeccable` 本机未安装，只在仓库出库。
+- **保留（互补，不重复）**：`review-animations` 98（动画审查，taste 无此岗）、`pick-ui-library` 92（组件库选型）、`scroll-world` 93（滚动叙事视频，seedance/kling 链路，不是前端页面）、`generative-ui` 92（对话内联 widget/图表）、`huashu-design` 81（原型/演示/信息图/视频，SKILL.md 明确排除生产级 Web App 与 SEO 站点）、`gsap` ×8（各 92，GSAP 官方 API 知识，不是设计流派）、taste 家族 13 个。
+- **taste 成为默认**：`CAPABILITY_RULES` 的 frontend 候选加 `design-taste-frontend`，标准包 frontend 槽位由 `generative-ui`(92) 换成 `design-taste-frontend`(96，direct，无 key)。`generative-ui` 仍在库，承担内联 widget 岗位。标准包仍 21 位、金融组合仍 28 位。
+- **防回流**：`retired-skills.json` 138 个 id（+4）、9 个整库屏蔽（+`bytesagain/ai-skills`、`pbakaus/impeccable`）；`design_school_decision` 补 `standard_default`/`dedupe_rule`/`kept_complementary`/`retired_duplicates`，`pending_user_decision` 清空。
+- **顺带修两个目录生成器 bug**（都是把 taste 提上默认后才暴露）：
+  1. `parse_frontmatter` 只认 `|`/`>`，不认 `>-`/`|-` 这类带 chomping 的块标量头，4 个技能的 description 变成字面 `">-"`（design-taste-frontend、baoyu-translate、achieving-cmmc-level-2-compliance、westockdata），标准包 note 也显示 `">-"`。改为正则 `[|>][+-]?\d*`。
+  2. 分类器 `ui` 用裸子串匹配，`quick`/`build`/`guide` 都命中 design-ui。description 修好后 `baoyu-translate` 因 “quick mode” 被误判成 design-ui 并抬到 92 分。给这类关键词加词边界（`BOUNDARY_KEYWORDS = {"ui"}`），11 个技能回到正确分类：baoyu-article-illustrator→media-generation、baoyu-translate→writing-content、memu→agent-orchestration、ponytail-audit→security-audit、agentmail-toolkit→communication 等。design-ui 45→34，5★ 98→89，L2 129→118 / L3 176→187；安装档 low/medium/high 未变（53/68/317）。
+- **impeccable 独有能力备忘**（日后要补 taste 可从这几处取）：`live`/`generate` 浏览器变体循环、PRODUCT.md/DESIGN.md 项目上下文、`reference/ios.md` 与 `android.md` 原生平台参考。
+- **门禁**：audit 317/311，missing_skills 0、duplicate_capabilities 0、standard_bundle_issues 0；syntax python 1266 / js 394（-108 全是 impeccable 的 .mjs/.js）errors 0；risk 15/15 new 0；5 个测试全 OK。
+
+待观察：
+
+- `frontend-design` 是高频技能（833 次调用、近 30 天 363 次，最后 2026-11-04），归档会改变日常行为；同岗位由 `design-taste-frontend` 承担。`web-animation-design` 33 次 / 近期 32 次，只在 Codex。要回退：`mv ~/.{qoder,codex}/skills-archive/<name> ~/.{qoder,codex}/skills/`。
+- 分类器还有兜底桶问题：`check-understanding`、`gstack`、`ponytail-help` 落到 commerce-ops（无关键词命中），`analytical-method-validation` 落到 media-generation。已不是 design-ui 误判，但分类仍不准，待单独处理。
+- `web-animation-design` 若日后定位到 canonical 上游且证明优于 taste 体系，删登记表条目即可重新导入。
+
 ## 2026-11-11（设计流派收敛：只留 taste 一家）
 
 已解决：
@@ -14,7 +37,7 @@
 - **2026-11-07 那次取消的运行留下了未发布内容**：工作区有 1564 个未跟踪文件（38MB，全是 `design-taste-frontend` 的 taste-skill v2 素材：958 svg / 122 js / 110 html / 66 webp 等，最大单文件 868KB，无 node_modules、无密钥）加 8 个已跟踪文件改动（taste 的 library/references、`memu`、`baoyu-format-markdown`）。ctime 显示素材在 11-07 10:24 落位、memu/baoyu 在 10:28 写入，都晚于 10:00 的发布提交 `9aa8571`，Quest 在 10:29 被取消，所以这批上游同步结果从未入库。本轮先单独提交这批遗留，再提交流派裁定。
 - **顺带校正**：`docs/WEEKLY_CURATION.md` 组合表还写着标准包 30 / 金融组合 34，实际已是 21 / 28；金融组合带 key 位 13/34 → 10/28；标准包跳过位去掉已不跳过的 finance-data；补写 `--include-active` 只用于人工裁定。`QODER_HANDOFF.md` 的技能数还停在 11-02 的 304，实际 11-07 重生成后是 319，已按 `catalog/skills.enriched.json` 的 summary 全量刷新。
 
-待用户裁决（未动）：
+待用户裁决（已于本日第二轮裁定，见上一节）：
 
 - “只留 taste 一家”是否延伸到其余非 taste 设计流派（分数已核对 `catalog/skills.enriched.json`）：`emilkowalski/skills` 的 review-animations 98 / pick-ui-library 92、`pbakaus/impeccable` 92、`oso95/scroll-world` 93、`bytesagain/ai-skills` 的 animation 92、`himself65/finance-skills` 的 generative-ui 92（占标准包 frontend 槽位）、`alchaincyf/huashu-design` 81，以及 `greensock/gsap-skills` ×8（各 92，属库 API 知识，是否算流派待定）。这些评分高、有脚本或私有知识，不属“被模型覆盖”，等明确指令再处理。
 - 另有 `frontend-design`、`web-animation-design` 两份：在 `skills/default/` 磁盘上、两个运行时也装着，但既不在 `default-skills.json` 也没有 SOURCE.txt（未注册、来源不明）。要不要补来源登记或一并归档，同样待裁决。

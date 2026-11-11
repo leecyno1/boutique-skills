@@ -2,36 +2,62 @@
   "generated_at": "2026-11-11",
   "status": "executed",
   "source_report": "reports/usage/obsolescence-analysis-2026-11-02.md",
-  "note": "用户决定：设计流派只留 taste 一家。elayadesign/ai-design-skills 不入库，本机 landing-page-design 归档。",
+  "note": "用户决定（2026-11-11）：taste-skill 作为标准默认设计库；未定位来源的要重定位；其他设计技能优于 taste 或互补则留，否则不要重复。据此归档 frontend-design（来源已定位=anthropics/skills@00756142，2025-12-04，SKILL.md 逐字比对 94.67% 相同，与 design-taste-frontend 同能力）与 web-animation-design（canonical 来源查不到，只有聚合/镜像，内容与已收录 review-animations 同源重复）。animation、impeccable 本机未安装，只在仓库出库。",
   "items": [
     {
-      "skill": "landing-page-design",
+      "skill": "frontend-design",
       "runtime": "qoder",
-      "path": "/Users/lichengyin/.qoder/skills/landing-page-design",
-      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11）：elayadesign 流派与 taste-skill 规则互斥，不收录并归档本机副本"
+      "path": "/Users/lichengyin/.qoder/skills/frontend-design",
+      "reason": "taste 为标准默认设计库，不要重复：来源已定位为 anthropics/skills@00756142（2025-12-04，94.7% 相同，description 被镜像改写），上游此后两次重写；3 文件旧副本与 design-taste-frontend（96 分、1651 文件、自带 lint/inspect）同能力。注意：近 30 天 363 次调用，属高频，归档后由 taste 承接"
     },
     {
-      "skill": "landing-page-design",
+      "skill": "frontend-design",
       "runtime": "codex",
-      "path": "/Users/lichengyin/.codex/skills/landing-page-design",
-      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11）：elayadesign 流派与 taste-skill 规则互斥，不收录并归档本机副本"
+      "path": "/Users/lichengyin/.codex/skills/frontend-design",
+      "reason": "taste 为标准默认设计库，不要重复：来源已定位为 anthropics/skills@00756142（2025-12-04，94.7% 相同，description 被镜像改写），上游此后两次重写；3 文件旧副本与 design-taste-frontend（96 分、1651 文件、自带 lint/inspect）同能力。注意：近 30 天 363 次调用，属高频，归档后由 taste 承接"
+    },
+    {
+      "skill": "web-animation-design",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/web-animation-design",
+      "reason": "重定位失败：canonical 上游查不到（GitHub 代码搜索只命中聚合与镜像 LeoYeAI/agent-master-skills、gabrielmoreira/agent-skills-mirror、clonetimer/Clonetimer-Skills、caffeinepub/it-ugi，以及 typebot.io / vercel-labs/open-agents / MaggieAppleton / keystone-ui-react 的 vendored 副本），无 license 无署名；内容是 Emil Kowalski animations.dev 课程指南，与已收录且来源已核验的 review-animations（98 分，含 STANDARDS.md）同源重复，上游 emilkowalski/skills 现已有 animate/animation-vocabulary/animation-performance/improve-animations/choreograph"
+    },
+    {
+      "skill": "web-animation-design",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/web-animation-design",
+      "reason": "重定位失败：canonical 上游查不到（GitHub 代码搜索只命中聚合与镜像 LeoYeAI/agent-master-skills、gabrielmoreira/agent-skills-mirror、clonetimer/Clonetimer-Skills、caffeinepub/it-ugi，以及 typebot.io / vercel-labs/open-agents / MaggieAppleton / keystone-ui-react 的 vendored 副本），无 license 无署名；内容是 Emil Kowalski animations.dev 课程指南，与已收录且来源已核验的 review-animations（98 分，含 STANDARDS.md）同源重复，上游 emilkowalski/skills 现已有 animate/animation-vocabulary/animation-performance/improve-animations/choreograph"
     }
   ],
-  "executed_at": "2026-11-11T13:05:38+00:00",
+  "executed_at": "2026-11-11T14:49:10+00:00",
   "results": [
     {
-      "skill": "landing-page-design",
+      "skill": "frontend-design",
       "runtime": "qoder",
-      "from": "/Users/lichengyin/.qoder/skills/landing-page-design",
+      "from": "/Users/lichengyin/.qoder/skills/frontend-design",
       "action": "archived",
-      "to": "/Users/lichengyin/.qoder/skills-archive/landing-page-design"
+      "to": "/Users/lichengyin/.qoder/skills-archive/frontend-design"
     },
     {
-      "skill": "landing-page-design",
+      "skill": "frontend-design",
       "runtime": "codex",
-      "from": "/Users/lichengyin/.codex/skills/landing-page-design",
+      "from": "/Users/lichengyin/.codex/skills/frontend-design",
       "action": "archived",
-      "to": "/Users/lichengyin/.codex/skills-archive/landing-page-design"
+      "to": "/Users/lichengyin/.codex/skills-archive/frontend-design"
+    },
+    {
+      "skill": "web-animation-design",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/web-animation-design",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/web-animation-design"
+    },
+    {
+      "skill": "web-animation-design",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/web-animation-design",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/web-animation-design"
     }
   ]
 }

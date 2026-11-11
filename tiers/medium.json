@@ -104,17 +104,6 @@
       ]
     },
     {
-      "id": "animation",
-      "name": "animation",
-      "description": "Generate CSS and SVG animation code snippets using bash and Python.",
-      "manual": "skills/default/animation/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/animation/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
       "id": "behavior-validator",
       "name": "behavior-validator",
       "description": "Source-blind user behavior validation against a prewritten contract for apps, CLIs, APIs, and generated artifacts.",

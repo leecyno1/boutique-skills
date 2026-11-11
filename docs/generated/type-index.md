@@ -8,10 +8,10 @@
 | 编程 / 工程工具 (`coding-devtools`) | 17 |
 | 数据分析 (`data-analysis`) | 8 |
 | 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 46 |
+| 设计 / UI (`design-ui`) | 34 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
-| 媒体生成 / 处理 (`media-generation`) | 40 |
-| 写作 / 内容 (`writing-content`) | 14 |
+| 媒体生成 / 处理 (`media-generation`) | 43 |
+| 写作 / 内容 (`writing-content`) | 15 |
 | 营销 / 增长 (`marketing-growth`) | 21 |
 | 金融 / 交易 (`finance-trading`) | 73 |
 | 金融 / 机构服务 (`finance-services`) | 4 |
@@ -22,12 +22,12 @@
 | 法律 / 合规 / 税务 (`legal-compliance`) | 2 |
 | 效率 / 知识管理 (`productivity-pkm`) | 3 |
 | 记忆 / 上下文基础设施 (`memory-context`) | 1 |
-| 通信 / 社交集成 (`communication`) | 1 |
+| 通信 / 社交集成 (`communication`) | 2 |
 | DevOps / 云 / 数据库 (`devops-cloud`) | 2 |
-| 安全 / 审计 (`security-audit`) | 4 |
+| 安全 / 审计 (`security-audit`) | 5 |
 | 本地 macOS / 桌面 (`local-macos`) | 0 |
-| 多 Agent / 自动调度 (`agent-orchestration`) | 7 |
-| 商业运营 (`commerce-ops`) | 13 |
+| 多 Agent / 自动调度 (`agent-orchestration`) | 8 |
+| 商业运营 (`commerce-ops`) | 16 |
 | 教育 / 学习 (`education-learning`) | 0 |
 
 ## 核心 Agent 能力
@@ -143,10 +143,9 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `review-animations` | `L2 Professional` | 5★ | `animation`, `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend-craft`, `l2`, `offline`, `standard` |
-| `design-taste-frontend` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
+| `design-taste-frontend` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `minimalist-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `redesign-existing-projects` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
-| `baoyu-article-illustrator` | `L2 Professional` | 5★ | `baoyu`, `design-ui`, `direct`, `l2`, `offline` |
 | `brandkit` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `high-end-visual-design` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `scroll-world` | `L2 Professional` | 5★ | `design`, `design-ui`, `direct`, `frontend`, `l2`, `media-generation`, `online` |
@@ -154,10 +153,6 @@
 | `adaptyv` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online` |
 | `agent-harness-construction` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `ai-music-album` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `analytical-method-validation` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `animation` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `cavecrew` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `check-understanding` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `design-taste-frontend-v1` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `edge-concept-synthesizer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `edge-strategy-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
@@ -172,22 +167,15 @@
 | `gsap-scrolltrigger` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
 | `gsap-timeline` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
 | `gsap-utils` | `L2 Professional` | 5★ | `design-animation`, `design-animation-suite`, `design-ui`, `direct`, `frontend-craft`, `greensock`, `gsap-skills`, `l2`, `offline` |
-| `gstack` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `image-to-code` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
 | `imagegen-frontend-mobile` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `imagegen-frontend-web` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online`, `taste-skill` |
-| `impeccable` | `L2 Professional` | 5★ | `browser-required`, `design-ui`, `frontend-craft`, `l2`, `online` |
 | `industrial-brutalist-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
-| `memu` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `pick-ui-library` | `L2 Professional` | 5★ | `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend`, `frontend-craft`, `l2`, `offline`, `standard` |
-| `ponytail-audit` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `ponytail-help` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `seo-cluster` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `stitch-design-taste` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `strategy-pivot-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `huashu-design` | `L2 Professional` | 4★ | `browser-required`, `design-ui`, `l2`, `online` |
-| `agentmail-toolkit` | `L2 Professional` | 4★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
-| `agentmail` | `L2 Professional` | 3★ | `api-key`, `default_sentinel`, `design-ui`, `l2`, `online` |
 
 ## HTML 发布 / 视觉出版
 
@@ -213,13 +201,16 @@
 | `dasheng-video-talking-head` | `L3 Specialist` | 5★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-vox-skills` | `L3 Specialist` | 5★ | `browser-required`, `dasheng-media-workflow`, `dasheng_media_workflow`, `l3`, `media-generation`, `online`, `optional`, `self-media-ops`, `video-orchestration` |
 | `video-autopilot-kit` | `L3 Specialist` | 4★ | `capcut`, `direct`, `ffmpeg`, `l3`, `media-generation`, `offline`, `short-video` |
+| `baoyu-article-illustrator` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-cover-image` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `dasheng-video-explainer-html` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `dasheng-video-style-trainer` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
 | `baoyu-xhs-images` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `gpt-image-2-style-library` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
+| `analytical-method-validation` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
 | `baoyu-comic` | `L3 Specialist` | 4★ | `baoyu`, `direct`, `l3`, `media-generation`, `offline` |
 | `bilibili-upload-bridge` | `L3 Specialist` | 4★ | `dasheng-media-workflow`, `dasheng_media_workflow`, `direct`, `l3`, `media-generation`, `offline`, `self-media-ops`, `self_media` |
+| `cavecrew` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
 | `caveman-commit` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
 | `caveman-compress` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
 | `cli-compression` | `L3 Specialist` | 4★ | `direct`, `l3`, `media-generation`, `offline` |
@@ -260,6 +251,7 @@
 | `obsidian-bases` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `writing-content` |
 | `baoyu-markdown-to-html` | `L3 Specialist` | 4★ | `baoyu`, `browser-required`, `l3`, `offline`, `writing-content` |
 | `defuddle` | `L3 Specialist` | 3★ | `browser-required`, `l3`, `online`, `writing-content` |
+| `agentmail` | `L3 Specialist` | 3★ | `api-key`, `default_sentinel`, `l3`, `online`, `writing-content` |
 
 ## 营销 / 增长
 
@@ -381,7 +373,7 @@
 | `a-stock-data` | `L2 Professional` | 5★ | `a-share`, `china-market-data`, `direct`, `finance`, `finance-data`, `l2`, `offline`, `standard`, `tushare-supplement` |
 | `global-stock-data` | `L2 Professional` | 5★ | `direct`, `finance`, `finance-data`, `global-market`, `l2`, `online`, `standard` |
 | `openclaw-stock-data-skill` | `L2 Professional` | 4★ | `a-share`, `api-key`, `data`, `finance`, `finance-data`, `high-frequency`, `l2`, `online` |
-| `westockdata` | `L2 Professional` | 4★ | `cross-market-data`, `direct`, `finance`, `finance-data`, `l2`, `offline`, `optional` |
+| `westockdata` | `L2 Professional` | 4★ | `cross-market-data`, `direct`, `finance`, `finance-data`, `l2`, `online`, `optional` |
 
 ## 金融 / 知识库
 
@@ -427,6 +419,7 @@
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
 | `agentmail-cli` | `L3 Specialist` | 3★ | `api-key`, `communication`, `default_sentinel`, `l3`, `online` |
+| `agentmail-toolkit` | `L3 Specialist` | 3★ | `api-key`, `communication`, `default_sentinel`, `l3`, `online` |
 
 ## DevOps / 云 / 数据库
 
@@ -443,6 +436,7 @@
 | `analyzing-active-directory-acl-abuse` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
 | `code-review` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
 | `gws-admin-reports` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
+| `ponytail-audit` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
 
 ## 多 Agent / 自动调度
 
@@ -453,6 +447,7 @@
 | `capability-evolver` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `colleague-skill` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `distilly` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
+| `memu` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `openclaw-cron-setup` | `L2 Professional` | 4★ | `agent-orchestration`, `browser-required`, `l2`, `online` |
 | `eigenflux` | `L3 Specialist` | 4★ | `agent-network`, `agent-orchestration`, `broadcast`, `codex-plugin`, `communication`, `l3`, `mcp-required`, `online` |
 
@@ -464,9 +459,12 @@
 | `after-hours-editorial-template` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `auto-paper-improvement-loop` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `blueprint-figure` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
+| `check-understanding` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `cli-chat` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
+| `gstack` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `gws-chat-send` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `ponytail-debt` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
+| `ponytail-help` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `ponytail-review` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `story-deslop` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |
 | `story-import` | `L3 Specialist` | 4★ | `commerce-ops`, `direct`, `l3`, `offline` |

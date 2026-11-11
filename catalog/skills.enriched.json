@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-07",
+  "generated_at": "2026-11-11",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -13,25 +13,25 @@
     ]
   },
   "summary": {
-    "skills": 319,
-    "native_origin_verified_or_referenced": 313,
+    "skills": 317,
+    "native_origin_verified_or_referenced": 311,
     "native_origin_excluded_presets": 6,
     "needs_origin_review": 0,
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 12,
-      "L2 Professional": 130,
-      "L3 Specialist": 177
+      "L2 Professional": 118,
+      "L3 Specialist": 187
     },
     "by_category": {
-      "agent-orchestration": 7,
+      "agent-orchestration": 8,
       "browser-automation": 4,
       "coding-devtools": 17,
-      "commerce-ops": 13,
-      "communication": 1,
+      "commerce-ops": 16,
+      "communication": 2,
       "core-agent": 11,
       "data-analysis": 8,
-      "design-ui": 46,
+      "design-ui": 34,
       "devops-cloud": 2,
       "docs-office": 10,
       "finance-data": 4,
@@ -42,26 +42,26 @@
       "html-publishing": 3,
       "legal-compliance": 2,
       "marketing-growth": 21,
-      "media-generation": 40,
+      "media-generation": 43,
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 3,
       "search-research": 28,
-      "security-audit": 4,
-      "writing-content": 14
+      "security-audit": 5,
+      "writing-content": 15
     },
     "by_access_mode": {
       "api-key": 82,
       "api-key+mcp-required": 3,
-      "browser-required": 28,
-      "direct": 194,
+      "browser-required": 27,
+      "direct": 193,
       "mcp-required": 12
     },
     "by_stars": {
       "1★": 6,
-      "3★": 57,
-      "4★": 157,
-      "5★": 99
+      "3★": 58,
+      "4★": 164,
+      "5★": 89
     }
   },
   "skills": [
@@ -439,7 +439,7 @@
     {
       "id": "design-taste-frontend",
       "name": "design-taste-frontend",
-      "description": ">-",
+      "description": "tasteskill 2.5.0, the anti-slop frontend skill. Builds professional company websites at the level of figma.com and x.ai: plain copy, one system, one section per screen, equal edges, real photographs and real product UI (product renders when there are no photographs), with shader effects, scenes and moments only on tech, gaming and software pages, quiet micro-interactions, and a checker that enforces it in a real browser. Use this whenever you build, design, redesign, restyle, polish or review a landing page, company, product, shop, cafe, hotel, studio, SaaS, AI, developer-tool or game site, in any stack (HTML/CSS, React, Next.js, Vue, Svelte, Astro, Tailwind), or when the user says a page looks generic, templated or \"AI-made\".",
       "manual": "skills/default/design-taste-frontend/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/design-taste-frontend/SKILL.md",
       "install_tiers": [
@@ -460,7 +460,7 @@
         "design-ui",
         "direct",
         "l2",
-        "offline",
+        "online",
         "taste-skill"
       ],
       "dependencies": {
@@ -468,7 +468,7 @@
         "api_keys": [],
         "required_tools": [],
         "access_mode": "direct",
-        "runtime": "offline"
+        "runtime": "online"
       },
       "risk_level": "low",
       "conflict_group": "design-taste-frontend",
@@ -749,49 +749,6 @@
       "preset_excluded": false,
       "rating": {
         "score": 95,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "baoyu-article-illustrator",
-      "name": "baoyu-article-illustrator",
-      "description": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\".",
-      "manual": "skills/default/baoyu-article-illustrator/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-article-illustrator/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-article-illustrator",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "baoyu",
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "baoyu-article-illustrator",
-      "preset_excluded": false,
-      "rating": {
-        "score": 94,
         "stars": 5,
         "rating_label": "★★★★★"
       }
@@ -1479,48 +1436,6 @@
       }
     },
     {
-      "id": "analytical-method-validation",
-      "name": "analytical-method-validation",
-      "description": "Plan, execute, and document validation, verification, and transfer of analytical procedures under the governing framework - ICH Q2(R2) and Q14, USP <1220>/<1225>/<1226>, ICH M10 bioanalytical, CLSI EP, or ISO/IEC 17025. Use for HPLC, LC-MS/MS, GC, CE, ICP-MS, dissolution, qNMR, qPCR, NIR, and ligand binding or cell-based assays whenever the question is whether a procedure is fit for its intended purpose. Triggers include \"method validation\", \"analytical method validation\", \"AMV\", \"validation protocol\", \"acceptance criteria\", \"linearity\", \"reportable range\", \"accuracy and precision\", \"repeatability\", \"intermediate precision\", \"recovery\", \"LOD\", \"LOQ\", \"detection limit\", \"quantitation limit\", \"specificity\", \"robustness\", \"method transfer\", \"method comparison\", \"Deming\", \"Passing-Bablok\", \"Bland-Altman\", \"equivalence testing\", \"OOS investigation\", \"ICH Q2\", \"Q2(R2)\", \"Q14\", \"USP 1225\", \"ICH M10\", \"incurred sample reanalysis\", \"ISR\", \"CLSI EP\", and any request to show that an assay works.",
-      "manual": "skills/default/analytical-method-validation/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "analytical-method-validation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
       "id": "analyze-results",
       "name": "analyze-results",
       "description": "Analyze ML experiment results, compute statistics, generate comparison tables and insights. Use when user says \"analyze results\", \"compare\", or needs to interpret experimental data.",
@@ -1557,49 +1472,6 @@
       },
       "risk_level": "low",
       "conflict_group": "analyze-results",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "animation",
-      "name": "animation",
-      "description": "Generate CSS and SVG animation code snippets using bash and Python. Use when building UI animations, keyframes, or transition effects.",
-      "manual": "skills/default/animation/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/animation/GUIDE.md",
-      "install_tiers": [
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/bytesagain/ai-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "animation",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -1994,90 +1866,6 @@
       },
       "risk_level": "low",
       "conflict_group": "build-project",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "cavecrew",
-      "name": "cavecrew",
-      "description": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer.",
-      "manual": "skills/default/cavecrew/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JuliusBrussee/caveman",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "cavecrew",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "check-understanding",
-      "name": "check-understanding",
-      "description": "Phase quiz for AI Engineering from Scratch. Trigger with \"quiz me\", \"test phase\", \"check my understanding\", \"do I know phase 3\", or `/check-understanding <phase>`.",
-      "manual": "skills/default/check-understanding/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "check-understanding",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -3146,48 +2934,6 @@
       }
     },
     {
-      "id": "gstack",
-      "name": "gstack",
-      "description": "Router for the gstack skill suite. (gstack)",
-      "manual": "skills/default/gstack/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/garrytan/gstack",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-19",
-        "mirror_source_url": "https://github.com/garrytan/gstack",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "gstack",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
       "id": "gws-calendar",
       "name": "gws-calendar",
       "description": "Google Calendar: Manage calendars and events.",
@@ -3443,52 +3189,6 @@
       }
     },
     {
-      "id": "impeccable",
-      "name": "impeccable",
-      "description": "Use to design, redesign, critique, audit, polish or animate a frontend: websites, landing pages, dashboards, app UI, components, native iOS/Android screens, or a design system (DESIGN.md).",
-      "manual": "skills/default/impeccable/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "browser-required",
-        "design-ui",
-        "frontend-craft",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser",
-          "node"
-        ],
-        "access_mode": "browser-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "impeccable",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
       "id": "industrial-brutalist-ui",
       "name": "industrial-brutalist-ui",
       "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints.",
@@ -3569,48 +3269,6 @@
       },
       "risk_level": "low",
       "conflict_group": "linkedin-reader",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "memu",
-      "name": "memu",
-      "description": "Install or uninstall memU for whatever agent you are — identify your host, print its packaged guide, and follow it to wire (or unwire) both seams (record and inject). Use when the user asks to install, set up, integrate, remove, or uninstall memU.",
-      "manual": "skills/default/memu/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/NevaMind-AI/memU",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-30",
-        "mirror_source_url": "https://github.com/NevaMind-AI/memU",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "memu",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -3749,90 +3407,6 @@
       },
       "risk_level": "low",
       "conflict_group": "pick-ui-library",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "ponytail-audit",
-      "name": "ponytail-audit",
-      "description": "Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. Use when the user says \"audit this codebase\", \"audit for over-engineering\", \"what can I delete from this repo\", \"find bloat\", \"ponytail-audit\", or \"/ponytail-audit\". One-shot report, does not apply fixes.",
-      "manual": "skills/default/ponytail-audit/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-audit",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "ponytail-help",
-      "name": "ponytail-help",
-      "description": "Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, \"ponytail help\", \"what ponytail commands\", \"how do I use ponytail\".",
-      "manual": "skills/default/ponytail-help/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-help",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -4944,6 +4518,49 @@
       }
     },
     {
+      "id": "baoyu-article-illustrator",
+      "name": "baoyu-article-illustrator",
+      "description": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\".",
+      "manual": "skills/default/baoyu-article-illustrator/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-article-illustrator/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-article-illustrator",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "baoyu",
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "baoyu-article-illustrator",
+      "preset_excluded": false,
+      "rating": {
+        "score": 87,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "baoyu-cover-image",
       "name": "baoyu-cover-image",
       "description": "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 11 color palettes and 7 rendering styles. Supports cinematic (2.35:1), widescreen (16:9), and square (1:1) aspects. Use when user asks to \"generate cover image\", \"create article cover\", or \"make cover\".",
@@ -5576,6 +5193,48 @@
       }
     },
     {
+      "id": "analytical-method-validation",
+      "name": "analytical-method-validation",
+      "description": "Plan, execute, and document validation, verification, and transfer of analytical procedures under the governing framework - ICH Q2(R2) and Q14, USP <1220>/<1225>/<1226>, ICH M10 bioanalytical, CLSI EP, or ISO/IEC 17025. Use for HPLC, LC-MS/MS, GC, CE, ICP-MS, dissolution, qNMR, qPCR, NIR, and ligand binding or cell-based assays whenever the question is whether a procedure is fit for its intended purpose. Triggers include \"method validation\", \"analytical method validation\", \"AMV\", \"validation protocol\", \"acceptance criteria\", \"linearity\", \"reportable range\", \"accuracy and precision\", \"repeatability\", \"intermediate precision\", \"recovery\", \"LOD\", \"LOQ\", \"detection limit\", \"quantitation limit\", \"specificity\", \"robustness\", \"method transfer\", \"method comparison\", \"Deming\", \"Passing-Bablok\", \"Bland-Altman\", \"equivalence testing\", \"OOS investigation\", \"ICH Q2\", \"Q2(R2)\", \"Q14\", \"USP 1225\", \"ICH M10\", \"incurred sample reanalysis\", \"ISR\", \"CLSI EP\", and any request to show that an assay works.",
+      "manual": "skills/default/analytical-method-validation/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "analytical-method-validation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "analyzing-active-directory-acl-abuse",
       "name": "analyzing-active-directory-acl-abuse",
       "description": "Detect dangerous ACL misconfigurations in Active Directory using ldap3",
@@ -5748,7 +5407,7 @@
     {
       "id": "baoyu-translate",
       "name": "baoyu-translate",
-      "description": ">-",
+      "description": "This skill should be used when the user asks to \"translate\", \"翻译\", \"精翻\", \"translate article\", \"translate to Chinese\", \"translate to English\", \"改成中文\", \"改成英文\", \"convert to Chinese\", \"localize\", \"本地化\", \"refined translation\", \"精细翻译\", \"proofread translation\", \"快速翻译\", \"快翻\", \"这篇文章翻译一下\", or provides a URL/file with translation intent. Supports three modes (quick/normal/refined) with custom glossary support.",
       "manual": "skills/default/baoyu-translate/GUIDE.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-translate/GUIDE.md",
       "install_tiers": [
@@ -5924,6 +5583,48 @@
       }
     },
     {
+      "id": "cavecrew",
+      "name": "cavecrew",
+      "description": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer.",
+      "manual": "skills/default/cavecrew/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "direct",
+        "l3",
+        "media-generation",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "cavecrew",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "caveman-commit",
       "name": "caveman-commit",
       "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
@@ -6045,6 +5746,48 @@
       },
       "risk_level": "low",
       "conflict_group": "channels-account-launch-expert",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "check-understanding",
+      "name": "check-understanding",
+      "description": "Phase quiz for AI Engineering from Scratch. Trigger with \"quiz me\", \"test phase\", \"check my understanding\", \"do I know phase 3\", or `/check-understanding <phase>`.",
+      "manual": "skills/default/check-understanding/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "check-understanding",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -6396,6 +6139,48 @@
       }
     },
     {
+      "id": "gstack",
+      "name": "gstack",
+      "description": "Router for the gstack skill suite. (gstack)",
+      "manual": "skills/default/gstack/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/garrytan/gstack",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-19",
+        "mirror_source_url": "https://github.com/garrytan/gstack",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "gstack",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "gws-admin-reports",
       "name": "gws-admin-reports",
       "description": "Google Workspace Admin SDK: Audit logs and usage reports.",
@@ -6564,6 +6349,48 @@
       }
     },
     {
+      "id": "memu",
+      "name": "memu",
+      "description": "Install or uninstall memU for whatever agent you are — identify your host, print its packaged guide, and follow it to wire (or unwire) both seams (record and inject). Use when the user asks to install, set up, integrate, remove, or uninstall memU.",
+      "manual": "skills/default/memu/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/NevaMind-AI/memU",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-30",
+        "mirror_source_url": "https://github.com/NevaMind-AI/memU",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
+      "tags": [
+        "agent-orchestration",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "memu",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "obsidian-bases",
       "name": "obsidian-bases",
       "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
@@ -6652,6 +6479,48 @@
       }
     },
     {
+      "id": "ponytail-audit",
+      "name": "ponytail-audit",
+      "description": "Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. Use when the user says \"audit this codebase\", \"audit for over-engineering\", \"what can I delete from this repo\", \"find bloat\", \"ponytail-audit\", or \"/ponytail-audit\". One-shot report, does not apply fixes.",
+      "manual": "skills/default/ponytail-audit/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "security-audit",
+      "category_label": "安全 / 审计",
+      "tags": [
+        "direct",
+        "l3",
+        "offline",
+        "security-audit"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-audit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "ponytail-debt",
       "name": "ponytail-debt",
       "description": "Harvest every `ponytail:` comment in the codebase into a debt ledger, so the deliberate shortcuts and deferrals ponytail leaves behind get tracked instead of rotting into \"later means never\". Use when the user says \"ponytail debt\", \"/ponytail-debt\", \"what did ponytail defer\", \"list the shortcuts\", \"ponytail ledger\", or \"what did we mark to do later\". One-shot report, changes nothing.",
@@ -6728,6 +6597,48 @@
       },
       "risk_level": "low",
       "conflict_group": "ponytail-gain",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "ponytail-help",
+      "name": "ponytail-help",
+      "description": "Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, \"ponytail help\", \"what ponytail commands\", \"how do I use ponytail\".",
+      "manual": "skills/default/ponytail-help/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "commerce-ops",
+      "category_label": "商业运营",
+      "tags": [
+        "commerce-ops",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-help",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -9339,7 +9250,7 @@
     {
       "id": "achieving-cmmc-level-2-compliance",
       "name": "achieving-cmmc-level-2-compliance",
-      "description": ">-",
+      "description": "Prepare a defense-contractor environment for CMMC Level 2 certification: scope CUI and FCI, implement the 110 NIST SP 800-171 Rev 2 security requirements across 14 families, compute the SPRS score with the DoD Assessment Methodology, manage a compliant POA&M, and ready the organization for a C3PAO assessment. Use when an organization handles Controlled Unclassified Information (CUI) under a DoD contract, when a contract carries DFARS clause 252.204-7012/7019/7020/7021, when preparing for or responding to a CMMC assessment, when computing or improving an SPRS score, when building a System Security Plan or POA&M for 800-171, or when scoping which systems are in the CUI boundary. Keywords: CMMC, CMMC Level 2, NIST 800-171, SP 800-171 Rev 2, CUI, FCI, SPRS, DFARS 7012, C3PAO, POA&M, System Security Plan, DoD Assessment Methodology, 110 controls, defense industrial base, DIB, FedRAMP equivalency.",
       "manual": "skills/default/achieving-cmmc-level-2-compliance/SKILL.md",
       "manual_url": null,
       "install_tiers": [
@@ -10296,54 +10207,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "agent-architecture-audit",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "agentmail-toolkit",
-      "name": "agentmail-toolkit",
-      "description": "Add email capabilities to AI agents using popular frameworks. Provides pre-built tools for TypeScript and Python frameworks including Vercel AI SDK, LangChain, Clawdbot, OpenAI Agents SDK, and LiveKit Agents. Use when integrating AgentMail with agent frameworks that need email send/receive tools.",
-      "manual": "skills/default/agentmail-toolkit/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail-toolkit/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/agentmail-to/agentmail-toolkit",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-toolkit",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "design-ui",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "AGENTMAIL_API_KEY",
-          "OPENAI_API_KEY"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "email-agent",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -11465,7 +11328,7 @@
     {
       "id": "westockdata",
       "name": "westockdata",
-      "description": ">-",
+      "description": "Query A-share, Hong Kong, and US stock, index, sector, and ETF data through the version-pinned westock-data-clawhub CLI. Use when one consistent command surface is more useful than writing data-fetching code: quotes, K-lines, financial statements, capital flow, technical indicators, shareholders, dividends, ETF holdings/NAV, market boards, calendars, or cross-market comparisons. Treat results as unverified market data, cite the command and retrieval time, and do not use this skill for trade execution or as the sole basis for an investment decision.",
       "manual": "skills/default/westockdata/SKILL.md",
       "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/westockdata/SKILL.md",
       "install_tiers": [
@@ -11488,7 +11351,7 @@
         "finance",
         "finance-data",
         "l2",
-        "offline",
+        "online",
         "optional"
       ],
       "dependencies": {
@@ -11498,7 +11361,7 @@
           "node"
         ],
         "access_mode": "direct",
-        "runtime": "offline"
+        "runtime": "online"
       },
       "risk_level": "medium",
       "conflict_group": "westockdata",
@@ -12387,6 +12250,54 @@
         "requires_api_keys": true,
         "api_keys": [
           "AGENTMAIL_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "email-agent",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "agentmail-toolkit",
+      "name": "agentmail-toolkit",
+      "description": "Add email capabilities to AI agents using popular frameworks. Provides pre-built tools for TypeScript and Python frameworks including Vercel AI SDK, LangChain, Clawdbot, OpenAI Agents SDK, and LiveKit Agents. Use when integrating AgentMail with agent frameworks that need email send/receive tools.",
+      "manual": "skills/default/agentmail-toolkit/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail-toolkit/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/agentmail-to/agentmail-toolkit",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-toolkit",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "communication",
+      "category_label": "通信 / 社交集成",
+      "tags": [
+        "api-key",
+        "communication",
+        "default_sentinel",
+        "l3",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "AGENTMAIL_API_KEY",
+          "OPENAI_API_KEY"
         ],
         "required_tools": [],
         "access_mode": "api-key",
@@ -14293,55 +14204,6 @@
       }
     },
     {
-      "id": "agentmail",
-      "name": "agentmail",
-      "description": "Give AI agents their own email inboxes using the AgentMail API. Use when building email agents, sending/receiving emails programmatically, managing inboxes, handling attachments, organizing with labels, creating drafts for human approval, or setting up real-time notifications via webhooks/websockets. Supports multi-tenant isolation with pods.",
-      "manual": "skills/default/agentmail/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail/GUIDE.md",
-      "install_tiers": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/agentmail-to/agentmail-skills",
-        "origin_type": "github",
-        "origin_confidence": "local_reference",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "api-key",
-        "default_sentinel",
-        "design-ui",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "AGENTMAIL_API_KEY"
-        ],
-        "required_tools": [
-          "browser"
-        ],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "email-agent",
-      "preset_excluded": false,
-      "rating": {
-        "score": 68,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
       "id": "minimax-multimodal-toolkit",
       "name": "mmx-cli",
       "description": "Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform. Use when the user wants to create media content, chat with MiniMax models, perform web search, or manage MiniMax API resources from the terminal.",
@@ -14437,6 +14299,55 @@
       "preset_excluded": false,
       "rating": {
         "score": 68,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
+      "id": "agentmail",
+      "name": "agentmail",
+      "description": "Give AI agents their own email inboxes using the AgentMail API. Use when building email agents, sending/receiving emails programmatically, managing inboxes, handling attachments, organizing with labels, creating drafts for human approval, or setting up real-time notifications via webhooks/websockets. Supports multi-tenant isolation with pods.",
+      "manual": "skills/default/agentmail/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail/GUIDE.md",
+      "install_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/agentmail-to/agentmail-skills",
+        "origin_type": "github",
+        "origin_confidence": "local_reference",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "writing-content",
+      "category_label": "写作 / 内容",
+      "tags": [
+        "api-key",
+        "default_sentinel",
+        "l3",
+        "online",
+        "writing-content"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "AGENTMAIL_API_KEY"
+        ],
+        "required_tools": [
+          "browser"
+        ],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "email-agent",
+      "preset_excluded": false,
+      "rating": {
+        "score": 61,
         "stars": 3,
         "rating_label": "★★★☆☆"
       }

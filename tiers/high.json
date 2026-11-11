@@ -453,17 +453,6 @@
       ]
     },
     {
-      "id": "animation",
-      "name": "animation",
-      "description": "Generate CSS and SVG animation code snippets using bash and Python.",
-      "manual": "skills/default/animation/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/animation/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/animation",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": []
-    },
-    {
       "id": "anthropic-fs-equity-research-catalyst-calendar",
       "name": "anthropic-fs-equity-research-catalyst-calendar",
       "description": "Build and maintain a calendar of upcoming catalysts across a coverage universe — earnings dates, conferences, product launches, regulatory decisions, and macro events. Helps prioritize attention and position ahead of events. Triggers on \"catalyst calendar\", \"upcoming events\", \"what's coming up\", \"earnings calendar\", \"event calendar\", or \"catalyst tracker\".",
@@ -2080,20 +2069,6 @@
       "groups": [
         "taste-skill",
         "design-ui"
-      ]
-    },
-    {
-      "id": "impeccable",
-      "name": "impeccable",
-      "description": "Production-grade frontend design, redesign, critique, audit, polish, accessibility, responsive, typography, motion, and design-system workflows with focused commands and local detectors.",
-      "manual": "skills/default/impeccable/SKILL.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/impeccable/SKILL.md",
-      "source": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "design-ui",
-        "frontend-craft"
       ]
     },
     {

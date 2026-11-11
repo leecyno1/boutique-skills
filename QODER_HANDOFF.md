@@ -9,13 +9,13 @@
 - GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
 - 注意：字符串 `boutique-openclaw-skills` 现在只应出现在 Gitee 仓库地址与历史记录里（旧会话转录目录、RepoWiki 目录、早期报告中的绝对路径）。仓库名、本地目录名、GitHub 地址都已统一为 `boutique-skills`。
-- 当前技能数：319（catalog/skills.enriched.json，生成于 2026-11-07；11-02 退役 132 个后由 11-07 周度发现补回 15 个）；skills/default/ 目录 458 个（含未注册候选与套件成员）
-- 横向分层：high 319 / medium 69 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 130 / L3 177
-- 星级分布：5★ 99 / 4★ 157 / 3★ 57 / 1★ 6
-- 来源核验：313 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
-- 标准包：21 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）
+- 当前技能数：317（catalog/skills.enriched.json，生成于 2026-11-11；11-02 退役 132 个、11-07 周度发现补回 15 个到 319，11-11 设计去重再出库 animation、impeccable 到 317）；skills/default/ 目录 454 个（含未注册候选与套件成员）
+- 横向分层：high 317 / medium 68 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 118 / L3 187
+- 星级分布：5★ 89 / 4★ 164 / 3★ 58 / 1★ 6
+- 来源核验：311 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
+- 标准包：21 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）。frontend 槽位 = `design-taste-frontend`（96，taste 为标准默认设计库）
 - 金融投资标准组合：28 个 Skill（能力位去重，上限 40；同位优先无 key 候选）
-- 退役登记：`catalog/retired-skills.json`（134 个 id + 7 个整库屏蔽 + 10 个共用不屏蔽），发现/导入阶段自动跳过；过时退役分析见 `reports/usage/obsolescence-analysis-2026-11-02.md`，设计流派裁定见同文件 `design_school_decision`。整库屏蔽只适用于“该库已无在库技能”的情况，`tests/test_retired_guard.py` 会断言屏蔽库不覆盖任何在库 origin
+- 退役登记：`catalog/retired-skills.json`（138 个 id + 9 个整库屏蔽 + 10 个共用不屏蔽），发现/导入阶段自动跳过；过时退役分析见 `reports/usage/obsolescence-analysis-2026-11-02.md`，设计流派裁定见同文件 `design_school_decision`。整库屏蔽只适用于“该库已无在库技能”的情况，`tests/test_retired_guard.py` 会断言屏蔽库不覆盖任何在库 origin
 - 组合 API Key 政策：大模型 key 与 GitHub 工具 token 豁免；第三方注册 key 在标准组合硬过滤、在金融组合同位软惩罚（详见 docs/WEEKLY_CURATION.md）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
@@ -32,7 +32,17 @@
 4. **过时退役已执行（2026-11-02）**：按“模型/harness 是否已覆盖”标准，本机归档 193 个技能（300 份副本：Qoder 292→132、Codex 241→100），仓库出库 132 个（436→304），全部登记进 `catalog/retired-skills.json` 防再导入。其中 codex 侧 ecc 一族（tdd-workflow、e2e-testing、security-review 等 24 个）近 30 天引用量高，属归档观察：若 Codex 输出质量下降，`mv ~/.codex/skills-archive/<name> ~/.codex/skills/` 即可恢复。归档目录现为 `~/.qoder/skills-archive` 263MB、`~/.codex/skills-archive` 101MB。
 5. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
 6. **`~/.qoder/skills` 缺 agent-reach 副本**：`~/.claude/skills` 与 `~/.agents/skills` 有，CLI 在 `~/.local/bin/agent-reach`。仓库与标准包 `social-research` 槽位均已收录，周更会自动同步上游。
-7. **设计流派收敛只做了一半，其余待用户裁决**：2026-11-11 用户裁定“设计流派只留 taste 一家”，已排除 elayadesign（见下）。但仓库里还有别的非 taste 设计流派没动：review-animations 98 / pick-ui-library 92（emilkowalski）、impeccable 92（pbakaus）、scroll-world 93（oso95）、animation 92（bytesagain）、generative-ui 92（himself65，占标准包 frontend 槽位）、huashu-design 81（alchaincyf）、gsap ×8（greensock，属库 API 知识）。另有 `frontend-design`、`web-animation-design` 在磁盘与本机都有但未注册、无 SOURCE.txt。这些分数高、有脚本或私有知识，不属“被模型覆盖”，**不要自行退役**，等用户明确指令。清单同步在 `catalog/retired-skills.json` 的 `design_school_decision.pending_user_decision`。
+7. **设计流派已收敛完毕（2026-11-11 第二轮）**：taste-skill 是标准默认设计库，标准包 frontend 槽位已换成 `design-taste-frontend`(96)。其余设计技能按“优于 taste 或互补则留，否则按重复出库”筛完：出库 animation、impeccable、frontend-design、web-animation-design 4 个；保留 review-animations 98、pick-ui-library 92、scroll-world 93、generative-ui 92、huashu-design 81、gsap ×8 与 taste 家族 13 个（互补岗位，不重复）。裁定与保留理由记在 `catalog/retired-skills.json` 的 `design_school_decision`（`pending_user_decision` 已清空）。**后续发现新的设计流派，先按这条规则判断，不要默认收录。**
+8. **目录分类器仍有兜底桶问题**：`check-understanding`、`gstack`、`ponytail-help` 无关键词命中落到 commerce-ops，`analytical-method-validation` 落到 media-generation。11-11 已修掉 `ui` 裸子串误判（11 个技能从 design-ui 回到正确分类），但兜底分类仍不准，待单独处理，不要顺手大改分类表。
+
+## 最近完成（2026-11-11 设计去重 + taste 设为标准默认）
+
+- 重定位：`frontend-design` 来源已定位 = `anthropics/skills@00756142`（2025-12-04，SKILL.md 逐字 94.67% 相同）；`web-animation-design` canonical 上游查不到（只有聚合/镜像，无 license 无署名），内容与在库 `review-animations`(98) 同源重复。
+- 出库 4 个：animation（bytesagain，shell 包 CSS keyframes，模型原生已覆盖）、impeccable（pbakaus，竞争流派，taste 96 > 92）、frontend-design、web-animation-design。仓库 319 → 317，目录 458 → 454。
+- 本机归档 4 份副本（frontend-design、web-animation-design 各 Qoder + Codex）。两者近期都有调用，dry-run 全被安全网拒绝，按人工裁定用 `--include-active --confirm`。**frontend-design 是高频技能（833 次 / 近 30 天 363 次），归档会改变日常行为**，同岗位由 design-taste-frontend 承担；回退 `mv ~/.{qoder,codex}/skills-archive/<name> ~/.{qoder,codex}/skills/`。
+- taste 成为默认：`CAPABILITY_RULES` 的 frontend 候选加 `design-taste-frontend`，标准包 frontend 槽位由 generative-ui(92) 换成 design-taste-frontend(96)。generative-ui 留在库里做对话内联 widget。
+- 修两个生成器 bug：`parse_frontmatter` 不认 `>-` 块标量头（4 个技能 description 变成字面 ">-"）；分类器 `ui` 裸子串匹配把 "quick" 判成 design-ui（加词边界后 11 个技能回到正确分类，design-ui 45→34）。
+- 门禁全绿：audit 317/311、missing_skills 0、standard_bundle_issues 0；syntax errors 0；risk 15/15 new 0；5 个测试 OK。
 
 ## 最近完成（2026-11-11 设计流派只留 taste 一家）
 

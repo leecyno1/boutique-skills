@@ -9,7 +9,7 @@
 **面向智能体的精品技能仓库：原生来源可审计、能力不重复、安装可控、持续月评。**
 
 [![Project](https://img.shields.io/badge/Project-Page-2b6cb0)](#boutique-skills)
-[![Skills](https://img.shields.io/badge/Skills-319-2ea44f)](#all-skills)
+[![Skills](https://img.shields.io/badge/Skills-317-2ea44f)](#all-skills)
 [![Native Origins](https://img.shields.io/badge/Native%20Origins-0%20missing-brightgreen)](docs/UPDATE_AND_AUDIT.md)
 [![Standard Bundle](https://img.shields.io/badge/Standard%20Bundle-21%20skills%20%2B%201%20pack-7c3aed)](catalog/standard-bundle.json)
 [![Technique](https://img.shields.io/badge/Technique-Source%20Audited-f97316)](docs/generated/scoring-model.md)
@@ -70,9 +70,9 @@ Or install a grouped suite:
 
 | Metric | Value |
 |---|---:|
-| Curated skills | 319 |
+| Curated skills | 317 |
 | Skill suites | 8 |
-| Native sources verified or referenced | 313 |
+| Native sources verified or referenced | 311 |
 | Agent preset exclusions | 6 |
 | Missing native origins | 0 |
 | Standard bundle size | 21 skills + 1 pack |
@@ -94,11 +94,11 @@ The standard bundle targets daily users: one best skill per capability, no skill
 | `skill` | `security-review` | `skill-security-auditor` | 5★ | `direct` |
 | `skill` | `data-analysis` | `data-analyst` | 5★ | `direct` |
 | `skill` | `docs` | `minimax-docx` | 4★ | `direct` |
-| `skill` | `frontend` | `generative-ui` | 5★ | `direct` |
+| `skill` | `frontend` | `design-taste-frontend` | 5★ | `direct` |
 | `skill` | `fullstack` | `fullstack-dev` | 3★ | `browser-required` |
 | `skill` | `image-generation` | `gpt-image-2-style-library` | 4★ | `direct` |
 | `skill` | `research-news` | `news-radar` | 4★ | `mcp-required` |
-| `skill` | `article-illustration` | `baoyu-article-illustrator` | 5★ | `direct` |
+| `skill` | `article-illustration` | `ian-xiaohei-illustrations` | 5★ | `direct` |
 | `skill` | `social-research` | `agent-reach` | 4★ | `browser-required` |
 | `skill` | `html-publishing` | `html-anything` | 5★ | `browser-required` |
 | `skill` | `finance-global-data` | `global-stock-data` | 5★ | `direct` |
@@ -237,6 +237,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `colleague-skill` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/titanwings/colleague-skill) |
 | `distilly` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/titanwings/distilly) |
 | `eigenflux` | `L3 Specialist` | `agent-orchestration` | 4★ | `mcp-required` | [Source](https://github.com/phronesis-io/codex-eigenflux) |
+| `memu` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/NevaMind-AI/memU) |
 | `openclaw-cron-setup` | `L2 Professional` | `agent-orchestration` | 4★ | `browser-required` | [Source](https://clawhub.ai/skills/openclaw-cron-setup) |
 | `self-improving-agent-cn` | `L2 Professional` | `agent-orchestration` | 5★ | `direct` | [Source](https://clawhub.ai/zhengxinjipai/self-improving-agent-cn) |
 | `abusing-dpapi-for-credential-access` | `L3 Specialist` | `browser-automation` | 3★ | `browser-required` | [Source](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
@@ -264,16 +265,20 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `after-hours-editorial-template` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
 | `auto-paper-improvement-loop` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `blueprint-figure` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/rohitg00/ai-engineering-from-scratch) |
+| `check-understanding` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `cli-batches` | `L3 Specialist` | `commerce-ops` | 3★ | `api-key` | [Source](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-chat` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/diegosouzapw/OmniRoute) |
+| `gstack` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/garrytan/gstack) |
 | `gws-chat-send` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/googleworkspace/cli) |
 | `inference-skills` | `L3 Specialist` | `commerce-ops` | 3★ | `api-key` | [Source](https://github.com/inference-sh/skills) |
 | `ponytail-debt` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
+| `ponytail-help` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
 | `ponytail-review` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
 | `story-deslop` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `story-import` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `story-long-analyze` | `L3 Specialist` | `commerce-ops` | 4★ | `direct` | [Source](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `agentmail-cli` | `L3 Specialist` | `communication` | 3★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-cli) |
+| `agentmail-toolkit` | `L3 Specialist` | `communication` | 3★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-toolkit) |
 | `agent-browser` | `L1 Foundation` | `core-agent` | 4★ | `browser-required` | [Source](https://openclawdoc.com/docs/skills/clawhub/) |
 | `chrome-devtools-mcp` | `L1 Foundation` | `core-agent` | 4★ | `mcp-required` | [Source](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
 | `find-skills` | `L1 Foundation` | `core-agent` | 5★ | `direct` | [Source](https://github.com/vercel-labs/skills/tree/main/skills/find-skills) |
@@ -296,15 +301,8 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `8-bit-orbit-video-template` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
 | `adaptyv` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/K-Dense-AI/scientific-agent-skills) |
 | `agent-harness-construction` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
-| `agentmail` | `L2 Professional` | `design-ui` | 3★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-skills) |
-| `agentmail-toolkit` | `L2 Professional` | `design-ui` | 4★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-toolkit) |
 | `ai-music-album` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
-| `analytical-method-validation` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/K-Dense-AI/scientific-agent-skills) |
-| `animation` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/bytesagain/ai-skills) |
-| `baoyu-article-illustrator` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `brandkit` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit) |
-| `cavecrew` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
-| `check-understanding` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `design-taste-frontend` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill) |
 | `design-taste-frontend-v1` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1) |
 | `edge-concept-synthesizer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-concept-synthesizer) |
@@ -320,19 +318,14 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `gsap-scrolltrigger` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger) |
 | `gsap-timeline` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-timeline) |
 | `gsap-utils` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-utils) |
-| `gstack` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/garrytan/gstack) |
 | `high-end-visual-design` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill) |
 | `huashu-design` | `L2 Professional` | `design-ui` | 4★ | `browser-required` | [Source](https://github.com/alchaincyf/huashu-design) |
 | `image-to-code` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill) |
 | `imagegen-frontend-mobile` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile) |
 | `imagegen-frontend-web` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-web) |
-| `impeccable` | `L2 Professional` | `design-ui` | 5★ | `browser-required` | [Source](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
 | `industrial-brutalist-ui` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/brutalist-skill) |
-| `memu` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/NevaMind-AI/memU) |
 | `minimalist-ui` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill) |
 | `pick-ui-library` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/pick-ui-library) |
-| `ponytail-audit` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
-| `ponytail-help` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
 | `redesign-existing-projects` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill) |
 | `review-animations` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
 | `scroll-world` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
@@ -460,6 +453,8 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `wechat-account-launch-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/wechat-account-launch-expert) |
 | `x-twitter-cold-start-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/x-twitter-cold-start-expert) |
 | `xiaohongshu-account-launch-expert` | `L3 Specialist` | `marketing-growth` | 4★ | `direct` | [Source](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/xiaohongshu-account-launch-expert) |
+| `analytical-method-validation` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/K-Dense-AI/scientific-agent-skills) |
+| `baoyu-article-illustrator` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
 | `baoyu-comic` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
 | `baoyu-compress-image` | `L3 Specialist` | `media-generation` | 3★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
 | `baoyu-cover-image` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
@@ -469,6 +464,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `baoyu-xhs-images` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
 | `bilibili-upload-bridge` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge) |
 | `buddy-sings` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
+| `cavecrew` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `caveman-commit` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `caveman-compress` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `cli-compression` | `L3 Specialist` | `media-generation` | 4★ | `direct` | [Source](https://github.com/diegosouzapw/OmniRoute) |
@@ -536,8 +532,10 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `analyzing-active-directory-acl-abuse` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
 | `code-review` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/shareAI-lab/learn-claude-code) |
 | `gws-admin-reports` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/googleworkspace/cli) |
+| `ponytail-audit` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |
 | `skill-vetter` | `L1 Foundation` | `security-audit` | 5★ | `direct` | [Source](https://github.com/app-incubator-xyz/skill-vetter) |
 | `abusing-shadow-credentials-for-privesc` | `L3 Specialist` | `writing-content` | 4★ | `direct` | [Source](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
+| `agentmail` | `L3 Specialist` | `writing-content` | 3★ | `api-key` | [Source](https://github.com/agentmail-to/agentmail-skills) |
 | `baoyu-format-markdown` | `L3 Specialist` | `writing-content` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
 | `baoyu-markdown-to-html` | `L3 Specialist` | `writing-content` | 4★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-markdown-to-html) |
 | `baoyu-skills` | `L3 Specialist` | `writing-content` | 4★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills) |

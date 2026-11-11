@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-07",
+  "generated_at": "2026-11-11",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -159,14 +159,14 @@
     },
     {
       "capability": "frontend",
-      "skill": "generative-ui",
+      "skill": "design-taste-frontend",
       "category": "design-ui",
       "stars": 5,
-      "score": 92,
+      "score": 96,
       "access_mode": "direct",
-      "conflict_group": "generative-ui",
-      "origin_url": "https://github.com/himself65/finance-skills/tree/main/plugins/ui-tools/skills/generative-ui",
-      "note": "Design system and templates for interactive HTML/SVG visuals in Claude and Codex, using an available inline renderer or a standalone HTML file. Use this skill whenever the user wants visual or interactive output rather than plain text or markdown: charts and dashboards, diagrams, flowcharts and architecture drawings, mockups, comparison grids, illustrations, interactive explainers (\"explain how X works\" with a visual), or tools with sliders, toggles, and live-updating displays — including financial data shown visually and requests phrased as \"show me\", \"visualize\", \"draw\", or \"chart this\"."
+      "conflict_group": "design-taste-frontend",
+      "origin_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill",
+      "note": "tasteskill 2.5.0, the anti-slop frontend skill. Builds professional company websites at the level of figma.com and x.ai: plain copy, one system, one section per screen, equal edges, real photographs and real product UI (product renders when there are no photographs), with shader effects, scenes and moments only on tech, gaming and software pages, quiet micro-interactions, and a checker that enforces it in a real browser. Use this whenever you build, design, redesign, restyle, polish or review a landing page, company, product, shop, cafe, hotel, studio, SaaS, AI, developer-tool or game site, in any stack (HTML/CSS, React, Next.js, Vue, Svelte, Astro, Tailwind), or when the user says a page looks generic, templated or \"AI-made\"."
     },
     {
       "capability": "fullstack",
@@ -203,14 +203,14 @@
     },
     {
       "capability": "article-illustration",
-      "skill": "baoyu-article-illustrator",
-      "category": "design-ui",
+      "skill": "ian-xiaohei-illustrations",
+      "category": "media-generation",
       "stars": 5,
-      "score": 94,
+      "score": 93,
       "access_mode": "direct",
-      "conflict_group": "baoyu-article-illustrator",
-      "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator",
-      "note": "Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to \"illustrate article\", \"add images\", \"generate images for article\", or \"为文章配图\"."
+      "conflict_group": "ian-xiaohei-illustrations",
+      "origin_url": "https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations",
+      "note": "生成 Ian 风格的中文正文配图。用于用户要求为中文文章、帖子、博客、Notion 文档、工作流文档、方法论、流程、结构、状态、隐喻或观点生成“怪诞”“小黑”“手绘”“正文配图”“文章插图”“配图建议”“shot list”“去标题/改图”等任务；默认使用小黑 IP、纯白手绘、少量红橙蓝批注、简洁清爽但天马行空的视觉风格。"
     },
     {
       "capability": "social-research",

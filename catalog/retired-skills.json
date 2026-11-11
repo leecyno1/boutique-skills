@@ -45,6 +45,12 @@
       "origin_url": "https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-stock",
       "retired_at": "2026-11-02"
     },
+    "animation": {
+      "group": "design-school",
+      "reason": "与 taste 重复且模型原生已覆盖：bytesagain 的 animation 是 677 行 shell CLI 包装 CSS keyframes（状态写 ~/.animation/data.jsonl），现代模型直接写 CSS/JS 动画即可；动画设计与审查由 taste 家族 + review-animations(98) + gsap×8 承担",
+      "origin_url": "https://github.com/bytesagain/ai-skills",
+      "retired_at": "2026-11-11"
+    },
     "animation-vocabulary": {
       "group": "L1-knowledge",
       "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
@@ -495,6 +501,18 @@
       "origin_url": "https://github.com/emilkowalski/skills/tree/main/skills/find-animation-opportunities",
       "retired_at": "2026-11-02"
     },
+    "frontend-design": {
+      "group": "design-school",
+      "reason": "来源已定位：anthropics/skills@00756142 的 skills/frontend-design（SKILL.md 逐字比对 94.67% 相同，本地 4133B / 上游 4440B），是 2 文件旧版；同岗位由 taste-skill(96) 承担，多出方向推断、lint 禁令扫描与真实浏览器验收。本机 qoder/codex 两份已归档到 skills-archive/，仓库删除未注册目录",
+      "origin_url": "https://github.com/anthropics/skills/tree/00756142/skills/frontend-design",
+      "retired_at": "2026-11-11"
+    },
+    "impeccable": {
+      "group": "design-school",
+      "reason": "竞争流派：pbakaus/impeccable 是另一套 24 命令设计体系（Persuade/Operate/Read/Experience 四模式），与 taste 争夺同一前端设计优先级；taste 96 > 92，且自带 lint.mjs 静态禁令扫描 + inspect.mjs 真实 Chrome 渲染测量。独有能力已记入 findings.md（live/generate 浏览器变体循环、PRODUCT.md/DESIGN.md 上下文、ios/android 原生参考）",
+      "origin_url": "https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable",
+      "retired_at": "2026-11-11"
+    },
     "improve-animations": {
       "group": "L1-knowledge",
       "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
@@ -783,6 +801,13 @@
       "origin_url": "https://open-meteo.com/",
       "retired_at": "2026-11-02"
     },
+    "web-animation-design": {
+      "group": "design-school",
+      "reason": "canonical 来源无法定位：无 SOURCE.txt、未注册 origin、GitHub 代码搜索无匹配，只在本机与仓库磁盘存在；内容与在库 review-animations(98) 及 emilkowalski/skills 上游包重复。本机 qoder/codex 两份已归档，仓库删除未注册目录；若日后定位到上游且证明优于 taste 体系，可删条目重新导入",
+      "origin_url": null,
+      "origin_status": "unlocatable",
+      "retired_at": "2026-11-11"
+    },
     "writing-plans": {
       "group": "L1-process",
       "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
@@ -809,12 +834,14 @@
     }
   },
   "blocked_repos": [
+    "bytesagain/ai-skills",
     "daydreammy/tushare-openclaw-skill",
     "elayadesign/ai-design-skills",
     "elayadesign/redesign-skill",
     "llmquant/skills",
     "obra/superpowers",
     "othmanadi/planning-with-files",
+    "pbakaus/impeccable",
     "steipete/clawdis"
   ],
   "shared_repos_not_blocked": [
@@ -838,15 +865,23 @@
       "https://github.com/elayadesign/redesign-skill"
     ],
     "note": "仓库里的 redesign-existing-projects 走 Leonxlnx/taste-skill origin，不受 elayadesign 屏蔽影响；本机 ~/.qoder/skills 与 ~/.codex/skills 的 elaya 版已备份到 skills-archive/redesign-existing-projects-elaya-20261111/ 后替换为 taste 版。",
-    "pending_user_decision": [
-      "emilkowalski/skills：review-animations 98、pick-ui-library 92",
-      "pbakaus/impeccable 92",
-      "oso95/scroll-world 93",
-      "bytesagain/ai-skills：animation 92",
-      "himself65/finance-skills：generative-ui 92（占 standard-bundle frontend 槽位）",
-      "alchaincyf/huashu-design 81",
-      "greensock/gsap-skills ×8（各 92，库 API 知识，是否算设计流派待定）",
-      "frontend-design、web-animation-design：磁盘与本机都有，但未注册且无 SOURCE.txt，来源待补"
-    ]
+    "pending_user_decision": [],
+    "standard_default": "design-taste-frontend（taste-skill 96）——standard-bundle frontend 槽位默认",
+    "dedupe_rule": "其余设计类 skill 仅在优于 taste 或与 taste 互补时保留，否则按重复出库（用户决定 2026-11-11）",
+    "kept_complementary": [
+      "emilkowalski/skills：review-animations 98（动画审查，taste 无此岗）、pick-ui-library 92（组件库选型）",
+      "oso95/scroll-world 93（滚动叙事视频，seedance/kling 生成链路，非前端页面）",
+      "himself65/finance-skills：generative-ui 92（对话内联 widget/图表，与 taste 的整页前端互补）",
+      "alchaincyf/huashu-design 81（原型/演示/信息图/视频，SKILL.md 明确排除生产级 Web App 与 SEO 站点）",
+      "greensock/gsap-skills ×8（各 92，GSAP 官方 API 知识，不是设计流派）",
+      "Leonxlnx/taste-skill 家族 13 个（标准默认）"
+    ],
+    "retired_duplicates": [
+      "animation",
+      "impeccable",
+      "frontend-design",
+      "web-animation-design"
+    ],
+    "resolved_at": "2026-11-11"
   }
 }

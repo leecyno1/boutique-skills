@@ -1,11 +1,11 @@
 # Boutique Skills Audit
 
-- Time: 2026-11-11 21:19:01
+- Time: 2026-11-11 23:03:50
 - Status: **WARN**
-- Catalog skills: 319
-- Audited skills: 313
+- Catalog skills: 317
+- Audited skills: 311
 - Legacy catalog skills: 42
-- Installed/Resolved: 313
+- Installed/Resolved: 311
 - Missing: 0
 - Missing env vars: 109
 - Duplicate capabilities: 0
@@ -41,8 +41,6 @@
 - minimax-web-search: `MINIMAX_API_KEY`
 - gpt-image: `OPENAI_API_KEY`
 - agent-architecture-audit: `OPENAI_API_KEY`
-- agentmail-toolkit: `AGENTMAIL_API_KEY`
-- agentmail-toolkit: `OPENAI_API_KEY`
 - alphaxiv: `OPENAI_API_KEY`
 - baoyu-image-gen: `ARK_API_KEY`
 - baoyu-image-gen: `AZURE_OPENAI_API_KEY`
@@ -80,6 +78,8 @@
 - macro-regime-detector: `FMP_API_KEY`
 - media-downloader: `PEXELS_API_KEY`
 - agentmail-cli: `AGENTMAIL_API_KEY`
+- agentmail-toolkit: `AGENTMAIL_API_KEY`
+- agentmail-toolkit: `OPENAI_API_KEY`
 - alphaear-reporter: `TUSHARE_TOKEN`
 - breakout-trade-planner: `TUSHARE_TOKEN`
 - canslim-screener: `FMP_API_KEY`
@@ -122,9 +122,9 @@
 - value-dividend-screener: `FMP_API_KEY`
 - vcp-screener: `FMP_API_KEY`
 - vision-analysis: `MINIMAX_API_KEY`
-- agentmail: `AGENTMAIL_API_KEY`
 - minimax-multimodal-toolkit: `MINIMAX_API_KEY`
 - notebooklm-skill: `GEMINI_API_KEY`
+- agentmail: `AGENTMAIL_API_KEY`
 - gif-sticker-maker: `MINIMAX_API_KEY`
 
 ## Duplicate Capabilities

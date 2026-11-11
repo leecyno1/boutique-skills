@@ -104,6 +104,11 @@ CATEGORY_KEYWORDS = [
     ("devops-cloud", ["database", "cloud", "deploy", "ops", "sql", "server"]),
 ]
 
+# Two-letter keywords that sit inside unrelated English words ("ui" in
+# "quick"/"build"/"guide"): match these on word boundaries only, otherwise a
+# translation skill mentioning "quick mode" lands in design-ui.
+BOUNDARY_KEYWORDS = {"ui"}
+
 L1 = {
     "agent-browser", "brainstorming", "chrome-devtools-mcp", "find-skills", "github",
     "mcp-builder", "model-usage", "planning-with-files", "shell", "skill-creator",
@@ -265,7 +270,6 @@ ALPHAGBM_MONITOR_SKILLS = {
 EDITORIAL_SCORE_OVERRIDES = {
     "btc-bottom-model": 78,
     "eigenflux": 79,
-    "impeccable": 92,
     "macro-liquidity": 82,
     "scientific-illustrator": 93,
     "tech-earnings-deepdive": 85,
@@ -373,7 +377,8 @@ CAPABILITY_RULES = [
     ("spreadsheet", ["xlsx", "minimax-xlsx"]),
     ("slides", ["pptx", "pptx-generator"]),
     ("pdf", ["pdf", "nano-pdf"]),
-    ("frontend", ["frontend-dev", "generative-ui"]),
+    # taste 是标准默认设计流派（用户决定 2026-11-11）：frontend 槽位优先给 design-taste-frontend
+    ("frontend", ["design-taste-frontend", "frontend-dev", "generative-ui"]),
     ("fullstack", ["fullstack-dev"]),
     ("database", ["database"]),
     ("mcp", ["mcp-builder"]),
@@ -472,7 +477,9 @@ def parse_frontmatter(skill_id: str) -> dict[str, Any]:
         key, value = line.split(":", 1)
         key = key.strip()
         value = value.strip()
-        if value in {"|", ">"}:
+        # YAML block scalar header: | or > plus optional chomping (+/-) and indent digit.
+        # Missing the indicators used to leave the literal ">-" as the description.
+        if re.fullmatch(r"[|>][+-]?\d*", value):
             block = []
             index += 1
             while index < len(lines):
@@ -659,7 +666,6 @@ def classify_category(skill_id: str, description: str) -> str:
         "frontend-dev": "coding-devtools",
         "ios-application-dev": "coding-devtools",
         "generative-ui": "design-ui",
-        "impeccable": "design-ui",
         "video-autopilot-kit": "media-generation",
         "video-shotcraft": "media-generation",
         "paper-framework-figure-studio-pro": "media-generation",
@@ -685,7 +691,12 @@ def classify_category(skill_id: str, description: str) -> str:
     if skill_id in L1 or skill_id in {"task", "todo", "model-usage"}:
         return "core-agent"
     for category, keywords in CATEGORY_KEYWORDS:
-        if any(keyword in haystack for keyword in keywords):
+        if any(
+            re.search(rf"\b{re.escape(keyword)}\b", haystack)
+            if keyword in BOUNDARY_KEYWORDS
+            else keyword in haystack
+            for keyword in keywords
+        ):
             return category
     return "commerce-ops"
 
@@ -757,9 +768,6 @@ def infer_dependencies(skill_id: str, description: str, existing_keys: list[str]
     if skill_id in ALPHAGBM_SKILLS:
         api_keys = ["ALPHAGBM_API_KEY"]
         tools = ["curl"]
-    if skill_id == "impeccable":
-        api_keys = []
-        tools = ["browser", "node"]
     if skill_id == "video-shotcraft":
         api_keys = []
         tools = ["browser", "ffmpeg", "node"]

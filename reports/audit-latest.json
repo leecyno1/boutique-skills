@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-11 21:19:01",
+  "timestamp": "2026-11-11 23:03:50",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 319,
-    "audited_skills": 313,
+    "catalog_skills": 317,
+    "audited_skills": 311,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 313,
+    "resolved_skills": 311,
     "missing_skills": 0,
     "missing_env": 109,
     "duplicate_capabilities": 0,
@@ -112,14 +112,6 @@
     },
     {
       "skill": "agent-architecture-audit",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "agentmail-toolkit",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "agentmail-toolkit",
       "env": "OPENAI_API_KEY"
     },
     {
@@ -269,6 +261,14 @@
     {
       "skill": "agentmail-cli",
       "env": "AGENTMAIL_API_KEY"
+    },
+    {
+      "skill": "agentmail-toolkit",
+      "env": "AGENTMAIL_API_KEY"
+    },
+    {
+      "skill": "agentmail-toolkit",
+      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "alphaear-reporter",
@@ -439,16 +439,16 @@
       "env": "MINIMAX_API_KEY"
     },
     {
-      "skill": "agentmail",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
       "skill": "minimax-multimodal-toolkit",
       "env": "MINIMAX_API_KEY"
     },
     {
       "skill": "notebooklm-skill",
       "env": "GEMINI_API_KEY"
+    },
+    {
+      "skill": "agentmail",
+      "env": "AGENTMAIL_API_KEY"
     },
     {
       "skill": "gif-sticker-maker",
@@ -594,10 +594,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/khazix-skills"
     },
     {
-      "skill": "baoyu-article-illustrator",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-article-illustrator"
-    },
-    {
       "skill": "brandkit",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/brandkit"
     },
@@ -658,16 +654,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ai-music-album"
     },
     {
-      "skill": "analytical-method-validation",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analytical-method-validation"
-    },
-    {
       "skill": "analyze-results",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analyze-results"
-    },
-    {
-      "skill": "animation",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/animation"
     },
     {
       "skill": "anndata",
@@ -704,14 +692,6 @@
     {
       "skill": "build-project",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/build-project"
-    },
-    {
-      "skill": "cavecrew",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cavecrew"
-    },
-    {
-      "skill": "check-understanding",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/check-understanding"
     },
     {
       "skill": "cli-backup-sync",
@@ -806,10 +786,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gsap-utils"
     },
     {
-      "skill": "gstack",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gstack"
-    },
-    {
       "skill": "gws-calendar",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gws-calendar"
     },
@@ -834,20 +810,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/imagegen-frontend-web"
     },
     {
-      "skill": "impeccable",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/impeccable"
-    },
-    {
       "skill": "industrial-brutalist-ui",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/industrial-brutalist-ui"
     },
     {
       "skill": "linkedin-reader",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/linkedin-reader"
-    },
-    {
-      "skill": "memu",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/memu"
     },
     {
       "skill": "obsidian-cli",
@@ -860,14 +828,6 @@
     {
       "skill": "pick-ui-library",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/pick-ui-library"
-    },
-    {
-      "skill": "ponytail-audit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-audit"
-    },
-    {
-      "skill": "ponytail-help",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-help"
     },
     {
       "skill": "reflection",
@@ -966,6 +926,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-reach"
     },
     {
+      "skill": "baoyu-article-illustrator",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-article-illustrator"
+    },
+    {
       "skill": "baoyu-cover-image",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-cover-image"
     },
@@ -1022,6 +986,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-eval"
     },
     {
+      "skill": "analytical-method-validation",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analytical-method-validation"
+    },
+    {
       "skill": "analyzing-active-directory-acl-abuse",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analyzing-active-directory-acl-abuse"
     },
@@ -1054,6 +1022,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/capability-evolver"
     },
     {
+      "skill": "cavecrew",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cavecrew"
+    },
+    {
       "skill": "caveman-commit",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-commit"
     },
@@ -1064,6 +1036,10 @@
     {
       "skill": "channels-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/channels-account-launch-expert"
+    },
+    {
+      "skill": "check-understanding",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/check-understanding"
     },
     {
       "skill": "cli-a2a",
@@ -1098,6 +1074,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/douyin-account-launch-expert"
     },
     {
+      "skill": "gstack",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gstack"
+    },
+    {
       "skill": "gws-admin-reports",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gws-admin-reports"
     },
@@ -1114,6 +1094,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/knap"
     },
     {
+      "skill": "memu",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/memu"
+    },
+    {
       "skill": "obsidian-bases",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/obsidian-bases"
     },
@@ -1122,12 +1106,20 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/policy-monitor"
     },
     {
+      "skill": "ponytail-audit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-audit"
+    },
+    {
       "skill": "ponytail-debt",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-debt"
     },
     {
       "skill": "ponytail-gain",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-gain"
+    },
+    {
+      "skill": "ponytail-help",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-help"
     },
     {
       "skill": "ponytail-review",
@@ -1434,10 +1426,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-architecture-audit"
     },
     {
-      "skill": "agentmail-toolkit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-toolkit"
-    },
-    {
       "skill": "alphaxiv",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaxiv"
     },
@@ -1610,6 +1598,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-cli"
     },
     {
+      "skill": "agentmail-toolkit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-toolkit"
+    },
+    {
       "skill": "alphaear-reporter",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter"
     },
@@ -1770,16 +1762,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/vision-analysis"
     },
     {
-      "skill": "agentmail",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail"
-    },
-    {
       "skill": "minimax-multimodal-toolkit",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-multimodal-toolkit"
     },
     {
       "skill": "notebooklm-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/notebooklm-skill"
+    },
+    {
+      "skill": "agentmail",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail"
     },
     {
       "skill": "gif-sticker-maker",

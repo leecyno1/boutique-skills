@@ -81,7 +81,9 @@ python3 tests/test_retired_guard.py
 
 被新模型 / harness 原生能力覆盖、或同能力多份合并后淘汰的技能，由人工审查后写入 `catalog/retired-skills.json`（含分组、理由、原 origin）。发现阶段跳过 `blocked_repos`，导入阶段跳过 `skills` 里的 id，保证周度自动化不会把退役技能再装回来。恢复某个技能：删掉对应条目后手动导入。分析依据见 `reports/usage/obsolescence-analysis-2026-11-02.md`。
 
-同一份登记表也承载**流派排除**：规则互斥的两套技能不能同时装载，人工裁定保留哪一家后，把另一家的 id 与整库写进来（分组 `design-school`）。2026-11-11 用户裁定设计流派只留 taste-skill 一家，`elayadesign/ai-design-skills` 与 `elayadesign/redesign-skill` 整库屏蔽，`landing-page-design`、`figma-designer` 登记不收录；裁定与待裁决清单见该文件的 `design_school_decision` 字段。注意：在库的 `redesign-existing-projects` origin 指向 `Leonxlnx/taste-skill`，不受 elaya 屏蔽影响。
+同一份登记表也承载**流派排除**：规则互斥的两套技能不能同时装载，人工裁定保留哪一家后，把另一家的 id 与整库写进来（分组 `design-school`）。2026-11-11 用户裁定设计流派只留 taste-skill 一家，`elayadesign/ai-design-skills` 与 `elayadesign/redesign-skill` 整库屏蔽，`landing-page-design`、`figma-designer` 登记不收录；裁定与保留清单见该文件的 `design_school_decision` 字段。注意：在库的 `redesign-existing-projects` origin 指向 `Leonxlnx/taste-skill`，不受 elaya 屏蔽影响。
+
+**设计类去重规则（2026-11-11 第二轮裁定）**：`design-taste-frontend`（taste-skill，96 分）是标准默认设计库，占标准包 frontend 槽位。其他设计技能只有在**优于 taste** 或**与 taste 互补**（不同岗位）时才保留，否则按重复出库。据此出库 `animation`、`impeccable`、`frontend-design`、`web-animation-design`，并整库屏蔽 `bytesagain/ai-skills`、`pbakaus/impeccable`；保留 review-animations（动画审查）、pick-ui-library（组件库选型）、scroll-world（滚动叙事视频）、generative-ui（对话内联 widget）、huashu-design（原型/演示/信息图）、gsap ×8（库 API 知识）。来源未定位的技能要先重定位：`frontend-design` 定位到 `anthropics/skills@00756142`，`web-animation-design` 查不到 canonical 上游（只有聚合与镜像），登记表里以 `origin_status: unlocatable` 标注。**周度发现遇到新的设计流派，先按这条规则判断，不要默认收录。**
 
 ## 组合控制（用户要求：各 <= 40）
 
