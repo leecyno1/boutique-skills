@@ -1,5 +1,24 @@
 # Findings
 
+## 2026-11-11（设计流派收敛：只留 taste 一家）
+
+已解决：
+
+- **触发**：用户给的小红书帖子指向 `elayadesign/ai-design-skills`（15242 星，MIT，2026-11-01 有推送），问是否值得入库。核查结论：不入库。
+- **理由一（规则互斥）**：elaya 与已在库的 taste-skill 同属反 AI 味设计流派（都黑名单 Inter/Roboto、推 Geist、禁渐变、同心圆角），但规则冲突且都自称优先——taste 允许 shader/WebGL/表现性瞬间，elaya 锁死封闭 token 集并全面禁渐变。两套同时装载会互相打架。用户裁定：**设计流派只留 taste 一家**。
+- **理由二（跑不起来）**：同库 `figma-designer` 依赖 Figma MCP，本机 Figma 工具数为 0，装了也无法执行。
+- **理由三（门槛）**：用仓库自己的评分器跑该库得 70 分进 review，且 `skill_subdirs=2 < MONOREPO_MIN_SUBDIRS=3`，自动入库分被抬到 101（不可达），本来就不会自动进库。
+- **本机执行**：`landing-page-design` 两份旧副本（Qoder + Codex，18.8KB，落后上游 22.1KB）经 `pending-cleanup.json` → `uninstall_skills.py --include-active --confirm` 归档，回执 `archived: 2`。`redesign-existing-projects` 本机原为 elaya 版（哈希 `6558d92fdeb2`，与上游逐字一致），先备份到 `~/.{qoder,codex}/skills-archive/redesign-existing-projects-elaya-20261111/`，再替换为仓库 taste 版（`0713bbfa0337`）。两个运行时现存 8 个设计技能完全一致。
+- **防回流**：`catalog/retired-skills.json` 新增 `design-school` 分组（`landing-page-design`、`figma-designer`）与 2 个整库屏蔽（`elayadesign/ai-design-skills`、`elayadesign/redesign-skill`），并记录 `design_school_decision`。仓库里的 `redesign-existing-projects` origin 指向 `Leonxlnx/taste-skill`，屏蔽 elaya 不影响它。
+- **新测试抓到一个旧错**：`tests/test_retired_guard.py` 加了 `test_blocked_repos_do_not_cover_live_origins`（整库屏蔽不得覆盖在库技能的 origin），一跑就报 `frontend-dev -> anthropics/skills/tree/main/skills/canvas-design`。2026-11-02 因为退役 `skill-creator` 把 `anthropics/skills` 整库屏蔽了，但该库还养着在库的 `frontend-dev`（71 分）。按登记表自己的规则（与存活技能共用的仓库只作 id 级跳过），已把它从 `blocked_repos` 移到 `shared_repos_not_blocked`。现状：134 个 id、7 个整库屏蔽、10 个共用不屏蔽。影响面：屏蔽只作用于发现阶段，`frontend-dev` 的上游同步一直正常，属潜在治理漏洞而非线上故障。
+- **2026-11-07 那次取消的运行留下了未发布内容**：工作区有 1564 个未跟踪文件（38MB，全是 `design-taste-frontend` 的 taste-skill v2 素材：958 svg / 122 js / 110 html / 66 webp 等，最大单文件 868KB，无 node_modules、无密钥）加 8 个已跟踪文件改动（taste 的 library/references、`memu`、`baoyu-format-markdown`）。ctime 显示素材在 11-07 10:24 落位、memu/baoyu 在 10:28 写入，都晚于 10:00 的发布提交 `9aa8571`，Quest 在 10:29 被取消，所以这批上游同步结果从未入库。本轮先单独提交这批遗留，再提交流派裁定。
+- **顺带校正**：`docs/WEEKLY_CURATION.md` 组合表还写着标准包 30 / 金融组合 34，实际已是 21 / 28；金融组合带 key 位 13/34 → 10/28；标准包跳过位去掉已不跳过的 finance-data；补写 `--include-active` 只用于人工裁定。`QODER_HANDOFF.md` 的技能数还停在 11-02 的 304，实际 11-07 重生成后是 319，已按 `catalog/skills.enriched.json` 的 summary 全量刷新。
+
+待用户裁决（未动）：
+
+- “只留 taste 一家”是否延伸到其余非 taste 设计流派（分数已核对 `catalog/skills.enriched.json`）：`emilkowalski/skills` 的 review-animations 98 / pick-ui-library 92、`pbakaus/impeccable` 92、`oso95/scroll-world` 93、`bytesagain/ai-skills` 的 animation 92、`himself65/finance-skills` 的 generative-ui 92（占标准包 frontend 槽位）、`alchaincyf/huashu-design` 81，以及 `greensock/gsap-skills` ×8（各 92，属库 API 知识，是否算流派待定）。这些评分高、有脚本或私有知识，不属“被模型覆盖”，等明确指令再处理。
+- 另有 `frontend-design`、`web-animation-design` 两份：在 `skills/default/` 磁盘上、两个运行时也装着，但既不在 `default-skills.json` 也没有 SOURCE.txt（未注册、来源不明）。要不要补来源登记或一并归档，同样待裁决。
+
 ## 2026-11-07（周度治理：大响应截断导致发现阶段中断）
 
 已解决：

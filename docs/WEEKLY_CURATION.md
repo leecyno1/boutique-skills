@@ -77,28 +77,30 @@ python3 tests/test_retired_guard.py
 3. **dominated_duplicate**：同一冲突组内存在高出 >= 15 分的同类技能，且自身 <= 70 分。
 4. **upstream_path_missing**：仓库存活但 origin 路径已不存在，且同步阶段无法迁移。同步阶段先用 SKILL.md 内容哈希、其次同名目录、再稳定的版本分支（如 `taste-skill-v1.9`）定位新路径；只有仍找不到去向的才出库。报告里的旧 URL 与当前 override 不一致时跳过，防止拿旧报告误删已迁移技能。
 
-## 出库规则（人工：过时退役）
+## 出库规则（人工：过时退役 / 流派排除）
 
 被新模型 / harness 原生能力覆盖、或同能力多份合并后淘汰的技能，由人工审查后写入 `catalog/retired-skills.json`（含分组、理由、原 origin）。发现阶段跳过 `blocked_repos`，导入阶段跳过 `skills` 里的 id，保证周度自动化不会把退役技能再装回来。恢复某个技能：删掉对应条目后手动导入。分析依据见 `reports/usage/obsolescence-analysis-2026-11-02.md`。
+
+同一份登记表也承载**流派排除**：规则互斥的两套技能不能同时装载，人工裁定保留哪一家后，把另一家的 id 与整库写进来（分组 `design-school`）。2026-11-11 用户裁定设计流派只留 taste-skill 一家，`elayadesign/ai-design-skills` 与 `elayadesign/redesign-skill` 整库屏蔽，`landing-page-design`、`figma-designer` 登记不收录；裁定与待裁决清单见该文件的 `design_school_decision` 字段。注意：在库的 `redesign-existing-projects` origin 指向 `Leonxlnx/taste-skill`，不受 elaya 屏蔽影响。
 
 ## 组合控制（用户要求：各 <= 40）
 
 | 组合 | 定位 | 数量 | 生成器 |
 |---|---|---:|---|
-| Standard Bundle (`catalog/standard-bundle.json`) | 日常用户基础场景，一能力一技能，零第三方 key | 30 base（上限 40） | `scripts/generate_enriched_catalog.py` |
-| Finance Suite (`catalog/suites/finance-investment-standard.json`) | 金融投资用户进阶场景，能力位去重取最优 | 34（上限 40） | `scripts/generate_finance_suite.py` |
+| Standard Bundle (`catalog/standard-bundle.json`) | 日常用户基础场景，一能力一技能，零第三方 key | 21 base（上限 40） | `scripts/generate_enriched_catalog.py` |
+| Finance Suite (`catalog/suites/finance-investment-standard.json`) | 金融投资用户进阶场景，能力位去重取最优 | 28（上限 40） | `scripts/generate_finance_suite.py` |
 
 ### API Key 政策（2026-08-19 新增）
 
 两个组合尽量避免需要复杂注册的第三方服务 API key（大模型 key 与 GitHub 工具 token 豁免）：
 
 - **豁免 key**：主流大模型（OPENAI/ANTHROPIC/GEMINI/DEEPSEEK/MOONSHOT/QWEN/DASHSCOPE/MINIMAX/ZHIPU 等）与开发者工具 token（GITHUB_TOKEN/GH_TOKEN）。
-- **标准组合**：硬过滤——任何需要第三方 key 的技能不入组合；能力位无 keyless 候选时直接跳过该位（当前跳过：email-agent、finance-data、ima-notes-knowledge、media-download）。政策与跳过清单写入 `standard-bundle.json` 的 `api_key_policy` 字段。
-- **金融组合**：软惩罚（同位候选评分 -12）——同位存在 direct/browser 候选时必胜出；仅当整位无 keyless 候选才保留 key 类技能（当前 13/34 位，均为机构数据/美股筛选器/期权/组合风险等专业深水区，且 TUSHARE_TOKEN 类为免费注册）。每个能力位的 access 与 api_keys 字段已在 suite JSON 中标注，可自行取舍。
+- **标准组合**：硬过滤——任何需要第三方 key 的技能不入组合；能力位无 keyless 候选时直接跳过该位（当前跳过：email-agent、ima-notes-knowledge、media-download）。政策与跳过清单写入 `standard-bundle.json` 的 `api_key_policy` 字段。
+- **金融组合**：软惩罚（同位候选评分 -12）——同位存在 direct/browser 候选时必胜出；仅当整位无 keyless 候选才保留 key 类技能（当前 10/28 位，均为机构数据/美股筛选器/期权/组合风险等专业深水区，且 TUSHARE_TOKEN 类为免费注册）。每个能力位的 access 与 api_keys 字段已在 suite JSON 中标注，可自行取舍。
 - **误报修复**：key 检测已改为词边界匹配（修复 "ima" 误匹配 "image"），自签 secret（JWT_SECRET 等）不再计入 API key。
 
 - 标准组合安装只装 base skills；`skill_packs` 是参考推荐（Claude Trading Skills 已并入金融组合）。
-- 金融组合每个能力位（A股数据/全球数据/宏观/政策/筛选/估值/交易计划/仓位/期权/组合风控/监控/回测/复盘/报告/知识库等 34 位）只保留评分最高的技能。
+- 金融组合每个能力位（A股数据/全球数据/宏观/政策/筛选/估值/交易计划/仓位/期权/组合风控/监控/回测/复盘/报告/知识库等 28 位）只保留评分最高的技能。
 - 同类重复比较：能力位/冲突组内按评分排序，只保留最高分；被支配技能按出库规则 3 清理。
 
 ## 发布规则
@@ -152,6 +154,8 @@ python3 scripts/telemetry_collect.py --days 30 --rescan-all  # 强制全量
 | discover | 未收录但高频（历史≥20 次或近30天≥5 次） | 反哺周度发现流程的入库候选 |
 
 **用户确认后才卸载**：`python3 scripts/uninstall_skills.py`（默认 dry-run 预览）→ `--confirm` 执行（或 `make cleanup-confirm`）。卸载为归档式（移入各运行时同级 `*-archive/` 目录，与 Codex 自身 skills-archive 惯例一致），不删除任何文件，`mv` 回原路径即可恢复；执行后写入 cleanup-receipts.jsonl 回执。执行器内置双重安全网：近 30 天有调用的技能即使出现在待确认清单中也会被拒绝卸载。
+
+**人工决策可绕过安全网**：`--include-active` 让近期有调用的技能也可归档，仅用于用户明确裁定的场景（如 2026-11-02 过时退役、2026-11-11 设计流派收敛）。周度自动化不得带这个参数。
 
 ```bash
 make recommendations   # 生成建议（周度流水线内含）

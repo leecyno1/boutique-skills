@@ -1,6 +1,6 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-10-31
+更新时间：2026-11-11
 
 ## 仓库信息
 
@@ -9,29 +9,37 @@
 - GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
 - 注意：字符串 `boutique-openclaw-skills` 现在只应出现在 Gitee 仓库地址与历史记录里（旧会话转录目录、RepoWiki 目录、早期报告中的绝对路径）。仓库名、本地目录名、GitHub 地址都已统一为 `boutique-skills`。
-- 当前技能数：304（catalog/skills.enriched.json，生成于 2026-11-02；过时退役 132 个后）；skills/default/ 目录 440 个（含未注册候选与套件成员）
-- 横向分层：high 304 / medium 69 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 121 / L3 171
-- 星级分布：5★ 91 / 4★ 152 / 3★ 55 / 1★ 6
-- 来源核验：298 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
+- 当前技能数：319（catalog/skills.enriched.json，生成于 2026-11-07；11-02 退役 132 个后由 11-07 周度发现补回 15 个）；skills/default/ 目录 458 个（含未注册候选与套件成员）
+- 横向分层：high 319 / medium 69 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 130 / L3 177
+- 星级分布：5★ 99 / 4★ 157 / 3★ 57 / 1★ 6
+- 来源核验：313 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
 - 标准包：21 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）
 - 金融投资标准组合：28 个 Skill（能力位去重，上限 40；同位优先无 key 候选）
-- 退役登记：`catalog/retired-skills.json`（132 个 id + 6 个整库屏蔽），发现/导入阶段自动跳过，分析见 `reports/usage/obsolescence-analysis-2026-11-02.md`
+- 退役登记：`catalog/retired-skills.json`（134 个 id + 7 个整库屏蔽 + 10 个共用不屏蔽），发现/导入阶段自动跳过；过时退役分析见 `reports/usage/obsolescence-analysis-2026-11-02.md`，设计流派裁定见同文件 `design_school_decision`。整库屏蔽只适用于“该库已无在库技能”的情况，`tests/test_retired_guard.py` 会断言屏蔽库不覆盖任何在库 origin
 - 组合 API Key 政策：大模型 key 与 GitHub 工具 token 豁免；第三方注册 key 在标准组合硬过滤、在金融组合同位软惩罚（详见 docs/WEEKLY_CURATION.md）
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-11-02 更新）
+## 当前待办（2026-11-11 更新）
 
 工作区在本轮上游同步后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希）。持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`；发布脚本内置 HTTPS→SSH 回退；周度流程共 11 步，第 2 步为上游同步（含 origin 路径迁移），第 3 步为出库（消费同步报告），第 9 步为审计 + 语法门禁 + 风险门禁 + 单元测试。
 
 未决（按处理紧迫度）：
 
-1. **治理链路已恢复，首次自动运行待验收**：Quest `436c5b6e-10c6-487b-b73a-1504e4cc89c0`，directory 域绑定本仓库，周六 09:00 Asia/Shanghai，Full Access，独立会话，下次触发 2026-11-07 09:00。旧的 chatOnly 任务（`70f2e60c`）与上一版 workspace 域任务（`d86c21e2`）已删除。首跑重点核对四件事：上游同步约 20–25 分钟是否跑完、origin 路径迁移是否写回 override、发布是否走了 SSH 回退、`catalog/risky-baseline.json` 是否按预期拦下新风险。
+1. **治理链路已恢复，自动运行仍需盯**：Quest `436c5b6e-10c6-487b-b73a-1504e4cc89c0`，directory 域绑定本仓库，周六 09:00 Asia/Shanghai，Full Access，独立会话，`enabled=true`，下次触发 2026-11-14 09:00（2026-11-11 经 `qoder_cron list` 核对）。2026-11-07 那次 `lastRunStatus=canceled`（跑了约 89 分钟）：发现阶段被 17MB 大响应截断打断，已修 `IncompleteRead` 回退并人工重跑全流程，详见 findings.md 2026-11-07。旧的 chatOnly 任务（`70f2e60c`）与上一版 workspace 域任务（`d86c21e2`）已删除。下次自动运行重点核对：上游同步约 20–25 分钟是否跑完、origin 路径迁移是否写回 override、发布是否走了 SSH 回退、`catalog/risky-baseline.json` 是否按预期拦下新风险、退役/屏蔽登记是否生效（不应再出现已退役 id）。
 2. **Qoder 侧归档目录已被清空**：`~/.qoder/skills-archive` 不存在，而 `~/.qoder/skills` 有 260/311 个目录 mtime 为 2026-09-16 —— 当天发生过一次批量恢复/重装，2026-08-22 归档卸载的 31 个 Qoder 技能被还原，归档副本同时丢失（`reports/usage/cleanup-receipts.jsonl` 里的 `to` 路径已失效，无法 `mv` 回滚）。Codex 侧未受影响。含义：归档式卸载对 Qoder 客户端重装不具持久性，卸载建议应当轮确认执行，不要跨周悬挂。
 3. **路径级失效已纳入周更治理（2026-10-31）**：`check_upstream_updates.py` 在 `source_path_missing` 时会自动迁移 origin——先按 SKILL.md 内容哈希，再按唯一同名目录，最后在版本/稳定分支（如 `taste-skill-v1.9`）里找原路径；迁移写回 `catalog/native-origin-overrides.json` 与 `SOURCE.txt`，并从新路径同步。`weekly_curation.py prune --upstream-report` 消费同一份报告，只对迁移失败、确认已删除的孤儿出库，并用 origin 是否已变动防止旧报告误删。本轮 52 个失效路径：30 个迁移成功（15 个 AlphaGBM 分类目录、12 个 taste-skill 版本分支、3 个 anthropics meeting-prep-agent），22 个确认上游已删除并出库。`prune` 仍保留 repo 级 404 检查，两者互补。
 4. **过时退役已执行（2026-11-02）**：按“模型/harness 是否已覆盖”标准，本机归档 193 个技能（300 份副本：Qoder 292→132、Codex 241→100），仓库出库 132 个（436→304），全部登记进 `catalog/retired-skills.json` 防再导入。其中 codex 侧 ecc 一族（tdd-workflow、e2e-testing、security-review 等 24 个）近 30 天引用量高，属归档观察：若 Codex 输出质量下降，`mv ~/.codex/skills-archive/<name> ~/.codex/skills/` 即可恢复。归档目录现为 `~/.qoder/skills-archive` 263MB、`~/.codex/skills-archive` 101MB。
 5. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
 6. **`~/.qoder/skills` 缺 agent-reach 副本**：`~/.claude/skills` 与 `~/.agents/skills` 有，CLI 在 `~/.local/bin/agent-reach`。仓库与标准包 `social-research` 槽位均已收录，周更会自动同步上游。
+7. **设计流派收敛只做了一半，其余待用户裁决**：2026-11-11 用户裁定“设计流派只留 taste 一家”，已排除 elayadesign（见下）。但仓库里还有别的非 taste 设计流派没动：review-animations 98 / pick-ui-library 92（emilkowalski）、impeccable 92（pbakaus）、scroll-world 93（oso95）、animation 92（bytesagain）、generative-ui 92（himself65，占标准包 frontend 槽位）、huashu-design 81（alchaincyf）、gsap ×8（greensock，属库 API 知识）。另有 `frontend-design`、`web-animation-design` 在磁盘与本机都有但未注册、无 SOURCE.txt。这些分数高、有脚本或私有知识，不属“被模型覆盖”，**不要自行退役**，等用户明确指令。清单同步在 `catalog/retired-skills.json` 的 `design_school_decision.pending_user_decision`。
+
+## 最近完成（2026-11-11 设计流派只留 taste 一家）
+
+- 用户给的小红书帖子指向 `elayadesign/ai-design-skills`（15242 星，MIT）。核查后不入库：与在库 taste-skill 规则互斥（elaya 禁渐变+封闭 token 集，taste 允许 shader/WebGL），同库 `figma-designer` 依赖 Figma MCP 而本机 0 个 Figma 工具，且仓库评分器给 70 分进 review、`skill_subdirs=2 < 3` 自动入库分被抬到 101。
+- 本机：`landing-page-design` 两份旧副本归档（`uninstall_skills.py --include-active --confirm`，回执 archived=2）；`redesign-existing-projects` 原为 elaya 版（`6558d92fdeb2`），备份到 `~/.{qoder,codex}/skills-archive/redesign-existing-projects-elaya-20261111/` 后替换为仓库 taste 版（`0713bbfa0337`）。两个运行时现存 8 个设计技能一致。
+- 仓库：`catalog/retired-skills.json` 加 `design-school` 分组 2 个 id + 2 个整库屏蔽（`elayadesign/ai-design-skills`、`elayadesign/redesign-skill`）+ `design_school_decision` 裁定记录。在库 `redesign-existing-projects` 的 origin 是 `Leonxlnx/taste-skill`，不受屏蔽影响。
+- 文档校正：`docs/WEEKLY_CURATION.md` 的组合数（30/34 → 21/28）、金融组合带 key 位数（13/34 → 10/28）、标准包跳过位（去掉已不跳过的 finance-data），并补写 `--include-active` 只用于人工裁定、周度自动化不得带。
 
 ## 最近完成（2026-10-31 修复周度治理 + 首次自动上游同步 + 路径级治理）
 

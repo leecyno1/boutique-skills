@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.11.02",
-  "note": "过时分析后出库的 skill。weekly_curation discover 跳过 blocked_repos；register_candidate 跳过 skills 中的 id，避免周度自动再导入。恢复：删掉对应条目再手动导入。",
+  "note": "人工审查后不再收录的 skill：过时退役（新模型/harness 已覆盖、同能力合并）或流派冲突排除。weekly_curation discover 跳过 blocked_repos；register_candidate 跳过 skills 中的 id，避免周度自动再导入。恢复：删掉对应条目再手动导入。",
   "analysis": "reports/usage/obsolescence-analysis-2026-11-02.md",
   "skills": {
     "akshare-stock": {
@@ -477,6 +477,12 @@
       "origin_url": "https://github.com/himself65/finance-skills",
       "retired_at": "2026-11-02"
     },
+    "figma-designer": {
+      "group": "design-school",
+      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11），elayadesign 流派不收录；另外它依赖 Figma MCP，本机 0 个 Figma 工具，装了也跑不起来",
+      "origin_url": "https://github.com/elayadesign/ai-design-skills/tree/main/skills/figma-designer",
+      "retired_at": "2026-11-11"
+    },
     "finance-skill-creator": {
       "group": "L1-process",
       "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
@@ -518,6 +524,12 @@
       "reason": "纯方法论/知识，无脚本无端点，模型自身已覆盖",
       "origin_url": "https://github.com/tradermonty/claude-trading-skills/tree/main/skills/kanchi-dividend-us-tax-accounting",
       "retired_at": "2026-11-02"
+    },
+    "landing-page-design": {
+      "group": "design-school",
+      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11）：elayadesign 与 taste-skill 规则互斥（禁渐变+封闭 token 集 vs 允许 shader/WebGL），本机两份旧副本已归档，仓库不收录",
+      "origin_url": "https://github.com/elayadesign/ai-design-skills/tree/main/skills/landing-page-design",
+      "retired_at": "2026-11-11"
     },
     "llmquant-commodities": {
       "group": "L1-llmquant",
@@ -695,7 +707,7 @@
     },
     "skill-creator": {
       "group": "L1-process",
-      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备",
+      "reason": "流程/元技能，现代 harness（计划、子代理、TODO、验证）已原生具备；注意 anthropics/skills 整库不屏蔽（在库 frontend-dev 来自该库 canvas-design），只做 id 级跳过",
       "origin_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
       "retired_at": "2026-11-02"
     },
@@ -797,8 +809,9 @@
     }
   },
   "blocked_repos": [
-    "anthropics/skills",
     "daydreammy/tushare-openclaw-skill",
+    "elayadesign/ai-design-skills",
+    "elayadesign/redesign-skill",
     "llmquant/skills",
     "obra/superpowers",
     "othmanadi/planning-with-files",
@@ -806,6 +819,7 @@
   ],
   "shared_repos_not_blocked": [
     "anthropics/financial-services",
+    "anthropics/skills",
     "emilkowalski/skills",
     "himself65/finance-skills",
     "jimliu/baoyu-skills",
@@ -814,5 +828,25 @@
     "minimax-ai/skills",
     "rkiding/awesome-finance-skills",
     "tradermonty/claude-trading-skills"
-  ]
+  ],
+  "design_school_decision": {
+    "decided_at": "2026-11-11",
+    "decision": "设计流派只保留 taste-skill 一家",
+    "kept_origin": "https://github.com/Leonxlnx/taste-skill",
+    "excluded_origins": [
+      "https://github.com/elayadesign/ai-design-skills",
+      "https://github.com/elayadesign/redesign-skill"
+    ],
+    "note": "仓库里的 redesign-existing-projects 走 Leonxlnx/taste-skill origin，不受 elayadesign 屏蔽影响；本机 ~/.qoder/skills 与 ~/.codex/skills 的 elaya 版已备份到 skills-archive/redesign-existing-projects-elaya-20261111/ 后替换为 taste 版。",
+    "pending_user_decision": [
+      "emilkowalski/skills：review-animations 98、pick-ui-library 92",
+      "pbakaus/impeccable 92",
+      "oso95/scroll-world 93",
+      "bytesagain/ai-skills：animation 92",
+      "himself65/finance-skills：generative-ui 92（占 standard-bundle frontend 槽位）",
+      "alchaincyf/huashu-design 81",
+      "greensock/gsap-skills ×8（各 92，库 API 知识，是否算设计流派待定）",
+      "frontend-design、web-animation-design：磁盘与本机都有，但未注册且无 SOURCE.txt，来源待补"
+    ]
+  }
 }

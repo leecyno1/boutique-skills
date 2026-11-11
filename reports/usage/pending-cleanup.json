@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-11-07T10:00:06",
-  "status": "pending",
-  "source_report": "recommendations-2026-11-07.json",
-  "note": "uninstall is archive-based and runs only via scripts/uninstall_skills.py --confirm",
-  "items": []
+  "generated_at": "2026-11-11",
+  "status": "executed",
+  "source_report": "reports/usage/obsolescence-analysis-2026-11-02.md",
+  "note": "用户决定：设计流派只留 taste 一家。elayadesign/ai-design-skills 不入库，本机 landing-page-design 归档。",
+  "items": [
+    {
+      "skill": "landing-page-design",
+      "runtime": "qoder",
+      "path": "/Users/lichengyin/.qoder/skills/landing-page-design",
+      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11）：elayadesign 流派与 taste-skill 规则互斥，不收录并归档本机副本"
+    },
+    {
+      "skill": "landing-page-design",
+      "runtime": "codex",
+      "path": "/Users/lichengyin/.codex/skills/landing-page-design",
+      "reason": "设计流派只留 taste 一家（用户决定 2026-11-11）：elayadesign 流派与 taste-skill 规则互斥，不收录并归档本机副本"
+    }
+  ],
+  "executed_at": "2026-11-11T13:05:38+00:00",
+  "results": [
+    {
+      "skill": "landing-page-design",
+      "runtime": "qoder",
+      "from": "/Users/lichengyin/.qoder/skills/landing-page-design",
+      "action": "archived",
+      "to": "/Users/lichengyin/.qoder/skills-archive/landing-page-design"
+    },
+    {
+      "skill": "landing-page-design",
+      "runtime": "codex",
+      "from": "/Users/lichengyin/.codex/skills/landing-page-design",
+      "action": "archived",
+      "to": "/Users/lichengyin/.codex/skills-archive/landing-page-design"
+    }
+  ]
 }

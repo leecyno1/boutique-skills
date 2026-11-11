@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -61,6 +62,25 @@ class RetiredGuardTests(unittest.TestCase):
         self.assertEqual(leaked, [], "retired skills must not remain in default-skills.json")
         for skill_id in data["skills"]:
             self.assertFalse((ROOT / "skills" / "default" / skill_id).exists(), skill_id)
+
+    def test_blocked_repos_do_not_cover_live_origins(self):
+        """A whole-repo block must not cut off a skill we still ship.
+
+        Guards the design-school decision: blocking elayadesign is only safe
+        because the in-repo redesign-existing-projects comes from taste-skill.
+        """
+        data = json.loads((ROOT / "catalog" / "retired-skills.json").read_text(encoding="utf-8"))
+        blocked = {r.lower() for r in data.get("blocked_repos", [])}
+        enriched = json.loads((ROOT / "catalog" / "skills.enriched.json").read_text(encoding="utf-8"))
+        clashes = []
+        for skill in enriched["skills"]:
+            origin = skill.get("origin") or {}
+            for key in ("origin_url", "mirror_source_url"):
+                url = origin.get(key) or ""
+                match = re.search(r"github\.com/([^/]+/[^/]+)", url)
+                if match and match.group(1).lower().removesuffix(".git") in blocked:
+                    clashes.append(f"{skill['id']} -> {url}")
+        self.assertEqual(clashes, [], "blocked_repos must not contain a live skill origin")
 
 
 if __name__ == "__main__":
