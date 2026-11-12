@@ -1,5 +1,23 @@
 # Findings
 
+## 2026-11-11（分类器完善：消灭兜底桶与跨词误命中）
+
+已解决：
+
+- **触发**：上一轮把 taste 提为标准默认后，发现分类器还有两类静默错分，用户要求完善。
+- **兜底桶清空**：`commerce-ops` 没有任何关键词，是“全不命中”的兜底桶，16 个技能 silently 落在这里（ablation-planner、auto-paper-improvement-loop、blueprint-figure、check-understanding、cli-chat、cli-batches、gstack、gws-chat-send、inference-skills、ponytail-debt/help/review、story-deslop/import/long-analyze、after-hours-editorial-template）。逐个读 SKILL.md 并按同家族惯例归类后，兜底桶为 0。
+- **跨词误命中**：`BOUNDARY_KEYWORDS` 从 `{"ui"}` 扩到 `{"ui","ios","media","vision"}`。实证：`ios` 命中 "ratios"（baoyu-image-gen 被判 coding-devtools）、"scenarios"；`media` 命中 "immediate"（analytical-method-validation）、"medians"（ponytail-gain）；`vision` 命中 "revision"（reflection 被判 media-generation）。加边界后 reflection→agent-orchestration、baoyu-image-gen→media-generation 自动归位。
+- **另外 11 个核对过的误判**：cli-a2a（"tasks" 判成 productivity-pkm）、cli-backup-sync（判成 data-analysis）、cli-compression / caveman-compress / caveman-commit（压缩的是提示词与提交信息，不是图片，却判成 media-generation）、cavecrew（子代理委派，判成 media-generation）、seo-agentic / seo-cluster（SEO 家族应在 marketing-growth）、agentmail（"drafts" 判成 writing-content，应与 agentmail-cli/toolkit 一致归 communication）、build-project（课程导师，判成 search-research）、analytical-method-validation（ICH/USP/ISO 合规验证，应归 legal-compliance）。
+- **结构调整**：`classify_category` 里的局部 `explicit` 字典提升为模块级 `CATEGORY_OVERRIDES`（52 → 80 条，新增条目按家族分组并写明理由），便于测试与维护。
+- **新门禁**：`tests/test_category_classifier.py`（6 个用例）断言①兜底桶只能由显式覆盖产生②目录分类与分类器实时计算一致（防手改/忘记重生成）③覆盖表分类名合法④跨词误命中回归⑤真实术语仍命中⑥`>-`/`|-`/`|2` 等块标量头解析出正文。已接入 `weekly_cycle.sh` 第 9 步，周度测试从 5 个变 6 个。
+- **影响面**：30 个技能分类变化，coding-devtools 17→27、agent-orchestration 8→12、media-generation 43→38、writing-content 15→17、communication 2→4、marketing-growth 21→23、commerce-ops 16→0；5★ 89→100、4★ 164→152、3★ 58→59；L2 118→128、L3 187→177。**安装档 low/medium/high 未变（53/68/317），标准包仍 21 位且 frontend 仍是 design-taste-frontend，金融组合仍 28 位。**
+- **门禁**：audit 317/311、missing_skills 0、duplicate_capabilities 0、standard_bundle_issues 0；syntax 1266 py + 394 js，errors 0；risk 15/15 new 0；6 个测试全 OK。
+
+待观察：
+
+- 分类联动评分与纵向分层，所以归位会改分数：seo-agentic 81→74、baoyu-image-gen 78→71、cli-backup-sync 92→79（都因离开 L2 分类）。这是评分模型既有设计，不是本轮引入；若认为“分类不该影响分数”，要单独改评分器。
+- 关键词表还有已知的宽匹配没动：`search` 命中 "research"、`market` 命中 "marketing"、`dev` 命中 "development"、`compress` 命中 "compressed"。这些要么结果尚可接受，要么已有覆盖表兜住；改成词边界会连带产生新兜底，需要逐个核对后再动。
+
 ## 2026-11-11（设计去重：taste 设为标准默认，其余按“优于或互补”筛）
 
 已解决：
@@ -20,7 +38,7 @@
 待观察：
 
 - `frontend-design` 是高频技能（833 次调用、近 30 天 363 次，最后 2026-11-04），归档会改变日常行为；同岗位由 `design-taste-frontend` 承担。`web-animation-design` 33 次 / 近期 32 次，只在 Codex。要回退：`mv ~/.{qoder,codex}/skills-archive/<name> ~/.{qoder,codex}/skills/`。
-- 分类器还有兜底桶问题：`check-understanding`、`gstack`、`ponytail-help` 落到 commerce-ops（无关键词命中），`analytical-method-validation` 落到 media-generation。已不是 design-ui 误判，但分类仍不准，待单独处理。
+- 分类器还有兜底桶问题：`check-understanding`、`gstack`、`ponytail-help` 落到 commerce-ops（无关键词命中），`analytical-method-validation` 落到 media-generation。已不是 design-ui 误判，但分类仍不准，待单独处理。（已于本日第三轮完善，见上一节）
 - `web-animation-design` 若日后定位到 canonical 上游且证明优于 taste 体系，删登记表条目即可重新导入。
 
 ## 2026-11-11（设计流派收敛：只留 taste 一家）

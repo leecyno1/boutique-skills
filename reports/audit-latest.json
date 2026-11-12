@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-11 23:03:50",
+  "timestamp": "2026-11-12 09:12:38",
   "status": "WARN",
   "summary": {
     "catalog_skills": 317,
@@ -119,46 +119,6 @@
       "env": "OPENAI_API_KEY"
     },
     {
-      "skill": "baoyu-image-gen",
-      "env": "ARK_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "AZURE_OPENAI_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "BIGMODEL_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "DASHSCOPE_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "GOOGLE_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "MINIMAX_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "OPENROUTER_API_KEY"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "REPLICATE_API_TOKEN"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "env": "ZAI_API_KEY"
-    },
-    {
       "skill": "bb-local-toolkit",
       "env": "OPENAI_API_KEY"
     },
@@ -181,6 +141,10 @@
     {
       "skill": "claude-certification",
       "env": "GITHUB_TOKEN"
+    },
+    {
+      "skill": "cli-batches",
+      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "ima",
@@ -275,6 +239,46 @@
       "env": "TUSHARE_TOKEN"
     },
     {
+      "skill": "baoyu-image-gen",
+      "env": "ARK_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "AZURE_OPENAI_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "BIGMODEL_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "DASHSCOPE_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "GOOGLE_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "MINIMAX_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "OPENAI_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "OPENROUTER_API_KEY"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "REPLICATE_API_TOKEN"
+    },
+    {
+      "skill": "baoyu-image-gen",
+      "env": "ZAI_API_KEY"
+    },
+    {
       "skill": "breakout-trade-planner",
       "env": "TUSHARE_TOKEN"
     },
@@ -288,10 +292,6 @@
     },
     {
       "skill": "caveman-evidence-review",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "cli-batches",
       "env": "OPENAI_API_KEY"
     },
     {
@@ -634,6 +634,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/a-stock-data"
     },
     {
+      "skill": "ablation-planner",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ablation-planner"
+    },
+    {
       "skill": "ad-creative",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ad-creative"
     },
@@ -644,6 +648,10 @@
     {
       "skill": "aeon",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/aeon"
+    },
+    {
+      "skill": "after-hours-editorial-template",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/after-hours-editorial-template"
     },
     {
       "skill": "agent-harness-construction",
@@ -670,6 +678,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/arxiv"
     },
     {
+      "skill": "auto-paper-improvement-loop",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/auto-paper-improvement-loop"
+    },
+    {
       "skill": "baoyu-youtube-transcript",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-youtube-transcript"
     },
@@ -694,8 +706,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/build-project"
     },
     {
-      "skill": "cli-backup-sync",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-backup-sync"
+      "skill": "caveman-commit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-commit"
+    },
+    {
+      "skill": "caveman-compress",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-compress"
+    },
+    {
+      "skill": "check-understanding",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/check-understanding"
+    },
+    {
+      "skill": "cli-a2a",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-a2a"
+    },
+    {
+      "skill": "cli-chat",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-chat"
+    },
+    {
+      "skill": "cli-compression",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-compression"
     },
     {
       "skill": "data-analyst",
@@ -830,16 +862,28 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/pick-ui-library"
     },
     {
+      "skill": "ponytail-debt",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-debt"
+    },
+    {
+      "skill": "ponytail-gain",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-gain"
+    },
+    {
+      "skill": "ponytail-help",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-help"
+    },
+    {
+      "skill": "ponytail-review",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-review"
+    },
+    {
       "skill": "reflection",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/reflection"
     },
     {
       "skill": "self-improving-agent-cn",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/self-improving-agent-cn"
-    },
-    {
-      "skill": "seo-cluster",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-cluster"
     },
     {
       "skill": "social-content",
@@ -970,32 +1014,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/uzi-skill"
     },
     {
-      "skill": "ablation-planner",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ablation-planner"
-    },
-    {
       "skill": "abusing-shadow-credentials-for-privesc",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/abusing-shadow-credentials-for-privesc"
-    },
-    {
-      "skill": "after-hours-editorial-template",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/after-hours-editorial-template"
     },
     {
       "skill": "agent-eval",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-eval"
     },
     {
-      "skill": "analytical-method-validation",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analytical-method-validation"
-    },
-    {
       "skill": "analyzing-active-directory-acl-abuse",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analyzing-active-directory-acl-abuse"
-    },
-    {
-      "skill": "auto-paper-improvement-loop",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/auto-paper-improvement-loop"
     },
     {
       "skill": "baoyu-comic",
@@ -1026,32 +1054,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cavecrew"
     },
     {
-      "skill": "caveman-commit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-commit"
-    },
-    {
-      "skill": "caveman-compress",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-compress"
-    },
-    {
       "skill": "channels-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/channels-account-launch-expert"
-    },
-    {
-      "skill": "check-understanding",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/check-understanding"
-    },
-    {
-      "skill": "cli-a2a",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-a2a"
-    },
-    {
-      "skill": "cli-chat",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-chat"
-    },
-    {
-      "skill": "cli-compression",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-compression"
     },
     {
       "skill": "code-review",
@@ -1110,28 +1114,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-audit"
     },
     {
-      "skill": "ponytail-debt",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-debt"
-    },
-    {
-      "skill": "ponytail-gain",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-gain"
-    },
-    {
-      "skill": "ponytail-help",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-help"
-    },
-    {
-      "skill": "ponytail-review",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ponytail-review"
-    },
-    {
       "skill": "seo-audit",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-audit"
     },
     {
       "skill": "seo-backlinks",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-backlinks"
+    },
+    {
+      "skill": "seo-cluster",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-cluster"
     },
     {
       "skill": "seo-competitor-pages",
@@ -1334,10 +1326,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/openclaw-cron-setup"
     },
     {
-      "skill": "seo-agentic",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-agentic"
-    },
-    {
       "skill": "etf-premium",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/etf-premium"
     },
@@ -1358,6 +1346,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-signal-tracker"
     },
     {
+      "skill": "analytical-method-validation",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analytical-method-validation"
+    },
+    {
       "skill": "bayesian-intrinsic-growth-valuation",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bayesian-intrinsic-growth-valuation"
     },
@@ -1368,6 +1360,10 @@
     {
       "skill": "buy-side-equity-research-memo",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/buy-side-equity-research-memo"
+    },
+    {
+      "skill": "cli-backup-sync",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-backup-sync"
     },
     {
       "skill": "eigenflux",
@@ -1438,10 +1434,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-equity-research-sector-overview"
     },
     {
-      "skill": "baoyu-image-gen",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-image-gen"
-    },
-    {
       "skill": "baoyu-markdown-to-html",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-markdown-to-html"
     },
@@ -1464,6 +1456,10 @@
     {
       "skill": "claude-certification",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/claude-certification"
+    },
+    {
+      "skill": "cli-batches",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-batches"
     },
     {
       "skill": "ima",
@@ -1578,6 +1574,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/finance-sentiment"
     },
     {
+      "skill": "seo-agentic",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-agentic"
+    },
+    {
       "skill": "baoyu-post-to-wechat",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-post-to-wechat"
     },
@@ -1606,6 +1606,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter"
     },
     {
+      "skill": "baoyu-image-gen",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-image-gen"
+    },
+    {
       "skill": "breakout-trade-planner",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/breakout-trade-planner"
     },
@@ -1620,10 +1624,6 @@
     {
       "skill": "caveman-evidence-review",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/caveman-evidence-review"
-    },
-    {
-      "skill": "cli-batches",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-batches"
     },
     {
       "skill": "dividend-growth-pullback-screener",

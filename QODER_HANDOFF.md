@@ -10,8 +10,8 @@
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
 - 注意：字符串 `boutique-openclaw-skills` 现在只应出现在 Gitee 仓库地址与历史记录里（旧会话转录目录、RepoWiki 目录、早期报告中的绝对路径）。仓库名、本地目录名、GitHub 地址都已统一为 `boutique-skills`。
 - 当前技能数：317（catalog/skills.enriched.json，生成于 2026-11-11；11-02 退役 132 个、11-07 周度发现补回 15 个到 319，11-11 设计去重再出库 animation、impeccable 到 317）；skills/default/ 目录 454 个（含未注册候选与套件成员）
-- 横向分层：high 317 / medium 68 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 118 / L3 187
-- 星级分布：5★ 89 / 4★ 164 / 3★ 58 / 1★ 6
+- 横向分层：high 317 / medium 68 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 128 / L3 177
+- 星级分布：5★ 100 / 4★ 152 / 3★ 59 / 1★ 6
 - 来源核验：311 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
 - 标准包：21 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）。frontend 槽位 = `design-taste-frontend`（96，taste 为标准默认设计库）
 - 金融投资标准组合：28 个 Skill（能力位去重，上限 40；同位优先无 key 候选）
@@ -33,7 +33,15 @@
 5. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
 6. **`~/.qoder/skills` 缺 agent-reach 副本**：`~/.claude/skills` 与 `~/.agents/skills` 有，CLI 在 `~/.local/bin/agent-reach`。仓库与标准包 `social-research` 槽位均已收录，周更会自动同步上游。
 7. **设计流派已收敛完毕（2026-11-11 第二轮）**：taste-skill 是标准默认设计库，标准包 frontend 槽位已换成 `design-taste-frontend`(96)。其余设计技能按“优于 taste 或互补则留，否则按重复出库”筛完：出库 animation、impeccable、frontend-design、web-animation-design 4 个；保留 review-animations 98、pick-ui-library 92、scroll-world 93、generative-ui 92、huashu-design 81、gsap ×8 与 taste 家族 13 个（互补岗位，不重复）。裁定与保留理由记在 `catalog/retired-skills.json` 的 `design_school_decision`（`pending_user_decision` 已清空）。**后续发现新的设计流派，先按这条规则判断，不要默认收录。**
-8. **目录分类器仍有兜底桶问题**：`check-understanding`、`gstack`、`ponytail-help` 无关键词命中落到 commerce-ops，`analytical-method-validation` 落到 media-generation。11-11 已修掉 `ui` 裸子串误判（11 个技能从 design-ui 回到正确分类），但兜底分类仍不准，待单独处理，不要顺手大改分类表。
+8. **分类器兜底桶已清空（2026-11-11 第三轮）**：`commerce-ops` 是“关键词全不命中”的兜底桶，原有 16 个技能静默错分，现已逐个核对 SKILL.md 归位（覆盖表 `CATEGORY_OVERRIDES` 52→80 条）。`BOUNDARY_KEYWORDS` 扩到 `ui/ios/media/vision`，挡掉 "quick"→design-ui、"ratios"→coding-devtools、"medians"/"immediate"→media-generation、"revision"→media-generation 这类跨词误命中。新增 `tests/test_category_classifier.py`（6 用例，已接入周度第 9 步）断言兜底桶只能由显式覆盖产生、目录分类与分类器实时一致。**新技能落进兜底桶时，读它的 SKILL.md 后写进覆盖表，不要留着错分；加短关键词前先判断会不会嵌在别的英文单词里。** 关键词表还有已知宽匹配（search 命中 research、market 命中 marketing、dev 命中 development、compress 命中 compressed），结果尚可接受或已被覆盖表兜住，未动。
+
+## 最近完成（2026-11-11 分类器完善）
+
+- 兜底桶 `commerce-ops` 从 16 个技能清到 0：逐个读 SKILL.md，按同家族惯例归类（课程家族→coding-devtools、OmniRoute CLI→coding-devtools、ponytail→coding-devtools、story 网文→writing-content、SEO→marketing-growth、论文套件→search-research、套件路由→agent-orchestration）。
+- 跨词误命中：`BOUNDARY_KEYWORDS` 扩到 `ui/ios/media/vision`，reflection、baoyu-image-gen 自动归位；另修正 cli-a2a/cli-backup-sync/cli-compression、cavecrew/caveman-commit/caveman-compress、seo-agentic/seo-cluster、agentmail、build-project、analytical-method-validation 共 11 个核对过的误判。
+- `classify_category` 的局部 `explicit` 字典提升为模块级 `CATEGORY_OVERRIDES`（52→80 条，按家族分组写理由）。
+- 新增 `tests/test_category_classifier.py`（6 用例：兜底桶必须显式覆盖、目录与分类器一致、覆盖表分类名合法、跨词回归、真实术语仍命中、块标量头解析），接入 `weekly_cycle.sh` 第 9 步，周度测试 5→6 个。
+- 影响面：30 个技能分类变化，5★ 89→100、L2 118→128 / L3 187→177；安装档 53/68/317 未变，标准包 21 位（frontend 仍 design-taste-frontend）、金融组合 28 位未变。门禁全绿（audit 0/0/0、syntax 0 errors、risk 15=15 new 0、6 测试 OK）。
 
 ## 最近完成（2026-11-11 设计去重 + taste 设为标准默认）
 

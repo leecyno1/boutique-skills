@@ -32,11 +32,11 @@
 | `gpt-image` | `OPENAI_API_KEY` | 无 | `medium` |
 | `agent-architecture-audit` | `OPENAI_API_KEY` | 无 | `medium` |
 | `alphaxiv` | `OPENAI_API_KEY` | 无 | `medium` |
-| `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `bb-local-toolkit` | `OPENAI_API_KEY` | `python` | `medium` |
 | `book-to-skill` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh` | `medium` |
 | `bug-bounty` | `OPENAI_API_KEY` | `python` | `medium` |
 | `claude-certification` | `GH_TOKEN`, `GITHUB_TOKEN` | `gh`, `node` | `medium` |
+| `cli-batches` | `OPENAI_API_KEY` | 无 | `medium` |
 | `ima` | `IMA_API_KEY`, `IMA_CLIENT_ID` | 无 | `medium` |
 | `lark-calendar` | `FEISHU_APP_SECRET` | 无 | `medium` |
 | `notebooklm-py` | `GEMINI_API_KEY` | 无 | `medium` |
@@ -54,11 +54,11 @@
 | `agentmail-cli` | `AGENTMAIL_API_KEY` | 无 | `medium` |
 | `agentmail-toolkit` | `AGENTMAIL_API_KEY`, `OPENAI_API_KEY` | 无 | `medium` |
 | `alphaear-reporter` | `TUSHARE_TOKEN` | `python` | `medium` |
+| `baoyu-image-gen` | `ARK_API_KEY`, `AZURE_OPENAI_API_KEY`, `BIGMODEL_API_KEY`, `DASHSCOPE_API_KEY`, `GOOGLE_API_KEY`, `MINIMAX_API_KEY`, `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `REPLICATE_API_TOKEN`, `ZAI_API_KEY` | 无 | `medium` |
 | `breakout-trade-planner` | `TUSHARE_TOKEN` | 无 | `medium` |
 | `canslim-screener` | `FMP_API_KEY` | `python` | `medium` |
 | `caveman-discover` | `OPENAI_API_KEY` | 无 | `medium` |
 | `caveman-evidence-review` | `OPENAI_API_KEY` | 无 | `medium` |
-| `cli-batches` | `OPENAI_API_KEY` | 无 | `medium` |
 | `dividend-growth-pullback-screener` | `FINVIZ_API_KEY`, `FMP_API_KEY` | `python` | `medium` |
 | `downtrend-duration-analyzer` | `FMP_API_KEY` | 无 | `medium` |
 | `earnings-calendar` | `FMP_API_KEY` | `browser`, `python` | `medium` |
@@ -161,22 +161,30 @@
 | `scroll-world` | 无 | `ffmpeg`, `higgsfield`, `python` | `low` |
 | `8-bit-orbit-video-template` | 无 | `ffmpeg` | `low` |
 | `a-stock-data` | 无 | `python` | `medium` |
+| `ablation-planner` | 无 | 无 | `low` |
 | `ad-creative` | 无 | 无 | `low` |
 | `adaptyv` | 无 | 无 | `low` |
 | `aeon` | 无 | `python` | `low` |
+| `after-hours-editorial-template` | 无 | 无 | `low` |
 | `agent-harness-construction` | 无 | 无 | `low` |
 | `ai-music-album` | 无 | `ffmpeg` | `low` |
 | `analyze-results` | 无 | `python` | `low` |
 | `anndata` | 无 | `python` | `low` |
 | `arbor` | 无 | `python` | `low` |
 | `arxiv` | 无 | 无 | `low` |
+| `auto-paper-improvement-loop` | 无 | 无 | `low` |
 | `baoyu-youtube-transcript` | 无 | `ffmpeg`, `python` | `low` |
 | `bb-methodology` | 无 | `node` | `low` |
 | `bear-notes` | 无 | 无 | `low` |
 | `behavior-validator` | 无 | 无 | `low` |
 | `bugcrowd-reporting` | 无 | 无 | `low` |
 | `build-project` | 无 | `node` | `low` |
-| `cli-backup-sync` | 无 | `python` | `low` |
+| `caveman-commit` | 无 | 无 | `low` |
+| `caveman-compress` | 无 | 无 | `low` |
+| `check-understanding` | 无 | 无 | `low` |
+| `cli-a2a` | 无 | 无 | `low` |
+| `cli-chat` | 无 | 无 | `low` |
+| `cli-compression` | 无 | 无 | `low` |
 | `data-analyst` | 无 | `python` | `low` |
 | `dbskill` | 无 | 无 | `low` |
 | `design-taste-frontend-v1` | 无 | 无 | `low` |
@@ -210,9 +218,12 @@
 | `obsidian-cli` | 无 | 无 | `low` |
 | `openclaw-stock-kb` | 无 | `python` | `low` |
 | `pick-ui-library` | 无 | 无 | `low` |
+| `ponytail-debt` | 无 | 无 | `low` |
+| `ponytail-gain` | 无 | 无 | `low` |
+| `ponytail-help` | 无 | 无 | `low` |
+| `ponytail-review` | 无 | 无 | `low` |
 | `reflection` | 无 | 无 | `low` |
 | `self-improving-agent-cn` | 无 | 无 | `low` |
-| `seo-cluster` | 无 | 无 | `low` |
 | `social-content` | 无 | `ffmpeg` | `low` |
 | `stitch-design-taste` | 无 | 无 | `low` |
 | `strategy-pivot-designer` | 无 | 无 | `low` |
@@ -238,13 +249,9 @@
 | `dasheng-stage-publish` | 无 | 无 | `low` |
 | `dasheng-stage-rewrite-v3` | 无 | 无 | `low` |
 | `gpt-image-2-style-library` | 无 | 无 | `low` |
-| `ablation-planner` | 无 | 无 | `low` |
 | `abusing-shadow-credentials-for-privesc` | 无 | 无 | `low` |
-| `after-hours-editorial-template` | 无 | 无 | `low` |
 | `agent-eval` | 无 | 无 | `low` |
-| `analytical-method-validation` | 无 | 无 | `low` |
 | `analyzing-active-directory-acl-abuse` | 无 | 无 | `low` |
-| `auto-paper-improvement-loop` | 无 | 无 | `low` |
 | `baoyu-comic` | 无 | 无 | `low` |
 | `baoyu-skills` | 无 | 无 | `low` |
 | `baoyu-translate` | 无 | 无 | `low` |
@@ -252,13 +259,7 @@
 | `blueprint-figure` | 无 | 无 | `low` |
 | `capability-evolver` | 无 | 无 | `low` |
 | `cavecrew` | 无 | 无 | `low` |
-| `caveman-commit` | 无 | 无 | `low` |
-| `caveman-compress` | 无 | 无 | `low` |
 | `channels-account-launch-expert` | 无 | 无 | `low` |
-| `check-understanding` | 无 | 无 | `low` |
-| `cli-a2a` | 无 | 无 | `low` |
-| `cli-chat` | 无 | 无 | `low` |
-| `cli-compression` | 无 | 无 | `low` |
 | `code-review` | 无 | 无 | `low` |
 | `colleague-skill` | 无 | 无 | `low` |
 | `dasheng-publish-operations-bridge` | 无 | 无 | `low` |
@@ -273,12 +274,9 @@
 | `obsidian-bases` | 无 | 无 | `low` |
 | `policy-monitor` | 无 | 无 | `medium` |
 | `ponytail-audit` | 无 | 无 | `low` |
-| `ponytail-debt` | 无 | 无 | `low` |
-| `ponytail-gain` | 无 | 无 | `low` |
-| `ponytail-help` | 无 | 无 | `low` |
-| `ponytail-review` | 无 | 无 | `low` |
 | `seo-audit` | 无 | 无 | `low` |
 | `seo-backlinks` | 无 | 无 | `low` |
+| `seo-cluster` | 无 | 无 | `low` |
 | `seo-competitor-pages` | 无 | 无 | `low` |
 | `social-auto-upload-bridge` | 无 | `ffmpeg`, `node` | `low` |
 | `story-cover` | 无 | 无 | `low` |
@@ -308,9 +306,11 @@
 | `acquiring-disk-image-with-dd-and-dcfldd` | 无 | 无 | `medium` |
 | `alphaear-predictor` | 无 | `python` | `medium` |
 | `alphaear-signal-tracker` | 无 | `python` | `medium` |
+| `analytical-method-validation` | 无 | 无 | `medium` |
 | `bayesian-intrinsic-growth-valuation` | 无 | `python` | `medium` |
 | `breadth-chart-analyst` | 无 | `python` | `medium` |
 | `buy-side-equity-research-memo` | 无 | `python` | `medium` |
+| `cli-backup-sync` | 无 | `python` | `medium` |
 | `gf-dma-health-index` | 无 | `python` | `medium` |
 | `hormuz-strait` | 无 | `python` | `medium` |
 | `paper-framework-figure-studio-pro` | 无 | `python` | `medium` |
@@ -341,7 +341,6 @@
 | `chrome-devtools-mcp` | 无 | `browser`, `mcp` | `medium` |
 | `course-guide` | 无 | `mcp`, `node` | `medium` |
 | `news-radar` | 无 | `mcp`, `python` | `medium` |
-| `seo-agentic` | 无 | `browser`, `mcp` | `medium` |
 | `eigenflux` | 无 | `eigenflux`, `mcp`, `node` | `high` |
 | `anthropic-fs-equity-research-catalyst-calendar` | 无 | `mcp` | `medium` |
 | `anthropic-fs-equity-research-sector-overview` | 无 | `mcp` | `medium` |
@@ -349,3 +348,4 @@
 | `anthropic-fs-financial-analysis-dcf-model` | 无 | `mcp`, `python` | `medium` |
 | `portfolio-manager` | 无 | `mcp`, `python` | `medium` |
 | `dasheng-xhs-publish-bridge` | 无 | `browser`, `mcp`, `node` | `medium` |
+| `seo-agentic` | 无 | `browser`, `mcp` | `medium` |

@@ -104,10 +104,109 @@ CATEGORY_KEYWORDS = [
     ("devops-cloud", ["database", "cloud", "deploy", "ops", "sql", "server"]),
 ]
 
-# Two-letter keywords that sit inside unrelated English words ("ui" in
-# "quick"/"build"/"guide"): match these on word boundaries only, otherwise a
-# translation skill mentioning "quick mode" lands in design-ui.
-BOUNDARY_KEYWORDS = {"ui"}
+# Keywords that also sit inside unrelated English words: match these on word
+# boundaries only. Demonstrated false hits without the boundary: "ui" in
+# "quick"/"build"/"guide" (design-ui), "ios" in "ratios"/"scenarios"
+# (coding-devtools), "media" in "immediate"/"medians" (media-generation),
+# "vision" in "revision"/"provision" (media-generation).
+BOUNDARY_KEYWORDS = {"ui", "ios", "media", "vision"}
+
+# 人工核对过的分类覆盖。关键词分类器只是启发式，命中不了的会落到兜底桶
+# commerce-ops；tests/test_category_classifier.py 断言兜底桶只能由本表产生，
+# 新技能若落进来必须在这里给出理由，而不是静默错分。
+CATEGORY_OVERRIDES = {
+    "a-stock-data": "finance-data",
+    "behavior-validator": "coding-devtools",
+    "agent-reach": "search-research",
+    "akshare-stock": "finance-data",
+    "funda-data": "finance-data",
+    "global-stock-data": "finance-data",
+    "openclaw-stock-data-skill": "finance-data",
+    "tushare-openclaw-skill": "finance-data",
+    "westockdata": "finance-data",
+    "uzi-skill": "finance-trading",
+    "yfinance-data": "finance-data",
+    "openclaw-stock-kb": "finance-knowledge",
+    "stock-monitor-skill": "finance-monitor",
+    "stock-daily-analysis-skill": "finance-trading",
+    "stock-analysis": "finance-trading",
+    "pybroker-backtest-skill": "finance-trading",
+    "policy-monitor": "policy-monitoring",
+    "scroll-world": "design-ui",
+    "skill-vetter": "security-audit",
+    "claude-mem-plugin": "memory-context",
+    "html-anything": "html-publishing",
+    "ima": "productivity-pkm",
+    "guizang-ppt-skill": "html-publishing",
+    "khazix-skills": "writing-content",
+    "humanizer-zh": "writing-content",
+    "dbskill": "marketing-growth",
+    "eigenflux": "agent-orchestration",
+    "guizang-social-card-skill": "media-generation",
+    "ian-xiaohei-illustrations": "media-generation",
+    "content-strategy": "marketing-growth",
+    "marketingskills": "marketing-growth",
+    "frontend-dev": "coding-devtools",
+    "ios-application-dev": "coding-devtools",
+    "generative-ui": "design-ui",
+    "video-autopilot-kit": "media-generation",
+    "video-shotcraft": "media-generation",
+    "paper-framework-figure-studio-pro": "media-generation",
+    "scientific-illustrator": "media-generation",
+    "media-downloader": "media-generation",
+    "minimax-pdf": "docs-office",
+    "vision-analysis": "media-generation",
+    "buddy-sings": "media-generation",
+    "gif-sticker-maker": "media-generation",
+    "minimax-music-gen": "media-generation",
+    "minimax-music-playlist": "media-generation",
+    "discord-reader": "search-research",
+    "linkedin-reader": "search-research",
+    "opencli-reader": "search-research",
+    "telegram-reader": "search-research",
+    "twitter-reader": "search-research",
+    "yc-reader": "search-research",
+    "startup-analysis": "commerce-ops",
+    # 论文/科研套件（与 alphaxiv、arxiv 同库同岗）
+    "ablation-planner": "search-research",
+    "auto-paper-improvement-loop": "search-research",
+    # AI Engineering from Scratch 课程家族（与 course-guide、claude-certification 一致）
+    "build-project": "coding-devtools",
+    "check-understanding": "coding-devtools",
+    "blueprint-figure": "media-generation",
+    # OmniRoute CLI 家族：都是命令行工具，不是任务/数据/媒体技能
+    "cli-a2a": "coding-devtools",
+    "cli-batches": "coding-devtools",
+    "cli-chat": "coding-devtools",
+    "cli-compression": "coding-devtools",
+    "cli-backup-sync": "devops-cloud",
+    # ponytail 家族：代码质量工具（audit 仍归 security-audit）
+    "ponytail-debt": "coding-devtools",
+    "ponytail-gain": "coding-devtools",
+    "ponytail-help": "coding-devtools",
+    "ponytail-review": "coding-devtools",
+    # caveman 家族：压缩的是提示词/提交信息，不是图片
+    "cavecrew": "agent-orchestration",
+    "caveman-commit": "coding-devtools",
+    "caveman-compress": "coding-devtools",
+    # 网文写作（story-cover 出图，仍归 media-generation）
+    "story-deslop": "writing-content",
+    "story-import": "writing-content",
+    "story-long-analyze": "writing-content",
+    # SEO 家族（与 seo-audit、seo-backlinks 一致）
+    "seo-agentic": "marketing-growth",
+    "seo-cluster": "marketing-growth",
+    # 邮件与消息（与 agentmail-cli、agentmail-toolkit 一致）
+    "agentmail": "communication",
+    "gws-chat-send": "communication",
+    # 套件路由/索引 hub
+    "gstack": "agent-orchestration",
+    "inference-skills": "agent-orchestration",
+    # 其余逐个核对过 SKILL.md 的误判
+    "after-hours-editorial-template": "design-ui",
+    "analytical-method-validation": "legal-compliance",
+}
+
 
 L1 = {
     "agent-browser", "brainstorming", "chrome-devtools-mcp", "find-skills", "github",
@@ -631,62 +730,8 @@ def classify_category(skill_id: str, description: str) -> str:
         return "finance-trading"
     if skill_id in DASHENG_MEDIA_WORKFLOW_CATEGORIES:
         return DASHENG_MEDIA_WORKFLOW_CATEGORIES[skill_id]
-    explicit = {
-        "a-stock-data": "finance-data",
-        "behavior-validator": "coding-devtools",
-        "agent-reach": "search-research",
-        "akshare-stock": "finance-data",
-        "funda-data": "finance-data",
-        "global-stock-data": "finance-data",
-        "openclaw-stock-data-skill": "finance-data",
-        "tushare-openclaw-skill": "finance-data",
-        "westockdata": "finance-data",
-        "uzi-skill": "finance-trading",
-        "yfinance-data": "finance-data",
-        "openclaw-stock-kb": "finance-knowledge",
-        "stock-monitor-skill": "finance-monitor",
-        "stock-daily-analysis-skill": "finance-trading",
-        "stock-analysis": "finance-trading",
-        "pybroker-backtest-skill": "finance-trading",
-        "policy-monitor": "policy-monitoring",
-        "scroll-world": "design-ui",
-        "skill-vetter": "security-audit",
-        "claude-mem-plugin": "memory-context",
-        "html-anything": "html-publishing",
-        "ima": "productivity-pkm",
-        "guizang-ppt-skill": "html-publishing",
-        "khazix-skills": "writing-content",
-        "humanizer-zh": "writing-content",
-        "dbskill": "marketing-growth",
-        "eigenflux": "agent-orchestration",
-        "guizang-social-card-skill": "media-generation",
-        "ian-xiaohei-illustrations": "media-generation",
-        "content-strategy": "marketing-growth",
-        "marketingskills": "marketing-growth",
-        "frontend-dev": "coding-devtools",
-        "ios-application-dev": "coding-devtools",
-        "generative-ui": "design-ui",
-        "video-autopilot-kit": "media-generation",
-        "video-shotcraft": "media-generation",
-        "paper-framework-figure-studio-pro": "media-generation",
-        "scientific-illustrator": "media-generation",
-        "media-downloader": "media-generation",
-        "minimax-pdf": "docs-office",
-        "vision-analysis": "media-generation",
-        "buddy-sings": "media-generation",
-        "gif-sticker-maker": "media-generation",
-        "minimax-music-gen": "media-generation",
-        "minimax-music-playlist": "media-generation",
-        "discord-reader": "search-research",
-        "linkedin-reader": "search-research",
-        "opencli-reader": "search-research",
-        "telegram-reader": "search-research",
-        "twitter-reader": "search-research",
-        "yc-reader": "search-research",
-        "startup-analysis": "commerce-ops",
-    }
-    if skill_id in explicit:
-        return explicit[skill_id]
+    if skill_id in CATEGORY_OVERRIDES:
+        return CATEGORY_OVERRIDES[skill_id]
     haystack = f"{skill_id} {description}".lower()
     if skill_id in L1 or skill_id in {"task", "todo", "model-usage"}:
         return "core-agent"

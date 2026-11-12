@@ -1,6 +1,6 @@
 # Boutique Skills Audit
 
-- Time: 2026-11-11 23:03:50
+- Time: 2026-11-12 09:12:38
 - Status: **WARN**
 - Catalog skills: 317
 - Audited skills: 311
@@ -42,22 +42,13 @@
 - gpt-image: `OPENAI_API_KEY`
 - agent-architecture-audit: `OPENAI_API_KEY`
 - alphaxiv: `OPENAI_API_KEY`
-- baoyu-image-gen: `ARK_API_KEY`
-- baoyu-image-gen: `AZURE_OPENAI_API_KEY`
-- baoyu-image-gen: `BIGMODEL_API_KEY`
-- baoyu-image-gen: `DASHSCOPE_API_KEY`
-- baoyu-image-gen: `GOOGLE_API_KEY`
-- baoyu-image-gen: `MINIMAX_API_KEY`
-- baoyu-image-gen: `OPENAI_API_KEY`
-- baoyu-image-gen: `OPENROUTER_API_KEY`
-- baoyu-image-gen: `REPLICATE_API_TOKEN`
-- baoyu-image-gen: `ZAI_API_KEY`
 - bb-local-toolkit: `OPENAI_API_KEY`
 - book-to-skill: `GH_TOKEN`
 - book-to-skill: `GITHUB_TOKEN`
 - bug-bounty: `OPENAI_API_KEY`
 - claude-certification: `GH_TOKEN`
 - claude-certification: `GITHUB_TOKEN`
+- cli-batches: `OPENAI_API_KEY`
 - ima: `IMA_API_KEY`
 - ima: `IMA_CLIENT_ID`
 - lark-calendar: `FEISHU_APP_SECRET`
@@ -81,11 +72,20 @@
 - agentmail-toolkit: `AGENTMAIL_API_KEY`
 - agentmail-toolkit: `OPENAI_API_KEY`
 - alphaear-reporter: `TUSHARE_TOKEN`
+- baoyu-image-gen: `ARK_API_KEY`
+- baoyu-image-gen: `AZURE_OPENAI_API_KEY`
+- baoyu-image-gen: `BIGMODEL_API_KEY`
+- baoyu-image-gen: `DASHSCOPE_API_KEY`
+- baoyu-image-gen: `GOOGLE_API_KEY`
+- baoyu-image-gen: `MINIMAX_API_KEY`
+- baoyu-image-gen: `OPENAI_API_KEY`
+- baoyu-image-gen: `OPENROUTER_API_KEY`
+- baoyu-image-gen: `REPLICATE_API_TOKEN`
+- baoyu-image-gen: `ZAI_API_KEY`
 - breakout-trade-planner: `TUSHARE_TOKEN`
 - canslim-screener: `FMP_API_KEY`
 - caveman-discover: `OPENAI_API_KEY`
 - caveman-evidence-review: `OPENAI_API_KEY`
-- cli-batches: `OPENAI_API_KEY`
 - dividend-growth-pullback-screener: `FINVIZ_API_KEY`
 - dividend-growth-pullback-screener: `FMP_API_KEY`
 - downtrend-duration-analyzer: `FMP_API_KEY`

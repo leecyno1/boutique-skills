@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-11",
+  "generated_at": "2026-11-12",
   "source_catalog": "catalog/default-skills.json",
   "policy": {
     "native_origin_required": true,
@@ -20,19 +20,18 @@
     "preset_excluded": 6,
     "by_horizontal_tier": {
       "L1 Foundation": 12,
-      "L2 Professional": 118,
-      "L3 Specialist": 187
+      "L2 Professional": 128,
+      "L3 Specialist": 177
     },
     "by_category": {
-      "agent-orchestration": 8,
+      "agent-orchestration": 12,
       "browser-automation": 4,
-      "coding-devtools": 17,
-      "commerce-ops": 16,
-      "communication": 2,
+      "coding-devtools": 27,
+      "communication": 4,
       "core-agent": 11,
-      "data-analysis": 8,
+      "data-analysis": 7,
       "design-ui": 34,
-      "devops-cloud": 2,
+      "devops-cloud": 3,
       "docs-office": 10,
       "finance-data": 4,
       "finance-knowledge": 1,
@@ -40,15 +39,15 @@
       "finance-services": 4,
       "finance-trading": 73,
       "html-publishing": 3,
-      "legal-compliance": 2,
-      "marketing-growth": 21,
-      "media-generation": 43,
+      "legal-compliance": 3,
+      "marketing-growth": 23,
+      "media-generation": 38,
       "memory-context": 1,
       "policy-monitoring": 1,
-      "productivity-pkm": 3,
-      "search-research": 28,
+      "productivity-pkm": 2,
+      "search-research": 29,
       "security-audit": 5,
-      "writing-content": 15
+      "writing-content": 17
     },
     "by_access_mode": {
       "api-key": 82,
@@ -59,9 +58,9 @@
     },
     "by_stars": {
       "1★": 6,
-      "3★": 58,
-      "4★": 164,
-      "5★": 89
+      "3★": 59,
+      "4★": 152,
+      "5★": 100
     }
   },
   "skills": [
@@ -1222,6 +1221,48 @@
       }
     },
     {
+      "id": "ablation-planner",
+      "name": "ablation-planner",
+      "description": "Use when main results pass result-to-claim (claim_supported=yes or partial) and ablation studies are needed for paper submission.",
+      "manual": "skills/default/ablation-planner/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-30",
+        "mirror_source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "direct",
+        "l2",
+        "offline",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ablation-planner",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "ad-creative",
       "name": "ad-creative",
       "description": "Generate and iterate ad creative including headlines, descriptions, and primary text. Useful for paid social and search ad iteration.",
@@ -1342,6 +1383,48 @@
       },
       "risk_level": "low",
       "conflict_group": "aeon",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "after-hours-editorial-template",
+      "name": "after-hours-editorial-template",
+      "description": "Luxury dark-editorial HyperFrames template for three-page cinematic storyboards, inspired by haute couture title cards and magazine chapter spreads. Use when the user asks for premium fashion-style motion pages, moody serif-led storytelling, or a high-end dark presentation aesthetic with rich transitions.",
+      "manual": "skills/default/after-hours-editorial-template/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/nexu-io/open-design",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/nexu-io/open-design",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "design-ui",
+      "category_label": "设计 / UI",
+      "tags": [
+        "design-ui",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "after-hours-editorial-template",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -1610,6 +1693,48 @@
       }
     },
     {
+      "id": "auto-paper-improvement-loop",
+      "name": "auto-paper-improvement-loop",
+      "description": "Autonomously improve a generated paper via GPT-6-Astra xhigh review → implement fixes → recompile, for 2 rounds. Use when user says \\\"改论文\\\", \\\"improve paper\\\", \\\"论文润色循环\\\", \\\"auto improve\\\", or wants to iteratively polish a generated paper.",
+      "manual": "skills/default/auto-paper-improvement-loop/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-30",
+        "mirror_source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "search-research",
+      "category_label": "搜索 / 研究 / 情报",
+      "tags": [
+        "direct",
+        "l2",
+        "offline",
+        "search-research"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "auto-paper-improvement-loop",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "baoyu-youtube-transcript",
       "name": "baoyu-youtube-transcript",
       "description": "Downloads YouTube video transcripts/subtitles and cover images by URL or video ID. Supports multiple languages, translation, chapters, and speaker identification. Caches raw data for fast re-formatting. Use when user asks to \"get YouTube transcript\", \"download subtitles\", \"get captions\", \"YouTube字幕\", \"YouTube封面\", \"视频封面\", \"video thumbnail\", \"video cover image\", or provides a YouTube URL and wants the transcript/subtitle text or cover image extracted.",
@@ -1847,13 +1972,13 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L2 Professional",
-      "primary_category": "search-research",
-      "category_label": "搜索 / 研究 / 情报",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
       "tags": [
+        "coding-devtools",
         "direct",
         "l2",
-        "online",
-        "search-research"
+        "online"
       ],
       "dependencies": {
         "requires_api_keys": false,
@@ -1874,10 +1999,136 @@
       }
     },
     {
-      "id": "cli-backup-sync",
-      "name": "cli-backup-sync",
-      "description": "Backup and restore OmniRoute data from the CLI. Trigger incremental snapshots, sync to cloud storage, manage backup schedules, and restore from archive files.",
-      "manual": "skills/default/cli-backup-sync/SKILL.md",
+      "id": "caveman-commit",
+      "name": "caveman-commit",
+      "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
+      "manual": "skills/default/caveman-commit/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "caveman-commit",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "caveman-compress",
+      "name": "caveman-compress",
+      "description": "Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input tokens, keeping a readable backup. Sends the file's text to the configured model provider. Trigger: /caveman-compress.",
+      "manual": "skills/default/caveman-compress/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JuliusBrussee/caveman",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "caveman-compress",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "check-understanding",
+      "name": "check-understanding",
+      "description": "Phase quiz for AI Engineering from Scratch. Trigger with \"quiz me\", \"test phase\", \"check my understanding\", \"do I know phase 3\", or `/check-understanding <phase>`.",
+      "manual": "skills/default/check-understanding/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-11-07",
+        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "check-understanding",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "cli-a2a",
+      "name": "cli-a2a",
+      "description": "Interact with the OmniRoute A2A server from the CLI. Send tasks, inspect skill execution history, and test the JSON-RPC 2.0 agent-to-agent protocol interactively.",
+      "manual": "skills/default/cli-a2a/SKILL.md",
       "manual_url": null,
       "install_tiers": [
         "high"
@@ -1891,10 +2142,10 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L2 Professional",
-      "primary_category": "data-analysis",
-      "category_label": "数据分析",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
       "tags": [
-        "data-analysis",
+        "coding-devtools",
         "direct",
         "l2",
         "offline"
@@ -1902,14 +2153,96 @@
       "dependencies": {
         "requires_api_keys": false,
         "api_keys": [],
-        "required_tools": [
-          "python"
-        ],
+        "required_tools": [],
         "access_mode": "direct",
         "runtime": "offline"
       },
       "risk_level": "low",
-      "conflict_group": "cli-backup-sync",
+      "conflict_group": "cli-a2a",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "cli-chat",
+      "name": "cli-chat",
+      "description": "Send chat completions, stream responses, and start an interactive REPL session from the CLI. Supports all OmniRoute providers, combo routing, and system prompt configuration.",
+      "manual": "skills/default/cli-chat/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "cli-chat",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "cli-compression",
+      "name": "cli-compression",
+      "description": "Configure and test prompt compression from the CLI. Manage RTK filters, Caveman rules, stacked compression modes, and preview compression output with real prompts.",
+      "manual": "skills/default/cli-compression/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "cli-compression",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -3415,6 +3748,174 @@
       }
     },
     {
+      "id": "ponytail-debt",
+      "name": "ponytail-debt",
+      "description": "Harvest every `ponytail:` comment in the codebase into a debt ledger, so the deliberate shortcuts and deferrals ponytail leaves behind get tracked instead of rotting into \"later means never\". Use when the user says \"ponytail debt\", \"/ponytail-debt\", \"what did ponytail defer\", \"list the shortcuts\", \"ponytail ledger\", or \"what did we mark to do later\". One-shot report, changes nothing.",
+      "manual": "skills/default/ponytail-debt/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-debt",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "ponytail-gain",
+      "name": "ponytail-gain",
+      "description": "Show ponytail's measured impact as a compact scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display, not a persistent mode, and not a per-repo number. Trigger: /ponytail-gain, \"ponytail gain\", \"what does ponytail save\", \"show ponytail impact\", \"ponytail scoreboard\".",
+      "manual": "skills/default/ponytail-gain/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-gain",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "ponytail-help",
+      "name": "ponytail-help",
+      "description": "Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, \"ponytail help\", \"what ponytail commands\", \"how do I use ponytail\".",
+      "manual": "skills/default/ponytail-help/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-help",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
+      "id": "ponytail-review",
+      "name": "ponytail-review",
+      "description": "Code review focused exclusively on over-engineering. Finds what to delete: reinvented standard library, unneeded dependencies, speculative abstractions, dead flexibility. One line per finding: location, what to cut, what replaces it. Use when the user says \"review for over-engineering\", \"what can we delete\", \"is this over-engineered\", \"simplify review\", or invokes /ponytail-review. Complements correctness-focused review, this one only hunts complexity.",
+      "manual": "skills/default/ponytail-review/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/DietrichGebert/ponytail",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "coding-devtools",
+        "direct",
+        "l2",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "ponytail-review",
+      "preset_excluded": false,
+      "rating": {
+        "score": 92,
+        "stars": 5,
+        "rating_label": "★★★★★"
+      }
+    },
+    {
       "id": "reflection",
       "name": "Self Reflection",
       "description": "Learns when to stop and review. Self-critiques before showing you, fewer revision rounds.",
@@ -3434,12 +3935,12 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L2 Professional",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
       "tags": [
+        "agent-orchestration",
         "direct",
         "l2",
-        "media-generation",
         "offline"
       ],
       "dependencies": {
@@ -3495,48 +3996,6 @@
       },
       "risk_level": "low",
       "conflict_group": "self-improving-agent-cn",
-      "preset_excluded": false,
-      "rating": {
-        "score": 92,
-        "stars": 5,
-        "rating_label": "★★★★★"
-      }
-    },
-    {
-      "id": "seo-cluster",
-      "name": "seo-cluster",
-      "description": "Cluster keywords by SERP overlap and design hub-and-spoke content architecture with internal links. Use for planning only; use the blog-cluster command to execute article production.",
-      "manual": "skills/default/seo-cluster/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/AgriciDaniel/claude-seo",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-30",
-        "mirror_source_url": "https://github.com/AgriciDaniel/claude-seo",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "design-ui",
-      "category_label": "设计 / UI",
-      "tags": [
-        "design-ui",
-        "direct",
-        "l2",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "seo-cluster",
       "preset_excluded": false,
       "rating": {
         "score": 92,
@@ -5025,48 +5484,6 @@
       }
     },
     {
-      "id": "ablation-planner",
-      "name": "ablation-planner",
-      "description": "Use when main results pass result-to-claim (claim_supported=yes or partial) and ablation studies are needed for paper submission.",
-      "manual": "skills/default/ablation-planner/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-30",
-        "mirror_source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ablation-planner",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "abusing-shadow-credentials-for-privesc",
       "name": "abusing-shadow-credentials-for-privesc",
       "description": "Take over Active Directory accounts by writing attacker-controlled public keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, or Certipy, then authenticate via PKINIT to recover the target's NT hash without a password reset. Use when BloodHound shows GenericWrite/GenericAll/AddKeyCredentialLink over a target, as a stealthier alternative to ForceChangePassword, during authorized red-team engagements.",
@@ -5101,48 +5518,6 @@
       },
       "risk_level": "low",
       "conflict_group": "abusing-shadow-credentials-for-privesc",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "after-hours-editorial-template",
-      "name": "after-hours-editorial-template",
-      "description": "Luxury dark-editorial HyperFrames template for three-page cinematic storyboards, inspired by haute couture title cards and magazine chapter spreads. Use when the user asks for premium fashion-style motion pages, moody serif-led storytelling, or a high-end dark presentation aesthetic with rich transitions.",
-      "manual": "skills/default/after-hours-editorial-template/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/nexu-io/open-design",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/nexu-io/open-design",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "after-hours-editorial-template",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -5193,48 +5568,6 @@
       }
     },
     {
-      "id": "analytical-method-validation",
-      "name": "analytical-method-validation",
-      "description": "Plan, execute, and document validation, verification, and transfer of analytical procedures under the governing framework - ICH Q2(R2) and Q14, USP <1220>/<1225>/<1226>, ICH M10 bioanalytical, CLSI EP, or ISO/IEC 17025. Use for HPLC, LC-MS/MS, GC, CE, ICP-MS, dissolution, qNMR, qPCR, NIR, and ligand binding or cell-based assays whenever the question is whether a procedure is fit for its intended purpose. Triggers include \"method validation\", \"analytical method validation\", \"AMV\", \"validation protocol\", \"acceptance criteria\", \"linearity\", \"reportable range\", \"accuracy and precision\", \"repeatability\", \"intermediate precision\", \"recovery\", \"LOD\", \"LOQ\", \"detection limit\", \"quantitation limit\", \"specificity\", \"robustness\", \"method transfer\", \"method comparison\", \"Deming\", \"Passing-Bablok\", \"Bland-Altman\", \"equivalence testing\", \"OOS investigation\", \"ICH Q2\", \"Q2(R2)\", \"Q14\", \"USP 1225\", \"ICH M10\", \"incurred sample reanalysis\", \"ISR\", \"CLSI EP\", and any request to show that an assay works.",
-      "manual": "skills/default/analytical-method-validation/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "direct",
-        "l3",
-        "media-generation",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "analytical-method-validation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "analyzing-active-directory-acl-abuse",
       "name": "analyzing-active-directory-acl-abuse",
       "description": "Detect dangerous ACL misconfigurations in Active Directory using ldap3",
@@ -5269,48 +5602,6 @@
       },
       "risk_level": "low",
       "conflict_group": "analyzing-active-directory-acl-abuse",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "auto-paper-improvement-loop",
-      "name": "auto-paper-improvement-loop",
-      "description": "Autonomously improve a generated paper via GPT-6-Astra xhigh review → implement fixes → recompile, for 2 rounds. Use when user says \\\"改论文\\\", \\\"improve paper\\\", \\\"论文润色循环\\\", \\\"auto improve\\\", or wants to iteratively polish a generated paper.",
-      "manual": "skills/default/auto-paper-improvement-loop/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-30",
-        "mirror_source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "auto-paper-improvement-loop",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -5514,12 +5805,12 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
       "tags": [
-        "commerce-ops",
         "direct",
         "l3",
+        "media-generation",
         "offline"
       ],
       "dependencies": {
@@ -5600,12 +5891,12 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
       "tags": [
+        "agent-orchestration",
         "direct",
         "l3",
-        "media-generation",
         "offline"
       ],
       "dependencies": {
@@ -5617,90 +5908,6 @@
       },
       "risk_level": "low",
       "conflict_group": "cavecrew",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "caveman-commit",
-      "name": "caveman-commit",
-      "description": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
-      "manual": "skills/default/caveman-commit/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JuliusBrussee/caveman",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "direct",
-        "l3",
-        "media-generation",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "caveman-commit",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "caveman-compress",
-      "name": "caveman-compress",
-      "description": "Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input tokens, keeping a readable backup. Sends the file's text to the configured model provider. Trigger: /caveman-compress.",
-      "manual": "skills/default/caveman-compress/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JuliusBrussee/caveman",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/JuliusBrussee/caveman",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "direct",
-        "l3",
-        "media-generation",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "caveman-compress",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -5746,174 +5953,6 @@
       },
       "risk_level": "low",
       "conflict_group": "channels-account-launch-expert",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "check-understanding",
-      "name": "check-understanding",
-      "description": "Phase quiz for AI Engineering from Scratch. Trigger with \"quiz me\", \"test phase\", \"check my understanding\", \"do I know phase 3\", or `/check-understanding <phase>`.",
-      "manual": "skills/default/check-understanding/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-11-07",
-        "mirror_source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "check-understanding",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "cli-a2a",
-      "name": "cli-a2a",
-      "description": "Interact with the OmniRoute A2A server from the CLI. Send tasks, inspect skill execution history, and test the JSON-RPC 2.0 agent-to-agent protocol interactively.",
-      "manual": "skills/default/cli-a2a/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "productivity-pkm",
-      "category_label": "效率 / 知识管理",
-      "tags": [
-        "direct",
-        "l3",
-        "offline",
-        "productivity-pkm"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "cli-a2a",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "cli-chat",
-      "name": "cli-chat",
-      "description": "Send chat completions, stream responses, and start an interactive REPL session from the CLI. Supports all OmniRoute providers, combo routing, and system prompt configuration.",
-      "manual": "skills/default/cli-chat/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "cli-chat",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "cli-compression",
-      "name": "cli-compression",
-      "description": "Configure and test prompt compression from the CLI. Manage RTK filters, Caveman rules, stacked compression modes, and preview compression output with real prompts.",
-      "manual": "skills/default/cli-compression/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "direct",
-        "l3",
-        "media-generation",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "cli-compression",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -6156,10 +6195,10 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
       "tags": [
-        "commerce-ops",
+        "agent-orchestration",
         "direct",
         "l3",
         "offline"
@@ -6240,10 +6279,10 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "communication",
+      "category_label": "通信 / 社交集成",
       "tags": [
-        "commerce-ops",
+        "communication",
         "direct",
         "l3",
         "offline"
@@ -6521,174 +6560,6 @@
       }
     },
     {
-      "id": "ponytail-debt",
-      "name": "ponytail-debt",
-      "description": "Harvest every `ponytail:` comment in the codebase into a debt ledger, so the deliberate shortcuts and deferrals ponytail leaves behind get tracked instead of rotting into \"later means never\". Use when the user says \"ponytail debt\", \"/ponytail-debt\", \"what did ponytail defer\", \"list the shortcuts\", \"ponytail ledger\", or \"what did we mark to do later\". One-shot report, changes nothing.",
-      "manual": "skills/default/ponytail-debt/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-debt",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "ponytail-gain",
-      "name": "ponytail-gain",
-      "description": "Show ponytail's measured impact as a compact scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display, not a persistent mode, and not a per-repo number. Trigger: /ponytail-gain, \"ponytail gain\", \"what does ponytail save\", \"show ponytail impact\", \"ponytail scoreboard\".",
-      "manual": "skills/default/ponytail-gain/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "media-generation",
-      "category_label": "媒体生成 / 处理",
-      "tags": [
-        "direct",
-        "l3",
-        "media-generation",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-gain",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "ponytail-help",
-      "name": "ponytail-help",
-      "description": "Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, \"ponytail help\", \"what ponytail commands\", \"how do I use ponytail\".",
-      "manual": "skills/default/ponytail-help/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-help",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
-      "id": "ponytail-review",
-      "name": "ponytail-review",
-      "description": "Code review focused exclusively on over-engineering. Finds what to delete: reinvented standard library, unneeded dependencies, speculative abstractions, dead flexibility. One line per finding: location, what to cut, what replaces it. Use when the user says \"review for over-engineering\", \"what can we delete\", \"is this over-engineered\", \"simplify review\", or invokes /ponytail-review. Complements correctness-focused review, this one only hunts complexity.",
-      "manual": "skills/default/ponytail-review/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/DietrichGebert/ponytail",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/DietrichGebert/ponytail",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "commerce-ops",
-        "direct",
-        "l3",
-        "offline"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [],
-        "access_mode": "direct",
-        "runtime": "offline"
-      },
-      "risk_level": "low",
-      "conflict_group": "ponytail-review",
-      "preset_excluded": false,
-      "rating": {
-        "score": 85,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "seo-audit",
       "name": "seo-audit",
       "description": "Run a full-site SEO audit and return a scored, prioritized report. Use only for site-wide checks; use seo-page for one URL or seo-technical for a technical-only review.",
@@ -6765,6 +6636,48 @@
       },
       "risk_level": "low",
       "conflict_group": "seo-backlinks",
+      "preset_excluded": false,
+      "rating": {
+        "score": 85,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "seo-cluster",
+      "name": "seo-cluster",
+      "description": "Cluster keywords by SERP overlap and design hub-and-spoke content architecture with internal links. Use for planning only; use the blog-cluster command to execute article production.",
+      "manual": "skills/default/seo-cluster/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AgriciDaniel/claude-seo",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-30",
+        "mirror_source_url": "https://github.com/AgriciDaniel/claude-seo",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "marketing-growth",
+      "category_label": "营销 / 增长",
+      "tags": [
+        "direct",
+        "l3",
+        "marketing-growth",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "low",
+      "conflict_group": "seo-cluster",
       "preset_excluded": false,
       "rating": {
         "score": 85,
@@ -6923,13 +6836,13 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "writing-content",
+      "category_label": "写作 / 内容",
       "tags": [
-        "commerce-ops",
         "direct",
         "l3",
-        "offline"
+        "offline",
+        "writing-content"
       ],
       "dependencies": {
         "requires_api_keys": false,
@@ -6965,13 +6878,13 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "writing-content",
+      "category_label": "写作 / 内容",
       "tags": [
-        "commerce-ops",
         "direct",
         "l3",
-        "offline"
+        "offline",
+        "writing-content"
       ],
       "dependencies": {
         "requires_api_keys": false,
@@ -7007,13 +6920,13 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "writing-content",
+      "category_label": "写作 / 内容",
       "tags": [
-        "commerce-ops",
         "direct",
         "l3",
-        "offline"
+        "offline",
+        "writing-content"
       ],
       "dependencies": {
         "requires_api_keys": false,
@@ -9156,51 +9069,6 @@
       }
     },
     {
-      "id": "seo-agentic",
-      "name": "seo-agentic",
-      "description": "Audit and fix agent readiness: the Lighthouse Agentic Browsing fraction, accessibility tree for agents, robots.txt and Content-Signal for AI agents, WAF treatment of agent traffic, llms.txt, Markdown delivery, ai-catalog.json, /.well-known discovery files, and WebMCP tools. Exclude AI citability and brand signals (seo-geo) and commerce protocol depth (seo-ecommerce).",
-      "manual": "skills/default/seo-agentic/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/AgriciDaniel/claude-seo",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-09-30",
-        "mirror_source_url": "https://github.com/AgriciDaniel/claude-seo",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "coding-devtools",
-        "l2",
-        "mcp-required",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": false,
-        "api_keys": [],
-        "required_tools": [
-          "browser",
-          "mcp"
-        ],
-        "access_mode": "mcp-required",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "seo-agentic",
-      "preset_excluded": false,
-      "rating": {
-        "score": 81,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "etf-premium",
       "name": "etf-premium",
       "description": "Calculate ETF premium/discount vs NAV via Yahoo Finance, and decompose single-day surges into NAV-driven vs structural components (gamma squeeze, dealer hedging, blocked AP arbitrage). Use whenever the user asks about an ETF's premium or discount, NAV comparison, why an ETF diverged from its holdings, or how much of a move is dealer-hedging-driven. Triggers: \"ETF premium\", \"ETF discount\", \"NAV premium\", \"is SPY at a premium\", \"BITO premium\", \"IBIT premium\", \"bond ETF discount\", \"trading above/below NAV\", \"ETF premium screener\", \"biggest discount\", \"compare ETF NAV\", \"ETF arbitrage\", \"ETF gamma squeeze\", \"ETF premium surge\", \"decompose ETF move\", \"dealer gamma exposure\", \"GEX for ETF\", \"why did this ETF jump\", \"premium convergence\", \"AP arbitrage blocked\", or any request about the gap between an ETF's price and underlying value. Especially relevant for leveraged, inverse, international, bond, commodity, and crypto ETFs.",
@@ -9426,6 +9294,48 @@
       }
     },
     {
+      "id": "analytical-method-validation",
+      "name": "analytical-method-validation",
+      "description": "Plan, execute, and document validation, verification, and transfer of analytical procedures under the governing framework - ICH Q2(R2) and Q14, USP <1220>/<1225>/<1226>, ICH M10 bioanalytical, CLSI EP, or ISO/IEC 17025. Use for HPLC, LC-MS/MS, GC, CE, ICP-MS, dissolution, qNMR, qPCR, NIR, and ligand binding or cell-based assays whenever the question is whether a procedure is fit for its intended purpose. Triggers include \"method validation\", \"analytical method validation\", \"AMV\", \"validation protocol\", \"acceptance criteria\", \"linearity\", \"reportable range\", \"accuracy and precision\", \"repeatability\", \"intermediate precision\", \"recovery\", \"LOD\", \"LOQ\", \"detection limit\", \"quantitation limit\", \"specificity\", \"robustness\", \"method transfer\", \"method comparison\", \"Deming\", \"Passing-Bablok\", \"Bland-Altman\", \"equivalence testing\", \"OOS investigation\", \"ICH Q2\", \"Q2(R2)\", \"Q14\", \"USP 1225\", \"ICH M10\", \"incurred sample reanalysis\", \"ISR\", \"CLSI EP\", and any request to show that an assay works.",
+      "manual": "skills/default/analytical-method-validation/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "legal-compliance",
+      "category_label": "法律 / 合规 / 税务",
+      "tags": [
+        "direct",
+        "l3",
+        "legal-compliance",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "analytical-method-validation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
       "id": "bayesian-intrinsic-growth-valuation",
       "name": "bayesian-intrinsic-growth-valuation",
       "description": "Use a Bayesian intrinsic-growth valuation model to evaluate whether a company's market value sufficiently, excessively, or insufficiently prices its real 3-5 year growth. Use when the user asks for Bayesian valuation, intrinsic growth rate, implied growth, growth-hypothesis probabilities, FOMO versus fundamentals, or company analysis based on fundamentals, industry cycle, TAM, market share, margin, valuation multiples, and new information.",
@@ -9557,6 +9467,50 @@
       },
       "risk_level": "medium",
       "conflict_group": "finance-specialist:buy-side-equity-research-memo",
+      "preset_excluded": false,
+      "rating": {
+        "score": 79,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "cli-backup-sync",
+      "name": "cli-backup-sync",
+      "description": "Backup and restore OmniRoute data from the CLI. Trigger incremental snapshots, sync to cloud storage, manage backup schedules, and restore from archive files.",
+      "manual": "skills/default/cli-backup-sync/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "devops-cloud",
+      "category_label": "DevOps / 云 / 数据库",
+      "tags": [
+        "devops-cloud",
+        "direct",
+        "l3",
+        "offline"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "python"
+        ],
+        "access_mode": "direct",
+        "runtime": "offline"
+      },
+      "risk_level": "medium",
+      "conflict_group": "cli-backup-sync",
       "preset_excluded": false,
       "rating": {
         "score": 79,
@@ -10363,60 +10317,6 @@
       }
     },
     {
-      "id": "baoyu-image-gen",
-      "name": "baoyu-image-gen",
-      "description": "AI image generation with OpenAI GPT Image 2.5, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
-      "manual": "skills/default/baoyu-image-gen/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-image-gen/GUIDE.md",
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-05",
-        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-image-gen",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L2 Professional",
-      "primary_category": "coding-devtools",
-      "category_label": "编程 / 工程工具",
-      "tags": [
-        "api-key",
-        "baoyu",
-        "coding-devtools",
-        "l2",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "ARK_API_KEY",
-          "AZURE_OPENAI_API_KEY",
-          "BIGMODEL_API_KEY",
-          "DASHSCOPE_API_KEY",
-          "GOOGLE_API_KEY",
-          "MINIMAX_API_KEY",
-          "OPENAI_API_KEY",
-          "OPENROUTER_API_KEY",
-          "REPLICATE_API_TOKEN",
-          "ZAI_API_KEY"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "image-generation",
-      "preset_excluded": false,
-      "rating": {
-        "score": 78,
-        "stars": 4,
-        "rating_label": "★★★★☆"
-      }
-    },
-    {
       "id": "baoyu-markdown-to-html",
       "name": "baoyu-markdown-to-html",
       "description": "Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, Mermaid (rendered to PNG via headless Chrome), PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for \"markdown to html\", \"convert md to html\", \"md 转 html\", \"微信外链转底部引用\", or needs styled HTML output from markdown.",
@@ -10690,6 +10590,50 @@
       },
       "risk_level": "medium",
       "conflict_group": "claude-certification",
+      "preset_excluded": false,
+      "rating": {
+        "score": 78,
+        "stars": 4,
+        "rating_label": "★★★★☆"
+      }
+    },
+    {
+      "id": "cli-batches",
+      "name": "cli-batches",
+      "description": "Submit and monitor batch inference jobs from the CLI. Upload and manage files for batch processing, retrieve results, and integrate batch pipelines with CI/CD workflows.",
+      "manual": "skills/default/cli-batches/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-22",
+        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L2 Professional",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
+      "tags": [
+        "api-key",
+        "coding-devtools",
+        "l2",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "OPENAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "cli-batches",
       "preset_excluded": false,
       "rating": {
         "score": 78,
@@ -12025,6 +11969,51 @@
       }
     },
     {
+      "id": "seo-agentic",
+      "name": "seo-agentic",
+      "description": "Audit and fix agent readiness: the Lighthouse Agentic Browsing fraction, accessibility tree for agents, robots.txt and Content-Signal for AI agents, WAF treatment of agent traffic, llms.txt, Markdown delivery, ai-catalog.json, /.well-known discovery files, and WebMCP tools. Exclude AI citability and brand signals (seo-geo) and commerce protocol depth (seo-ecommerce).",
+      "manual": "skills/default/seo-agentic/SKILL.md",
+      "manual_url": null,
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/AgriciDaniel/claude-seo",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-09-30",
+        "mirror_source_url": "https://github.com/AgriciDaniel/claude-seo",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "marketing-growth",
+      "category_label": "营销 / 增长",
+      "tags": [
+        "l3",
+        "marketing-growth",
+        "mcp-required",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": false,
+        "api_keys": [],
+        "required_tools": [
+          "browser",
+          "mcp"
+        ],
+        "access_mode": "mcp-required",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "seo-agentic",
+      "preset_excluded": false,
+      "rating": {
+        "score": 74,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "baoyu-post-to-wechat",
       "name": "baoyu-post-to-wechat",
       "description": "Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (贴图, formerly 图文) with multiple images. Markdown article workflows default to converting ordinary external links into bottom citations for WeChat-friendly output. Use when user mentions \"发布公众号\", \"post to wechat\", \"微信公众号\", or \"贴图/图文/文章\".",
@@ -12362,6 +12351,60 @@
       }
     },
     {
+      "id": "baoyu-image-gen",
+      "name": "baoyu-image-gen",
+      "description": "AI image generation with OpenAI GPT Image 2.5, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream, Replicate and Agnes APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.",
+      "manual": "skills/default/baoyu-image-gen/GUIDE.md",
+      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/baoyu-image-gen/GUIDE.md",
+      "install_tiers": [
+        "high"
+      ],
+      "origin": {
+        "origin_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen",
+        "origin_type": "github",
+        "origin_confidence": "verified_override",
+        "origin_verified_at": "2026-08-05",
+        "mirror_source_url": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/baoyu-image-gen",
+        "needs_origin_review": false
+      },
+      "horizontal_tier": "L3 Specialist",
+      "primary_category": "media-generation",
+      "category_label": "媒体生成 / 处理",
+      "tags": [
+        "api-key",
+        "baoyu",
+        "l3",
+        "media-generation",
+        "online"
+      ],
+      "dependencies": {
+        "requires_api_keys": true,
+        "api_keys": [
+          "ARK_API_KEY",
+          "AZURE_OPENAI_API_KEY",
+          "BIGMODEL_API_KEY",
+          "DASHSCOPE_API_KEY",
+          "GOOGLE_API_KEY",
+          "MINIMAX_API_KEY",
+          "OPENAI_API_KEY",
+          "OPENROUTER_API_KEY",
+          "REPLICATE_API_TOKEN",
+          "ZAI_API_KEY"
+        ],
+        "required_tools": [],
+        "access_mode": "api-key",
+        "runtime": "online"
+      },
+      "risk_level": "medium",
+      "conflict_group": "image-generation",
+      "preset_excluded": false,
+      "rating": {
+        "score": 71,
+        "stars": 3,
+        "rating_label": "★★★☆☆"
+      }
+    },
+    {
       "id": "breakout-trade-planner",
       "name": "breakout-trade-planner",
       "description": "Generate Minervini-style breakout trade plans from VCP screener output with worst-case risk calculation, portfolio heat management, and Alpaca-compatible order templates (stop-limit bracket for pre-placement, limit bracket for post-confirmation). Use when user has VCP screener results and wants actionable trade plans with entry/stop/target levels and position sizing.",
@@ -12536,50 +12579,6 @@
       },
       "risk_level": "medium",
       "conflict_group": "caveman-evidence-review",
-      "preset_excluded": false,
-      "rating": {
-        "score": 71,
-        "stars": 3,
-        "rating_label": "★★★☆☆"
-      }
-    },
-    {
-      "id": "cli-batches",
-      "name": "cli-batches",
-      "description": "Submit and monitor batch inference jobs from the CLI. Upload and manage files for batch processing, retrieve results, and integrate batch pipelines with CI/CD workflows.",
-      "manual": "skills/default/cli-batches/SKILL.md",
-      "manual_url": null,
-      "install_tiers": [
-        "high"
-      ],
-      "origin": {
-        "origin_url": "https://github.com/diegosouzapw/OmniRoute",
-        "origin_type": "github",
-        "origin_confidence": "verified_override",
-        "origin_verified_at": "2026-08-22",
-        "mirror_source_url": "https://github.com/diegosouzapw/OmniRoute",
-        "needs_origin_review": false
-      },
-      "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
-      "tags": [
-        "api-key",
-        "commerce-ops",
-        "l3",
-        "online"
-      ],
-      "dependencies": {
-        "requires_api_keys": true,
-        "api_keys": [
-          "OPENAI_API_KEY"
-        ],
-        "required_tools": [],
-        "access_mode": "api-key",
-        "runtime": "online"
-      },
-      "risk_level": "medium",
-      "conflict_group": "cli-batches",
       "preset_excluded": false,
       "rating": {
         "score": 71,
@@ -13219,11 +13218,11 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "commerce-ops",
-      "category_label": "商业运营",
+      "primary_category": "agent-orchestration",
+      "category_label": "多 Agent / 自动调度",
       "tags": [
+        "agent-orchestration",
         "api-key",
-        "commerce-ops",
         "default_sentinel",
         "l3",
         "online"
@@ -14323,14 +14322,14 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L3 Specialist",
-      "primary_category": "writing-content",
-      "category_label": "写作 / 内容",
+      "primary_category": "communication",
+      "category_label": "通信 / 社交集成",
       "tags": [
         "api-key",
+        "communication",
         "default_sentinel",
         "l3",
-        "online",
-        "writing-content"
+        "online"
       ],
       "dependencies": {
         "requires_api_keys": true,
