@@ -68,6 +68,13 @@ class CategoryClassifierTests(unittest.TestCase):
             ("demo-medians", "benchmark medians and immediate feedback", "media-generation"),
             ("demo-revision", "self-critique, fewer revision rounds", "media-generation"),
             ("demo-scenarios", "usage scenarios for the suite", "coding-devtools"),
+            # 逐个核对时实测到的跨词误命中
+            ("demo-hunting", "developer psychology and anomaly detection", "coding-devtools"),
+            ("demo-redteam", "pull the app from the store developer page", "coding-devtools"),
+            ("demo-growth", "marketing copy and content strategy", "finance-trading"),
+            ("demo-prompt", "prompt compression for long threads", "media-generation"),
+            ("demo-strategy", "strategy designer for swing setups", "design-ui"),
+            ("demo-scorecard", "campaign evaluation and reporting", "finance-trading"),
         ]
         for skill_id, description, wrong in cases:
             with self.subTest(skill=skill_id):
@@ -80,10 +87,39 @@ class CategoryClassifierTests(unittest.TestCase):
             ("demo-ios", "iOS app development", "coding-devtools"),
             ("demo-media", "social media image pipeline", "media-generation"),
             ("demo-vision", "computer vision analysis", "media-generation"),
+            # 屈折变化必须保留：复数、过去式、-ous 形容词
+            ("demo-stocks", "screen stocks for a pullback", "finance-trading"),
+            ("demo-images", "generate images for the article", "media-generation"),
+            ("demo-tasks", "track tasks and reminders", "productivity-pkm"),
+            ("demo-danger", "dangerous permission requests", "security-audit"),
+            ("demo-markets", "compare markets across sectors", "finance-trading"),
+            ("demo-compressed", "compressed archive of the bundle", "media-generation"),
+            ("demo-designed", "designed for reading comfort", "design-ui"),
         ]
         for skill_id, description, expected in cases:
             with self.subTest(skill=skill_id):
                 self.assertEqual(m.classify_category(skill_id, description), expected)
+
+    def test_reviewed_families_stay_in_one_category(self):
+        """同库同岗：这三个家族整库一个岗位，逐个核对后定死，防止关键词再把它们拆散。"""
+        expected = {
+            "tradermonty/claude-trading-skills": "finance-trading",
+            "elementalsouls/Claude-BugHunter": "security-audit",
+            "affaan-m/ECC": "agent-orchestration",
+        }
+        strays = []
+        seen = {repo: 0 for repo in expected}
+        for skill in self.enriched["skills"]:
+            origin = skill.get("origin") or {}
+            url = origin.get("origin_url") or origin.get("mirror_source_url") or ""
+            for repo, category in expected.items():
+                if f"github.com/{repo}" not in url:
+                    continue
+                seen[repo] += 1
+                if skill["primary_category"] != category:
+                    strays.append(f"{skill['id']}: {skill['primary_category']} != {category}")
+        self.assertEqual(strays, [], "family member filed under the wrong category")
+        self.assertTrue(all(count > 0 for count in seen.values()), f"family vanished from catalog: {seen}")
 
     def test_block_scalar_frontmatter_headers(self):
         """`>-` / `|-` used to leave the literal header as the description."""

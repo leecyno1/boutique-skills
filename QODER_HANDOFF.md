@@ -1,6 +1,6 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-11-11
+更新时间：2026-11-12
 
 ## 仓库信息
 
@@ -9,9 +9,9 @@
 - GitHub：https://github.com/leecyno1/boutique-skills（远端 origin；2026-09-11 由 boutique-openclaw-skills 改名，origin URL 已同步更新）
 - Gitee：https://gitee.com/leecyno1/boutique-openclaw-skills（远端 gitee；未改名）
 - 注意：字符串 `boutique-openclaw-skills` 现在只应出现在 Gitee 仓库地址与历史记录里（旧会话转录目录、RepoWiki 目录、早期报告中的绝对路径）。仓库名、本地目录名、GitHub 地址都已统一为 `boutique-skills`。
-- 当前技能数：317（catalog/skills.enriched.json，生成于 2026-11-11；11-02 退役 132 个、11-07 周度发现补回 15 个到 319，11-11 设计去重再出库 animation、impeccable 到 317）；skills/default/ 目录 454 个（含未注册候选与套件成员）
-- 横向分层：high 317 / medium 68 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 128 / L3 177
-- 星级分布：5★ 100 / 4★ 152 / 3★ 59 / 1★ 6
+- 当前技能数：317（catalog/skills.enriched.json，生成于 2026-11-12；11-02 退役 132 个、11-07 周度发现补回 15 个到 319，11-11 设计去重再出库 animation、impeccable 到 317）；skills/default/ 目录 454 个（含未注册候选与套件成员）
+- 横向分层：high 317 / medium 68 / low 53（累积分层，非互斥）；纵向 L1 12 / L2 115 / L3 190
+- 星级分布：5★ 91 / 4★ 157 / 3★ 63 / 1★ 6
 - 来源核验：311 已核验或引用，6 个预设能力豁免，needs_origin_review = 0
 - 标准包：21 个 Skill（上限 40，零第三方 key；packs 为参考推荐不随包安装）。frontend 槽位 = `design-taste-frontend`（96，taste 为标准默认设计库）
 - 金融投资标准组合：28 个 Skill（能力位去重，上限 40；同位优先无 key 候选）
@@ -20,7 +20,7 @@
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-11-11 更新）
+## 当前待办（2026-11-12 更新）
 
 工作区在本轮上游同步后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希）。持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`；发布脚本内置 HTTPS→SSH 回退；周度流程共 11 步，第 2 步为上游同步（含 origin 路径迁移），第 3 步为出库（消费同步报告），第 9 步为审计 + 语法门禁 + 风险门禁 + 单元测试。
 
@@ -33,7 +33,16 @@
 5. **人工复核队列**：`alibaba/open-code-review`（42823 星，Apache-2.0）被 monorepo 门槛（`skill_subdirs=2 < 3`）挡下而非聚合商店规则，评估与入库条件见 `reports/source-discovery/open-code-review-review-2026-09-30.md`；同批 `pascalorg/editor` 建议维持不收。
 6. **`~/.qoder/skills` 缺 agent-reach 副本**：`~/.claude/skills` 与 `~/.agents/skills` 有，CLI 在 `~/.local/bin/agent-reach`。仓库与标准包 `social-research` 槽位均已收录，周更会自动同步上游。
 7. **设计流派已收敛完毕（2026-11-11 第二轮）**：taste-skill 是标准默认设计库，标准包 frontend 槽位已换成 `design-taste-frontend`(96)。其余设计技能按“优于 taste 或互补则留，否则按重复出库”筛完：出库 animation、impeccable、frontend-design、web-animation-design 4 个；保留 review-animations 98、pick-ui-library 92、scroll-world 93、generative-ui 92、huashu-design 81、gsap ×8 与 taste 家族 13 个（互补岗位，不重复）。裁定与保留理由记在 `catalog/retired-skills.json` 的 `design_school_decision`（`pending_user_decision` 已清空）。**后续发现新的设计流派，先按这条规则判断，不要默认收录。**
-8. **分类器兜底桶已清空（2026-11-11 第三轮）**：`commerce-ops` 是“关键词全不命中”的兜底桶，原有 16 个技能静默错分，现已逐个核对 SKILL.md 归位（覆盖表 `CATEGORY_OVERRIDES` 52→80 条）。`BOUNDARY_KEYWORDS` 扩到 `ui/ios/media/vision`，挡掉 "quick"→design-ui、"ratios"→coding-devtools、"medians"/"immediate"→media-generation、"revision"→media-generation 这类跨词误命中。新增 `tests/test_category_classifier.py`（6 用例，已接入周度第 9 步）断言兜底桶只能由显式覆盖产生、目录分类与分类器实时一致。**新技能落进兜底桶时，读它的 SKILL.md 后写进覆盖表，不要留着错分；加短关键词前先判断会不会嵌在别的英文单词里。** 关键词表还有已知宽匹配（search 命中 research、market 命中 marketing、dev 命中 development、compress 命中 compressed），结果尚可接受或已被覆盖表兜住，未动。
+8. **分类器兜底桶已清空（2026-11-11 第三轮）**：`commerce-ops` 是“关键词全不命中”的兜底桶，原有 16 个技能静默错分，现已逐个核对 SKILL.md 归位。`tests/test_category_classifier.py`（已接入周度第 9 步）断言兜底桶只能由显式覆盖产生、目录分类与分类器实时一致。**新技能落进兜底桶时，读它的 SKILL.md 后写进 `CATEGORY_OVERRIDES`，不要留着错分；加短关键词前先判断会不会嵌在别的英文单词里。**
+9. **宽匹配已逐个核对完毕（2026-11-12 第四轮）**：`BOUNDARY_KEYWORDS` 现为 9 个 `ui/ios/media/vision/dev/market/compress/design/valuation`，每个都有具名实证误命中；`BOUNDARY_INFLECTION = (?:s|es|ed|ous)?` 保住 stocks/images/tasks/dangerous 这类合法屈折，**故意不放过 -ing 与 -er**（否则 marketing 又命中 market、策略 designer 又命中 design）。`search` 实测无危害不收（research 本身就是同分类关键词）。覆盖表 80→94 条，新增三个家族：tradermonty 交易 edge 流水线→finance-trading、Claude-BugHunter 漏洞赏金→security-audit、ECC Agent 工程→agent-orchestration。**改关键词表前先跑影响面模拟，改完必须重生成目录并跑 7 个分类器用例；同库同岗的家族核对完就加进 `test_reviewed_families_stay_in_one_category`。** 归位会联动掉星（本轮 9 个 5★→4★、4 个 4★→3★），那是评分模型既有设计，不是 bug。
+
+## 最近完成（2026-11-12 逐个核对宽匹配）
+
+- 探针枚举 24 个"关键词只以嵌词形式命中"的技能，逐个读 SKILL.md 判定：合法屈折与站得住的分类不动，14 个错分按家族归位（tradermonty edge 流水线 6 个→finance-trading、Claude-BugHunter 5 个→security-audit、ECC 3 个→agent-orchestration）。
+- 词边界集合 4→9（新增 dev/market/compress/design/valuation），屈折白名单 `(?:s|es|ed|ous)?`；`search`/`task`/`mcp` 经实测无危害，不收，避免集合虚胖。
+- 分类器测试 6→7 用例：新增 6 条跨词回归、7 条屈折回归，以及 `test_reviewed_families_stay_in_one_category`（断言三个库各自单一分类，成员 41/5/4）。
+- 影响面精确 14 个技能，其余 303 个零变化：finance-trading 73→79、security-audit 5→10、agent-orchestration 12→15、design-ui 34→30、coding-devtools 27→24、search-research 29→25；L2 128→115 / L3 177→190；5★ 100→91。安装档 53/68/317、标准包 21 位、金融组合 28 位逐字节未变，兜底桶仍 0。
+- 门禁全绿：audit 317/311（missing 0、duplicate 0、bundle issues 0）、syntax 1266 py + 394 js errors 0、risk 15=15 new 0、6 个测试文件 27 用例 OK。
 
 ## 最近完成（2026-11-11 分类器完善）
 

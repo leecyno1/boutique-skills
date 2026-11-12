@@ -3,30 +3,30 @@
 | 类型 | 数量 |
 |---|---:|
 | 核心 Agent 能力 (`core-agent`) | 11 |
-| 搜索 / 研究 / 情报 (`search-research`) | 29 |
+| 搜索 / 研究 / 情报 (`search-research`) | 25 |
 | 浏览器 / 自动化 (`browser-automation`) | 4 |
-| 编程 / 工程工具 (`coding-devtools`) | 27 |
-| 数据分析 (`data-analysis`) | 7 |
+| 编程 / 工程工具 (`coding-devtools`) | 24 |
+| 数据分析 (`data-analysis`) | 5 |
 | 文档 / 办公 (`docs-office`) | 10 |
-| 设计 / UI (`design-ui`) | 34 |
+| 设计 / UI (`design-ui`) | 30 |
 | HTML 发布 / 视觉出版 (`html-publishing`) | 3 |
 | 媒体生成 / 处理 (`media-generation`) | 38 |
 | 写作 / 内容 (`writing-content`) | 17 |
 | 营销 / 增长 (`marketing-growth`) | 23 |
-| 金融 / 交易 (`finance-trading`) | 73 |
+| 金融 / 交易 (`finance-trading`) | 79 |
 | 金融 / 机构服务 (`finance-services`) | 4 |
 | 金融 / 数据源 (`finance-data`) | 4 |
 | 金融 / 知识库 (`finance-knowledge`) | 1 |
 | 金融 / 监控预警 (`finance-monitor`) | 1 |
 | 政策 / 宏观监控 (`policy-monitoring`) | 1 |
 | 法律 / 合规 / 税务 (`legal-compliance`) | 3 |
-| 效率 / 知识管理 (`productivity-pkm`) | 2 |
+| 效率 / 知识管理 (`productivity-pkm`) | 1 |
 | 记忆 / 上下文基础设施 (`memory-context`) | 1 |
 | 通信 / 社交集成 (`communication`) | 4 |
 | DevOps / 云 / 数据库 (`devops-cloud`) | 3 |
-| 安全 / 审计 (`security-audit`) | 5 |
+| 安全 / 审计 (`security-audit`) | 10 |
 | 本地 macOS / 桌面 (`local-macos`) | 0 |
-| 多 Agent / 自动调度 (`agent-orchestration`) | 12 |
+| 多 Agent / 自动调度 (`agent-orchestration`) | 15 |
 | 商业运营 (`commerce-ops`) | 0 |
 | 教育 / 学习 (`education-learning`) | 0 |
 
@@ -59,9 +59,7 @@
 | `arxiv` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research` |
 | `auto-paper-improvement-loop` | `L2 Professional` | 5★ | `direct`, `l2`, `offline`, `search-research` |
 | `bear-notes` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research` |
-| `bugcrowd-reporting` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research` |
 | `discord-reader` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research`, `trading_finance` |
-| `edge-pipeline-orchestrator` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research`, `trading_finance` |
 | `linkedin-reader` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research`, `trading_finance` |
 | `obsidian-cli` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research` |
 | `telegram-reader` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research`, `trading_finance` |
@@ -72,8 +70,6 @@
 | `news-radar` | `L2 Professional` | 4★ | `l2`, `mcp-required`, `online`, `search-research` |
 | `gpt-image` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `alphaxiv` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
-| `bb-local-toolkit` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
-| `bug-bounty` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `notebooklm-py` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `paperless-docs` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
 | `paperless-ngx-tools` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
@@ -93,7 +89,6 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
-| `bb-methodology` | `L2 Professional` | 5★ | `coding-devtools`, `direct`, `l2`, `offline` |
 | `behavior-validator` | `L2 Professional` | 5★ | `behavior-testing`, `coding-devtools`, `direct`, `l2`, `online`, `openclaw-official`, `quality-assurance` |
 | `build-project` | `L2 Professional` | 5★ | `coding-devtools`, `direct`, `l2`, `online` |
 | `caveman-commit` | `L2 Professional` | 5★ | `coding-devtools`, `direct`, `l2`, `offline` |
@@ -112,9 +107,7 @@
 | `react-native-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
-| `apk-redteam-pipeline` | `L2 Professional` | 4★ | `browser-required`, `coding-devtools`, `l2`, `online` |
 | `course-guide` | `L2 Professional` | 4★ | `coding-devtools`, `l2`, `mcp-required`, `offline` |
-| `agent-architecture-audit` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `book-to-skill` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `claude-certification` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `cli-batches` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
@@ -129,8 +122,6 @@
 | `anndata` | `L2 Professional` | 5★ | `data-analysis`, `direct`, `l2`, `offline` |
 | `baoyu-youtube-transcript` | `L2 Professional` | 5★ | `baoyu`, `data-analysis`, `direct`, `l2`, `offline` |
 | `data-analyst` | `L2 Professional` | 5★ | `data-analysis`, `default_sentinel`, `direct`, `l2`, `offline` |
-| `edge-signal-aggregator` | `L2 Professional` | 5★ | `china-market-data`, `data-analysis`, `direct`, `l2`, `offline`, `trading_finance`, `tushare-supplement` |
-| `edge-strategy-reviewer` | `L2 Professional` | 5★ | `data-analysis`, `direct`, `l2`, `offline`, `trading_finance` |
 | `xlsx` | `L2 Professional` | 1★ | `data-analysis`, `direct`, `l2`, `offline` |
 
 ## 文档 / 办公
@@ -162,11 +153,8 @@
 | `8-bit-orbit-video-template` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `adaptyv` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `online` |
 | `after-hours-editorial-template` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
-| `agent-harness-construction` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `ai-music-album` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline` |
 | `design-taste-frontend-v1` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
-| `edge-concept-synthesizer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
-| `edge-strategy-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `full-output-enforcement` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `generative-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `gpt-taste` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
@@ -184,7 +172,6 @@
 | `industrial-brutalist-ui` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
 | `pick-ui-library` | `L2 Professional` | 5★ | `design`, `design-animation-suite`, `design-ui`, `direct`, `emil-kowalski`, `frontend`, `frontend-craft`, `l2`, `offline`, `standard` |
 | `stitch-design-taste` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `taste-skill` |
-| `strategy-pivot-designer` | `L2 Professional` | 5★ | `design-ui`, `direct`, `l2`, `offline`, `trading_finance` |
 | `huashu-design` | `L2 Professional` | 4★ | `browser-required`, `design-ui`, `l2`, `online` |
 
 ## HTML 发布 / 视觉出版
@@ -318,11 +305,17 @@
 | `bayesian-intrinsic-growth-valuation` | `L3 Specialist` | 4★ | `direct`, `finance-research`, `finance-trading`, `investment-framework`, `l3`, `offline`, `serenity-skill` |
 | `breadth-chart-analyst` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
 | `buy-side-equity-research-memo` | `L3 Specialist` | 4★ | `direct`, `finance-research`, `finance-trading`, `investment-framework`, `l3`, `online`, `serenity-skill` |
+| `edge-concept-synthesizer` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
+| `edge-pipeline-orchestrator` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `online`, `trading_finance` |
+| `edge-signal-aggregator` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
+| `edge-strategy-designer` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
+| `edge-strategy-reviewer` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
 | `gf-dma-health-index` | `L3 Specialist` | 4★ | `direct`, `finance-research`, `finance-trading`, `investment-framework`, `l3`, `offline`, `serenity-skill` |
 | `hormuz-strait` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
 | `sector-analyst` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `online`, `trading_finance` |
 | `serenity-alpha` | `L3 Specialist` | 4★ | `direct`, `finance-research`, `finance-trading`, `investment-framework`, `l3`, `online`, `serenity-skill` |
 | `stock-liquidity` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
+| `strategy-pivot-designer` | `L3 Specialist` | 4★ | `direct`, `finance-trading`, `l3`, `offline`, `trading_finance` |
 | `tam-adj-peg` | `L3 Specialist` | 4★ | `direct`, `finance-research`, `finance-trading`, `investment-framework`, `l3`, `offline`, `serenity-skill` |
 | `trade-hypothesis-ideator` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
 | `trader-memory-core` | `L3 Specialist` | 4★ | `china-market-data`, `direct`, `finance-trading`, `l3`, `offline`, `trading_finance`, `tushare-supplement` |
@@ -414,7 +407,6 @@
 
 | Skill | 横向层级 | 星级 | 标签 |
 |---|---|---:|---|
-| `agent-eval` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `productivity-pkm` |
 | `ima` | `L2 Professional` | 4★ | `api-key`, `knowledge`, `l2`, `notes`, `online`, `productivity`, `productivity-pkm`, `standard` |
 
 ## 记忆 / 上下文基础设施
@@ -446,9 +438,14 @@
 |---|---|---:|---|
 | `skill-vetter` | `L1 Foundation` | 5★ | `direct`, `l1`, `offline`, `security`, `security-audit`, `standard` |
 | `analyzing-active-directory-acl-abuse` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
+| `bb-methodology` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
+| `bugcrowd-reporting` | `L3 Specialist` | 4★ | `direct`, `l3`, `online`, `security-audit` |
 | `code-review` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
 | `gws-admin-reports` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
 | `ponytail-audit` | `L3 Specialist` | 4★ | `direct`, `l3`, `offline`, `security-audit` |
+| `apk-redteam-pipeline` | `L3 Specialist` | 3★ | `browser-required`, `l3`, `online`, `security-audit` |
+| `bb-local-toolkit` | `L3 Specialist` | 3★ | `api-key`, `l3`, `online`, `security-audit` |
+| `bug-bounty` | `L3 Specialist` | 3★ | `api-key`, `l3`, `online`, `security-audit` |
 
 ## 多 Agent / 自动调度
 
@@ -457,6 +454,8 @@
 | `reflection` | `L2 Professional` | 5★ | `agent-orchestration`, `direct`, `l2`, `offline` |
 | `self-improving-agent-cn` | `L2 Professional` | 5★ | `agent-orchestration`, `direct`, `l2`, `offline` |
 | `agent-introspection-debugging` | `L3 Specialist` | 5★ | `agent-orchestration`, `direct`, `l3`, `offline` |
+| `agent-eval` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
+| `agent-harness-construction` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `capability-evolver` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `cavecrew` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `colleague-skill` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
@@ -465,4 +464,5 @@
 | `memu` | `L3 Specialist` | 4★ | `agent-orchestration`, `direct`, `l3`, `offline` |
 | `openclaw-cron-setup` | `L2 Professional` | 4★ | `agent-orchestration`, `browser-required`, `l2`, `online` |
 | `eigenflux` | `L3 Specialist` | 4★ | `agent-network`, `agent-orchestration`, `broadcast`, `codex-plugin`, `communication`, `l3`, `mcp-required`, `online` |
+| `agent-architecture-audit` | `L3 Specialist` | 3★ | `agent-orchestration`, `api-key`, `l3`, `online` |
 | `inference-skills` | `L3 Specialist` | 3★ | `agent-orchestration`, `api-key`, `default_sentinel`, `l3`, `online` |

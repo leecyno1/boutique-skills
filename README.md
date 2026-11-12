@@ -114,10 +114,10 @@ Finance skills now have a dedicated **Finance Investment Standard Suite**. It is
 
 | Metric | Value |
 |---|---:|
-| Finance-related skills | 83 |
+| Finance-related skills | 89 |
 | Finance investment standard suite | 28 skills |
 | Finance data skills | 4 |
-| Finance trading/research skills | 73 |
+| Finance trading/research skills | 79 |
 | Institutional finance services | 4 |
 | Finance monitor/risk skills | 1 |
 
@@ -232,6 +232,9 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 
 | Skill | Tier | Type | Stars | Use | Origin |
 |---|---|---|---:|---|---|
+| `agent-architecture-audit` | `L3 Specialist` | `agent-orchestration` | 3★ | `api-key` | [Source](https://github.com/affaan-m/ECC) |
+| `agent-eval` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
+| `agent-harness-construction` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `agent-introspection-debugging` | `L3 Specialist` | `agent-orchestration` | 5★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `capability-evolver` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://mcp.directory/skills/details/1368/capability-evolver) |
 | `cavecrew` | `L3 Specialist` | `agent-orchestration` | 4★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
@@ -248,11 +251,8 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `browser-cdp` | `L3 Specialist` | `browser-automation` | 3★ | `browser-required` | [Source](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `notebooklm-skill` | `L2 Professional` | `browser-automation` | 3★ | `api-key` | [Source](https://github.com/PleasePrompto/notebooklm-skill) |
 | `oracle` | `L3 Specialist` | `browser-automation` | 3★ | `api-key` | [Source](https://github.com/steipete/oracle) |
-| `agent-architecture-audit` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/affaan-m/ECC) |
 | `agentmail-mcp` | `L2 Professional` | `coding-devtools` | 4★ | `api-key+mcp-required` | [Source](https://github.com/agentmail-to/agentmail-mcp) |
 | `android-native-dev` | `L2 Professional` | `coding-devtools` | 4★ | `direct` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/android-native-dev) |
-| `apk-redteam-pipeline` | `L2 Professional` | `coding-devtools` | 4★ | `browser-required` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
-| `bb-methodology` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `book-to-skill` | `L2 Professional` | `coding-devtools` | 4★ | `api-key` | [Source](https://github.com/virgiliojr94/book-to-skill) |
 | `build-project` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/rohitg00/ai-engineering-from-scratch) |
@@ -294,19 +294,14 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `anndata` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/K-Dense-AI/scientific-agent-skills) |
 | `baoyu-youtube-transcript` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `data-analyst` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/data-analyst) |
-| `edge-signal-aggregator` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-signal-aggregator) |
-| `edge-strategy-reviewer` | `L2 Professional` | `data-analysis` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-reviewer) |
 | `xlsx` | `L2 Professional` | `data-analysis` | 1★ | `direct` | Preset |
 | `8-bit-orbit-video-template` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
 | `adaptyv` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/K-Dense-AI/scientific-agent-skills) |
 | `after-hours-editorial-template` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
-| `agent-harness-construction` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `ai-music-album` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
 | `brandkit` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit) |
 | `design-taste-frontend` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill) |
 | `design-taste-frontend-v1` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1) |
-| `edge-concept-synthesizer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-concept-synthesizer) |
-| `edge-strategy-designer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-designer) |
 | `full-output-enforcement` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/output-skill) |
 | `generative-ui` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/ui-tools/skills/generative-ui) |
 | `gpt-taste` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill) |
@@ -330,7 +325,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `review-animations` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
 | `scroll-world` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
 | `stitch-design-taste` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/stitch-skill) |
-| `strategy-pivot-designer` | `L2 Professional` | `design-ui` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/strategy-pivot-designer) |
 | `caveman-discover` | `L3 Specialist` | `devops-cloud` | 3★ | `api-key` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `caveman-evidence-review` | `L3 Specialist` | `devops-cloud` | 3★ | `api-key` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `cli-backup-sync` | `L3 Specialist` | `devops-cloud` | 4★ | `direct` | [Source](https://github.com/diegosouzapw/OmniRoute) |
@@ -385,7 +379,12 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `earnings-trade-analyzer` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-trade-analyzer) |
 | `economic-calendar-fetcher` | `L3 Specialist` | `finance-trading` | 4★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher) |
 | `edge-candidate-agent` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-candidate-agent) |
+| `edge-concept-synthesizer` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-concept-synthesizer) |
 | `edge-hint-extractor` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-hint-extractor) |
+| `edge-pipeline-orchestrator` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator) |
+| `edge-signal-aggregator` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-signal-aggregator) |
+| `edge-strategy-designer` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-designer) |
+| `edge-strategy-reviewer` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-reviewer) |
 | `etf-premium` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills) |
 | `exposure-coach` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/exposure-coach) |
 | `finance-sentiment` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment) |
@@ -415,6 +414,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `stock-correlation` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-correlation) |
 | `stock-daily-analysis-skill` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/chjm-ai/stock-daily-analysis-skill) |
 | `stock-liquidity` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/market-analysis/skills/stock-liquidity) |
+| `strategy-pivot-designer` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/strategy-pivot-designer) |
 | `tam-adj-peg` | `L3 Specialist` | `finance-trading` | 4★ | `direct` | [Source](https://github.com/haskaomni/serenity-skill/tree/main/skills/tam-adj-peg) |
 | `tech-earnings-deepdive` | `L3 Specialist` | `finance-trading` | 4★ | `browser-required` | [Source](https://github.com/star23/Day1Global-Skills/tree/main/tech-earnings-deepdive) |
 | `theme-detector` | `L3 Specialist` | `finance-trading` | 3★ | `api-key` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/theme-detector) |
@@ -496,7 +496,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `vision-analysis` | `L2 Professional` | `media-generation` | 3★ | `api-key+mcp-required` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `claude-mem-plugin` | `L3 Specialist` | `memory-context` | 5★ | `api-key` | [Source](https://github.com/thedotmack/claude-mem) |
 | `policy-monitor` | `L3 Specialist` | `policy-monitoring` | 4★ | `direct` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/policy-monitor) |
-| `agent-eval` | `L3 Specialist` | `productivity-pkm` | 4★ | `direct` | [Source](https://github.com/affaan-m/ECC) |
 | `ima` | `L2 Professional` | `productivity-pkm` | 4★ | `api-key` | [Source](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
 | `ablation-planner` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `ad-creative` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/nexu-io/open-design) |
@@ -507,13 +506,9 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `arxiv` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `auto-paper-improvement-loop` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `baoyu-url-to-markdown` | `L2 Professional` | `search-research` | 4★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
-| `bb-local-toolkit` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
 | `bear-notes` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/openclaw/openclaw) |
-| `bug-bounty` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
-| `bugcrowd-reporting` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
 | `dasheng-hotspot-radar` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
 | `discord-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/discord-reader) |
-| `edge-pipeline-orchestrator` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator) |
 | `gpt-image` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/wuyoscar/GPT-Image2-Skill) |
 | `linkedin-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/linkedin-reader) |
 | `minimax-multimodal-toolkit` | `L2 Professional` | `search-research` | 3★ | `api-key` | [Source](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-multimodal-toolkit) |
@@ -528,6 +523,11 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `telegram-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/telegram-reader) |
 | `twitter-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/twitter-reader) |
 | `analyzing-active-directory-acl-abuse` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
+| `apk-redteam-pipeline` | `L3 Specialist` | `security-audit` | 3★ | `browser-required` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
+| `bb-local-toolkit` | `L3 Specialist` | `security-audit` | 3★ | `api-key` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
+| `bb-methodology` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
+| `bug-bounty` | `L3 Specialist` | `security-audit` | 3★ | `api-key` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
+| `bugcrowd-reporting` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/elementalsouls/Claude-BugHunter) |
 | `code-review` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/shareAI-lab/learn-claude-code) |
 | `gws-admin-reports` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/googleworkspace/cli) |
 | `ponytail-audit` | `L3 Specialist` | `security-audit` | 4★ | `direct` | [Source](https://github.com/DietrichGebert/ponytail) |

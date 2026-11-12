@@ -104,12 +104,26 @@ CATEGORY_KEYWORDS = [
     ("devops-cloud", ["database", "cloud", "deploy", "ops", "sql", "server"]),
 ]
 
-# Keywords that also sit inside unrelated English words: match these on word
-# boundaries only. Demonstrated false hits without the boundary: "ui" in
-# "quick"/"build"/"guide" (design-ui), "ios" in "ratios"/"scenarios"
-# (coding-devtools), "media" in "immediate"/"medians" (media-generation),
-# "vision" in "revision"/"provision" (media-generation).
-BOUNDARY_KEYWORDS = {"ui", "ios", "media", "vision"}
+# 这些关键词也嵌在无关英文单词里，只能按词边界匹配。每个词都有实测误命中：
+#   ui        -> quick / build / guide        (design-ui)
+#   ios       -> ratios / scenarios           (coding-devtools)
+#   media     -> immediate / medians          (media-generation)
+#   vision    -> revision / provision         (media-generation)
+#   dev       -> developer / development      (coding-devtools)
+#   market    -> marketing                    (finance-trading)
+#   compress  -> compression / compressed     (media-generation)
+#   design    -> designer                     (design-ui)
+#   valuation -> evaluation                   (finance-trading)
+# 反例：search 嵌在 research 里不算误命中——research 本身就是 search-research 的
+# 关键词，加边界只会换个命中词、分类不变，所以不收进来。
+BOUNDARY_KEYWORDS = {
+    "ui", "ios", "media", "vision",
+    "dev", "market", "compress", "design", "valuation",
+}
+# 词边界允许有限屈折：复数、过去式、-ous 形容词仍要命中（stocks / images /
+# tasks / dangerous / compressed）。故意不放过 -ing 和 -er，否则 marketing 又会
+# 命中 market、交易策略 designer 又会命中 design。
+BOUNDARY_INFLECTION = r"(?:s|es|ed|ous)?"
 
 # 人工核对过的分类覆盖。关键词分类器只是启发式，命中不了的会落到兜底桶
 # commerce-ops；tests/test_category_classifier.py 断言兜底桶只能由本表产生，
@@ -205,6 +219,30 @@ CATEGORY_OVERRIDES = {
     # 其余逐个核对过 SKILL.md 的误判
     "after-hours-editorial-template": "design-ui",
     "analytical-method-validation": "legal-compliance",
+    # tradermonty/claude-trading-skills 交易 edge 流水线：同库的 edge-candidate-agent、
+    # edge-hint-extractor 本来就是 finance-trading。designer 是"策略设计"不是 UI 设计，
+    # research 是"策略研究"不是检索技能，data-analysis 也盖不住整条交易流水线。
+    "edge-concept-synthesizer": "finance-trading",
+    "edge-pipeline-orchestrator": "finance-trading",
+    "edge-signal-aggregator": "finance-trading",
+    "edge-strategy-designer": "finance-trading",
+    "edge-strategy-reviewer": "finance-trading",
+    "strategy-pivot-designer": "finance-trading",
+    # elementalsouls/Claude-BugHunter 漏洞赏金家族：整库都是安全测试。
+    # 描述里的 developer psychology / Play Store developer page 命中 dev，
+    # tech stack research 命中 research，都不是它们的本职。
+    "apk-redteam-pipeline": "security-audit",
+    "bb-local-toolkit": "security-audit",
+    "bb-methodology": "security-audit",
+    "bug-bounty": "security-audit",
+    "bugcrowd-reporting": "security-audit",
+    # affaan-m/ECC 家族：都是 Agent 工程技能，与同库 agent-introspection-debugging 一致。
+    # agent-harness-construction 的 "Design and optimize" 指动作空间不是界面；
+    # agent-eval 的 tasks 是评测用例不是待办清单；agent-architecture-audit 审的是
+    # Agent 栈可靠性，不是安全。
+    "agent-architecture-audit": "agent-orchestration",
+    "agent-eval": "agent-orchestration",
+    "agent-harness-construction": "agent-orchestration",
 }
 
 
@@ -737,7 +775,7 @@ def classify_category(skill_id: str, description: str) -> str:
         return "core-agent"
     for category, keywords in CATEGORY_KEYWORDS:
         if any(
-            re.search(rf"\b{re.escape(keyword)}\b", haystack)
+            re.search(rf"\b{re.escape(keyword)}{BOUNDARY_INFLECTION}\b", haystack)
             if keyword in BOUNDARY_KEYWORDS
             else keyword in haystack
             for keyword in keywords

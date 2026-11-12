@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-12 09:12:38",
+  "timestamp": "2026-11-12 10:04:00",
   "status": "WARN",
   "summary": {
     "catalog_skills": 317,
@@ -111,15 +111,7 @@
       "env": "OPENAI_API_KEY"
     },
     {
-      "skill": "agent-architecture-audit",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "alphaxiv",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "bb-local-toolkit",
       "env": "OPENAI_API_KEY"
     },
     {
@@ -129,10 +121,6 @@
     {
       "skill": "book-to-skill",
       "env": "GITHUB_TOKEN"
-    },
-    {
-      "skill": "bug-bounty",
-      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "claude-certification",
@@ -223,6 +211,10 @@
       "env": "PEXELS_API_KEY"
     },
     {
+      "skill": "agent-architecture-audit",
+      "env": "OPENAI_API_KEY"
+    },
+    {
       "skill": "agentmail-cli",
       "env": "AGENTMAIL_API_KEY"
     },
@@ -279,8 +271,16 @@
       "env": "ZAI_API_KEY"
     },
     {
+      "skill": "bb-local-toolkit",
+      "env": "OPENAI_API_KEY"
+    },
+    {
       "skill": "breakout-trade-planner",
       "env": "TUSHARE_TOKEN"
+    },
+    {
+      "skill": "bug-bounty",
+      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "canslim-screener",
@@ -654,10 +654,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/after-hours-editorial-template"
     },
     {
-      "skill": "agent-harness-construction",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-harness-construction"
-    },
-    {
       "skill": "ai-music-album",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ai-music-album"
     },
@@ -686,20 +682,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-youtube-transcript"
     },
     {
-      "skill": "bb-methodology",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bb-methodology"
-    },
-    {
       "skill": "bear-notes",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bear-notes"
     },
     {
       "skill": "behavior-validator",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/behavior-validator"
-    },
-    {
-      "skill": "bugcrowd-reporting",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bugcrowd-reporting"
     },
     {
       "skill": "build-project",
@@ -744,26 +732,6 @@
     {
       "skill": "discord-reader",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/discord-reader"
-    },
-    {
-      "skill": "edge-concept-synthesizer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-concept-synthesizer"
-    },
-    {
-      "skill": "edge-pipeline-orchestrator",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-pipeline-orchestrator"
-    },
-    {
-      "skill": "edge-signal-aggregator",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-signal-aggregator"
-    },
-    {
-      "skill": "edge-strategy-designer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-strategy-designer"
-    },
-    {
-      "skill": "edge-strategy-reviewer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-strategy-reviewer"
     },
     {
       "skill": "feishu-doc-creator",
@@ -894,10 +862,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/stitch-design-taste"
     },
     {
-      "skill": "strategy-pivot-designer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/strategy-pivot-designer"
-    },
-    {
       "skill": "telegram-reader",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/telegram-reader"
     },
@@ -1022,6 +986,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-eval"
     },
     {
+      "skill": "agent-harness-construction",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-harness-construction"
+    },
+    {
       "skill": "analyzing-active-directory-acl-abuse",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analyzing-active-directory-acl-abuse"
     },
@@ -1038,12 +1006,20 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-translate"
     },
     {
+      "skill": "bb-methodology",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bb-methodology"
+    },
+    {
       "skill": "bilibili-upload-bridge",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bilibili-upload-bridge"
     },
     {
       "skill": "blueprint-figure",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/blueprint-figure"
+    },
+    {
+      "skill": "bugcrowd-reporting",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bugcrowd-reporting"
     },
     {
       "skill": "capability-evolver",
@@ -1290,10 +1266,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-mcp"
     },
     {
-      "skill": "apk-redteam-pipeline",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/apk-redteam-pipeline"
-    },
-    {
       "skill": "course-guide",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/course-guide"
     },
@@ -1366,6 +1338,26 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-backup-sync"
     },
     {
+      "skill": "edge-concept-synthesizer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-concept-synthesizer"
+    },
+    {
+      "skill": "edge-pipeline-orchestrator",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-pipeline-orchestrator"
+    },
+    {
+      "skill": "edge-signal-aggregator",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-signal-aggregator"
+    },
+    {
+      "skill": "edge-strategy-designer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-strategy-designer"
+    },
+    {
+      "skill": "edge-strategy-reviewer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/edge-strategy-reviewer"
+    },
+    {
       "skill": "eigenflux",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/eigenflux"
     },
@@ -1398,6 +1390,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/stock-liquidity"
     },
     {
+      "skill": "strategy-pivot-designer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/strategy-pivot-designer"
+    },
+    {
       "skill": "tam-adj-peg",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/tam-adj-peg"
     },
@@ -1418,10 +1414,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/us-market-bubble-detector"
     },
     {
-      "skill": "agent-architecture-audit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-architecture-audit"
-    },
-    {
       "skill": "alphaxiv",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaxiv"
     },
@@ -1438,20 +1430,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-markdown-to-html"
     },
     {
-      "skill": "bb-local-toolkit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bb-local-toolkit"
-    },
-    {
       "skill": "book-to-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/book-to-skill"
     },
     {
       "skill": "btc-bottom-model",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/btc-bottom-model"
-    },
-    {
-      "skill": "bug-bounty",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bug-bounty"
     },
     {
       "skill": "claude-certification",
@@ -1546,6 +1530,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/abusing-dpapi-for-credential-access"
     },
     {
+      "skill": "apk-redteam-pipeline",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/apk-redteam-pipeline"
+    },
+    {
       "skill": "baoyu-compress-image",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-compress-image"
     },
@@ -1594,6 +1582,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/us-value-investing"
     },
     {
+      "skill": "agent-architecture-audit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-architecture-audit"
+    },
+    {
       "skill": "agentmail-cli",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-cli"
     },
@@ -1610,8 +1602,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-image-gen"
     },
     {
+      "skill": "bb-local-toolkit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bb-local-toolkit"
+    },
+    {
       "skill": "breakout-trade-planner",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/breakout-trade-planner"
+    },
+    {
+      "skill": "bug-bounty",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/bug-bounty"
     },
     {
       "skill": "canslim-screener",

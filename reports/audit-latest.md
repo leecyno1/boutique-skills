@@ -1,6 +1,6 @@
 # Boutique Skills Audit
 
-- Time: 2026-11-12 09:12:38
+- Time: 2026-11-12 10:04:00
 - Status: **WARN**
 - Catalog skills: 317
 - Audited skills: 311
@@ -40,12 +40,9 @@
 - agentmail-mcp: `AGENTMAIL_API_KEY`
 - minimax-web-search: `MINIMAX_API_KEY`
 - gpt-image: `OPENAI_API_KEY`
-- agent-architecture-audit: `OPENAI_API_KEY`
 - alphaxiv: `OPENAI_API_KEY`
-- bb-local-toolkit: `OPENAI_API_KEY`
 - book-to-skill: `GH_TOKEN`
 - book-to-skill: `GITHUB_TOKEN`
-- bug-bounty: `OPENAI_API_KEY`
 - claude-certification: `GH_TOKEN`
 - claude-certification: `GITHUB_TOKEN`
 - cli-batches: `OPENAI_API_KEY`
@@ -68,6 +65,7 @@
 - baoyu-post-to-wechat: `WECHAT_BAOYU_APP_SECRET`
 - macro-regime-detector: `FMP_API_KEY`
 - media-downloader: `PEXELS_API_KEY`
+- agent-architecture-audit: `OPENAI_API_KEY`
 - agentmail-cli: `AGENTMAIL_API_KEY`
 - agentmail-toolkit: `AGENTMAIL_API_KEY`
 - agentmail-toolkit: `OPENAI_API_KEY`
@@ -82,7 +80,9 @@
 - baoyu-image-gen: `OPENROUTER_API_KEY`
 - baoyu-image-gen: `REPLICATE_API_TOKEN`
 - baoyu-image-gen: `ZAI_API_KEY`
+- bb-local-toolkit: `OPENAI_API_KEY`
 - breakout-trade-planner: `TUSHARE_TOKEN`
+- bug-bounty: `OPENAI_API_KEY`
 - canslim-screener: `FMP_API_KEY`
 - caveman-discover: `OPENAI_API_KEY`
 - caveman-evidence-review: `OPENAI_API_KEY`

@@ -1,5 +1,27 @@
 # Findings
 
+## 2026-11-12（逐个核对宽匹配：三个家族归位，词边界扩到 9 个）
+
+已解决：
+
+- **触发**：上一轮留了待办——`search` 命中 "research"、`market` 命中 "marketing"、`dev` 命中 "development"、`compress` 命中 "compressed" 这类宽匹配没动。用户要求逐个核对，不许一刀切改匹配器。
+- **核对方法**：写探针枚举目录里所有"关键词只以嵌词形式命中"的技能（24 个），逐个读 SKILL.md 描述判断；再用 faithful 模拟器（复刻全部 early-return 与覆盖表，先验证能 0 误差重算现有 317 个分类）测量每种改法的影响面，最后只采纳有实证的那部分。
+- **判定为正确、不动的**：`stocks`/`images`/`tasks`/`agents`/`dangerous`/`trader` 等合法屈折（dividend-growth-pullback-screener、earnings-calendar、finviz-screener、institutional-flow-tracker、pead-screener、baoyu-article-illustrator、baoyu-post-to-weibo/x、seedance2-skill、capability-evolver、analyzing-active-directory-acl-abuse、ibd-distribution-day-monitor、market-breadth-analyzer、trader-memory-core）；`notebooklm-py` 归 search-research 站得住（描述里 research 是整词，且 notebooklm 本身就是该分类关键词）。
+- **判定为错分、已归位的 14 个**（全部走 `CATEGORY_OVERRIDES`，按家族分组写明理由）：
+  - `tradermonty/claude-trading-skills` 交易 edge 流水线 6 个 → **finance-trading**：edge-strategy-designer / strategy-pivot-designer（"designer" 是策略设计不是 UI 设计，原判 design-ui）、edge-concept-synthesizer（同前）、edge-pipeline-orchestrator（"research" 原判 search-research）、edge-signal-aggregator / edge-strategy-reviewer（原判 data-analysis）。同库 edge-candidate-agent、edge-hint-extractor 本来就是 finance-trading，全库 41 个技能现在同岗。
+  - `elementalsouls/Claude-BugHunter` 漏洞赏金 5 个 → **security-audit**：bb-methodology / apk-redteam-pipeline（"developer psychology"、"Play Store developer page" 里的 dev 原判 coding-devtools）、bb-local-toolkit / bug-bounty / bugcrowd-reporting（"tech stack research" 原判 search-research）。
+  - `affaan-m/ECC` Agent 工程 3 个 → **agent-orchestration**：agent-harness-construction（"Design and optimize" 指动作空间与工具定义，原判 design-ui）、agent-eval（评测用例的 tasks 原判 productivity-pkm）、agent-architecture-audit（审 Agent 栈可靠性不是安全，原判 coding-devtools）。与同库 agent-introspection-debugging 一致。
+- **词边界扩到 9 个**：`BOUNDARY_KEYWORDS` = ui/ios/media/vision + **dev/market/compress/design/valuation**，每个都有具名实证：dev→developer（bb-methodology 等 3 个）、market→marketing（marketingskills、content-strategy 原本会被判 finance-trading，只靠覆盖表挡住）、compress→compression（cli-compression、caveman-compress 原本会被判 media-generation）、design→designer（两个策略 designer）、valuation→evaluation（dbskill 原本会被判 finance-trading）。
+- **`search` 经实测不收**：research 本身就是 search-research 的关键词，给 search 加边界只会把 notebooklm-py 的命中词从 search 换成 research，分类不变——没有实证危害就不进集合，避免集合虚胖。`task`/`mcp` 同理排除（task 只有合法复数 tasks；mcp 的嵌词是 webmcp，本来就是 MCP 相关）。
+- **屈折白名单**：新增 `BOUNDARY_INFLECTION = r"(?:s|es|ed|ous)?"`，保住 stocks/images/tasks/dangerous/compressed/designed/markets；**故意不放过 -ing 和 -er**，否则 marketing 又命中 market、策略 designer 又命中 design。实测两种屈折集合对 317 个技能的影响面差别只在两个 designer 上，取更小的那个。
+- **影响面（精确 14 个，其余 303 个零变化）**：finance-trading 73→79、security-audit 5→10、agent-orchestration 12→15、design-ui 34→30、coding-devtools 27→24、search-research 29→25、data-analysis 7→5、productivity-pkm 2→1；L2 128→115 / L3 177→190；5★ 100→91、4★ 152→157、3★ 59→63。**安装档 low/medium/high 未变（53/68/317），标准包仍 21 位、金融组合仍 28 位，逐字节相同。** 兜底桶仍为 0。
+- **门禁**：audit 317/311、missing_skills 0、duplicate_capabilities 0、standard_bundle_issues 0；syntax 1266 py + 394 js，errors 0；risk 15/15 new 0；6 个测试文件 27 个用例全 OK（分类器测试 6→7 用例）。
+
+待观察：
+
+- **归位会掉星，这是评分模型既有设计**：9 个技能 5★→4★（两个 designer、edge 家族 4 个、agent-harness-construction、bb-methodology、bugcrowd-reporting），4 个 4★→3★（agent-architecture-audit、apk-redteam-pipeline、bb-local-toolkit、bug-bounty）。原因是离开 L2 分类（-7 分）以及 finance-trading 风险档 low→medium（-6 分）。它们原先的高分是错分抬出来的，不是本轮压分；若认为"分类不该影响分数"，要单独改评分器。
+- **新增家族门禁**：`test_reviewed_families_stay_in_one_category` 断言上面三个库在目录里各自单一分类（41 / 5 / 4 个成员），关键词表日后再变也不会把它们拆散。新家族核对完可以照此加一条。
+
 ## 2026-11-11（分类器完善：消灭兜底桶与跨词误命中）
 
 已解决：
@@ -16,7 +38,7 @@
 待观察：
 
 - 分类联动评分与纵向分层，所以归位会改分数：seo-agentic 81→74、baoyu-image-gen 78→71、cli-backup-sync 92→79（都因离开 L2 分类）。这是评分模型既有设计，不是本轮引入；若认为“分类不该影响分数”，要单独改评分器。
-- 关键词表还有已知的宽匹配没动：`search` 命中 "research"、`market` 命中 "marketing"、`dev` 命中 "development"、`compress` 命中 "compressed"。这些要么结果尚可接受，要么已有覆盖表兜住；改成词边界会连带产生新兜底，需要逐个核对后再动。
+- ~~关键词表还有已知的宽匹配没动：`search` 命中 "research"、`market` 命中 "marketing"、`dev` 命中 "development"、`compress` 命中 "compressed"。~~ **2026-11-12 已逐个核对处理**：market/compress/dev/design/valuation 收进词边界集合，search 实测无危害不收，14 个错分技能按家族归位，见上一节。
 
 ## 2026-11-11（设计去重：taste 设为标准默认，其余按“优于或互补”筛）
 

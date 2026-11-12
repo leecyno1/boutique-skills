@@ -58,14 +58,19 @@ python3 tests/test_category_classifier.py
 - `check_new_risks.py`：把审计的 `(skill, file, pattern)` 风险命中与 `catalog/risky-baseline.json` 比对，出现基线外组合即阻断。放行一条必须在基线里写 `reason`，并在 `findings.md` 记录判定依据。
 - 两道门禁与审计任一非零退出，`weekly_cycle.sh` 因 `set -e` 中止，不会发布。
 
-## 分类器与兜底桶（2026-11-11 完善）
+## 分类器与兜底桶（2026-11-11 完善，2026-11-12 逐个核对宽匹配）
 
-`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看。
+`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表，94 条），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看，还会抬分或压分。
 
-两条硬规则：
+三条硬规则：
 
-- **跨词误命中必须挡掉**。`BOUNDARY_KEYWORDS = {"ui", "ios", "media", "vision"}` 只做词边界匹配：`ui` 曾把 "quick"/"build"/"guide" 判成 design-ui，`ios` 曾把 "ratios"/"scenarios" 判成 coding-devtools，`media` 曾把 "immediate"/"medians" 判成 media-generation，`vision` 曾把 "revision"/"provision" 判成 media-generation。加新关键词时，凡是能嵌在别的英文单词里的短词，都要进这个集合。
-- **兜底桶只能由人工覆盖产生**。`tests/test_category_classifier.py` 断言目录里任何 `commerce-ops` 技能都必须在 `CATEGORY_OVERRIDES` 里显式写明，并断言目录分类与分类器实时计算一致（防止手改目录或忘记重生成）。新技能落进兜底桶时，正确做法是读它的 SKILL.md、按同家族惯例给出分类并写进覆盖表，而不是留着错分。
+- **跨词误命中必须挡掉**。`BOUNDARY_KEYWORDS` 现为 9 个：`ui`（"quick"/"build"/"guide"）、`ios`（"ratios"/"scenarios"）、`media`（"immediate"/"medians"）、`vision`（"revision"/"provision"）、`dev`（"developer"/"development"）、`market`（"marketing"）、`compress`（"compression"/"compressed"）、`design`（"designer"）、`valuation`（"evaluation"）。每个词都有具名实证误命中才收进来——`search` 嵌在 "research" 里不算，因为 research 本身就是 search-research 的关键词，加边界只换命中词、分类不变。加新关键词时按同样标准判断。
+- **词边界允许有限屈折**。`BOUNDARY_INFLECTION = r"(?:s|es|ed|ous)?"`，保住 stocks / images / tasks / dangerous / compressed / designed / markets 这类合法变形；**故意不放过 -ing 和 -er**，否则 marketing 又会命中 market、交易策略 designer 又会命中 design。
+- **兜底桶只能由人工覆盖产生**。`tests/test_category_classifier.py`（7 用例）断言目录里任何 `commerce-ops` 技能都必须在 `CATEGORY_OVERRIDES` 里显式写明，并断言目录分类与分类器实时计算一致（防止手改目录或忘记重生成）。新技能落进兜底桶时，正确做法是读它的 SKILL.md、按同家族惯例给出分类并写进覆盖表，而不是留着错分。
+
+同库同岗的家族核对完要钉住：`test_reviewed_families_stay_in_one_category` 断言 `tradermonty/claude-trading-skills` 全库 finance-trading（41 个）、`elementalsouls/Claude-BugHunter` 全库 security-audit（5 个）、`affaan-m/ECC` 全库 agent-orchestration（4 个），关键词表日后再变也不会把它们拆散。
+
+改关键词表或覆盖表之前先跑影响面模拟（复刻全部早返回与覆盖表，先验证能 0 误差重算现有分类），改完必须 `python3 scripts/generate_enriched_catalog.py` 重生成并跑全部门禁。
 
 frontmatter 解析同样有回归测试：`description: >-` / `|-` 这类带 chomping 的块标量头必须解析出正文，不能把 `">-"` 当描述（曾影响 4 个技能，并让标准包 note 显示 `">-"`）。
 
