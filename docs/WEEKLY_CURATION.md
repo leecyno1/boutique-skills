@@ -60,7 +60,7 @@ python3 tests/test_category_classifier.py
 
 ## 分类器与兜底桶（2026-11-11 完善，2026-11-12 逐个核对宽匹配）
 
-`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表，101 条），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看，还会抬分或压分。
+`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表，102 条），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看，还会抬分或压分。
 
 三条硬规则：
 
@@ -71,6 +71,8 @@ python3 tests/test_category_classifier.py
 同库同岗的家族核对完要钉住：`test_reviewed_families_stay_in_one_category` 断言 `tradermonty/claude-trading-skills` 全库 finance-trading（41 个）、`elementalsouls/Claude-BugHunter` 全库 security-audit（5 个）、`affaan-m/ECC` 全库 agent-orchestration（4 个），关键词表日后再变也不会把它们拆散。
 
 改关键词表或覆盖表之前先跑影响面模拟（复刻全部早返回与覆盖表，先验证能 0 误差重算现有分类），改完必须 `python3 scripts/generate_enriched_catalog.py` 重生成并跑全部门禁。
+
+**门禁盲区：分类稳定性没有断言。** 分类器测试只保证"目录与分类器实时一致"，不保证"上游同步前后分类不变"。上游改一句描述就能静默改掉分类与评分而门禁全绿——2026-11-21 `book-to-skill` 因上游新增 "remote MCP book search" 被 search 关键词从 coding-devtools 挤成 search-research。同理，新入库技能可能全部错分却一个都不落进兜底桶（本轮 Jeffallan/claude-skills 5 个全错）。**所以每轮同步与入库后要 diff `primary_category`，逐个核对变化项，别只看门禁绿不绿。** 连字符复合词（`trade-offs` 里的 trade）加词边界也挡不住，只能显式覆盖。
 
 frontmatter 解析同样有回归测试：`description: >-` / `|-` 这类带 chomping 的块标量头必须解析出正文，不能把 `">-"` 当描述（曾影响 4 个技能，并让标准包 note 显示 `">-"`）。
 

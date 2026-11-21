@@ -125,7 +125,7 @@
 | `shader-dev` | 编程 / 工程工具 | 4★ | `direct` | [origin](https://github.com/MiniMax-AI/skills/tree/main/skills/shader-dev) |
 | `agentmail-mcp` | 编程 / 工程工具 | 4★ | `api-key+mcp-required` | [origin](https://github.com/agentmail-to/agentmail-mcp) |
 | `atlassian-mcp` | 编程 / 工程工具 | 4★ | `mcp-required` | [origin](https://github.com/Jeffallan/claude-skills) |
-| `book-to-skill` | 搜索 / 研究 / 情报 | 4★ | `api-key+mcp-required` | [origin](https://github.com/virgiliojr94/book-to-skill) |
+| `book-to-skill` | 编程 / 工程工具 | 4★ | `api-key+mcp-required` | [origin](https://github.com/virgiliojr94/book-to-skill) |
 | `course-guide` | 编程 / 工程工具 | 4★ | `mcp-required` | [origin](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `guizang-ppt-skill` | HTML 发布 / 视觉出版 | 4★ | `browser-required` | [origin](https://github.com/op7418/guizang-ppt-skill) |
 | `huashu-design` | 设计 / UI | 4★ | `browser-required` | [origin](https://github.com/alchaincyf/huashu-design) |

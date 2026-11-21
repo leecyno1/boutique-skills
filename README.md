@@ -260,6 +260,7 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `architecture-designer` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/Jeffallan/claude-skills) |
 | `atlassian-mcp` | `L2 Professional` | `coding-devtools` | 4★ | `mcp-required` | [Source](https://github.com/Jeffallan/claude-skills) |
 | `behavior-validator` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
+| `book-to-skill` | `L2 Professional` | `coding-devtools` | 4★ | `api-key+mcp-required` | [Source](https://github.com/virgiliojr94/book-to-skill) |
 | `build-project` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `caveman-commit` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
 | `caveman-compress` | `L2 Professional` | `coding-devtools` | 5★ | `direct` | [Source](https://github.com/JuliusBrussee/caveman) |
@@ -521,7 +522,6 @@ Skill suites are domain packs kept outside the standard no-duplicate bundle. Use
 | `auto-paper-improvement-loop` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `baoyu-url-to-markdown` | `L2 Professional` | `search-research` | 4★ | `browser-required` | [Source](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `bear-notes` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/openclaw/openclaw) |
-| `book-to-skill` | `L2 Professional` | `search-research` | 4★ | `api-key+mcp-required` | [Source](https://github.com/virgiliojr94/book-to-skill) |
 | `dasheng-hotspot-radar` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-hotspot-radar) |
 | `discord-reader` | `L2 Professional` | `search-research` | 5★ | `direct` | [Source](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/discord-reader) |
 | `gpt-image` | `L2 Professional` | `search-research` | 4★ | `api-key` | [Source](https://github.com/wuyoscar/GPT-Image2-Skill) |

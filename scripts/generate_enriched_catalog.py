@@ -265,6 +265,11 @@ CATEGORY_OVERRIDES = {
     "architecture-designer": "coding-devtools",
     "atlassian-mcp": "coding-devtools",
     "chaos-engineer": "devops-cloud",
+    # 上游描述漂移导致的改分类（2026-11-21 同步 virgiliojr94/book-to-skill 后出现）：
+    # 上游新增 "remote MCP book search" 功能，描述里的 search 抢在 mcp/skill-creator
+    # 之前命中，把 coding-devtools 挤成 search-research。本职仍是把书/文档转成 agent
+    # skill（与 skill-creator、writing-skills 同岗），检索只是找书的附带入口。
+    "book-to-skill": "coding-devtools",
 }
 
 

@@ -3,9 +3,9 @@
 | 类型 | 数量 |
 |---|---:|
 | 核心 Agent 能力 (`core-agent`) | 11 |
-| 搜索 / 研究 / 情报 (`search-research`) | 27 |
+| 搜索 / 研究 / 情报 (`search-research`) | 26 |
 | 浏览器 / 自动化 (`browser-automation`) | 6 |
-| 编程 / 工程工具 (`coding-devtools`) | 27 |
+| 编程 / 工程工具 (`coding-devtools`) | 28 |
 | 数据分析 (`data-analysis`) | 6 |
 | 文档 / 办公 (`docs-office`) | 10 |
 | 设计 / UI (`design-ui`) | 36 |
@@ -67,7 +67,6 @@
 | `twitter-reader` | `L2 Professional` | 5★ | `direct`, `l2`, `online`, `search-research`, `trading_finance` |
 | `agent-reach` | `L2 Professional` | 4★ | `browser-required`, `l2`, `offline`, `research`, `search-research`, `social`, `standard` |
 | `baoyu-url-to-markdown` | `L2 Professional` | 4★ | `baoyu`, `browser-required`, `l2`, `online`, `search-research` |
-| `book-to-skill` | `L2 Professional` | 4★ | `api-key+mcp-required`, `l2`, `online`, `search-research` |
 | `minimax-web-search` | `L2 Professional` | 4★ | `api-key+mcp-required`, `default_sentinel`, `l2`, `minimax_local_compat`, `online`, `search-research` |
 | `news-radar` | `L2 Professional` | 4★ | `l2`, `mcp-required`, `online`, `search-research` |
 | `alphaxiv` | `L2 Professional` | 4★ | `api-key`, `l2`, `online`, `search-research` |
@@ -115,6 +114,7 @@
 | `shader-dev` | `L2 Professional` | 4★ | `coding-devtools`, `default_sentinel`, `direct`, `l2`, `minimax_official`, `offline` |
 | `agentmail-mcp` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `default_sentinel`, `l2`, `online` |
 | `atlassian-mcp` | `L2 Professional` | 4★ | `coding-devtools`, `l2`, `mcp-required`, `online` |
+| `book-to-skill` | `L2 Professional` | 4★ | `api-key+mcp-required`, `coding-devtools`, `l2`, `online` |
 | `course-guide` | `L2 Professional` | 4★ | `coding-devtools`, `l2`, `mcp-required`, `offline` |
 | `claude-certification` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |
 | `cli-batches` | `L2 Professional` | 4★ | `api-key`, `coding-devtools`, `l2`, `online` |

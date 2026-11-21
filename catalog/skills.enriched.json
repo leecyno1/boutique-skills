@@ -26,7 +26,7 @@
     "by_category": {
       "agent-orchestration": 15,
       "browser-automation": 6,
-      "coding-devtools": 27,
+      "coding-devtools": 28,
       "communication": 3,
       "core-agent": 11,
       "data-analysis": 6,
@@ -45,7 +45,7 @@
       "memory-context": 1,
       "policy-monitoring": 1,
       "productivity-pkm": 2,
-      "search-research": 27,
+      "search-research": 26,
       "security-audit": 10,
       "writing-content": 17
     },
@@ -8919,13 +8919,13 @@
         "needs_origin_review": false
       },
       "horizontal_tier": "L2 Professional",
-      "primary_category": "search-research",
-      "category_label": "搜索 / 研究 / 情报",
+      "primary_category": "coding-devtools",
+      "category_label": "编程 / 工程工具",
       "tags": [
         "api-key+mcp-required",
+        "coding-devtools",
         "l2",
-        "online",
-        "search-research"
+        "online"
       ],
       "dependencies": {
         "requires_api_keys": true,

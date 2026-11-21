@@ -1,5 +1,35 @@
 # Findings
 
+## 2026-11-21（周度治理：11 步跑通并发布，新入库 5 个技能全部静默错分已归位）
+
+已解决（全流程完成，双远端已同步）：
+
+- **背景**：11-14 定时运行停在第 9 步兜底桶门禁，本地修复并复验后第 10-11 步未执行，378 项改动（含 11 个新入库技能）悬挂一周，远端仍在 `c8ad942`。本轮完整跑完 11 步，把 11-14 与 11-21 两周成果一并发布。
+- **发现**：评估 29 个候选，3 个 import 判定，实际入库 5 个技能，全部来自首次入库的 `Jeffallan/claude-skills`（12471★，MIT）：angular-architect、api-designer、architecture-designer、atlassian-mcp、chaos-engineer。`alchaincyf/nuwa-skill` 连续两轮 0 落盘（导入函数静默缺口，本轮未修）；`cheaper-inference/omniroute` 的 5 个 CLI 技能早已在库。
+- **主动介入 1：5 个新技能全部静默错分**。没有一个落进兜底桶，所以门禁不会拦，但分类全错。逐个取证触发词后加 5 条 `CATEGORY_OVERRIDES`，未动关键词表：
+  - `angular-architect`：`writing Angular tests` 命中 writing → writing-content。本职是 Angular 17+ 框架实现，按 frontend-dev / react-native-dev / flutter-dev 惯例归 **coding-devtools**。
+  - `api-designer`：`planning API architecture` 命中 planning → agent-orchestration。本职是 REST/GraphQL/OpenAPI 规范，归 **coding-devtools**。
+  - `architecture-designer`：`technology trade-offs` 里的 trade 子串命中 → finance-trading。**连字符复合词 `\btrade\b` 照样命中，加词边界救不了**，只能显式覆盖。本职是系统架构/ADR，归 **coding-devtools**。
+  - `atlassian-mcp`：`searching Confluence pages` 命中 search → search-research。本职是 Jira/Confluence MCP 集成与服务器鉴权，按 agentmail-mcp 惯例归 **coding-devtools**。
+  - `chaos-engineer`：`Designs chaos experiments` 命中 design+s（合法屈折）→ design-ui。本职是分布式系统韧性/SRE 运维，归 **devops-cloud**。
+  - 该库 5 个岗位各不相同，**不是单一分类家族**，不适用 `test_reviewed_families_stay_in_one_category` 那种断言。
+- **主动介入 2：上游描述漂移会静默改分类**。本周同步 `virgiliojr94/book-to-skill`（9 改 + 2 增）后，上游新增 "remote MCP book search" 功能，描述里的 search 抢在 mcp/skill-creator 之前命中，把 `book-to-skill` 从 coding-devtools 挤成 search-research。本职仍是把书/文档转成 agent skill（与 skill-creator、writing-skills 同岗），检索只是找书的附带入口，已加覆盖归位。**这是现有门禁的盲区：分类器测试只断言"目录与分类器实时一致"，不断言"同步前后分类稳定"，上游改一句描述就能静默改掉分类与评分。**
+- **影响面**：覆盖表 96→102 条。在库 327 个技能分类零变化（介入 1 前模拟验证），介入 2 精确 1 个（book-to-skill，score 81 不变）。最终 coding-devtools 24→28、devops-cloud 3→4、search-research 27→26、design-ui 36 不变；兜底桶仍 0。
+- **上游同步**：检查 311 个来源，**0 error**（11-14 的 market-breadth-analyzer 瞬时超时未复现）；28 个技能更新，133 改 + 94 增 = 227 个文件变更，主力是 tradermonty/claude-trading-skills 19 个、DeepTutor +28 文件、huashu-design 13 改 +10 增。**origin 迁移 0、路径失效 0、仓库 404 0**，上游本周无重组。
+- **出库**：0 项（311 个上游全部存活，无路径删除、无低分、无被支配重复）。
+- **门禁全绿**：audit 332/326，missing_skills 0、duplicate_capabilities 0、missing_native_origins 0、standard_bundle_issues 0；syntax 1372 py + 397 js，errors 0；risk 15=15、new 0、resolved 0；6 个测试文件 27 用例 OK。
+- **组合**：标准包 21 位（frontend 仍 `design-taste-frontend` 96，跳过位仍 email-agent / ima-notes-knowledge / media-download）、金融组合 28 位，均 ≤40。
+- **发布**：`e4d946a`，750 个文件，HEAD / origin/main / gitee/main 三方 SHA 一致，两个远端都走 HTTPS 直连、未触发 SSH 回退；4 个受保护文件未入提交，发布后工作区干净。分类归位的补充提交见下方 SHA。
+
+待观察：
+
+- **卸载建议从 0 跳到 97，根因是 Qoder 侧又一次批量还原**（不是新判据、不是评分变化）。取证：11-07 报告 installed 237（qoder 132 / codex 100 / agents 3 / lingma 2），本轮 370，qoder 活目录 132→267（+135）。97 项 = 96 个唯一技能（brand-guidelines 双运行时）+ 96 qoder / 1 codex；其中 95 个从未收录于仓库、91 个零调用记录，只有 `nano-pdf` 属已退役。这批目录 mtime 仍是 2026-09-16(32) / 08-06(19) / 02-03(16) 等旧日期，与本地 `~/.qoder/skills-archive`（183 个目录）只有 1 个重合，**说明不是从本地归档移回，而是客户端侧还原/重装**，与待办 2 记录的现象同类。含义不变：归档式卸载对客户端重装不具持久性，**卸载确认应当轮执行，不要跨周悬挂**。全部 97 项 status=pending，未执行任何卸载。
+- **discover 1 项**：`computer-use`（qoder，历史 73 次调用、近 30 天 0 次、未收录），建议纳入发现流程复核；注意它可能由 Qoder 插件提供，收录前要先确认 canonical 上游。
+- **84 个来源无法内容同步**：`metadata_only_root_no_skill_md` 84（11-14 是 74）+ `metadata_only_root_too_large` 1，origin 指向仓库根目录且无 SKILL.md，只能核验存在性。这是长期覆盖缺口，要逐个补 origin 路径才能真正纳入周更。
+- **导入函数静默 0 落盘**：`collect_skill_files` 抓取为空或超限时静默 `continue`，nuwa-skill 连续两轮因此 0 落盘却无日志。补一条 warn 即可，本轮未改。
+- **Jeffallan/claude-skills 只入库 5 个**：该库有上百个工程专家技能，本轮只落 5 个。是否继续收录、按什么岗位筛选，需人工裁定；继续收录时注意每个都要单独核对分类，不能按单一家族处理。
+- **EGM 家族分类语义**（11-14 遗留，未裁定）：egm-brainstorm/draft/drift-report/resolve/bootstrap 现全在 design-ui，但内容是软件设计文档/README 契约工作流，语义上更接近 docs-office 或 agent-orchestration。
+
 ## 2026-11-14（周度治理：兜底桶门禁拦下两个新入库技能）
 
 已解决（本地修复并复验，第 10-11 步未执行）：
