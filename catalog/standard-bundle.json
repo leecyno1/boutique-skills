@@ -1,6 +1,6 @@
 {
   "schema_version": "2026.05.17",
-  "generated_at": "2026-11-12",
+  "generated_at": "2026-11-21",
   "max_skills": 40,
   "dedupe_rule": "one highest-scored skill per capability and conflict_group; base skills only (packs are reference recommendations); Open/Hermes preset skills excluded; third-party API-key skills excluded (LLM keys and GitHub tokens exempt)",
   "api_key_policy": {
@@ -95,8 +95,8 @@
       "capability": "browser-automation",
       "skill": "agent-browser",
       "category": "core-agent",
-      "stars": 4,
-      "score": 89,
+      "stars": 5,
+      "score": 91,
       "access_mode": "browser-required",
       "conflict_group": "browser-automation",
       "origin_url": "https://openclawdoc.com/docs/skills/clawhub/",
@@ -166,7 +166,7 @@
       "access_mode": "direct",
       "conflict_group": "design-taste-frontend",
       "origin_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill",
-      "note": "tasteskill 2.5.0, the anti-slop frontend skill. Builds professional company websites at the level of figma.com and x.ai: plain copy, one system, one section per screen, equal edges, real photographs and real product UI (product renders when there are no photographs), with shader effects, scenes and moments only on tech, gaming and software pages, quiet micro-interactions, and a checker that enforces it in a real browser. Use this whenever you build, design, redesign, restyle, polish or review a landing page, company, product, shop, cafe, hotel, studio, SaaS, AI, developer-tool or game site, in any stack (HTML/CSS, React, Next.js, Vue, Svelte, Astro, Tailwind), or when the user says a page looks generic, templated or \"AI-made\"."
+      "note": "tasteskill 2.5.1, the anti-slop frontend skill. Builds professional company websites at the level of figma.com and x.ai: plain copy in a voice of its own, one system, one section per screen, equal edges, real photographs and real product UI (licensed stand-in photographs when the client has none; a product render only when the brief asks for 3D), a hero entrance and one or two dealt moments on every page, shader effects and scenes only on tech, gaming and software pages, quiet micro-interactions, and a checker and finish gate that enforce it in a real browser. Use this whenever you build, design, redesign, restyle, polish or review a landing page, company, product, shop, cafe, hotel, studio, SaaS, AI, developer-tool or game site, as static HTML/CSS or inside an existing React, Next.js, Vue, Svelte, Astro or Tailwind project, or when the user says a page looks generic, templated or \"AI-made\"."
     },
     {
       "capability": "fullstack",
@@ -184,7 +184,7 @@
       "skill": "gpt-image-2-style-library",
       "category": "media-generation",
       "stars": 4,
-      "score": 86,
+      "score": 85,
       "access_mode": "direct",
       "conflict_group": "image-generation",
       "origin_url": "https://github.com/freestylefly/awesome-gpt-image-2",
@@ -254,7 +254,7 @@
       "access_mode": "direct",
       "conflict_group": "content-strategy",
       "origin_url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy",
-      "note": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content strategy,\" \"what should I write about,\" \"content ideas,\" \"blog strategy,\" \"topic clusters,\" \"content planning,\" \"editorial calendar,\" \"content marketing,\" \"content roadmap,\" \"what content should I create,\" \"blog topics,\" \"content pillars,\" or \"I don't know what to write.\" Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social."
+      "note": "When the user wants to plan content, or asks which topic or piece to prioritize, what to write about, or why posts bring no customers: topic clusters, editorial calendars, roadmaps tied to customers and search. For writing pieces, see copywriting. For SEO audits, see seo-audit. For social content, see social."
     },
     {
       "capability": "writing",

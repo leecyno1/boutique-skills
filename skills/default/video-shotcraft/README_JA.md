@@ -8,9 +8,9 @@
 
 # video-shotcraft
 
-[English](README.md) | [中文](README_CN.md) | **日本語** | [Русский](README_RU.md)
+[English](README.md) | [中文](README_CN.md) | [繁體中文](README_TW.md) | **日本語** | [Русский](README_RU.md)
 
-[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
+[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/) <a href="#wechat-community"><img src="https://img.shields.io/badge/WeChat%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97-07C160?style=flat&amp;logo=wechat&amp;logoColor=white" alt="WeChat グループ" height="20"></a>
 [![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
 [![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
@@ -60,13 +60,12 @@ Claude Code や Codex に「プロダクトのプロモーション動画を作�
 <table>
 <tr>
 <td align="center" valign="middle" width="25%">
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><img src="./assets/readme/sponsors/packycode.png" width="200" alt="PackyCode ロゴ"></a><br>
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><b>PackyCode</b></a>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><img src="./assets/readme/sponsors/apinebula.png" width="200" alt="APINEBULA ロゴ"></a><br>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><b>APINEBULA</b></a>
 </td>
 <td>
-  <p>PackyCode は、1 つの API エンドポイントと API キーで主要な AI モデルにアクセスできる、高速で安定した API 中継サービスです。自動フェイルオーバーと、Codex / Claude Code 専用の高速ルートを提供します。</p>
-  <p>新規ユーザーには $1 分の無料クレジットと初回チャージ割引があり、対象ルートでは最大 80% オフ。人民元でチャージでき、為替レートへの上乗せや追加のチャージ手数料はありません。</p>
-  <p><a href="https://www.packyapi.ai/register?aff=l9IZ">PackyCode を始める →</a></p>
+  <p>本プロジェクトをご支援いただいた APINEBULA に感謝します！APINEBULA は、银河录像局が運営するエンタープライズ向け AI 統合プラットフォームです。親プラットフォームのリソースを活用し、開発者、チーム、企業に安定した費用対効果の高い大規模言語モデル API を提供します。Claude、GPT、Gemini など主要モデルのフル機能版に単一の API でアクセスでき、モデル料金は通常価格の 6% から。企業向けの高い同時処理能力、正式な契約、法人名義の銀行振込、請求書発行にも対応しています。</p>
+  <p><a href="https://apinebula.ai/ref/HLROcb4p">こちらのリンクから登録</a>し、チャージ時にクーポンコード <b>video</b> を入力すると、<b>10% オフ</b>になります。</p>
 </td>
 </tr>
 <tr>
@@ -296,3 +295,15 @@ BGM と既存テンプレート音声の提供元
     <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
   </picture>
 </a>
+
+<a id="wechat-community"></a>
+
+## 💬 WeChat グループ
+
+「Vincent 的 AI 交流群 3」で、AI アプリ、プログラミング、動画制作について交流しましょう。
+
+<a href="assets/wechat-group.jpg?v=3"><img src="assets/wechat-group.jpg?v=3" alt="Vincent の AI WeChat グループ参加用 QR コード" width="400"></a>
+
+WeChat で QR コードを読み取って参加できます。スマートフォンでは画像を保存し、WeChat のスキャン機能でアルバムから選んでください。
+
+この QR コードは **2026-11-26 より前**まで有効です（WeChat の表示を優先）。期限切れの場合は、[X で Vincent に連絡](https://x.com/VincentWei93)して最新の参加方法を確認してください。

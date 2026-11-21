@@ -54,6 +54,65 @@ If the launcher reports that `jsonschema` is not importable AND `uv` is not on `
 
 Do **not** treat the thesis store as unavailable and do **not** mutate `state/theses/*.yaml` by hand to work around a missing dependency — schema validation is part of thesis state integrity.
 
+Equity accounting is long-only. Do not ingest parabolic-short plans or record
+short-equity trades through `manual`; there is no adapter for those plans.
+Explicit SHORT directions are rejected before they can be discarded by raw
+registration, manual ingest, equity opening or shares-report attachment. Generic
+registration does not import a raw position: use validated futures attachment or
+`open-position --contracts` for futures LONG/SHORT.
+
+When both initial prices are supplied, they must be finite numeric/non-bool
+values. Positive initial stop > positive entry is rejected at manual ingest,
+shares-report attachment and default equity activation (using the actual fill). Absent
+optional pairs and existing finite nonpositive-price behavior remain compatible.
+Do not apply this initial-entry rule to an ACTIVE/PARTIALLY_CLOSED long's stop:
+a profitable long may update its stop above original entry. Manual source prices
+remain provenance only; authoritative fills still come from `open-position`.
+For a backfill with a profit-protecting stop, open the long with its initial stop,
+then update the current stop after activation.
+
+For a real long that gaps and fills below its planned stop, keep the default
+refusal unless explicitly acknowledging the actual fill with
+`open-position --allow-gap-fill` (API: `allow_gap_fill=True`). This opt-in only
+bypasses the positive fill-below-positive-stop geometry guard for equity;
+SHORT intent, invalid prices/quantities/state and all ingest/attachment validation
+still refuse. Futures reject this equity-only option. A normal/equal fill adds
+no gap annotation. The flag must be a Python bool in API calls.
+The acknowledgement still requires a share count: pass `--shares` or attach a sized position.
+
+Preserve the target, planned stop, sizing audit fields and provenance. Store the
+actual fill and append a `gap fill acknowledged` entry to the protected ACTIVE
+`status_history.reason`, including exact actual fill and stop values. A supplied
+reason must remain a string. This audit survives later stop changes; inspect
+status history when reviewing the gap. Closing/trimming uses the actual fill
+for long-side P&L. This records a fill that already occurred, not approval to
+open a new trade or retain a breached stop. Planned sizing fields are not
+recalculated by this acknowledgement.
+
+```bash
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store \
+  --state-dir state/theses/ open-position <id> \
+  --actual-price 88 --actual-date 2026-11-01 --shares 10 \
+  --allow-gap-fill --reason "record actual broker fill"
+```
+
+Explicit legacy short equity records (a SHORT word or a bare SELL, such as SELL_SHORT, Short position or SELL; labels such as Sell to close stay long) are refused before new
+accounting or MAE/MFE calculations. CLOSED/INVALIDATED legacy shorts can produce
+historical-only postmortems: P&L, MAE/MFE, position valuation and risk are shown as
+unavailable (—), with an explicit unsupported-short explanation. This report
+fetches no prices and leaves thesis/index state, stored outcomes and provenance
+unchanged; old values are not validated or corrected. ACTIVE/PARTIALLY_CLOSED
+records still cannot generate postmortems. They can still be marked reviewed
+or terminated as INVALIDATED without an exit price; these bookkeeping actions
+preserve all existing monetary fields and provenance. Summary statistics and
+monthly reports skip explicit shorts and report their excluded count
+(`excluded_unsupported_equity_shorts` in summary JSON when nonzero).
+Old manual provenance was free text: BUY, Long position and other non-short
+labels retain legacy long accounting. New direction inputs remain strictly LONG.
+Read-only inspection remains available; no old outcomes are migrated or re-signed.
+Ambiguous legacy records cannot be classified from a trailing stop alone.
+Keep short-equity journals external; never relabel one as a futures contract.
+
 ## Workflow
 
 ### 1. Register — Ingest screener output as thesis
@@ -154,10 +213,14 @@ Python: `thesis_store.transition(state_dir, thesis_id, "ENTRY_READY", reason, ev
 
 ```bash
 python3 .../trader_memory_cli.py store --state-dir state/theses/ open-position <id> \
-  --actual-price 142.10 --actual-date 2026-05-02 [--shares 7.86] [--event-date 2026-05-02]
+  --actual-price 142.10 --actual-date 2026-05-02 --shares 7.86 [--event-date 2026-05-02]
 ```
 
-`--shares` accepts **fractional** quantities. Python:
+`--shares` is **required for an equity thesis** unless `attach-position` already
+recorded a share count; otherwise `open-position` exits 1 with
+`ERROR: open_position() requires a share count ...` and nothing is saved.
+ACTIVE theses recorded before this check without shares still close on the
+legacy per-share path. `--shares` accepts **fractional** quantities. Python:
 `thesis_store.open_position(state_dir, thesis_id, actual_price, actual_date, shares=..., event_date=...)`.
 `shares` (and `shares_remaining`, when present) must be a **finite, positive
 number no greater than 10<sup>12</sup>** (a sanity bound, not an economic
@@ -169,6 +232,9 @@ report) are rejected with a clean error at save time, on `open-position`,
 For a **futures** thesis, use `--contracts` instead of `--shares` (see
 "Futures positions" below) — if `attach-futures-position` already populated
 the position, omit `--contracts` and only pass `--actual-price`/`--actual-date`.
+
+`store doctor` validates file/index consistency, prints a JSON report, and exits 1
+when `ok` is false or the state directory is missing or not a directory.
 
 **Trim — partial close** (ACTIVE/PARTIALLY_CLOSED → PARTIALLY_CLOSED, or →
 CLOSED when the whole remainder is sold):
@@ -302,6 +368,16 @@ python3 skills/trader-memory-core/scripts/trader_memory_cli.py review \
 ```
 
 Generate a structured postmortem in `state/journal/`. If FMP API key is available, includes MAE/MFE (Maximum Adverse/Favorable Excursion) metrics.
+
+Record the lessons learned on a CLOSED or INVALIDATED thesis with `record-lessons`. This produces the `lessons_log_entry` of the `trade-memory-loop` lessons step; the text lands in `outcome.lessons_learned`.
+
+```bash
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store \
+  --state-dir state/theses/ record-lessons th_aapl_div_20260314_a3f1 \
+  --text "Sized too large into earnings; cut the position before the print."
+```
+
+Use `--file PATH` (UTF-8) instead of `--text` for multi-line text, and `--text="..."` when the text starts with `-`. If a lesson already exists the command refuses; pass `--append` to add a line or `--replace` to overwrite. Keep one plain paragraph per lesson, because lists and blank lines render as separate Markdown blocks in the monthly report. Re-run `review postmortem` afterwards to refresh the journal report; `review monthly-report --month YYYY-MM` lists the lessons under "Top Lessons".
 
 **Summary statistics:**
 

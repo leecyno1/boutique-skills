@@ -204,7 +204,7 @@
       "slot": "市场宽度/趋势",
       "capability": "technical-trend",
       "skill": "market-breadth-analyzer",
-      "score": 81,
+      "score": 80,
       "access": "direct",
       "api_keys": []
     },
@@ -290,7 +290,7 @@
       "slot": "ETF 研究",
       "capability": "etf",
       "skill": "etf-premium",
-      "score": 80,
+      "score": 79,
       "access": "direct",
       "api_keys": []
     },
@@ -359,5 +359,5 @@
     "API key policy: third-party-key candidates are penalized in slot ranking; keyless candidates win whenever a slot has one. LLM keys and GitHub tokens are exempt.",
     "Slot count 28, skill count 28 (max 40)."
   ],
-  "generated_at": "2026-11-12"
+  "generated_at": "2026-11-21"
 }

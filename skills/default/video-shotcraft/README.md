@@ -8,9 +8,11 @@
 
 # video-shotcraft
 
-**English** | [中文](README_CN.md) | [日本語](README_JA.md) | [Русский](README_RU.md)
+<a href="#support"><img src="https://img.shields.io/badge/%E2%98%95%20Support%20author-16803C?style=for-the-badge" alt="☕ Support author" height="32"></a>
 
-[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
+**English** | [中文](README_CN.md) | [繁體中文](README_TW.md) | [日本語](README_JA.md) | [Русский](README_RU.md)
+
+[![Gallery](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/) <a href="#wechat-community"><img src="https://img.shields.io/badge/WeChat%20community-07C160?style=flat&amp;logo=wechat&amp;logoColor=white" alt="WeChat community" height="20"></a>
 [![Showcase](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
 [![GitHub stars](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
@@ -61,22 +63,12 @@ sharp, on-brand and fully editable.
 <table>
 <tr>
 <td align="center" valign="middle" width="25%">
-  <a href="https://go.apimart.ai/tw-video-shotcraft"><img src="./assets/readme/sponsors/apimart.png" width="200" alt="APIMart logo"></a><br>
-  <a href="https://go.apimart.ai/tw-video-shotcraft"><b>APIMart</b></a>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><img src="./assets/readme/sponsors/apinebula.png" width="200" alt="APINEBULA logo"></a><br>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><b>APINEBULA</b></a>
 </td>
 <td>
-  <p>Thanks to APIMart for sponsoring this project! APIMart is a low-cost API platform for AI image &amp; video generation — GPT-Image-2 from $0.006/image, 160+ images per dollar. One async API covers both image and video: submit a task, get an ID, fetch results via polling or callback. Batch tens of thousands of images without timeouts, switch models without changing code. Pay-as-you-go with no monthly fee — <a href="https://go.apimart.ai/tw-video-shotcraft">sign up here</a> to get started.</p>
-</td>
-</tr>
-<tr>
-<td align="center" valign="middle" width="25%">
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><img src="./assets/readme/sponsors/packycode.png" width="200" alt="PackyCode logo"></a><br>
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><b>PackyCode</b></a>
-</td>
-<td>
-  <p>Access leading AI models through PackyCode with one API endpoint and one API key. Enjoy fast, reliable access with automatic failover and dedicated high-speed routes for Codex and Claude Code.</p>
-  <p>Get started with $1 in free credits, a discount on your first top-up, and savings of up to 80% on eligible routes. Pay in RMB with no currency conversion markups or extra top-up fees.</p>
-  <p><a href="https://www.packyapi.ai/register?aff=l9IZ">Get started with PackyCode →</a></p>
+  <p>Thanks to APINEBULA for sponsoring this project! APINEBULA is an enterprise-grade AI aggregation platform operated by 银河录像局. Backed by its parent platform's resources, it provides stable, cost-effective access to large language model APIs for developers, teams and enterprises. Access full-capability Claude, GPT, Gemini and other leading models through one API, with model pricing starting at 6% of the regular price. Enterprise services include high concurrency, formal contracts, corporate bank transfers and invoicing.</p>
+  <p><a href="https://apinebula.ai/ref/HLROcb4p">Register through this link</a> and enter the promo code <b>video</b> when topping up to get <b>10% off</b>.</p>
 </td>
 </tr>
 <tr>
@@ -294,6 +286,22 @@ Thanks also to **[Remotion](https://www.remotion.dev/)**, which powers every dem
 and animation communities whose published principles inform several cards; and **Claude Code**, with which this
 library was built, iterated and QA'd using the same workflow the skill teaches.
 
+<a id="support"></a>
+
+## ☕ Support this project
+
+If this project helped you, you're welcome to buy me a coffee and support its continued development and maintenance.
+
+<a href="https://ko-fi.com/vincentwei"><img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy me a coffee on Ko-fi" height="40"></a>
+
+One-time tip on Ko-fi with a card or PayPal. In mainland China? Use WeChat below:
+
+<img src="assets/wechat-sponsor.jpg" alt="WeChat sponsorship QR code" width="280">
+
+Scan with WeChat; any amount is appreciated. On a phone, save the image and select it from your album in WeChat's Scan feature.
+
+Sponsorship is entirely optional. Stars, feedback, and sharing are just as welcome. Sponsorship does not change this project's license terms.
+
 ## Follow me
 
 <p>
@@ -311,3 +319,15 @@ library was built, iterated and QA'd using the same workflow the skill teaches.
     <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
   </picture>
 </a>
+
+<a id="wechat-community"></a>
+
+## 💬 WeChat community
+
+Join “Vincent 的 AI 交流群 3” to chat about AI applications, coding, and video creation.
+
+<a href="assets/wechat-group.jpg?v=3"><img src="assets/wechat-group.jpg?v=3" alt="Vincent’s AI WeChat community QR code" width="400"></a>
+
+Scan with WeChat to join. On a phone, save the image, then open WeChat’s Scan feature and select it from your album.
+
+This QR code is valid before **2026-11-26**, subject to WeChat’s notice. If it has expired, [contact Vincent on X](https://x.com/VincentWei93) for the latest way to join.

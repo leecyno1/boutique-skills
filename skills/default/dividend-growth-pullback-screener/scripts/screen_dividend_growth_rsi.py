@@ -34,11 +34,14 @@ from typing import Optional
 
 import requests
 
+# Request exception messages can embed credential-bearing URLs. Log only their class.
+
 
 class FINVIZClient:
     """Client for FINVIZ Elite API"""
 
-    BASE_URL = "https://elite.finviz.com/export.ashx"
+    # FINVIZ moved the screener export here and requires type= from 2026-12-07 (#799).
+    BASE_URL = "https://elite.finviz.com/export/screener"
 
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -65,6 +68,7 @@ class FINVIZClient:
         filters = "cap_midover,fa_div_0.5to3,fa_divgrowth_3yo10,fa_eps3years_o5,fa_sales3years_o5,geo_usa,ta_rsi_os40"
 
         params = {
+            "type": "stocks",  # Required by /export/screener (#799)
             "v": "151",  # View type
             "f": filters,  # Filter conditions
             "ft": "4",  # File type: CSV export
@@ -81,7 +85,7 @@ class FINVIZClient:
 
             if response.status_code == 200:
                 # Parse CSV response
-                csv_content = response.content.decode("utf-8")
+                csv_content = response.content.decode("utf-8-sig")
                 reader = csv.DictReader(io.StringIO(csv_content))
 
                 symbols = set()
@@ -105,11 +109,36 @@ class FINVIZClient:
                 return set()
 
         except requests.exceptions.RequestException as e:
-            print(f"ERROR: FINVIZ request exception: {e}", file=sys.stderr)
+            print(f"ERROR: FINVIZ request exception: {type(e).__name__}", file=sys.stderr)
             return set()
 
 
 from fmp_client import FMPClient as SharedFMPClient
+
+_PLAN_RESTRICTION_MARKERS = (
+    "http 402",
+    "subscription",
+    "legacy endpoint",
+    "restricted endpoint",
+    "premium query",
+    "not available under your current",
+)
+
+
+class FMPPlanRestrictedError(RuntimeError):
+    """The FMP plan does not serve an endpoint this screen requires."""
+
+
+def _is_plan_restriction(error: Optional[str]) -> bool:
+    """Return True when an FMP failure looks like plan/endpoint gating.
+
+    The shared client records the redacted status/body in ``_last_error``.
+    The shared client does not expose a plan flag, and 403 is also used for
+    invalid keys or WAF blocks, so only the observed legacy/subscription/
+    premium/restricted phrasings are treated as plan gating.
+    """
+    text = (error or "").lower()
+    return any(marker in text for marker in _PLAN_RESTRICTION_MARKERS)
 
 
 class FMPClient(SharedFMPClient):
@@ -122,6 +151,13 @@ class FMPClient(SharedFMPClient):
             params["exchange"] = exchange
 
         result = self._get("stock-screener", params)
+        if not result and _is_plan_restriction(self._last_error):
+            raise FMPPlanRestrictedError(
+                "FMP plan does not include the stock screener endpoint required "
+                "for FMP-only screening (HTTP 402/403). Use --use-finviz, or "
+                "switch to an FMP plan that includes the screener. See "
+                "docs/en/getting-started.md#fmp-plans."
+            )
         return result if result else []
 
     def get_historical_prices(self, symbol: str, days: int = 30) -> Optional[list[dict]]:
@@ -699,6 +735,7 @@ def screen_dividend_growth_pullbacks(
     rsi_max: float = 40.0,
     max_candidates: int = None,
     finviz_symbols: Optional[set[str]] = None,
+    stats: Optional[dict] = None,
 ) -> list[dict]:
     """
     Main screening function.
@@ -710,6 +747,9 @@ def screen_dividend_growth_pullbacks(
         rsi_max: Maximum RSI value (default 40)
         max_candidates: Maximum number of candidates to analyze (None = all)
         finviz_symbols: Optional set of symbols from FINVIZ pre-screening
+        stats: Optional dict filled with run statistics; currently
+            plan_gated_skipped, the number of candidates skipped because a
+            per-symbol analysis call was plan-restricted (issue #777).
 
     Returns:
         List of qualified stocks with full analysis
@@ -738,11 +778,15 @@ def screen_dividend_growth_pullbacks(
         # Convert FINVIZ symbols to candidate format for FMP analysis
         # We'll fetch quote data with profile to get sector information
         candidates = []
+        plan_restricted = False
         print("Fetching quote and profile data from FMP for FINVIZ symbols...", file=sys.stderr)
         for symbol in finviz_symbols:
             stock_data = client.get_quote_with_profile(symbol)
             if stock_data:
                 candidates.append(stock_data)
+
+            if _is_plan_restriction(getattr(client, "_last_error", None)):
+                plan_restricted = True
 
             if client.rate_limit_reached:
                 print(
@@ -750,6 +794,15 @@ def screen_dividend_growth_pullbacks(
                     file=sys.stderr,
                 )
                 break
+
+        if not candidates and plan_restricted:
+            raise FMPPlanRestrictedError(
+                "FMP plan does not include the quote endpoint required to enrich "
+                "FINVIZ candidates (HTTP 402/403); the profile lookup that depends "
+                "on it is unavailable too. --use-finviz is already active; switch "
+                "to an FMP plan that includes quote access. See "
+                "docs/en/getting-started.md#fmp-plans."
+            )
 
         print(
             f"Retrieved quote and profile data for {len(candidates)} symbols from FMP",
@@ -774,6 +827,16 @@ def screen_dividend_growth_pullbacks(
 
     results = []
 
+    # Symbols whose analysis was blocked by a plan-restricted endpoint
+    # (issue #777). Checked immediately after each fetch: _last_error only
+    # describes the most recent call, so a later successful fetch would hide
+    # an earlier plan restriction.
+    plan_gated_symbols: set[str] = set()
+
+    def _note_plan_restriction(symbol: str) -> None:
+        if _is_plan_restriction(getattr(client, "_last_error", None)):
+            plan_gated_symbols.add(symbol)
+
     for i, stock in enumerate(candidates, 1):
         symbol = stock.get("symbol", "")
         company_name = stock.get("companyName", "")
@@ -797,6 +860,7 @@ def screen_dividend_growth_pullbacks(
 
         # Fetch dividend history
         dividend_history = client.get_dividend_history(symbol)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
@@ -831,6 +895,7 @@ def screen_dividend_growth_pullbacks(
 
         # Fetch historical prices for RSI
         historical_prices = client.get_historical_prices(symbol, days=30)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
@@ -854,18 +919,22 @@ def screen_dividend_growth_pullbacks(
 
         # Fetch additional fundamental data
         income_stmts = client.get_income_statement(symbol, limit=5)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
         balance_sheet = client.get_balance_sheet(symbol, limit=5)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
         cash_flow = client.get_cash_flow(symbol, limit=5)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
         key_metrics = client.get_key_metrics(symbol, limit=1)
+        _note_plan_restriction(symbol)
         if client.rate_limit_reached:
             break
 
@@ -956,6 +1025,32 @@ def screen_dividend_growth_pullbacks(
 
         results.append(result)
         print(f"  ✅ QUALIFIED - Score: {result['composite_score']}", file=sys.stderr)
+
+    # Plan gating in the analysis stage (issue #777): when every candidate
+    # was blocked, the run is plan-gated, not a "no matches" result; when only
+    # some were blocked, report how many were skipped. A symbol counts as
+    # skipped only when it produced no result, so a symbol that qualified
+    # despite one gated call is not counted.
+    plan_gated_skipped = len(plan_gated_symbols - {r["symbol"] for r in results})
+    if stats is not None:
+        stats["plan_gated_skipped"] = plan_gated_skipped
+    if not results and plan_gated_skipped:
+        raise FMPPlanRestrictedError(
+            "FMP plan does not include the per-symbol analysis endpoints "
+            "required for detailed analysis (dividends, historical prices, "
+            "income-statement, balance-sheet-statement, cash-flow-statement, "
+            "key-metrics) (HTTP 402/403); "
+            f"{plan_gated_skipped} of {len(candidates)} candidate(s) could not "
+            "be analyzed. Switch to an FMP plan that includes them. See "
+            "docs/en/getting-started.md#fmp-plans."
+        )
+    if plan_gated_skipped:
+        print(
+            f"⚠️  {plan_gated_skipped} candidate(s) skipped: FMP plan does not "
+            "include an endpoint required for detailed analysis. Results may "
+            "be incomplete.",
+            file=sys.stderr,
+        )
 
     # Sort by composite score
     results.sort(key=lambda x: x["composite_score"], reverse=True)
@@ -1287,14 +1382,29 @@ Environment Variables:
         print(f"\n{'=' * 80}\n", file=sys.stderr)
 
     # Run screening
-    results = screen_dividend_growth_pullbacks(
-        api_key=fmp_api_key,
-        min_yield=args.min_yield,
-        min_div_growth=args.min_div_growth,
-        rsi_max=args.rsi_max,
-        max_candidates=args.max_candidates,
-        finviz_symbols=finviz_symbols,
-    )
+    stats: dict = {}
+    try:
+        results = screen_dividend_growth_pullbacks(
+            api_key=fmp_api_key,
+            min_yield=args.min_yield,
+            min_div_growth=args.min_div_growth,
+            rsi_max=args.rsi_max,
+            max_candidates=args.max_candidates,
+            finviz_symbols=finviz_symbols,
+            stats=stats,
+        )
+    except FMPPlanRestrictedError:
+        # Keep the CLI boundary independent of exception/request text. The
+        # library exception retains detailed endpoint/count diagnostics.
+        print(
+            "ERROR: FMP plan does not include the stock screener endpoint or a "
+            "required per-symbol analysis endpoint (quotes, ratios, dividends, "
+            "historical prices or financials; HTTP 402/403). Use an FMP plan "
+            "that includes the required endpoints. See "
+            "docs/en/getting-started.md#fmp-plans.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     # Prepare metadata
     criteria = {
@@ -1324,6 +1434,8 @@ Environment Variables:
         },
         "stocks": results,
     }
+    if stats.get("plan_gated_skipped"):
+        json_output["metadata"]["plan_gated_skipped"] = stats["plan_gated_skipped"]
 
     json_path = os.path.join(logs_dir, f"dividend_growth_pullback_results_{today}.json")
     with open(json_path, "w", encoding="utf-8") as f:

@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-11-12 10:04:00",
+  "timestamp": "2026-11-21 09:28:57",
   "status": "WARN",
   "summary": {
-    "catalog_skills": 317,
-    "audited_skills": 311,
+    "catalog_skills": 332,
+    "audited_skills": 326,
     "legacy_catalog_skills": 42,
-    "resolved_skills": 311,
+    "resolved_skills": 326,
     "missing_skills": 0,
-    "missing_env": 109,
+    "missing_env": 108,
     "duplicate_capabilities": 0,
     "risky_hits": 15,
     "missing_native_origins": 0,
@@ -103,24 +103,20 @@
       "env": "AGENTMAIL_API_KEY"
     },
     {
-      "skill": "minimax-web-search",
-      "env": "MINIMAX_API_KEY"
-    },
-    {
-      "skill": "gpt-image",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "alphaxiv",
-      "env": "OPENAI_API_KEY"
-    },
-    {
       "skill": "book-to-skill",
       "env": "GH_TOKEN"
     },
     {
       "skill": "book-to-skill",
       "env": "GITHUB_TOKEN"
+    },
+    {
+      "skill": "minimax-web-search",
+      "env": "MINIMAX_API_KEY"
+    },
+    {
+      "skill": "alphaxiv",
+      "env": "OPENAI_API_KEY"
     },
     {
       "skill": "claude-certification",
@@ -132,6 +128,10 @@
     },
     {
       "skill": "cli-batches",
+      "env": "OPENAI_API_KEY"
+    },
+    {
+      "skill": "gpt-image",
       "env": "OPENAI_API_KEY"
     },
     {
@@ -175,60 +175,12 @@
       "env": "TUSHARE_TOKEN"
     },
     {
-      "skill": "economic-calendar-fetcher",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "institutional-flow-tracker",
-      "env": "FMP_API_KEY"
-    },
-    {
-      "skill": "finance-sentiment",
-      "env": "ADANOS_API_KEY"
-    },
-    {
-      "skill": "baoyu-post-to-wechat",
-      "env": "ACCESS_TOKEN"
-    },
-    {
-      "skill": "baoyu-post-to-wechat",
-      "env": "WECHAT_AI_TOOLS_APP_SECRET"
-    },
-    {
-      "skill": "baoyu-post-to-wechat",
-      "env": "WECHAT_APP_SECRET"
-    },
-    {
-      "skill": "baoyu-post-to-wechat",
-      "env": "WECHAT_BAOYU_APP_SECRET"
-    },
-    {
       "skill": "macro-regime-detector",
       "env": "FMP_API_KEY"
     },
     {
-      "skill": "media-downloader",
-      "env": "PEXELS_API_KEY"
-    },
-    {
-      "skill": "agent-architecture-audit",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "agentmail-cli",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "agentmail-toolkit",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
-      "skill": "agentmail-toolkit",
-      "env": "OPENAI_API_KEY"
-    },
-    {
-      "skill": "alphaear-reporter",
-      "env": "TUSHARE_TOKEN"
+      "skill": "economic-calendar-fetcher",
+      "env": "FMP_API_KEY"
     },
     {
       "skill": "baoyu-image-gen",
@@ -269,6 +221,54 @@
     {
       "skill": "baoyu-image-gen",
       "env": "ZAI_API_KEY"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "env": "ACCESS_TOKEN"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "env": "WECHAT_AI_TOOLS_APP_SECRET"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "env": "WECHAT_APP_SECRET"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "env": "WECHAT_BAOYU_APP_SECRET"
+    },
+    {
+      "skill": "finance-sentiment",
+      "env": "ADANOS_API_KEY"
+    },
+    {
+      "skill": "institutional-flow-tracker",
+      "env": "FMP_API_KEY"
+    },
+    {
+      "skill": "media-downloader",
+      "env": "PEXELS_API_KEY"
+    },
+    {
+      "skill": "agent-architecture-audit",
+      "env": "OPENAI_API_KEY"
+    },
+    {
+      "skill": "agentmail-cli",
+      "env": "AGENTMAIL_API_KEY"
+    },
+    {
+      "skill": "agentmail-toolkit",
+      "env": "AGENTMAIL_API_KEY"
+    },
+    {
+      "skill": "agentmail-toolkit",
+      "env": "OPENAI_API_KEY"
+    },
+    {
+      "skill": "alphaear-reporter",
+      "env": "TUSHARE_TOKEN"
     },
     {
       "skill": "bb-local-toolkit",
@@ -447,10 +447,6 @@
       "env": "GEMINI_API_KEY"
     },
     {
-      "skill": "agentmail",
-      "env": "AGENTMAIL_API_KEY"
-    },
-    {
       "skill": "gif-sticker-maker",
       "env": "MINIMAX_API_KEY"
     }
@@ -558,12 +554,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/todo"
     },
     {
-      "skill": "review-animations",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/review-animations"
-    },
-    {
-      "skill": "dasheng-hotspot-radar",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-hotspot-radar"
+      "skill": "redesign-existing-projects",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/redesign-existing-projects"
     },
     {
       "skill": "design-taste-frontend",
@@ -586,16 +578,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/opencli-reader"
     },
     {
-      "skill": "redesign-existing-projects",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/redesign-existing-projects"
+      "skill": "review-animations",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/review-animations"
+    },
+    {
+      "skill": "dasheng-hotspot-radar",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-hotspot-radar"
     },
     {
       "skill": "khazix-skills",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/khazix-skills"
-    },
-    {
-      "skill": "brandkit",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/brandkit"
     },
     {
       "skill": "claude-mem-plugin",
@@ -610,8 +602,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seedance2-skill"
     },
     {
-      "skill": "high-end-visual-design",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/high-end-visual-design"
+      "skill": "brandkit",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/brandkit"
     },
     {
       "skill": "ian-xiaohei-illustrations",
@@ -638,6 +630,18 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ablation-planner"
     },
     {
+      "skill": "about-page",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/about-page"
+    },
+    {
+      "skill": "accessibility-testing",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/accessibility-testing"
+    },
+    {
+      "skill": "accessible-authentication",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/accessible-authentication"
+    },
+    {
       "skill": "ad-creative",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/ad-creative"
     },
@@ -662,12 +666,24 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/analyze-results"
     },
     {
+      "skill": "angular-architect",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/angular-architect"
+    },
+    {
       "skill": "anndata",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anndata"
     },
     {
+      "skill": "api-designer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/api-designer"
+    },
+    {
       "skill": "arbor",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/arbor"
+    },
+    {
+      "skill": "architecture-designer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/architecture-designer"
     },
     {
       "skill": "arxiv",
@@ -734,6 +750,26 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/discord-reader"
     },
     {
+      "skill": "egm-bootstrap",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/egm-bootstrap"
+    },
+    {
+      "skill": "egm-brainstorm",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/egm-brainstorm"
+    },
+    {
+      "skill": "egm-draft",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/egm-draft"
+    },
+    {
+      "skill": "egm-drift-report",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/egm-drift-report"
+    },
+    {
+      "skill": "egm-resolve",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/egm-resolve"
+    },
+    {
       "skill": "feishu-doc-creator",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/feishu-doc-creator"
     },
@@ -796,6 +832,10 @@
     {
       "skill": "gws-calendar-insert",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gws-calendar-insert"
+    },
+    {
+      "skill": "high-end-visual-design",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/high-end-visual-design"
     },
     {
       "skill": "image-to-code",
@@ -870,16 +910,48 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/twitter-reader"
     },
     {
+      "skill": "agent-browser",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-browser"
+    },
+    {
       "skill": "agent-introspection-debugging",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-introspection-debugging"
+    },
+    {
+      "skill": "baoyu-article-illustrator",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-article-illustrator"
+    },
+    {
+      "skill": "dasheng-stage-transwrite",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-stage-transwrite"
+    },
+    {
+      "skill": "dasheng-style-profiler",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-style-profiler"
+    },
+    {
+      "skill": "dasheng-vox-skills",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-vox-skills"
+    },
+    {
+      "skill": "baoyu-format-markdown",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-format-markdown"
+    },
+    {
+      "skill": "baoyu-xhs-images",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-xhs-images"
+    },
+    {
+      "skill": "chrome-devtools-mcp",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/chrome-devtools-mcp"
     },
     {
       "skill": "dasheng-html-video-bridge",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-html-video-bridge"
     },
     {
-      "skill": "dasheng-stage-transwrite",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-stage-transwrite"
+      "skill": "dasheng-paradigm-profiler",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-paradigm-profiler"
     },
     {
       "skill": "dasheng-video-director",
@@ -892,30 +964,6 @@
     {
       "skill": "dasheng-video-talking-head",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-video-talking-head"
-    },
-    {
-      "skill": "dasheng-vox-skills",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-vox-skills"
-    },
-    {
-      "skill": "agent-browser",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-browser"
-    },
-    {
-      "skill": "baoyu-format-markdown",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-format-markdown"
-    },
-    {
-      "skill": "chrome-devtools-mcp",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/chrome-devtools-mcp"
-    },
-    {
-      "skill": "dasheng-paradigm-profiler",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-paradigm-profiler"
-    },
-    {
-      "skill": "dasheng-style-profiler",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-style-profiler"
     },
     {
       "skill": "url-to-markdown",
@@ -934,10 +982,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agent-reach"
     },
     {
-      "skill": "baoyu-article-illustrator",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-article-illustrator"
-    },
-    {
       "skill": "baoyu-cover-image",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-cover-image"
     },
@@ -950,14 +994,6 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-video-explainer-html"
     },
     {
-      "skill": "dasheng-video-style-trainer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-video-style-trainer"
-    },
-    {
-      "skill": "baoyu-xhs-images",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-xhs-images"
-    },
-    {
       "skill": "dasheng-stage-publish",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-stage-publish"
     },
@@ -966,12 +1002,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-stage-rewrite-v3"
     },
     {
-      "skill": "github",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/github"
+      "skill": "dasheng-video-style-trainer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-video-style-trainer"
     },
     {
-      "skill": "gpt-image-2-style-library",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gpt-image-2-style-library"
+      "skill": "github",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/github"
     },
     {
       "skill": "uzi-skill",
@@ -1052,6 +1088,10 @@
     {
       "skill": "douyin-account-launch-expert",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/douyin-account-launch-expert"
+    },
+    {
+      "skill": "gpt-image-2-style-library",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gpt-image-2-style-library"
     },
     {
       "skill": "gstack",
@@ -1266,6 +1306,14 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail-mcp"
     },
     {
+      "skill": "atlassian-mcp",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/atlassian-mcp"
+    },
+    {
+      "skill": "book-to-skill",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/book-to-skill"
+    },
+    {
       "skill": "course-guide",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/course-guide"
     },
@@ -1276,10 +1324,6 @@
     {
       "skill": "huashu-design",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/huashu-design"
-    },
-    {
-      "skill": "market-breadth-analyzer",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/market-breadth-analyzer"
     },
     {
       "skill": "market-environment-analysis",
@@ -1298,8 +1342,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/openclaw-cron-setup"
     },
     {
-      "skill": "etf-premium",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/etf-premium"
+      "skill": "anthropic-fs-equity-research-catalyst-calendar",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-equity-research-catalyst-calendar"
+    },
+    {
+      "skill": "anthropic-fs-equity-research-sector-overview",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-equity-research-sector-overview"
+    },
+    {
+      "skill": "market-breadth-analyzer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/market-breadth-analyzer"
     },
     {
       "skill": "achieving-cmmc-level-2-compliance",
@@ -1334,6 +1386,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/buy-side-equity-research-memo"
     },
     {
+      "skill": "chaos-engineer",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/chaos-engineer"
+    },
+    {
       "skill": "cli-backup-sync",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-backup-sync"
     },
@@ -1362,12 +1418,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/eigenflux"
     },
     {
-      "skill": "gf-dma-health-index",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gf-dma-health-index"
+      "skill": "etf-premium",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/etf-premium"
     },
     {
-      "skill": "gpt-image",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gpt-image"
+      "skill": "gf-dma-health-index",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gf-dma-health-index"
     },
     {
       "skill": "hormuz-strait",
@@ -1418,20 +1474,12 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaxiv"
     },
     {
-      "skill": "anthropic-fs-equity-research-catalyst-calendar",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-equity-research-catalyst-calendar"
-    },
-    {
-      "skill": "anthropic-fs-equity-research-sector-overview",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-equity-research-sector-overview"
+      "skill": "anthropic-fs-financial-analysis-ib-check-deck",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-financial-analysis-ib-check-deck"
     },
     {
       "skill": "baoyu-markdown-to-html",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-markdown-to-html"
-    },
-    {
-      "skill": "book-to-skill",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/book-to-skill"
     },
     {
       "skill": "btc-bottom-model",
@@ -1444,6 +1492,10 @@
     {
       "skill": "cli-batches",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/cli-batches"
+    },
+    {
+      "skill": "gpt-image",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/gpt-image"
     },
     {
       "skill": "ima",
@@ -1474,16 +1526,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/tavily-search"
     },
     {
-      "skill": "anthropic-fs-financial-analysis-ib-check-deck",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/anthropic-fs-financial-analysis-ib-check-deck"
-    },
-    {
       "skill": "data-quality-checker",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/data-quality-checker"
-    },
-    {
-      "skill": "video-shotcraft",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/video-shotcraft"
     },
     {
       "skill": "anthropic-fs-financial-analysis-dcf-model",
@@ -1498,6 +1542,10 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/us-market-sentiment"
     },
     {
+      "skill": "video-shotcraft",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/video-shotcraft"
+    },
+    {
       "skill": "westockdata",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/westockdata"
     },
@@ -1506,12 +1554,8 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/buddy-sings"
     },
     {
-      "skill": "economic-calendar-fetcher",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/economic-calendar-fetcher"
-    },
-    {
-      "skill": "institutional-flow-tracker",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/institutional-flow-tracker"
+      "skill": "macro-regime-detector",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/macro-regime-detector"
     },
     {
       "skill": "marketingskills",
@@ -1526,8 +1570,16 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/minimax-music-playlist"
     },
     {
+      "skill": "404-page",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/404-page"
+    },
+    {
       "skill": "abusing-dpapi-for-credential-access",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/abusing-dpapi-for-credential-access"
+    },
+    {
+      "skill": "accessible-notifications",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/accessible-notifications"
     },
     {
       "skill": "apk-redteam-pipeline",
@@ -1554,24 +1606,36 @@
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/dasheng-xhs-publish-bridge"
     },
     {
+      "skill": "deeptutor",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/deeptutor"
+    },
+    {
       "skill": "defuddle",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/defuddle"
     },
     {
-      "skill": "finance-sentiment",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/finance-sentiment"
+      "skill": "economic-calendar-fetcher",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/economic-calendar-fetcher"
     },
     {
       "skill": "seo-agentic",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/seo-agentic"
     },
     {
+      "skill": "baoyu-image-gen",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-image-gen"
+    },
+    {
       "skill": "baoyu-post-to-wechat",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-post-to-wechat"
     },
     {
-      "skill": "macro-regime-detector",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/macro-regime-detector"
+      "skill": "finance-sentiment",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/finance-sentiment"
+    },
+    {
+      "skill": "institutional-flow-tracker",
+      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/institutional-flow-tracker"
     },
     {
       "skill": "media-downloader",
@@ -1596,10 +1660,6 @@
     {
       "skill": "alphaear-reporter",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/alphaear-reporter"
-    },
-    {
-      "skill": "baoyu-image-gen",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/baoyu-image-gen"
     },
     {
       "skill": "bb-local-toolkit",
@@ -1768,10 +1828,6 @@
     {
       "skill": "notebooklm-skill",
       "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/notebooklm-skill"
-    },
-    {
-      "skill": "agentmail",
-      "path": "/Volumes/PSSD/Projects/boutique-skills/skills/default/agentmail"
     },
     {
       "skill": "gif-sticker-maker",

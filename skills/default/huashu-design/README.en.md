@@ -29,7 +29,9 @@ npx skills add alchaincyf/huashu-design
 
 > 📣 **Now MIT-licensed.** As of 2026-05-14 this skill is fully open-source under the [MIT License](LICENSE) — free for personal **and** commercial use, no authorization required. ([what changed](#license))
 
-> 🆕 **3.1: Xiaohongshu (RED) carousels.** Eight layout paradigms for 3:4 image sets — specimen journal, product notebook, index, panorama strip, daily paper, trading cards, vertical blank, area infographic — and every specimen doubles as an editable template. One command slices the pages and checks type size, overflow, text across panorama seams and overlapping text. [See the specimens](#design-direction-advisor)
+> 🆕 **3.4: a new way to think about app prototypes, plus App Store screenshots.** We walked through all 90 finalists of the last two App Store Awards and distilled eight interface paradigms (each with a specimen): decide what the thing your app manages looks like in the real world, then draw screens. New App Store screenshot module (1320×2868, panoramas, break-the-frame, search-result preview). References are now measured, not paraphrased — borrow one layer (the mechanism), never the whole look — and your result is put side by side with the reference afterwards. Wherever a UI needs an image it gets a real one: runtimes with native image generation (Codex, Doubao, WorkBuddy) generate directly; Claude Code and DeepSeek Harness borrow a local Codex or an image API key you provide. No more emoji or grey placeholders.
+
+> **3.1: Xiaohongshu (RED) carousels.** Eight layout paradigms for 3:4 image sets — specimen journal, product notebook, index, panorama strip, daily paper, trading cards, vertical blank, area infographic — and every specimen doubles as an editable template. One command slices the pages and checks type size, overflow, text across panorama seams and overlapping text. [See the specimens](#design-direction-advisor)
 
 > **3.0: bolder directions, and projects that stop looking alike.** Six thumbnails first, then the three strongest become real designs; the style library grows to 84 (new App and Chinese & East Asian sections), each with a specimen; reference works are screenshotted before they are borrowed from; plus a facts-only design check and a "look ledger" that remembers what you've already shipped. [How it works](#core-mechanics)
 
@@ -115,6 +117,18 @@ A map of every travel photo from three years, in a Kaoru Kasai–style long scro
 
 ---
 
+## 📺 Beginner Tutorial (recorded by Huasheng (Huashu))
+
+Not sure how to start? Watch Huashu's recorded getting-started tutorial for huashu-design:
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=m-_BlUdcIvw"><img src="https://img.youtube.com/vi/m-_BlUdcIvw/maxresdefault.jpg" alt="huashu-design tutorial" width="70%"></a>
+</p>
+
+<p align="center"><sub>👉 <a href="https://www.youtube.com/watch?v=m-_BlUdcIvw">Watch the full tutorial on YouTube</a></sub></p>
+
+---
+
 ## Install
 
 ```bash
@@ -123,7 +137,7 @@ npx skills add alchaincyf/huashu-design
 
 **DeepSeek Harness**: this repo is also a DSH plugin. `dsh plugin --profile desktop add github:alchaincyf/huashu-design` (use `web` for the web app), then restart DSH. Remove with `dsh plugin --profile desktop remove huashu-design`.
 
-> **Verify after install**: this skill is more than a single SKILL.md — the `references/`, `assets/`, `scripts/`, and `demos/` subdirectories hold 99 referenced recipes, scripts, and assets that the skill depends on. After installing, check the install path (e.g. `~/.claude/skills/huashu-design/`); if you only see SKILL.md and none of those subdirectories, your `skills` CLI is too old (≤1.5.15 had a bug that synced only the single file, fixed in 1.5.19). Upgrade and reinstall:
+> **Verify after install**: this skill is more than a single SKILL.md — the `references/`, `assets/`, `scripts/`, and `demos/` subdirectories hold 430+ referenced recipes, scripts, and asset files that the skill depends on. After installing, check the install path (e.g. `~/.claude/skills/huashu-design/`); if you only see SKILL.md and none of those subdirectories, your `skills` CLI is too old (≤1.5.15 had a bug that synced only the single file, fixed in 1.5.19). Upgrade and reinstall:
 >
 > ```bash
 > npm i -g skills@latest        # or npx skills@latest add alchaincyf/huashu-design
@@ -141,7 +155,7 @@ Then just talk to Claude Code:
 "Make a keynote for AI psychology. Give me 3 style directions to pick from."
 "Build an iOS prototype for a Pomodoro app — 4 screens, actually clickable."
 "Turn this logic into a 60-second animation. Export MP4 and GIF."
-"Run a 5-dimension expert review on this design."
+"Run a 6-dimension expert review on this design."
 ```
 
 No buttons, no panels, no Figma plugin. Agent-agnostic — drops into Claude Code, Cursor, Trae, Hermes, OpenClaw, or any markdown-skill-capable agent.
@@ -168,8 +182,9 @@ No buttons, no panels, no Figma plugin. Agent-agnostic — drops into Claude Cod
 | Design variations | 3+ side-by-side · Tweaks live params · cross-dimension exploration | 10 min |
 | Infographic / data viz | Print-quality typography · exports to PDF/PNG/SVG | 10 min |
 | Xiaohongshu carousel / cover | 3:4 image sets (≤18) · 8 paradigm templates · continuous panorama strips · one-command slicing with checks | 10–15 min |
+| App Store screenshots | 1320×2868 store images (≤10) · real same-category store screenshots as references · panoramas sliced automatically · search-result preview and checks | 10–15 min |
 | Design direction advisor | Three logics × two candidates each · six thumbnails → three real designs, the other three kept as alternates | 10 min |
-| 5-dimension expert critique | Radar chart + Keep/Fix/Quick Wins · actionable punch list | 3 min |
+| 6-dimension expert critique | Concept/intent veto + 5 execution dims · radar chart + Keep/Fix/Quick Wins · actionable punch list | 3 min |
 
 ---
 
@@ -223,9 +238,9 @@ Magazine-grade typography · precise CSS Grid columns · `text-wrap: pretty` typ
 
 <p align="center"><img src="https://github.com/alchaincyf/huashu-design/releases/download/v2.0/c5-infographic-en.gif" width="100%"></p>
 
-### 5-Dimension Expert Critique
+### 6-Dimension Expert Critique
 
-Philosophical coherence · visual hierarchy · execution craft · functionality · innovation — each scored 0–10 · radar-chart visualization · outputs Keep / Fix / Quick Wins punch list.
+Concept/intent (highest weight; a score ≤5 caps the total at 6.0) + philosophical coherence · visual hierarchy · execution craft · functionality · innovation — each scored 0–10 · radar-chart visualization · outputs Keep / Fix / Quick Wins punch list.
 
 <p align="center"><img src="https://github.com/alchaincyf/huashu-design/releases/download/v2.0/c6-expert-review-en.gif" width="100%"></p>
 
@@ -240,6 +255,38 @@ No heroic one-shot attempts: start with assumptions + placeholders + reasoning, 
 Mandatory whenever the task involves a specific brand: ask → search → download (three fallback paths) → verify + extract → write `brand-spec.md` covering **logo, product shots, UI screenshots, colors, fonts** — all required assets, not just colors.
 
 <p align="center"><img src="https://github.com/alchaincyf/huashu-design/releases/download/v2.0/w1-brand-protocol-en.gif" width="100%"></p>
+
+---
+
+## Showcase · Real-world cases from the 2.0 era
+
+### Parrot Evolution website · the three-logics advisor flow in practice (2.0)
+
+> **Live demo · [https://www.huasheng.ai/parrots/](https://www.huasheng.ai/parrots/)**
+
+One sentence — "make a website introducing parrot evolution" — zero extra requirements, and the skill ran the full 2.0 advisor flow on its own: first judged that images were content-essential → pulled public-domain natural-history illustrations (Edward Lear / John Gould parrot plates) → **three logics in parallel** (seconds roulette + award-winning sites as real-world references + Kenya Hara's "White" philosophy), each producing a version with real visuals. **Design only after the materials are in — not color-block placeholders filled in as you go.**
+
+### "Talking about skills" · PM after-party talk deck
+
+> **Live demo · [https://skill-huasheng.vercel.app](https://skill-huasheng.vercel.app)**
+
+A 13-page HTML deck, **done entirely with huashu-design**:
+
+- Black-background minimal-serif visual system (cover / about / hook / what / why / closing)
+- 2 cinematic demos with BGM + SFX, 22 seconds each (Nuwa skill workflow + Darwin skill workflow), each in a **completely independent visual language**:
+  - **Nuwa**: 3D knowledge orbit + Pentagon distillation + SKILL.md typewriter + "21 minutes" hero reveal
+  - **Darwin**: autoresearch loop spin + v1/v5 side-by-side diff + full-screen Hill-Climb curve + Ratchet gear lock
+- Each cinematic shows a **complete static workflow dashboard** by default (the audience can always see how the skill is running); press ▶ to trigger the animation, which fades back to the dashboard when it finishes
+- Embeds huasheng.ai's 25-second hero animation (iframe with a localized fallback)
+- Real data: the real 14,495-stargazer growth curve (pulled from the gh API) + DeepSeek V4's real specs (WebSearch-verified)
+- Real AI material: a 4×2 grid image generated with `huashu-gpt-image`, 8 standalone transparent PNGs cut out with `extract_grid.py`, floating on the 3D orbit
+
+**Pages worth studying**:
+- `/slides/slide-04b-nuwa-flow.html` · the two-layer architecture of static dashboard + cinematic overlay
+- `/slides/slide-06b-darwin-flow.html` · a contrast case of two completely independent visual languages
+- `/slides/slide-03b-deepseek-cover.html` · AI slop vs the real-designer point of view, side by side
+
+For the cinematic patterns in detail, see `references/cinematic-patterns.md`.
 
 ---
 
@@ -284,6 +331,7 @@ Why: we ran three rounds of blind before/after tests on fixed briefs (internal).
 
 - **Experience**: `scripts/learn.py` recalls your verbatim taste notes ("too plain", "A's layout with C's colors") and past lessons before work starts, and records what's worth keeping afterwards — it tells you when it records, and you can decline
 - **Look ledger**: every delivery logs what it looked like (background, palette, fonts, layout skeleton, plus the project name and path), so the next project steers away — the "each one fine, together all the same" kind of monotony
+- **Polish loop**: `scripts/polish.py` screenshots the page screen by screen at full size, so the model revises once against its own screenshots before handing over; it reports facts such as "several screens in a row with only text and boxes" or "thumbnail is still a placeholder block", and warns when the polish log is left empty. Lighter models, or any run where the script raises warnings, take the steady track (`references/steady-track.md`): start from a specimen, write a screen-by-screen outline first, pick each screen's form from a menu
 - **Design check**: `scripts/design_lint.py` only measures checkable facts — broken images, unreadably small text, low contrast, console errors are red; habitual template chrome (uppercase eyebrows, "A · B · C" chains) is yellow; `compare` and `ledger check` catch reskins and repeats. Whether it looks good is your call; it gives no score
 - All of this lives only on your machine in `~/.huashu-design/`, never ships with the skill; delete the folder to forget everything
 
@@ -351,6 +399,7 @@ huashu-design/
 ├── SKILL.md                 # Main doc (read by agent, Chinese)
 ├── README.md                # Chinese README (default)
 ├── README.en.md             # English README (this file)
+├── test-prompts.json        # Manual smoke-test prompts (8)
 ├── assets/                  # Starter Components
 │   ├── animations.jsx       # Stage + Sprite + Easing + interpolate
 │   ├── ios_frame.jsx        # iPhone 15 Pro bezel
@@ -360,14 +409,17 @@ huashu-design/
 │   ├── deck_stage.js        # HTML deck engine
 │   ├── deck_index.html      # Multi-file deck assembler
 │   ├── design_canvas.jsx    # Side-by-side variation display
-│   ├── showcases/           # 24 prebuilt samples (8 scenes × 3 styles)
+│   ├── showcases/           # 24 prebuilt samples (8 scenes × 3 styles, index in INDEX.md)
 │   ├── style-specimens/     # Specimens for all 92 styles (html source + jpg) and section overviews; the xhs/ ones double as templates
 │   └── bgm-*.mp3            # 6 scene-specific background tracks
 ├── references/              # Drill-down docs by task (Chinese)
 │   ├── animation-pitfalls.md
 │   ├── directions.md        # Three directions: six candidates → thumbnails → pick three
+│   ├── polish-loop.md       # Polish loop: per-screen screenshots, look, revise once
+│   ├── steady-track.md      # Steady track: specimen start, screen outline, form menu
 │   ├── design-styles.md     # 92 HTML-native styles (web 20 + deck 20 + infographic 20 + app 12 + Chinese & East Asian 12 + Xiaohongshu 8)
-│   ├── modules/             # Web / deck / infographic / Xiaohongshu / motion module manuals
+│   ├── modules/             # Web / deck / infographic / Xiaohongshu / App Store screenshots / motion module manuals
+│   ├── app-paradigms.md     # Eight app interface paradigms drawn from two years of App Store Awards finalists
 │   ├── slide-decks.md
 │   ├── editable-pptx.md
 │   ├── critique-guide.md
@@ -376,16 +428,22 @@ huashu-design/
 ├── scripts/                 # Export toolchain
 │   ├── render-video.js      # HTML → MP4
 │   ├── xhs_render.py        # Xiaohongshu pages → 3:4 images + checks
+│   ├── appstore_shots.py    # Real apps' store screenshots → reference board
+│   ├── ref_card.py          # Measure a reference's palette and layout; put your result beside it afterwards
+│   ├── gen_image.py         # Borrow a local Codex CLI to generate imagery when the runtime cannot; accepts only genuinely generated files
+│   ├── appstore_render.py   # App Store screenshots → upload-ready images + search preview + checks
 │   ├── convert-formats.sh   # MP4 → 60fps + GIF
 │   ├── add-music.sh         # MP4 + BGM
 │   ├── export_deck_pdf.mjs
 │   ├── export_deck_pptx.mjs
 │   ├── html2pptx.js
 │   ├── design_lint.py       # Design check, reskin/repeat detection, look ledger
+│   ├── polish.py            # Polish loop: per-screen shots, thumbnail check, polish log
 │   ├── learn.py             # Taste experience read/write
 │   ├── ref_board.py         # Screenshot reference works into a board
 │   ├── capabilities.py      # Detect local capabilities (image gen, sibling skills, Node, ffmpeg)
-│   └── verify.py
+│   ├── verify.py
+│   └── tests/               # pytest regression (python3 -m pytest scripts/tests/ -q)
 └── demos/                   # Capability demos referenced by this README
 ```
 
@@ -398,6 +456,14 @@ The day Anthropic launched Claude Design I played with it until 4 a.m. A few day
 So I had an agent deconstruct Claude Design itself (including the system prompts circulating in the community, the brand asset protocol, the component mechanics), distill it into a structured spec, then write it as a skill installed in my own Claude Code.
 
 Thanks to Anthropic for writing the Claude Design prompts so clearly. This kind of derivative work inspired by other products is the new form of open-source culture in the AI era.
+
+---
+
+## Products built with huashu-design
+
+The three interface skins of **[FanBox · a coding-agent cockpit](https://github.com/alchaincyf/fanbox)** were designed with huashu-design. Direct Claude Code / Codex to do the work, and see every file it touches and every line it changes.
+
+[![FanBox · Coding Agent cockpit](https://raw.githubusercontent.com/alchaincyf/fanbox/master/assets/promo-banner.jpg)](https://github.com/alchaincyf/fanbox)
 
 ---
 

@@ -60,7 +60,7 @@ python3 tests/test_category_classifier.py
 
 ## 分类器与兜底桶（2026-11-11 完善，2026-11-12 逐个核对宽匹配）
 
-`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表，94 条），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看，还会抬分或压分。
+`classify_category` 是启发式：先按家族/预设集合早返回，再查 `CATEGORY_OVERRIDES`（人工核对过的覆盖表，101 条），最后按 `CATEGORY_KEYWORDS` 顺序做关键词匹配，全不命中就落到兜底桶 `commerce-ops`。分类会联动评分与纵向分层（coding-devtools / design-ui / data-analysis / docs-office / search-research / finance-data / finance-knowledge 属 L2），所以错分不只是标签难看，还会抬分或压分。
 
 三条硬规则：
 

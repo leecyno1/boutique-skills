@@ -58,7 +58,7 @@ Any non-terminal status can transition to `INVALIDATED`:
 |-----------|----------------|--------|
 | `register()` | — | Creates thesis with `IDEA` status (idempotent via fingerprint) |
 | `transition()` | Any non-terminal (IDEA → ENTRY_READY only) | Advances status, appends to `status_history` |
-| `open_position()` | `ENTRY_READY` | Sets entry data + `shares_remaining`, transitions to `ACTIVE` (only path to ACTIVE) |
+| `open_position()` | `ENTRY_READY` | Sets entry data + `shares_remaining`, transitions to `ACTIVE` (only path to ACTIVE); an equity open requires `shares` or an attached share count |
 | `attach_position()` | `IDEA` / `ENTRY_READY` / `ACTIVE` | Attaches position sizing data (sets `shares` + `shares_remaining == shares`); rejected on PARTIALLY_CLOSED / CLOSED / INVALIDATED (would corrupt the trim ledger) |
 | `trim()` | `ACTIVE` / `PARTIALLY_CLOSED` | Sells part; appends a ledger entry, decrements `shares_remaining`; → `PARTIALLY_CLOSED` (or `CLOSED` if remainder hits 0) |
 | `link_report()` | Any | Adds linked report reference |
@@ -72,7 +72,9 @@ Any non-terminal status can transition to `INVALIDATED`:
 - `transition()` only allows `IDEA → ENTRY_READY`; `ACTIVE` and
   `PARTIALLY_CLOSED` are blocked (use `open_position()` / `trim()`), as are
   all terminal statuses.
-- Use `open_position()` to reach `ACTIVE` (requires `actual_price` and `actual_date`).
+- Use `open_position()` to reach `ACTIVE` (requires `actual_price` and `actual_date`;
+  an equity thesis also needs `shares` or a share count already recorded by
+  `attach_position()`).
 - Use `trim()` to reach `PARTIALLY_CLOSED` (requires `shares_sold`, `price`, `date`).
 - Use `close()` (from `ACTIVE` or `PARTIALLY_CLOSED`), `trim()` selling the
   whole remainder, or `terminate(terminal_status="CLOSED")` to reach `CLOSED`.
@@ -82,9 +84,11 @@ Any non-terminal status can transition to `INVALIDATED`:
 ## CLI Access
 
 Every lifecycle operation is also a `thesis_store.py` subcommand:
-`transition`, `open-position`, `attach-position`, `close`, `terminate`
-(alongside `list` / `get` / `review-due` / `rebuild-index` / `doctor` /
+`transition`, `open-position`, `attach-position`, `close`, `terminate`,
+`record-lessons` (alongside `list` / `get` / `review-due` / `rebuild-index` / `doctor` /
 `mark-reviewed`). No Python required to walk a thesis through its lifecycle.
+`doctor` prints its JSON report and exits 1 when `ok` is false or the state
+directory is missing or not a directory.
 
 ### Backdating an existing position (`--event-date`)
 
@@ -110,3 +114,64 @@ save.
 2. On review: `last_review_date` updated, `next_review_date` advanced
 3. `list_review_due(as_of)` returns theses where `next_review_date <= as_of`
 4. Review status: `OK` → `WARN` → `REVIEW` (escalation ladder)
+
+## Long-only equities and initial risk levels
+
+Equity accounting is long-only. Do not ingest parabolic-short plans or record
+short-equity trades through `manual`; there is no adapter for those plans.
+Explicit SHORT directions are rejected before they can be discarded by raw
+registration, manual ingest, equity opening or shares-report attachment. Generic
+registration does not import a raw position: use validated futures attachment or
+`open-position --contracts` for futures LONG/SHORT.
+
+When both initial prices are supplied, they must be finite numeric/non-bool
+values. Positive initial stop > positive entry is rejected at manual ingest,
+shares-report attachment and default equity activation (using the actual fill). Absent
+optional pairs and existing finite nonpositive-price behavior remain compatible.
+Do not apply this initial-entry rule to an ACTIVE/PARTIALLY_CLOSED long's stop:
+a profitable long may update its stop above original entry. Manual source prices
+remain provenance only; authoritative fills still come from `open-position`.
+For a backfill with a profit-protecting stop, open the long with its initial stop,
+then update the current stop after activation.
+
+For a real long that gaps and fills below its planned stop, keep the default
+refusal unless explicitly acknowledging the actual fill with
+`open-position --allow-gap-fill` (API: `allow_gap_fill=True`). This opt-in only
+bypasses the positive fill-below-positive-stop geometry guard for equity;
+SHORT intent, invalid prices/quantities/state and all ingest/attachment validation
+still refuse. Futures reject this equity-only option. A normal/equal fill adds
+no gap annotation. The flag must be a Python bool in API calls.
+The acknowledgement still requires a share count: pass `--shares` or attach a sized position.
+
+Preserve the target, planned stop, sizing audit fields and provenance. Store the
+actual fill and append a `gap fill acknowledged` entry to the protected ACTIVE
+`status_history.reason`, including exact actual fill and stop values. A supplied
+reason must remain a string. This audit survives later stop changes; inspect
+status history when reviewing the gap. Closing/trimming uses the actual fill
+for long-side P&L. This records a fill that already occurred, not approval to
+open a new trade or retain a breached stop. Planned sizing fields are not
+recalculated by this acknowledgement.
+
+```bash
+python3 skills/trader-memory-core/scripts/trader_memory_cli.py store \
+  --state-dir state/theses/ open-position <id> \
+  --actual-price 88 --actual-date 2026-11-01 --shares 10 \
+  --allow-gap-fill --reason "record actual broker fill"
+```
+
+Explicit legacy short equity records (a SHORT word or a bare SELL, such as SELL_SHORT, Short position or SELL; labels such as Sell to close stay long) are refused before new
+accounting or MAE/MFE calculations. CLOSED/INVALIDATED legacy shorts can produce
+historical-only postmortems: P&L, MAE/MFE, position valuation and risk are shown as
+unavailable (—), with an explicit unsupported-short explanation. This report
+fetches no prices and leaves thesis/index state, stored outcomes and provenance
+unchanged; old values are not validated or corrected. ACTIVE/PARTIALLY_CLOSED
+records still cannot generate postmortems. They can still be marked reviewed
+or terminated as INVALIDATED without an exit price; these bookkeeping actions
+preserve all existing monetary fields and provenance. Summary statistics and
+monthly reports skip explicit shorts and report their excluded count
+(`excluded_unsupported_equity_shorts` in summary JSON when nonzero).
+Old manual provenance was free text: BUY, Long position and other non-short
+labels retain legacy long accounting. New direction inputs remain strictly LONG.
+Read-only inspection remains available; no old outcomes are migrated or re-signed.
+Ambiguous legacy records cannot be classified from a trailing stop alone.
+Keep short-equity journals external; never relabel one as a futures contract.

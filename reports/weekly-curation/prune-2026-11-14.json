@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-11-14T09:45:09",
+  "checked_upstreams": 301,
+  "path_missing_checked": 0,
+  "suggestions": [
+    {
+      "skill": "agentmail",
+      "reason": "dominated_duplicate",
+      "detail": "conflict group 'email-agent' has a member scoring 81"
+    }
+  ],
+  "applied": [
+    "agentmail"
+  ]
+}

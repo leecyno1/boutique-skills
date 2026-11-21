@@ -1,5 +1,22 @@
 # Findings
 
+## 2026-11-14（周度治理：兜底桶门禁拦下两个新入库技能）
+
+已解决（本地修复并复验，第 10-11 步未执行）：
+
+- **触发**：`weekly_cycle.sh` 第 9 步 `tests/test_category_classifier.py::test_no_silent_commerce_ops_fallback` 失败，`commerce-ops` 出现 `accessible-authentication`、`egm-bootstrap`。脚本按 `set -e` 中止，第 10 步（调整建议）与第 11 步（双远端发布）未运行，origin/gitee 仍在 `c8ad942`。
+- **根因**：本周发现阶段自动入库 11 个技能（5 个 import 仓库中 3 个产出目录），其中 Front-End-Checklist 的 `accessible-authentication` 与 EGM 的 `egm-bootstrap` 描述不含任何分类关键词，落到兜底桶；门禁按设计拦截未经人工复核的兜底分类。另两个 import 仓库 `alchaincyf/nuwa-skill`、`cheaper-inference/omniroute` 没有产出新目录：omniroute 的 5 个 CLI 技能早已在库；nuwa-skill 未抓到可入库文件（静默 0 落盘，导入函数缺少提示）。
+- **修复**：读两份 SKILL.md 后新增两条 `CATEGORY_OVERRIDES`，未改关键词表：`egm-bootstrap` → `design-ui`（同库 egm-brainstorm/draft/drift-report/resolve 全在此类）；`accessible-authentication` → `design-ui`（审登录/注册/MFA/恢复流程的 WCAG 可访问性，是前端 UX 审查而非安全审计）。
+- **影响面**：分类变化精确 2 个，其余 325 个零变化；`commerce-ops` 2→0、`design-ui` 34→36、L2 121→123 / L3 194→192；5★ 91→93、4★ 164→162（离开 L3 加分，属评分模型既有设计）；标准包 21、金融组合 28 未变。
+- **复验**：`audit_skills.py` 327/321，missing / duplicate / missing_native_origins / standard_bundle_issues 全 0；syntax 1293 py + 397 js，errors 0；risk 15=15、new 0；7 个测试文件 27 用例全 OK。
+- **当前状态**：修复与门禁只在本地，尚未提交/发布；等待用户确认后补跑第 10-11 步。
+
+待观察：
+
+- EGM 家族按关键词 "design" 落在 `design-ui`，但内容是软件设计文档 / README 契约工作流（bootstrap/draft/drift-report/resolve），语义上更接近 `docs-office` 或 `agent-orchestration`。本轮只按“同家族惯例”把 bootstrap 归位，是否整体重分类需人工裁定。
+- 上游同步 `market-breadth-analyzer` 记 1 次 error（read timeout，瞬时网络；不是 404），其余 300 个来源完成；origin 迁移 0，prune 未受影响。
+- 导入函数的可观测性缺口：`collect_skill_files` 抓取为空或超限时静默 `continue`，本轮 nuwa-skill 因此 0 落盘却无日志，后续可补一条 warn。
+
 ## 2026-11-12（逐个核对宽匹配：三个家族归位，词边界扩到 9 个）
 
 已解决：

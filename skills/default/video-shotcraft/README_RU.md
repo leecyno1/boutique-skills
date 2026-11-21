@@ -8,9 +8,9 @@
 
 # video-shotcraft
 
-[English](README.md) | [中文](README_CN.md) | [日本語](README_JA.md) | **Русский**
+[English](README.md) | [中文](README_CN.md) | [繁體中文](README_TW.md) | [日本語](README_JA.md) | **Русский**
 
-[![Галерея](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/)
+[![Галерея](https://img.shields.io/badge/Gallery-live%20previews-d3923c)](https://vincentwei1021.github.io/video-shotcraft/) <a href="#wechat-community"><img src="https://img.shields.io/badge/%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20WeChat-07C160?style=flat&amp;logo=wechat&amp;logoColor=white" alt="Сообщество WeChat" height="20"></a>
 [![Витрина](https://img.shields.io/badge/Showcase-community%20videos-7c3aed)](https://vincentwei1021.github.io/video-shotcraft/showcase.html)
 
 [![Звёзды GitHub](https://img.shields.io/github/stars/Vincentwei1021/video-shotcraft)](https://github.com/Vincentwei1021/video-shotcraft/stargazers)
@@ -61,22 +61,12 @@
 <table>
 <tr>
 <td align="center" valign="middle" width="25%">
-  <a href="https://go.apimart.ai/tw-video-shotcraft"><img src="./assets/readme/sponsors/apimart.png" width="200" alt="Логотип APIMart"></a><br>
-  <a href="https://go.apimart.ai/tw-video-shotcraft"><b>APIMart</b></a>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><img src="./assets/readme/sponsors/apinebula.png" width="200" alt="Логотип APINEBULA"></a><br>
+  <a href="https://apinebula.ai/ref/HLROcb4p"><b>APINEBULA</b></a>
 </td>
 <td>
-  <p>Спасибо APIMart за поддержку проекта! APIMart — доступная API-платформа для генерации изображений и видео с ИИ: GPT-Image-2 от $0.006 за изображение, 160+ изображений за доллар. Один асинхронный API для изображений и видео: отправьте задачу, получите ID и заберите результат опросом или через обратный вызов. Генерируйте десятки тысяч изображений пакетами без тайм-аутов, меняйте модели без изменения кода. Оплата по использованию, без абонентской платы — <a href="https://go.apimart.ai/tw-video-shotcraft">зарегистрируйтесь здесь</a>, чтобы начать.</p>
-</td>
-</tr>
-<tr>
-<td align="center" valign="middle" width="25%">
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><img src="./assets/readme/sponsors/packycode.png" width="200" alt="Логотип PackyCode"></a><br>
-  <a href="https://www.packyapi.ai/register?aff=l9IZ"><b>PackyCode</b></a>
-</td>
-<td>
-  <p>Получите доступ к ведущим ИИ-моделям через PackyCode с единой точкой доступа API и одним API-ключом. Быстрый и надёжный доступ с автоматическим переключением при сбоях и выделенными высокоскоростными маршрутами для Codex и Claude Code.</p>
-  <p>Начните с $1 бесплатных средств, скидки на первое пополнение и экономии до 80% на доступных по акции маршрутах. Платите в RMB без наценок за конвертацию валюты и дополнительных комиссий за пополнение.</p>
-  <p><a href="https://www.packyapi.ai/register?aff=l9IZ">Начать работу с PackyCode →</a></p>
+  <p>Спасибо APINEBULA за поддержку проекта! APINEBULA — корпоративная платформа агрегации ИИ от 银河录像局. Используя ресурсы материнской платформы, она предоставляет разработчикам, командам и компаниям стабильный и экономичный доступ к API больших языковых моделей. Один API объединяет полнофункциональные Claude, GPT, Gemini и другие ведущие модели; цены на модели начинаются от 6% стандартной стоимости. Для компаний доступны высокая параллельность запросов, официальные договоры, оплата с расчётного счёта и выставление счетов.</p>
+  <p><a href="https://apinebula.ai/ref/HLROcb4p">Зарегистрируйтесь по этой ссылке</a> и введите промокод <b>video</b> при пополнении, чтобы получить <b>скидку 10%</b>.</p>
 </td>
 </tr>
 <tr>
@@ -310,3 +300,15 @@ CLI поиска и загрузки Video Shotcraft реализован нез
     <img alt="График истории звёзд" src="https://api.star-history.com/chart?repos=Vincentwei1021/video-shotcraft&type=date&legend=top-left&sealed_token=DQ8_yn0k8in6tP80CRd9Ghuk1fcdEW7poFh9ticGB3wMNO-E_i6g51sUiQWCAQYP0u0bjRweuIfGoRS8FnrIz86oFp1lcl5zu2vrEJrQOoNvwdUSwmm8XNPkAiln1o-EBAX0uU8k6ReIlSRufGLqpoxsWshMSZ9mmok6ox5XXIUO77b7zOgp2yRIH6yR" />
   </picture>
 </a>
+
+<a id="wechat-community"></a>
+
+## 💬 Сообщество WeChat
+
+Присоединяйтесь к «Vincent 的 AI 交流群 3», чтобы обсуждать приложения ИИ, программирование и создание видео.
+
+<a href="assets/wechat-group.jpg?v=3"><img src="assets/wechat-group.jpg?v=3" alt="QR-код AI-сообщества Vincent в WeChat" width="400"></a>
+
+Отсканируйте QR-код в WeChat. На телефоне сохраните изображение и выберите его из альбома в функции сканирования WeChat.
+
+QR-код действителен **до 2026-11-26**; ориентируйтесь на уведомление WeChat. Если срок истёк, [свяжитесь с Vincent в X](https://x.com/VincentWei93), чтобы узнать актуальный способ вступить.

@@ -243,6 +243,28 @@ CATEGORY_OVERRIDES = {
     "agent-architecture-audit": "agent-orchestration",
     "agent-eval": "agent-orchestration",
     "agent-harness-construction": "agent-orchestration",
+    # google/elephant-goldfish-model EGM 家族：同库 egm-brainstorm/draft/drift-report/
+    # resolve 都在 design-ui；bootstrap 产出仓库架构 README（设计文档），描述里没有
+    # ui/design 关键词，按家族惯例显式归位。
+    "egm-bootstrap": "design-ui",
+    # thedaviddias/Front-End-Checklist 可访问性审查：审登录/注册/MFA/恢复流程的 WCAG
+    # 可访问性，属前端 UX 质量而不是安全审计；描述不含 ui/design 关键词，显式归位。
+    "accessible-authentication": "design-ui",
+    # Jeffallan/claude-skills 工程专家家族（2026-11-21 首次入库 5 个，岗位各不相同，
+    # 不是单一分类家族）。每个都被描述里的 incidental 词抢先命中：
+    #   angular-architect      "writing Angular tests"        -> writing-content
+    #   api-designer           "planning API architecture"    -> agent-orchestration
+    #   architecture-designer  "technology trade-offs"        -> finance-trading
+    #   atlassian-mcp          "searching Confluence pages"   -> search-research
+    #   chaos-engineer         "Designs chaos experiments"    -> design-ui
+    # trade-offs 是连字符复合词，\btrade\b 照样命中，加词边界救不了，只能显式覆盖。
+    # 前四个按 frontend-dev / react-native-dev / agentmail-mcp 的工程惯例归 coding-devtools；
+    # chaos-engineer 是分布式系统韧性/SRE 运维，归 devops-cloud。
+    "angular-architect": "coding-devtools",
+    "api-designer": "coding-devtools",
+    "architecture-designer": "coding-devtools",
+    "atlassian-mcp": "coding-devtools",
+    "chaos-engineer": "devops-cloud",
 }
 
 

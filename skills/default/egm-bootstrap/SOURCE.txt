@@ -1,0 +1,5 @@
+Source: https://github.com/google/elephant-goldfish-model
+Base source commit: main @ 2026-11-14
+License: Apache-2.0
+Stars at import: 18625
+Imported by: scripts/weekly_curation.py on 2026-11-14 (score 80).

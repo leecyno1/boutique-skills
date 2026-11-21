@@ -63,12 +63,45 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     return p.parse_args(argv)
 
 
+class ConfigError(ValueError):
+    """A configuration-shape diagnostic that never embeds file contents."""
+
+
 def load_config(path: str | None) -> dict:
     config_path = Path(path) if path else DEFAULT_CONFIG_PATH
     if not config_path.exists():
         raise FileNotFoundError(f"config not found: {config_path}")
     with open(config_path, encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+        try:
+            config = yaml.safe_load(f)
+        except UnicodeError:
+            raise
+        except (ValueError, TypeError, KeyError, AttributeError, OverflowError, RecursionError):
+            # SafeLoader's scalar constructors can raise plain Python errors
+            # (e.g. !!int/!!bool/!!timestamp). Their text may expose a key.
+            raise ConfigError("invalid YAML value or excessive nesting") from None
+    if config is None:
+        return {}  # Preserve empty/comment-only/null YAML as default configuration.
+    if not isinstance(config, dict):
+        raise ConfigError("top-level YAML must be a mapping (key/value pairs)")
+    for field in ("data", "strategy_context"):
+        value = config.get(field)
+        if value is None:
+            if field in config:
+                config[field] = {}
+        elif not isinstance(value, dict):
+            raise ConfigError(f"{field} must be a mapping or null")
+    indexes = config.get("indexes")
+    if indexes is not None:
+        if not isinstance(indexes, list):
+            raise ConfigError("indexes must be a list or null")
+        for index, entry in enumerate(indexes):
+            if not isinstance(entry, dict):
+                raise ConfigError(f"indexes[{index}] must be a mapping")
+            symbol = entry.get("symbol")
+            if not isinstance(symbol, str) or not symbol.strip():
+                raise ConfigError(f"indexes[{index}].symbol must be a non-empty string")
+    return config
 
 
 def resolve_api_key(cli_key: str | None, config: dict) -> str:
@@ -316,7 +349,27 @@ def _index_result_to_dict(r: IndexResult) -> dict:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    config = load_config(args.config)
+    config_path = Path(args.config) if args.config else DEFAULT_CONFIG_PATH
+    try:
+        config = load_config(args.config)
+    except OSError as exc:
+        print(
+            f"ERROR: cannot read configuration {config_path} ({type(exc).__name__}).",
+            file=sys.stderr,
+        )
+        return 1
+    except UnicodeError:
+        print(f"ERROR: configuration {config_path} must be UTF-8 YAML.", file=sys.stderr)
+        return 1
+    except yaml.YAMLError as exc:
+        # Parser exception text includes source snippets, potentially API keys.
+        mark = getattr(exc, "problem_mark", None)
+        location = f" (line {mark.line + 1}, column {mark.column + 1})" if mark else ""
+        print(f"ERROR: configuration {config_path} has invalid YAML{location}.", file=sys.stderr)
+        return 1
+    except ConfigError as exc:
+        print(f"ERROR: invalid configuration {config_path}: {exc}.", file=sys.stderr)
+        return 1
 
     # CLI overrides
     if args.symbols:
@@ -334,8 +387,8 @@ def main(argv: list[str] | None = None) -> int:
 
     # Symbols / benchmark mapping
     indexes_cfg: list[dict] = config.get("indexes") or [
-        {"symbol": "QQQ", "benchmark_name": "Nasdaq Proxy"},
-        {"symbol": "SPY", "benchmark_name": "S&P500 Proxy"},
+        {"symbol": "QQQ", "benchmark_name": "QQQ (Nasdaq-100 ETF proxy; not Nasdaq Composite)"},
+        {"symbol": "SPY", "benchmark_name": "SPY (S&P 500 ETF proxy)"},
     ]
     if config.get("symbols_override"):
         wanted = {s.upper() for s in config["symbols_override"]}
@@ -343,8 +396,29 @@ def main(argv: list[str] | None = None) -> int:
             {"symbol": s, "benchmark_name": f"{s} proxy"} for s in config["symbols_override"]
         ]
 
+    # Known ETFs must never inherit an ambiguous index label from config.
+    identities = {
+        "QQQ": "QQQ (Nasdaq-100 ETF proxy; not Nasdaq Composite)",
+        "SPY": "SPY (S&P 500 ETF proxy)",
+        "^IXIC": "Nasdaq Composite (^IXIC)",
+        "^GSPC": "S&P 500 (^GSPC)",
+    }
+    indexes_cfg = [
+        dict(
+            item,
+            instrument_name=identities.get(
+                item["symbol"].upper(), item.get("benchmark_name", item["symbol"])
+            ),
+        )
+        for item in indexes_cfg
+    ]
+
     # FMP client
-    api_key = resolve_api_key(args.api_key, config)
+    try:
+        api_key = resolve_api_key(args.api_key, config)
+    except ValueError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
     client = build_fmp_client(api_key=api_key)
 
     rule = _build_rule(config)
@@ -409,6 +483,7 @@ def main(argv: list[str] | None = None) -> int:
         "lookback_days": lookback,
         "symbols_requested": [i["symbol"] for i in indexes_cfg],
         "symbols_loaded": symbols_loaded,
+        "instrument_identity": indexes_cfg,
         "skipped_sessions": skipped_sessions_all,
         "audit_flags": sorted(set(aggregate_audit_flags)),
         "generated_at": generated_at,

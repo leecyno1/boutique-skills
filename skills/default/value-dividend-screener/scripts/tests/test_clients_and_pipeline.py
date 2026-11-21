@@ -61,7 +61,9 @@ class TestFINVIZClient:
     def test_request_exception_returns_empty(self, capsys):
         client, _ = self._client(exc=requests.exceptions.ConnectionError("boom"))
         assert client.screen_stocks() == set()
-        assert "boom" in capsys.readouterr().err
+        output = capsys.readouterr().err
+        assert "ConnectionError" in output
+        assert "boom" not in output
 
 
 # --------------------------------------------------------------------------
@@ -267,6 +269,15 @@ class TestHistoricalPrices:
 # RSI
 # --------------------------------------------------------------------------
 class TestRSI:
+    @pytest.mark.parametrize("bad", [None, True, "100", 0, -1, float("nan"), float("inf")])
+    def test_invalid_close_is_unavailable(self, bad):
+        prices = list(range(1, 31))
+        prices[15] = bad
+        assert RSICalculator.calculate_rsi(prices) is None
+
+    def test_nonfinite_derived_result_is_unavailable(self):
+        assert RSICalculator.calculate_rsi([1e308, 1.0] * 15) is None
+
     def test_insufficient_data(self):
         assert RSICalculator.calculate_rsi([1.0] * 14) is None
 
@@ -622,6 +633,7 @@ class FakeFMP:
     def __init__(self, api_key):
         self.api_key = api_key
         self.rate_limit_reached = False
+        self._last_error = None
         self.trip_on = None
         self.screen_args = None
         self.cfg = FakeFMP.cfg
@@ -631,6 +643,16 @@ class FakeFMP:
         if self.trip_on == name:
             self.rate_limit_reached = True
 
+    def _note_fetch(self, symbol, value):
+        """Mirror the real client's _last_error after a per-symbol fetch.
+
+        The real client clears _last_error at the start of every _get and sets
+        it on failure, so a fetch that returns data leaves it clear and a
+        fetch that returns nothing leaves the configured failure reason.
+        """
+        error = self.cfg.get("last_error_by_symbol", {}).get(symbol, self.cfg.get("last_error"))
+        self._last_error = error if (not value and error) else None
+
     def screen_stocks(self, **kwargs):
         self.screen_args = kwargs
         return [dict(c) for c in self.cfg["candidates"]]
@@ -639,7 +661,12 @@ class FakeFMP:
         kind = endpoint.split("/")[0]
         sym = endpoint.split("/")[-1]
         if kind == "quote":
-            return self.cfg.get("quotes", {}).get(sym)
+            data = self.cfg.get("quotes", {}).get(sym)
+            if data is None:
+                self._last_error = self.cfg.get("last_error_by_symbol", {}).get(
+                    sym, self.cfg.get("last_error")
+                )
+            return data
         if kind == "ratios":
             return self.cfg.get("ratios", {}).get(sym)
         return None
@@ -650,11 +677,13 @@ class FakeFMP:
 
     def get_income_statement(self, symbol, limit=5):
         self._maybe_trip("income")
-        return self.cfg["income"].get(symbol, [])
+        value = self.cfg["income"].get(symbol, [])
+        self._note_fetch(symbol, value)
+        return value
 
     def get_balance_sheet(self, symbol, limit=5):
         self._maybe_trip("balance")
-        return [
+        value = [
             {
                 "totalDebt": 50,
                 "totalStockholdersEquity": 100,
@@ -662,10 +691,12 @@ class FakeFMP:
                 "totalCurrentLiabilities": 100,
             }
         ]
+        self._note_fetch(symbol, value)
+        return value
 
     def get_cash_flow(self, symbol, limit=5):
         self._maybe_trip("cash")
-        return [
+        value = [
             {
                 "dividendsPaid": -1e9,
                 "operatingCashFlow": 9e9,
@@ -673,18 +704,26 @@ class FakeFMP:
                 "netIncome": 1e10,
             }
         ]
+        self._note_fetch(symbol, value)
+        return value
 
     def get_key_metrics(self, symbol, limit=5):
         self._maybe_trip("metrics")
-        return [{"roe": 0.15}]
+        value = [{"roe": 0.15}]
+        self._note_fetch(symbol, value)
+        return value
 
     def get_dividend_history(self, symbol):
         self._maybe_trip("dividend")
-        return self.cfg["dividends"].get(symbol, {})
+        value = self.cfg["dividends"].get(symbol, {})
+        self._note_fetch(symbol, value)
+        return value
 
     def get_historical_prices(self, symbol, days=30):
         self._maybe_trip("prices")
-        return self.cfg["prices"].get(symbol, [])
+        value = self.cfg["prices"].get(symbol, [])
+        self._note_fetch(symbol, value)
+        return value
 
 
 @pytest.fixture
@@ -701,7 +740,345 @@ def _good_candidate(symbol="GOOD", price=20.0, **extra):
     return c
 
 
+class TestPlanGating:
+    def _client(self, *responses, key="test-key-123"):
+        client = FMPClient(key)
+        session = MagicMock()
+        session.get.side_effect = list(responses)
+        client.session = session
+        return client
+
+    def test_plan_restriction_raises(self):
+        client = self._client(_resp(402, text="not available under your current subscription"))
+        with pytest.raises(mod.FMPPlanRestrictedError, match="stock screener"):
+            client.screen_stocks(3.0, 20, 2)
+
+    def test_invalid_key_403_is_not_plan_restriction(self):
+        client = self._client(_resp(403, text="Invalid API KEY"))
+        assert client.screen_stocks(3.0, 20, 2) == []
+
+    def test_empty_200_is_not_plan_restriction(self):
+        client = self._client(_resp(200, []))
+        assert client.screen_stocks(3.0, 20, 2) == []
+
+    def test_200_rows_are_returned(self):
+        row = {
+            "symbol": "AAA",
+            "price": 20.0,
+            "lastAnnualDividend": 1.0,
+            "marketCap": 1e10,
+        }
+        client = self._client(
+            _resp(200, [row]),
+            _resp(200, [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.5}]),
+        )
+        assert [r["symbol"] for r in client.screen_stocks(3.0, 20, 2)] == ["AAA"]
+
+    def test_finviz_all_quotes_plan_restricted_raises(self, fake_fmp):
+        fake_fmp.cfg = {
+            "quotes": {},
+            "last_error": "HTTP 402 - not available under your current subscription",
+        }
+        with pytest.raises(mod.FMPPlanRestrictedError, match="quote endpoint"):
+            mod.screen_value_dividend_stocks("key", finviz_symbols={"AAA"})
+
+    def test_finviz_rate_limit_is_not_plan_restriction(self, fake_fmp):
+        fake_fmp.cfg = {"quotes": {}, "last_error": "HTTP 429 (daily rate limit)"}
+        assert mod.screen_value_dividend_stocks("key", finviz_symbols={"AAA"}) == []
+
+    def test_legacy_endpoint_403_raises(self):
+        client = self._client(_resp(403, text="Legacy Endpoint: only legacy users have access"))
+        with pytest.raises(mod.FMPPlanRestrictedError, match="stock screener"):
+            client.screen_stocks(3.0, 20, 2)
+
+    def test_finviz_mixed_failures_still_raise_when_any_is_plan_restricted(self, fake_fmp):
+        # The first symbol is plan-restricted, the last fails for another reason;
+        # the flag, not the final _last_error, decides.
+        fake_fmp.cfg = {
+            "quotes": {},
+            "last_error_by_symbol": {
+                "AAA": "HTTP 402 - not available under your current subscription",
+                "BBB": "HTTP 500 - server error",
+            },
+        }
+        with pytest.raises(mod.FMPPlanRestrictedError, match="quote endpoint"):
+            mod.screen_value_dividend_stocks("key", finviz_symbols=["AAA", "BBB"])
+
+    def test_finviz_partial_success_does_not_raise(self, fake_fmp):
+        fake_fmp.cfg = {
+            "quotes": {"GOOD": [{"symbol": "GOOD", "price": 20.0}]},
+            "ratios": {"GOOD": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}]},
+            "profiles": {"GOOD": {"sector": "Utilities", "industry": "Power"}},
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": _falling_prices()},
+            "last_error_by_symbol": {
+                "BAD": "HTTP 402 - not available under your current subscription"
+            },
+        }
+        results = mod.screen_value_dividend_stocks("key", finviz_symbols=["GOOD", "BAD"])
+        assert isinstance(results, list)
+
+    def test_finviz_double_without_last_error_is_safe(self, monkeypatch):
+        class NoErrorAttr:
+            rate_limit_reached = False
+
+            def _get(self, endpoint, params=None):
+                return None
+
+            def get_company_profile(self, symbol):
+                return None
+
+        monkeypatch.setattr(mod, "FMPClient", lambda key: NoErrorAttr())
+        assert mod.screen_value_dividend_stocks("key", finviz_symbols={"AAA"}) == []
+
+    # -- Issue #777: plan gating in the per-symbol analysis stage --------
+
+    def _analysis_cfg(self, **overrides):
+        cfg = {
+            "quotes": {"GOOD": [{"symbol": "GOOD", "price": 20.0}]},
+            "ratios": {"GOOD": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}]},
+            "profiles": {"GOOD": {"sector": "Utilities", "industry": "Power"}},
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": _falling_prices()},
+        }
+        cfg.update(overrides)
+        return cfg
+
+    def test_analysis_stage_plan_restriction_raises_when_all_gated(self, fake_fmp):
+        # FINVIZ path: quote/profile/ratios return 200, but the per-symbol
+        # analysis calls (income-statement, dividends, prices) return 402.
+        fake_fmp.cfg = self._analysis_cfg(
+            quotes={"AAA": [{"symbol": "AAA", "price": 20.0}]},
+            ratios={"AAA": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}]},
+            profiles={"AAA": {"sector": "Utilities", "industry": "Power"}},
+            income={},
+            dividends={},
+            prices={},
+            last_error_by_symbol={
+                "AAA": "HTTP 402 - Premium Query Parameter ... not available "
+                "under your current subscription"
+            },
+        )
+        with pytest.raises(mod.FMPPlanRestrictedError, match="detailed analysis"):
+            mod.screen_value_dividend_stocks("key", finviz_symbols=["AAA"])
+
+    def test_analysis_stage_partial_gating_returns_survivors_and_warns(self, fake_fmp, capsys):
+        fake_fmp.cfg = self._analysis_cfg(
+            quotes={
+                "GOOD": [{"symbol": "GOOD", "price": 20.0}],
+                "BAD": [{"symbol": "BAD", "price": 20.0}],
+            },
+            ratios={
+                "GOOD": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}],
+                "BAD": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}],
+            },
+            profiles={
+                "GOOD": {"sector": "Utilities", "industry": "Power"},
+                "BAD": {"sector": "Utilities", "industry": "Power"},
+            },
+            last_error_by_symbol={
+                "BAD": "HTTP 402 - Premium Query Parameter ... not available "
+                "under your current subscription"
+            },
+        )
+        stats = {}
+        results = mod.screen_value_dividend_stocks(
+            "key", finviz_symbols=["GOOD", "BAD"], stats=stats
+        )
+        assert [r["symbol"] for r in results] == ["GOOD"]
+        assert stats["plan_gated_skipped"] == 1
+        err = capsys.readouterr().err
+        assert "1 candidate" in err
+        assert "plan" in err.lower()
+
+    def test_analysis_stage_genuine_empty_keeps_current_behavior(self, fake_fmp):
+        # All 200s, no data anywhere in the analysis stage: a normal empty
+        # result, not a plan-gating error.
+        fake_fmp.cfg = self._analysis_cfg(
+            quotes={"AAA": [{"symbol": "AAA", "price": 20.0}]},
+            ratios={"AAA": [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.0}]},
+            profiles={"AAA": {"sector": "Utilities", "industry": "Power"}},
+            income={},
+            dividends={},
+            prices={},
+        )
+        stats = {}
+        assert mod.screen_value_dividend_stocks("key", finviz_symbols=["AAA"], stats=stats) == []
+        assert stats["plan_gated_skipped"] == 0
+
+    def test_gate2_ratios_plan_restriction_raises_when_all_gated(self):
+        # FMP-only path: the screener returns 200, but every gate-2 ratios
+        # call returns 402, so the run must not end as "0 candidates".
+        rows = [
+            {
+                "symbol": "AAA",
+                "price": 100.0,
+                "lastAnnualDividend": 4.0,
+                "marketCap": 5e9,
+            },
+            {
+                "symbol": "BBB",
+                "price": 100.0,
+                "lastAnnualDividend": 4.0,
+                "marketCap": 4e9,
+            },
+        ]
+        client = self._client(
+            _resp(200, rows),
+            _resp(
+                402,
+                text="Premium Query Parameter ... not available under your current subscription",
+            ),
+            _resp(
+                402,
+                text="Premium Query Parameter ... not available under your current subscription",
+            ),
+        )
+        with pytest.raises(mod.FMPPlanRestrictedError, match="ratios"):
+            client.screen_stocks(3.0, 20, 2)
+
+    def test_gate2_ratios_partial_gating_returns_survivor(self):
+        rows = [
+            {
+                "symbol": "AAA",
+                "price": 100.0,
+                "lastAnnualDividend": 4.0,
+                "marketCap": 5e9,
+            },
+            {
+                "symbol": "BBB",
+                "price": 100.0,
+                "lastAnnualDividend": 4.0,
+                "marketCap": 4e9,
+            },
+        ]
+        client = self._client(
+            _resp(200, rows),
+            _resp(
+                402,
+                text="Premium Query Parameter ... not available under your current subscription",
+            ),
+            _resp(200, [{"priceToEarningsRatio": 10.0, "priceToBookRatio": 1.5}]),
+        )
+        assert [r["symbol"] for r in client.screen_stocks(3.0, 20, 2)] == ["BBB"]
+        assert client.plan_restricted_ratios_skipped == 1
+
+    def test_gate2_ratios_non_plan_failure_does_not_raise(self):
+        rows = [
+            {
+                "symbol": "AAA",
+                "price": 100.0,
+                "lastAnnualDividend": 4.0,
+                "marketCap": 5e9,
+            }
+        ]
+        client = self._client(_resp(200, rows), _resp(403, text="Invalid API key"))
+        assert client.screen_stocks(3.0, 20, 2) == []
+        assert client.plan_restricted_ratios_skipped == 0
+
+
 class TestScreeningPipeline:
+    @pytest.mark.parametrize("index", [0, 14, 29])
+    @pytest.mark.parametrize(
+        "bad", ["missing", None, True, "100", 0, -1, float("nan"), float("inf"), -float("inf")]
+    )
+    def test_invalid_history_is_skipped_without_shortening(
+        self, fake_fmp, monkeypatch, capsys, index, bad
+    ):
+        bars = _falling_prices()
+        bars[index] = {} if bad == "missing" else {"close": bad}
+        fake_fmp.cfg = {
+            "candidates": [_good_candidate(sector="Utilities")],
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": bars},
+        }
+        calculator = MagicMock(side_effect=AssertionError("invalid history reached RSI"))
+        monkeypatch.setattr(RSICalculator, "calculate_rsi", calculator)
+        assert mod.screen_value_dividend_stocks("fixture-only") == []
+        calculator.assert_not_called()
+        assert "RSI unavailable: missing or invalid close data" in capsys.readouterr().err
+        assert len(bars) == 30
+
+    @pytest.mark.parametrize("bad_row", [None, "not-a-bar", []])
+    def test_non_mapping_bar_is_unavailable(self, fake_fmp, capsys, bad_row):
+        bars = _falling_prices()
+        bars[5] = bad_row
+        fake_fmp.cfg = {
+            "candidates": [_good_candidate(sector="Utilities")],
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": bars},
+        }
+        assert mod.screen_value_dividend_stocks("fixture-only") == []
+        assert "RSI unavailable" in capsys.readouterr().err
+
+    @pytest.mark.parametrize("bad", ["missing", float("nan")])
+    def test_generated_transport_preserves_gap_and_next_candidate_continues(
+        self, fake_fmp, monkeypatch, capsys, bad
+    ):
+        broken = [{"close": 30 - i} for i in range(30)]
+        broken[0] = {} if bad == "missing" else {"close": bad}
+        valid = _falling_prices()
+        real = FMPClient("fixture-only")
+        session = MagicMock()
+
+        def get(url, params, timeout):
+            assert url.endswith("/stable/historical-price-eod/full")
+            assert timeout == 30
+            return _resp(200, broken if params["symbol"] == "BAD" else valid)
+
+        session.get.side_effect = get
+        real.session = session
+        monkeypatch.setattr(
+            fake_fmp,
+            "get_historical_prices",
+            lambda self, symbol, days=30: real.get_historical_prices(symbol, days),
+        )
+        calculator = MagicMock(wraps=RSICalculator.calculate_rsi)
+        monkeypatch.setattr(RSICalculator, "calculate_rsi", calculator)
+        fake_fmp.cfg = {
+            "candidates": [_good_candidate(s, sector="Utilities") for s in ("BAD", "GOOD")],
+            "income": {s: _income() for s in ("BAD", "GOOD")},
+            "dividends": {s: _dividend_history() for s in ("BAD", "GOOD")},
+        }
+        result = mod.screen_value_dividend_stocks("fixture-only")
+        assert [r["symbol"] for r in result] == ["GOOD"]
+        assert result[0]["rsi"] == 0.0
+        assert session.get.call_count == 2
+        calculator.assert_called_once_with([bar["close"] for bar in reversed(valid)], period=14)
+        assert "RSI unavailable" in capsys.readouterr().err
+        json.dumps(result, allow_nan=False)
+
+    def test_clean_history_reaches_rsi_in_full_chronological_order(self, fake_fmp, monkeypatch):
+        bars = [{"close": 30 - i} for i in range(30)]
+        fake_fmp.cfg = {
+            "candidates": [_good_candidate(sector="Utilities")],
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": bars},
+        }
+        calculator = MagicMock(wraps=RSICalculator.calculate_rsi)
+        monkeypatch.setattr(RSICalculator, "calculate_rsi", calculator)
+        result = mod.screen_value_dividend_stocks("fixture-only")
+        assert result[0]["rsi"] == 100.0
+        calculator.assert_called_once_with(list(range(1, 31)), period=14)
+
+    @pytest.mark.parametrize("count", [19, 20])
+    def test_existing_rsi_observation_threshold_is_preserved(self, fake_fmp, count):
+        fake_fmp.cfg = {
+            "candidates": [_good_candidate(sector="Utilities")],
+            "income": {"GOOD": _income()},
+            "dividends": {"GOOD": _dividend_history()},
+            "prices": {"GOOD": _falling_prices(count)},
+        }
+        result = mod.screen_value_dividend_stocks("fixture-only")
+        assert bool(result) == (count == 20)
+        if result:
+            assert result[0]["rsi"] == 0.0
+
     def test_fmp_only_happy_path_builds_full_result(self, fake_fmp, capsys):
         fake_fmp.cfg = {
             "candidates": [_good_candidate(pe=12.0, priceToBook=1.4)],
@@ -985,11 +1362,44 @@ class TestMain:
         assert not out.exists()
         assert "No stocks found matching all criteria" in capsys.readouterr().err
 
+    def test_plan_restriction_exits_1_with_plan_message(self, monkeypatch, tmp_path, capsys):
+        out = tmp_path / "res.json"
+        monkeypatch.setenv("FMP_API_KEY", "fmp")
+
+        def raise_plan(*args, **kwargs):
+            raise mod.FMPPlanRestrictedError(
+                "FMP plan does not include the stock screener endpoint required: "
+                "synthetic-private-diagnostic-marker"
+            )
+
+        monkeypatch.setattr(mod, "screen_value_dividend_stocks", raise_plan)
+        with pytest.raises(SystemExit) as exc:
+            self._run(monkeypatch, ["--output", str(out)])
+        assert exc.value.code == 1
+        diagnostic = capsys.readouterr().err
+        assert "FMP plan does not include the stock screener endpoint" in diagnostic
+        assert "synthetic-private-diagnostic-marker" not in diagnostic
+        assert not out.exists()
+
+    def test_main_includes_plan_gated_skipped_in_metadata(self, monkeypatch, tmp_path):
+        out = tmp_path / "res.json"
+
+        def fake_screen(key, top_n, finviz_symbols, max_candidates, stats=None):
+            if stats is not None:
+                stats["plan_gated_skipped"] = 2
+            return [{"symbol": "AAA", "composite_score": 55.0}]
+
+        monkeypatch.setenv("FMP_API_KEY", "env-fmp")
+        monkeypatch.setattr(mod, "screen_value_dividend_stocks", fake_screen)
+        self._run(monkeypatch, ["--output", str(out)])
+        data = json.loads(out.read_text(encoding="utf-8"))
+        assert data["metadata"]["plan_gated_skipped"] == 2
+
     def test_fmp_only_writes_json_report(self, monkeypatch, tmp_path):
         out = tmp_path / "nested" / "res.json"
         captured = {}
 
-        def fake_screen(key, top_n, finviz_symbols, max_candidates):
+        def fake_screen(key, top_n, finviz_symbols, max_candidates, stats=None):
             captured.update(
                 key=key, top_n=top_n, finviz=finviz_symbols, max_candidates=max_candidates
             )
@@ -1012,7 +1422,7 @@ class TestMain:
         def fake_finviz_init(self, api_key):
             seen["finviz_key"] = api_key
 
-        def fake_screen(key, top_n, finviz_symbols, max_candidates):
+        def fake_screen(key, top_n, finviz_symbols, max_candidates, stats=None):
             seen["fmp_key"] = key
             seen["symbols"] = finviz_symbols
             return [{"symbol": "ZZZ", "composite_score": 1.0}]

@@ -1,0 +1,5 @@
+Source: https://github.com/Jeffallan/claude-skills
+Base source commit: main @ 2026-11-21
+License: MIT
+Stars at import: 12471
+Imported by: scripts/weekly_curation.py on 2026-11-21 (score 80).

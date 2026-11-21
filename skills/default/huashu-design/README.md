@@ -31,7 +31,9 @@ npx skills add alchaincyf/huashu-design
 
 > 📣 **已改为 MIT 协议。** 自 2026-05-14 起本 skill 完全开源（[MIT License](LICENSE)），个人和**商用都免费**，无需事先授权。原「个人使用免费、企业商用需授权」的条款已作废。([查看变更](#license))
 
-> 🆕 **3.1：新增小红书图文。** 一组 3:4 竖图的八种范式——标本志、贴纸本、索引、长卷、日报、集换卡、留白、信息图，每个样张同时是能直接改的模板；一条命令切成成图，顺手查字号、出界、长卷跨缝和压字。[看样张](#设计方向顾问)
+> 🆕 **3.4：App 原型换了一套想法，新增 App Store 宣传图。** 走查两届 App Store Awards 的 90 个入围作品，提炼出八条界面范式（各带样张）：先定「这个 App 管的事在现实里长什么样」，再画屏。新增商店宣传图模块（1320×2868，连幅、破框、搜索结果预览）。参考改成「看原图、量数字、借一层不借一身」，做完和参照并排对回去。界面里该是图的地方放真的图：自带生图的环境（Codex、豆包、WorkBuddy）直接生成，Claude Code、DeepSeek Harness 借本机 Codex 或你给的生图 API，不再用 emoji 和占位块顶替。
+
+> **3.1：新增小红书图文。** 一组 3:4 竖图的八种范式——标本志、贴纸本、索引、长卷、日报、集换卡、留白、信息图，每个样张同时是能直接改的模板；一条命令切成成图，顺手查字号、出界、长卷跨缝和压字。[看样张](#设计方向顾问)
 
 > **3.0：三个方向更敢，项目之间也不再长一个样。** 先出六张缩略图再挑三版做成真稿；风格库扩到 84 种（新增 App、中文与东亚两个分区），每种都有样张；参照作品先截图再动手；带一个只量事实的设计体检，和一本记住你做过什么样子的外观账本。[详见核心机制](#核心机制)
 
@@ -131,7 +133,7 @@ npx skills add alchaincyf/huashu-design
 npx skills add alchaincyf/huashu-design
 ```
 
-> **装完先自检**：这个 skill 不只是 SKILL.md 一个文件，`references/`、`assets/`、`scripts/`、`demos/` 四个子目录里有 99 处被引用的配方、脚本、素材，缺一不可。装完看一眼安装目录（如 `~/.claude/skills/huashu-design/`），如果只有 SKILL.md、没有那几个子目录，说明你的 `skills` CLI 版本太旧（≤1.5.15 有个只同步单文件的 bug，已在 1.5.19 修复）。升级后再装一次即可：
+> **装完先自检**：这个 skill 不只是 SKILL.md 一个文件，`references/`、`assets/`、`scripts/`、`demos/` 四个子目录里有 430+ 个被引用的配方、脚本、素材文件，缺一不可。装完看一眼安装目录（如 `~/.claude/skills/huashu-design/`），如果只有 SKILL.md、没有那几个子目录，说明你的 `skills` CLI 版本太旧（≤1.5.15 有个只同步单文件的 bug，已在 1.5.19 修复）。升级后再装一次即可：
 >
 > ```bash
 > npm i -g skills@latest        # 或 npx skills@latest add alchaincyf/huashu-design
@@ -159,7 +161,7 @@ dsh plugin --profile desktop add github:alchaincyf/huashu-design
 「做一份 AI 心理学的演讲 PPT，推荐 3 个风格方向让我选」
 「做个 AI 番茄钟 iOS 原型，4 个核心屏幕要真能点击」
 「把这段逻辑做成 60 秒动画，导出 MP4 和 GIF」
-「帮我对这个设计做一个 5 维度评审」
+「帮我对这个设计做一个 6 维度评审」
 ```
 
 没有按钮、没有面板、没有 Figma 插件。
@@ -186,8 +188,9 @@ dsh plugin --profile desktop add github:alchaincyf/huashu-design
 | 设计变体 | 3+ 并排对比 · Tweaks 实时调参 · 跨维度探索 | 10 min |
 | 信息图 / 可视化 | 印刷级排版 · 可导 PDF/PNG/SVG | 10 min |
 | 小红书图文 / 封面 | 3:4 一组图（≤18 张）· 8 种范式模板 · 长卷连续滑动 · 一条命令切图并体检 | 10–15 min |
+| App Store 宣传图 | 1320×2868 上架图（≤10 张）· 先拉同类目真实商店截图当参考 · 连幅自动切张 · 搜索结果缩略预览与体检 | 10–15 min |
 | 设计方向顾问 | **三套逻辑各出两个候选**（最佳设计师 + 同媒介获奖作品 + 秒数轮盘）· 六张缩略图挑三版真实视觉，另三张作备选 | 10 min |
-| 5 维度专家评审 | 雷达图 + Keep/Fix/Quick Wins · 可操作修复清单 | 3 min |
+| 6 维度专家评审 | 概念/立意一票否决 + 5 个执行维度 · 雷达图 + Keep/Fix/Quick Wins · 可操作修复清单 | 3 min |
 
 ---
 
@@ -239,9 +242,9 @@ HTML deck 浏览器演讲 · `html2pptx.js` 读 DOM 的 computedStyle 逐元素�
 
 <p align="center"><img src="https://github.com/alchaincyf/huashu-design/releases/download/v2.0/c5-infographic.gif" width="100%"></p>
 
-### 5 维度专家评审
+### 6 维度专家评审
 
-哲学一致性 · 视觉层级 · 细节执行 · 功能性 · 创新性 各 0–10 分 · 雷达图可视化 · 输出 Keep / Fix / Quick Wins 清单。
+概念/立意（权重最高，≤5 分时总评封顶）+ 哲学一致性 · 视觉层级 · 细节执行 · 功能性 · 创新性 各 0–10 分 · 雷达图可视化 · 输出 Keep / Fix / Quick Wins 清单。
 
 <p align="center"><img src="https://github.com/alchaincyf/huashu-design/releases/download/v2.0/c6-expert-review.gif" width="100%"></p>
 
@@ -324,6 +327,7 @@ A/B 测试（v1 vs v2，各跑 6 agent）：**v2 的稳定性方差比 v1 低 5 
 
 - **经验**：`scripts/learn.py` 开工前带出你说过的品味原话（「太素了」「A 的结构加 C 的颜色」）和过去的教训，收工时把值得记的记下来；记录前会告诉你，不想记可以拒绝
 - **外观账本**：每次交付记一笔「长什么样」（底色、色板、字体、版式骨架，连同项目名和所在路径），下个项目主动避开——单个项目看都不错、放在一起却长得像，这种单调靠它管
+- **打磨环**：`scripts/polish.py` 把页面按原尺寸逐屏截图，模型看着自己的截图改一轮再交；它会报「连续几屏只有文字和框」「缩略图还是占位色块」这类事实，打磨记录空着也会提醒。轻量模型或脚本报警时走稳妥轨道（`references/steady-track.md`）：从样张改起、先写逐屏稿、每屏从形式菜单里挑
 - **设计体检**：`scripts/design_lint.py` 只量能核对的事实——图裂了、字小到读不了、对比度不够、控制台报错是红灯；全大写小标签、「A · B · C」这类顺手的模板装饰是黄灯；三版是不是换皮、和最近的项目撞没撞，`compare` 和 `ledger check` 来查。好不好看归你判断，它不打分
 - 这些记录只存在你本机的 `~/.huashu-design/`，不随 skill 分发，删掉文件夹就全部忘记
 
@@ -387,6 +391,7 @@ huashu-design/
 ├── SKILL.md                 # 主文档（给 agent 读）
 ├── README.md                # 中文 README（默认，本文件）
 ├── README.en.md             # 英文 README
+├── test-prompts.json        # 手动冒烟提示词（8 条）
 ├── assets/                  # Starter Components
 │   ├── animations.jsx       # Stage + Sprite + Easing + interpolate
 │   ├── ios_frame.jsx        # iPhone 15 Pro bezel
@@ -396,14 +401,18 @@ huashu-design/
 │   ├── deck_stage.js        # HTML 幻灯片引擎
 │   ├── deck_index.html      # 多文件 deck 拼接器
 │   ├── design_canvas.jsx    # 并排变体展示
-│   ├── showcases/           # 24 个预制样例（8 场景 × 3 风格）
-│   ├── style-specimens/     # 92 种风格的样张（html 源码 + jpg）与分区总览；xhs/ 的样张同时是模板
+│   ├── showcases/           # 24 个预制样例（8 场景 × 3 风格，索引见 INDEX.md）
+│   ├── style-specimens/     # 92 种风格的样张（html 源码 + jpg）与分区总览；xhs/ 的样张同时是模板；paradigm/ 是 8 条 App 界面范式
+│   ├── appstore/            # App Store 宣传图模板
 │   └── bgm-*.mp3            # 6 首场景化背景音乐
 ├── references/              # 按任务深入读的子文档
 │   ├── animation-pitfalls.md
 │   ├── directions.md        # 三方向：六个候选 → 缩略图 → 挑三版
+│   ├── polish-loop.md       # 打磨环：逐屏截图、看图、改一轮
+│   ├── steady-track.md      # 稳妥轨道：样张起步、逐屏稿、形式菜单
 │   ├── design-styles.md     # 92 种 HTML 原生风格库（网页 20 + PPT 20 + 信息图 20 + App 12 + 中文与东亚 12 + 小红书 8）
-│   ├── modules/             # 网页 / deck / 信息图 / 小红书 / 动画 五个模块手册
+│   ├── modules/             # 网页 / deck / 信息图 / 小红书 / App Store 宣传图 / 动画 六个模块手册
+│   ├── app-paradigms.md     # App 界面八条范式：两届 App Store Awards 入围作品的拆解与取图 id
 │   ├── slide-decks.md
 │   ├── editable-pptx.md
 │   ├── critique-guide.md
@@ -412,17 +421,23 @@ huashu-design/
 ├── scripts/                 # 导出工具链
 │   ├── render-video.js      # HTML → MP4
 │   ├── xhs_render.py        # 小红书图文 → 3:4 成图 + 体检
+│   ├── appstore_shots.py    # 拉真实 App 的商店截图拼成参考板
+│   ├── ref_card.py          # 量参考原图的色板与版面；做完和参照并排对回去（借一层，不借一身）
+│   ├── gen_image.py         # 不能生图的环境里借本机 Codex 生成素材图，只认真生成的
+│   ├── appstore_render.py   # App Store 宣传图 → 可上传成图 + 搜索结果预览 + 体检
 │   ├── convert-formats.sh   # MP4 → 60fps + GIF
 │   ├── add-music.sh         # MP4 + BGM
 │   ├── export_deck_pdf.mjs
 │   ├── export_deck_pptx.mjs
 │   ├── html2pptx.js
 │   ├── design_lint.py       # 设计体检、三版撞色撞骨架、外观账本
+│   ├── polish.py            # 打磨环：逐屏截图、缩略图检查、打磨记录
 │   ├── learn.py             # 品味经验的读写
 │   ├── ref_board.py         # 把参考作品截成参考板
 │   ├── capabilities.py      # 探测本机能力（生图、兄弟 skill、Node、ffmpeg）
-│   └── verify.py
-└── demos/                   # 9 个能力演示 (c*/w*)，中英双版 GIF/MP4/HTML + hero v10
+│   ├── verify.py
+│   └── tests/               # pytest 回归（python3 -m pytest scripts/tests/ -q）
+└── demos/                   # 9 个能力演示 (c*/w*) 中英双版 HTML（动图/视频走 Release 外链）+ hero v10（英文版）
 ```
 
 ---

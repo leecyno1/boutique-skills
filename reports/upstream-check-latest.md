@@ -1,17 +1,18 @@
 # Upstream Skill Update Check
 
-- Generated at: `2026-11-07T09:53:19`
-- Checked GitHub-backed local skills: `288`
+- Generated at: `2026-11-21T09:19:38`
+- Checked GitHub-backed local skills: `311`
 - Relocated origins: `0`
-- current: `158`
-- error: `10`
-- metadata_only_root_no_skill_md: `59`
+- current: `173`
+- metadata_only_root_no_skill_md: `84`
 - metadata_only_root_too_large: `1`
-- updated: `33`
-- wrapper_origin: `27`
+- updated: `28`
+- wrapper_origin: `25`
 
 | Skill | Status | Changed | Added | Upstream |
 |---|---|---:|---:|---|
+| `a-stock-data` | `current` | 0 | 0 | [simonlin1212/a-stock-data](https://github.com/simonlin1212/a-stock-data) |
+| `agent-reach` | `current` | 0 | 0 | [Panniantong/agent-reach](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
 | `alphaear-predictor` | `current` | 0 | 0 | [RKiding/Awesome-finance-skills](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-predictor) |
 | `alphaear-reporter` | `current` | 0 | 0 | [RKiding/Awesome-finance-skills](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-reporter) |
 | `alphaear-signal-tracker` | `current` | 0 | 0 | [RKiding/Awesome-finance-skills](https://github.com/RKiding/Awesome-finance-skills/tree/main/skills/alphaear-signal-tracker) |
@@ -35,11 +36,24 @@
 | `anthropic-fs-equity-research-sector-overview` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/equity-research/skills/sector-overview) |
 | `anthropic-fs-financial-analysis-dcf-model` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/dcf-model) |
 | `anthropic-fs-financial-analysis-ib-check-deck` | `current` | 0 | 0 | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/ib-check-deck) |
+| `baoyu-article-illustrator` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
+| `baoyu-comic` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
+| `baoyu-compress-image` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
+| `baoyu-cover-image` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
+| `baoyu-format-markdown` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
+| `baoyu-image-gen` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
+| `baoyu-markdown-to-html` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-markdown-to-html) |
+| `baoyu-post-to-wechat` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-wechat) |
+| `baoyu-post-to-weibo` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
+| `baoyu-post-to-x` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
+| `baoyu-translate` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-translate) |
+| `baoyu-url-to-markdown` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
+| `baoyu-xhs-images` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
+| `baoyu-youtube-transcript` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
 | `bayesian-intrinsic-growth-valuation` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/bayesian-intrinsic-growth-valuation) |
 | `behavior-validator` | `current` | 0 | 0 | [openclaw/agent-skills](https://github.com/openclaw/agent-skills/tree/main/skills/behavior-validator) |
 | `bilibili-upload-bridge` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/bilibili-upload-bridge) |
 | `brandkit` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/brandkit) |
-| `breadth-chart-analyst` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
 | `breakout-trade-planner` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breakout-trade-planner) |
 | `btc-bottom-model` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/btc-bottom-model) |
 | `buddy-sings` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/buddy-sings) |
@@ -65,19 +79,19 @@
 | `dasheng-vox-skills` | `current` | 0 | 0 | [leecyno1/newma-media-studio](https://github.com/leecyno1/newma-media-studio/tree/main/skills/dasheng-vox-skills) |
 | `dasheng-xhs-publish-bridge` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/dasheng-xhs-publish-bridge) |
 | `data-analyst` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/data-analyst) |
-| `data-quality-checker` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker) |
+| `design-taste-frontend` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill) |
 | `design-taste-frontend-v1` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/taste-skill-v1) |
 | `discord-reader` | `current` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/discord-reader) |
 | `distilly` | `current` | 0 | 0 | [titanwings/distilly](https://github.com/titanwings/distilly) |
 | `douyin-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/douyin-account-launch-expert) |
-| `earnings-calendar` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-calendar) |
 | `earnings-trade-analyzer` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-trade-analyzer) |
 | `edge-candidate-agent` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-candidate-agent) |
 | `edge-concept-synthesizer` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-concept-synthesizer) |
 | `edge-hint-extractor` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-hint-extractor) |
+| `edge-pipeline-orchestrator` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator) |
+| `edge-signal-aggregator` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-signal-aggregator) |
 | `edge-strategy-designer` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-designer) |
 | `edge-strategy-reviewer` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-strategy-reviewer) |
-| `exposure-coach` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/exposure-coach) |
 | `feishu-doc-creator` | `current` | 0 | 0 | [leecyno1/dasheng-media-workflow-skills](https://github.com/leecyno1/dasheng-media-workflow-skills/tree/main/skills/feishu-doc-creator) |
 | `finance-sentiment` | `current` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/data-providers/skills/finance-sentiment) |
 | `find-skills` | `current` | 0 | 0 | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills) |
@@ -88,6 +102,7 @@
 | `generative-ui` | `current` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/ui-tools/skills/generative-ui) |
 | `gf-dma-health-index` | `current` | 0 | 0 | [haskaomni/serenity-skill](https://github.com/haskaomni/serenity-skill/tree/main/skills/gf-dma-health-index) |
 | `gif-sticker-maker` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/gif-sticker-maker) |
+| `global-stock-data` | `current` | 0 | 0 | [simonlin1212/global-stock-data](https://github.com/simonlin1212/global-stock-data) |
 | `gpt-taste` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/gpt-tasteskill) |
 | `gsap-core` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core) |
 | `gsap-frameworks` | `current` | 0 | 0 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills/tree/main/skills/gsap-frameworks) |
@@ -102,7 +117,6 @@
 | `high-end-visual-design` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/soft-skill) |
 | `humanizer-zh` | `current` | 0 | 0 | [idao-cube/humanizer-zh](https://github.com/idao-cube/humanizer-zh) |
 | `ian-xiaohei-illustrations` | `current` | 0 | 0 | [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations/tree/main/ian-xiaohei-illustrations) |
-| `ibd-distribution-day-monitor` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/ibd-distribution-day-monitor) |
 | `ima` | `current` | 0 | 0 | [leecyno1/boutique-skills](https://github.com/leecyno1/boutique-skills/tree/main/skills/default/ima) |
 | `image-to-code` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/image-to-code-skill) |
 | `imagegen-frontend-mobile` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v2/skills/imagegen-frontend-mobile) |
@@ -114,7 +128,6 @@
 | `macro-liquidity` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/macro-liquidity) |
 | `macro-regime-detector` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/macro-regime-detector) |
 | `market-environment-analysis` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-environment-analysis) |
-| `market-top-detector` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-top-detector) |
 | `media-downloader` | `current` | 0 | 0 | [yizhiyanhua-ai/media-downloader](https://github.com/yizhiyanhua-ai/media-downloader.git) |
 | `minimalist-ui` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/minimalist-skill) |
 | `minimax-docx` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) |
@@ -134,6 +147,7 @@
 | `pybroker-backtest-skill` | `current` | 0 | 0 | [gaaiyun/pybroker-backtest-skill](https://github.com/gaaiyun/pybroker-backtest-skill) |
 | `react-native-dev` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/react-native-dev) |
 | `redesign-existing-projects` | `current` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/taste-skill-v1.9/skills/redesign-skill) |
+| `review-animations` | `current` | 0 | 0 | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
 | `scroll-world` | `current` | 0 | 0 | [oso95/scroll-world](https://github.com/oso95/scroll-world/tree/main/skills/scroll-world) |
 | `sector-analyst` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/sector-analyst) |
 | `seedance2-skill` | `current` | 0 | 0 | [dexhunter/seedance2-skill](https://github.com/dexhunter/seedance2-skill) |
@@ -156,10 +170,10 @@
 | `trade-hypothesis-ideator` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trade-hypothesis-ideator) |
 | `twitter-reader` | `current` | 0 | 0 | [himself65/finance-skills](https://github.com/himself65/finance-skills/tree/main/plugins/social-readers/skills/twitter-reader) |
 | `uptrend-analyzer` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/uptrend-analyzer) |
+| `url-to-markdown` | `current` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | `us-market-bubble-detector` | `current` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/us-market-bubble-detector) |
 | `us-market-sentiment` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/us-market-sentiment) |
 | `us-value-investing` | `current` | 0 | 0 | [star23/Day1Global-Skills](https://github.com/star23/Day1Global-Skills/tree/main/us-value-investing) |
-| `video-shotcraft` | `current` | 0 | 0 | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) |
 | `vision-analysis` | `current` | 0 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/vision-analysis) |
 | `wb-xhs-account-profile` | `current` | 0 | 0 | [jackbauerxu/workbuddy-xhs-skills](https://github.com/jackbauerxu/workbuddy-xhs-skills/tree/main/wb-xhs-account-profile) |
 | `wb-xhs-humanize-compliance` | `current` | 0 | 0 | [jackbauerxu/workbuddy-xhs-skills](https://github.com/jackbauerxu/workbuddy-xhs-skills/tree/main/wb-xhs-humanize-compliance) |
@@ -170,28 +184,27 @@
 | `wechat-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/wechat-account-launch-expert) |
 | `x-twitter-cold-start-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/x-twitter-cold-start-expert) |
 | `xiaohongshu-account-launch-expert` | `current` | 0 | 0 | [chenjin-cmd/agent-skills-launch-pack_](https://github.com/chenjin-cmd/agent-skills-launch-pack_/tree/main/skills/xiaohongshu-account-launch-expert) |
-| `agent-reach` | `error` | 0 | 0 | [Panniantong/agent-reach](https://github.com/Panniantong/agent-reach/tree/main/agent_reach/skill) |
-| `baoyu-article-illustrator` | `error` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) |
-| `baoyu-cover-image` | `error` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) |
-| `baoyu-format-markdown` | `error` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-format-markdown) |
-| `design-taste-frontend` | `error` | 0 | 0 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill) |
-| `huashu-design` | `error` | 0 | 0 | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design) |
-| `impeccable` | `error` | 0 | 0 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable/tree/main/plugin/skills/impeccable) |
-| `market-breadth-analyzer` | `error` | 0 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-breadth-analyzer) |
-| `memu` | `error` | 0 | 0 | [NevaMind-AI/memU](https://github.com/NevaMind-AI/memU) |
-| `url-to-markdown` | `error` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
+| `404-page` | `metadata_only_root_no_skill_md` | 0 | 0 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) |
+| `8-bit-orbit-video-template` | `metadata_only_root_no_skill_md` | 0 | 0 | [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 | `ablation-planner` | `metadata_only_root_no_skill_md` | 0 | 0 | [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
+| `about-page` | `metadata_only_root_no_skill_md` | 0 | 0 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) |
 | `abusing-dpapi-for-credential-access` | `metadata_only_root_no_skill_md` | 0 | 0 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
 | `abusing-shadow-credentials-for-privesc` | `metadata_only_root_no_skill_md` | 0 | 0 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
+| `accessibility-testing` | `metadata_only_root_no_skill_md` | 0 | 0 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) |
+| `accessible-authentication` | `metadata_only_root_no_skill_md` | 0 | 0 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) |
+| `accessible-notifications` | `metadata_only_root_no_skill_md` | 0 | 0 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) |
 | `achieving-cmmc-level-2-compliance` | `metadata_only_root_no_skill_md` | 0 | 0 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
 | `acquiring-disk-image-with-dd-and-dcfldd` | `metadata_only_root_no_skill_md` | 0 | 0 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
+| `ad-creative` | `metadata_only_root_no_skill_md` | 0 | 0 | [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 | `adaptyv` | `metadata_only_root_no_skill_md` | 0 | 0 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) |
 | `aeon` | `metadata_only_root_no_skill_md` | 0 | 0 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) |
+| `after-hours-editorial-template` | `metadata_only_root_no_skill_md` | 0 | 0 | [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 | `agent-architecture-audit` | `metadata_only_root_no_skill_md` | 0 | 0 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `agent-eval` | `metadata_only_root_no_skill_md` | 0 | 0 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `agent-harness-construction` | `metadata_only_root_no_skill_md` | 0 | 0 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `agent-introspection-debugging` | `metadata_only_root_no_skill_md` | 0 | 0 | [affaan-m/ECC](https://github.com/affaan-m/ECC) |
 | `agentmail-cli` | `metadata_only_root_no_skill_md` | 0 | 0 | [agentmail-to/agentmail-cli](https://github.com/agentmail-to/agentmail-cli) |
+| `ai-music-album` | `metadata_only_root_no_skill_md` | 0 | 0 | [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 | `alphaxiv` | `metadata_only_root_no_skill_md` | 0 | 0 | [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `analytical-method-validation` | `metadata_only_root_no_skill_md` | 0 | 0 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) |
 | `analyze-results` | `metadata_only_root_no_skill_md` | 0 | 0 | [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
@@ -203,16 +216,32 @@
 | `auto-paper-improvement-loop` | `metadata_only_root_no_skill_md` | 0 | 0 | [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
 | `bb-local-toolkit` | `metadata_only_root_no_skill_md` | 0 | 0 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) |
 | `bb-methodology` | `metadata_only_root_no_skill_md` | 0 | 0 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) |
+| `bear-notes` | `metadata_only_root_no_skill_md` | 0 | 0 | [openclaw/openclaw](https://github.com/openclaw/openclaw) |
+| `blueprint-figure` | `metadata_only_root_no_skill_md` | 0 | 0 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `browser-cdp` | `metadata_only_root_no_skill_md` | 0 | 0 | [zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `bug-bounty` | `metadata_only_root_no_skill_md` | 0 | 0 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) |
 | `bugcrowd-reporting` | `metadata_only_root_no_skill_md` | 0 | 0 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) |
+| `build-project` | `metadata_only_root_no_skill_md` | 0 | 0 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
+| `cavecrew` | `metadata_only_root_no_skill_md` | 0 | 0 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| `caveman-commit` | `metadata_only_root_no_skill_md` | 0 | 0 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| `caveman-compress` | `metadata_only_root_no_skill_md` | 0 | 0 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| `caveman-discover` | `metadata_only_root_no_skill_md` | 0 | 0 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| `caveman-evidence-review` | `metadata_only_root_no_skill_md` | 0 | 0 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| `check-understanding` | `metadata_only_root_no_skill_md` | 0 | 0 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
+| `claude-certification` | `metadata_only_root_no_skill_md` | 0 | 0 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `cli-a2a` | `metadata_only_root_no_skill_md` | 0 | 0 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-backup-sync` | `metadata_only_root_no_skill_md` | 0 | 0 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-batches` | `metadata_only_root_no_skill_md` | 0 | 0 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-chat` | `metadata_only_root_no_skill_md` | 0 | 0 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
 | `cli-compression` | `metadata_only_root_no_skill_md` | 0 | 0 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) |
 | `code-review` | `metadata_only_root_no_skill_md` | 0 | 0 | [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) |
+| `course-guide` | `metadata_only_root_no_skill_md` | 0 | 0 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
 | `defuddle` | `metadata_only_root_no_skill_md` | 0 | 0 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) |
+| `egm-bootstrap` | `metadata_only_root_no_skill_md` | 0 | 0 | [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) |
+| `egm-brainstorm` | `metadata_only_root_no_skill_md` | 0 | 0 | [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) |
+| `egm-draft` | `metadata_only_root_no_skill_md` | 0 | 0 | [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) |
+| `egm-drift-report` | `metadata_only_root_no_skill_md` | 0 | 0 | [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) |
+| `egm-resolve` | `metadata_only_root_no_skill_md` | 0 | 0 | [google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model) |
 | `gpt-image` | `metadata_only_root_no_skill_md` | 0 | 0 | [wuyoscar/GPT-Image2-Skill](https://github.com/wuyoscar/GPT-Image2-Skill) |
 | `gpt-image-2-style-library` | `metadata_only_root_no_skill_md` | 0 | 0 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) |
 | `gws-admin-reports` | `metadata_only_root_no_skill_md` | 0 | 0 | [googleworkspace/cli](https://github.com/googleworkspace/cli) |
@@ -240,43 +269,36 @@
 | `story-import` | `metadata_only_root_no_skill_md` | 0 | 0 | [zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `story-long-analyze` | `metadata_only_root_no_skill_md` | 0 | 0 | [zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) |
 | `gstack` | `metadata_only_root_too_large` | 0 | 0 | [garrytan/gstack](https://github.com/garrytan/gstack) |
-| `a-stock-data` | `updated` | 4 | 0 | [simonlin1212/a-stock-data](https://github.com/simonlin1212/a-stock-data) |
-| `baoyu-comic` | `updated` | 8 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
-| `baoyu-compress-image` | `updated` | 1 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-compress-image) |
-| `baoyu-image-gen` | `updated` | 15 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
-| `baoyu-markdown-to-html` | `updated` | 1 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-markdown-to-html) |
-| `baoyu-post-to-wechat` | `updated` | 7 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-wechat) |
-| `baoyu-post-to-weibo` | `updated` | 1 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) |
-| `baoyu-post-to-x` | `updated` | 3 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
-| `baoyu-translate` | `updated` | 7 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-translate) |
-| `baoyu-url-to-markdown` | `updated` | 7 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
-| `baoyu-xhs-images` | `updated` | 2 | 3 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) |
-| `baoyu-youtube-transcript` | `updated` | 4 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-youtube-transcript) |
-| `book-to-skill` | `updated` | 1 | 0 | [virgiliojr94/book-to-skill](https://github.com/virgiliojr94/book-to-skill) |
-| `canslim-screener` | `updated` | 2 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/canslim-screener) |
-| `dividend-growth-pullback-screener` | `updated` | 2 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dividend-growth-pullback-screener) |
-| `downtrend-duration-analyzer` | `updated` | 1 | 1 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/downtrend-duration-analyzer) |
+| `book-to-skill` | `updated` | 9 | 2 | [virgiliojr94/book-to-skill](https://github.com/virgiliojr94/book-to-skill) |
+| `breadth-chart-analyst` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst) |
+| `canslim-screener` | `updated` | 9 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/canslim-screener) |
+| `data-quality-checker` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker) |
+| `deeptutor` | `updated` | 1 | 28 | [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) |
+| `dividend-growth-pullback-screener` | `updated` | 4 | 2 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dividend-growth-pullback-screener) |
+| `downtrend-duration-analyzer` | `updated` | 4 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/downtrend-duration-analyzer) |
+| `earnings-calendar` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-calendar) |
 | `economic-calendar-fetcher` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher) |
-| `edge-pipeline-orchestrator` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator) |
-| `edge-signal-aggregator` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-signal-aggregator) |
-| `frontend-dev` | `updated` | 1 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
-| `ftd-detector` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/ftd-detector) |
-| `global-stock-data` | `updated` | 4 | 0 | [simonlin1212/global-stock-data](https://github.com/simonlin1212/global-stock-data) |
+| `exposure-coach` | `updated` | 2 | 3 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/exposure-coach) |
+| `frontend-dev` | `updated` | 4 | 0 | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills/tree/main/skills/frontend-dev) |
+| `ftd-detector` | `updated` | 12 | 12 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/ftd-detector) |
+| `huashu-design` | `updated` | 13 | 10 | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design) |
+| `ibd-distribution-day-monitor` | `updated` | 5 | 1 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/ibd-distribution-day-monitor) |
+| `market-breadth-analyzer` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-breadth-analyzer) |
+| `market-top-detector` | `updated` | 9 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-top-detector) |
+| `memu` | `updated` | 4 | 0 | [NevaMind-AI/memU](https://github.com/NevaMind-AI/memU) |
 | `notebooklm-py` | `updated` | 2 | 0 | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) |
 | `options-strategy-advisor` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/options-strategy-advisor) |
-| `parabolic-short-trade-planner` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/parabolic-short-trade-planner) |
+| `parabolic-short-trade-planner` | `updated` | 1 | 1 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/parabolic-short-trade-planner) |
 | `position-sizer` | `updated` | 4 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/position-sizer) |
-| `review-animations` | `updated` | 2 | 0 | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/main/skills/review-animations) |
-| `signal-postmortem` | `updated` | 4 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/signal-postmortem) |
-| `theme-detector` | `updated` | 5 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/theme-detector) |
-| `trader-memory-core` | `updated` | 3 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trader-memory-core) |
-| `uzi-skill` | `updated` | 3 | 0 | [wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill) |
-| `value-dividend-screener` | `updated` | 1 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/value-dividend-screener) |
-| `vcp-screener` | `updated` | 2 | 0 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/vcp-screener) |
-| `agentmail` | `wrapper_origin` | 0 | 0 | [agentmail-to/agentmail-skills](https://github.com/agentmail-to/agentmail-skills) |
+| `signal-postmortem` | `updated` | 6 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/signal-postmortem) |
+| `theme-detector` | `updated` | 11 | 3 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/theme-detector) |
+| `trader-memory-core` | `updated` | 9 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/trader-memory-core) |
+| `uzi-skill` | `updated` | 2 | 1 | [wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill) |
+| `value-dividend-screener` | `updated` | 5 | 4 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/value-dividend-screener) |
+| `vcp-screener` | `updated` | 6 | 7 | [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/vcp-screener) |
+| `video-shotcraft` | `updated` | 5 | 0 | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) |
 | `agentmail-mcp` | `wrapper_origin` | 0 | 0 | [agentmail-to/agentmail-mcp](https://github.com/agentmail-to/agentmail-mcp) |
 | `agentmail-toolkit` | `wrapper_origin` | 0 | 0 | [agentmail-to/agentmail-toolkit](https://github.com/agentmail-to/agentmail-toolkit) |
-| `animation` | `wrapper_origin` | 0 | 0 | [bytesagain/ai-skills](https://github.com/bytesagain/ai-skills) |
 | `baoyu-skills` | `wrapper_origin` | 0 | 0 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) |
 | `chrome-devtools-mcp` | `wrapper_origin` | 0 | 0 | [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
 | `claude-mem-plugin` | `wrapper_origin` | 0 | 0 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |

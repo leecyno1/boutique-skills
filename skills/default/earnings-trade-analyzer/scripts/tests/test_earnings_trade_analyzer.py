@@ -16,6 +16,7 @@ from zoneinfo import ZoneInfo
 
 import pytest
 from analyze_earnings_trades import (
+    CalendarDependencyMissingError,
     CalendarUnavailableError,
     _resolve_as_of,
     apply_entry_filter,
@@ -772,7 +773,15 @@ class TestMainZeroResultExitCodes:
 
         with patch("analyze_earnings_trades.FMPClient", return_value=client) as mock_client_class:
             mock_client_class.US_EXCHANGES = FMPClient.US_EXCHANGES
-            argv = self._argv(tmp_path) + ["--max-api-calls", str(max_calls)]
+            # gh-672: the calendar endpoint now costs one call per day, so a
+            # zero-lookback window keeps it at exactly one call and the budget
+            # still exhausts mid-profile-fetch, which is what this test pins.
+            argv = self._argv(tmp_path) + [
+                "--lookback-days",
+                "0",
+                "--max-api-calls",
+                str(max_calls),
+            ]
             with patch.object(sys, "argv", argv):
                 with pytest.raises(SystemExit) as exc_info:
                     main()
@@ -924,6 +933,28 @@ class TestMainZeroResultExitCodes:
             in err
         )
         mock_count.assert_called_once()
+
+    @patch(
+        "analyze_earnings_trades.count_sessions",
+        side_effect=CalendarDependencyMissingError("pandas-market-calendars requirements.txt"),
+    )
+    @patch("analyze_earnings_trades.FMPClient")
+    def test_empty_calendar_with_missing_calendar_dependency_exits_2(
+        self, mock_client_class, mock_count, tmp_path, capsys
+    ):
+        client = mock_client_class.return_value
+        mock_client_class.US_EXCHANGES = FMPClient.US_EXCHANGES
+        client.get_earnings_calendar.return_value = []
+        client.get_api_stats.return_value = {"budget_remaining": 50, "rate_limit_reached": False}
+
+        with patch.object(sys, "argv", self._argv(tmp_path)):
+            with pytest.raises(SystemExit) as exc_info:
+                main()
+
+        assert exc_info.value.code == 2
+        err = capsys.readouterr().err
+        assert "requirements.txt" in err
+        assert "ZERO_RESULT_REASON" not in err
 
     @patch(
         "analyze_earnings_trades.count_sessions",

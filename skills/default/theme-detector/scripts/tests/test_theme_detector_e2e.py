@@ -4,10 +4,15 @@ Tests the full flow: raw industries -> rank -> classify -> score -> report
 without network calls (all I/O is mocked).
 """
 
+import csv
+import io
 import json
 import sys
 from datetime import date
+from unittest.mock import Mock
 
+import pandas as pd
+import pytest
 from calculators.heat_calculator import (
     breadth_signal_score,
     calculate_theme_heat,
@@ -244,20 +249,70 @@ class TestThemeDetectorE2E:
         assert ai["theme_origin"] == "seed"
         assert ai["name_confidence"] == "high"
 
-    def test_cli_scan_hits_history_no_update(self, monkeypatch, tmp_path, capsys):
+    @pytest.mark.parametrize("mode", ["public", "elite", "elite_fallback", "elite_truncated"])
+    @pytest.mark.parametrize("fmp_available", [False, True])
+    def test_cli_scan_hits_history_no_update(
+        self, monkeypatch, tmp_path, capsys, mode, fmp_available
+    ):
         """CLI run emits leadership/history sections without mutating history."""
         import etf_scanner
         import finviz_performance_client
         import theme_detector
         import uptrend_client
 
+        monkeypatch.delenv("FINVIZ_API_KEY", raising=False)
+        monkeypatch.delenv("FMP_API_KEY", raising=False)
+        if fmp_available:
+            monkeypatch.setenv("FMP_API_KEY", "fictional-fmp-key")
         raw = [
             _make_raw_industry("Semiconductors", "Technology", 0.05, 0.12, 0.25),
             _make_raw_industry("Software - Application", "Technology", 0.04, 0.10, 0.20),
             _make_raw_industry("Software - Infrastructure", "Technology", 0.035, 0.09, 0.18),
             _make_raw_industry("Banks - Diversified", "Financial", 0.01, 0.02, 0.03),
         ]
-        monkeypatch.setattr(finviz_performance_client, "get_industry_performance", lambda: raw)
+        body = io.StringIO()
+        writer = csv.writer(body)
+        columns = finviz_performance_client.ELITE_COLUMNS
+        writer.writerow(["Name", *columns])
+        for industry in raw:
+            writer.writerow(
+                [
+                    industry["name"],
+                    *[str(industry.get(key, 0) * 100) + "%" for key in columns.values()],
+                ]
+            )
+        if mode == "elite":
+            group_http = Mock(return_value=Mock(status_code=200, text=body.getvalue()))
+            monkeypatch.setattr(finviz_performance_client.requests, "get", group_http)
+        else:
+            public_rows = pd.DataFrame(
+                [
+                    {
+                        "Name": row["name"],
+                        "Perf Week": row["perf_1w"],
+                        "Perf Month": row["perf_1m"],
+                        "Perf Quart": row["perf_3m"],
+                        "Perf Half": 0.0,
+                        "Perf Year": 0.0,
+                        "Perf YTD": 0.0,
+                    }
+                    for row in raw
+                ]
+            )
+            public_client = Mock()
+            public_client.Performance.return_value.screener_view.return_value = public_rows
+            monkeypatch.setattr(finviz_performance_client, "HAS_FINVIZFINANCE", True)
+            monkeypatch.setattr(finviz_performance_client, "fvperf", public_client, raising=False)
+            group_http = Mock(return_value=Mock(status_code=403, text="fictional-elite-key"))
+            if mode == "elite_truncated":
+                # #685: a clean 4-row Elite CSV under the shipped floor is not Elite data.
+                group_http.return_value = Mock(status_code=200, text=body.getvalue())
+                monkeypatch.setattr(
+                    finviz_performance_client,
+                    "ELITE_MIN_ROWS",
+                    {"sector": 11, "industry": 100},
+                )
+            monkeypatch.setattr(finviz_performance_client.requests, "get", group_http)
         monkeypatch.setattr(
             finviz_performance_client, "cap_outlier_performances", lambda rows: rows
         )
@@ -347,6 +402,10 @@ class TestThemeDetectorE2E:
             "argv",
             [
                 "theme_detector.py",
+                "--finviz-mode",
+                "public" if mode == "public" else "elite",
+                "--finviz-api-key",
+                "fictional-elite-key",
                 "--output-dir",
                 str(tmp_path),
                 "--scan-hits",
@@ -364,6 +423,28 @@ class TestThemeDetectorE2E:
         theme_detector.main()
         captured = capsys.readouterr()
         report = json.loads(captured.out)
+        if mode != "public":
+            group_http.assert_called_once()
+            assert group_http.call_args.kwargs["params"]["auth"] == "fictional-elite-key"
+        else:
+            group_http.assert_not_called()
+        assert "fictional-elite-key" not in captured.out + captured.err
+        actual_source = "elite" if mode == "elite" else "public"
+        assert report["metadata"]["finviz_mode"] == actual_source
+        assert report["metadata"]["finviz_mode_requested"] == (
+            "public" if mode == "public" else "elite"
+        )
+        assert report["metadata"]["data_sources"]["finviz_industry_performance"] == {
+            "source": actual_source,
+            "fallback_reason": {
+                "elite_fallback": "http_status",
+                "elite_truncated": "too_few_rows",
+            }.get(mode),
+        }
+        assert report["metadata"]["data_mode"] == determine_data_mode(
+            fmp_available, actual_source == "elite"
+        )
+        assert json.loads(next(tmp_path.glob("theme_detector_*.json")).read_text()) == report
         top_theme = report["themes"]["all"][0]
         assert top_theme["leadership_score"] is not None
         assert top_theme["leadership_counts"]["ep9m"] == 1
@@ -374,6 +455,10 @@ class TestThemeDetectorE2E:
         markdown = next(tmp_path.glob("theme_detector_*.md")).read_text()
         assert "## 2. What Changed Today" in markdown
         assert "## 3. Leadership Evidence" in markdown
+        if mode == "elite_fallback":
+            assert "FINVIZ industry performance used public fallback (http_status)" in markdown
+        if mode == "elite_truncated":
+            assert "FINVIZ industry performance used public fallback (too_few_rows)" in markdown
         assert json.loads(history_file.read_text()) == history_payload
 
     def test_historical_live_as_of_fails_before_provider_access(self, capsys):

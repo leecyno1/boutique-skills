@@ -32,19 +32,6 @@
       "groups": []
     },
     {
-      "id": "agentmail",
-      "name": "agentmail",
-      "description": "Give AI agents their own email inboxes using the AgentMail API.",
-      "manual": "skills/default/agentmail/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "agentmail-cli",
       "name": "agentmail-cli",
       "description": "Send and receive emails programmatically using the AgentMail CLI.",

@@ -176,55 +176,25 @@ def test_recorder_to_analyzer_exports_real_feedback(monkeypatch, tmp_path, capsy
     assert {p.name: p.read_bytes() for p in pm_dir.iterdir()} == before
 
 
-def test_batch_without_key_records_neutral_and_skips_unusable_signals(
-    monkeypatch, tmp_path, capsys
-):
+def test_batch_without_key_skips_all_without_inventing_outcomes(monkeypatch, tmp_path, capsys):
     source = tmp_path / "signals.json"
     write_json(source, [signal(), signal(1, entry_price=0), signal(2, signal_date="invalid")])
+    original = source.read_bytes()
     output = tmp_path / "reports"
-    cli(monkeypatch, recorder, "--signals-file", source, "--output-dir", output)
+    with pytest.raises(SystemExit) as error:
+        cli(monkeypatch, recorder, "--signals-file", source, "--output-dir", output)
+    assert error.value.code == 1
     batch = read_json(output / "postmortem_batch_2026-10-04_120000.json")
-    assert (batch["processed"], batch["total_signals"]) == (1, 3)
-    record = batch["postmortems"][0]
-    assert record["realized_returns"] == {}
-    assert record["outcome_category"] == "NEUTRAL"
-    assert record["exit_price"] == 100.0
-    assert record["exit_date"] == "2026-09-06"
-    assert sorted(p.name for p in (output / "postmortems").iterdir()) == ["pm_sig_0.json"]
+    assert (batch["processed"], batch["skipped"], batch["total_signals"]) == (0, 3, 3)
+    assert batch["postmortems"] == []
+    assert not list((output / "postmortems").iterdir())
     captured = capsys.readouterr()
     assert "No FMP API key" in captured.err
+    assert "No observed 5d exit" in captured.err
     assert "No entry price" in captured.err
     assert "Invalid signal date" in captured.err
-
-
-@pytest.mark.parametrize(
-    "signal_id,ticker,date",
-    [("sig_FICTION_2026-09-01", "FICTION", "2026-09-01"), ("manual", "UNKNOWN", "2026-10-04")],
-)
-def test_manual_recording_preserves_notes_without_inventing_returns(
-    monkeypatch, tmp_path, capsys, signal_id, ticker, date
-):
-    cli(
-        monkeypatch,
-        recorder,
-        "--signal-id",
-        signal_id,
-        "--exit-price",
-        "105",
-        "--exit-date",
-        "2026-10-04",
-        "--outcome-notes",
-        "fictional manual observation",
-        "--output-dir",
-        tmp_path,
-    )
-    record = read_json(tmp_path / "postmortems" / f"pm_{signal_id}.json")
-    assert (record["ticker"], record["signal_date"]) == (ticker, date)
-    assert (record["exit_price"], record["entry_price"]) == (105, 0)
-    assert record["realized_returns"] == {}
-    assert record["outcome_category"] == "NEUTRAL"
-    assert record["outcome_notes"] == "fictional manual observation"
-    assert "Outcome: NEUTRAL" in capsys.readouterr().out
+    assert "NEUTRAL" not in captured.out
+    assert source.read_bytes() == original
 
 
 def test_list_ready_uses_fixed_cutoff_and_does_not_record(monkeypatch, tmp_path, capsys):

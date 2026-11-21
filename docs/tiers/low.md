@@ -2,7 +2,7 @@
 
 稳定基础档，适合首次安装和轻量生产环境。只包含通用协作、搜索、文档、基础媒体和安全工作流。
 
-- 技能数量：`53`
+- 技能数量：`52`
 - 安装命令：`./scripts/install-tier.sh low`
 - JSON 清单：`tiers/low.json`
 
@@ -12,7 +12,6 @@
 |---|---|---|---|
 | `a-stock-data` | A 股全栈数据工具包，覆盖行情、研报、题材归因、北向资金、龙虎榜、解禁、两融、大宗交易、股东户数、分红、新闻、基础数据和公告。 | [skills/default/a-stock-data/GUIDE.md](../../skills/default/a-stock-data/GUIDE.md) | [source](https://github.com/simonlin1212/a-stock-data) |
 | `agent-browser` | Headless browser automation CLI for AI agents. | [skills/default/agent-browser/GUIDE.md](../../skills/default/agent-browser/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agent-browser) |
-| `agentmail` | Give AI agents their own email inboxes using the AgentMail API. | [skills/default/agentmail/GUIDE.md](../../skills/default/agentmail/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail) |
 | `agentmail-cli` | Send and receive emails programmatically using the AgentMail CLI. | [skills/default/agentmail-cli/GUIDE.md](../../skills/default/agentmail-cli/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-cli) |
 | `agentmail-mcp` | AgentMail MCP server for email tools in AI assistants. | [skills/default/agentmail-mcp/GUIDE.md](../../skills/default/agentmail-mcp/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-mcp) |
 | `agentmail-toolkit` | Add email capabilities to AI agents using popular frameworks. | [skills/default/agentmail-toolkit/GUIDE.md](../../skills/default/agentmail-toolkit/GUIDE.md) | [source](https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail-toolkit) |

@@ -8,12 +8,14 @@ exposure ceiling, bias direction, and action recommendation.
 
 import argparse
 import json
+import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from evaluation_coverage import evaluation_input_usable
 from provenance_contract import validate_market_inputs
 
 # Component weights for composite score
@@ -48,7 +50,7 @@ def _regime_input_is_usable(data: Optional[dict]) -> bool:
     canonical macro-regime-detector reports, explicit very-low confidence,
     zero usable components, or malformed availability metadata fail closed.
     """
-    if not isinstance(data, dict):
+    if not evaluation_input_usable(data):
         return False
 
     regime = data.get("regime")
@@ -98,14 +100,14 @@ def load_json_file(path: Optional[Path]) -> Optional[dict]:
     try:
         with open(path) as f:
             return json.load(f)
-    except (OSError, json.JSONDecodeError) as e:
+    except (OSError, UnicodeError, json.JSONDecodeError) as e:
         print(f"Warning: Could not load {path}: {e}", file=sys.stderr)
         return None
 
 
 def extract_breadth_score(data: Optional[dict]) -> Optional[int]:
     """Extract breadth score from breadth analyzer output."""
-    if data is None:
+    if not evaluation_input_usable(data):
         return None
     # Support various field names from upstream skill
     if "breadth_score" in data:
@@ -150,7 +152,7 @@ def extract_uptrend_score(data: Optional[dict]) -> Optional[int]:
     top level) and the nested shape emitted by uptrend-analyzer, which stores
     its result under a ``composite`` sub-object.
     """
-    if data is None:
+    if not evaluation_input_usable(data):
         return None
     if "uptrend_score" in data:
         return int(data["uptrend_score"])
@@ -212,7 +214,13 @@ def extract_regime_name(data: Optional[dict]) -> str:
 
 def extract_top_risk_score(data: Optional[dict]) -> Optional[int]:
     """Extract top risk score (inverted - high risk = low score)."""
-    if data is None:
+    if not evaluation_input_usable(data):
+        return None
+    declared = data.get("composite")
+    if isinstance(declared, dict) and (
+        declared.get("data_available") is False
+        or ("composite_score" in declared and declared["composite_score"] is None)
+    ):
         return None
     if "top_risk_score" in data:
         return int(data["top_risk_score"])
@@ -246,7 +254,7 @@ def extract_ftd_score(data: Optional[dict]) -> Optional[int]:
     (``total_score``); a confirmed Follow-Through Day is a bullish
     bottom-confirmation signal, so the score is used directly (no inversion).
     """
-    if data is None:
+    if not evaluation_input_usable(data):
         return None
     if "ftd_score" in data:
         return int(data["ftd_score"])
@@ -261,22 +269,61 @@ def extract_ftd_score(data: Optional[dict]) -> Optional[int]:
     return None
 
 
+def _valid_theme_number(value: object) -> bool:
+    return (
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and 0 <= value <= 100
+        and math.isfinite(value)
+    )
+
+
 def extract_theme_score(data: Optional[dict]) -> Optional[int]:
-    """Extract theme strength score."""
-    if data is None:
+    """Consume a theme report using an uncalibrated directional-heat heuristic.
+
+    Canonical ownership is consumer-side: score = round(50 + mean(signed heat)/2).
+    Bullish heat is positive, bearish negative. Every themes.all row must be
+    valid; quality warnings are preserved by the CLI, not evidence of freshness.
+    """
+    if not evaluation_input_usable(data):
         return None
+    if data.get("report_type") == "theme_detector":
+        quality = data.get("data_quality")
+        if (
+            not isinstance(quality, dict)
+            or not isinstance(quality.get("status"), str)
+            or quality.get("status") not in {"ok", "warning"}
+            or not isinstance(quality.get("flags"), list)
+            or not all(isinstance(flag, str) for flag in quality["flags"])
+        ):
+            return None
+        themes = data.get("themes")
+        rows = themes.get("all") if isinstance(themes, dict) else None
+        if not isinstance(rows, list) or not rows:
+            return None
+        signed = []
+        for row in rows:
+            if (
+                not isinstance(row, dict)
+                or not isinstance(row.get("direction"), str)
+                or row.get("direction") not in {"bullish", "bearish"}
+                or not _valid_theme_number(row.get("heat"))
+            ):
+                return None
+            signed.append(row["heat"] if row["direction"] == "bullish" else -row["heat"])
+        return round(50 + math.fsum(signed) / len(signed) / 2)
     if "theme_score" in data:
-        return int(data["theme_score"])
-    if "theme_strength" in data:
-        strength = data["theme_strength"].lower()
+        return int(data["theme_score"]) if _valid_theme_number(data["theme_score"]) else None
+    strength = data.get("theme_strength")
+    if isinstance(strength, str):
         mapping = {"strong": 85, "stable": 65, "rotating": 40, "collapsing": 20}
-        return mapping.get(strength, 50)
+        return mapping.get(strength.lower().strip())
     return None
 
 
 def extract_sector_score(data: Optional[dict]) -> Optional[int]:
     """Extract sector condition score."""
-    if data is None:
+    if not evaluation_input_usable(data):
         return None
     if "sector_score" in data:
         return int(data["sector_score"])
@@ -296,7 +343,7 @@ def extract_sector_score(data: Optional[dict]) -> Optional[int]:
 
 def extract_institutional_score(data: Optional[dict]) -> Optional[int]:
     """Extract institutional flow score."""
-    if data is None:
+    if not evaluation_input_usable(data):
         return None
     if "institutional_score" in data:
         return int(data["institutional_score"])
@@ -597,6 +644,11 @@ def generate_markdown_report(result: dict) -> str:
             ]
         )
 
+    if result.get("inputs_unparseable"):
+        lines.extend(["### Unparsable Inputs", ", ".join(result["inputs_unparseable"]), ""])
+    for name, warnings in result.get("input_warnings", {}).items():
+        lines.extend([f"### Input Warnings: {name}", *[f"- {warning}" for warning in warnings], ""])
+
     return "\n".join(lines)
 
 
@@ -640,6 +692,32 @@ def main():
     sector_data = load_json_file(args.sector)
     institutional_data = load_json_file(args.institutional)
 
+    for name, data in (
+        ("breadth", breadth_data),
+        ("uptrend", uptrend_data),
+        ("regime", regime_data),
+        ("top_risk", top_risk_data),
+        ("ftd", ftd_data),
+        ("theme", theme_data),
+        ("sector", sector_data),
+        ("institutional", institutional_data),
+    ):
+        if (
+            isinstance(data, dict)
+            and "evaluation_coverage" in data
+            and not evaluation_input_usable(data)
+        ):
+            print(
+                f"Warning: {name} evaluation_coverage is incomplete or invalid; input excluded as missing.",
+                file=sys.stderr,
+            )
+
+    # These two raw inputs also influence bias/participation independently of scores.
+    if not evaluation_input_usable(sector_data):
+        sector_data = None
+    if not evaluation_input_usable(institutional_data):
+        institutional_data = None
+
     lineage = None
     if args.require_provenance:
         try:
@@ -668,6 +746,23 @@ def main():
     # Calculate composite
     composite, provided, missing = calculate_composite_score(scores)
 
+    # Keep missing/unusable scoring semantics internally; only the diagnostics
+    # distinguish an omitted theme from a supplied but unusable file.
+    unparsable = ["theme"] if args.theme is not None and scores["theme"] is None else []
+    input_warnings = {}
+    if unparsable:
+        print(
+            "Warning: unparsable theme input; expected valid legacy theme fields or "
+            "a theme_detector report with themes.all and data_quality. Theme excluded.",
+            file=sys.stderr,
+        )
+    elif isinstance(theme_data, dict) and theme_data.get("report_type") == "theme_detector":
+        flags = theme_data["data_quality"]["flags"]
+        if flags:
+            input_warnings["theme"] = list(flags)
+            for flag in flags:
+                print(f"Warning: theme: {flag}", file=sys.stderr)
+
     # Determine outputs
     exposure_ceiling = determine_exposure_ceiling(composite)
     missing_critical = len(set(missing) & CRITICAL_INPUTS)
@@ -682,6 +777,19 @@ def main():
         composite, recommendation, participation, bias, scores, missing, exposure_ceiling
     )
 
+    if unparsable:
+        rationale += " Supplied theme input is unparsable and excluded."
+    if (
+        isinstance(theme_data, dict)
+        and theme_data.get("report_type") == "theme_detector"
+        and scores["theme"] is not None
+    ):
+        rationale += " Theme score uses an uncalibrated directional-heat heuristic."
+    if input_warnings:
+        rationale += (
+            " Upstream theme quality warnings remain; confidence measures input completeness only."
+        )
+
     # Build result
     now = datetime.now(timezone.utc)
     result = {
@@ -695,9 +803,15 @@ def main():
         "composite_score": round(composite, 1),
         "component_scores": {f"{k}_score": v for k, v in scores.items() if v is not None},
         "inputs_provided": provided,
-        "inputs_missing": missing,
+        "inputs_missing": [name for name in missing if name not in unparsable],
         "rationale": rationale,
     }
+
+    # Preserve the established strict output schema when diagnostics are empty.
+    if unparsable:
+        result["inputs_unparseable"] = unparsable
+    if input_warnings:
+        result["input_warnings"] = input_warnings
 
     if lineage is not None:
         result["input_lineage"] = lineage

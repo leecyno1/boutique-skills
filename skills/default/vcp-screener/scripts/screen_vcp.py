@@ -37,9 +37,11 @@ from calculators.relative_strength_calculator import (
     rank_relative_strength_universe,
 )
 from calculators.trend_template_calculator import calculate_trend_template
-from calculators.vcp_pattern_calculator import calculate_vcp_pattern
+from calculators.vcp_pattern_calculator import VCPPriceDataError, calculate_vcp_pattern
 from calculators.volume_pattern_calculator import calculate_volume_pattern
-from fmp_client import FMPClient
+from coverage_client import CoverageFMPClient as FMPClient
+from coverage_client import failure_reason, history_problem, quote_problem
+from evaluation_coverage import build_evaluation_coverage
 from report_generator import generate_json_report, generate_markdown_report
 from scorer import calculate_composite_score
 
@@ -212,6 +214,9 @@ def parse_arguments():
 
     args = parser.parse_args()
 
+    if args.max_candidates < 1:
+        parser.error("--max-candidates must be positive")
+
     # Lower bound is 2 by design: VCP requires successive contractions, and
     # contraction_ratio scoring needs at least 2 to compute ratios.
     if not (2 <= args.min_contractions <= 4):
@@ -344,6 +349,22 @@ def analyze_stock(
         if sp500_history:
             sp500_history = sp500_history[as_of_offset:]
 
+    # Validate pattern observations before RS/TT can consume invalid closes.
+    vcp_result = calculate_vcp_pattern(
+        historical,
+        lookback_days=lookback_days,
+        atr_multiplier=atr_multiplier,
+        min_contraction_days=min_contraction_days,
+        min_contractions=min_contractions,
+        t1_depth_min=t1_depth_min,
+        contraction_ratio=contraction_ratio,
+        wide_and_loose_threshold=wide_and_loose_threshold,
+    )
+
+    if vcp_result.get("data_available") is False:
+        print(f"{symbol}: {vcp_result['error']}", file=sys.stderr)
+        return None
+
     price = quote.get("price", 0)
     market_cap = quote.get("marketCap", 0)
 
@@ -358,18 +379,6 @@ def analyze_stock(
         rs_rank=rs_rank,
         ext_threshold=ext_threshold,
         max_sma200_extension=max_sma200_extension,
-    )
-
-    # 3. VCP Pattern Detection
-    vcp_result = calculate_vcp_pattern(
-        historical,
-        lookback_days=lookback_days,
-        atr_multiplier=atr_multiplier,
-        min_contraction_days=min_contraction_days,
-        min_contractions=min_contractions,
-        t1_depth_min=t1_depth_min,
-        contraction_ratio=contraction_ratio,
-        wide_and_loose_threshold=wide_and_loose_threshold,
     )
 
     # 4. Volume Pattern
@@ -613,15 +622,19 @@ def run_historical(args, client) -> None:
         "max_sma200_extension": args.max_sma200_extension,
         "wide_and_loose_threshold": args.wide_and_loose_threshold,
     }
-    detections = scan_history(
-        ticker,
-        historical,
-        sp500_history,
-        stride_days=args.stride_days,
-        outcome_days=args.outcome_days,
-        lookback_days=args.lookback_days,
-        analyzer_kwargs=analyzer_kwargs,
-    )
+    try:
+        detections = scan_history(
+            ticker,
+            historical,
+            sp500_history,
+            stride_days=args.stride_days,
+            outcome_days=args.outcome_days,
+            lookback_days=args.lookback_days,
+            analyzer_kwargs=analyzer_kwargs,
+        )
+    except VCPPriceDataError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
     print(f"  Found {len(detections)} unique VCP detections")
     print()
 
@@ -710,6 +723,11 @@ def main():
         universe_desc = f"S&P 500 ({len(symbols)} stocks)"
         print(f"OK ({len(symbols)} stocks)")
 
+    # Coverage counts unique requested symbols, not repeated input rows.
+    symbols = list(dict.fromkeys(sym.strip().upper() for sym in symbols))
+    universe_desc = f"{'Custom' if args.universe else 'S&P 500'} ({len(symbols)} stocks)"
+    outcomes = {sym: "missing_data" for sym in symbols}
+
     # Build sector/name lookup
     sector_map = {}
     name_map = {}
@@ -729,10 +747,18 @@ def main():
     for sym in symbols:
         quote = all_quotes.get(sym)
         if not quote:
+            outcomes[sym] = failure_reason(client, "quote", sym)
+            continue
+        problem = quote_problem(quote)
+        if problem:
+            outcomes[sym] = problem
             continue
         passed, likelihood = pre_filter_stock(quote)
         if passed:
             pre_filtered.append((sym, likelihood, quote))
+            outcomes[sym] = "candidate_limit"
+        else:
+            outcomes[sym] = None
 
     # Sort by Stage 2 likelihood, take top candidates
     pre_filtered.sort(key=lambda x: x[1], reverse=True)
@@ -750,12 +776,13 @@ def main():
 
     # Fetch SPY historical for RS calculation
     print("  Fetching SPY 260-day history...", end=" ", flush=True)
-    spy_data = client.get_historical_prices("SPY", days=260)
+    spy_data = client.get_historical_prices("SPY", days=260) if candidates else None
     sp500_history = spy_data.get("historical", []) if spy_data else []
-    if sp500_history:
+    benchmark_problem = history_problem(sp500_history, benchmark=True)
+    if not benchmark_problem:
         print(f"OK ({len(sp500_history)} days)")
     else:
-        print("WARN - SPY data unavailable, RS calculations will be limited")
+        print("SPY comparison unavailable; affected candidates cannot be evaluated")
 
     # Fetch historical data for candidates
     candidate_symbols = [c[0] for c in candidates]
@@ -766,8 +793,14 @@ def main():
         if (i + 1) % 20 == 0 or i == len(candidate_symbols) - 1:
             print(f"    Progress: {i + 1}/{len(candidate_symbols)}", flush=True)
         data = client.get_historical_prices(sym, days=260)
-        if data and "historical" in data:
-            candidate_histories[sym] = data["historical"]
+        hist = data.get("historical", []) if isinstance(data, dict) else []
+        problem = history_problem(hist)
+        if problem:
+            outcomes[sym] = failure_reason(client, "historical", sym, problem)
+        elif benchmark_problem:
+            outcomes[sym] = "benchmark_unavailable"
+        else:
+            candidate_histories[sym] = hist
 
     # Apply Trend Template filter
     print("  Applying 7-point Trend Template...", end=" ", flush=True)
@@ -785,6 +818,10 @@ def main():
         tt_result = calculate_trend_template(
             hist, quote, rs_rank=rs_rank, ext_threshold=args.ext_threshold
         )
+        if rs_result.get("error") or tt_result.get("error"):
+            outcomes[sym] = "analysis_failed"
+            continue
+        outcomes[sym] = None
         if passes_trend_filter(tt_result, args.trend_min_score):
             trend_passed.append((sym, quote))
 
@@ -839,6 +876,7 @@ def main():
             print(f"Score: {score:.1f} ({analysis['rating']})")
             results.append(analysis)
         else:
+            outcomes[sym] = "analysis_failed"
             print("FAILED")
 
     print()
@@ -947,9 +985,14 @@ def main():
     }
 
     top_results = results[: args.top]
+    coverage = build_evaluation_coverage(outcomes)
 
-    generate_json_report(top_results, metadata, json_file, all_results=results)
-    generate_markdown_report(top_results, metadata, md_file, all_results=results)
+    generate_json_report(
+        top_results, metadata, json_file, all_results=results, evaluation_coverage=coverage
+    )
+    generate_markdown_report(
+        top_results, metadata, md_file, all_results=results, evaluation_coverage=coverage
+    )
 
     # ========================================================================
     # Summary
@@ -958,6 +1001,9 @@ def main():
     print("=" * 70)
     print("VCP Screening Complete")
     print("=" * 70)
+    print(
+        f"Evaluation coverage: {coverage['evaluated']}/{coverage['universe_size']} evaluated ({coverage['verdict']})"
+    )
 
     # Top 5 display
     if results:
@@ -972,7 +1018,10 @@ def main():
             )
     else:
         print()
-        print("  No VCP candidates found in this screening run.")
+        if coverage["verdict"] == "complete":
+            print("  No VCP candidates found in this screening run.")
+        else:
+            print("  Result undetermined: incomplete evaluation coverage.")
 
     print()
     print(f"  JSON Report:    {json_file}")

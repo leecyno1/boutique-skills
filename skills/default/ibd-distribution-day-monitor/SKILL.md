@@ -5,6 +5,10 @@ description: Detect IBD-style Distribution Days for QQQ/SPY (close down at least
 
 # IBD Distribution Day Monitor
 
+## Instrument identity (#765)
+
+QQQ is a Nasdaq-100 ETF proxy, not the Nasdaq Composite (`^IXIC`). SPY is an ETF proxy, not `^GSPC`. DD counts use the named symbol's own price and volume; ETF counts are not official index counts. Select explicit symbols with `--symbols`; missing data must not trigger substitution or a mixed series. The risk classes and TQQQ policy are this tool's separate heuristics, not a calibrated FTD success probability (calibration remains #676).
+
 ## Purpose
 Detect IBD-style Distribution Days for major market ETFs (QQQ as Nasdaq proxy, SPY as S&P 500 proxy) and produce a daily market deterioration signal plus a TQQQ/QQQ exposure recommendation. Designed for post-market review.
 
@@ -19,9 +23,16 @@ Do NOT use this skill to:
 - Execute trades or modify orders.
 - Generate discretionary market predictions outside of the IBD ruleset.
 
+## Prerequisites
+
+- **FMP API key:** Required. Pass `--api-key`, set `config.data.api_key`, or set the `FMP_API_KEY` environment variable, in that priority order.
+- **Other API keys:** None used.
+- **Python:** 3.9+ with `PyYAML>=6.0` and `requests>=2.31.0` (see `requirements.txt`).
+
 ## Inputs
 - Symbols (default: QQQ, SPY) and lookback (default 80 trading sessions).
 - Optional `--as-of YYYY-MM-DD` for backtesting against a historical session.
+- Optional `--config` for a readable UTF-8 YAML mapping. Empty/null documents use defaults. Configuration read/parse errors and invalid top-level, `data`, `strategy_context` or `indexes` shapes return exit 1 on stderr before provider access; correct the file/path and retry. YAML error diagnostics do not echo file contents.
 - Strategy context: instrument (TQQQ or QQQ), current exposure %, base trailing stop %.
 - FMP API key via `--api-key`, `config.data.api_key`, or `FMP_API_KEY` env var (in that priority order).
 

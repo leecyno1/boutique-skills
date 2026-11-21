@@ -87,19 +87,6 @@
       ]
     },
     {
-      "id": "agentmail",
-      "name": "agentmail",
-      "description": "Give AI agents their own email inboxes using the AgentMail API.",
-      "manual": "skills/default/agentmail/GUIDE.md",
-      "manual_url": "https://github.com/leecyno1/boutique-skills/tree/main/skills/default/agentmail/GUIDE.md",
-      "source": "https://github.com/leecyno1/auto-install-Openclaw/tree/release/hermes-website-minimax-hardening-20260503/skills/default/agentmail",
-      "requires_api_keys": false,
-      "api_keys": [],
-      "groups": [
-        "default_sentinel"
-      ]
-    },
-    {
       "id": "agentmail-cli",
       "name": "agentmail-cli",
       "description": "Send and receive emails programmatically using the AgentMail CLI.",
@@ -4200,6 +4187,166 @@
       "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
       "manual": "skills/default/course-guide/SKILL.md",
       "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "deeptutor",
+      "name": "deeptutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "manual": "skills/default/deeptutor/SKILL.md",
+      "source": "https://github.com/HKUDS/DeepTutor",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "404-page",
+      "name": "404-page",
+      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "manual": "skills/default/404-page/SKILL.md",
+      "source": "https://github.com/thedaviddias/Front-End-Checklist",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "about-page",
+      "name": "about-page",
+      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "manual": "skills/default/about-page/SKILL.md",
+      "source": "https://github.com/thedaviddias/Front-End-Checklist",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "accessibility-testing",
+      "name": "accessibility-testing",
+      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "manual": "skills/default/accessibility-testing/SKILL.md",
+      "source": "https://github.com/thedaviddias/Front-End-Checklist",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "accessible-authentication",
+      "name": "accessible-authentication",
+      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "manual": "skills/default/accessible-authentication/SKILL.md",
+      "source": "https://github.com/thedaviddias/Front-End-Checklist",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "accessible-notifications",
+      "name": "accessible-notifications",
+      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
+      "manual": "skills/default/accessible-notifications/SKILL.md",
+      "source": "https://github.com/thedaviddias/Front-End-Checklist",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "egm-bootstrap",
+      "name": "egm-bootstrap",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "manual": "skills/default/egm-bootstrap/SKILL.md",
+      "source": "https://github.com/google/elephant-goldfish-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "egm-brainstorm",
+      "name": "egm-brainstorm",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "manual": "skills/default/egm-brainstorm/SKILL.md",
+      "source": "https://github.com/google/elephant-goldfish-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "egm-draft",
+      "name": "egm-draft",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "manual": "skills/default/egm-draft/SKILL.md",
+      "source": "https://github.com/google/elephant-goldfish-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "egm-drift-report",
+      "name": "egm-drift-report",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "manual": "skills/default/egm-drift-report/SKILL.md",
+      "source": "https://github.com/google/elephant-goldfish-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "egm-resolve",
+      "name": "egm-resolve",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "manual": "skills/default/egm-resolve/SKILL.md",
+      "source": "https://github.com/google/elephant-goldfish-model",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "angular-architect",
+      "name": "angular-architect",
+      "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
+      "manual": "skills/default/angular-architect/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "api-designer",
+      "name": "api-designer",
+      "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
+      "manual": "skills/default/api-designer/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "architecture-designer",
+      "name": "architecture-designer",
+      "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
+      "manual": "skills/default/architecture-designer/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "atlassian-mcp",
+      "name": "atlassian-mcp",
+      "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
+      "manual": "skills/default/atlassian-mcp/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills",
+      "requires_api_keys": false,
+      "api_keys": [],
+      "groups": []
+    },
+    {
+      "id": "chaos-engineer",
+      "name": "chaos-engineer",
+      "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
+      "manual": "skills/default/chaos-engineer/SKILL.md",
+      "source": "https://github.com/Jeffallan/claude-skills",
       "requires_api_keys": false,
       "api_keys": [],
       "groups": []

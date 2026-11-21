@@ -298,5 +298,21 @@
   "build-project": "https://github.com/rohitg00/ai-engineering-from-scratch",
   "check-understanding": "https://github.com/rohitg00/ai-engineering-from-scratch",
   "claude-certification": "https://github.com/rohitg00/ai-engineering-from-scratch",
-  "course-guide": "https://github.com/rohitg00/ai-engineering-from-scratch"
+  "course-guide": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "deeptutor": "https://github.com/HKUDS/DeepTutor",
+  "404-page": "https://github.com/thedaviddias/Front-End-Checklist",
+  "about-page": "https://github.com/thedaviddias/Front-End-Checklist",
+  "accessibility-testing": "https://github.com/thedaviddias/Front-End-Checklist",
+  "accessible-authentication": "https://github.com/thedaviddias/Front-End-Checklist",
+  "accessible-notifications": "https://github.com/thedaviddias/Front-End-Checklist",
+  "egm-bootstrap": "https://github.com/google/elephant-goldfish-model",
+  "egm-brainstorm": "https://github.com/google/elephant-goldfish-model",
+  "egm-draft": "https://github.com/google/elephant-goldfish-model",
+  "egm-drift-report": "https://github.com/google/elephant-goldfish-model",
+  "egm-resolve": "https://github.com/google/elephant-goldfish-model",
+  "angular-architect": "https://github.com/Jeffallan/claude-skills",
+  "api-designer": "https://github.com/Jeffallan/claude-skills",
+  "architecture-designer": "https://github.com/Jeffallan/claude-skills",
+  "atlassian-mcp": "https://github.com/Jeffallan/claude-skills",
+  "chaos-engineer": "https://github.com/Jeffallan/claude-skills"
 }

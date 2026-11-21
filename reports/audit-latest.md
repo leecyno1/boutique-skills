@@ -1,13 +1,13 @@
 # Boutique Skills Audit
 
-- Time: 2026-11-12 10:04:00
+- Time: 2026-11-21 09:28:57
 - Status: **WARN**
-- Catalog skills: 317
-- Audited skills: 311
+- Catalog skills: 332
+- Audited skills: 326
 - Legacy catalog skills: 42
-- Installed/Resolved: 311
+- Installed/Resolved: 326
 - Missing: 0
-- Missing env vars: 109
+- Missing env vars: 108
 - Duplicate capabilities: 0
 - Risk hits: 15
 - Missing native origins: 0
@@ -38,14 +38,14 @@
 - alphagbm-vol-smile: `ALPHAGBM_API_KEY`
 - alphagbm-vol-surface: `ALPHAGBM_API_KEY`
 - agentmail-mcp: `AGENTMAIL_API_KEY`
-- minimax-web-search: `MINIMAX_API_KEY`
-- gpt-image: `OPENAI_API_KEY`
-- alphaxiv: `OPENAI_API_KEY`
 - book-to-skill: `GH_TOKEN`
 - book-to-skill: `GITHUB_TOKEN`
+- minimax-web-search: `MINIMAX_API_KEY`
+- alphaxiv: `OPENAI_API_KEY`
 - claude-certification: `GH_TOKEN`
 - claude-certification: `GITHUB_TOKEN`
 - cli-batches: `OPENAI_API_KEY`
+- gpt-image: `OPENAI_API_KEY`
 - ima: `IMA_API_KEY`
 - ima: `IMA_CLIENT_ID`
 - lark-calendar: `FEISHU_APP_SECRET`
@@ -56,20 +56,8 @@
 - tavily-search: `OPENAI_API_KEY`
 - tavily-search: `TAVILY_API_KEY`
 - data-quality-checker: `TUSHARE_TOKEN`
-- economic-calendar-fetcher: `FMP_API_KEY`
-- institutional-flow-tracker: `FMP_API_KEY`
-- finance-sentiment: `ADANOS_API_KEY`
-- baoyu-post-to-wechat: `ACCESS_TOKEN`
-- baoyu-post-to-wechat: `WECHAT_AI_TOOLS_APP_SECRET`
-- baoyu-post-to-wechat: `WECHAT_APP_SECRET`
-- baoyu-post-to-wechat: `WECHAT_BAOYU_APP_SECRET`
 - macro-regime-detector: `FMP_API_KEY`
-- media-downloader: `PEXELS_API_KEY`
-- agent-architecture-audit: `OPENAI_API_KEY`
-- agentmail-cli: `AGENTMAIL_API_KEY`
-- agentmail-toolkit: `AGENTMAIL_API_KEY`
-- agentmail-toolkit: `OPENAI_API_KEY`
-- alphaear-reporter: `TUSHARE_TOKEN`
+- economic-calendar-fetcher: `FMP_API_KEY`
 - baoyu-image-gen: `ARK_API_KEY`
 - baoyu-image-gen: `AZURE_OPENAI_API_KEY`
 - baoyu-image-gen: `BIGMODEL_API_KEY`
@@ -80,6 +68,18 @@
 - baoyu-image-gen: `OPENROUTER_API_KEY`
 - baoyu-image-gen: `REPLICATE_API_TOKEN`
 - baoyu-image-gen: `ZAI_API_KEY`
+- baoyu-post-to-wechat: `ACCESS_TOKEN`
+- baoyu-post-to-wechat: `WECHAT_AI_TOOLS_APP_SECRET`
+- baoyu-post-to-wechat: `WECHAT_APP_SECRET`
+- baoyu-post-to-wechat: `WECHAT_BAOYU_APP_SECRET`
+- finance-sentiment: `ADANOS_API_KEY`
+- institutional-flow-tracker: `FMP_API_KEY`
+- media-downloader: `PEXELS_API_KEY`
+- agent-architecture-audit: `OPENAI_API_KEY`
+- agentmail-cli: `AGENTMAIL_API_KEY`
+- agentmail-toolkit: `AGENTMAIL_API_KEY`
+- agentmail-toolkit: `OPENAI_API_KEY`
+- alphaear-reporter: `TUSHARE_TOKEN`
 - bb-local-toolkit: `OPENAI_API_KEY`
 - breakout-trade-planner: `TUSHARE_TOKEN`
 - bug-bounty: `OPENAI_API_KEY`
@@ -124,7 +124,6 @@
 - vision-analysis: `MINIMAX_API_KEY`
 - minimax-multimodal-toolkit: `MINIMAX_API_KEY`
 - notebooklm-skill: `GEMINI_API_KEY`
-- agentmail: `AGENTMAIL_API_KEY`
 - gif-sticker-maker: `MINIMAX_API_KEY`
 
 ## Duplicate Capabilities

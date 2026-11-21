@@ -31,6 +31,15 @@ This skill detects and ranks trending market themes by analyzing cross-sector mo
 
 ---
 
+For dynamic representative-stock selection from FINVIZ Elite, request
+Ticker, Market Cap, Change and Volume (`c=1,6,66,67`). Elite Market Cap is in
+millions and is reported in dollars. Volume now contributes to the existing
+40% cap / 30% directional-change / 30% volume rank score, so representative
+order can change. Missing or unusable Volume is warned about and its weight is
+re-normalized over the remaining factors. These weights are separate from
+Theme Heat and stock-leadership scoring. See the methodology reference for a
+synthetic before/after example.
+
 ## When to Use This Skill
 
 **Explicit Triggers:**
@@ -59,7 +68,7 @@ This skill detects and ranks trending market themes by analyzing cross-sector mo
 ## Prerequisites
 
 **Required:**
-- Python 3.9+ with core dependencies.
+- Python 3.9+ for core/Elite execution; public FINVIZ requires Python 3.10+ and `finvizfinance>=1.5.0`.
   ```bash
   pip install -r skills/theme-detector/requirements.txt
   ```
@@ -69,7 +78,7 @@ This skill detects and ranks trending market themes by analyzing cross-sector mo
 uv run --python 3.12 \
   --with requests --with beautifulsoup4 --with lxml \
   --with pandas --with numpy --with yfinance \
-  --with finvizfinance --with PyYAML \
+  --with 'finvizfinance>=1.5.0' --with PyYAML \
   python skills/theme-detector/scripts/theme_detector.py \
   --finviz-api-key "$FINVIZ_API_KEY" \
   --fmp-api-key "$FMP_API_KEY" \
@@ -89,8 +98,10 @@ FMP API (optional, for P/E ratio valuation data):
 export FMP_API_KEY=your_fmp_api_key_here
 ```
 
-The requirements include `finvizfinance`, PyYAML, pandas/numpy, requests, and
-yfinance because normal public-mode execution imports or uses each of them.
+The generated requirements retain core dependencies and the shared calendar pin.
+`finvizfinance>=1.5.0` is installed only on Python 3.10+; Python 3.9 skips
+that optional package and supports Elite group export through requests. Public
+group fetch is disabled on Python 3.9 even if an older scraper remains installed.
 
 Without FINVIZ Elite, the skill uses public FINVIZ scraping (limited to ~20 stocks per industry, slower rate limits).
 
@@ -104,7 +115,7 @@ Check that API keys are configured (see Prerequisites):
 
 ```bash
 # Verify FINVIZ Elite API key (optional but recommended)
-echo $FINVIZ_API_KEY
+test -n "${FINVIZ_API_KEY:-}" && echo "FINVIZ key configured"
 
 # Verify FMP API key (optional)
 echo $FMP_API_KEY
@@ -295,13 +306,18 @@ The skill generates two output files in the `reports/` directory:
   "generated_at": "2026-04-18 10:30:00",
   "metadata": {
     "generated_at": "2026-04-18 10:30:00",
-    "data_mode": "full",
+    "data_mode": "FINVIZ-Elite+FMP",
     "finviz_mode": "elite",
+    "finviz_mode_requested": "elite",
     "fmp_available": true,
     "max_themes": 14,
     "max_stocks_per_theme": 5,
     "data_sources": {
       "finviz_industries": 152,
+      "finviz_industry_performance": {
+        "source": "elite",
+        "fallback_reason": null
+      },
       "yfinance_stocks": 68,
       "etf_volume": 24
     }
@@ -438,6 +454,49 @@ rather than PIT snapshots, a non-current `--as-of-date` fails closed. Freshness
 counts XNYS sessions and excludes future-dated source rows.
 
 ## Important Notes
+
+### FINVIZ group source and failure behavior
+
+With a configured `FINVIZ_API_KEY` or `--finviz-api-key`, industry and sector
+performance prefer the authenticated Elite group CSV export. A non-200,
+unreadable, empty or malformed export warns and falls back to the public
+`finvizfinance>=1.5.0` scraper on Python 3.10+. `--finviz-mode public` forces
+public-only operation even when a key is configured. Without a key, public
+scraping remains the normal path; provider blocking is still possible.
+
+Report metadata distinguishes `finviz_mode_requested` from `finviz_mode`, the
+source that actually supplied industry performance. `data_mode` uses that
+actual source together with FMP key availability; it does not prove FMP fetch
+success. `data_sources.finviz_industry_performance` records `source` and a safe
+`fallback_reason` (`null` without an Elite failure). Public fallback is also
+listed in report quality flags. Dynamic stock selection keeps its own source
+policy and per-stock provenance; an industry fallback does not disable Elite
+stock requests. The existing `finviz_industries` row count is unchanged.
+
+Fallback reasons identify HTTP/request failures or a failed CSV validation
+check without including keys, URLs, response bodies or raw exception text.
+An Elite CSV that parses but has fewer than 11 sector rows or 100 industry
+rows is treated as truncated (`fallback_reason: too_few_rows`) and the public
+source is used instead. Theme runs fetch industries only, so the 100-row floor
+is the one that applies to them. Above the floor, row counts describe received
+data, not completeness. The public fallback has no floor. If public data is
+also unavailable (Python < 3.10 or finvizfinance missing), the run exits with
+an error naming the Elite failure reason instead of reporting on partial data.
+
+CSV percentage points, including values below 1%, are normalized to decimal
+ratios at the client boundary and converted to percentage points once by the
+pipeline. Missing, nonfinite or malformed required export data cannot appear as
+a successful empty scan. If neither source supplies industry data, the CLI
+exits 1 with upgrade/key/access guidance instead of producing a report. These
+source failures do not print keys, response bodies, request URLs or raw exception
+messages. Library callers retain the list-returning interface; an explicit
+empty `api_key` selects public-only and an omitted key reads `FINVIZ_API_KEY`.
+
+Dynamic representative-stock selection safely merges overlapping proxy ETF
+holdings, keeps both reasons, and retains the maximum available composite score;
+unscored ETF/static candidates use zero. This remains candidate research, with
+no broker execution or guarantee of provider access. The repair's regression
+fixtures are synthetic; a successful test is not live provider acceptance.
 
 ### FINVIZ Mode Differences
 
