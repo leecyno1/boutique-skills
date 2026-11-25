@@ -58,7 +58,8 @@
 
 - 新建仓库根 `AGENTS.md`：Agent 入口、权威文档顺序、7 条硬规则（目录只能脚本生成、兜底桶必须为空、设计只认 taste 默认、出库走归档、4 个保护文件、发布只用 publish_weekly.sh、密钥只读键名）、验收命令、工具链。已加进 `publish_weekly.sh` 白名单。
 - 新建 `docs/MIGRATION.md`：随盘/未随盘清单、新机 6 步落地、离线验收、硬编码与陈旧引用清单、周度任务重建参数、禁止事项。
-- 迁移包 `/Volumes/PSSD/123/boutique-skills-新机迁移/`：完整仓库副本（含 `.git`、双远端配置）+ 根 AGENTS.md/README.md + `config/boutique-skills-cron.json`（周度任务定义，新机照抄只改 cwd）+ 文件清单。排除 `__pycache__`、`.DS_Store`、`.qoder/`、遥测扫描缓存，以及两个 stale 旧克隆、OpenClawInstaller、公众号文章等无关项目。原目录保留。
+- 迁移包 `/Volumes/PSSD/123/boutique-skills-新机迁移/`：完整仓库副本（含 `.git`、双远端配置）+ 根 AGENTS.md/README.md + `config/boutique-skills-cron.json` 与 instruction 原文（周度任务定义，新机照抄只改 cwd）+ `config/inventory.json` + `config/TRACKED-FILES.txt`。排除 `__pycache__`、`.DS_Store`、`.qoder/`、遥测扫描缓存，以及两个 stale 旧克隆、OpenClawInstaller、公众号文章等无关项目。原目录保留。
+- 副本内实跑验收（不是只比文件数）：`git ls-files -s` 与原目录逐行一致（12490 个已跟踪文件）、工作区干净、audit/syntax/risk 退出码全 0 且各计数为 0、6 个测试文件全 PASS。注意 `audit_skills.py` 会把仓库绝对路径写进 `reports/audit-latest.*`，在新路径跑审计必然产生差异，属正常。
 - 顺手查出一个门禁盲区：`scripts/build_skills_directory.py` 需要 PyYAML，**旧机没装，该脚本一直跑不起来**；它不在周度流程里所以门禁全绿也掩盖了。已写进 AGENTS.md 与 MIGRATION.md，新机补装。
 - 基线核对：HEAD `50bff92`，工作区干净，HEAD=origin=gitee；332 技能 / 469 目录，L1 12 / L2 127 / L3 193，安装档 52/67/332，标准包 21、金融组合 28。audit/syntax/risk 全 0，6 个测试文件全过。
 

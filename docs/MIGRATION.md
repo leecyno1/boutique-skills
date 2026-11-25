@@ -48,6 +48,8 @@ for t in tests/test_*.py; do python3 "$t"; done
 
 判定标准：audit 的 `missing_skills`、`duplicate_capabilities`、`missing_native_origins`、`standard_bundle_issues` 全为 0；syntax `errors` 为 0；risk `new` 为 0；6 个测试文件全 OK。任一非零就先查原因，不要改基线或跳过测试。
 
+一个副作用：`audit_skills.py` 把仓库绝对路径写进 `reports/audit-latest.{json,md}`，所以在新路径跑审计会让这两个文件产生差异。这是正常的，周度发布会带上；不要为了让 `git status` 干净而手改报告内容。
+
 联网后再核对 `git rev-parse HEAD origin/main gitee/main` 三者一致（需先 `git fetch`）。
 
 ## 需要在新机复核的硬编码与陈旧引用
