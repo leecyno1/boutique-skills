@@ -28,6 +28,7 @@ fi
 
 git add -- \
   .gitignore \
+  AGENTS.md \
   README.md \
   QODER_HANDOFF.md \
   findings.md \

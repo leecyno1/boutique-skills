@@ -1,6 +1,8 @@
 # Boutique Skills 交接给 Qoder
 
-更新时间：2026-11-21
+更新时间：2026-11-25
+
+接手先读 [AGENTS.md](AGENTS.md)（Agent 入口与硬规则）。换新机器读 [docs/MIGRATION.md](docs/MIGRATION.md)。
 
 ## 仓库信息
 
@@ -20,7 +22,17 @@
 
 本仓库收录经过搜索、去重、来源审计和评分的 Agent Skills。维护重点是来源可追溯、能力不重复、依赖透明、评分可复核、安装可用。
 
-## 当前待办（2026-11-21 更新）
+## 移交新机器（2026-11-25）
+
+本仓库要整体搬到新 Mac 继续开发。迁移包已备好：`/Volumes/PSSD/123/boutique-skills-新机迁移/`，仓库副本在其下 `boutique-skills/`，含完整 `.git` 与双远端配置，工作区干净。**原目录 `/Volumes/PSSD/Projects/boutique-skills` 保留不动**，两边都是完整可用的仓库。
+
+落地步骤、离线验收命令、硬编码路径清单、定时任务重建参数与禁止事项全部写在 [docs/MIGRATION.md](docs/MIGRATION.md)。三条最要紧的：
+
+1. **同一时间只允许一台机器启用周度任务**，两台同时跑会重复发现、重复发布并互相覆盖。切换顺序：先停旧机 → 新机离线验收 → 再建新机任务。
+2. 副本带着可用的远端配置，`git push` 是真会生效的。验收前不要自动推送或发布。
+3. 未随盘的是机器状态与无关项目：本机技能安装目录与归档、钥匙串与 gh/git 凭据、`.qoder/repowiki` 缓存、遥测扫描缓存，以及 `boutique-skills.stale-*` 两个旧克隆、`OpenClawInstaller`、`公众号文章` 等同级项目。
+
+## 当前待办（2026-11-25 更新）
 
 工作区在本轮周度治理后干净，`main` 与 origin、gitee 三方同步（具体提交号以 `git log --oneline -1` 为准，不要在记忆文件里钉哈希）。持久结论：`publish_weekly.sh` 白名单已含 `assets/`、`.gitignore`、`findings.md`、`task_plan.md`，`.gitignore` 排除遥测缓存与 `.qoder/`；发布脚本内置 HTTPS→SSH 回退；周度流程共 11 步，第 2 步为上游同步（含 origin 路径迁移），第 3 步为出库（消费同步报告），第 9 步为审计 + 语法门禁 + 风险门禁 + 单元测试。
 
@@ -41,6 +53,14 @@
 13. **分类器兜底桶已清空（2026-11-11 第三轮）**：`commerce-ops` 是“关键词全不命中”的兜底桶，原有 16 个技能静默错分，现已逐个核对 SKILL.md 归位。`tests/test_category_classifier.py`（已接入周度第 9 步）断言兜底桶只能由显式覆盖产生、目录分类与分类器实时一致。**新技能落进兜底桶时，读它的 SKILL.md 后写进 `CATEGORY_OVERRIDES`，不要留着错分；加短关键词前先判断会不会嵌在别的英文单词里。**
 14. **宽匹配已逐个核对完毕（2026-11-12 第四轮）**：`BOUNDARY_KEYWORDS` 现为 9 个 `ui/ios/media/vision/dev/market/compress/design/valuation`，每个都有具名实证误命中；`BOUNDARY_INFLECTION = (?:s|es|ed|ous)?` 保住 stocks/images/tasks/dangerous 这类合法屈折，**故意不放过 -ing 与 -er**。`search` 实测无危害不收。覆盖表 80→94 条（11-14 +2、11-21 +6，现 102 条），新增三个家族：tradermonty 交易 edge 流水线→finance-trading、Claude-BugHunter 漏洞赏金→security-audit、ECC Agent 工程→agent-orchestration。**改关键词表前先跑影响面模拟，改完必须重生成目录并跑 7 个分类器用例；同库同岗的家族核对完就加进 `test_reviewed_families_stay_in_one_category`。** 归位会联动掉星，那是评分模型既有设计，不是 bug。
 15. **EGM 家族分类语义未裁定（11-14 遗留）**：egm-brainstorm/draft/drift-report/resolve/bootstrap 现全在 design-ui，但内容是软件设计文档/README 契约工作流，语义上更接近 docs-office 或 agent-orchestration。
+
+## 最近完成（2026-11-25 整理项目 + 备好新机迁移包）
+
+- 新建仓库根 `AGENTS.md`：Agent 入口、权威文档顺序、7 条硬规则（目录只能脚本生成、兜底桶必须为空、设计只认 taste 默认、出库走归档、4 个保护文件、发布只用 publish_weekly.sh、密钥只读键名）、验收命令、工具链。已加进 `publish_weekly.sh` 白名单。
+- 新建 `docs/MIGRATION.md`：随盘/未随盘清单、新机 6 步落地、离线验收、硬编码与陈旧引用清单、周度任务重建参数、禁止事项。
+- 迁移包 `/Volumes/PSSD/123/boutique-skills-新机迁移/`：完整仓库副本（含 `.git`、双远端配置）+ 根 AGENTS.md/README.md + `config/boutique-skills-cron.json`（周度任务定义，新机照抄只改 cwd）+ 文件清单。排除 `__pycache__`、`.DS_Store`、`.qoder/`、遥测扫描缓存，以及两个 stale 旧克隆、OpenClawInstaller、公众号文章等无关项目。原目录保留。
+- 顺手查出一个门禁盲区：`scripts/build_skills_directory.py` 需要 PyYAML，**旧机没装，该脚本一直跑不起来**；它不在周度流程里所以门禁全绿也掩盖了。已写进 AGENTS.md 与 MIGRATION.md，新机补装。
+- 基线核对：HEAD `50bff92`，工作区干净，HEAD=origin=gitee；332 技能 / 469 目录，L1 12 / L2 127 / L3 193，安装档 52/67/332，标准包 21、金融组合 28。audit/syntax/risk 全 0，6 个测试文件全过。
 
 ## 最近完成（2026-11-21 周度治理 11 步跑通）
 
@@ -115,6 +135,8 @@
 
 ## 关键目录
 
+- AGENTS.md：Agent 接手入口与硬规则（任何机器都先读这份）。
+- docs/MIGRATION.md：换新机器的落地、验收与复核清单。
 - skills/default/<name>/：Skill 主文件、配置、Agent 展示信息和来源说明。
 - catalog/default-skills.json：基础注册表。
 - catalog/native-origin-overrides.json：来源核验覆盖。
